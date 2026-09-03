@@ -164,5 +164,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Forethought / Checkpoints",
+  "plain_aliases": [],
+  "task_phrases": [
+    "deployments",
+    "schema or API changes",
+    "financial or external communications",
+    "multi-stage automation"
+  ],
+  "confusable_with": [
+    "bounded-exit",
+    "risk-tier-scaling"
+  ]
 }

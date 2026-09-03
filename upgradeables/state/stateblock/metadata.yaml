@@ -180,5 +180,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Canonical Task State",
+  "plain_aliases": [
+    "Canonical Task State"
+  ],
+  "task_phrases": [
+    "multi-step execution",
+    "agent orchestration",
+    "complex editing",
+    "auditable workflows"
+  ],
+  "confusable_with": [
+    "micro-scaffolding",
+    "state-snapshot",
+    "task-set-lock-in"
+  ]
 }

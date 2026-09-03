@@ -156,5 +156,18 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Independent Evidence Redundancy",
+  "plain_aliases": [
+    "Independent Evidence Redundancy"
+  ],
+  "task_phrases": [
+    "high-stakes evidence work",
+    "critical factual claims",
+    "source-grounded decision support",
+    "safety-relevant tradeoffs"
+  ],
+  "confusable_with": [
+    "multi-truth-gating"
+  ]
 }

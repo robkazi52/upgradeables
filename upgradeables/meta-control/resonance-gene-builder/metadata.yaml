@@ -182,5 +182,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Cross-Module Coordination Rule Builder",
+  "plain_aliases": [
+    "Cross-Module Coordination Rule Builder"
+  ],
+  "task_phrases": [
+    "recurring validator-generator pairings",
+    "stable Core-Gene couplings",
+    "multi-module evidence workflows",
+    "repeated authority-sensitive compositions"
+  ],
+  "confusable_with": [
+    "behavior-gene-builder",
+    "resonance"
+  ]
 }

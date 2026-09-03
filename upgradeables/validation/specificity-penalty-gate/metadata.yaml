@@ -168,5 +168,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Unsupported Precision Gate",
+  "plain_aliases": [
+    "Unsupported Precision Gate"
+  ],
+  "task_phrases": [
+    "research answers",
+    "estimates",
+    "incident explanations",
+    "requirements derived from incomplete evidence",
+    "source recovery"
+  ],
+  "confusable_with": [
+    "epistemic-status-gating",
+    "grounding-no-invention"
+  ]
 }

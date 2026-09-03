@@ -160,5 +160,16 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Fail-Closed Abstention",
+  "plain_aliases": [],
+  "task_phrases": [
+    "medical, legal, or policy analysis",
+    "citation-bearing research",
+    "safety-critical decisions",
+    "source transcription and fidelity work"
+  ],
+  "confusable_with": [
+    "fermionic-veto"
+  ]
 }

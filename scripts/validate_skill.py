@@ -21,6 +21,9 @@ REQUIRED_HEADINGS = (
     "Tests",
 )
 COMPONENT = re.compile(r"`([a-z0-9]+(?:-[a-z0-9]+)*)@(\d+\.\d+\.\d+)`")
+SPLIT_COMPONENT = re.compile(
+    r"\|\s*`([a-z0-9]+(?:-[a-z0-9]+)*)`\s*\|\s*`(\d+\.\d+\.\d+)`\s*\|"
+)
 
 
 def frontmatter(text):
@@ -69,7 +72,8 @@ def validate(path):
         line for line in selected_body.splitlines()
         if not re.search(r"\|\s*Drop\s*\|", line, re.IGNORECASE)
     ]
-    components = set(COMPONENT.findall("\n".join(selected_lines)))
+    selected_text = "\n".join(selected_lines)
+    components = set(COMPONENT.findall(selected_text)) | set(SPLIT_COMPONENT.findall(selected_text))
     if not components:
         errors.append("no selected Upgradeable slug@version references found")
     for slug, version in components:

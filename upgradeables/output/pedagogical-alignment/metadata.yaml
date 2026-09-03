@@ -175,5 +175,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Pedagogical Alignment Constraint",
+  "plain_aliases": [],
+  "task_phrases": [
+    "tutorials",
+    "documentation",
+    "stakeholder briefings",
+    "technical-to-nontechnical translation",
+    "onboarding"
+  ],
+  "confusable_with": [
+    "explanation-minimality-scaffold",
+    "style-alignment"
+  ]
 }

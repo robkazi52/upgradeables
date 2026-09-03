@@ -21,7 +21,7 @@ Modern conservative interpretation: write a decision sentence with owner, option
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires analysis risks becoming directionless.. Best-fit tasks: recommendations, go/no-go reviews, option selection, resource allocation.
+Triggers: analysis risks becoming directionless before commitment. Best-fit tasks: recommendations, go/no-go reviews, option selection, resource allocation.
 
 ## Interactions and failure boundary
 

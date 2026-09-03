@@ -182,5 +182,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Reusable Behavior Component Builder",
+  "plain_aliases": [
+    "Reusable Behavior Component Builder"
+  ],
+  "task_phrases": [
+    "recurring reasoning patterns",
+    "domain-specific writing behavior",
+    "tone or risk-emphasis modules",
+    "research synthesis behaviors"
+  ],
+  "confusable_with": [
+    "domain-core-builder",
+    "resonance-gene-builder"
+  ]
 }

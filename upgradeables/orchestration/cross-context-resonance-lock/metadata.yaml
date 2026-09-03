@@ -153,5 +153,18 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Cross-Context Relationship Guard",
+  "plain_aliases": [
+    "Cross-Context Relationship Guard"
+  ],
+  "task_phrases": [
+    "multi-document synthesis",
+    "multi-agent handoffs",
+    "parallel workstream integration"
+  ],
+  "confusable_with": [
+    "resonance",
+    "state-routing-bus"
+  ]
 }

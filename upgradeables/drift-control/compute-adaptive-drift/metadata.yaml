@@ -185,5 +185,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Runtime-Adaptive Drift Checks",
+  "plain_aliases": [
+    "Runtime-Adaptive Drift Checks"
+  ],
+  "task_phrases": [
+    "cross-model skills",
+    "variable tool availability",
+    "cost-limited execution",
+    "mixed-capability agents"
+  ],
+  "confusable_with": [
+    "controlled-drift-corridors",
+    "domain-normalized-drift",
+    "drift-spectra-scaling"
+  ]
 }

@@ -36,7 +36,7 @@ Canonical package: `anti-tunnel-vision@1.1.0`. ID: `T2-19`. Functional classes: 
 
 ## Trigger Conditions
 
-- Activate when the task requires premature fixation is plausible.
+- premature fixation could hide credible alternatives
 
 ## Non-Triggers
 

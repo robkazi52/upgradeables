@@ -22,7 +22,7 @@ A cautious modern interpretation is a reversible quarantine ledger: move an expl
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires discarded branches keep resurfacing.. Best-fit tasks: long branching investigations, iterative drafting, agent workflows with recurring stale branches, large mixed-authority contexts.
+Triggers: discarded branches repeatedly re-enter active reasoning. Best-fit tasks: long branching investigations, iterative drafting, agent workflows with recurring stale branches, large mixed-authority contexts.
 
 ## Interactions and failure boundary
 

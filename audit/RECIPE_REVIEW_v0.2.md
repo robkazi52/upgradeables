@@ -52,11 +52,11 @@ All 17 recipes were reviewed against v0.2 package semantics.
 
 **Important exclusion:** Omit Surgery Edit while the defect remains local; omit citation controls without external sources.
 
-| `code-review` | `task-set-lock-in`, `scoped-loader`, `grounding-no-invention`, `invariance-stress-scaffold` | `critical-atomic-verification`, `fail-closed-abstention` | PASS |
+| `code-review` | `task-set-lock-in`, `scoped-loader`, `grounding-no-invention` | `critical-atomic-verification`, `fail-closed-abstention` | PASS |
 
 **Boundary:** Use when the requested deliverable is review-only analysis of a concrete diff or pull request for correctness, regressions, and unsupported assumptions.
 
-**Required rationale:** `task-set-lock-in` — Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation. `scoped-loader` — Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation. `grounding-no-invention` — Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation. `invariance-stress-scaffold` — Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.
+**Required rationale:** `task-set-lock-in` — Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation. `scoped-loader` — Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation. `grounding-no-invention` — Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.
 
 **Important exclusion:** Omit rewrite modules unless remediation is requested; review evidence must precede edits.
 

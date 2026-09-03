@@ -38,23 +38,23 @@ Core-derived context separately from facts found in the supplied sources.
 This example starts from the `research-skill` recipe for a bounded, moderately
 high-impact corpus with citations.
 
-| Recipe role | Component | Decision | Reason |
-|---|---|---|---|
-| R | `task-set-lock-in@1.1.0` | Keep | Preserve the research question and deliverable. |
-| R | `scoped-loader@1.1.0` | Keep | Enforce the allowed source boundary. |
-| R | `stateblock@1.1.0` | Keep | Separate evidence, inference, phase, and topic. |
-| R | `grounding-no-invention@1.1.0` | Keep | Unsupported claims must not enter the answer. |
-| A | `activation-budget-funnel@1.1.0` | Drop | The selected corpus is small enough for direct loading. |
-| A | `neuro-focus@1.1.0` | Drop | Narrowing attention is not needed for this bounded task. |
-| A | `stable-long-context@1.1.0` | Drop | Long-context continuation is not triggered. |
-| A | `sequential-memory-state-engine@1.1.0` | Drop | Durable multi-chunk intake is not triggered. |
-| A | `multi-truth-gating@1.1.0` | Keep | Material claims need support and conflict checks. |
-| A | `citation-fidelity@1.1.0` | Keep | The output includes citations. |
-| A | `truth-priority-hierarchy@1.1.0` | Keep | Direct source evidence outranks interpretation. |
-| C | `critical-atomic-verification@1.1.0` | Keep | High-impact claims require atomic verification. |
-| A | `parallel-qms@1.1.0` | Keep | Run independent logical and citation checks; sequential execution is acceptable. |
-| O | `anti-tunnel-vision@1.1.0` | Keep | Test one credible competing interpretation. |
-| C | `state-snapshot@1.1.0` | Drop | No continuation handoff is requested. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `task-set-lock-in` | `1.1.0` | Keep | research scope is accepted | Preserve the research question and deliverable. |
+| `scoped-loader` | `1.1.0` | Keep | supplied sources are the evidence boundary | Enforce the allowed source boundary. |
+| `stateblock` | `1.1.0` | Keep | evidence and inference must remain distinct | Separate evidence, inference, phase, and topic. |
+| `grounding-no-invention` | `1.1.0` | Keep | claims depend on supplied sources | Unsupported claims must not enter the answer. |
+| `activation-budget-funnel` | `1.1.0` | Drop | not active: the corpus is small | Direct loading is sufficient. |
+| `neuro-focus` | `1.1.0` | Drop | not active: no attention overload | Narrowing is unnecessary for this bounded task. |
+| `stable-long-context` | `1.1.0` | Drop | not active: no long-context continuation | No continuation guarantee is needed. |
+| `sequential-memory-state-engine` | `1.1.0` | Drop | not active: no multi-chunk intake | Durable staged intake is unnecessary. |
+| `multi-truth-gating` | `1.1.0` | Keep | material claims need support checks | Preserve conflict and support status. |
+| `citation-fidelity` | `1.1.0` | Keep | the output includes citations | Verify that citations support nearby claims. |
+| `truth-priority-hierarchy` | `1.1.0` | Keep | evidence and interpretation compete | Direct source evidence outranks interpretation. |
+| `critical-atomic-verification` | `1.1.0` | Keep | a claim has high impact | Verify consequential claims atomically. |
+| `parallel-qms` | `1.1.0` | Keep | independent logical and citation failures are plausible | Run distinct checks; sequential execution is acceptable. |
+| `anti-tunnel-vision` | `1.1.0` | Keep | a credible competing interpretation exists | Test that interpretation before commitment. |
+| `state-snapshot` | `1.1.0` | Drop | not active: no handoff is requested | No continuation snapshot is needed. |
 
 ## Authority and Precedence
 

@@ -175,5 +175,17 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Adapter-First Experimentation",
+  "plain_aliases": [],
+  "task_phrases": [
+    "new loader or validator trials",
+    "tool integrations",
+    "alternative routing logic",
+    "model-specific optimization"
+  ],
+  "confusable_with": [
+    "crispr-edit",
+    "future-proof-mode-selector"
+  ]
 }

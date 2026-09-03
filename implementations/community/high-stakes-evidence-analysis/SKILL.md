@@ -24,13 +24,13 @@ Keep accepted decisions, unresolved issues, capability limits, and validation re
 
 ## Selected Upgradeables
 
-| Component | Why selected |
-|---|---|
-| `grounding-no-invention@1.1.0` | Restricts decision-relevant facts to inspected authorized sources and keeps missing support visible. |
-| `truth-priority-hierarchy@1.1.0` | Resolves source disagreement by authority, applicability, and evidence quality rather than fluency or vote count. |
-| `critical-atomic-verification@1.1.0` | Verifies the smallest claims whose failure would change the consequential conclusion. |
-| `citation-fidelity@1.1.0` | Requires each citation to entail its nearby claim with the needed scope, condition, and qualifier. |
-| `fail-closed-abstention@1.1.0` | Withholds any conclusion that depends on an unsupported essential claim and names the missing evidence. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `grounding-no-invention` | `1.1.0` | Keep | work relies on documents, data, external facts, or consequential claims | Restricts decision-relevant facts to inspected authorized sources and keeps missing support visible. |
+| `truth-priority-hierarchy` | `1.1.0` | Keep | evidence classes or authorities conflict | Resolves source disagreement by authority, applicability, and evidence quality rather than fluency or vote count. |
+| `critical-atomic-verification` | `1.1.0` | Keep | small factual errors could change the outcome | Verifies the smallest claims whose failure would change the consequential conclusion. |
+| `citation-fidelity` | `1.1.0` | Keep | output contains citations or source-attributed claims | Requires each citation to entail its nearby claim with the needed scope, condition, and qualifier. |
+| `fail-closed-abstention` | `1.1.0` | Keep | required evidence cannot be verified | Withholds any conclusion that depends on an unsupported essential claim and names the missing evidence. |
 
 Tempting exclusions:
 
@@ -78,7 +78,7 @@ A stronger model may compress bookkeeping but must preserve authority, package-s
 
 ## Provenance
 
-Built against registry `0.2.0` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
+Built against registry `0.2.1` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
 
 ## Tests
 

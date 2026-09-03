@@ -21,9 +21,9 @@ The `name` must match the containing folder name.
 
 ## Selected Upgradeables
 
-| Upgradeable | Why selected | Active trigger |
-|---|---|---|
-| `<slug>@<version>` | <reason> | <observable condition> |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `<slug>` | `<version>` | Keep / Drop | <observable condition, or n/a> | <reason> |
 
 ## Authority and Precedence
 

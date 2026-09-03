@@ -1,4 +1,4 @@
-"""Build deterministic SHA-256 checksums for public v0.2 release assets."""
+"""Build deterministic SHA-256 checksums for public release assets."""
 from __future__ import annotations
 
 import argparse
@@ -8,17 +8,28 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "dist/SHA256SUMS.txt"
-ASSETS = (
+CORE_ASSETS = (
     "dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md",
+    "dist/OFFLINE_START.md",
     "registry/registry.json",
     "registry/registry.yaml",
+    "runtime/index.json",
+    "runtime/router.json",
     "audit/OPERATIONAL_PACKAGE_REVIEW_v0.2.md",
 )
 
 
+def assets():
+    packs = sorted(
+        path.relative_to(ROOT).as_posix()
+        for path in (ROOT / "dist/recipe-packs").glob("*.md")
+    )
+    return (*CORE_ASSETS, *packs)
+
+
 def render():
     lines = []
-    for relative in ASSETS:
+    for relative in assets():
         path = ROOT / relative
         if not path.is_file():
             raise FileNotFoundError(relative)
@@ -40,10 +51,10 @@ def main():
         if not TARGET.exists() or TARGET.read_text(encoding="utf-8") != expected:
             print("release checksums are stale", file=sys.stderr)
             return 1
-        print(f"release asset check: OK ({len(ASSETS)} assets)")
+        print(f"release asset check: OK ({len(assets())} assets)")
         return 0
     TARGET.write_text(expected, encoding="utf-8", newline="\n")
-    print(f"built {TARGET.relative_to(ROOT)} ({len(ASSETS)} assets)")
+    print(f"built {TARGET.relative_to(ROOT)} ({len(assets())} assets)")
     return 0
 
 

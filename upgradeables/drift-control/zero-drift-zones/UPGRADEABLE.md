@@ -37,7 +37,7 @@ Canonical package: `zero-drift-zones@1.1.0`. ID: `T3-14`. Functional classes: dr
 
 ## Trigger Conditions
 
-- Activate when the task requires content contains fidelity-locked atoms.
+- content contains fidelity-locked atoms
 
 ## Non-Triggers
 

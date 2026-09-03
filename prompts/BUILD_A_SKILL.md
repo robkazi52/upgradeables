@@ -8,13 +8,13 @@ Use https://github.com/robkazi52/upgradeables to build a complete, reusable [GEN
 [DESCRIBE THE JOB, USERS, INPUTS, AND DESIRED OUTPUT]
 
 First read START_HERE.md and MODEL_CONSUMPTION_GUIDE.md. Then:
-1. Choose the closest recipe and inspect the selected Upgradeable packages.
-2. Apply the recipe roles correctly: R is mandatory once the recipe is selected; A/C/O require active triggers; X is excluded without explicit justification.
-3. Resolve requires, counterbalances, conflicts, and redundancy. Prefer the smallest sufficient composition.
-4. Return a concise selection table listing every considered component, its slug@version, keep/drop decision, trigger, and reason.
-5. Produce a complete SKILL.md using templates/SKILL_IMPLEMENTATION_TEMPLATE.md. Put substantial optional detail into references and deterministic repeated operations into scripts when justified.
-6. Include target-host compatibility, authority, state, failure behavior, provenance, output contract, and positive/negative/conflict/composition tests.
-7. Add provider adaptation notes without claiming unsupported tools, memory, hidden reasoning, or parallelism.
+1. Check implementations/community for an existing task Skill to reuse or adapt.
+2. If none fits, query the task and open one compact runtime recipe pack. Inspect a full Upgradeable package only when deeper implementation detail is necessary.
+3. Apply recipe roles correctly: R is structurally required but can remain dormant until its phase trigger; A/C/O require active triggers; X needs explicit justification.
+4. Resolve requires, counterbalances, conflicts, and redundancy. Prefer the smallest sufficient composition.
+5. Return a concise table listing component, version, keep/drop decision, trigger, and reason.
+6. Produce a complete SKILL.md using templates/SKILL_IMPLEMENTATION_TEMPLATE.md. Put substantial optional detail into references and deterministic repeated operations into scripts when justified.
+7. Include target-host compatibility, authority, state, failure behavior, provenance, output contract, and positive/negative/authority/failure/composition tests.
 
-Deliver the finished Skill package, not merely a plan. If you cannot access the repository, say so and ask me to attach dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md.
+Deliver the finished Skill package, not merely a plan. If you cannot access the repository, ask me for dist/OFFLINE_START.md and the matching dist/recipe-packs file.
 ```

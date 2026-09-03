@@ -21,7 +21,7 @@ Define a repair window around the smallest unit that fails an explicit criterion
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires a defect is localized.. Best-fit tasks: one unsupported claim, one missing requirement, awkward transition, local contradiction, small formatting defect.
+Triggers: a specific defect has been localized. Best-fit tasks: one unsupported claim, one missing requirement, awkward transition, local contradiction, small formatting defect.
 
 ## Interactions and failure boundary
 

@@ -182,5 +182,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Domain-Calibrated Change Tolerance",
+  "plain_aliases": [
+    "Domain-Calibrated Change Tolerance"
+  ],
+  "task_phrases": [
+    "cross-domain skills",
+    "domain-specific rewriting",
+    "regulated advice",
+    "mixed precision/creative systems"
+  ],
+  "confusable_with": [
+    "compute-adaptive-drift",
+    "controlled-drift-corridors",
+    "drift-spectra-scaling"
+  ]
 }

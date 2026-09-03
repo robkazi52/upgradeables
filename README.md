@@ -14,13 +14,14 @@ Want to experiment first? Open [Try These Five Things](TRY_IT.md).
 Paste this into a model that can open web links:
 
 ```text
-Read https://raw.githubusercontent.com/robkazi52/upgradeables/main/START_HERE.md and follow the instructions for models. Use the smallest relevant set of Upgradeables, then complete this task instead of only describing the framework: [PASTE YOUR TASK]. If you cannot access the link, ask me to attach the all-in-one kit.
+Read https://raw.githubusercontent.com/robkazi52/upgradeables/main/START_HERE.md and follow the model route. Then complete this task: [PASTE YOUR TASK].
 ```
 
-If the model cannot open links, copy the prompt in
-[Quick Task](prompts/QUICK_TASK.md), or upload the
-[all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) to the chat. You can
-also [download the raw kit](https://raw.githubusercontent.com/robkazi52/upgradeables/main/dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md).
+If the model cannot open links, copy [Quick Task](prompts/QUICK_TASK.md), or
+upload [Offline Start](dist/OFFLINE_START.md) plus the one matching compact
+file from [`dist/recipe-packs/`](dist/recipe-packs/). The
+[all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) remains available for
+deep offline inspection, but is intentionally much larger.
 
 ### Build a reusable Skill
 
@@ -37,8 +38,8 @@ The universal model entrypoint is [START_HERE.md](START_HERE.md).
 ```bash
 git clone https://github.com/robkazi52/upgradeables.git
 cd upgradeables
-python scripts/query_registry.py --search citation
-python scripts/query_registry.py --recipe research-skill
+python scripts/query_registry.py --task "review this pull request" --brief
+python scripts/query_registry.py --recipe code-review --runtime
 ```
 
 ## What is an Upgradeable?
@@ -74,13 +75,16 @@ Use one of three short discovery paths:
 ## Find the right building blocks
 
 - Human/model router: [START_HERE.md](START_HERE.md)
+- Tiny machine router: [`runtime/router.json`](runtime/router.json)
+- Compact runtime cards and recipe packs: [`runtime/`](runtime/)
 - Compact machine catalog: [`registry/catalog.json`](registry/catalog.json)
 - Full machine registry: [`registry/registry.json`](registry/registry.json)
 - Task-family starting points: [`recipes/`](recipes/)
 - Individual packages: [`upgradeables/`](upgradeables/)
 - Plain-language name recommendations: [v0.2 naming review](audit/NAMING_REVIEW_v0.2.md)
 - Copy-ready chat prompts: [`prompts/`](prompts/)
-- Portable offline context: [all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md)
+- Low-context offline start: [Offline Start](dist/OFFLINE_START.md)
+- Comprehensive offline reference: [all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md)
 - Deeper model instructions: [Model Consumption Guide](MODEL_CONSUMPTION_GUIDE.md)
 
 The query helper has no third-party dependencies:
@@ -90,6 +94,8 @@ python scripts/query_registry.py --slug grounding-no-invention
 python scripts/query_registry.py --class validation
 python scripts/query_registry.py --search long-context
 python scripts/query_registry.py --recipe coding-debugging
+python scripts/query_registry.py --task "triage and fix this GitHub issue" --brief
+python scripts/query_registry.py --search "long context" --brief --limit 5
 ```
 
 Or query the compact catalog directly:
@@ -126,8 +132,8 @@ hypotheses the results motivate.
 
 Use the [Skill implementation template](templates/SKILL_IMPLEMENTATION_TEMPLATE.md)
 and the [worked community examples](implementations/community/), covering research,
-coding/debugging, long-context analysis, creative ideation, high-stakes evidence,
-Skill architecture, and ARC-style perception reasoning.
+coding/debugging, GitHub issue fixing, long-context analysis, creative ideation,
+high-stakes evidence, Skill architecture, and ARC-style perception reasoning.
 Community members and companies can contribute complete Skills without changing
 the canonical Upgradeable registry. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
 separate Skill and Upgradeable contribution paths.
@@ -148,6 +154,7 @@ Requires Python 3.11+ and no runtime dependencies:
 python scripts/build_semantic_packages.py --check
 python scripts/build_ecosystem_reviews.py --check
 python scripts/build_registry.py --check
+python scripts/build_runtime.py --check
 python scripts/validate_registry.py
 python scripts/validate_behavior_cases.py
 python scripts/run_deterministic_package_checks.py
@@ -161,11 +168,10 @@ python scripts/check_links.py
 
 ## Give this repo to an LLM
 
-Point the model to [the consumption guide](MODEL_CONSUMPTION_GUIDE.md) for the
-selection rules, [the full registry](registry/registry.json) for structured
-discovery, or [the all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) when
-it cannot clone or browse the repository. Tell it to finish the real task with
-the smallest triggered composition, not merely summarize this framework.
+Point the model to [Start Here](START_HERE.md). It will use the tiny router, an
+existing Skill, or one compact runtime recipe. For offline use, attach
+[Offline Start](dist/OFFLINE_START.md) and one recipe pack. Use the full registry
+and all-in-one kit only for deep inspection or contribution work.
 
 ## Authority and safety
 

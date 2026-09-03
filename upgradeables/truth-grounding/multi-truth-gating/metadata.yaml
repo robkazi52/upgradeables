@@ -159,5 +159,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Independent Evidence Gate",
+  "plain_aliases": [
+    "Independent Evidence Gate"
+  ],
+  "task_phrases": [
+    "high-stakes evidence synthesis",
+    "conflicting-source research",
+    "medical, legal, or policy decisions",
+    "critical architecture choices"
+  ],
+  "confusable_with": [
+    "cross-checking-chains",
+    "truth-redundancy"
+  ]
 }

@@ -165,5 +165,17 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Cross-Checking Chains",
+  "plain_aliases": [],
+  "task_phrases": [
+    "high-stakes fact verification",
+    "data pipeline validation",
+    "release qualification",
+    "multi-source research"
+  ],
+  "confusable_with": [
+    "critical-atomic-verification",
+    "parallel-qms"
+  ]
 }

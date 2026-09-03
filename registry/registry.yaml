@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "registry_version": "0.2.0",
+  "registry_version": "0.2.1",
   "generated_from": "upgradeables/*/*/metadata.yaml",
   "source_corpus": [
     "archive/source/OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
@@ -199,7 +199,23 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Progressive Context Intake",
+      "plain_aliases": [
+        "Progressive Context Intake"
+      ],
+      "task_phrases": [
+        "multi-source research",
+        "long-document analysis",
+        "evidence-heavy authoring",
+        "policy or legal evidence review",
+        "large modular agent workflows"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "neuro-focus",
+        "scoped-loader"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -378,7 +394,19 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Adapter-First Experimentation",
+      "plain_aliases": [],
+      "task_phrases": [
+        "new loader or validator trials",
+        "tool integrations",
+        "alternative routing logic",
+        "model-specific optimization"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "future-proof-mode-selector"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -416,7 +444,7 @@
         "branching cost exceeds the bounded decision value"
       ],
       "triggers": [
-        "Activate when the task requires premature fixation is plausible."
+        "premature fixation could hide credible alternatives"
       ],
       "non_triggers": [
         "the answer is directly established by a locked source",
@@ -543,7 +571,18 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Anti-Tunnel Vision",
+      "plain_aliases": [],
+      "task_phrases": [
+        "ambiguous diagnosis",
+        "architecture choice with two credible patterns",
+        "research synthesis with competing explanations"
+      ],
+      "confusable_with": [
+        "dominant-driver-isolation-scaffold",
+        "multiverse-reasoning"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -695,7 +734,20 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Modular System Design Orchestrator",
+      "plain_aliases": [
+        "Modular System Design Orchestrator"
+      ],
+      "task_phrases": [
+        "Skill and OS architecture",
+        "workflow design",
+        "framework refactoring"
+      ],
+      "confusable_with": [
+        "meta-supervisor",
+        "ultimate-suite-supervisor"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -871,7 +923,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Temporary Focused-Context View",
+      "plain_aliases": [
+        "Temporary Focused-Context View"
+      ],
+      "task_phrases": [
+        "long-context analysis",
+        "large codebase navigation",
+        "multi-document synthesis",
+        "stateful agent workflows"
+      ],
+      "confusable_with": [
+        "activation-budget-funnel",
+        "structured-state-projection",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -1031,7 +1098,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Capability and Completion Honesty Gate",
+      "plain_aliases": [
+        "Capability and Completion Honesty Gate"
+      ],
+      "task_phrases": [
+        "agentic tool use",
+        "research status reporting",
+        "coding and build completion reports",
+        "high-stakes analysis"
+      ],
+      "confusable_with": [
+        "grounding-no-invention"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -1068,7 +1148,7 @@
         "the governing authority cannot be identified from available context"
       ],
       "triggers": [
-        "Activate when the task requires multiple instruction authorities coexist."
+        "multiple instruction authorities coexist and may conflict"
       ],
       "non_triggers": [
         "the workflow has no competing instruction or authority layers",
@@ -1183,7 +1263,18 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Authority Anchor Enforcement",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-module agent workflows",
+        "policy-constrained execution",
+        "delegated task routing"
+      ],
+      "confusable_with": [
+        "mode-lock-in",
+        "task-set-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -1369,7 +1460,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Reusable Behavior Component Builder",
+      "plain_aliases": [
+        "Reusable Behavior Component Builder"
+      ],
+      "task_phrases": [
+        "recurring reasoning patterns",
+        "domain-specific writing behavior",
+        "tone or risk-emphasis modules",
+        "research synthesis behaviors"
+      ],
+      "confusable_with": [
+        "domain-core-builder",
+        "resonance-gene-builder"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -1532,7 +1637,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Bidirectional Consistency",
+      "plain_aliases": [],
+      "task_phrases": [
+        "requirements-to-implementation checks",
+        "summary-to-source checks",
+        "schema migrations",
+        "plan-to-objective traceability"
+      ],
+      "confusable_with": [
+        "critical-atomic-verification",
+        "multi-layer-consistency"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -1708,7 +1825,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Bounded Iteration Stop Rule",
+      "plain_aliases": [
+        "Bounded Iteration Stop Rule"
+      ],
+      "task_phrases": [
+        "document revision",
+        "code or prompt refinement",
+        "multi-pass synthesis",
+        "quality-controlled drafting"
+      ],
+      "confusable_with": [
+        "reasoning-scale-controller",
+        "structured-refinement"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -1888,7 +2019,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Citation Fidelity Gate",
+      "plain_aliases": [],
+      "task_phrases": [
+        "research reports",
+        "technical documentation",
+        "legal or policy synthesis",
+        "fact-checked public writing"
+      ],
+      "confusable_with": [
+        "critical-atomic-verification",
+        "grounding-no-invention"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -2062,7 +2205,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Clarification Gateway",
+      "plain_aliases": [],
+      "task_phrases": [
+        "requirements intake",
+        "ambiguous data transformation",
+        "multi-constraint planning",
+        "high-stakes evidence work"
+      ],
+      "confusable_with": [
+        "grounding-no-invention",
+        "task-set-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -2246,7 +2401,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Reasoning Effort Budget Controller",
+      "plain_aliases": [
+        "Reasoning Effort Budget Controller"
+      ],
+      "task_phrases": [
+        "mixed-risk queues",
+        "bounded research",
+        "iterative authoring",
+        "cost-sensitive agent workflows"
+      ],
+      "confusable_with": [
+        "dynamic-depth-allocation",
+        "reasoning-throughput-governor",
+        "risk-tier-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -2413,7 +2583,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Periodic Whole-Task Consistency Check",
+      "plain_aliases": [
+        "Periodic Whole-Task Consistency Check"
+      ],
+      "task_phrases": [
+        "long coding sessions",
+        "multi-stage research",
+        "agent orchestration",
+        "large document production"
+      ],
+      "confusable_with": [
+        "coherence-loops",
+        "state-snapshot"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -2585,7 +2769,19 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Coherence Loops",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-file changes",
+        "long-form documents",
+        "multi-agent synthesis",
+        "cross-component specification repair"
+      ],
+      "confusable_with": [
+        "coherence-heartbeat",
+        "reflectos"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -2774,7 +2970,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Runtime-Adaptive Drift Checks",
+      "plain_aliases": [
+        "Runtime-Adaptive Drift Checks"
+      ],
+      "task_phrases": [
+        "cross-model skills",
+        "variable tool availability",
+        "cost-limited execution",
+        "mixed-capability agents"
+      ],
+      "confusable_with": [
+        "controlled-drift-corridors",
+        "domain-normalized-drift",
+        "drift-spectra-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -2941,7 +3152,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Contradiction Micro-Repair Pack",
+      "plain_aliases": [],
+      "task_phrases": [
+        "conflicting requirements",
+        "inconsistent dates or quantities",
+        "state snapshots with mutually exclusive flags",
+        "documents whose conclusion contradicts a cited premise"
+      ],
+      "confusable_with": [
+        "micro-repair",
+        "multi-layer-consistency"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -3126,7 +3349,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Bounded Change Rules",
+      "plain_aliases": [
+        "Bounded Change Rules"
+      ],
+      "task_phrases": [
+        "document rewriting",
+        "cross-format conversion",
+        "summarization",
+        "creative work with fixed constraints"
+      ],
+      "confusable_with": [
+        "drift-spectra-scaling",
+        "drift-suppression",
+        "zero-drift-zones"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -3307,7 +3545,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Auditable Reasoning State",
+      "plain_aliases": [
+        "Auditable Reasoning State"
+      ],
+      "task_phrases": [
+        "multi-agent research",
+        "long investigations",
+        "regulated decisions",
+        "work requiring resumable rationale"
+      ],
+      "confusable_with": [
+        "state-snapshot",
+        "stateblock",
+        "working-memory-cues"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -3474,7 +3727,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Counterfactual Integrity Gate",
+      "plain_aliases": [],
+      "task_phrases": [
+        "scenario analysis",
+        "causal counterfactuals",
+        "planning under alternatives",
+        "creative work mixed with factual sources"
+      ],
+      "confusable_with": [
+        "counterfactual-silence-scaffold",
+        "domain-mode-isolation"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -3636,7 +3901,20 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "No-Unrequested-Scenarios Guard",
+      "plain_aliases": [
+        "No-Unrequested-Scenarios Guard"
+      ],
+      "task_phrases": [
+        "record extraction",
+        "source-faithful summarization",
+        "incident reporting",
+        "citation-bound authoring"
+      ],
+      "confusable_with": [
+        "counterfactual-integrity"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -3821,7 +4099,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Precision Local System Edit",
+      "plain_aliases": [
+        "Precision Local System Edit"
+      ],
+      "task_phrases": [
+        "one rule change in a prompt or skill",
+        "small schema-compatible config edit",
+        "precise clause replacement",
+        "localized architecture adjustment"
+      ],
+      "confusable_with": [
+        "micro-repair",
+        "safe-rewrite",
+        "surgery-edit"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -3994,7 +4287,22 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Critical Fact Verification",
+      "plain_aliases": [
+        "Critical Fact Verification"
+      ],
+      "task_phrases": [
+        "medical or legal factual synthesis",
+        "deployment decisions",
+        "financial calculations",
+        "requirements verification",
+        "citation-heavy research"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "cross-checking-chains"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -4163,7 +4471,19 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Cross-Checking Chains",
+      "plain_aliases": [],
+      "task_phrases": [
+        "high-stakes fact verification",
+        "data pipeline validation",
+        "release qualification",
+        "multi-source research"
+      ],
+      "confusable_with": [
+        "critical-atomic-verification",
+        "parallel-qms"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -4320,7 +4640,20 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Cross-Context Relationship Guard",
+      "plain_aliases": [
+        "Cross-Context Relationship Guard"
+      ],
+      "task_phrases": [
+        "multi-document synthesis",
+        "multi-agent handoffs",
+        "parallel workstream integration"
+      ],
+      "confusable_with": [
+        "resonance",
+        "state-routing-bus"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -4492,7 +4825,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Alternative-Scenario Consistency Check",
+      "plain_aliases": [
+        "Alternative-Scenario Consistency Check"
+      ],
+      "task_phrases": [
+        "architecture alternatives",
+        "scenario planning",
+        "multi-hypothesis research",
+        "strategy selection"
+      ],
+      "confusable_with": [
+        "multi-layer-consistency",
+        "parallel-qms"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -4529,7 +4876,7 @@
         "framing a decision would falsely narrow an exploratory task"
       ],
       "triggers": [
-        "Activate when the task requires analysis risks becoming directionless."
+        "analysis risks becoming directionless before commitment"
       ],
       "non_triggers": [
         "the task asks only for faithful extraction or description",
@@ -4658,7 +5005,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Decision-First Scaffold",
+      "plain_aliases": [],
+      "task_phrases": [
+        "recommendations",
+        "go/no-go reviews",
+        "option selection",
+        "resource allocation"
+      ],
+      "confusable_with": [
+        "dominant-driver-isolation-scaffold",
+        "task-set-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -4843,7 +5202,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Shared Domain Knowledge Component Builder",
+      "plain_aliases": [
+        "Shared Domain Knowledge Component Builder"
+      ],
+      "task_phrases": [
+        "recurring specialist domains",
+        "evidence-intensive decisions",
+        "policy or technical reference systems",
+        "multi-Gene domain bundles"
+      ],
+      "confusable_with": [
+        "behavior-gene-builder",
+        "stateblock"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -5028,7 +5401,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Domain / Mode Isolation",
+      "plain_aliases": [],
+      "task_phrases": [
+        "mixed-domain workspaces",
+        "multi-tenant assistants",
+        "regulated workflows",
+        "parallel specialist agents"
+      ],
+      "confusable_with": [
+        "mode-lock-in",
+        "scoped-loader",
+        "structured-state-projection"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -5214,7 +5600,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Domain-Calibrated Change Tolerance",
+      "plain_aliases": [
+        "Domain-Calibrated Change Tolerance"
+      ],
+      "task_phrases": [
+        "cross-domain skills",
+        "domain-specific rewriting",
+        "regulated advice",
+        "mixed precision/creative systems"
+      ],
+      "confusable_with": [
+        "compute-adaptive-drift",
+        "controlled-drift-corridors",
+        "drift-spectra-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -5248,7 +5649,7 @@
         "the task requires a complete safety hazard inventory rather than prioritization"
       ],
       "triggers": [
-        "Activate when the task requires many possible causes compete."
+        "many plausible causes compete for priority"
       ],
       "non_triggers": [
         "the system is known to require irreducibly joint causes",
@@ -5379,7 +5780,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Dominant-Driver Isolation Scaffold",
+      "plain_aliases": [],
+      "task_phrases": [
+        "root-cause analysis",
+        "business driver analysis",
+        "performance bottleneck diagnosis",
+        "risk prioritization"
+      ],
+      "confusable_with": [
+        "anti-tunnel-vision",
+        "decision-first-scaffold"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -5567,7 +5980,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Downstream Invariant Protection",
+      "plain_aliases": [
+        "Downstream Invariant Protection"
+      ],
+      "task_phrases": [
+        "multi-stage generation",
+        "agent pipelines",
+        "source-to-summary-to-decision workflows",
+        "format conversion chains"
+      ],
+      "confusable_with": [
+        "drift-suppression",
+        "working-memory-lock-in",
+        "zero-drift-zones"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -5604,7 +6032,7 @@
         "retention or audit policy requires it to remain actively visible"
       ],
       "triggers": [
-        "Activate when the task requires discarded branches keep resurfacing."
+        "discarded branches repeatedly re-enter active reasoning"
       ],
       "non_triggers": [
         "the branch is unresolved rather than rejected",
@@ -5753,7 +6181,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Retired-Branch Quarantine",
+      "plain_aliases": [
+        "Retired-Branch Quarantine"
+      ],
+      "task_phrases": [
+        "long branching investigations",
+        "iterative drafting",
+        "agent workflows with recurring stale branches",
+        "large mixed-authority contexts"
+      ],
+      "confusable_with": [
+        "micro-scaffolding",
+        "non-authoritative-branch-suppression",
+        "stable-long-context"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -5941,7 +6384,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Content-Specific Change Tolerance",
+      "plain_aliases": [
+        "Content-Specific Change Tolerance"
+      ],
+      "task_phrases": [
+        "mixed-content rewriting",
+        "summaries",
+        "format migrations",
+        "multi-stage synthesis"
+      ],
+      "confusable_with": [
+        "compute-adaptive-drift",
+        "controlled-drift-corridors",
+        "domain-normalized-drift"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -6128,7 +6586,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Drift Suppression",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long agent workflows",
+        "high-fidelity editing",
+        "multi-stage synthesis",
+        "policy-bound generation"
+      ],
+      "confusable_with": [
+        "drift-sink-scaffold",
+        "mode-lock-in",
+        "zero-drift-zones"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -6314,7 +6785,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Per-Region Reasoning Depth",
+      "plain_aliases": [
+        "Per-Region Reasoning Depth"
+      ],
+      "task_phrases": [
+        "heterogeneous documents",
+        "mixed-risk code changes",
+        "large research corpora",
+        "multi-stage plans with uneven uncertainty"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "reasoning-throughput-governor",
+        "risk-tier-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -6478,7 +6964,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Evidence-Confidence Gate",
+      "plain_aliases": [
+        "Evidence-Confidence Gate"
+      ],
+      "task_phrases": [
+        "evidence synthesis",
+        "investigation",
+        "decision support",
+        "source-grounded research",
+        "high-stakes review"
+      ],
+      "confusable_with": [
+        "grounding-no-invention"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -6653,7 +7153,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Minimum Sufficient Explanation",
+      "plain_aliases": [
+        "Minimum Sufficient Explanation"
+      ],
+      "task_phrases": [
+        "direct answers",
+        "status updates",
+        "executive summaries",
+        "routine technical guidance",
+        "high-volume assistant outputs"
+      ],
+      "confusable_with": [
+        "pedagogical-alignment",
+        "style-alignment"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -6803,7 +7318,18 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "External State Automation",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-session projects",
+        "durable agent workflows",
+        "long document production"
+      ],
+      "confusable_with": [
+        "state-routing-bus",
+        "state-snapshot"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -6967,7 +7493,18 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Fail-Closed Abstention",
+      "plain_aliases": [],
+      "task_phrases": [
+        "medical, legal, or policy analysis",
+        "citation-bearing research",
+        "safety-critical decisions",
+        "source transcription and fidelity work"
+      ],
+      "confusable_with": [
+        "fermionic-veto"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -7137,7 +7674,22 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Non-Compensable Constraint Veto",
+      "plain_aliases": [
+        "Non-Compensable Constraint Veto"
+      ],
+      "task_phrases": [
+        "safety reviews",
+        "constraint-heavy planning",
+        "security decisions",
+        "branch collapse",
+        "truth-conflict resolution"
+      ],
+      "confusable_with": [
+        "fail-closed-abstention",
+        "multi-truth-gating"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -7305,7 +7857,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Forethought / Checkpoints",
+      "plain_aliases": [],
+      "task_phrases": [
+        "deployments",
+        "schema or API changes",
+        "financial or external communications",
+        "multi-stage automation"
+      ],
+      "confusable_with": [
+        "bounded-exit",
+        "risk-tier-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -7487,7 +8051,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Runtime Compatibility Mode Selector",
+      "plain_aliases": [
+        "Runtime Compatibility Mode Selector"
+      ],
+      "task_phrases": [
+        "cross-model skill packages",
+        "tool-optional workflows",
+        "portable agent systems",
+        "deployments with different context and persistence support"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "model-size-drift-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -7655,7 +8233,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Grounding / No-Invention",
+      "plain_aliases": [],
+      "task_phrases": [
+        "source-grounded research",
+        "record and chart review",
+        "policy or legal analysis",
+        "citation-bearing authoring",
+        "tool-result reporting"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "specificity-penalty-gate"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -7835,7 +8426,22 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Explore-Then-Commit Mode",
+      "plain_aliases": [
+        "Explore-Then-Commit Mode"
+      ],
+      "task_phrases": [
+        "architecture followed by implementation",
+        "research plan followed by evidence extraction",
+        "migration design followed by cutover",
+        "complex repository builds"
+      ],
+      "confusable_with": [
+        "future-proof-mode-selector",
+        "power-mode",
+        "safe-mode"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8000,7 +8606,19 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Image Text Fidelity Capture",
+      "plain_aliases": [],
+      "task_phrases": [
+        "document image transcription",
+        "figure or screenshot capture",
+        "scanned-record intake",
+        "long-document source fidelity"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "grounding-no-invention"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8172,7 +8790,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Protected-Constraint Robustness Test",
+      "plain_aliases": [
+        "Protected-Constraint Robustness Test"
+      ],
+      "task_phrases": [
+        "prompt robustness checks",
+        "policy interpretation",
+        "classification stability",
+        "summary validation"
+      ],
+      "confusable_with": [
+        "bidirectional-consistency",
+        "parallel-qms"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8349,7 +8981,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Workflow Health Monitor",
+      "plain_aliases": [
+        "Workflow Health Monitor"
+      ],
+      "task_phrases": [
+        "long multi-module workflows",
+        "multi-agent coordination",
+        "iterative reasoning",
+        "mode-rich systems"
+      ],
+      "confusable_with": [
+        "meta-stability",
+        "meta-supervisor"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8535,7 +9181,21 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Stable-State Recovery Mode",
+      "plain_aliases": [
+        "Stable-State Recovery Mode"
+      ],
+      "task_phrases": [
+        "long-context drift",
+        "conflicting module activation",
+        "repeated change cycles",
+        "multi-agent state divergence"
+      ],
+      "confusable_with": [
+        "safe-mode",
+        "stuck-pattern-reset"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8718,7 +9378,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Workflow Repair Supervisor",
+      "plain_aliases": [
+        "Workflow Repair Supervisor"
+      ],
+      "task_phrases": [
+        "complex iterative scaffolds",
+        "multi-module reasoning",
+        "repeated failures",
+        "runtime process-health supervision"
+      ],
+      "confusable_with": [
+        "meta-awareness",
+        "ultimate-suite-supervisor"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8753,7 +9427,7 @@
         "the correct local replacement depends on unresolved global decisions"
       ],
       "triggers": [
-        "Activate when the task requires a defect is localized."
+        "a specific defect has been localized"
       ],
       "non_triggers": [
         "the artifact architecture is globally wrong",
@@ -8893,7 +9567,23 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Minimal Local Correction",
+      "plain_aliases": [
+        "Minimal Local Correction"
+      ],
+      "task_phrases": [
+        "one unsupported claim",
+        "one missing requirement",
+        "awkward transition",
+        "local contradiction",
+        "small formatting defect"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "regenerative-rewrite",
+        "structured-refinement"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -8933,7 +9623,7 @@
         "the subtask is already complete"
       ],
       "triggers": [
-        "Activate when the task requires multi-step or high-constraint work."
+        "multi-step or high-constraint work"
       ],
       "non_triggers": [
         "a one-step task has no fragile constraints",
@@ -9074,7 +9764,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Micro-Scaffolding",
+      "plain_aliases": [],
+      "task_phrases": [
+        "high-constraint rewriting",
+        "source-grounded paragraph construction",
+        "localized code changes",
+        "multi-step transformations",
+        "complex formatting"
+      ],
+      "confusable_with": [
+        "forethought-checkpoints",
+        "stateblock",
+        "task-set-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -9255,7 +9959,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Mode Lock-In",
+      "plain_aliases": [],
+      "task_phrases": [
+        "strict transformations",
+        "long sessions",
+        "multi-mode assistants",
+        "policy-bound work"
+      ],
+      "confusable_with": [
+        "domain-mode-isolation",
+        "task-set-lock-in",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -9440,7 +10157,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Model-Capability Scaffolding Scale",
+      "plain_aliases": [
+        "Model-Capability Scaffolding Scale"
+      ],
+      "task_phrases": [
+        "cross-model deployments",
+        "model upgrades",
+        "prompt simplification",
+        "reliability-sensitive drift control"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "future-proof-mode-selector"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -9606,7 +10337,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Multi-Layer Consistency",
+      "plain_aliases": [],
+      "task_phrases": [
+        "large documents",
+        "modular software",
+        "policy hierarchies",
+        "multi-step analytical conclusions"
+      ],
+      "confusable_with": [
+        "bidirectional-consistency",
+        "cross-universe-consistency"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -9769,7 +10512,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Independent Evidence Gate",
+      "plain_aliases": [
+        "Independent Evidence Gate"
+      ],
+      "task_phrases": [
+        "high-stakes evidence synthesis",
+        "conflicting-source research",
+        "medical, legal, or policy decisions",
+        "critical architecture choices"
+      ],
+      "confusable_with": [
+        "cross-checking-chains",
+        "truth-redundancy"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -9954,7 +10711,22 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Bounded Alternative Search",
+      "plain_aliases": [
+        "Bounded Alternative Search"
+      ],
+      "task_phrases": [
+        "ambiguous design choices",
+        "research plans",
+        "narrative or document architectures",
+        "competing causal models"
+      ],
+      "confusable_with": [
+        "anti-tunnel-vision",
+        "parallel-qms",
+        "reasoning-scale-controller"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -10131,7 +10903,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Bounded Attention Focus",
+      "plain_aliases": [
+        "Bounded Attention Focus"
+      ],
+      "task_phrases": [
+        "large-corpus research",
+        "one-module debugging",
+        "targeted policy review",
+        "high-value constraint analysis"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "scoped-loader",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -10317,7 +11104,20 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Non-Authoritative Branch Suppression",
+      "plain_aliases": [],
+      "task_phrases": [
+        "mixed-authority document sets",
+        "versioned policies",
+        "agent planning trees",
+        "retrieval with untrusted text"
+      ],
+      "confusable_with": [
+        "drift-sink-scaffold",
+        "mode-lock-in",
+        "scoped-loader"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -10522,7 +11322,23 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Parallel Validation System",
+      "plain_aliases": [
+        "Parallel Validation System"
+      ],
+      "task_phrases": [
+        "high-stakes synthesis",
+        "complex repository validation",
+        "multiverse collapse",
+        "long-form factual work",
+        "safety-sensitive decisions"
+      ],
+      "confusable_with": [
+        "cross-checking-chains",
+        "cross-universe-consistency",
+        "multi-layer-consistency"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -10701,7 +11517,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Pedagogical Alignment Constraint",
+      "plain_aliases": [],
+      "task_phrases": [
+        "tutorials",
+        "documentation",
+        "stakeholder briefings",
+        "technical-to-nontechnical translation",
+        "onboarding"
+      ],
+      "confusable_with": [
+        "explanation-minimality-scaffold",
+        "style-alignment"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -10874,7 +11703,21 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Stage-Separated Reasoning Scaffold",
+      "plain_aliases": [
+        "Stage-Separated Reasoning Scaffold"
+      ],
+      "task_phrases": [
+        "evidence-grounded writing",
+        "multi-source research",
+        "risk analysis",
+        "long workflows with distinct reasoning modes"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "domain-mode-isolation"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -11055,7 +11898,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Placeholder Suppression",
+      "plain_aliases": [],
+      "task_phrases": [
+        "template-based documents",
+        "generated repositories",
+        "forms and reports",
+        "configuration generation",
+        "multi-agent artifact assembly"
+      ],
+      "confusable_with": [
+        "grounding-no-invention",
+        "safe-rewrite"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -11241,7 +12097,22 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Deep Exploration Mode",
+      "plain_aliases": [
+        "Deep Exploration Mode"
+      ],
+      "task_phrases": [
+        "system architecture",
+        "novel workflow design",
+        "strategic planning",
+        "ambiguous research design"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "multiverse-reasoning",
+        "safe-mode"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -11392,7 +12263,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Explore-to-Execute Transition",
+      "plain_aliases": [
+        "Explore-to-Execute Transition"
+      ],
+      "task_phrases": [
+        "design-to-implementation workflows",
+        "iterative planning",
+        "creative work with a committed deliverable"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "mode-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -11574,7 +12458,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Task-Scope Reasoning Controller",
+      "plain_aliases": [
+        "Task-Scope Reasoning Controller"
+      ],
+      "task_phrases": [
+        "mixed-complexity workflows",
+        "long-form construction",
+        "system design",
+        "quality evaluation"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "dynamic-depth-allocation",
+        "micro-scaffolding"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -11763,7 +12662,23 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Reasoning Efficiency Controller",
+      "plain_aliases": [
+        "Reasoning Efficiency Controller"
+      ],
+      "task_phrases": [
+        "large package builds",
+        "multi-agent research",
+        "batch validation",
+        "latency-sensitive pipelines",
+        "branch-heavy planning"
+      ],
+      "confusable_with": [
+        "bounded-exit",
+        "cognitive-governor",
+        "dynamic-depth-allocation"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -11945,7 +12860,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Checkpointed Work Reflection",
+      "plain_aliases": [
+        "Checkpointed Work Reflection"
+      ],
+      "task_phrases": [
+        "multi-step implementation",
+        "research synthesis",
+        "document revision",
+        "agent handoffs",
+        "recovery after test failure"
+      ],
+      "confusable_with": [
+        "coherence-heartbeat",
+        "coherence-loops"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -12120,7 +13050,21 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Full-Structure Invariant-Preserving Rewrite",
+      "plain_aliases": [
+        "Full-Structure Invariant-Preserving Rewrite"
+      ],
+      "task_phrases": [
+        "globally incoherent drafts",
+        "broken source-to-section mapping",
+        "documents with incompatible inherited structures",
+        "outputs damaged by repeated patching"
+      ],
+      "confusable_with": [
+        "micro-repair",
+        "surgery-edit"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -12272,7 +13216,20 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Cross-Module Coordination",
+      "plain_aliases": [
+        "Cross-Module Coordination"
+      ],
+      "task_phrases": [
+        "multi-module Skills",
+        "evidence-to-state coordination",
+        "composed agent workflows"
+      ],
+      "confusable_with": [
+        "cross-context-resonance-lock",
+        "resonance-gene-builder"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -12458,7 +13415,21 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Cross-Module Coordination Rule Builder",
+      "plain_aliases": [
+        "Cross-Module Coordination Rule Builder"
+      ],
+      "task_phrases": [
+        "recurring validator-generator pairings",
+        "stable Core-Gene couplings",
+        "multi-module evidence workflows",
+        "repeated authority-sensitive compositions"
+      ],
+      "confusable_with": [
+        "behavior-gene-builder",
+        "resonance"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -12642,7 +13613,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Risk-Tier Scaling",
+      "plain_aliases": [],
+      "task_phrases": [
+        "medical, legal, financial, or safety-sensitive work",
+        "irreversible changes",
+        "uncertain external actions",
+        "mixed-risk artifacts"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "dynamic-depth-allocation",
+        "safe-mode"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -12827,7 +13811,23 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Conservative Execution Mode",
+      "plain_aliases": [
+        "Conservative Execution Mode"
+      ],
+      "task_phrases": [
+        "source-faithful extraction",
+        "production changes",
+        "high-risk recommendations",
+        "final publication",
+        "irreversible operations"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "power-mode",
+        "risk-tier-scaling"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13007,7 +14007,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Safe Rewrite Logic",
+      "plain_aliases": [],
+      "task_phrases": [
+        "paraphrasing",
+        "tone adjustment",
+        "format conversion",
+        "clarity polishing",
+        "audience adaptation"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "micro-repair",
+        "style-alignment"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13190,7 +14204,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Scoped Loader / Loader Sequencing",
+      "plain_aliases": [],
+      "task_phrases": [
+        "modular Skill execution",
+        "agent routing",
+        "large reference libraries",
+        "domain OS selection",
+        "multi-stage research"
+      ],
+      "confusable_with": [
+        "activation-budget-funnel",
+        "future-proof-mode-selector",
+        "state-routing-bus"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13372,7 +14400,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Automatic Canonical-State Update",
+      "plain_aliases": [
+        "Automatic Canonical-State Update"
+      ],
+      "task_phrases": [
+        "agent loops",
+        "long editing sessions",
+        "tool-rich workflows",
+        "multi-step investigations"
+      ],
+      "confusable_with": [
+        "sequential-memory-state-engine",
+        "stateblock",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13564,7 +14607,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Ordered Memory-State Update Engine",
+      "plain_aliases": [
+        "Ordered Memory-State Update Engine"
+      ],
+      "task_phrases": [
+        "long-lived agents",
+        "case management",
+        "iterative research",
+        "multi-source evolving records"
+      ],
+      "confusable_with": [
+        "selfblock-auto-update",
+        "stable-long-context",
+        "stateblock"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13736,7 +14794,22 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Unsupported Precision Gate",
+      "plain_aliases": [
+        "Unsupported Precision Gate"
+      ],
+      "task_phrases": [
+        "research answers",
+        "estimates",
+        "incident explanations",
+        "requirements derived from incomplete evidence",
+        "source recovery"
+      ],
+      "confusable_with": [
+        "epistemic-status-gating",
+        "grounding-no-invention"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13923,7 +14996,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Stable Long-Context",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long research projects",
+        "large document synthesis",
+        "multi-session builds",
+        "extended agent runs"
+      ],
+      "confusable_with": [
+        "sequential-memory-state-engine",
+        "state-snapshot",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -13961,7 +15047,7 @@
         "the host provides no real file, message, context, or structured-state handoff"
       ],
       "triggers": [
-        "Activate when the task requires multiple components exchange state."
+        "multiple components must exchange typed state"
       ],
       "non_triggers": [
         "all work occurs inside one uninterrupted component",
@@ -14074,7 +15160,20 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Task-State Handoff Router",
+      "plain_aliases": [
+        "Task-State Handoff Router"
+      ],
+      "task_phrases": [
+        "multi-agent workflows",
+        "modular Skills",
+        "cross-process continuation"
+      ],
+      "confusable_with": [
+        "external-state-automation",
+        "state-snapshot"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -14257,7 +15356,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "State Snapshot",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-session projects",
+        "agent handoffs",
+        "rollback-sensitive workflows",
+        "audits"
+      ],
+      "confusable_with": [
+        "stable-long-context",
+        "stateblock",
+        "temporal-anchor-scaffold"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -14441,7 +15553,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Canonical Task State",
+      "plain_aliases": [
+        "Canonical Task State"
+      ],
+      "task_phrases": [
+        "multi-step execution",
+        "agent orchestration",
+        "complex editing",
+        "auditable workflows"
+      ],
+      "confusable_with": [
+        "micro-scaffolding",
+        "state-snapshot",
+        "task-set-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -14615,7 +15742,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Structured Refinement Cycles",
+      "plain_aliases": [],
+      "task_phrases": [
+        "drafts with several defect classes",
+        "reports requiring source and style review",
+        "prompt or specification cleanup",
+        "publication preparation"
+      ],
+      "confusable_with": [
+        "bounded-exit",
+        "micro-repair",
+        "regenerative-rewrite"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -14799,7 +15939,20 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Structured State Projection",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-agent systems",
+        "domain isolation",
+        "sensitive workflows",
+        "tool calls with narrow schemas"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "domain-mode-isolation",
+        "state-snapshot"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -14984,7 +16137,20 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Stuck-Pattern Reset Pack",
+      "plain_aliases": [],
+      "task_phrases": [
+        "repeated tool failures",
+        "recursive revision loops",
+        "stale debugging hypotheses",
+        "nonconverging planning"
+      ],
+      "confusable_with": [
+        "anti-tunnel-vision",
+        "bounded-exit",
+        "meta-stability"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -15166,7 +16332,21 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Style-Alignment Module",
+      "plain_aliases": [],
+      "task_phrases": [
+        "house-style editing",
+        "voice matching",
+        "channel adaptation",
+        "consistent multi-author documents",
+        "format and tone normalization"
+      ],
+      "confusable_with": [
+        "explanation-minimality-scaffold",
+        "pedagogical-alignment",
+        "safe-rewrite"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -15360,7 +16540,23 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Structural System Edit",
+      "plain_aliases": [
+        "Structural System Edit"
+      ],
+      "task_phrases": [
+        "layer reorganization",
+        "Core replacement",
+        "major workflow change",
+        "large incompatible refactor",
+        "schema or public interface migration"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "micro-repair",
+        "regenerative-rewrite"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -15548,7 +16744,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Task-Set Lock-In",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-step builds",
+        "contracted deliverables",
+        "long research",
+        "tasks with exclusions"
+      ],
+      "confusable_with": [
+        "mode-lock-in",
+        "stateblock",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -15734,7 +16943,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Temporal Anchor Scaffold",
+      "plain_aliases": [],
+      "task_phrases": [
+        "incident timelines",
+        "policy version analysis",
+        "case chronology",
+        "news or market research"
+      ],
+      "confusable_with": [
+        "micro-scaffolding",
+        "sequential-memory-state-engine",
+        "state-snapshot"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -15897,7 +17119,19 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Truth Priority Hierarchy",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-source research",
+        "policy and regulatory analysis",
+        "multi-validator workflows",
+        "domain decisions with mixed evidence classes"
+      ],
+      "confusable_with": [
+        "fermionic-veto",
+        "parallel-qms"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -16057,7 +17291,20 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Independent Evidence Redundancy",
+      "plain_aliases": [
+        "Independent Evidence Redundancy"
+      ],
+      "task_phrases": [
+        "high-stakes evidence work",
+        "critical factual claims",
+        "source-grounded decision support",
+        "safety-relevant tradeoffs"
+      ],
+      "confusable_with": [
+        "multi-truth-gating"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -16227,7 +17474,21 @@
       "activation_cost": {
         "level": "medium",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Dual-Source Bounded Synthesis",
+      "plain_aliases": [
+        "Dual-Source Bounded Synthesis"
+      ],
+      "task_phrases": [
+        "comparative research",
+        "evidence-grounded authoring",
+        "policy synthesis",
+        "explanatory integration of two sources"
+      ],
+      "confusable_with": [
+        "controlled-drift-corridors",
+        "truth-redundancy"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -16423,7 +17684,22 @@
       "activation_cost": {
         "level": "high",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Suite-Wide Workflow Supervisor",
+      "plain_aliases": [
+        "Suite-Wide Workflow Supervisor"
+      ],
+      "task_phrases": [
+        "large modular OS execution",
+        "multi-mode skill suites",
+        "complex authoring or research systems",
+        "architecture plus execution pipelines"
+      ],
+      "confusable_with": [
+        "architect-orchestrator",
+        "hybrid-mode",
+        "meta-supervisor"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -16603,7 +17879,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Working-Memory Cues",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long transformations",
+        "repetitive tool loops",
+        "tasks with a few recurring constraints",
+        "review workflows"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "stateblock",
+        "working-memory-lock-in"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -16789,7 +18078,20 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Working-Memory Lock-In",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long agent loops",
+        "high-fidelity transformations",
+        "safety-critical execution",
+        "multi-step builds"
+      ],
+      "confusable_with": [
+        "stable-long-context",
+        "task-set-lock-in",
+        "working-memory-cues"
+      ]
     },
     {
       "schema_version": "2.0.0",
@@ -16829,7 +18131,7 @@
         "everything is marked zero-drift and no useful transformation remains"
       ],
       "triggers": [
-        "Activate when the task requires content contains fidelity-locked atoms."
+        "content contains fidelity-locked atoms"
       ],
       "non_triggers": [
         "the user explicitly authorizes change to the marked content",
@@ -16978,7 +18280,22 @@
       "activation_cost": {
         "level": "low",
         "notes": "Architectural burden classification; not a measured compute benchmark."
-      }
+      },
+      "plain_display_name": "Immutable Content Zones",
+      "plain_aliases": [
+        "Immutable Content Zones"
+      ],
+      "task_phrases": [
+        "legal and policy transformation",
+        "source-grounded summaries",
+        "code/API migration",
+        "safety-critical instructions"
+      ],
+      "confusable_with": [
+        "controlled-drift-corridors",
+        "drift-immunity-propagation",
+        "working-memory-lock-in"
+      ]
     }
   ],
   "historical_records": [
@@ -18940,7 +20257,7 @@
       "slug": "research-skill",
       "display_name": "Research Skill",
       "version": "1.1.0",
-      "purpose": "Seed composition for research skill workflows.",
+      "purpose": "Research a question across multiple sources and produce a bounded, cited synthesis.",
       "classifications": {
         "task-set-lock-in": "R",
         "scoped-loader": "R",
@@ -18979,14 +20296,20 @@
         "critical-atomic-verification"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "multi-source research and evidence synthesis",
+      "task_phrases": [
+        "research several sources",
+        "compare sources",
+        "write a cited research synthesis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "source-grounded-analysis",
       "display_name": "Source-Grounded Analysis",
       "version": "1.1.0",
-      "purpose": "Seed composition for source-grounded analysis workflows.",
+      "purpose": "Analyze or transform supplied sources without inventing unsupported claims or losing attribution.",
       "classifications": {
         "task-set-lock-in": "R",
         "mode-lock-in": "R",
@@ -19018,14 +20341,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "source-bounded analysis, comparison, extraction, and rewriting",
+      "task_phrases": [
+        "analyze these sources",
+        "compare supplied documents",
+        "rewrite using only provided evidence"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "high-stakes-reasoning",
       "display_name": "High-Stakes Reasoning",
       "version": "1.1.0",
-      "purpose": "Seed composition for high-stakes reasoning workflows.",
+      "purpose": "Evaluate consequential claims with proportionate evidence, uncertainty, verification, and abstention controls.",
       "classifications": {
         "grounding-no-invention": "R",
         "epistemic-status-gating": "R",
@@ -19070,14 +20399,20 @@
         "fermionic-veto"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "consequential evidence evaluation and decision support",
+      "task_phrases": [
+        "verify a consequential claim",
+        "high stakes analysis",
+        "evidence sensitive decision"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "medical-evidence",
       "display_name": "Medical Evidence",
       "version": "1.1.0",
-      "purpose": "Seed composition for medical evidence workflows.",
+      "purpose": "Synthesize medical evidence with applicability, uncertainty, and professional-review boundaries.",
       "classifications": {
         "task-set-lock-in": "R",
         "grounding-no-invention": "R",
@@ -19114,14 +20449,20 @@
         "fail-closed-abstention"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "medical literature and clinical-evidence synthesis",
+      "task_phrases": [
+        "review medical evidence",
+        "compare clinical studies",
+        "medical literature synthesis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "legal-evidence",
       "display_name": "Legal Evidence",
       "version": "1.1.0",
-      "purpose": "Seed composition for legal evidence workflows.",
+      "purpose": "Analyze jurisdiction- and date-sensitive legal sources while preserving authority and citation fidelity.",
       "classifications": {
         "task-set-lock-in": "R",
         "grounding-no-invention": "R",
@@ -19158,14 +20499,20 @@
         "fail-closed-abstention"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "legal research and jurisdiction-sensitive source analysis",
+      "task_phrases": [
+        "research legal sources",
+        "analyze a law or regulation",
+        "jurisdiction specific legal analysis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "coding-debugging",
       "display_name": "Coding / Debugging",
       "version": "1.1.0",
-      "purpose": "Seed composition for coding / debugging workflows.",
+      "purpose": "Reproduce, diagnose, and repair a software defect with the smallest verified change.",
       "classifications": {
         "task-set-lock-in": "R",
         "stateblock": "A",
@@ -19201,14 +20548,21 @@
         "surgery-edit"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "software debugging, reproduction, diagnosis, and verified repair",
+      "task_phrases": [
+        "debug this code",
+        "reproduce this bug",
+        "fix a failing test",
+        "diagnose a software issue"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "code-review",
       "display_name": "Code / Pull Request Review",
       "version": "1.1.0",
-      "purpose": "Seed composition for review-only code and pull request analysis.",
+      "purpose": "Review a concrete diff or pull request for bugs, regressions, unsafe assumptions, and missing tests without editing it.",
       "classifications": {
         "task-set-lock-in": "R",
         "scoped-loader": "R",
@@ -19218,7 +20572,7 @@
         "dominant-driver-isolation-scaffold": "A",
         "anti-tunnel-vision": "A",
         "bidirectional-consistency": "A",
-        "invariance-stress-scaffold": "R",
+        "invariance-stress-scaffold": "C",
         "epistemic-status-gating": "A",
         "critical-atomic-verification": "C",
         "citation-fidelity": "C",
@@ -19236,8 +20590,7 @@
       "required_rationales": {
         "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
         "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
-        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
       },
       "important_exclusions": [
         "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
@@ -19247,14 +20600,21 @@
         "fail-closed-abstention"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "pull-request, diff, commit, and regression review",
+      "task_phrases": [
+        "review this pull request",
+        "review this diff",
+        "find bugs and regressions",
+        "review code without editing"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "long-context-corpus",
       "display_name": "Long-Context / Corpus",
       "version": "1.1.0",
-      "purpose": "Seed composition for long-context / corpus workflows.",
+      "purpose": "Analyze a corpus too large for one context while preserving sequence, provenance, and resumable state.",
       "classifications": {
         "stateblock": "R",
         "sequential-memory-state-engine": "R",
@@ -19288,14 +20648,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "large-corpus analysis and resumable document workflows",
+      "task_phrases": [
+        "analyze a large corpus",
+        "work across many documents",
+        "resume a long document analysis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "authoring",
       "display_name": "Authoring",
       "version": "1.1.0",
-      "purpose": "Seed composition for authoring workflows.",
+      "purpose": "Draft or rewrite a controlled deliverable for a defined message, audience, style, and source boundary.",
       "classifications": {
         "task-set-lock-in": "R",
         "grounding-no-invention": "C",
@@ -19324,14 +20690,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "controlled drafting, rewriting, and publication preparation",
+      "task_phrases": [
+        "write a controlled draft",
+        "rewrite this document",
+        "prepare a publication draft"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "creative-ideation",
       "display_name": "Creative Ideation",
       "version": "1.1.0",
-      "purpose": "Seed composition for creative ideation workflows.",
+      "purpose": "Generate materially distinct ideas and converge on a bounded selection using explicit criteria.",
       "classifications": {
         "task-set-lock-in": "R",
         "controlled-drift-corridors": "R",
@@ -19360,14 +20732,20 @@
         "multiverse-reasoning"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "bounded brainstorming, concept generation, and selection",
+      "task_phrases": [
+        "brainstorm distinct ideas",
+        "generate concepts",
+        "compare creative directions"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "education-explanation",
       "display_name": "Education / Explanation",
       "version": "1.1.0",
-      "purpose": "Seed composition for education / explanation workflows.",
+      "purpose": "Explain a subject for a defined learner and objective without sacrificing domain accuracy.",
       "classifications": {
         "pedagogical-alignment": "R",
         "explanation-minimality-scaffold": "A",
@@ -19395,14 +20773,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "teaching, tutoring, and audience-adapted explanation",
+      "task_phrases": [
+        "explain this to a learner",
+        "teach this concept",
+        "create a lesson"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "decision-support",
       "display_name": "Decision Support",
       "version": "1.1.0",
-      "purpose": "Seed composition for decision support workflows.",
+      "purpose": "Compare consequential options against explicit criteria and evidence without presenting generated choices as facts.",
       "classifications": {
         "task-set-lock-in": "R",
         "decision-first-scaffold": "R",
@@ -19432,14 +20816,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "option comparison, trade-off analysis, and recommendation support",
+      "task_phrases": [
+        "compare my options",
+        "help me decide",
+        "analyze tradeoffs"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "architecture-skill-building",
       "display_name": "Architecture / Skill Building",
       "version": "1.1.0",
-      "purpose": "Seed composition for architecture / skill building workflows.",
+      "purpose": "Design a portable multi-component Skill with explicit interfaces, authority, host assumptions, and tests.",
       "classifications": {
         "architect-orchestrator": "R",
         "power-mode": "A",
@@ -19489,14 +20879,20 @@
         "future-proof-mode-selector"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "Skill, agent, prompt-system, and workflow architecture",
+      "task_phrases": [
+        "build a reusable skill",
+        "design an agent workflow",
+        "improve a complex prompt system"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "multi-agent-orchestration",
       "display_name": "Multi-Agent / Orchestration",
       "version": "1.1.0",
-      "purpose": "Seed composition for multi-agent / orchestration workflows.",
+      "purpose": "Coordinate distinct workers through scoped tasks, explicit state handoffs, and result collection.",
       "classifications": {
         "architect-orchestrator": "R",
         "scoped-loader": "R",
@@ -19532,14 +20928,20 @@
         "state-routing-bus"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "multi-worker delegation, handoffs, and synthesis",
+      "task_phrases": [
+        "delegate to multiple agents",
+        "coordinate parallel workers",
+        "combine agent results"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "deterministic-intake-routing",
       "display_name": "Deterministic Intake / Routing",
       "version": "1.1.0",
-      "purpose": "Seed composition for deterministic intake / routing workflows.",
+      "purpose": "Route structured requests using explicit fields and predicates, clarifying or failing closed when inputs are missing.",
       "classifications": {
         "task-set-lock-in": "R",
         "clarification-gateway": "A",
@@ -19572,14 +20974,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "form intake, rules-based classification, and workflow routing",
+      "task_phrases": [
+        "route an intake form",
+        "classify requests by rules",
+        "choose a workflow from fields"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "long-context-source-fidelity",
       "display_name": "Long-Context Source Fidelity",
       "version": "1.1.0",
-      "purpose": "Seed composition for long-context source fidelity workflows.",
+      "purpose": "Transform a long or segmented source without losing quotations, identifiers, sequence, or provenance.",
       "classifications": {
         "working-memory-lock-in": "R",
         "sequential-memory-state-engine": "R",
@@ -19618,14 +21026,20 @@
         "truth-redundancy"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "long-document transformation and source-faithful continuation",
+      "task_phrases": [
+        "transform a long document",
+        "preserve quotes across sections",
+        "continue source faithful editing"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "perception-reasoning",
       "display_name": "Perception & Spatial Reasoning",
       "version": "1.1.0",
-      "purpose": "Infer transformation rules from examples, falsify alternatives, and execute the selected rule with bounded verification.",
+      "purpose": "Infer and apply transformations in bounded grid, symbolic, visual-analogy, or spatial-reasoning tasks.",
       "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
       "classifications": {
         "task-set-lock-in": "R",
@@ -19665,7 +21079,12 @@
         "multiverse-reasoning"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_phrases": [
+        "solve a grid puzzle",
+        "infer a visual transformation",
+        "complete a spatial pattern"
+      ]
     }
   ],
   "qms_modes": [

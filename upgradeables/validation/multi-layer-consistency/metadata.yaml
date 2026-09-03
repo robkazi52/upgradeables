@@ -162,5 +162,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Multi-Layer Consistency",
+  "plain_aliases": [],
+  "task_phrases": [
+    "large documents",
+    "modular software",
+    "policy hierarchies",
+    "multi-step analytical conclusions"
+  ],
+  "confusable_with": [
+    "bidirectional-consistency",
+    "cross-universe-consistency"
+  ]
 }

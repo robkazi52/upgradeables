@@ -166,5 +166,19 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Dual-Source Bounded Synthesis",
+  "plain_aliases": [
+    "Dual-Source Bounded Synthesis"
+  ],
+  "task_phrases": [
+    "comparative research",
+    "evidence-grounded authoring",
+    "policy synthesis",
+    "explanatory integration of two sources"
+  ],
+  "confusable_with": [
+    "controlled-drift-corridors",
+    "truth-redundancy"
+  ]
 }

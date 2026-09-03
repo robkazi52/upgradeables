@@ -35,7 +35,7 @@ Canonical package: `authority-anchor-enforcement@1.1.0`. ID: `JAN26-12`. Functio
 
 ## Trigger Conditions
 
-- Activate when the task requires multiple instruction authorities coexist.
+- multiple instruction authorities coexist and may conflict
 
 ## Non-Triggers
 

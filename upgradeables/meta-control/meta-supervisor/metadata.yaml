@@ -179,5 +179,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Workflow Repair Supervisor",
+  "plain_aliases": [
+    "Workflow Repair Supervisor"
+  ],
+  "task_phrases": [
+    "complex iterative scaffolds",
+    "multi-module reasoning",
+    "repeated failures",
+    "runtime process-health supervision"
+  ],
+  "confusable_with": [
+    "meta-awareness",
+    "ultimate-suite-supervisor"
+  ]
 }

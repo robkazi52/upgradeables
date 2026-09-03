@@ -163,5 +163,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Counterfactual Integrity Gate",
+  "plain_aliases": [],
+  "task_phrases": [
+    "scenario analysis",
+    "causal counterfactuals",
+    "planning under alternatives",
+    "creative work mixed with factual sources"
+  ],
+  "confusable_with": [
+    "counterfactual-silence-scaffold",
+    "domain-mode-isolation"
+  ]
 }

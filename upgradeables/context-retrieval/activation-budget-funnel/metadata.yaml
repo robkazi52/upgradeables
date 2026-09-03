@@ -181,5 +181,21 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Progressive Context Intake",
+  "plain_aliases": [
+    "Progressive Context Intake"
+  ],
+  "task_phrases": [
+    "multi-source research",
+    "long-document analysis",
+    "evidence-heavy authoring",
+    "policy or legal evidence review",
+    "large modular agent workflows"
+  ],
+  "confusable_with": [
+    "attention-compression-scaffold",
+    "neuro-focus",
+    "scoped-loader"
+  ]
 }

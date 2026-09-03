@@ -21,7 +21,7 @@ Modern conservative interpretation: enumerate candidate drivers, define the targ
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires many possible causes compete.. Best-fit tasks: root-cause analysis, business driver analysis, performance bottleneck diagnosis, risk prioritization.
+Triggers: many plausible causes compete for priority. Best-fit tasks: root-cause analysis, business driver analysis, performance bottleneck diagnosis, risk prioritization.
 
 ## Interactions and failure boundary
 

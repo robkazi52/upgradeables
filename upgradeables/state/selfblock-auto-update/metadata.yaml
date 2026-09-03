@@ -178,5 +178,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Automatic Canonical-State Update",
+  "plain_aliases": [
+    "Automatic Canonical-State Update"
+  ],
+  "task_phrases": [
+    "agent loops",
+    "long editing sessions",
+    "tool-rich workflows",
+    "multi-step investigations"
+  ],
+  "confusable_with": [
+    "sequential-memory-state-engine",
+    "stateblock",
+    "working-memory-lock-in"
+  ]
 }

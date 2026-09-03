@@ -34,7 +34,7 @@
     "branching cost exceeds the bounded decision value"
   ],
   "triggers": [
-    "Activate when the task requires premature fixation is plausible."
+    "premature fixation could hide credible alternatives"
   ],
   "non_triggers": [
     "the answer is directly established by a locked source",
@@ -161,5 +161,16 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Anti-Tunnel Vision",
+  "plain_aliases": [],
+  "task_phrases": [
+    "ambiguous diagnosis",
+    "architecture choice with two credible patterns",
+    "research synthesis with competing explanations"
+  ],
+  "confusable_with": [
+    "dominant-driver-isolation-scaffold",
+    "multiverse-reasoning"
+  ]
 }

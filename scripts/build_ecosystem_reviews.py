@@ -28,6 +28,66 @@ RECIPE_EXCLUSIONS = {
     "perception-reasoning": ["Omit coherence heartbeat and meta supervision for bounded single-puzzle work; add candidate branching only when hypotheses genuinely compete."],
 }
 
+RECIPE_PURPOSES = {
+    "research-skill": "Research a question across multiple sources and produce a bounded, cited synthesis.",
+    "source-grounded-analysis": "Analyze or transform supplied sources without inventing unsupported claims or losing attribution.",
+    "high-stakes-reasoning": "Evaluate consequential claims with proportionate evidence, uncertainty, verification, and abstention controls.",
+    "medical-evidence": "Synthesize medical evidence with applicability, uncertainty, and professional-review boundaries.",
+    "legal-evidence": "Analyze jurisdiction- and date-sensitive legal sources while preserving authority and citation fidelity.",
+    "coding-debugging": "Reproduce, diagnose, and repair a software defect with the smallest verified change.",
+    "code-review": "Review a concrete diff or pull request for bugs, regressions, unsafe assumptions, and missing tests without editing it.",
+    "long-context-corpus": "Analyze a corpus too large for one context while preserving sequence, provenance, and resumable state.",
+    "authoring": "Draft or rewrite a controlled deliverable for a defined message, audience, style, and source boundary.",
+    "creative-ideation": "Generate materially distinct ideas and converge on a bounded selection using explicit criteria.",
+    "education-explanation": "Explain a subject for a defined learner and objective without sacrificing domain accuracy.",
+    "decision-support": "Compare consequential options against explicit criteria and evidence without presenting generated choices as facts.",
+    "architecture-skill-building": "Design a portable multi-component Skill with explicit interfaces, authority, host assumptions, and tests.",
+    "multi-agent-orchestration": "Coordinate distinct workers through scoped tasks, explicit state handoffs, and result collection.",
+    "deterministic-intake-routing": "Route structured requests using explicit fields and predicates, clarifying or failing closed when inputs are missing.",
+    "long-context-source-fidelity": "Transform a long or segmented source without losing quotations, identifiers, sequence, or provenance.",
+    "perception-reasoning": "Infer and apply transformations in bounded grid, symbolic, visual-analogy, or spatial-reasoning tasks.",
+}
+
+RECIPE_TASK_FAMILIES = {
+    "research-skill": "multi-source research and evidence synthesis",
+    "source-grounded-analysis": "source-bounded analysis, comparison, extraction, and rewriting",
+    "high-stakes-reasoning": "consequential evidence evaluation and decision support",
+    "medical-evidence": "medical literature and clinical-evidence synthesis",
+    "legal-evidence": "legal research and jurisdiction-sensitive source analysis",
+    "coding-debugging": "software debugging, reproduction, diagnosis, and verified repair",
+    "code-review": "pull-request, diff, commit, and regression review",
+    "long-context-corpus": "large-corpus analysis and resumable document workflows",
+    "authoring": "controlled drafting, rewriting, and publication preparation",
+    "creative-ideation": "bounded brainstorming, concept generation, and selection",
+    "education-explanation": "teaching, tutoring, and audience-adapted explanation",
+    "decision-support": "option comparison, trade-off analysis, and recommendation support",
+    "architecture-skill-building": "Skill, agent, prompt-system, and workflow architecture",
+    "multi-agent-orchestration": "multi-worker delegation, handoffs, and synthesis",
+    "deterministic-intake-routing": "form intake, rules-based classification, and workflow routing",
+    "long-context-source-fidelity": "long-document transformation and source-faithful continuation",
+    "perception-reasoning": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
+}
+
+RECIPE_TASK_PHRASES = {
+    "research-skill": ["research several sources", "compare sources", "write a cited research synthesis"],
+    "source-grounded-analysis": ["analyze these sources", "compare supplied documents", "rewrite using only provided evidence"],
+    "high-stakes-reasoning": ["verify a consequential claim", "high stakes analysis", "evidence sensitive decision"],
+    "medical-evidence": ["review medical evidence", "compare clinical studies", "medical literature synthesis"],
+    "legal-evidence": ["research legal sources", "analyze a law or regulation", "jurisdiction specific legal analysis"],
+    "coding-debugging": ["debug this code", "reproduce this bug", "fix a failing test", "diagnose a software issue"],
+    "code-review": ["review this pull request", "review this diff", "find bugs and regressions", "review code without editing"],
+    "long-context-corpus": ["analyze a large corpus", "work across many documents", "resume a long document analysis"],
+    "authoring": ["write a controlled draft", "rewrite this document", "prepare a publication draft"],
+    "creative-ideation": ["brainstorm distinct ideas", "generate concepts", "compare creative directions"],
+    "education-explanation": ["explain this to a learner", "teach this concept", "create a lesson"],
+    "decision-support": ["compare my options", "help me decide", "analyze tradeoffs"],
+    "architecture-skill-building": ["build a reusable skill", "design an agent workflow", "improve a complex prompt system"],
+    "multi-agent-orchestration": ["delegate to multiple agents", "coordinate parallel workers", "combine agent results"],
+    "deterministic-intake-routing": ["route an intake form", "classify requests by rules", "choose a workflow from fields"],
+    "long-context-source-fidelity": ["transform a long document", "preserve quotes across sections", "continue source faithful editing"],
+    "perception-reasoning": ["solve a grid puzzle", "infer a visual transformation", "complete a spatial pattern"],
+}
+
 RECIPE_BOUNDARIES = {
     "research-skill": "Use when a deliverable must synthesize multiple accessible sources and corpus size or ambiguity makes scoped loading, shared state, and claim-level grounding necessary.",
     "source-grounded-analysis": "Use when an analysis or rewrite must remain traceable to identified sources, preserve locked source meaning, and attach citations at claim level.",
@@ -434,7 +494,11 @@ def skill_text(slug, cfg, metadata):
     rows = []
     for component in selected:
         item = metadata[component]
-        rows.append(f"| `{component}@{item['version']}` | {details['component_reasons'][component]} |")
+        trigger = item.get("triggers", ["task-specific condition is met"])[0]
+        rows.append(
+            f"| `{component}` | `{item['version']}` | Keep | {trigger} | "
+            f"{details['component_reasons'][component]} |"
+        )
     exclusions = "\n".join(f"- {item}" for item in excluded)
     inputs = "\n".join(f"- {item}" for item in details["inputs"])
     procedure = "\n".join(f"{index}. {item}" for index, item in enumerate(details["procedure"], 1))
@@ -467,8 +531,8 @@ Keep accepted decisions, unresolved issues, capability limits, and validation re
 
 ## Selected Upgradeables
 
-| Component | Why selected |
-|---|---|
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
 {chr(10).join(rows)}
 
 Tempting exclusions:
@@ -501,7 +565,7 @@ A stronger model may compress bookkeeping but must preserve authority, package-s
 
 ## Provenance
 
-Built against registry `0.2.0` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
+Built against registry `0.2.1` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
 
 ## Tests
 
@@ -516,6 +580,9 @@ def outputs():
     for recipe in recipe_doc["recipes"]:
         recipe["schema_version"] = "2.0.0"
         recipe["version"] = "1.1.0"
+        recipe["purpose"] = RECIPE_PURPOSES[recipe["slug"]]
+        recipe["task_family"] = RECIPE_TASK_FAMILIES[recipe["slug"]]
+        recipe["task_phrases"] = RECIPE_TASK_PHRASES[recipe["slug"]]
         recipe["activation_boundary"] = RECIPE_BOUNDARIES[recipe["slug"]]
         rationale_context = RECIPE_REQUIREMENT_CONTEXT[recipe["slug"]]
         recipe["required_rationales"] = {

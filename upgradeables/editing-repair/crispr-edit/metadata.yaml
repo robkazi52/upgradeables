@@ -181,5 +181,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Precision Local System Edit",
+  "plain_aliases": [
+    "Precision Local System Edit"
+  ],
+  "task_phrases": [
+    "one rule change in a prompt or skill",
+    "small schema-compatible config edit",
+    "precise clause replacement",
+    "localized architecture adjustment"
+  ],
+  "confusable_with": [
+    "micro-repair",
+    "safe-rewrite",
+    "surgery-edit"
+  ]
 }

@@ -181,5 +181,20 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Bounded Alternative Search",
+  "plain_aliases": [
+    "Bounded Alternative Search"
+  ],
+  "task_phrases": [
+    "ambiguous design choices",
+    "research plans",
+    "narrative or document architectures",
+    "competing causal models"
+  ],
+  "confusable_with": [
+    "anti-tunnel-vision",
+    "parallel-qms",
+    "reasoning-scale-controller"
+  ]
 }

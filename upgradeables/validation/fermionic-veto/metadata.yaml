@@ -166,5 +166,20 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Non-Compensable Constraint Veto",
+  "plain_aliases": [
+    "Non-Compensable Constraint Veto"
+  ],
+  "task_phrases": [
+    "safety reviews",
+    "constraint-heavy planning",
+    "security decisions",
+    "branch collapse",
+    "truth-conflict resolution"
+  ],
+  "confusable_with": [
+    "fail-closed-abstention",
+    "multi-truth-gating"
+  ]
 }

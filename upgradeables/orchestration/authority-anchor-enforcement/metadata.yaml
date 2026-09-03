@@ -33,7 +33,7 @@
     "the governing authority cannot be identified from available context"
   ],
   "triggers": [
-    "Activate when the task requires multiple instruction authorities coexist."
+    "multiple instruction authorities coexist and may conflict"
   ],
   "non_triggers": [
     "the workflow has no competing instruction or authority layers",
@@ -148,5 +148,16 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Authority Anchor Enforcement",
+  "plain_aliases": [],
+  "task_phrases": [
+    "multi-module agent workflows",
+    "policy-constrained execution",
+    "delegated task routing"
+  ],
+  "confusable_with": [
+    "mode-lock-in",
+    "task-set-lock-in"
+  ]
 }

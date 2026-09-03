@@ -21,7 +21,7 @@ Modern operational interpretation: record the governing authority, its scope, an
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires multiple instruction authorities coexist.. Best-fit tasks: multi-module agent workflows, policy-constrained execution, delegated task routing.
+Triggers: multiple instruction authorities coexist and may conflict. Best-fit tasks: multi-module agent workflows, policy-constrained execution, delegated task routing.
 
 ## Interactions and failure boundary
 

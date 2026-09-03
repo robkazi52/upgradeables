@@ -36,7 +36,7 @@
     "the subtask is already complete"
   ],
   "triggers": [
-    "Activate when the task requires multi-step or high-constraint work."
+    "multi-step or high-constraint work"
   ],
   "non_triggers": [
     "a one-step task has no fragile constraints",
@@ -177,5 +177,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Micro-Scaffolding",
+  "plain_aliases": [],
+  "task_phrases": [
+    "high-constraint rewriting",
+    "source-grounded paragraph construction",
+    "localized code changes",
+    "multi-step transformations",
+    "complex formatting"
+  ],
+  "confusable_with": [
+    "forethought-checkpoints",
+    "stateblock",
+    "task-set-lock-in"
+  ]
 }

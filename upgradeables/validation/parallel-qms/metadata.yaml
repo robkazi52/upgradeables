@@ -201,5 +201,21 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Parallel Validation System",
+  "plain_aliases": [
+    "Parallel Validation System"
+  ],
+  "task_phrases": [
+    "high-stakes synthesis",
+    "complex repository validation",
+    "multiverse collapse",
+    "long-form factual work",
+    "safety-sensitive decisions"
+  ],
+  "confusable_with": [
+    "cross-checking-chains",
+    "cross-universe-consistency",
+    "multi-layer-consistency"
+  ]
 }

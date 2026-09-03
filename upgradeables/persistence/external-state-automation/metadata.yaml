@@ -146,5 +146,16 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "External State Automation",
+  "plain_aliases": [],
+  "task_phrases": [
+    "multi-session projects",
+    "durable agent workflows",
+    "long document production"
+  ],
+  "confusable_with": [
+    "state-routing-bus",
+    "state-snapshot"
+  ]
 }

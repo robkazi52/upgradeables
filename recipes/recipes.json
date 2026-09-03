@@ -6,7 +6,7 @@
       "slug": "research-skill",
       "display_name": "Research Skill",
       "version": "1.1.0",
-      "purpose": "Seed composition for research skill workflows.",
+      "purpose": "Research a question across multiple sources and produce a bounded, cited synthesis.",
       "classifications": {
         "task-set-lock-in": "R",
         "scoped-loader": "R",
@@ -45,14 +45,20 @@
         "critical-atomic-verification"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "multi-source research and evidence synthesis",
+      "task_phrases": [
+        "research several sources",
+        "compare sources",
+        "write a cited research synthesis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "source-grounded-analysis",
       "display_name": "Source-Grounded Analysis",
       "version": "1.1.0",
-      "purpose": "Seed composition for source-grounded analysis workflows.",
+      "purpose": "Analyze or transform supplied sources without inventing unsupported claims or losing attribution.",
       "classifications": {
         "task-set-lock-in": "R",
         "mode-lock-in": "R",
@@ -84,14 +90,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "source-bounded analysis, comparison, extraction, and rewriting",
+      "task_phrases": [
+        "analyze these sources",
+        "compare supplied documents",
+        "rewrite using only provided evidence"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "high-stakes-reasoning",
       "display_name": "High-Stakes Reasoning",
       "version": "1.1.0",
-      "purpose": "Seed composition for high-stakes reasoning workflows.",
+      "purpose": "Evaluate consequential claims with proportionate evidence, uncertainty, verification, and abstention controls.",
       "classifications": {
         "grounding-no-invention": "R",
         "epistemic-status-gating": "R",
@@ -136,14 +148,20 @@
         "fermionic-veto"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "consequential evidence evaluation and decision support",
+      "task_phrases": [
+        "verify a consequential claim",
+        "high stakes analysis",
+        "evidence sensitive decision"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "medical-evidence",
       "display_name": "Medical Evidence",
       "version": "1.1.0",
-      "purpose": "Seed composition for medical evidence workflows.",
+      "purpose": "Synthesize medical evidence with applicability, uncertainty, and professional-review boundaries.",
       "classifications": {
         "task-set-lock-in": "R",
         "grounding-no-invention": "R",
@@ -180,14 +198,20 @@
         "fail-closed-abstention"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "medical literature and clinical-evidence synthesis",
+      "task_phrases": [
+        "review medical evidence",
+        "compare clinical studies",
+        "medical literature synthesis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "legal-evidence",
       "display_name": "Legal Evidence",
       "version": "1.1.0",
-      "purpose": "Seed composition for legal evidence workflows.",
+      "purpose": "Analyze jurisdiction- and date-sensitive legal sources while preserving authority and citation fidelity.",
       "classifications": {
         "task-set-lock-in": "R",
         "grounding-no-invention": "R",
@@ -224,14 +248,20 @@
         "fail-closed-abstention"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "legal research and jurisdiction-sensitive source analysis",
+      "task_phrases": [
+        "research legal sources",
+        "analyze a law or regulation",
+        "jurisdiction specific legal analysis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "coding-debugging",
       "display_name": "Coding / Debugging",
       "version": "1.1.0",
-      "purpose": "Seed composition for coding / debugging workflows.",
+      "purpose": "Reproduce, diagnose, and repair a software defect with the smallest verified change.",
       "classifications": {
         "task-set-lock-in": "R",
         "stateblock": "A",
@@ -267,14 +297,21 @@
         "surgery-edit"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "software debugging, reproduction, diagnosis, and verified repair",
+      "task_phrases": [
+        "debug this code",
+        "reproduce this bug",
+        "fix a failing test",
+        "diagnose a software issue"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "code-review",
       "display_name": "Code / Pull Request Review",
       "version": "1.1.0",
-      "purpose": "Seed composition for review-only code and pull request analysis.",
+      "purpose": "Review a concrete diff or pull request for bugs, regressions, unsafe assumptions, and missing tests without editing it.",
       "classifications": {
         "task-set-lock-in": "R",
         "scoped-loader": "R",
@@ -284,7 +321,7 @@
         "dominant-driver-isolation-scaffold": "A",
         "anti-tunnel-vision": "A",
         "bidirectional-consistency": "A",
-        "invariance-stress-scaffold": "R",
+        "invariance-stress-scaffold": "C",
         "epistemic-status-gating": "A",
         "critical-atomic-verification": "C",
         "citation-fidelity": "C",
@@ -302,8 +339,7 @@
       "required_rationales": {
         "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
         "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
-        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
       },
       "important_exclusions": [
         "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
@@ -313,14 +349,21 @@
         "fail-closed-abstention"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "pull-request, diff, commit, and regression review",
+      "task_phrases": [
+        "review this pull request",
+        "review this diff",
+        "find bugs and regressions",
+        "review code without editing"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "long-context-corpus",
       "display_name": "Long-Context / Corpus",
       "version": "1.1.0",
-      "purpose": "Seed composition for long-context / corpus workflows.",
+      "purpose": "Analyze a corpus too large for one context while preserving sequence, provenance, and resumable state.",
       "classifications": {
         "stateblock": "R",
         "sequential-memory-state-engine": "R",
@@ -354,14 +397,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "large-corpus analysis and resumable document workflows",
+      "task_phrases": [
+        "analyze a large corpus",
+        "work across many documents",
+        "resume a long document analysis"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "authoring",
       "display_name": "Authoring",
       "version": "1.1.0",
-      "purpose": "Seed composition for authoring workflows.",
+      "purpose": "Draft or rewrite a controlled deliverable for a defined message, audience, style, and source boundary.",
       "classifications": {
         "task-set-lock-in": "R",
         "grounding-no-invention": "C",
@@ -390,14 +439,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "controlled drafting, rewriting, and publication preparation",
+      "task_phrases": [
+        "write a controlled draft",
+        "rewrite this document",
+        "prepare a publication draft"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "creative-ideation",
       "display_name": "Creative Ideation",
       "version": "1.1.0",
-      "purpose": "Seed composition for creative ideation workflows.",
+      "purpose": "Generate materially distinct ideas and converge on a bounded selection using explicit criteria.",
       "classifications": {
         "task-set-lock-in": "R",
         "controlled-drift-corridors": "R",
@@ -426,14 +481,20 @@
         "multiverse-reasoning"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "bounded brainstorming, concept generation, and selection",
+      "task_phrases": [
+        "brainstorm distinct ideas",
+        "generate concepts",
+        "compare creative directions"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "education-explanation",
       "display_name": "Education / Explanation",
       "version": "1.1.0",
-      "purpose": "Seed composition for education / explanation workflows.",
+      "purpose": "Explain a subject for a defined learner and objective without sacrificing domain accuracy.",
       "classifications": {
         "pedagogical-alignment": "R",
         "explanation-minimality-scaffold": "A",
@@ -461,14 +522,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "teaching, tutoring, and audience-adapted explanation",
+      "task_phrases": [
+        "explain this to a learner",
+        "teach this concept",
+        "create a lesson"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "decision-support",
       "display_name": "Decision Support",
       "version": "1.1.0",
-      "purpose": "Seed composition for decision support workflows.",
+      "purpose": "Compare consequential options against explicit criteria and evidence without presenting generated choices as facts.",
       "classifications": {
         "task-set-lock-in": "R",
         "decision-first-scaffold": "R",
@@ -498,14 +565,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "option comparison, trade-off analysis, and recommendation support",
+      "task_phrases": [
+        "compare my options",
+        "help me decide",
+        "analyze tradeoffs"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "architecture-skill-building",
       "display_name": "Architecture / Skill Building",
       "version": "1.1.0",
-      "purpose": "Seed composition for architecture / skill building workflows.",
+      "purpose": "Design a portable multi-component Skill with explicit interfaces, authority, host assumptions, and tests.",
       "classifications": {
         "architect-orchestrator": "R",
         "power-mode": "A",
@@ -555,14 +628,20 @@
         "future-proof-mode-selector"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "Skill, agent, prompt-system, and workflow architecture",
+      "task_phrases": [
+        "build a reusable skill",
+        "design an agent workflow",
+        "improve a complex prompt system"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "multi-agent-orchestration",
       "display_name": "Multi-Agent / Orchestration",
       "version": "1.1.0",
-      "purpose": "Seed composition for multi-agent / orchestration workflows.",
+      "purpose": "Coordinate distinct workers through scoped tasks, explicit state handoffs, and result collection.",
       "classifications": {
         "architect-orchestrator": "R",
         "scoped-loader": "R",
@@ -598,14 +677,20 @@
         "state-routing-bus"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "multi-worker delegation, handoffs, and synthesis",
+      "task_phrases": [
+        "delegate to multiple agents",
+        "coordinate parallel workers",
+        "combine agent results"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "deterministic-intake-routing",
       "display_name": "Deterministic Intake / Routing",
       "version": "1.1.0",
-      "purpose": "Seed composition for deterministic intake / routing workflows.",
+      "purpose": "Route structured requests using explicit fields and predicates, clarifying or failing closed when inputs are missing.",
       "classifications": {
         "task-set-lock-in": "R",
         "clarification-gateway": "A",
@@ -638,14 +723,20 @@
       ],
       "high_cost_components": [],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "form intake, rules-based classification, and workflow routing",
+      "task_phrases": [
+        "route an intake form",
+        "classify requests by rules",
+        "choose a workflow from fields"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "long-context-source-fidelity",
       "display_name": "Long-Context Source Fidelity",
       "version": "1.1.0",
-      "purpose": "Seed composition for long-context source fidelity workflows.",
+      "purpose": "Transform a long or segmented source without losing quotations, identifiers, sequence, or provenance.",
       "classifications": {
         "working-memory-lock-in": "R",
         "sequential-memory-state-engine": "R",
@@ -684,14 +775,20 @@
         "truth-redundancy"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_family": "long-document transformation and source-faithful continuation",
+      "task_phrases": [
+        "transform a long document",
+        "preserve quotes across sections",
+        "continue source faithful editing"
+      ]
     },
     {
       "schema_version": "2.0.0",
       "slug": "perception-reasoning",
       "display_name": "Perception & Spatial Reasoning",
       "version": "1.1.0",
-      "purpose": "Infer transformation rules from examples, falsify alternatives, and execute the selected rule with bounded verification.",
+      "purpose": "Infer and apply transformations in bounded grid, symbolic, visual-analogy, or spatial-reasoning tasks.",
       "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
       "classifications": {
         "task-set-lock-in": "R",
@@ -731,7 +828,12 @@
         "multiverse-reasoning"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
-      "review_status": "PASS"
+      "review_status": "PASS",
+      "task_phrases": [
+        "solve a grid puzzle",
+        "infer a visual transformation",
+        "complete a spatial pattern"
+      ]
     }
   ]
 }

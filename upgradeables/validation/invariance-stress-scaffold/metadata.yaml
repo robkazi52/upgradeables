@@ -168,5 +168,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Protected-Constraint Robustness Test",
+  "plain_aliases": [
+    "Protected-Constraint Robustness Test"
+  ],
+  "task_phrases": [
+    "prompt robustness checks",
+    "policy interpretation",
+    "classification stability",
+    "summary validation"
+  ],
+  "confusable_with": [
+    "bidirectional-consistency",
+    "parallel-qms"
+  ]
 }

@@ -169,5 +169,20 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Critical Fact Verification",
+  "plain_aliases": [
+    "Critical Fact Verification"
+  ],
+  "task_phrases": [
+    "medical or legal factual synthesis",
+    "deployment decisions",
+    "financial calculations",
+    "requirements verification",
+    "citation-heavy research"
+  ],
+  "confusable_with": [
+    "citation-fidelity",
+    "cross-checking-chains"
+  ]
 }

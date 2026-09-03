@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PROFILE_DIR = ROOT / "tools/semantic_profiles"
 BASELINE = ROOT / "audit/v0.1.0-operational-baseline.json"
+PLAIN_NAMES = json.loads((ROOT / "registry/plain_names.json").read_text(encoding="utf-8"))["names"]
 ALLOWED_BASIS = {"recovered", "normalized-from-recovered", "modern-interpretation", "provisional"}
 ALLOWED_SUPPORT = {"sufficiently-recovered", "strongly-derivable", "modern-operationalization", "source-gap"}
 SKILL_TYPE_TAXONOMY = (
@@ -52,6 +53,15 @@ RELATIONSHIP_ALIASES = {
     "proportionality": "reasoning-scale-controller",
     "final-validation": "parallel-qms",
     "template-preservation": "safe-rewrite",
+}
+TRIGGER_OVERRIDES = {
+    "drift-sink-scaffold": ["discarded branches repeatedly re-enter active reasoning"],
+    "micro-repair": ["a specific defect has been localized"],
+    "authority-anchor-enforcement": ["multiple instruction authorities coexist and may conflict"],
+    "state-routing-bus": ["multiple components must exchange typed state"],
+    "anti-tunnel-vision": ["premature fixation could hide credible alternatives"],
+    "decision-first-scaffold": ["analysis risks becoming directionless before commitment"],
+    "dominant-driver-isolation-scaffold": ["many plausible causes compete for priority"],
 }
 REQUIRED_PROFILE = {
     "source_support", "source_refs", "summary", "purpose", "problem_solved",
@@ -224,10 +234,15 @@ def update_metadata(metadata, profile):
     counterbalances = normalized_relationships(profile["counterbalance_reasons"])
     redundancies = normalized_relationships(profile["redundancy_reasons"])
     source_refs = normalized_source_refs(profile["source_refs"], metadata)
+    plain_name = PLAIN_NAMES.get(metadata["slug"], metadata["display_name"])
     item.update({
         "schema_version": "2.0.0",
         "version": "1.1.0",
         "purpose": profile["purpose"],
+        "plain_display_name": plain_name,
+        "plain_aliases": [plain_name] if plain_name != metadata["display_name"] else [],
+        "task_phrases": profile["best_fit_tasks"],
+        "confusable_with": sorted(profile["closest_neighbors"]),
         "problem_solved": profile["problem_solved"],
         "os_role": profile["os_role"],
         "pipeline_stages": profile["pipeline_stages"],
@@ -260,9 +275,10 @@ def update_metadata(metadata, profile):
         },
     })
     item["triggers"] = [
-        trigger if len(trigger.split()) >= 5 else f"Activate when the task requires {trigger.rstrip('.').casefold()}."
+        re.sub(r"^Activate when the task requires\s+", "", trigger, flags=re.IGNORECASE).strip().rstrip(".")
         for trigger in item["triggers"]
     ]
+    item["triggers"] = TRIGGER_OVERRIDES.get(metadata["slug"], item["triggers"])
     # The reviewed reason maps are authoritative for v0.2 relationships. Rebuild
     # the legacy slug arrays from them so stale v0.1 or pre-normalization labels
     # cannot survive indefinitely through a set union.

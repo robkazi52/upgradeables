@@ -163,5 +163,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Periodic Whole-Task Consistency Check",
+  "plain_aliases": [
+    "Periodic Whole-Task Consistency Check"
+  ],
+  "task_phrases": [
+    "long coding sessions",
+    "multi-stage research",
+    "agent orchestration",
+    "large document production"
+  ],
+  "confusable_with": [
+    "coherence-loops",
+    "state-snapshot"
+  ]
 }

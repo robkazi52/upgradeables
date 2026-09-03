@@ -24,12 +24,12 @@ Keep accepted decisions, unresolved issues, capability limits, and validation re
 
 ## Selected Upgradeables
 
-| Component | Why selected |
-|---|---|
-| `architect-orchestrator@1.1.0` | Turns the task contract into a staged component architecture with explicit interfaces, critique, and acceptance gates. |
-| `adapter-first-experimentation@1.1.0` | Keeps host- or provider-specific capabilities detachable from the portable base until they pass comparison and validation. |
-| `scoped-loader@1.1.0` | Selects only components whose distinctive triggers are active and prevents maximal-stack scaffolding. |
-| `state-snapshot@1.1.0` | Records the accepted design, validation evidence, host assumptions, and unresolved extension work for continuation. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `architect-orchestrator` | `1.1.0` | Keep | designing or refactoring a Skill, OS, framework, or workflow | Turns the task contract into a staged component architecture with explicit interfaces, critique, and acceptance gates. |
+| `adapter-first-experimentation` | `1.1.0` | Keep | a new capability may destabilize a base workflow | Keeps host- or provider-specific capabilities detachable from the portable base until they pass comparison and validation. |
+| `scoped-loader` | `1.1.0` | Keep | a modular workflow has multiple available components | Selects only components whose distinctive triggers are active and prevents maximal-stack scaffolding. |
+| `state-snapshot` | `1.1.0` | Keep | a workflow pauses, hands off, or persists | Records the accepted design, validation evidence, host assumptions, and unresolved extension work for continuation. |
 
 Tempting exclusions:
 
@@ -78,7 +78,7 @@ A stronger model may compress bookkeeping but must preserve authority, package-s
 
 ## Provenance
 
-Built against registry `0.2.0` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
+Built against registry `0.2.1` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
 
 ## Tests
 

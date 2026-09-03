@@ -38,7 +38,7 @@ Canonical package: `micro-scaffolding@1.1.0`. ID: `T1-01`. Functional classes: p
 
 ## Trigger Conditions
 
-- Activate when the task requires multi-step or high-constraint work.
+- multi-step or high-constraint work
 
 ## Non-Triggers
 

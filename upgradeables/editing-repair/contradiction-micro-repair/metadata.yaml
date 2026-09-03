@@ -163,5 +163,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Contradiction Micro-Repair Pack",
+  "plain_aliases": [],
+  "task_phrases": [
+    "conflicting requirements",
+    "inconsistent dates or quantities",
+    "state snapshots with mutually exclusive flags",
+    "documents whose conclusion contradicts a cited premise"
+  ],
+  "confusable_with": [
+    "micro-repair",
+    "multi-layer-consistency"
+  ]
 }

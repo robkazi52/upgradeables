@@ -37,7 +37,7 @@ Canonical package: `drift-sink-scaffold@1.1.0`. ID: `JAN26-10`. Functional class
 
 ## Trigger Conditions
 
-- Activate when the task requires discarded branches keep resurfacing.
+- discarded branches repeatedly re-enter active reasoning
 
 ## Non-Triggers
 

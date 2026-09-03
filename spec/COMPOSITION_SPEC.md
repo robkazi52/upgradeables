@@ -4,6 +4,11 @@ The primary value of Upgradeables is composition. Select only components whose
 triggers are active, preserve authority order, declare state interfaces, and
 remove redundant scaffolding.
 
+After a recipe is selected, an `R` component is structurally required but need
+not run continuously. It may stay dormant until its phase-specific trigger. If
+that trigger cannot occur in the workflow, reject the recipe instead of carrying
+an impossible requirement.
+
 ## Common stacks
 
 ```text

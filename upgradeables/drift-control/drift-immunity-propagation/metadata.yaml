@@ -184,5 +184,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Downstream Invariant Protection",
+  "plain_aliases": [
+    "Downstream Invariant Protection"
+  ],
+  "task_phrases": [
+    "multi-stage generation",
+    "agent pipelines",
+    "source-to-summary-to-decision workflows",
+    "format conversion chains"
+  ],
+  "confusable_with": [
+    "drift-suppression",
+    "working-memory-lock-in",
+    "zero-drift-zones"
+  ]
 }

@@ -35,7 +35,7 @@ Canonical package: `state-routing-bus@1.1.0`. ID: `A-02`. Functional classes: st
 
 ## Trigger Conditions
 
-- Activate when the task requires multiple components exchange state.
+- multiple components must exchange typed state
 
 ## Non-Triggers
 

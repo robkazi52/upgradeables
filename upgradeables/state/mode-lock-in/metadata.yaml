@@ -177,5 +177,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Mode Lock-In",
+  "plain_aliases": [],
+  "task_phrases": [
+    "strict transformations",
+    "long sessions",
+    "multi-mode assistants",
+    "policy-bound work"
+  ],
+  "confusable_with": [
+    "domain-mode-isolation",
+    "task-set-lock-in",
+    "working-memory-lock-in"
+  ]
 }

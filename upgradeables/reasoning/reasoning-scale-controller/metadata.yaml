@@ -178,5 +178,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Task-Scope Reasoning Controller",
+  "plain_aliases": [
+    "Task-Scope Reasoning Controller"
+  ],
+  "task_phrases": [
+    "mixed-complexity workflows",
+    "long-form construction",
+    "system design",
+    "quality evaluation"
+  ],
+  "confusable_with": [
+    "cognitive-governor",
+    "dynamic-depth-allocation",
+    "micro-scaffolding"
+  ]
 }

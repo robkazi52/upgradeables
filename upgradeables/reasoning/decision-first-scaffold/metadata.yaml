@@ -33,7 +33,7 @@
     "framing a decision would falsely narrow an exploratory task"
   ],
   "triggers": [
-    "Activate when the task requires analysis risks becoming directionless."
+    "analysis risks becoming directionless before commitment"
   ],
   "non_triggers": [
     "the task asks only for faithful extraction or description",
@@ -162,5 +162,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Decision-First Scaffold",
+  "plain_aliases": [],
+  "task_phrases": [
+    "recommendations",
+    "go/no-go reviews",
+    "option selection",
+    "resource allocation"
+  ],
+  "confusable_with": [
+    "dominant-driver-isolation-scaffold",
+    "task-set-lock-in"
+  ]
 }

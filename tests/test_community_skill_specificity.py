@@ -85,7 +85,10 @@ class CommunitySkillSpecificityTests(unittest.TestCase):
     def test_selected_component_rationales_are_not_registry_purposes(self):
         catalog = json.loads((ROOT / "registry" / "catalog.json").read_text(encoding="utf-8"))
         purposes = {item["slug"]: item["purpose"] for item in catalog["upgradeables"]}
-        row_pattern = re.compile(r"^\| `([a-z0-9-]+)@\d+\.\d+\.\d+` \| (.+) \|$", re.MULTILINE)
+        row_pattern = re.compile(
+            r"^\| `([a-z0-9-]+)` \| `\d+\.\d+\.\d+` \| Keep \| [^|]+ \| (.+) \|$",
+            re.MULTILINE,
+        )
         seen_rationales = set()
         for skill_slug in SKILLS:
             text = (ROOT / "implementations" / "community" / skill_slug / "SKILL.md").read_text(encoding="utf-8")

@@ -148,5 +148,18 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Modular System Design Orchestrator",
+  "plain_aliases": [
+    "Modular System Design Orchestrator"
+  ],
+  "task_phrases": [
+    "Skill and OS architecture",
+    "workflow design",
+    "framework refactoring"
+  ],
+  "confusable_with": [
+    "meta-supervisor",
+    "ultimate-suite-supervisor"
+  ]
 }

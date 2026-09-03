@@ -182,5 +182,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Per-Region Reasoning Depth",
+  "plain_aliases": [
+    "Per-Region Reasoning Depth"
+  ],
+  "task_phrases": [
+    "heterogeneous documents",
+    "mixed-risk code changes",
+    "large research corpora",
+    "multi-stage plans with uneven uncertainty"
+  ],
+  "confusable_with": [
+    "cognitive-governor",
+    "reasoning-throughput-governor",
+    "risk-tier-scaling"
+  ]
 }

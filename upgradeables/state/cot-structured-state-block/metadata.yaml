@@ -177,5 +177,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Auditable Reasoning State",
+  "plain_aliases": [
+    "Auditable Reasoning State"
+  ],
+  "task_phrases": [
+    "multi-agent research",
+    "long investigations",
+    "regulated decisions",
+    "work requiring resumable rationale"
+  ],
+  "confusable_with": [
+    "state-snapshot",
+    "stateblock",
+    "working-memory-cues"
+  ]
 }

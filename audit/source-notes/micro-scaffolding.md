@@ -22,7 +22,7 @@ At the start of a fragile subtask, extract only the few invariants and checkpoin
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires multi-step or high-constraint work.. Best-fit tasks: high-constraint rewriting, source-grounded paragraph construction, localized code changes, multi-step transformations, complex formatting.
+Triggers: multi-step or high-constraint work. Best-fit tasks: high-constraint rewriting, source-grounded paragraph construction, localized code changes, multi-step transformations, complex formatting.
 
 ## Interactions and failure boundary
 

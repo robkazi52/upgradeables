@@ -180,5 +180,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Risk-Tier Scaling",
+  "plain_aliases": [],
+  "task_phrases": [
+    "medical, legal, financial, or safety-sensitive work",
+    "irreversible changes",
+    "uncertain external actions",
+    "mixed-risk artifacts"
+  ],
+  "confusable_with": [
+    "cognitive-governor",
+    "dynamic-depth-allocation",
+    "safe-mode"
+  ]
 }

@@ -179,5 +179,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Scoped Loader / Loader Sequencing",
+  "plain_aliases": [],
+  "task_phrases": [
+    "modular Skill execution",
+    "agent routing",
+    "large reference libraries",
+    "domain OS selection",
+    "multi-stage research"
+  ],
+  "confusable_with": [
+    "activation-budget-funnel",
+    "future-proof-mode-selector",
+    "state-routing-bus"
+  ]
 }

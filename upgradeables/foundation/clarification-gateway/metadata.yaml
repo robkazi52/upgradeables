@@ -170,5 +170,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Clarification Gateway",
+  "plain_aliases": [],
+  "task_phrases": [
+    "requirements intake",
+    "ambiguous data transformation",
+    "multi-constraint planning",
+    "high-stakes evidence work"
+  ],
+  "confusable_with": [
+    "grounding-no-invention",
+    "task-set-lock-in"
+  ]
 }

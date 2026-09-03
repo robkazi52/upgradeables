@@ -38,7 +38,7 @@ Canonical package: `micro-repair@1.1.0`. ID: `T2-04`. Functional classes: editin
 
 ## Trigger Conditions
 
-- Activate when the task requires a defect is localized.
+- a specific defect has been localized
 
 ## Non-Triggers
 

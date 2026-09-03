@@ -179,5 +179,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "State Snapshot",
+  "plain_aliases": [],
+  "task_phrases": [
+    "multi-session projects",
+    "agent handoffs",
+    "rollback-sensitive workflows",
+    "audits"
+  ],
+  "confusable_with": [
+    "stable-long-context",
+    "stateblock",
+    "temporal-anchor-scaffold"
+  ]
 }

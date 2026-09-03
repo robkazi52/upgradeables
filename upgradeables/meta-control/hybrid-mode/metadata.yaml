@@ -176,5 +176,20 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Explore-Then-Commit Mode",
+  "plain_aliases": [
+    "Explore-Then-Commit Mode"
+  ],
+  "task_phrases": [
+    "architecture followed by implementation",
+    "research plan followed by evidence extraction",
+    "migration design followed by cutover",
+    "complex repository builds"
+  ],
+  "confusable_with": [
+    "future-proof-mode-selector",
+    "power-mode",
+    "safe-mode"
+  ]
 }

@@ -173,5 +173,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Workflow Health Monitor",
+  "plain_aliases": [
+    "Workflow Health Monitor"
+  ],
+  "task_phrases": [
+    "long multi-module workflows",
+    "multi-agent coordination",
+    "iterative reasoning",
+    "mode-rich systems"
+  ],
+  "confusable_with": [
+    "meta-stability",
+    "meta-supervisor"
+  ]
 }

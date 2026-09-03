@@ -168,5 +168,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Alternative-Scenario Consistency Check",
+  "plain_aliases": [
+    "Alternative-Scenario Consistency Check"
+  ],
+  "task_phrases": [
+    "architecture alternatives",
+    "scenario planning",
+    "multi-hypothesis research",
+    "strategy selection"
+  ],
+  "confusable_with": [
+    "multi-layer-consistency",
+    "parallel-qms"
+  ]
 }

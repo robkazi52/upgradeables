@@ -176,5 +176,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Citation Fidelity Gate",
+  "plain_aliases": [],
+  "task_phrases": [
+    "research reports",
+    "technical documentation",
+    "legal or policy synthesis",
+    "fact-checked public writing"
+  ],
+  "confusable_with": [
+    "critical-atomic-verification",
+    "grounding-no-invention"
+  ]
 }

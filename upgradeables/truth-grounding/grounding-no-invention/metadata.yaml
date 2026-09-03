@@ -164,5 +164,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Grounding / No-Invention",
+  "plain_aliases": [],
+  "task_phrases": [
+    "source-grounded research",
+    "record and chart review",
+    "policy or legal analysis",
+    "citation-bearing authoring",
+    "tool-result reporting"
+  ],
+  "confusable_with": [
+    "citation-fidelity",
+    "specificity-penalty-gate"
+  ]
 }

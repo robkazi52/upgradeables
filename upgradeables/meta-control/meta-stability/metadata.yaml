@@ -182,5 +182,19 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Stable-State Recovery Mode",
+  "plain_aliases": [
+    "Stable-State Recovery Mode"
+  ],
+  "task_phrases": [
+    "long-context drift",
+    "conflicting module activation",
+    "repeated change cycles",
+    "multi-agent state divergence"
+  ],
+  "confusable_with": [
+    "safe-mode",
+    "stuck-pattern-reset"
+  ]
 }

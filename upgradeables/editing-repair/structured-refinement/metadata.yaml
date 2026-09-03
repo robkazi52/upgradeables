@@ -170,5 +170,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Structured Refinement Cycles",
+  "plain_aliases": [],
+  "task_phrases": [
+    "drafts with several defect classes",
+    "reports requiring source and style review",
+    "prompt or specification cleanup",
+    "publication preparation"
+  ],
+  "confusable_with": [
+    "bounded-exit",
+    "micro-repair",
+    "regenerative-rewrite"
+  ]
 }

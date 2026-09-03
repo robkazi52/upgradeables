@@ -183,5 +183,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Drift Suppression",
+  "plain_aliases": [],
+  "task_phrases": [
+    "long agent workflows",
+    "high-fidelity editing",
+    "multi-stage synthesis",
+    "policy-bound generation"
+  ],
+  "confusable_with": [
+    "drift-sink-scaffold",
+    "mode-lock-in",
+    "zero-drift-zones"
+  ]
 }

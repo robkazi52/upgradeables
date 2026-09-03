@@ -23,12 +23,12 @@ Keep accepted decisions, unresolved issues, capability limits, and validation re
 
 ## Selected Upgradeables
 
-| Component | Why selected |
-|---|---|
-| `multiverse-reasoning@1.1.0` | Generates a bounded set of concepts that differ on declared creative axes rather than surface wording. |
-| `anti-tunnel-vision@1.1.0` | Tests the favored concept against at least one credible rival before selection. |
-| `bounded-exit@1.1.0` | Stops branching when the requested set and decision criteria are satisfied or further search has low value. |
-| `style-alignment@1.1.0` | Applies the target voice and format only after a concept is selected, without changing the locked brief. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `multiverse-reasoning` | `1.1.0` | Keep | competing hypotheses or designs would add value | Generates a bounded set of concepts that differ on declared creative axes rather than surface wording. |
+| `anti-tunnel-vision` | `1.1.0` | Keep | premature fixation could hide credible alternatives | Tests the favored concept against at least one credible rival before selection. |
+| `bounded-exit` | `1.1.0` | Keep | a draft needs iterative improvement | Stops branching when the requested set and decision criteria are satisfied or further search has low value. |
+| `style-alignment` | `1.1.0` | Keep | a style or voice is specified | Applies the target voice and format only after a concept is selected, without changing the locked brief. |
 
 Tempting exclusions:
 
@@ -76,7 +76,7 @@ A stronger model may compress bookkeeping but must preserve authority, package-s
 
 ## Provenance
 
-Built against registry `0.2.0` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
+Built against registry `0.2.1` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
 
 ## Tests
 

@@ -147,5 +147,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Explore-to-Execute Transition",
+  "plain_aliases": [
+    "Explore-to-Execute Transition"
+  ],
+  "task_phrases": [
+    "design-to-implementation workflows",
+    "iterative planning",
+    "creative work with a committed deliverable"
+  ],
+  "confusable_with": [
+    "hybrid-mode",
+    "mode-lock-in"
+  ]
 }

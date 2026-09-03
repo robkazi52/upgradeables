@@ -181,5 +181,18 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Stuck-Pattern Reset Pack",
+  "plain_aliases": [],
+  "task_phrases": [
+    "repeated tool failures",
+    "recursive revision loops",
+    "stale debugging hypotheses",
+    "nonconverging planning"
+  ],
+  "confusable_with": [
+    "anti-tunnel-vision",
+    "bounded-exit",
+    "meta-stability"
+  ]
 }

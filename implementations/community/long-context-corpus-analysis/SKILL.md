@@ -24,12 +24,12 @@ Keep accepted decisions, unresolved issues, capability limits, and validation re
 
 ## Selected Upgradeables
 
-| Component | Why selected |
-|---|---|
-| `scoped-loader@1.1.0` | Loads question-relevant source batches without treating an uninspected corpus as active evidence. |
-| `sequential-memory-state-engine@1.1.0` | Commits provenance-bearing evidence deltas while distinguishing current, contradicted, and superseded source state. |
-| `state-snapshot@1.1.0` | Creates reproducible coverage and evidence checkpoints for handoff or interrupted analysis. |
-| `stable-long-context@1.1.0` | Keeps a compact current evidence view with retrievable pointers instead of carrying raw source batches indefinitely. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `scoped-loader` | `1.1.0` | Keep | a modular workflow has multiple available components | Loads question-relevant source batches without treating an uninspected corpus as active evidence. |
+| `sequential-memory-state-engine` | `1.1.0` | Keep | state changes across steps or source chunks | Commits provenance-bearing evidence deltas while distinguishing current, contradicted, and superseded source state. |
+| `state-snapshot` | `1.1.0` | Keep | a workflow pauses, hands off, or persists | Creates reproducible coverage and evidence checkpoints for handoff or interrupted analysis. |
+| `stable-long-context` | `1.1.0` | Keep | large corpus or long-running workflow | Keeps a compact current evidence view with retrievable pointers instead of carrying raw source batches indefinitely. |
 
 Tempting exclusions:
 
@@ -77,7 +77,7 @@ A stronger model may compress bookkeeping but must preserve authority, package-s
 
 ## Provenance
 
-Built against registry `0.2.0` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
+Built against registry `0.2.1` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
 
 ## Tests
 

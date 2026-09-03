@@ -169,5 +169,19 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Stage-Separated Reasoning Scaffold",
+  "plain_aliases": [
+    "Stage-Separated Reasoning Scaffold"
+  ],
+  "task_phrases": [
+    "evidence-grounded writing",
+    "multi-source research",
+    "risk analysis",
+    "long workflows with distinct reasoning modes"
+  ],
+  "confusable_with": [
+    "citation-fidelity",
+    "domain-mode-isolation"
+  ]
 }

@@ -180,5 +180,18 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Structured State Projection",
+  "plain_aliases": [],
+  "task_phrases": [
+    "multi-agent systems",
+    "domain isolation",
+    "sensitive workflows",
+    "tool calls with narrow schemas"
+  ],
+  "confusable_with": [
+    "attention-compression-scaffold",
+    "domain-mode-isolation",
+    "state-snapshot"
+  ]
 }

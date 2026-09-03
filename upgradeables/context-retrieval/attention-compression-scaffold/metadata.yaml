@@ -172,5 +172,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Temporary Focused-Context View",
+  "plain_aliases": [
+    "Temporary Focused-Context View"
+  ],
+  "task_phrases": [
+    "long-context analysis",
+    "large codebase navigation",
+    "multi-document synthesis",
+    "stateful agent workflows"
+  ],
+  "confusable_with": [
+    "activation-budget-funnel",
+    "structured-state-projection",
+    "working-memory-lock-in"
+  ]
 }

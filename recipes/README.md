@@ -8,10 +8,11 @@ Recipes classify component defaults as required (R), automatically recommended
 - `A`, `C`, and `O`: include only when the component's trigger applies.
 - `X`: exclude unless a task-specific reason justifies it.
 
-Recipes are starting points, not always-on stacks. To see resolved versions,
-triggers, dependencies, and package paths without searching the full registry,
-run `python scripts/query_registry.py --recipe <recipe-slug>` or inspect
-[`registry/catalog.json`](../registry/catalog.json).
+Recipes are starting points, not always-on stacks. `R` is structurally required
+but can remain dormant until its phase trigger. For normal execution, use one
+compact file in [`runtime/recipes/`](../runtime/recipes/) or run
+`python scripts/query_registry.py --recipe <recipe-slug> --runtime`. The
+`resolved/` and source files are deeper review and contribution views.
 
 - [Research Skill](resolved/research-skill.md)
 - [Source-Grounded Analysis](resolved/source-grounded-analysis.md)

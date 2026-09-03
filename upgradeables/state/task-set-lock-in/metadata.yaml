@@ -184,5 +184,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Task-Set Lock-In",
+  "plain_aliases": [],
+  "task_phrases": [
+    "multi-step builds",
+    "contracted deliverables",
+    "long research",
+    "tasks with exclusions"
+  ],
+  "confusable_with": [
+    "mode-lock-in",
+    "stateblock",
+    "working-memory-lock-in"
+  ]
 }

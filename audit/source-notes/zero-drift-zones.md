@@ -22,7 +22,7 @@ Identify minimal semantic atoms whose alteration would invalidate the task, assi
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires content contains fidelity-locked atoms.. Best-fit tasks: legal and policy transformation, source-grounded summaries, code/API migration, safety-critical instructions.
+Triggers: content contains fidelity-locked atoms. Best-fit tasks: legal and policy transformation, source-grounded summaries, code/API migration, safety-critical instructions.
 
 ## Interactions and failure boundary
 

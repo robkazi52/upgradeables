@@ -185,5 +185,21 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Reasoning Efficiency Controller",
+  "plain_aliases": [
+    "Reasoning Efficiency Controller"
+  ],
+  "task_phrases": [
+    "large package builds",
+    "multi-agent research",
+    "batch validation",
+    "latency-sensitive pipelines",
+    "branch-heavy planning"
+  ],
+  "confusable_with": [
+    "bounded-exit",
+    "cognitive-governor",
+    "dynamic-depth-allocation"
+  ]
 }

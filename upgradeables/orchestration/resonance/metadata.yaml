@@ -148,5 +148,18 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Cross-Module Coordination",
+  "plain_aliases": [
+    "Cross-Module Coordination"
+  ],
+  "task_phrases": [
+    "multi-module Skills",
+    "evidence-to-state coordination",
+    "composed agent workflows"
+  ],
+  "confusable_with": [
+    "cross-context-resonance-lock",
+    "resonance-gene-builder"
+  ]
 }

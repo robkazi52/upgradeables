@@ -177,5 +177,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Placeholder Suppression",
+  "plain_aliases": [],
+  "task_phrases": [
+    "template-based documents",
+    "generated repositories",
+    "forms and reports",
+    "configuration generation",
+    "multi-agent artifact assembly"
+  ],
+  "confusable_with": [
+    "grounding-no-invention",
+    "safe-rewrite"
+  ]
 }

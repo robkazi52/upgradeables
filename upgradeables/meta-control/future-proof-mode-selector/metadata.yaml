@@ -178,5 +178,19 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Runtime Compatibility Mode Selector",
+  "plain_aliases": [
+    "Runtime Compatibility Mode Selector"
+  ],
+  "task_phrases": [
+    "cross-model skill packages",
+    "tool-optional workflows",
+    "portable agent systems",
+    "deployments with different context and persistence support"
+  ],
+  "confusable_with": [
+    "hybrid-mode",
+    "model-size-drift-scaling"
+  ]
 }

@@ -188,5 +188,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Ordered Memory-State Update Engine",
+  "plain_aliases": [
+    "Ordered Memory-State Update Engine"
+  ],
+  "task_phrases": [
+    "long-lived agents",
+    "case management",
+    "iterative research",
+    "multi-source evolving records"
+  ],
+  "confusable_with": [
+    "selfblock-auto-update",
+    "stable-long-context",
+    "stateblock"
+  ]
 }

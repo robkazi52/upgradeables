@@ -1,12 +1,28 @@
 {
   "schema_version": "1.0.0",
-  "registry_version": "0.2.0",
+  "registry_version": "0.2.1",
   "purpose": "Compact discovery catalog. registry/registry.json remains authoritative.",
   "entrypoint": "START_HERE.md",
   "upgradeables": [
     {
       "slug": "activation-budget-funnel",
       "display_name": "Activation-Budget Funnel",
+      "plain_display_name": "Progressive Context Intake",
+      "plain_aliases": [
+        "Progressive Context Intake"
+      ],
+      "task_phrases": [
+        "multi-source research",
+        "long-document analysis",
+        "evidence-heavy authoring",
+        "policy or legal evidence review",
+        "large modular agent workflows"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "neuro-focus",
+        "scoped-loader"
+      ],
       "version": "1.1.0",
       "purpose": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.",
       "activation_class": "U1-common-conditional",
@@ -57,6 +73,18 @@
     {
       "slug": "adapter-first-experimentation",
       "display_name": "Adapter-First Experimentation",
+      "plain_display_name": "Adapter-First Experimentation",
+      "plain_aliases": [],
+      "task_phrases": [
+        "new loader or validator trials",
+        "tool integrations",
+        "alternative routing logic",
+        "model-specific optimization"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "future-proof-mode-selector"
+      ],
       "version": "1.1.0",
       "purpose": "Protect a working OS or workflow from speculative capabilities while preserving a path for evidence-based evolution.",
       "activation_class": "U4-meta-architecture",
@@ -103,6 +131,17 @@
     {
       "slug": "anti-tunnel-vision",
       "display_name": "Anti-Tunnel Vision",
+      "plain_display_name": "Anti-Tunnel Vision",
+      "plain_aliases": [],
+      "task_phrases": [
+        "ambiguous diagnosis",
+        "architecture choice with two credible patterns",
+        "research synthesis with competing explanations"
+      ],
+      "confusable_with": [
+        "dominant-driver-isolation-scaffold",
+        "multiverse-reasoning"
+      ],
       "version": "1.1.0",
       "purpose": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates.",
       "activation_class": "U1-common-conditional",
@@ -132,7 +171,7 @@
       "mechanism_basis": "recovered",
       "mechanism": "Name the leading path and at least one genuinely plausible competitor, specify the observation that would distinguish them, and compare only on that discriminating evidence. The controller is bounded: it prevents first-path lock-in without turning every task into open-ended brainstorming.",
       "triggers": [
-        "Activate when the task requires premature fixation is plausible."
+        "premature fixation could hide credible alternatives"
       ],
       "requires": [],
       "counterbalances": [
@@ -151,6 +190,19 @@
     {
       "slug": "architect-orchestrator",
       "display_name": "Architect Orchestrator",
+      "plain_display_name": "Modular System Design Orchestrator",
+      "plain_aliases": [
+        "Modular System Design Orchestrator"
+      ],
+      "task_phrases": [
+        "Skill and OS architecture",
+        "workflow design",
+        "framework refactoring"
+      ],
+      "confusable_with": [
+        "meta-supervisor",
+        "ultimate-suite-supervisor"
+      ],
       "version": "1.1.0",
       "purpose": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
       "activation_class": "U4-meta-architecture",
@@ -197,6 +249,21 @@
     {
       "slug": "attention-compression-scaffold",
       "display_name": "Attention Compression Scaffold",
+      "plain_display_name": "Temporary Focused-Context View",
+      "plain_aliases": [
+        "Temporary Focused-Context View"
+      ],
+      "task_phrases": [
+        "long-context analysis",
+        "large codebase navigation",
+        "multi-document synthesis",
+        "stateful agent workflows"
+      ],
+      "confusable_with": [
+        "activation-budget-funnel",
+        "structured-state-projection",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Reduce attention burden while retaining the facts, constraints, provenance, and retrieval pointers required by the current subtask.",
       "activation_class": "U1-common-conditional",
@@ -244,6 +311,19 @@
     {
       "slug": "authenticity-anti-evasion",
       "display_name": "Authenticity & Anti-Evasion Principle",
+      "plain_display_name": "Capability and Completion Honesty Gate",
+      "plain_aliases": [
+        "Capability and Completion Honesty Gate"
+      ],
+      "task_phrases": [
+        "agentic tool use",
+        "research status reporting",
+        "coding and build completion reports",
+        "high-stakes analysis"
+      ],
+      "confusable_with": [
+        "grounding-no-invention"
+      ],
       "version": "1.1.0",
       "purpose": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability.",
       "activation_class": "U0-foundational",
@@ -285,6 +365,17 @@
     {
       "slug": "authority-anchor-enforcement",
       "display_name": "Authority Anchor Enforcement",
+      "plain_display_name": "Authority Anchor Enforcement",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-module agent workflows",
+        "policy-constrained execution",
+        "delegated task routing"
+      ],
+      "confusable_with": [
+        "mode-lock-in",
+        "task-set-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Bind consequential decisions and state changes to an explicit governing authority so lower-priority modules cannot silently override them.",
       "activation_class": "U1-common-conditional",
@@ -313,7 +404,7 @@
       "mechanism_basis": "provisional",
       "mechanism": "Modern operational interpretation: record the governing authority, its scope, and the decisions it controls in explicit state. Before a module changes protected state or acts externally, compare the proposed action with that anchor. Reject, narrow, or escalate any action that depends on lower-priority text overriding the anchor; never infer missing authorization.",
       "triggers": [
-        "Activate when the task requires multiple instruction authorities coexist."
+        "multiple instruction authorities coexist and may conflict"
       ],
       "requires": [],
       "counterbalances": [],
@@ -326,6 +417,20 @@
     {
       "slug": "behavior-gene-builder",
       "display_name": "Behavior Gene Builder",
+      "plain_display_name": "Reusable Behavior Component Builder",
+      "plain_aliases": [
+        "Reusable Behavior Component Builder"
+      ],
+      "task_phrases": [
+        "recurring reasoning patterns",
+        "domain-specific writing behavior",
+        "tone or risk-emphasis modules",
+        "research synthesis behaviors"
+      ],
+      "confusable_with": [
+        "domain-core-builder",
+        "resonance-gene-builder"
+      ],
       "version": "1.1.0",
       "purpose": "Turn repeatable behavior, logic, evidence handling, and output contracts into swappable components that compose with Cores and validators.",
       "activation_class": "U4-meta-architecture",
@@ -372,6 +477,18 @@
     {
       "slug": "bidirectional-consistency",
       "display_name": "Bidirectional Consistency",
+      "plain_display_name": "Bidirectional Consistency",
+      "plain_aliases": [],
+      "task_phrases": [
+        "requirements-to-implementation checks",
+        "summary-to-source checks",
+        "schema migrations",
+        "plan-to-objective traceability"
+      ],
+      "confusable_with": [
+        "critical-atomic-verification",
+        "multi-layer-consistency"
+      ],
       "version": "1.1.0",
       "purpose": "Expose lossy, non-invertible, or spuriously plausible transformations that one-way review misses.",
       "activation_class": "U1-common-conditional",
@@ -421,6 +538,20 @@
     {
       "slug": "bounded-exit",
       "display_name": "Bounded ExIt",
+      "plain_display_name": "Bounded Iteration Stop Rule",
+      "plain_aliases": [
+        "Bounded Iteration Stop Rule"
+      ],
+      "task_phrases": [
+        "document revision",
+        "code or prompt refinement",
+        "multi-pass synthesis",
+        "quality-controlled drafting"
+      ],
+      "confusable_with": [
+        "reasoning-scale-controller",
+        "structured-refinement"
+      ],
       "version": "1.1.0",
       "purpose": "Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates.",
       "activation_class": "U1-common-conditional",
@@ -466,6 +597,18 @@
     {
       "slug": "citation-fidelity",
       "display_name": "Citation Fidelity Gate",
+      "plain_display_name": "Citation Fidelity Gate",
+      "plain_aliases": [],
+      "task_phrases": [
+        "research reports",
+        "technical documentation",
+        "legal or policy synthesis",
+        "fact-checked public writing"
+      ],
+      "confusable_with": [
+        "critical-atomic-verification",
+        "grounding-no-invention"
+      ],
       "version": "1.1.0",
       "purpose": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.",
       "activation_class": "U1-common-conditional",
@@ -511,6 +654,18 @@
     {
       "slug": "clarification-gateway",
       "display_name": "Clarification Gateway",
+      "plain_display_name": "Clarification Gateway",
+      "plain_aliases": [],
+      "task_phrases": [
+        "requirements intake",
+        "ambiguous data transformation",
+        "multi-constraint planning",
+        "high-stakes evidence work"
+      ],
+      "confusable_with": [
+        "grounding-no-invention",
+        "task-set-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Keep clarification proportional: ask only for materially blocking information, otherwise continue with the narrowest explicit assumption or bounded partial result.",
       "activation_class": "U1-common-conditional",
@@ -557,6 +712,21 @@
     {
       "slug": "cognitive-governor",
       "display_name": "Reasoning Budget / Cognitive Governor",
+      "plain_display_name": "Reasoning Effort Budget Controller",
+      "plain_aliases": [
+        "Reasoning Effort Budget Controller"
+      ],
+      "task_phrases": [
+        "mixed-risk queues",
+        "bounded research",
+        "iterative authoring",
+        "cost-sensitive agent workflows"
+      ],
+      "confusable_with": [
+        "dynamic-depth-allocation",
+        "reasoning-throughput-governor",
+        "risk-tier-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent both expensive overthinking of trivial work and unsafe underchecking of consequential work.",
       "activation_class": "U1-common-conditional",
@@ -604,6 +774,20 @@
     {
       "slug": "coherence-heartbeat",
       "display_name": "Global Coherence Heartbeat",
+      "plain_display_name": "Periodic Whole-Task Consistency Check",
+      "plain_aliases": [
+        "Periodic Whole-Task Consistency Check"
+      ],
+      "task_phrases": [
+        "long coding sessions",
+        "multi-stage research",
+        "agent orchestration",
+        "large document production"
+      ],
+      "confusable_with": [
+        "coherence-loops",
+        "state-snapshot"
+      ],
       "version": "1.1.0",
       "purpose": "Detect long-horizon drift early without rerunning a full review after every step.",
       "activation_class": "U1-common-conditional",
@@ -648,6 +832,18 @@
     {
       "slug": "coherence-loops",
       "display_name": "Coherence Loops",
+      "plain_display_name": "Coherence Loops",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-file changes",
+        "long-form documents",
+        "multi-agent synthesis",
+        "cross-component specification repair"
+      ],
+      "confusable_with": [
+        "coherence-heartbeat",
+        "reflectos"
+      ],
       "version": "1.1.0",
       "purpose": "Repair cross-part inconsistencies while preventing endless self-review.",
       "activation_class": "U2-specialized",
@@ -692,6 +888,21 @@
     {
       "slug": "compute-adaptive-drift",
       "display_name": "Compute-Adaptive Drift Constraining",
+      "plain_display_name": "Runtime-Adaptive Drift Checks",
+      "plain_aliases": [
+        "Runtime-Adaptive Drift Checks"
+      ],
+      "task_phrases": [
+        "cross-model skills",
+        "variable tool availability",
+        "cost-limited execution",
+        "mixed-capability agents"
+      ],
+      "confusable_with": [
+        "controlled-drift-corridors",
+        "domain-normalized-drift",
+        "drift-spectra-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Maintain semantic reliability across weak and strong runtimes without burdening every runtime identically.",
       "activation_class": "U2-specialized",
@@ -741,6 +952,18 @@
     {
       "slug": "contradiction-micro-repair",
       "display_name": "Contradiction Micro-Repair Pack",
+      "plain_display_name": "Contradiction Micro-Repair Pack",
+      "plain_aliases": [],
+      "task_phrases": [
+        "conflicting requirements",
+        "inconsistent dates or quantities",
+        "state snapshots with mutually exclusive flags",
+        "documents whose conclusion contradicts a cited premise"
+      ],
+      "confusable_with": [
+        "micro-repair",
+        "multi-layer-consistency"
+      ],
       "version": "1.1.0",
       "purpose": "Resolve direct logical or factual inconsistency while preserving every compatible claim and locked constraint.",
       "activation_class": "U1-common-conditional",
@@ -786,6 +1009,21 @@
     {
       "slug": "controlled-drift-corridors",
       "display_name": "Controlled Drift Corridors",
+      "plain_display_name": "Bounded Change Rules",
+      "plain_aliases": [
+        "Bounded Change Rules"
+      ],
+      "task_phrases": [
+        "document rewriting",
+        "cross-format conversion",
+        "summarization",
+        "creative work with fixed constraints"
+      ],
+      "confusable_with": [
+        "drift-spectra-scaling",
+        "drift-suppression",
+        "zero-drift-zones"
+      ],
       "version": "1.1.0",
       "purpose": "Enable adaptation, compression, or creativity without surrendering semantic control.",
       "activation_class": "U1-common-conditional",
@@ -835,6 +1073,21 @@
     {
       "slug": "cot-structured-state-block",
       "display_name": "CoT-Structured State Block",
+      "plain_display_name": "Auditable Reasoning State",
+      "plain_aliases": [
+        "Auditable Reasoning State"
+      ],
+      "task_phrases": [
+        "multi-agent research",
+        "long investigations",
+        "regulated decisions",
+        "work requiring resumable rationale"
+      ],
+      "confusable_with": [
+        "state-snapshot",
+        "stateblock",
+        "working-memory-cues"
+      ],
       "version": "1.1.0",
       "purpose": "Make reasoning-relevant state portable and auditable while preserving the boundary between useful state and hidden internal deliberation.",
       "activation_class": "U1-common-conditional",
@@ -882,6 +1135,18 @@
     {
       "slug": "counterfactual-integrity",
       "display_name": "Counterfactual Integrity Gate",
+      "plain_display_name": "Counterfactual Integrity Gate",
+      "plain_aliases": [],
+      "task_phrases": [
+        "scenario analysis",
+        "causal counterfactuals",
+        "planning under alternatives",
+        "creative work mixed with factual sources"
+      ],
+      "confusable_with": [
+        "counterfactual-silence-scaffold",
+        "domain-mode-isolation"
+      ],
       "version": "1.1.0",
       "purpose": "Make counterfactual exploration safe and auditable by preserving an explicit boundary between factual, evaluative, framing, and hypothetical phases.",
       "activation_class": "U1-common-conditional",
@@ -926,6 +1191,19 @@
     {
       "slug": "counterfactual-silence-scaffold",
       "display_name": "Counterfactual Silence Scaffold",
+      "plain_display_name": "No-Unrequested-Scenarios Guard",
+      "plain_aliases": [
+        "No-Unrequested-Scenarios Guard"
+      ],
+      "task_phrases": [
+        "record extraction",
+        "source-faithful summarization",
+        "incident reporting",
+        "citation-bound authoring"
+      ],
+      "confusable_with": [
+        "counterfactual-integrity"
+      ],
       "version": "1.1.0",
       "purpose": "Protect factual extraction and reporting tasks from unsolicited counterfactual elaboration.",
       "activation_class": "U2-specialized",
@@ -970,6 +1248,21 @@
     {
       "slug": "crispr-edit",
       "display_name": "CRISPR Editing",
+      "plain_display_name": "Precision Local System Edit",
+      "plain_aliases": [
+        "Precision Local System Edit"
+      ],
+      "task_phrases": [
+        "one rule change in a prompt or skill",
+        "small schema-compatible config edit",
+        "precise clause replacement",
+        "localized architecture adjustment"
+      ],
+      "confusable_with": [
+        "micro-repair",
+        "safe-rewrite",
+        "surgery-edit"
+      ],
       "version": "1.1.0",
       "purpose": "Make high-confidence micro-edits to structured systems without collateral semantic or interface drift.",
       "activation_class": "U2-specialized",
@@ -1016,6 +1309,21 @@
     {
       "slug": "critical-atomic-verification",
       "display_name": "Critical Atomic Verification",
+      "plain_display_name": "Critical Fact Verification",
+      "plain_aliases": [
+        "Critical Fact Verification"
+      ],
+      "task_phrases": [
+        "medical or legal factual synthesis",
+        "deployment decisions",
+        "financial calculations",
+        "requirements verification",
+        "citation-heavy research"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "cross-checking-chains"
+      ],
       "version": "1.1.0",
       "purpose": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
       "activation_class": "U3-high-risk-expensive",
@@ -1065,6 +1373,18 @@
     {
       "slug": "cross-checking-chains",
       "display_name": "Cross-Checking Chains",
+      "plain_display_name": "Cross-Checking Chains",
+      "plain_aliases": [],
+      "task_phrases": [
+        "high-stakes fact verification",
+        "data pipeline validation",
+        "release qualification",
+        "multi-source research"
+      ],
+      "confusable_with": [
+        "critical-atomic-verification",
+        "parallel-qms"
+      ],
       "version": "1.1.0",
       "purpose": "Make validation ordered, traceable, and resistant to repeated correlated checking.",
       "activation_class": "U2-specialized",
@@ -1108,6 +1428,19 @@
     {
       "slug": "cross-context-resonance-lock",
       "display_name": "Cross-Context Resonance Lock",
+      "plain_display_name": "Cross-Context Relationship Guard",
+      "plain_aliases": [
+        "Cross-Context Relationship Guard"
+      ],
+      "task_phrases": [
+        "multi-document synthesis",
+        "multi-agent handoffs",
+        "parallel workstream integration"
+      ],
+      "confusable_with": [
+        "resonance",
+        "state-routing-bus"
+      ],
       "version": "1.1.0",
       "purpose": "Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.",
       "activation_class": "U2-specialized",
@@ -1151,6 +1484,20 @@
     {
       "slug": "cross-universe-consistency",
       "display_name": "Cross-Universe Consistency Mode",
+      "plain_display_name": "Alternative-Scenario Consistency Check",
+      "plain_aliases": [
+        "Alternative-Scenario Consistency Check"
+      ],
+      "task_phrases": [
+        "architecture alternatives",
+        "scenario planning",
+        "multi-hypothesis research",
+        "strategy selection"
+      ],
+      "confusable_with": [
+        "multi-layer-consistency",
+        "parallel-qms"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent a final synthesis from combining mutually exclusive premises harvested from different candidate worlds.",
       "activation_class": "U3-high-risk-expensive",
@@ -1195,6 +1542,18 @@
     {
       "slug": "decision-first-scaffold",
       "display_name": "Decision-First Scaffold",
+      "plain_display_name": "Decision-First Scaffold",
+      "plain_aliases": [],
+      "task_phrases": [
+        "recommendations",
+        "go/no-go reviews",
+        "option selection",
+        "resource allocation"
+      ],
+      "confusable_with": [
+        "dominant-driver-isolation-scaffold",
+        "task-set-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.",
       "activation_class": "U1-common-conditional",
@@ -1224,7 +1583,7 @@
       "mechanism_basis": "provisional",
       "mechanism": "Modern conservative interpretation: write a decision sentence with owner, options, criteria, and deadline or commitment point; then admit analysis only when it changes an option score, exposes a constraint, or reduces a named uncertainty. The historical corpus recovers the exact name but not this mechanism.",
       "triggers": [
-        "Activate when the task requires analysis risks becoming directionless."
+        "analysis risks becoming directionless before commitment"
       ],
       "requires": [],
       "counterbalances": [
@@ -1239,6 +1598,20 @@
     {
       "slug": "domain-core-builder",
       "display_name": "Domain Core Builder",
+      "plain_display_name": "Shared Domain Knowledge Component Builder",
+      "plain_aliases": [
+        "Shared Domain Knowledge Component Builder"
+      ],
+      "task_phrases": [
+        "recurring specialist domains",
+        "evidence-intensive decisions",
+        "policy or technical reference systems",
+        "multi-Gene domain bundles"
+      ],
+      "confusable_with": [
+        "behavior-gene-builder",
+        "stateblock"
+      ],
       "version": "1.1.0",
       "purpose": "Give multiple behaviors a shared, sourced domain substrate without duplicating knowledge across Genes or turning a Core into an OS.",
       "activation_class": "U4-meta-architecture",
@@ -1285,6 +1658,19 @@
     {
       "slug": "domain-mode-isolation",
       "display_name": "Domain / Mode Isolation",
+      "plain_display_name": "Domain / Mode Isolation",
+      "plain_aliases": [],
+      "task_phrases": [
+        "mixed-domain workspaces",
+        "multi-tenant assistants",
+        "regulated workflows",
+        "parallel specialist agents"
+      ],
+      "confusable_with": [
+        "mode-lock-in",
+        "scoped-loader",
+        "structured-state-projection"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
       "activation_class": "U0-foundational",
@@ -1335,6 +1721,21 @@
     {
       "slug": "domain-normalized-drift",
       "display_name": "Domain-Normalized Drift Field",
+      "plain_display_name": "Domain-Calibrated Change Tolerance",
+      "plain_aliases": [
+        "Domain-Calibrated Change Tolerance"
+      ],
+      "task_phrases": [
+        "cross-domain skills",
+        "domain-specific rewriting",
+        "regulated advice",
+        "mixed precision/creative systems"
+      ],
+      "confusable_with": [
+        "compute-adaptive-drift",
+        "controlled-drift-corridors",
+        "drift-spectra-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Avoid applying casual creative tolerance to precision domains or unnecessary rigidity to expressive domains.",
       "activation_class": "U2-specialized",
@@ -1383,6 +1784,18 @@
     {
       "slug": "dominant-driver-isolation-scaffold",
       "display_name": "Dominant-Driver Isolation Scaffold",
+      "plain_display_name": "Dominant-Driver Isolation Scaffold",
+      "plain_aliases": [],
+      "task_phrases": [
+        "root-cause analysis",
+        "business driver analysis",
+        "performance bottleneck diagnosis",
+        "risk prioritization"
+      ],
+      "confusable_with": [
+        "anti-tunnel-vision",
+        "decision-first-scaffold"
+      ],
       "version": "1.1.0",
       "purpose": "Separate high-leverage causes or constraints from correlated, downstream, or low-impact factors.",
       "activation_class": "U1-common-conditional",
@@ -1412,7 +1825,7 @@
       "mechanism_basis": "provisional",
       "mechanism": "Modern conservative interpretation: enumerate candidate drivers, define the target outcome, estimate each candidate's unique explanatory or intervention leverage, and test the leading driver against the strongest alternative and interaction effects. The historical sources recover only the scaffold's exact name.",
       "triggers": [
-        "Activate when the task requires many possible causes compete."
+        "many plausible causes compete for priority"
       ],
       "requires": [],
       "counterbalances": [
@@ -1427,6 +1840,21 @@
     {
       "slug": "drift-immunity-propagation",
       "display_name": "Drift Immunity Propagation",
+      "plain_display_name": "Downstream Invariant Protection",
+      "plain_aliases": [
+        "Downstream Invariant Protection"
+      ],
+      "task_phrases": [
+        "multi-stage generation",
+        "agent pipelines",
+        "source-to-summary-to-decision workflows",
+        "format conversion chains"
+      ],
+      "confusable_with": [
+        "drift-suppression",
+        "working-memory-lock-in",
+        "zero-drift-zones"
+      ],
       "version": "1.1.0",
       "purpose": "Preserve established drift resistance across pipelines rather than only at the original source boundary.",
       "activation_class": "U2-specialized",
@@ -1476,6 +1904,21 @@
     {
       "slug": "drift-sink-scaffold",
       "display_name": "Drift Sink Scaffold",
+      "plain_display_name": "Retired-Branch Quarantine",
+      "plain_aliases": [
+        "Retired-Branch Quarantine"
+      ],
+      "task_phrases": [
+        "long branching investigations",
+        "iterative drafting",
+        "agent workflows with recurring stale branches",
+        "large mixed-authority contexts"
+      ],
+      "confusable_with": [
+        "micro-scaffolding",
+        "non-authoritative-branch-suppression",
+        "stable-long-context"
+      ],
       "version": "1.1.0",
       "purpose": "Stop known drift attractors from repeatedly re-entering active reasoning without destroying potentially useful history.",
       "activation_class": "U2-specialized",
@@ -1508,7 +1951,7 @@
       "mechanism_basis": "provisional",
       "mechanism": "A cautious modern interpretation is a reversible quarantine ledger: move an explicitly classified branch out of the active view, record why, by whose authority, its provenance, dependencies, review condition, and stable pointer, then block automatic retrieval unless a matching review trigger fires. The sink is neither deletion nor a semantic garbage collector, and the unrecovered ECL label must not be expanded speculatively.",
       "triggers": [
-        "Activate when the task requires discarded branches keep resurfacing."
+        "discarded branches repeatedly re-enter active reasoning"
       ],
       "requires": [],
       "counterbalances": [
@@ -1525,6 +1968,21 @@
     {
       "slug": "drift-spectra-scaling",
       "display_name": "Drift-Spectra Scaling",
+      "plain_display_name": "Content-Specific Change Tolerance",
+      "plain_aliases": [
+        "Content-Specific Change Tolerance"
+      ],
+      "task_phrases": [
+        "mixed-content rewriting",
+        "summaries",
+        "format migrations",
+        "multi-stage synthesis"
+      ],
+      "confusable_with": [
+        "compute-adaptive-drift",
+        "controlled-drift-corridors",
+        "domain-normalized-drift"
+      ],
       "version": "1.1.0",
       "purpose": "Allocate strictness where meaning is fragile and flexibility where variation is valuable.",
       "activation_class": "U2-specialized",
@@ -1574,6 +2032,19 @@
     {
       "slug": "drift-suppression",
       "display_name": "Drift Suppression",
+      "plain_display_name": "Drift Suppression",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long agent workflows",
+        "high-fidelity editing",
+        "multi-stage synthesis",
+        "policy-bound generation"
+      ],
+      "confusable_with": [
+        "drift-sink-scaffold",
+        "mode-lock-in",
+        "zero-drift-zones"
+      ],
       "version": "1.1.0",
       "purpose": "Keep execution aligned after distracting context, repeated transformation, or model error.",
       "activation_class": "U0-foundational",
@@ -1623,6 +2094,21 @@
     {
       "slug": "dynamic-depth-allocation",
       "display_name": "Dynamic Depth Allocation",
+      "plain_display_name": "Per-Region Reasoning Depth",
+      "plain_aliases": [
+        "Per-Region Reasoning Depth"
+      ],
+      "task_phrases": [
+        "heterogeneous documents",
+        "mixed-risk code changes",
+        "large research corpora",
+        "multi-stage plans with uneven uncertainty"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "reasoning-throughput-governor",
+        "risk-tier-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Concentrate analysis and verification where local marginal value is highest instead of applying uniform depth across a task.",
       "activation_class": "U1-common-conditional",
@@ -1670,6 +2156,20 @@
     {
       "slug": "epistemic-status-gating",
       "display_name": "Epistemic Status Gating",
+      "plain_display_name": "Evidence-Confidence Gate",
+      "plain_aliases": [
+        "Evidence-Confidence Gate"
+      ],
+      "task_phrases": [
+        "evidence synthesis",
+        "investigation",
+        "decision support",
+        "source-grounded research",
+        "high-stakes review"
+      ],
+      "confusable_with": [
+        "grounding-no-invention"
+      ],
       "version": "1.1.0",
       "purpose": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact.",
       "activation_class": "U1-common-conditional",
@@ -1713,6 +2213,21 @@
     {
       "slug": "explanation-minimality-scaffold",
       "display_name": "Explanation Minimality Scaffold",
+      "plain_display_name": "Minimum Sufficient Explanation",
+      "plain_aliases": [
+        "Minimum Sufficient Explanation"
+      ],
+      "task_phrases": [
+        "direct answers",
+        "status updates",
+        "executive summaries",
+        "routine technical guidance",
+        "high-volume assistant outputs"
+      ],
+      "confusable_with": [
+        "pedagogical-alignment",
+        "style-alignment"
+      ],
       "version": "1.1.0",
       "purpose": "Remove explanatory material that does not change comprehension, verification, decision, or safe execution while retaining required rationale and caveats.",
       "activation_class": "U1-common-conditional",
@@ -1758,6 +2273,17 @@
     {
       "slug": "external-state-automation",
       "display_name": "External State Automation",
+      "plain_display_name": "External State Automation",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-session projects",
+        "durable agent workflows",
+        "long document production"
+      ],
+      "confusable_with": [
+        "state-routing-bus",
+        "state-snapshot"
+      ],
       "version": "1.1.0",
       "purpose": "Serialize and restore important task state through real files, memory stores, databases, or project documents when the host supports persistence.",
       "activation_class": "U2-specialized",
@@ -1802,6 +2328,17 @@
     {
       "slug": "fail-closed-abstention",
       "display_name": "Fail-Closed Abstention",
+      "plain_display_name": "Fail-Closed Abstention",
+      "plain_aliases": [],
+      "task_phrases": [
+        "medical, legal, or policy analysis",
+        "citation-bearing research",
+        "safety-critical decisions",
+        "source transcription and fidelity work"
+      ],
+      "confusable_with": [
+        "fermionic-veto"
+      ],
       "version": "1.1.0",
       "purpose": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
       "activation_class": "U3-high-risk-expensive",
@@ -1844,6 +2381,21 @@
     {
       "slug": "fermionic-veto",
       "display_name": "Fermionic Veto Strengthening",
+      "plain_display_name": "Non-Compensable Constraint Veto",
+      "plain_aliases": [
+        "Non-Compensable Constraint Veto"
+      ],
+      "task_phrases": [
+        "safety reviews",
+        "constraint-heavy planning",
+        "security decisions",
+        "branch collapse",
+        "truth-conflict resolution"
+      ],
+      "confusable_with": [
+        "fail-closed-abstention",
+        "multi-truth-gating"
+      ],
       "version": "1.1.0",
       "purpose": "Preserve non-compensable constraints during aggregation and synthesis.",
       "activation_class": "U3-high-risk-expensive",
@@ -1889,6 +2441,18 @@
     {
       "slug": "forethought-checkpoints",
       "display_name": "Forethought / Checkpoints",
+      "plain_display_name": "Forethought / Checkpoints",
+      "plain_aliases": [],
+      "task_phrases": [
+        "deployments",
+        "schema or API changes",
+        "financial or external communications",
+        "multi-stage automation"
+      ],
+      "confusable_with": [
+        "bounded-exit",
+        "risk-tier-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Catch missing prerequisites and foreseeable downstream failure while reversal is still cheap.",
       "activation_class": "U1-common-conditional",
@@ -1934,6 +2498,20 @@
     {
       "slug": "future-proof-mode-selector",
       "display_name": "Future-Proof Mode Selector",
+      "plain_display_name": "Runtime Compatibility Mode Selector",
+      "plain_aliases": [
+        "Runtime Compatibility Mode Selector"
+      ],
+      "task_phrases": [
+        "cross-model skill packages",
+        "tool-optional workflows",
+        "portable agent systems",
+        "deployments with different context and persistence support"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "model-size-drift-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Keep workflows portable across frontier and smaller models, tool environments, and future hosts without weakening invariant controls.",
       "activation_class": "U4-meta-architecture",
@@ -1980,6 +2558,19 @@
     {
       "slug": "grounding-no-invention",
       "display_name": "Grounding / No-Invention",
+      "plain_display_name": "Grounding / No-Invention",
+      "plain_aliases": [],
+      "task_phrases": [
+        "source-grounded research",
+        "record and chart review",
+        "policy or legal analysis",
+        "citation-bearing authoring",
+        "tool-result reporting"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "specificity-penalty-gate"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
       "activation_class": "U0-foundational",
@@ -2030,6 +2621,21 @@
     {
       "slug": "hybrid-mode",
       "display_name": "HYBRID Mode",
+      "plain_display_name": "Explore-Then-Commit Mode",
+      "plain_aliases": [
+        "Explore-Then-Commit Mode"
+      ],
+      "task_phrases": [
+        "architecture followed by implementation",
+        "research plan followed by evidence extraction",
+        "migration design followed by cutover",
+        "complex repository builds"
+      ],
+      "confusable_with": [
+        "future-proof-mode-selector",
+        "power-mode",
+        "safe-mode"
+      ],
       "version": "1.1.0",
       "purpose": "Combine broad planning capability with conservative implementation without letting speculative branch assumptions leak into committed work.",
       "activation_class": "U4-meta-architecture",
@@ -2077,6 +2683,18 @@
     {
       "slug": "image-text-fidelity-capture",
       "display_name": "Image Text Fidelity Capture",
+      "plain_display_name": "Image Text Fidelity Capture",
+      "plain_aliases": [],
+      "task_phrases": [
+        "document image transcription",
+        "figure or screenshot capture",
+        "scanned-record intake",
+        "long-document source fidelity"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "grounding-no-invention"
+      ],
       "version": "1.1.0",
       "purpose": "Create a source-faithful textual representation of image-borne evidence for downstream indexing, analysis, or copying.",
       "activation_class": "U2-specialized",
@@ -2119,6 +2737,20 @@
     {
       "slug": "invariance-stress-scaffold",
       "display_name": "Invariance Stress Scaffold",
+      "plain_display_name": "Protected-Constraint Robustness Test",
+      "plain_aliases": [
+        "Protected-Constraint Robustness Test"
+      ],
+      "task_phrases": [
+        "prompt robustness checks",
+        "policy interpretation",
+        "classification stability",
+        "summary validation"
+      ],
+      "confusable_with": [
+        "bidirectional-consistency",
+        "parallel-qms"
+      ],
       "version": "1.1.0",
       "purpose": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.",
       "activation_class": "U1-common-conditional",
@@ -2169,6 +2801,20 @@
     {
       "slug": "meta-awareness",
       "display_name": "Meta-Awareness Pack",
+      "plain_display_name": "Workflow Health Monitor",
+      "plain_aliases": [
+        "Workflow Health Monitor"
+      ],
+      "task_phrases": [
+        "long multi-module workflows",
+        "multi-agent coordination",
+        "iterative reasoning",
+        "mode-rich systems"
+      ],
+      "confusable_with": [
+        "meta-stability",
+        "meta-supervisor"
+      ],
       "version": "1.1.0",
       "purpose": "Turn process-health signals into explicit observations that a supervisor can route to repair, pause, or continuation.",
       "activation_class": "U4-meta-architecture",
@@ -2215,6 +2861,20 @@
     {
       "slug": "meta-stability",
       "display_name": "Meta-Stability Mode",
+      "plain_display_name": "Stable-State Recovery Mode",
+      "plain_aliases": [
+        "Stable-State Recovery Mode"
+      ],
+      "task_phrases": [
+        "long-context drift",
+        "conflicting module activation",
+        "repeated change cycles",
+        "multi-agent state divergence"
+      ],
+      "confusable_with": [
+        "safe-mode",
+        "stuck-pattern-reset"
+      ],
       "version": "1.1.0",
       "purpose": "Preserve a trusted task state while isolating drift sources and resuming from one explicit authority-consistent configuration.",
       "activation_class": "U2-specialized",
@@ -2262,6 +2922,20 @@
     {
       "slug": "meta-supervisor",
       "display_name": "Meta-Supervisor Bundle",
+      "plain_display_name": "Workflow Repair Supervisor",
+      "plain_aliases": [
+        "Workflow Repair Supervisor"
+      ],
+      "task_phrases": [
+        "complex iterative scaffolds",
+        "multi-module reasoning",
+        "repeated failures",
+        "runtime process-health supervision"
+      ],
+      "confusable_with": [
+        "meta-awareness",
+        "ultimate-suite-supervisor"
+      ],
       "version": "1.1.0",
       "purpose": "Coordinate Meta-Awareness, Stuck-Pattern Reset, and Contradiction Micro-Repair without becoming the suite-wide mode and architecture authority.",
       "activation_class": "U4-meta-architecture",
@@ -2309,6 +2983,22 @@
     {
       "slug": "micro-repair",
       "display_name": "Micro-Repair",
+      "plain_display_name": "Minimal Local Correction",
+      "plain_aliases": [
+        "Minimal Local Correction"
+      ],
+      "task_phrases": [
+        "one unsupported claim",
+        "one missing requirement",
+        "awkward transition",
+        "local contradiction",
+        "small formatting defect"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "regenerative-rewrite",
+        "structured-refinement"
+      ],
       "version": "1.1.0",
       "purpose": "Restore local correctness or completeness with the minimum semantic blast radius.",
       "activation_class": "U0-foundational",
@@ -2339,7 +3029,7 @@
       "mechanism_basis": "recovered",
       "mechanism": "Define a repair window around the smallest unit that fails an explicit criterion, freeze the surrounding accepted region, patch only that unit and any directly required connective token, then compare the window before and after. Widen once only when a direct dependency proves the first window insufficient; recurring or architecture-level failure escalates instead of allowing scope creep.",
       "triggers": [
-        "Activate when the task requires a defect is localized."
+        "a specific defect has been localized"
       ],
       "requires": [],
       "counterbalances": [
@@ -2356,6 +3046,20 @@
     {
       "slug": "micro-scaffolding",
       "display_name": "Micro-Scaffolding",
+      "plain_display_name": "Micro-Scaffolding",
+      "plain_aliases": [],
+      "task_phrases": [
+        "high-constraint rewriting",
+        "source-grounded paragraph construction",
+        "localized code changes",
+        "multi-step transformations",
+        "complex formatting"
+      ],
+      "confusable_with": [
+        "forethought-checkpoints",
+        "stateblock",
+        "task-set-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue.",
       "activation_class": "U0-foundational",
@@ -2388,7 +3092,7 @@
       "mechanism_basis": "recovered",
       "mechanism": "At the start of a fragile subtask, extract only the few invariants and checkpoints that could be lost locally, such as preserve all numbers, preserve citation mapping, change tone only, and do not alter the conclusion. Use that compact scaffold while performing the step, check the local result against it, then retire the scaffold immediately when the subtask is accepted. It remains strictly smaller and shorter-lived than the workflow's canonical StateBlock.",
       "triggers": [
-        "Activate when the task requires multi-step or high-constraint work."
+        "multi-step or high-constraint work"
       ],
       "requires": [],
       "counterbalances": [
@@ -2404,6 +3108,19 @@
     {
       "slug": "mode-lock-in",
       "display_name": "Mode Lock-In",
+      "plain_display_name": "Mode Lock-In",
+      "plain_aliases": [],
+      "task_phrases": [
+        "strict transformations",
+        "long sessions",
+        "multi-mode assistants",
+        "policy-bound work"
+      ],
+      "confusable_with": [
+        "domain-mode-isolation",
+        "task-set-lock-in",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Keep behavior stable across long sessions, tool calls, and distracting inputs.",
       "activation_class": "U0-foundational",
@@ -2453,6 +3170,20 @@
     {
       "slug": "model-size-drift-scaling",
       "display_name": "Drift-Stability Scaling with Model Size",
+      "plain_display_name": "Model-Capability Scaffolding Scale",
+      "plain_aliases": [
+        "Model-Capability Scaffolding Scale"
+      ],
+      "task_phrases": [
+        "cross-model deployments",
+        "model upgrades",
+        "prompt simplification",
+        "reliability-sensitive drift control"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "future-proof-mode-selector"
+      ],
       "version": "1.1.0",
       "purpose": "Avoid fossilized over-scaffolding on more reliable models without mistaking model strength for permission to remove essential controls.",
       "activation_class": "U4-meta-architecture",
@@ -2500,6 +3231,18 @@
     {
       "slug": "multi-layer-consistency",
       "display_name": "Multi-Layer Consistency",
+      "plain_display_name": "Multi-Layer Consistency",
+      "plain_aliases": [],
+      "task_phrases": [
+        "large documents",
+        "modular software",
+        "policy hierarchies",
+        "multi-step analytical conclusions"
+      ],
+      "confusable_with": [
+        "bidirectional-consistency",
+        "cross-universe-consistency"
+      ],
       "version": "1.1.0",
       "purpose": "Maintain vertical consistency from local facts and operations to the overall conclusion or system behavior.",
       "activation_class": "U1-common-conditional",
@@ -2544,6 +3287,20 @@
     {
       "slug": "multi-truth-gating",
       "display_name": "Multi-Truth Gating",
+      "plain_display_name": "Independent Evidence Gate",
+      "plain_aliases": [
+        "Independent Evidence Gate"
+      ],
+      "task_phrases": [
+        "high-stakes evidence synthesis",
+        "conflicting-source research",
+        "medical, legal, or policy decisions",
+        "critical architecture choices"
+      ],
+      "confusable_with": [
+        "cross-checking-chains",
+        "truth-redundancy"
+      ],
       "version": "1.1.0",
       "purpose": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.",
       "activation_class": "U3-high-risk-expensive",
@@ -2586,6 +3343,21 @@
     {
       "slug": "multiverse-reasoning",
       "display_name": "Multiverse Engine",
+      "plain_display_name": "Bounded Alternative Search",
+      "plain_aliases": [
+        "Bounded Alternative Search"
+      ],
+      "task_phrases": [
+        "ambiguous design choices",
+        "research plans",
+        "narrative or document architectures",
+        "competing causal models"
+      ],
+      "confusable_with": [
+        "anti-tunnel-vision",
+        "parallel-qms",
+        "reasoning-scale-controller"
+      ],
       "version": "1.1.0",
       "purpose": "Obtain real alternative search without losing control of truth, constraints, cost, or convergence.",
       "activation_class": "U3-high-risk-expensive",
@@ -2633,6 +3405,21 @@
     {
       "slug": "neuro-focus",
       "display_name": "Neuro-Focus",
+      "plain_display_name": "Bounded Attention Focus",
+      "plain_aliases": [
+        "Bounded Attention Focus"
+      ],
+      "task_phrases": [
+        "large-corpus research",
+        "one-module debugging",
+        "targeted policy review",
+        "high-value constraint analysis"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "scoped-loader",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Increase depth and signal quality on a bounded target when irrelevant material would otherwise dilute effort.",
       "activation_class": "U1-common-conditional",
@@ -2680,6 +3467,19 @@
     {
       "slug": "non-authoritative-branch-suppression",
       "display_name": "Non-Authoritative Branch Suppression",
+      "plain_display_name": "Non-Authoritative Branch Suppression",
+      "plain_aliases": [],
+      "task_phrases": [
+        "mixed-authority document sets",
+        "versioned policies",
+        "agent planning trees",
+        "retrieval with untrusted text"
+      ],
+      "confusable_with": [
+        "drift-sink-scaffold",
+        "mode-lock-in",
+        "scoped-loader"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent attractive but non-governing alternatives from overriding the authoritative task branch.",
       "activation_class": "U2-specialized",
@@ -2729,6 +3529,22 @@
     {
       "slug": "parallel-qms",
       "display_name": "Parallel Quality Management System",
+      "plain_display_name": "Parallel Validation System",
+      "plain_aliases": [
+        "Parallel Validation System"
+      ],
+      "task_phrases": [
+        "high-stakes synthesis",
+        "complex repository validation",
+        "multiverse collapse",
+        "long-form factual work",
+        "safety-sensitive decisions"
+      ],
+      "confusable_with": [
+        "cross-checking-chains",
+        "cross-universe-consistency",
+        "multi-layer-consistency"
+      ],
       "version": "1.1.0",
       "purpose": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote.",
       "activation_class": "U1-common-conditional",
@@ -2783,6 +3599,19 @@
     {
       "slug": "pedagogical-alignment",
       "display_name": "Pedagogical Alignment Constraint",
+      "plain_display_name": "Pedagogical Alignment Constraint",
+      "plain_aliases": [],
+      "task_phrases": [
+        "tutorials",
+        "documentation",
+        "stakeholder briefings",
+        "technical-to-nontechnical translation",
+        "onboarding"
+      ],
+      "confusable_with": [
+        "explanation-minimality-scaffold",
+        "style-alignment"
+      ],
       "version": "1.1.0",
       "purpose": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.",
       "activation_class": "U1-common-conditional",
@@ -2829,6 +3658,20 @@
     {
       "slug": "phase-locked-reasoning-scaffold",
       "display_name": "Phase-Locked Reasoning Scaffold",
+      "plain_display_name": "Stage-Separated Reasoning Scaffold",
+      "plain_aliases": [
+        "Stage-Separated Reasoning Scaffold"
+      ],
+      "task_phrases": [
+        "evidence-grounded writing",
+        "multi-source research",
+        "risk analysis",
+        "long workflows with distinct reasoning modes"
+      ],
+      "confusable_with": [
+        "citation-fidelity",
+        "domain-mode-isolation"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent cross-phase contamination while still allowing explicitly governed transitions between reasoning modes.",
       "activation_class": "U2-specialized",
@@ -2875,6 +3718,19 @@
     {
       "slug": "placeholder-suppression",
       "display_name": "Placeholder Suppression",
+      "plain_display_name": "Placeholder Suppression",
+      "plain_aliases": [],
+      "task_phrases": [
+        "template-based documents",
+        "generated repositories",
+        "forms and reports",
+        "configuration generation",
+        "multi-agent artifact assembly"
+      ],
+      "confusable_with": [
+        "grounding-no-invention",
+        "safe-rewrite"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent scaffolding artifacts from escaping as if they were complete content.",
       "activation_class": "U1-common-conditional",
@@ -2921,6 +3777,21 @@
     {
       "slug": "power-mode",
       "display_name": "POWER Mode",
+      "plain_display_name": "Deep Exploration Mode",
+      "plain_aliases": [
+        "Deep Exploration Mode"
+      ],
+      "task_phrases": [
+        "system architecture",
+        "novel workflow design",
+        "strategic planning",
+        "ambiguous research design"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "multiverse-reasoning",
+        "safe-mode"
+      ],
       "version": "1.1.0",
       "purpose": "Increase solution search and architectural depth before commitment when the problem is genuinely ambiguous or system-wide.",
       "activation_class": "U4-meta-architecture",
@@ -2969,6 +3840,19 @@
     {
       "slug": "progressive-mode-shaping",
       "display_name": "Progressive Mode Shaping",
+      "plain_display_name": "Explore-to-Execute Transition",
+      "plain_aliases": [
+        "Explore-to-Execute Transition"
+      ],
+      "task_phrases": [
+        "design-to-implementation workflows",
+        "iterative planning",
+        "creative work with a committed deliverable"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "mode-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.",
       "activation_class": "U1-common-conditional",
@@ -3013,6 +3897,21 @@
     {
       "slug": "reasoning-scale-controller",
       "display_name": "Reasoning-Scale Controller",
+      "plain_display_name": "Task-Scope Reasoning Controller",
+      "plain_aliases": [
+        "Task-Scope Reasoning Controller"
+      ],
+      "task_phrases": [
+        "mixed-complexity workflows",
+        "long-form construction",
+        "system design",
+        "quality evaluation"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "dynamic-depth-allocation",
+        "micro-scaffolding"
+      ],
       "version": "1.1.0",
       "purpose": "Match reasoning depth and scope to the unit of work instead of applying either shallow local analysis or system-wide architecture indiscriminately.",
       "activation_class": "U1-common-conditional",
@@ -3059,6 +3958,22 @@
     {
       "slug": "reasoning-throughput-governor",
       "display_name": "Reasoning Throughput Governor",
+      "plain_display_name": "Reasoning Efficiency Controller",
+      "plain_aliases": [
+        "Reasoning Efficiency Controller"
+      ],
+      "task_phrases": [
+        "large package builds",
+        "multi-agent research",
+        "batch validation",
+        "latency-sensitive pipelines",
+        "branch-heavy planning"
+      ],
+      "confusable_with": [
+        "bounded-exit",
+        "cognitive-governor",
+        "dynamic-depth-allocation"
+      ],
       "version": "1.1.0",
       "purpose": "Maximize useful completed work per unit time while respecting the Cognitive Governor's budget and every mandatory validation barrier.",
       "activation_class": "U2-specialized",
@@ -3107,6 +4022,21 @@
     {
       "slug": "reflectos",
       "display_name": "Work Reflection Loop OS / ReflectOS",
+      "plain_display_name": "Checkpointed Work Reflection",
+      "plain_aliases": [
+        "Checkpointed Work Reflection"
+      ],
+      "task_phrases": [
+        "multi-step implementation",
+        "research synthesis",
+        "document revision",
+        "agent handoffs",
+        "recovery after test failure"
+      ],
+      "confusable_with": [
+        "coherence-heartbeat",
+        "coherence-loops"
+      ],
       "version": "1.1.0",
       "purpose": "Correct process and output errors at meaningful checkpoints without turning reflection into unbounded rumination or invented content.",
       "activation_class": "U1-common-conditional",
@@ -3153,6 +4083,20 @@
     {
       "slug": "regenerative-rewrite",
       "display_name": "Regenerative Rewrite",
+      "plain_display_name": "Full-Structure Invariant-Preserving Rewrite",
+      "plain_aliases": [
+        "Full-Structure Invariant-Preserving Rewrite"
+      ],
+      "task_phrases": [
+        "globally incoherent drafts",
+        "broken source-to-section mapping",
+        "documents with incompatible inherited structures",
+        "outputs damaged by repeated patching"
+      ],
+      "confusable_with": [
+        "micro-repair",
+        "surgery-edit"
+      ],
       "version": "1.1.0",
       "purpose": "Replace a systemically broken expression or structure without losing verified content, requirements, provenance, or accepted decisions.",
       "activation_class": "U2-specialized",
@@ -3198,6 +4142,19 @@
     {
       "slug": "resonance",
       "display_name": "Resonance",
+      "plain_display_name": "Cross-Module Coordination",
+      "plain_aliases": [
+        "Cross-Module Coordination"
+      ],
+      "task_phrases": [
+        "multi-module Skills",
+        "evidence-to-state coordination",
+        "composed agent workflows"
+      ],
+      "confusable_with": [
+        "cross-context-resonance-lock",
+        "resonance-gene-builder"
+      ],
       "version": "1.1.0",
       "purpose": "Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.",
       "activation_class": "U2-specialized",
@@ -3241,6 +4198,20 @@
     {
       "slug": "resonance-gene-builder",
       "display_name": "Resonance Gene Builder",
+      "plain_display_name": "Cross-Module Coordination Rule Builder",
+      "plain_aliases": [
+        "Cross-Module Coordination Rule Builder"
+      ],
+      "task_phrases": [
+        "recurring validator-generator pairings",
+        "stable Core-Gene couplings",
+        "multi-module evidence workflows",
+        "repeated authority-sensitive compositions"
+      ],
+      "confusable_with": [
+        "behavior-gene-builder",
+        "resonance"
+      ],
       "version": "1.1.0",
       "purpose": "Make useful cross-module reinforcement explicit and reusable without merging modules, duplicating content, or granting hidden communication.",
       "activation_class": "U4-meta-architecture",
@@ -3288,6 +4259,19 @@
     {
       "slug": "risk-tier-scaling",
       "display_name": "Risk-Tier Scaling",
+      "plain_display_name": "Risk-Tier Scaling",
+      "plain_aliases": [],
+      "task_phrases": [
+        "medical, legal, financial, or safety-sensitive work",
+        "irreversible changes",
+        "uncertain external actions",
+        "mixed-risk artifacts"
+      ],
+      "confusable_with": [
+        "cognitive-governor",
+        "dynamic-depth-allocation",
+        "safe-mode"
+      ],
       "version": "1.1.0",
       "purpose": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
       "activation_class": "U1-common-conditional",
@@ -3335,6 +4319,22 @@
     {
       "slug": "safe-mode",
       "display_name": "SAFE Mode",
+      "plain_display_name": "Conservative Execution Mode",
+      "plain_aliases": [
+        "Conservative Execution Mode"
+      ],
+      "task_phrases": [
+        "source-faithful extraction",
+        "production changes",
+        "high-risk recommendations",
+        "final publication",
+        "irreversible operations"
+      ],
+      "confusable_with": [
+        "hybrid-mode",
+        "power-mode",
+        "risk-tier-scaling"
+      ],
       "version": "1.1.0",
       "purpose": "Protect factual and consequential execution after the plan is chosen or whenever uncertainty and impact require constrained behavior.",
       "activation_class": "U3-high-risk-expensive",
@@ -3383,6 +4383,20 @@
     {
       "slug": "safe-rewrite",
       "display_name": "Safe Rewrite Logic",
+      "plain_display_name": "Safe Rewrite Logic",
+      "plain_aliases": [],
+      "task_phrases": [
+        "paraphrasing",
+        "tone adjustment",
+        "format conversion",
+        "clarity polishing",
+        "audience adaptation"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "micro-repair",
+        "style-alignment"
+      ],
       "version": "1.1.0",
       "purpose": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.",
       "activation_class": "U0-foundational",
@@ -3430,6 +4444,20 @@
     {
       "slug": "scoped-loader",
       "display_name": "Scoped Loader / Loader Sequencing",
+      "plain_display_name": "Scoped Loader / Loader Sequencing",
+      "plain_aliases": [],
+      "task_phrases": [
+        "modular Skill execution",
+        "agent routing",
+        "large reference libraries",
+        "domain OS selection",
+        "multi-stage research"
+      ],
+      "confusable_with": [
+        "activation-budget-funnel",
+        "future-proof-mode-selector",
+        "state-routing-bus"
+      ],
       "version": "1.1.0",
       "purpose": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
       "activation_class": "U0-foundational",
@@ -3478,6 +4506,21 @@
     {
       "slug": "selfblock-auto-update",
       "display_name": "SelfBlock Auto-Update",
+      "plain_display_name": "Automatic Canonical-State Update",
+      "plain_aliases": [
+        "Automatic Canonical-State Update"
+      ],
+      "task_phrases": [
+        "agent loops",
+        "long editing sessions",
+        "tool-rich workflows",
+        "multi-step investigations"
+      ],
+      "confusable_with": [
+        "sequential-memory-state-engine",
+        "stateblock",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Reduce stale state and forgotten deltas during iterative work.",
       "activation_class": "U2-specialized",
@@ -3526,6 +4569,21 @@
     {
       "slug": "sequential-memory-state-engine",
       "display_name": "Sequential Memory State Engine (SMSE)",
+      "plain_display_name": "Ordered Memory-State Update Engine",
+      "plain_aliases": [
+        "Ordered Memory-State Update Engine"
+      ],
+      "task_phrases": [
+        "long-lived agents",
+        "case management",
+        "iterative research",
+        "multi-source evolving records"
+      ],
+      "confusable_with": [
+        "selfblock-auto-update",
+        "stable-long-context",
+        "stateblock"
+      ],
       "version": "1.1.0",
       "purpose": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
       "activation_class": "U1-common-conditional",
@@ -3579,6 +4637,21 @@
     {
       "slug": "specificity-penalty-gate",
       "display_name": "Specificity Penalty Gate",
+      "plain_display_name": "Unsupported Precision Gate",
+      "plain_aliases": [
+        "Unsupported Precision Gate"
+      ],
+      "task_phrases": [
+        "research answers",
+        "estimates",
+        "incident explanations",
+        "requirements derived from incomplete evidence",
+        "source recovery"
+      ],
+      "confusable_with": [
+        "epistemic-status-gating",
+        "grounding-no-invention"
+      ],
       "version": "1.1.0",
       "purpose": "Provide a conservative modern interpretation of the recovered name while keeping the historical source gap explicit.",
       "activation_class": "U2-specialized",
@@ -3625,6 +4698,19 @@
     {
       "slug": "stable-long-context",
       "display_name": "Stable Long-Context",
+      "plain_display_name": "Stable Long-Context",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long research projects",
+        "large document synthesis",
+        "multi-session builds",
+        "extended agent runs"
+      ],
+      "confusable_with": [
+        "sequential-memory-state-engine",
+        "state-snapshot",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Extend usable context duration without treating the entire transcript as equally current or important.",
       "activation_class": "U1-common-conditional",
@@ -3674,6 +4760,19 @@
     {
       "slug": "state-routing-bus",
       "display_name": "State Routing Bus",
+      "plain_display_name": "Task-State Handoff Router",
+      "plain_aliases": [
+        "Task-State Handoff Router"
+      ],
+      "task_phrases": [
+        "multi-agent workflows",
+        "modular Skills",
+        "cross-process continuation"
+      ],
+      "confusable_with": [
+        "external-state-automation",
+        "state-snapshot"
+      ],
       "version": "1.1.0",
       "purpose": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.",
       "activation_class": "U4-meta-architecture",
@@ -3702,7 +4801,7 @@
       "mechanism_basis": "recovered",
       "mechanism": "Represent the handoff as a typed envelope containing sender, receiver, schema version, authority, provenance, payload, and unresolved status. Validate the envelope and receiver permissions, transmit it through an actual host mechanism such as context, file, message, or database, then require acknowledgement. No latent pointer or hidden channel is assumed.",
       "triggers": [
-        "Activate when the task requires multiple components exchange state."
+        "multiple components must exchange typed state"
       ],
       "requires": [],
       "counterbalances": [
@@ -3717,6 +4816,19 @@
     {
       "slug": "state-snapshot",
       "display_name": "State Snapshot",
+      "plain_display_name": "State Snapshot",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-session projects",
+        "agent handoffs",
+        "rollback-sensitive workflows",
+        "audits"
+      ],
+      "confusable_with": [
+        "stable-long-context",
+        "stateblock",
+        "temporal-anchor-scaffold"
+      ],
       "version": "1.1.0",
       "purpose": "Create a stable checkpoint that can be resumed or audited after interruption.",
       "activation_class": "U1-common-conditional",
@@ -3766,6 +4878,21 @@
     {
       "slug": "stateblock",
       "display_name": "StateBlock",
+      "plain_display_name": "Canonical Task State",
+      "plain_aliases": [
+        "Canonical Task State"
+      ],
+      "task_phrases": [
+        "multi-step execution",
+        "agent orchestration",
+        "complex editing",
+        "auditable workflows"
+      ],
+      "confusable_with": [
+        "micro-scaffolding",
+        "state-snapshot",
+        "task-set-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
       "activation_class": "U0-foundational",
@@ -3814,6 +4941,19 @@
     {
       "slug": "structured-refinement",
       "display_name": "Structured Refinement Cycles",
+      "plain_display_name": "Structured Refinement Cycles",
+      "plain_aliases": [],
+      "task_phrases": [
+        "drafts with several defect classes",
+        "reports requiring source and style review",
+        "prompt or specification cleanup",
+        "publication preparation"
+      ],
+      "confusable_with": [
+        "bounded-exit",
+        "micro-repair",
+        "regenerative-rewrite"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent one revision pass from trading away correctness while improving structure or style.",
       "activation_class": "U1-common-conditional",
@@ -3861,6 +5001,19 @@
     {
       "slug": "structured-state-projection",
       "display_name": "Structured State Projection",
+      "plain_display_name": "Structured State Projection",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-agent systems",
+        "domain isolation",
+        "sensitive workflows",
+        "tool calls with narrow schemas"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "domain-mode-isolation",
+        "state-snapshot"
+      ],
       "version": "1.1.0",
       "purpose": "Reduce context, privacy, and authority leakage between components.",
       "activation_class": "U2-specialized",
@@ -3910,6 +5063,19 @@
     {
       "slug": "stuck-pattern-reset",
       "display_name": "Stuck-Pattern Reset Pack",
+      "plain_display_name": "Stuck-Pattern Reset Pack",
+      "plain_aliases": [],
+      "task_phrases": [
+        "repeated tool failures",
+        "recursive revision loops",
+        "stale debugging hypotheses",
+        "nonconverging planning"
+      ],
+      "confusable_with": [
+        "anti-tunnel-vision",
+        "bounded-exit",
+        "meta-stability"
+      ],
       "version": "1.1.0",
       "purpose": "Break nonproductive loops without erasing the trustworthy task context needed for a genuinely different next attempt.",
       "activation_class": "U2-specialized",
@@ -3957,6 +5123,20 @@
     {
       "slug": "style-alignment",
       "display_name": "Style-Alignment Module",
+      "plain_display_name": "Style-Alignment Module",
+      "plain_aliases": [],
+      "task_phrases": [
+        "house-style editing",
+        "voice matching",
+        "channel adaptation",
+        "consistent multi-author documents",
+        "format and tone normalization"
+      ],
+      "confusable_with": [
+        "explanation-minimality-scaffold",
+        "pedagogical-alignment",
+        "safe-rewrite"
+      ],
       "version": "1.1.0",
       "purpose": "Make artifacts consistent with audience, publication, or organizational style while keeping truth and requirements dominant.",
       "activation_class": "U1-common-conditional",
@@ -4004,6 +5184,22 @@
     {
       "slug": "surgery-edit",
       "display_name": "Surgery Editing",
+      "plain_display_name": "Structural System Edit",
+      "plain_aliases": [
+        "Structural System Edit"
+      ],
+      "task_phrases": [
+        "layer reorganization",
+        "Core replacement",
+        "major workflow change",
+        "large incompatible refactor",
+        "schema or public interface migration"
+      ],
+      "confusable_with": [
+        "crispr-edit",
+        "micro-repair",
+        "regenerative-rewrite"
+      ],
       "version": "1.1.0",
       "purpose": "Make macro changes to layers, cores, workflows, or incompatible interfaces without losing invariants, dependents, or rollback control.",
       "activation_class": "U3-high-risk-expensive",
@@ -4054,6 +5250,19 @@
     {
       "slug": "task-set-lock-in",
       "display_name": "Task-Set Lock-In",
+      "plain_display_name": "Task-Set Lock-In",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-step builds",
+        "contracted deliverables",
+        "long research",
+        "tasks with exclusions"
+      ],
+      "confusable_with": [
+        "mode-lock-in",
+        "stateblock",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent scope substitution and goal drift during execution.",
       "activation_class": "U0-foundational",
@@ -4103,6 +5312,19 @@
     {
       "slug": "temporal-anchor-scaffold",
       "display_name": "Temporal Anchor Scaffold",
+      "plain_display_name": "Temporal Anchor Scaffold",
+      "plain_aliases": [],
+      "task_phrases": [
+        "incident timelines",
+        "policy version analysis",
+        "case chronology",
+        "news or market research"
+      ],
+      "confusable_with": [
+        "micro-scaffolding",
+        "sequential-memory-state-engine",
+        "state-snapshot"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent chronology errors and confusion between event time, publication time, and current validity.",
       "activation_class": "U1-common-conditional",
@@ -4152,6 +5374,18 @@
     {
       "slug": "truth-priority-hierarchy",
       "display_name": "Truth Priority Hierarchy",
+      "plain_display_name": "Truth Priority Hierarchy",
+      "plain_aliases": [],
+      "task_phrases": [
+        "multi-source research",
+        "policy and regulatory analysis",
+        "multi-validator workflows",
+        "domain decisions with mixed evidence classes"
+      ],
+      "confusable_with": [
+        "fermionic-veto",
+        "parallel-qms"
+      ],
       "version": "1.1.0",
       "purpose": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
       "activation_class": "U1-common-conditional",
@@ -4194,6 +5428,19 @@
     {
       "slug": "truth-redundancy",
       "display_name": "Truth Redundancy",
+      "plain_display_name": "Independent Evidence Redundancy",
+      "plain_aliases": [
+        "Independent Evidence Redundancy"
+      ],
+      "task_phrases": [
+        "high-stakes evidence work",
+        "critical factual claims",
+        "source-grounded decision support",
+        "safety-relevant tradeoffs"
+      ],
+      "confusable_with": [
+        "multi-truth-gating"
+      ],
       "version": "1.1.0",
       "purpose": "Reduce single-point truth failure before high-impact synthesis or decision-making.",
       "activation_class": "U3-high-risk-expensive",
@@ -4235,6 +5482,20 @@
     {
       "slug": "two-truths-and-corridor",
       "display_name": "Two Truths + Corridor",
+      "plain_display_name": "Dual-Source Bounded Synthesis",
+      "plain_aliases": [
+        "Dual-Source Bounded Synthesis"
+      ],
+      "task_phrases": [
+        "comparative research",
+        "evidence-grounded authoring",
+        "policy synthesis",
+        "explanatory integration of two sources"
+      ],
+      "confusable_with": [
+        "controlled-drift-corridors",
+        "truth-redundancy"
+      ],
       "version": "1.1.0",
       "purpose": "Enable useful synthesis without losing redundant factual grounding.",
       "activation_class": "U2-specialized",
@@ -4280,6 +5541,21 @@
     {
       "slug": "ultimate-suite-supervisor",
       "display_name": "Ultimate Suite Supervisor",
+      "plain_display_name": "Suite-Wide Workflow Supervisor",
+      "plain_aliases": [
+        "Suite-Wide Workflow Supervisor"
+      ],
+      "task_phrases": [
+        "large modular OS execution",
+        "multi-mode skill suites",
+        "complex authoring or research systems",
+        "architecture plus execution pipelines"
+      ],
+      "confusable_with": [
+        "architect-orchestrator",
+        "hybrid-mode",
+        "meta-supervisor"
+      ],
       "version": "1.1.0",
       "purpose": "Keep a large OS or skill suite operating as one authority-consistent system across planning, execution, repair, and finalization.",
       "activation_class": "U4-meta-architecture",
@@ -4330,6 +5606,19 @@
     {
       "slug": "working-memory-cues",
       "display_name": "Working-Memory Cues",
+      "plain_display_name": "Working-Memory Cues",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long transformations",
+        "repetitive tool loops",
+        "tasks with a few recurring constraints",
+        "review workflows"
+      ],
+      "confusable_with": [
+        "attention-compression-scaffold",
+        "stateblock",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Keep easily forgotten but relevant information salient during execution.",
       "activation_class": "U0-foundational",
@@ -4378,6 +5667,19 @@
     {
       "slug": "working-memory-lock-in",
       "display_name": "Working-Memory Lock-In",
+      "plain_display_name": "Working-Memory Lock-In",
+      "plain_aliases": [],
+      "task_phrases": [
+        "long agent loops",
+        "high-fidelity transformations",
+        "safety-critical execution",
+        "multi-step builds"
+      ],
+      "confusable_with": [
+        "stable-long-context",
+        "task-set-lock-in",
+        "working-memory-cues"
+      ],
       "version": "1.1.0",
       "purpose": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.",
       "activation_class": "U1-common-conditional",
@@ -4426,6 +5728,21 @@
     {
       "slug": "zero-drift-zones",
       "display_name": "Zero-Drift Zones",
+      "plain_display_name": "Immutable Content Zones",
+      "plain_aliases": [
+        "Immutable Content Zones"
+      ],
+      "task_phrases": [
+        "legal and policy transformation",
+        "source-grounded summaries",
+        "code/API migration",
+        "safety-critical instructions"
+      ],
+      "confusable_with": [
+        "controlled-drift-corridors",
+        "drift-immunity-propagation",
+        "working-memory-lock-in"
+      ],
       "version": "1.1.0",
       "purpose": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.",
       "activation_class": "U1-common-conditional",
@@ -4458,7 +5775,7 @@
       "mechanism_basis": "recovered",
       "mechanism": "Identify minimal semantic atoms whose alteration would invalidate the task, assign stable IDs and source spans, and specify their preservation rule: exact text, exact value/unit, or meaning-equivalent statement with required qualifiers. Carry the IDs through all transforms and require a deterministic check or source-grounded review before acceptance.",
       "triggers": [
-        "Activate when the task requires content contains fidelity-locked atoms."
+        "content contains fidelity-locked atoms"
       ],
       "requires": [],
       "counterbalances": [
@@ -4477,8 +5794,13 @@
     {
       "slug": "research-skill",
       "display_name": "Research Skill",
-      "purpose": "Seed composition for research skill workflows.",
-      "task_family": "",
+      "purpose": "Research a question across multiple sources and produce a bounded, cited synthesis.",
+      "task_family": "multi-source research and evidence synthesis",
+      "task_phrases": [
+        "research several sources",
+        "compare sources",
+        "write a cited research synthesis"
+      ],
       "activation_boundary": "Use when a deliverable must synthesize multiple accessible sources and corpus size or ambiguity makes scoped loading, shared state, and claim-level grounding necessary.",
       "important_exclusions": [
         "Omit durable or parallel machinery unless corpus size or real host execution triggers it."
@@ -4494,6 +5816,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -4503,6 +5826,7 @@
           "slug": "scoped-loader",
           "role": "R",
           "display_name": "Scoped Loader / Loader Sequencing",
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
           "version": "1.1.0",
           "trigger_summary": "a modular workflow has multiple available components",
           "requires": [],
@@ -4512,6 +5836,7 @@
           "slug": "stateblock",
           "role": "R",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -4521,6 +5846,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -4530,6 +5856,7 @@
           "slug": "activation-budget-funnel",
           "role": "A",
           "display_name": "Activation-Budget Funnel",
+          "plain_display_name": "Progressive Context Intake",
           "version": "1.1.0",
           "trigger_summary": "many sources or modules compete for attention",
           "requires": [],
@@ -4539,6 +5866,7 @@
           "slug": "neuro-focus",
           "role": "A",
           "display_name": "Neuro-Focus",
+          "plain_display_name": "Bounded Attention Focus",
           "version": "1.1.0",
           "trigger_summary": "large sources or a narrow debug region demand concentration",
           "requires": [],
@@ -4548,6 +5876,7 @@
           "slug": "stable-long-context",
           "role": "A",
           "display_name": "Stable Long-Context",
+          "plain_display_name": "Stable Long-Context",
           "version": "1.1.0",
           "trigger_summary": "large corpus or long-running workflow",
           "requires": [],
@@ -4557,6 +5886,7 @@
           "slug": "sequential-memory-state-engine",
           "role": "A",
           "display_name": "Sequential Memory State Engine (SMSE)",
+          "plain_display_name": "Ordered Memory-State Update Engine",
           "version": "1.1.0",
           "trigger_summary": "state changes across steps or source chunks",
           "requires": [],
@@ -4566,6 +5896,7 @@
           "slug": "multi-truth-gating",
           "role": "A",
           "display_name": "Multi-Truth Gating",
+          "plain_display_name": "Independent Evidence Gate",
           "version": "1.1.0",
           "trigger_summary": "an important conclusion rests on fragile evidence",
           "requires": [],
@@ -4575,6 +5906,7 @@
           "slug": "citation-fidelity",
           "role": "A",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -4584,6 +5916,7 @@
           "slug": "truth-priority-hierarchy",
           "role": "A",
           "display_name": "Truth Priority Hierarchy",
+          "plain_display_name": "Truth Priority Hierarchy",
           "version": "1.1.0",
           "trigger_summary": "evidence classes or authorities conflict",
           "requires": [],
@@ -4593,6 +5926,7 @@
           "slug": "critical-atomic-verification",
           "role": "C",
           "display_name": "Critical Atomic Verification",
+          "plain_display_name": "Critical Fact Verification",
           "version": "1.1.0",
           "trigger_summary": "small factual errors could change the outcome",
           "requires": [],
@@ -4602,6 +5936,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -4611,8 +5946,9 @@
           "slug": "anti-tunnel-vision",
           "role": "O",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -4620,6 +5956,7 @@
           "slug": "state-snapshot",
           "role": "C",
           "display_name": "State Snapshot",
+          "plain_display_name": "State Snapshot",
           "version": "1.1.0",
           "trigger_summary": "a workflow pauses, hands off, or persists",
           "requires": [],
@@ -4630,8 +5967,13 @@
     {
       "slug": "source-grounded-analysis",
       "display_name": "Source-Grounded Analysis",
-      "purpose": "Seed composition for source-grounded analysis workflows.",
-      "task_family": "",
+      "purpose": "Analyze or transform supplied sources without inventing unsupported claims or losing attribution.",
+      "task_family": "source-bounded analysis, comparison, extraction, and rewriting",
+      "task_phrases": [
+        "analyze these sources",
+        "compare supplied documents",
+        "rewrite using only provided evidence"
+      ],
       "activation_boundary": "Use when an analysis or rewrite must remain traceable to identified sources, preserve locked source meaning, and attach citations at claim level.",
       "important_exclusions": [
         "Omit branching and creative expansion unless competing interpretations are an explicit deliverable."
@@ -4644,6 +5986,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -4653,6 +5996,7 @@
           "slug": "mode-lock-in",
           "role": "R",
           "display_name": "Mode Lock-In",
+          "plain_display_name": "Mode Lock-In",
           "version": "1.1.0",
           "trigger_summary": "a task can drift between modes",
           "requires": [],
@@ -4662,6 +6006,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -4671,6 +6016,7 @@
           "slug": "safe-rewrite",
           "role": "A",
           "display_name": "Safe Rewrite Logic",
+          "plain_display_name": "Safe Rewrite Logic",
           "version": "1.1.0",
           "trigger_summary": "paraphrasing, polishing, or format conversion",
           "requires": [],
@@ -4680,6 +6026,7 @@
           "slug": "citation-fidelity",
           "role": "R",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -4689,8 +6036,9 @@
           "slug": "zero-drift-zones",
           "role": "A",
           "display_name": "Zero-Drift Zones",
+          "plain_display_name": "Immutable Content Zones",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires content contains fidelity-locked atoms.",
+          "trigger_summary": "content contains fidelity-locked atoms",
           "requires": [],
           "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
         },
@@ -4698,6 +6046,7 @@
           "slug": "controlled-drift-corridors",
           "role": "A",
           "display_name": "Controlled Drift Corridors",
+          "plain_display_name": "Bounded Change Rules",
           "version": "1.1.0",
           "trigger_summary": "synthesis or creativity must coexist with fidelity",
           "requires": [],
@@ -4707,6 +6056,7 @@
           "slug": "counterfactual-integrity",
           "role": "A",
           "display_name": "Counterfactual Integrity Gate",
+          "plain_display_name": "Counterfactual Integrity Gate",
           "version": "1.1.0",
           "trigger_summary": "counterfactual or hypothetical reasoning is used",
           "requires": [],
@@ -4716,8 +6066,9 @@
           "slug": "micro-repair",
           "role": "A",
           "display_name": "Micro-Repair",
+          "plain_display_name": "Minimal Local Correction",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires a defect is localized.",
+          "trigger_summary": "a specific defect has been localized",
           "requires": [],
           "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
         },
@@ -4725,6 +6076,7 @@
           "slug": "placeholder-suppression",
           "role": "A",
           "display_name": "Placeholder Suppression",
+          "plain_display_name": "Placeholder Suppression",
           "version": "1.1.0",
           "trigger_summary": "templates or staged artifacts are finalized",
           "requires": [],
@@ -4734,6 +6086,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -4744,8 +6097,13 @@
     {
       "slug": "high-stakes-reasoning",
       "display_name": "High-Stakes Reasoning",
-      "purpose": "Seed composition for high-stakes reasoning workflows.",
-      "task_family": "",
+      "purpose": "Evaluate consequential claims with proportionate evidence, uncertainty, verification, and abstention controls.",
+      "task_family": "consequential evidence evaluation and decision support",
+      "task_phrases": [
+        "verify a consequential claim",
+        "high stakes analysis",
+        "evidence sensitive decision"
+      ],
       "activation_boundary": "Use when an error could materially affect safety, health, rights, finances, or an irreversible action and the necessary evidence can be inspected.",
       "important_exclusions": [
         "Omit style and ideation modules; do not add simulated distributed evaluators."
@@ -4764,6 +6122,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -4773,6 +6132,7 @@
           "slug": "epistemic-status-gating",
           "role": "R",
           "display_name": "Epistemic Status Gating",
+          "plain_display_name": "Evidence-Confidence Gate",
           "version": "1.1.0",
           "trigger_summary": "claims of mixed certainty are present",
           "requires": [],
@@ -4782,6 +6142,7 @@
           "slug": "risk-tier-scaling",
           "role": "R",
           "display_name": "Risk-Tier Scaling",
+          "plain_display_name": "Risk-Tier Scaling",
           "version": "1.1.0",
           "trigger_summary": "task risk varies or must be classified",
           "requires": [],
@@ -4791,6 +6152,7 @@
           "slug": "critical-atomic-verification",
           "role": "R",
           "display_name": "Critical Atomic Verification",
+          "plain_display_name": "Critical Fact Verification",
           "version": "1.1.0",
           "trigger_summary": "small factual errors could change the outcome",
           "requires": [],
@@ -4800,6 +6162,7 @@
           "slug": "multi-truth-gating",
           "role": "R",
           "display_name": "Multi-Truth Gating",
+          "plain_display_name": "Independent Evidence Gate",
           "version": "1.1.0",
           "trigger_summary": "an important conclusion rests on fragile evidence",
           "requires": [],
@@ -4809,6 +6172,7 @@
           "slug": "truth-redundancy",
           "role": "A",
           "display_name": "Truth Redundancy",
+          "plain_display_name": "Independent Evidence Redundancy",
           "version": "1.1.0",
           "trigger_summary": "a consequential claim can be independently checked",
           "requires": [],
@@ -4818,6 +6182,7 @@
           "slug": "truth-priority-hierarchy",
           "role": "R",
           "display_name": "Truth Priority Hierarchy",
+          "plain_display_name": "Truth Priority Hierarchy",
           "version": "1.1.0",
           "trigger_summary": "evidence classes or authorities conflict",
           "requires": [],
@@ -4827,6 +6192,7 @@
           "slug": "domain-mode-isolation",
           "role": "R",
           "display_name": "Domain / Mode Isolation",
+          "plain_display_name": "Domain / Mode Isolation",
           "version": "1.1.0",
           "trigger_summary": "multiple domains or semantic modes coexist",
           "requires": [],
@@ -4836,6 +6202,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -4845,6 +6212,7 @@
           "slug": "fail-closed-abstention",
           "role": "R",
           "display_name": "Fail-Closed Abstention",
+          "plain_display_name": "Fail-Closed Abstention",
           "version": "1.1.0",
           "trigger_summary": "required evidence cannot be verified",
           "requires": [],
@@ -4854,6 +6222,7 @@
           "slug": "fermionic-veto",
           "role": "A",
           "display_name": "Fermionic Veto Strengthening",
+          "plain_display_name": "Non-Compensable Constraint Veto",
           "version": "1.1.0",
           "trigger_summary": "a defined critical condition must have veto authority",
           "requires": [],
@@ -4863,6 +6232,7 @@
           "slug": "parallel-qms",
           "role": "R",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -4872,6 +6242,7 @@
           "slug": "dynamic-depth-allocation",
           "role": "A",
           "display_name": "Dynamic Depth Allocation",
+          "plain_display_name": "Per-Region Reasoning Depth",
           "version": "1.1.0",
           "trigger_summary": "task regions vary in difficulty or risk",
           "requires": [],
@@ -4882,8 +6253,13 @@
     {
       "slug": "medical-evidence",
       "display_name": "Medical Evidence",
-      "purpose": "Seed composition for medical evidence workflows.",
-      "task_family": "",
+      "purpose": "Synthesize medical evidence with applicability, uncertainty, and professional-review boundaries.",
+      "task_family": "medical literature and clinical-evidence synthesis",
+      "task_phrases": [
+        "review medical evidence",
+        "compare clinical studies",
+        "medical literature synthesis"
+      ],
       "activation_boundary": "Use for source-backed medical evidence synthesis where claim scope, uncertainty, and abstention matter; it does not replace clinical diagnosis or treatment.",
       "important_exclusions": [
         "Omit unconstrained generation and any validator whose evidence boundary cannot be supplied."
@@ -4899,6 +6275,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -4908,6 +6285,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -4917,6 +6295,7 @@
           "slug": "risk-tier-scaling",
           "role": "R",
           "display_name": "Risk-Tier Scaling",
+          "plain_display_name": "Risk-Tier Scaling",
           "version": "1.1.0",
           "trigger_summary": "task risk varies or must be classified",
           "requires": [],
@@ -4926,6 +6305,7 @@
           "slug": "critical-atomic-verification",
           "role": "R",
           "display_name": "Critical Atomic Verification",
+          "plain_display_name": "Critical Fact Verification",
           "version": "1.1.0",
           "trigger_summary": "small factual errors could change the outcome",
           "requires": [],
@@ -4935,6 +6315,7 @@
           "slug": "truth-priority-hierarchy",
           "role": "R",
           "display_name": "Truth Priority Hierarchy",
+          "plain_display_name": "Truth Priority Hierarchy",
           "version": "1.1.0",
           "trigger_summary": "evidence classes or authorities conflict",
           "requires": [],
@@ -4944,6 +6325,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -4953,6 +6335,7 @@
           "slug": "fail-closed-abstention",
           "role": "R",
           "display_name": "Fail-Closed Abstention",
+          "plain_display_name": "Fail-Closed Abstention",
           "version": "1.1.0",
           "trigger_summary": "required evidence cannot be verified",
           "requires": [],
@@ -4962,6 +6345,7 @@
           "slug": "domain-mode-isolation",
           "role": "R",
           "display_name": "Domain / Mode Isolation",
+          "plain_display_name": "Domain / Mode Isolation",
           "version": "1.1.0",
           "trigger_summary": "multiple domains or semantic modes coexist",
           "requires": [],
@@ -4971,6 +6355,7 @@
           "slug": "parallel-qms",
           "role": "R",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -4981,8 +6366,13 @@
     {
       "slug": "legal-evidence",
       "display_name": "Legal Evidence",
-      "purpose": "Seed composition for legal evidence workflows.",
-      "task_family": "",
+      "purpose": "Analyze jurisdiction- and date-sensitive legal sources while preserving authority and citation fidelity.",
+      "task_family": "legal research and jurisdiction-sensitive source analysis",
+      "task_phrases": [
+        "research legal sources",
+        "analyze a law or regulation",
+        "jurisdiction specific legal analysis"
+      ],
       "activation_boundary": "Use for source-backed legal analysis tied to a declared jurisdiction and date where authority, quotation, and uncertainty must remain auditable; it is not legal advice.",
       "important_exclusions": [
         "Omit creative rewriting and preserve jurisdiction, date, authority, and quotation boundaries."
@@ -4998,6 +6388,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5007,6 +6398,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -5016,6 +6408,7 @@
           "slug": "risk-tier-scaling",
           "role": "R",
           "display_name": "Risk-Tier Scaling",
+          "plain_display_name": "Risk-Tier Scaling",
           "version": "1.1.0",
           "trigger_summary": "task risk varies or must be classified",
           "requires": [],
@@ -5025,6 +6418,7 @@
           "slug": "critical-atomic-verification",
           "role": "R",
           "display_name": "Critical Atomic Verification",
+          "plain_display_name": "Critical Fact Verification",
           "version": "1.1.0",
           "trigger_summary": "small factual errors could change the outcome",
           "requires": [],
@@ -5034,6 +6428,7 @@
           "slug": "truth-priority-hierarchy",
           "role": "R",
           "display_name": "Truth Priority Hierarchy",
+          "plain_display_name": "Truth Priority Hierarchy",
           "version": "1.1.0",
           "trigger_summary": "evidence classes or authorities conflict",
           "requires": [],
@@ -5043,6 +6438,7 @@
           "slug": "citation-fidelity",
           "role": "R",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -5052,8 +6448,9 @@
           "slug": "zero-drift-zones",
           "role": "A",
           "display_name": "Zero-Drift Zones",
+          "plain_display_name": "Immutable Content Zones",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires content contains fidelity-locked atoms.",
+          "trigger_summary": "content contains fidelity-locked atoms",
           "requires": [],
           "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
         },
@@ -5061,6 +6458,7 @@
           "slug": "fail-closed-abstention",
           "role": "R",
           "display_name": "Fail-Closed Abstention",
+          "plain_display_name": "Fail-Closed Abstention",
           "version": "1.1.0",
           "trigger_summary": "required evidence cannot be verified",
           "requires": [],
@@ -5070,6 +6468,7 @@
           "slug": "parallel-qms",
           "role": "R",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5080,8 +6479,14 @@
     {
       "slug": "coding-debugging",
       "display_name": "Coding / Debugging",
-      "purpose": "Seed composition for coding / debugging workflows.",
-      "task_family": "",
+      "purpose": "Reproduce, diagnose, and repair a software defect with the smallest verified change.",
+      "task_family": "software debugging, reproduction, diagnosis, and verified repair",
+      "task_phrases": [
+        "debug this code",
+        "reproduce this bug",
+        "fix a failing test",
+        "diagnose a software issue"
+      ],
       "activation_boundary": "Use after a software defect is reproducible or tightly localized and the task requests a verified repair, not a review-only finding.",
       "important_exclusions": [
         "Omit Surgery Edit while the defect remains local; omit citation controls without external sources."
@@ -5096,6 +6501,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5105,6 +6511,7 @@
           "slug": "stateblock",
           "role": "A",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -5114,6 +6521,7 @@
           "slug": "forethought-checkpoints",
           "role": "A",
           "display_name": "Forethought / Checkpoints",
+          "plain_display_name": "Forethought / Checkpoints",
           "version": "1.1.0",
           "trigger_summary": "an action is costly, irreversible, or dependency-sensitive",
           "requires": [],
@@ -5123,8 +6531,9 @@
           "slug": "dominant-driver-isolation-scaffold",
           "role": "A",
           "display_name": "Dominant-Driver Isolation Scaffold",
+          "plain_display_name": "Dominant-Driver Isolation Scaffold",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires many possible causes compete.",
+          "trigger_summary": "many plausible causes compete for priority",
           "requires": [],
           "package_path": "upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md"
         },
@@ -5132,8 +6541,9 @@
           "slug": "anti-tunnel-vision",
           "role": "A",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -5141,6 +6551,7 @@
           "slug": "bidirectional-consistency",
           "role": "A",
           "display_name": "Bidirectional Consistency",
+          "plain_display_name": "Bidirectional Consistency",
           "version": "1.1.0",
           "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
           "requires": [],
@@ -5150,6 +6561,7 @@
           "slug": "invariance-stress-scaffold",
           "role": "R",
           "display_name": "Invariance Stress Scaffold",
+          "plain_display_name": "Protected-Constraint Robustness Test",
           "version": "1.1.0",
           "trigger_summary": "a patch or rewrite must preserve invariants",
           "requires": [],
@@ -5159,8 +6571,9 @@
           "slug": "micro-repair",
           "role": "R",
           "display_name": "Micro-Repair",
+          "plain_display_name": "Minimal Local Correction",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires a defect is localized.",
+          "trigger_summary": "a specific defect has been localized",
           "requires": [],
           "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
         },
@@ -5168,6 +6581,7 @@
           "slug": "crispr-edit",
           "role": "A",
           "display_name": "CRISPR Editing",
+          "plain_display_name": "Precision Local System Edit",
           "version": "1.1.0",
           "trigger_summary": "a change is small and local",
           "requires": [],
@@ -5177,6 +6591,7 @@
           "slug": "surgery-edit",
           "role": "C",
           "display_name": "Surgery Editing",
+          "plain_display_name": "Structural System Edit",
           "version": "1.1.0",
           "trigger_summary": "layers, Cores, or workflows require major replacement",
           "requires": [],
@@ -5186,6 +6601,7 @@
           "slug": "structured-refinement",
           "role": "A",
           "display_name": "Structured Refinement Cycles",
+          "plain_display_name": "Structured Refinement Cycles",
           "version": "1.1.0",
           "trigger_summary": "revision has multiple defect classes",
           "requires": [],
@@ -5195,6 +6611,7 @@
           "slug": "bounded-exit",
           "role": "A",
           "display_name": "Bounded ExIt",
+          "plain_display_name": "Bounded Iteration Stop Rule",
           "version": "1.1.0",
           "trigger_summary": "a draft needs iterative improvement",
           "requires": [],
@@ -5204,6 +6621,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5213,6 +6631,7 @@
           "slug": "drift-suppression",
           "role": "A",
           "display_name": "Drift Suppression",
+          "plain_display_name": "Drift Suppression",
           "version": "1.1.0",
           "trigger_summary": "long, branching, or iterative work",
           "requires": [],
@@ -5223,8 +6642,14 @@
     {
       "slug": "code-review",
       "display_name": "Code / Pull Request Review",
-      "purpose": "Seed composition for review-only code and pull request analysis.",
-      "task_family": "",
+      "purpose": "Review a concrete diff or pull request for bugs, regressions, unsafe assumptions, and missing tests without editing it.",
+      "task_family": "pull-request, diff, commit, and regression review",
+      "task_phrases": [
+        "review this pull request",
+        "review this diff",
+        "find bugs and regressions",
+        "review code without editing"
+      ],
       "activation_boundary": "Use when the requested deliverable is review-only analysis of a concrete diff or pull request for correctness, regressions, and unsupported assumptions.",
       "important_exclusions": [
         "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
@@ -5240,6 +6665,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5249,6 +6675,7 @@
           "slug": "scoped-loader",
           "role": "R",
           "display_name": "Scoped Loader / Loader Sequencing",
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
           "version": "1.1.0",
           "trigger_summary": "a modular workflow has multiple available components",
           "requires": [],
@@ -5258,6 +6685,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -5267,6 +6695,7 @@
           "slug": "stateblock",
           "role": "C",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -5276,6 +6705,7 @@
           "slug": "forethought-checkpoints",
           "role": "A",
           "display_name": "Forethought / Checkpoints",
+          "plain_display_name": "Forethought / Checkpoints",
           "version": "1.1.0",
           "trigger_summary": "an action is costly, irreversible, or dependency-sensitive",
           "requires": [],
@@ -5285,8 +6715,9 @@
           "slug": "dominant-driver-isolation-scaffold",
           "role": "A",
           "display_name": "Dominant-Driver Isolation Scaffold",
+          "plain_display_name": "Dominant-Driver Isolation Scaffold",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires many possible causes compete.",
+          "trigger_summary": "many plausible causes compete for priority",
           "requires": [],
           "package_path": "upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md"
         },
@@ -5294,8 +6725,9 @@
           "slug": "anti-tunnel-vision",
           "role": "A",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -5303,6 +6735,7 @@
           "slug": "bidirectional-consistency",
           "role": "A",
           "display_name": "Bidirectional Consistency",
+          "plain_display_name": "Bidirectional Consistency",
           "version": "1.1.0",
           "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
           "requires": [],
@@ -5310,8 +6743,9 @@
         },
         {
           "slug": "invariance-stress-scaffold",
-          "role": "R",
+          "role": "C",
           "display_name": "Invariance Stress Scaffold",
+          "plain_display_name": "Protected-Constraint Robustness Test",
           "version": "1.1.0",
           "trigger_summary": "a patch or rewrite must preserve invariants",
           "requires": [],
@@ -5321,6 +6755,7 @@
           "slug": "epistemic-status-gating",
           "role": "A",
           "display_name": "Epistemic Status Gating",
+          "plain_display_name": "Evidence-Confidence Gate",
           "version": "1.1.0",
           "trigger_summary": "claims of mixed certainty are present",
           "requires": [],
@@ -5330,6 +6765,7 @@
           "slug": "critical-atomic-verification",
           "role": "C",
           "display_name": "Critical Atomic Verification",
+          "plain_display_name": "Critical Fact Verification",
           "version": "1.1.0",
           "trigger_summary": "small factual errors could change the outcome",
           "requires": [],
@@ -5339,6 +6775,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -5348,6 +6785,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5357,6 +6795,7 @@
           "slug": "drift-suppression",
           "role": "A",
           "display_name": "Drift Suppression",
+          "plain_display_name": "Drift Suppression",
           "version": "1.1.0",
           "trigger_summary": "long, branching, or iterative work",
           "requires": [],
@@ -5366,6 +6805,7 @@
           "slug": "fail-closed-abstention",
           "role": "C",
           "display_name": "Fail-Closed Abstention",
+          "plain_display_name": "Fail-Closed Abstention",
           "version": "1.1.0",
           "trigger_summary": "required evidence cannot be verified",
           "requires": [],
@@ -5376,8 +6816,13 @@
     {
       "slug": "long-context-corpus",
       "display_name": "Long-Context / Corpus",
-      "purpose": "Seed composition for long-context / corpus workflows.",
-      "task_family": "",
+      "purpose": "Analyze a corpus too large for one context while preserving sequence, provenance, and resumable state.",
+      "task_family": "large-corpus analysis and resumable document workflows",
+      "task_phrases": [
+        "analyze a large corpus",
+        "work across many documents",
+        "resume a long document analysis"
+      ],
       "activation_boundary": "Use when the authorized corpus cannot be handled safely as one undifferentiated context and indexed state must preserve sequence and provenance.",
       "important_exclusions": [
         "Omit full-corpus reloads and alternative-branch generation unless explicitly triggered."
@@ -5390,6 +6835,7 @@
           "slug": "stateblock",
           "role": "R",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -5399,6 +6845,7 @@
           "slug": "sequential-memory-state-engine",
           "role": "R",
           "display_name": "Sequential Memory State Engine (SMSE)",
+          "plain_display_name": "Ordered Memory-State Update Engine",
           "version": "1.1.0",
           "trigger_summary": "state changes across steps or source chunks",
           "requires": [],
@@ -5408,6 +6855,7 @@
           "slug": "working-memory-lock-in",
           "role": "A",
           "display_name": "Working-Memory Lock-In",
+          "plain_display_name": "Working-Memory Lock-In",
           "version": "1.1.0",
           "trigger_summary": "critical state competes with large context",
           "requires": [],
@@ -5417,6 +6865,7 @@
           "slug": "stable-long-context",
           "role": "R",
           "display_name": "Stable Long-Context",
+          "plain_display_name": "Stable Long-Context",
           "version": "1.1.0",
           "trigger_summary": "large corpus or long-running workflow",
           "requires": [],
@@ -5426,6 +6875,7 @@
           "slug": "activation-budget-funnel",
           "role": "R",
           "display_name": "Activation-Budget Funnel",
+          "plain_display_name": "Progressive Context Intake",
           "version": "1.1.0",
           "trigger_summary": "many sources or modules compete for attention",
           "requires": [],
@@ -5435,6 +6885,7 @@
           "slug": "attention-compression-scaffold",
           "role": "A",
           "display_name": "Attention Compression Scaffold",
+          "plain_display_name": "Temporary Focused-Context View",
           "version": "1.1.0",
           "trigger_summary": "source volume exceeds the active workspace",
           "requires": [],
@@ -5444,6 +6895,7 @@
           "slug": "neuro-focus",
           "role": "A",
           "display_name": "Neuro-Focus",
+          "plain_display_name": "Bounded Attention Focus",
           "version": "1.1.0",
           "trigger_summary": "large sources or a narrow debug region demand concentration",
           "requires": [],
@@ -5453,6 +6905,7 @@
           "slug": "drift-suppression",
           "role": "R",
           "display_name": "Drift Suppression",
+          "plain_display_name": "Drift Suppression",
           "version": "1.1.0",
           "trigger_summary": "long, branching, or iterative work",
           "requires": [],
@@ -5462,6 +6915,7 @@
           "slug": "coherence-heartbeat",
           "role": "A",
           "display_name": "Global Coherence Heartbeat",
+          "plain_display_name": "Periodic Whole-Task Consistency Check",
           "version": "1.1.0",
           "trigger_summary": "a workflow is long or multi-stage",
           "requires": [],
@@ -5471,6 +6925,7 @@
           "slug": "cross-context-resonance-lock",
           "role": "C",
           "display_name": "Cross-Context Resonance Lock",
+          "plain_display_name": "Cross-Context Relationship Guard",
           "version": "1.1.0",
           "trigger_summary": "related contexts must stay aligned across a long task",
           "requires": [],
@@ -5480,6 +6935,7 @@
           "slug": "state-snapshot",
           "role": "A",
           "display_name": "State Snapshot",
+          "plain_display_name": "State Snapshot",
           "version": "1.1.0",
           "trigger_summary": "a workflow pauses, hands off, or persists",
           "requires": [],
@@ -5489,6 +6945,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -5499,8 +6956,13 @@
     {
       "slug": "authoring",
       "display_name": "Authoring",
-      "purpose": "Seed composition for authoring workflows.",
-      "task_family": "",
+      "purpose": "Draft or rewrite a controlled deliverable for a defined message, audience, style, and source boundary.",
+      "task_family": "controlled drafting, rewriting, and publication preparation",
+      "task_phrases": [
+        "write a controlled draft",
+        "rewrite this document",
+        "prepare a publication draft"
+      ],
       "activation_boundary": "Use when drafting or rewriting a controlled deliverable with an explicit message, audience, style, source, or placeholder contract.",
       "important_exclusions": [
         "Omit citation fidelity for source-free drafting and omit structural surgery for tonal edits."
@@ -5513,6 +6975,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5522,6 +6985,7 @@
           "slug": "grounding-no-invention",
           "role": "C",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -5531,6 +6995,7 @@
           "slug": "style-alignment",
           "role": "A",
           "display_name": "Style-Alignment Module",
+          "plain_display_name": "Style-Alignment Module",
           "version": "1.1.0",
           "trigger_summary": "a style or voice is specified",
           "requires": [],
@@ -5540,6 +7005,7 @@
           "slug": "pedagogical-alignment",
           "role": "C",
           "display_name": "Pedagogical Alignment Constraint",
+          "plain_display_name": "Pedagogical Alignment Constraint",
           "version": "1.1.0",
           "trigger_summary": "an audience or teaching level is known",
           "requires": [],
@@ -5549,6 +7015,7 @@
           "slug": "safe-rewrite",
           "role": "R",
           "display_name": "Safe Rewrite Logic",
+          "plain_display_name": "Safe Rewrite Logic",
           "version": "1.1.0",
           "trigger_summary": "paraphrasing, polishing, or format conversion",
           "requires": [],
@@ -5558,6 +7025,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -5567,6 +7035,7 @@
           "slug": "placeholder-suppression",
           "role": "R",
           "display_name": "Placeholder Suppression",
+          "plain_display_name": "Placeholder Suppression",
           "version": "1.1.0",
           "trigger_summary": "templates or staged artifacts are finalized",
           "requires": [],
@@ -5576,8 +7045,9 @@
           "slug": "micro-repair",
           "role": "A",
           "display_name": "Micro-Repair",
+          "plain_display_name": "Minimal Local Correction",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires a defect is localized.",
+          "trigger_summary": "a specific defect has been localized",
           "requires": [],
           "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
         },
@@ -5585,6 +7055,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5595,8 +7066,13 @@
     {
       "slug": "creative-ideation",
       "display_name": "Creative Ideation",
-      "purpose": "Seed composition for creative ideation workflows.",
-      "task_family": "",
+      "purpose": "Generate materially distinct ideas and converge on a bounded selection using explicit criteria.",
+      "task_family": "bounded brainstorming, concept generation, and selection",
+      "task_phrases": [
+        "brainstorm distinct ideas",
+        "generate concepts",
+        "compare creative directions"
+      ],
       "activation_boundary": "Use when the user needs multiple materially distinct concepts followed by bounded convergence, while factual claims remain outside the creative corridor.",
       "important_exclusions": [
         "Omit high-stakes evidence gates unless factual claims enter the deliverable."
@@ -5611,6 +7087,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5620,6 +7097,7 @@
           "slug": "controlled-drift-corridors",
           "role": "R",
           "display_name": "Controlled Drift Corridors",
+          "plain_display_name": "Bounded Change Rules",
           "version": "1.1.0",
           "trigger_summary": "synthesis or creativity must coexist with fidelity",
           "requires": [],
@@ -5629,6 +7107,7 @@
           "slug": "counterfactual-integrity",
           "role": "A",
           "display_name": "Counterfactual Integrity Gate",
+          "plain_display_name": "Counterfactual Integrity Gate",
           "version": "1.1.0",
           "trigger_summary": "counterfactual or hypothetical reasoning is used",
           "requires": [],
@@ -5638,6 +7117,7 @@
           "slug": "domain-mode-isolation",
           "role": "A",
           "display_name": "Domain / Mode Isolation",
+          "plain_display_name": "Domain / Mode Isolation",
           "version": "1.1.0",
           "trigger_summary": "multiple domains or semantic modes coexist",
           "requires": [],
@@ -5647,6 +7127,7 @@
           "slug": "multiverse-reasoning",
           "role": "A",
           "display_name": "Multiverse Engine",
+          "plain_display_name": "Bounded Alternative Search",
           "version": "1.1.0",
           "trigger_summary": "competing hypotheses or designs would add value",
           "requires": [],
@@ -5656,8 +7137,9 @@
           "slug": "anti-tunnel-vision",
           "role": "A",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -5665,6 +7147,7 @@
           "slug": "parallel-qms",
           "role": "C",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5674,6 +7157,7 @@
           "slug": "grounding-no-invention",
           "role": "C",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -5684,8 +7168,13 @@
     {
       "slug": "education-explanation",
       "display_name": "Education / Explanation",
-      "purpose": "Seed composition for education / explanation workflows.",
-      "task_family": "",
+      "purpose": "Explain a subject for a defined learner and objective without sacrificing domain accuracy.",
+      "task_family": "teaching, tutoring, and audience-adapted explanation",
+      "task_phrases": [
+        "explain this to a learner",
+        "teach this concept",
+        "create a lesson"
+      ],
       "activation_boundary": "Use when an explanation must be adapted to a named learner, objective, and prerequisite level while retaining domain accuracy.",
       "important_exclusions": [
         "Omit deep validation stacks for low-risk exposition; retain accuracy checks that the domain requires."
@@ -5698,6 +7187,7 @@
           "slug": "pedagogical-alignment",
           "role": "R",
           "display_name": "Pedagogical Alignment Constraint",
+          "plain_display_name": "Pedagogical Alignment Constraint",
           "version": "1.1.0",
           "trigger_summary": "an audience or teaching level is known",
           "requires": [],
@@ -5707,6 +7197,7 @@
           "slug": "explanation-minimality-scaffold",
           "role": "A",
           "display_name": "Explanation Minimality Scaffold",
+          "plain_display_name": "Minimum Sufficient Explanation",
           "version": "1.1.0",
           "trigger_summary": "verbosity can obscure the answer",
           "requires": [],
@@ -5716,6 +7207,7 @@
           "slug": "style-alignment",
           "role": "A",
           "display_name": "Style-Alignment Module",
+          "plain_display_name": "Style-Alignment Module",
           "version": "1.1.0",
           "trigger_summary": "a style or voice is specified",
           "requires": [],
@@ -5725,6 +7217,7 @@
           "slug": "grounding-no-invention",
           "role": "A",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -5734,8 +7227,9 @@
           "slug": "micro-scaffolding",
           "role": "A",
           "display_name": "Micro-Scaffolding",
+          "plain_display_name": "Micro-Scaffolding",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires multi-step or high-constraint work.",
+          "trigger_summary": "multi-step or high-constraint work",
           "requires": [],
           "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md"
         },
@@ -5743,6 +7237,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5752,6 +7247,7 @@
           "slug": "safe-rewrite",
           "role": "A",
           "display_name": "Safe Rewrite Logic",
+          "plain_display_name": "Safe Rewrite Logic",
           "version": "1.1.0",
           "trigger_summary": "paraphrasing, polishing, or format conversion",
           "requires": [],
@@ -5761,8 +7257,9 @@
           "slug": "anti-tunnel-vision",
           "role": "C",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -5770,6 +7267,7 @@
           "slug": "parallel-qms",
           "role": "C",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5780,8 +7278,13 @@
     {
       "slug": "decision-support",
       "display_name": "Decision Support",
-      "purpose": "Seed composition for decision support workflows.",
-      "task_family": "",
+      "purpose": "Compare consequential options against explicit criteria and evidence without presenting generated choices as facts.",
+      "task_family": "option comparison, trade-off analysis, and recommendation support",
+      "task_phrases": [
+        "compare my options",
+        "help me decide",
+        "analyze tradeoffs"
+      ],
       "activation_boundary": "Use when a user must compare consequential options against explicit criteria and evidence without turning generated candidates into facts.",
       "important_exclusions": [
         "Omit Multiverse when options are already fixed; never turn candidate generation into fake evidence."
@@ -5794,6 +7297,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -5803,8 +7307,9 @@
           "slug": "decision-first-scaffold",
           "role": "R",
           "display_name": "Decision-First Scaffold",
+          "plain_display_name": "Decision-First Scaffold",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires analysis risks becoming directionless.",
+          "trigger_summary": "analysis risks becoming directionless before commitment",
           "requires": [],
           "package_path": "upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md"
         },
@@ -5812,6 +7317,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -5821,6 +7327,7 @@
           "slug": "risk-tier-scaling",
           "role": "A",
           "display_name": "Risk-Tier Scaling",
+          "plain_display_name": "Risk-Tier Scaling",
           "version": "1.1.0",
           "trigger_summary": "task risk varies or must be classified",
           "requires": [],
@@ -5830,8 +7337,9 @@
           "slug": "anti-tunnel-vision",
           "role": "A",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -5839,6 +7347,7 @@
           "slug": "bidirectional-consistency",
           "role": "A",
           "display_name": "Bidirectional Consistency",
+          "plain_display_name": "Bidirectional Consistency",
           "version": "1.1.0",
           "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
           "requires": [],
@@ -5848,6 +7357,7 @@
           "slug": "truth-priority-hierarchy",
           "role": "A",
           "display_name": "Truth Priority Hierarchy",
+          "plain_display_name": "Truth Priority Hierarchy",
           "version": "1.1.0",
           "trigger_summary": "evidence classes or authorities conflict",
           "requires": [],
@@ -5857,6 +7367,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -5866,6 +7377,7 @@
           "slug": "dynamic-depth-allocation",
           "role": "C",
           "display_name": "Dynamic Depth Allocation",
+          "plain_display_name": "Per-Region Reasoning Depth",
           "version": "1.1.0",
           "trigger_summary": "task regions vary in difficulty or risk",
           "requires": [],
@@ -5875,6 +7387,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -5885,8 +7398,13 @@
     {
       "slug": "architecture-skill-building",
       "display_name": "Architecture / Skill Building",
-      "purpose": "Seed composition for architecture / skill building workflows.",
-      "task_family": "",
+      "purpose": "Design a portable multi-component Skill with explicit interfaces, authority, host assumptions, and tests.",
+      "task_family": "Skill, agent, prompt-system, and workflow architecture",
+      "task_phrases": [
+        "build a reusable skill",
+        "design an agent workflow",
+        "improve a complex prompt system"
+      ],
       "activation_boundary": "Use when designing or restructuring a portable multi-component Skill whose interfaces, authority order, and host assumptions must be explicit.",
       "important_exclusions": [
         "Omit suite-level supervision for a single small Skill and omit surgery for additive changes."
@@ -5910,6 +7428,7 @@
           "slug": "architect-orchestrator",
           "role": "R",
           "display_name": "Architect Orchestrator",
+          "plain_display_name": "Modular System Design Orchestrator",
           "version": "1.1.0",
           "trigger_summary": "designing or refactoring a Skill, OS, framework, or workflow",
           "requires": [],
@@ -5919,6 +7438,7 @@
           "slug": "power-mode",
           "role": "A",
           "display_name": "POWER Mode",
+          "plain_display_name": "Deep Exploration Mode",
           "version": "1.1.0",
           "trigger_summary": "architecture or design benefits from broad exploration",
           "requires": [],
@@ -5928,6 +7448,7 @@
           "slug": "hybrid-mode",
           "role": "A",
           "display_name": "HYBRID Mode",
+          "plain_display_name": "Explore-Then-Commit Mode",
           "version": "1.1.0",
           "trigger_summary": "work includes both broad design and grounded execution",
           "requires": [],
@@ -5937,6 +7458,7 @@
           "slug": "reasoning-scale-controller",
           "role": "A",
           "display_name": "Reasoning-Scale Controller",
+          "plain_display_name": "Task-Scope Reasoning Controller",
           "version": "1.1.0",
           "trigger_summary": "task complexity or risk requires depth selection",
           "requires": [],
@@ -5946,6 +7468,7 @@
           "slug": "multiverse-reasoning",
           "role": "A",
           "display_name": "Multiverse Engine",
+          "plain_display_name": "Bounded Alternative Search",
           "version": "1.1.0",
           "trigger_summary": "competing hypotheses or designs would add value",
           "requires": [],
@@ -5955,6 +7478,7 @@
           "slug": "behavior-gene-builder",
           "role": "C",
           "display_name": "Behavior Gene Builder",
+          "plain_display_name": "Reusable Behavior Component Builder",
           "version": "1.1.0",
           "trigger_summary": "a recurring task family needs reusable behavior",
           "requires": [],
@@ -5964,6 +7488,7 @@
           "slug": "domain-core-builder",
           "role": "C",
           "display_name": "Domain Core Builder",
+          "plain_display_name": "Shared Domain Knowledge Component Builder",
           "version": "1.1.0",
           "trigger_summary": "a recurring domain needs structured knowledge and decision logic",
           "requires": [],
@@ -5973,6 +7498,7 @@
           "slug": "scoped-loader",
           "role": "R",
           "display_name": "Scoped Loader / Loader Sequencing",
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
           "version": "1.1.0",
           "trigger_summary": "a modular workflow has multiple available components",
           "requires": [],
@@ -5982,6 +7508,7 @@
           "slug": "stateblock",
           "role": "R",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -5991,6 +7518,7 @@
           "slug": "parallel-qms",
           "role": "R",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -6000,6 +7528,7 @@
           "slug": "meta-supervisor",
           "role": "A",
           "display_name": "Meta-Supervisor Bundle",
+          "plain_display_name": "Workflow Repair Supervisor",
           "version": "1.1.0",
           "trigger_summary": "complex scaffolding itself needs supervision",
           "requires": [],
@@ -6009,6 +7538,7 @@
           "slug": "adapter-first-experimentation",
           "role": "A",
           "display_name": "Adapter-First Experimentation",
+          "plain_display_name": "Adapter-First Experimentation",
           "version": "1.1.0",
           "trigger_summary": "a new capability may destabilize a base workflow",
           "requires": [],
@@ -6018,6 +7548,7 @@
           "slug": "crispr-edit",
           "role": "A",
           "display_name": "CRISPR Editing",
+          "plain_display_name": "Precision Local System Edit",
           "version": "1.1.0",
           "trigger_summary": "a change is small and local",
           "requires": [],
@@ -6027,6 +7558,7 @@
           "slug": "surgery-edit",
           "role": "C",
           "display_name": "Surgery Editing",
+          "plain_display_name": "Structural System Edit",
           "version": "1.1.0",
           "trigger_summary": "layers, Cores, or workflows require major replacement",
           "requires": [],
@@ -6036,6 +7568,7 @@
           "slug": "dynamic-depth-allocation",
           "role": "A",
           "display_name": "Dynamic Depth Allocation",
+          "plain_display_name": "Per-Region Reasoning Depth",
           "version": "1.1.0",
           "trigger_summary": "task regions vary in difficulty or risk",
           "requires": [],
@@ -6045,8 +7578,9 @@
           "slug": "anti-tunnel-vision",
           "role": "A",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -6054,6 +7588,7 @@
           "slug": "state-snapshot",
           "role": "A",
           "display_name": "State Snapshot",
+          "plain_display_name": "State Snapshot",
           "version": "1.1.0",
           "trigger_summary": "a workflow pauses, hands off, or persists",
           "requires": [],
@@ -6063,6 +7598,7 @@
           "slug": "future-proof-mode-selector",
           "role": "A",
           "display_name": "Future-Proof Mode Selector",
+          "plain_display_name": "Runtime Compatibility Mode Selector",
           "version": "1.1.0",
           "trigger_summary": "an implementation targets models with different capabilities",
           "requires": [],
@@ -6073,8 +7609,13 @@
     {
       "slug": "multi-agent-orchestration",
       "display_name": "Multi-Agent / Orchestration",
-      "purpose": "Seed composition for multi-agent / orchestration workflows.",
-      "task_family": "",
+      "purpose": "Coordinate distinct workers through scoped tasks, explicit state handoffs, and result collection.",
+      "task_family": "multi-worker delegation, handoffs, and synthesis",
+      "task_phrases": [
+        "delegate to multiple agents",
+        "coordinate parallel workers",
+        "combine agent results"
+      ],
       "activation_boundary": "Use only when the host can run or coordinate distinct workers and the task needs explicit routing, state exchange, and result collection.",
       "important_exclusions": [
         "Omit distributed claims when the host cannot provide isolated workers or result collection."
@@ -6090,6 +7631,7 @@
           "slug": "architect-orchestrator",
           "role": "R",
           "display_name": "Architect Orchestrator",
+          "plain_display_name": "Modular System Design Orchestrator",
           "version": "1.1.0",
           "trigger_summary": "designing or refactoring a Skill, OS, framework, or workflow",
           "requires": [],
@@ -6099,6 +7641,7 @@
           "slug": "scoped-loader",
           "role": "R",
           "display_name": "Scoped Loader / Loader Sequencing",
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
           "version": "1.1.0",
           "trigger_summary": "a modular workflow has multiple available components",
           "requires": [],
@@ -6108,8 +7651,9 @@
           "slug": "state-routing-bus",
           "role": "R",
           "display_name": "State Routing Bus",
+          "plain_display_name": "Task-State Handoff Router",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires multiple components exchange state.",
+          "trigger_summary": "multiple components must exchange typed state",
           "requires": [],
           "package_path": "upgradeables/orchestration/state-routing-bus/UPGRADEABLE.md"
         },
@@ -6117,6 +7661,7 @@
           "slug": "stateblock",
           "role": "R",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -6126,6 +7671,7 @@
           "slug": "state-snapshot",
           "role": "R",
           "display_name": "State Snapshot",
+          "plain_display_name": "State Snapshot",
           "version": "1.1.0",
           "trigger_summary": "a workflow pauses, hands off, or persists",
           "requires": [],
@@ -6135,6 +7681,7 @@
           "slug": "domain-mode-isolation",
           "role": "R",
           "display_name": "Domain / Mode Isolation",
+          "plain_display_name": "Domain / Mode Isolation",
           "version": "1.1.0",
           "trigger_summary": "multiple domains or semantic modes coexist",
           "requires": [],
@@ -6144,6 +7691,7 @@
           "slug": "resonance",
           "role": "A",
           "display_name": "Resonance",
+          "plain_display_name": "Cross-Module Coordination",
           "version": "1.1.0",
           "trigger_summary": "several active modules must align",
           "requires": [],
@@ -6153,6 +7701,7 @@
           "slug": "parallel-qms",
           "role": "A",
           "display_name": "Parallel Quality Management System",
+          "plain_display_name": "Parallel Validation System",
           "version": "1.1.0",
           "trigger_summary": "a composed workflow needs structured quality evaluation",
           "requires": [],
@@ -6162,6 +7711,7 @@
           "slug": "multi-layer-consistency",
           "role": "A",
           "display_name": "Multi-Layer Consistency",
+          "plain_display_name": "Multi-Layer Consistency",
           "version": "1.1.0",
           "trigger_summary": "multiple authority layers are composed",
           "requires": [],
@@ -6171,6 +7721,7 @@
           "slug": "external-state-automation",
           "role": "C",
           "display_name": "External State Automation",
+          "plain_display_name": "External State Automation",
           "version": "1.1.0",
           "trigger_summary": "continuation requires real external state",
           "requires": [],
@@ -6181,8 +7732,13 @@
     {
       "slug": "deterministic-intake-routing",
       "display_name": "Deterministic Intake / Routing",
-      "purpose": "Seed composition for deterministic intake / routing workflows.",
-      "task_family": "",
+      "purpose": "Route structured requests using explicit fields and predicates, clarifying or failing closed when inputs are missing.",
+      "task_family": "form intake, rules-based classification, and workflow routing",
+      "task_phrases": [
+        "route an intake form",
+        "classify requests by rules",
+        "choose a workflow from fields"
+      ],
       "activation_boundary": "Use when supplied fields and explicit predicates should deterministically select a route, with clarification or fail-closed handling for missing inputs.",
       "important_exclusions": [
         "Omit model-judged routing when deterministic predicates fully decide the route."
@@ -6195,6 +7751,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -6204,6 +7761,7 @@
           "slug": "clarification-gateway",
           "role": "A",
           "display_name": "Clarification Gateway",
+          "plain_display_name": "Clarification Gateway",
           "version": "1.1.0",
           "trigger_summary": "required variables are missing or instructions conflict",
           "requires": [],
@@ -6213,6 +7771,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -6222,6 +7781,7 @@
           "slug": "scoped-loader",
           "role": "R",
           "display_name": "Scoped Loader / Loader Sequencing",
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
           "version": "1.1.0",
           "trigger_summary": "a modular workflow has multiple available components",
           "requires": [],
@@ -6231,6 +7791,7 @@
           "slug": "domain-mode-isolation",
           "role": "R",
           "display_name": "Domain / Mode Isolation",
+          "plain_display_name": "Domain / Mode Isolation",
           "version": "1.1.0",
           "trigger_summary": "multiple domains or semantic modes coexist",
           "requires": [],
@@ -6240,6 +7801,7 @@
           "slug": "stateblock",
           "role": "R",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -6249,6 +7811,7 @@
           "slug": "structured-state-projection",
           "role": "A",
           "display_name": "Structured State Projection",
+          "plain_display_name": "Structured State Projection",
           "version": "1.1.0",
           "trigger_summary": "a component needs a bounded state view",
           "requires": [],
@@ -6258,8 +7821,9 @@
           "slug": "authority-anchor-enforcement",
           "role": "A",
           "display_name": "Authority Anchor Enforcement",
+          "plain_display_name": "Authority Anchor Enforcement",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires multiple instruction authorities coexist.",
+          "trigger_summary": "multiple instruction authorities coexist and may conflict",
           "requires": [],
           "package_path": "upgradeables/orchestration/authority-anchor-enforcement/UPGRADEABLE.md"
         },
@@ -6267,6 +7831,7 @@
           "slug": "external-state-automation",
           "role": "C",
           "display_name": "External State Automation",
+          "plain_display_name": "External State Automation",
           "version": "1.1.0",
           "trigger_summary": "continuation requires real external state",
           "requires": [],
@@ -6276,6 +7841,7 @@
           "slug": "authenticity-anti-evasion",
           "role": "R",
           "display_name": "Authenticity & Anti-Evasion Principle",
+          "plain_display_name": "Capability and Completion Honesty Gate",
           "version": "1.1.0",
           "trigger_summary": "claims about evidence, actions, or completion are emitted",
           "requires": [],
@@ -6286,8 +7852,13 @@
     {
       "slug": "long-context-source-fidelity",
       "display_name": "Long-Context Source Fidelity",
-      "purpose": "Seed composition for long-context source fidelity workflows.",
-      "task_family": "",
+      "purpose": "Transform a long or segmented source without losing quotations, identifiers, sequence, or provenance.",
+      "task_family": "long-document transformation and source-faithful continuation",
+      "task_phrases": [
+        "transform a long document",
+        "preserve quotes across sections",
+        "continue source faithful editing"
+      ],
       "activation_boundary": "Use when a long or segmented source must be transformed without losing sequence, quotations, identifiers, or provenance across context boundaries.",
       "important_exclusions": [
         "Omit persistence when one context suffices and omit citation certification for inaccessible sources."
@@ -6303,6 +7874,7 @@
           "slug": "working-memory-lock-in",
           "role": "R",
           "display_name": "Working-Memory Lock-In",
+          "plain_display_name": "Working-Memory Lock-In",
           "version": "1.1.0",
           "trigger_summary": "critical state competes with large context",
           "requires": [],
@@ -6312,6 +7884,7 @@
           "slug": "sequential-memory-state-engine",
           "role": "R",
           "display_name": "Sequential Memory State Engine (SMSE)",
+          "plain_display_name": "Ordered Memory-State Update Engine",
           "version": "1.1.0",
           "trigger_summary": "state changes across steps or source chunks",
           "requires": [],
@@ -6321,6 +7894,7 @@
           "slug": "stateblock",
           "role": "R",
           "display_name": "StateBlock",
+          "plain_display_name": "Canonical Task State",
           "version": "1.1.0",
           "trigger_summary": "work spans multiple steps or components",
           "requires": [],
@@ -6330,6 +7904,7 @@
           "slug": "stable-long-context",
           "role": "R",
           "display_name": "Stable Long-Context",
+          "plain_display_name": "Stable Long-Context",
           "version": "1.1.0",
           "trigger_summary": "large corpus or long-running workflow",
           "requires": [],
@@ -6339,8 +7914,9 @@
           "slug": "zero-drift-zones",
           "role": "R",
           "display_name": "Zero-Drift Zones",
+          "plain_display_name": "Immutable Content Zones",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires content contains fidelity-locked atoms.",
+          "trigger_summary": "content contains fidelity-locked atoms",
           "requires": [],
           "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
         },
@@ -6348,6 +7924,7 @@
           "slug": "drift-suppression",
           "role": "R",
           "display_name": "Drift Suppression",
+          "plain_display_name": "Drift Suppression",
           "version": "1.1.0",
           "trigger_summary": "long, branching, or iterative work",
           "requires": [],
@@ -6357,6 +7934,7 @@
           "slug": "image-text-fidelity-capture",
           "role": "C",
           "display_name": "Image Text Fidelity Capture",
+          "plain_display_name": "Image Text Fidelity Capture",
           "version": "1.1.0",
           "trigger_summary": "an image contains source text to transcribe",
           "requires": [],
@@ -6366,6 +7944,7 @@
           "slug": "reflectos",
           "role": "A",
           "display_name": "Work Reflection Loop OS / ReflectOS",
+          "plain_display_name": "Checkpointed Work Reflection",
           "version": "1.1.0",
           "trigger_summary": "output needs a deliberate quality pass",
           "requires": [],
@@ -6375,6 +7954,7 @@
           "slug": "fail-closed-abstention",
           "role": "R",
           "display_name": "Fail-Closed Abstention",
+          "plain_display_name": "Fail-Closed Abstention",
           "version": "1.1.0",
           "trigger_summary": "required evidence cannot be verified",
           "requires": [],
@@ -6384,6 +7964,7 @@
           "slug": "truth-redundancy",
           "role": "A",
           "display_name": "Truth Redundancy",
+          "plain_display_name": "Independent Evidence Redundancy",
           "version": "1.1.0",
           "trigger_summary": "a consequential claim can be independently checked",
           "requires": [],
@@ -6393,6 +7974,7 @@
           "slug": "citation-fidelity",
           "role": "C",
           "display_name": "Citation Fidelity Gate",
+          "plain_display_name": "Citation Fidelity Gate",
           "version": "1.1.0",
           "trigger_summary": "output contains citations or source-attributed claims",
           "requires": [],
@@ -6402,6 +7984,7 @@
           "slug": "state-snapshot",
           "role": "A",
           "display_name": "State Snapshot",
+          "plain_display_name": "State Snapshot",
           "version": "1.1.0",
           "trigger_summary": "a workflow pauses, hands off, or persists",
           "requires": [],
@@ -6412,8 +7995,13 @@
     {
       "slug": "perception-reasoning",
       "display_name": "Perception & Spatial Reasoning",
-      "purpose": "Infer transformation rules from examples, falsify alternatives, and execute the selected rule with bounded verification.",
+      "purpose": "Infer and apply transformations in bounded grid, symbolic, visual-analogy, or spatial-reasoning tasks.",
       "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
+      "task_phrases": [
+        "solve a grid puzzle",
+        "infer a visual transformation",
+        "complete a spatial pattern"
+      ],
       "activation_boundary": "Use for bounded integer-grid or symbolic transformation tasks with at least one training pair and a test input; disclose reduced verification when only one pair is available.",
       "important_exclusions": [
         "Omit coherence heartbeat and meta supervision for bounded single-puzzle work; add candidate branching only when hypotheses genuinely compete."
@@ -6428,6 +8016,7 @@
           "slug": "task-set-lock-in",
           "role": "R",
           "display_name": "Task-Set Lock-In",
+          "plain_display_name": "Task-Set Lock-In",
           "version": "1.1.0",
           "trigger_summary": "multi-step work begins or scope changes",
           "requires": [],
@@ -6437,6 +8026,7 @@
           "slug": "grounding-no-invention",
           "role": "R",
           "display_name": "Grounding / No-Invention",
+          "plain_display_name": "Grounding / No-Invention",
           "version": "1.1.0",
           "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
           "requires": [],
@@ -6446,8 +8036,9 @@
           "slug": "anti-tunnel-vision",
           "role": "R",
           "display_name": "Anti-Tunnel Vision",
+          "plain_display_name": "Anti-Tunnel Vision",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "trigger_summary": "premature fixation could hide credible alternatives",
           "requires": [],
           "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
         },
@@ -6455,6 +8046,7 @@
           "slug": "bounded-exit",
           "role": "R",
           "display_name": "Bounded ExIt",
+          "plain_display_name": "Bounded Iteration Stop Rule",
           "version": "1.1.0",
           "trigger_summary": "a draft needs iterative improvement",
           "requires": [],
@@ -6464,8 +8056,9 @@
           "slug": "micro-scaffolding",
           "role": "R",
           "display_name": "Micro-Scaffolding",
+          "plain_display_name": "Micro-Scaffolding",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires multi-step or high-constraint work.",
+          "trigger_summary": "multi-step or high-constraint work",
           "requires": [],
           "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md"
         },
@@ -6473,6 +8066,7 @@
           "slug": "bidirectional-consistency",
           "role": "A",
           "display_name": "Bidirectional Consistency",
+          "plain_display_name": "Bidirectional Consistency",
           "version": "1.1.0",
           "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
           "requires": [],
@@ -6482,6 +8076,7 @@
           "slug": "forethought-checkpoints",
           "role": "A",
           "display_name": "Forethought / Checkpoints",
+          "plain_display_name": "Forethought / Checkpoints",
           "version": "1.1.0",
           "trigger_summary": "an action is costly, irreversible, or dependency-sensitive",
           "requires": [],
@@ -6491,6 +8086,7 @@
           "slug": "cot-structured-state-block",
           "role": "A",
           "display_name": "CoT-Structured State Block",
+          "plain_display_name": "Auditable Reasoning State",
           "version": "1.1.0",
           "trigger_summary": "structured intermediate task state must survive across steps",
           "requires": [],
@@ -6500,8 +8096,9 @@
           "slug": "decision-first-scaffold",
           "role": "C",
           "display_name": "Decision-First Scaffold",
+          "plain_display_name": "Decision-First Scaffold",
           "version": "1.1.0",
-          "trigger_summary": "Activate when the task requires analysis risks becoming directionless.",
+          "trigger_summary": "analysis risks becoming directionless before commitment",
           "requires": [],
           "package_path": "upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md"
         },
@@ -6509,6 +8106,7 @@
           "slug": "invariance-stress-scaffold",
           "role": "C",
           "display_name": "Invariance Stress Scaffold",
+          "plain_display_name": "Protected-Constraint Robustness Test",
           "version": "1.1.0",
           "trigger_summary": "a patch or rewrite must preserve invariants",
           "requires": [],
@@ -6518,6 +8116,7 @@
           "slug": "counterfactual-integrity",
           "role": "C",
           "display_name": "Counterfactual Integrity Gate",
+          "plain_display_name": "Counterfactual Integrity Gate",
           "version": "1.1.0",
           "trigger_summary": "counterfactual or hypothetical reasoning is used",
           "requires": [],
@@ -6527,6 +8126,7 @@
           "slug": "multiverse-reasoning",
           "role": "O",
           "display_name": "Multiverse Engine",
+          "plain_display_name": "Bounded Alternative Search",
           "version": "1.1.0",
           "trigger_summary": "competing hypotheses or designs would add value",
           "requires": [],
@@ -6536,6 +8136,7 @@
           "slug": "cognitive-governor",
           "role": "O",
           "display_name": "Reasoning Budget / Cognitive Governor",
+          "plain_display_name": "Reasoning Effort Budget Controller",
           "version": "1.1.0",
           "trigger_summary": "effort allocation materially affects cost or quality",
           "requires": [],
@@ -6545,6 +8146,7 @@
           "slug": "coherence-heartbeat",
           "role": "X",
           "display_name": "Global Coherence Heartbeat",
+          "plain_display_name": "Periodic Whole-Task Consistency Check",
           "version": "1.1.0",
           "trigger_summary": "a workflow is long or multi-stage",
           "requires": [],
@@ -6554,6 +8156,7 @@
           "slug": "meta-supervisor",
           "role": "X",
           "display_name": "Meta-Supervisor Bundle",
+          "plain_display_name": "Workflow Repair Supervisor",
           "version": "1.1.0",
           "trigger_summary": "complex scaffolding itself needs supervision",
           "requires": [],

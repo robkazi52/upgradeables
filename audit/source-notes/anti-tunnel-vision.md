@@ -21,7 +21,7 @@ Name the leading path and at least one genuinely plausible competitor, specify t
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires premature fixation is plausible.. Best-fit tasks: ambiguous diagnosis, architecture choice with two credible patterns, research synthesis with competing explanations.
+Triggers: premature fixation could hide credible alternatives. Best-fit tasks: ambiguous diagnosis, architecture choice with two credible patterns, research synthesis with competing explanations.
 
 ## Interactions and failure boundary
 

@@ -30,7 +30,7 @@
     "the task requires a complete safety hazard inventory rather than prioritization"
   ],
   "triggers": [
-    "Activate when the task requires many possible causes compete."
+    "many plausible causes compete for priority"
   ],
   "non_triggers": [
     "the system is known to require irreducibly joint causes",
@@ -161,5 +161,17 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Dominant-Driver Isolation Scaffold",
+  "plain_aliases": [],
+  "task_phrases": [
+    "root-cause analysis",
+    "business driver analysis",
+    "performance bottleneck diagnosis",
+    "risk prioritization"
+  ],
+  "confusable_with": [
+    "anti-tunnel-vision",
+    "decision-first-scaffold"
+  ]
 }

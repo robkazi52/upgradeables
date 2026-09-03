@@ -161,5 +161,17 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Image Text Fidelity Capture",
+  "plain_aliases": [],
+  "task_phrases": [
+    "document image transcription",
+    "figure or screenshot capture",
+    "scanned-record intake",
+    "long-document source fidelity"
+  ],
+  "confusable_with": [
+    "citation-fidelity",
+    "grounding-no-invention"
+  ]
 }

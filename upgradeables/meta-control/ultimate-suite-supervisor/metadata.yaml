@@ -192,5 +192,20 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Suite-Wide Workflow Supervisor",
+  "plain_aliases": [
+    "Suite-Wide Workflow Supervisor"
+  ],
+  "task_phrases": [
+    "large modular OS execution",
+    "multi-mode skill suites",
+    "complex authoring or research systems",
+    "architecture plus execution pipelines"
+  ],
+  "confusable_with": [
+    "architect-orchestrator",
+    "hybrid-mode",
+    "meta-supervisor"
+  ]
 }

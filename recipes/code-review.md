@@ -13,7 +13,7 @@ O = optional, and X = normally excluded.
 | `dominant-driver-isolation-scaffold` | A |
 | `anti-tunnel-vision` | A |
 | `bidirectional-consistency` | A |
-| `invariance-stress-scaffold` | R |
+| `invariance-stress-scaffold` | C |
 | `epistemic-status-gating` | A |
 | `critical-atomic-verification` | C |
 | `citation-fidelity` | C |
@@ -25,6 +25,8 @@ O = optional, and X = normally excluded.
 
 Lock the requested review scope and expected output. Inspect the diff, relevant
 callers, contracts, tests, and configuration without assuming unseen behavior.
+If no diff, branch, commit range, or pull-request link is supplied, request one
+and stop rather than inventing review findings.
 Look for correctness defects, regressions, unsafe assumptions, missing tests, and
 scope drift. This is a review-only recipe: do not activate editing components
 unless the user separately asks for fixes.

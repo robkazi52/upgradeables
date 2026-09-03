@@ -28,7 +28,7 @@ def payload():
     recipes = load(ROOT / "recipes/recipes.json")["recipes"]
     return {
         "schema_version": "1.0.0",
-        "registry_version": "0.2.0",
+        "registry_version": "0.2.1",
         "generated_from": "upgradeables/*/*/metadata.yaml",
         "source_corpus": [
             "archive/source/OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
@@ -57,7 +57,8 @@ def render(data):
 def catalog_payload(data):
     """Render a compact discovery surface without duplicating canonical metadata."""
     fields = (
-        "slug", "display_name", "version", "purpose", "activation_class",
+        "slug", "display_name", "plain_display_name", "plain_aliases",
+        "task_phrases", "confusable_with", "version", "purpose", "activation_class",
         "functional_classes", "os_role", "pipeline_stages", "best_fit_tasks",
         "avoid_when", "mechanism_basis", "mechanism", "triggers", "requires",
         "counterbalances", "potentially_redundant_with", "package_path",
@@ -77,6 +78,7 @@ def catalog_payload(data):
                 "slug": slug,
                 "role": role,
                 "display_name": item["display_name"],
+                "plain_display_name": item["plain_display_name"],
                 "version": item["version"],
                 "trigger_summary": item["triggers"][0] if item["triggers"] else "",
                 "requires": item["requires"],
@@ -87,6 +89,7 @@ def catalog_payload(data):
             "display_name": recipe["display_name"],
             "purpose": recipe["purpose"],
             "task_family": recipe.get("task_family", ""),
+            "task_phrases": recipe.get("task_phrases", []),
             "activation_boundary": recipe.get("activation_boundary", ""),
             "important_exclusions": recipe.get("important_exclusions", []),
             "high_cost_components": recipe.get("high_cost_components", []),
@@ -107,7 +110,8 @@ def render_recipe_card(recipe):
     lines = [
         f"# {recipe['display_name']} — Resolved Recipe",
         "",
-        "Generated discovery view. Evaluate triggers here, then open only retained packages.",
+        "Generated discovery view. For normal execution, load the compact",
+        f"[runtime recipe pack](../../runtime/recipes/{recipe['slug']}.md) instead of full packages.",
         f"See the [source recipe notes](../{recipe['slug']}.md) for composition and tests.",
         "",
         "`R` stays required after selecting this recipe. `A`, `C`, and `O` require an",
@@ -120,7 +124,7 @@ def render_recipe_card(recipe):
         requires = ", ".join(f"`{slug}`" for slug in item["requires"]) or "—"
         trigger = item["trigger_summary"].replace("|", "\\|") or "See package"
         package = "../../" + item["package_path"]
-        component = f"[{item['display_name']} (`{item['slug']}@{item['version']}`)]({package})"
+        component = f"[{item['plain_display_name']} (`{item['slug']}@{item['version']}`)]({package})"
         lines.append(f"| {item['role']} | {component} | {trigger} | {requires} |")
     lines.extend([
         "",

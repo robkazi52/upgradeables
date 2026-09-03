@@ -1,0 +1,46 @@
+[
+  {
+    "task": "review this pull request for bugs and regressions",
+    "recipe": "code-review",
+    "conditional": ["invariance-stress-scaffold"],
+    "not_required": ["invariance-stress-scaffold", "micro-repair"]
+  },
+  {
+    "task": "triage and fix this GitHub issue",
+    "recipe": "coding-debugging",
+    "skill": "github-issue-triage-fix"
+  },
+  {
+    "task": "research five sources",
+    "recipe": "research-skill",
+    "skill": "source-bounded-research"
+  },
+  {
+    "task": "analyze a long document",
+    "recipe": "long-context-corpus",
+    "skill": "long-context-corpus-analysis"
+  },
+  {
+    "task": "improve a difficult prompt",
+    "recipe": "architecture-skill-building"
+  },
+  {
+    "task": "build a reusable skill",
+    "recipe": "architecture-skill-building",
+    "skill": "architecture-skill-building"
+  },
+  {
+    "task": "solve this grid puzzle",
+    "recipe": "perception-reasoning",
+    "skill": "arc-perception-solver"
+  },
+  {
+    "task": "review this patch only; do not edit it",
+    "recipe": "code-review",
+    "not_anywhere": ["micro-repair"]
+  },
+  {
+    "task": "say hello",
+    "recipe": null
+  }
+]

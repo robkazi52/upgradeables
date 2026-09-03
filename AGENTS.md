@@ -5,12 +5,14 @@ Start with [START_HERE.md](START_HERE.md).
 ## When using the library
 
 Complete the user's task. Do not edit this repository merely because you are
-using an Upgradeable. Select the closest recipe, load only triggered components
-and required dependencies, and follow the task route in `START_HERE.md`.
+using an Upgradeable. Query `runtime/router.json`, prefer an existing task Skill,
+then load one `runtime/recipes/` pack. Do not load parallel source, resolved,
+runtime, registry, and all-in-one representations of the same recipe.
 
 ## When building a Skill
 
-Read `MODEL_CONSUMPTION_GUIDE.md`, use
+Check `implementations/community/` first. Then read
+`MODEL_CONSUMPTION_GUIDE.md`, use
 `templates/SKILL_IMPLEMENTATION_TEMPLATE.md`, cite selected `slug@version`
 records, and return behavioral/composition tests. A Skill performs a job; it is
 not one wrapper per Upgradeable.

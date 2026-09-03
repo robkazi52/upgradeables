@@ -171,5 +171,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Minimum Sufficient Explanation",
+  "plain_aliases": [
+    "Minimum Sufficient Explanation"
+  ],
+  "task_phrases": [
+    "direct answers",
+    "status updates",
+    "executive summaries",
+    "routine technical guidance",
+    "high-volume assistant outputs"
+  ],
+  "confusable_with": [
+    "pedagogical-alignment",
+    "style-alignment"
+  ]
 }

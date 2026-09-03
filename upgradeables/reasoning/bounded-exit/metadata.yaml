@@ -172,5 +172,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Bounded Iteration Stop Rule",
+  "plain_aliases": [
+    "Bounded Iteration Stop Rule"
+  ],
+  "task_phrases": [
+    "document revision",
+    "code or prompt refinement",
+    "multi-pass synthesis",
+    "quality-controlled drafting"
+  ],
+  "confusable_with": [
+    "reasoning-scale-controller",
+    "structured-refinement"
+  ]
 }

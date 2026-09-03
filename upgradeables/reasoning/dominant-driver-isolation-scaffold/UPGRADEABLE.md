@@ -37,7 +37,7 @@ Canonical package: `dominant-driver-isolation-scaffold@1.1.0`. ID: `JAN26-03`. F
 
 ## Trigger Conditions
 
-- Activate when the task requires many possible causes compete.
+- many plausible causes compete for priority
 
 ## Non-Triggers
 

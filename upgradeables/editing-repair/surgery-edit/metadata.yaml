@@ -190,5 +190,21 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Structural System Edit",
+  "plain_aliases": [
+    "Structural System Edit"
+  ],
+  "task_phrases": [
+    "layer reorganization",
+    "Core replacement",
+    "major workflow change",
+    "large incompatible refactor",
+    "schema or public interface migration"
+  ],
+  "confusable_with": [
+    "crispr-edit",
+    "micro-repair",
+    "regenerative-rewrite"
+  ]
 }

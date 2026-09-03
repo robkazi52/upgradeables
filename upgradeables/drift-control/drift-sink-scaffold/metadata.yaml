@@ -33,7 +33,7 @@
     "retention or audit policy requires it to remain actively visible"
   ],
   "triggers": [
-    "Activate when the task requires discarded branches keep resurfacing."
+    "discarded branches repeatedly re-enter active reasoning"
   ],
   "non_triggers": [
     "the branch is unresolved rather than rejected",
@@ -182,5 +182,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Retired-Branch Quarantine",
+  "plain_aliases": [
+    "Retired-Branch Quarantine"
+  ],
+  "task_phrases": [
+    "long branching investigations",
+    "iterative drafting",
+    "agent workflows with recurring stale branches",
+    "large mixed-authority contexts"
+  ],
+  "confusable_with": [
+    "micro-scaffolding",
+    "non-authoritative-branch-suppression",
+    "stable-long-context"
+  ]
 }

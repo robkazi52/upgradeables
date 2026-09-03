@@ -24,12 +24,12 @@ Keep accepted decisions, unresolved issues, capability limits, and validation re
 
 ## Selected Upgradeables
 
-| Component | Why selected |
-|---|---|
-| `task-set-lock-in@1.1.0` | Keeps the observed behavior, expected behavior, edit scope, and success test fixed while diagnosis evolves. |
-| `invariance-stress-scaffold@1.1.0` | Tests whether the proposed repair preserves neighboring interfaces and behavior under benign input or representation changes. |
-| `micro-repair@1.1.0` | Constrains the patch to the smallest surface justified by the isolated root cause. |
-| `bidirectional-consistency@1.1.0` | Requires the changed lines to explain the repaired behavior and the diagnosis to justify every changed line. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `task-set-lock-in` | `1.1.0` | Keep | multi-step work begins or scope changes | Keeps the observed behavior, expected behavior, edit scope, and success test fixed while diagnosis evolves. |
+| `invariance-stress-scaffold` | `1.1.0` | Keep | a patch or rewrite must preserve invariants | Tests whether the proposed repair preserves neighboring interfaces and behavior under benign input or representation changes. |
+| `micro-repair` | `1.1.0` | Keep | a specific defect has been localized | Constrains the patch to the smallest surface justified by the isolated root cause. |
+| `bidirectional-consistency` | `1.1.0` | Keep | causal, logical, quantitative, or evidence claims are central | Requires the changed lines to explain the repaired behavior and the diagnosis to justify every changed line. |
 
 Tempting exclusions:
 
@@ -77,7 +77,7 @@ A stronger model may compress bookkeeping but must preserve authority, package-s
 
 ## Provenance
 
-Built against registry `0.2.0` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
+Built against registry `0.2.1` and the package versions cited above. It is community implementation guidance, not a recovered historical Skill.
 
 ## Tests
 

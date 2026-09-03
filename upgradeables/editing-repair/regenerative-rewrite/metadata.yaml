@@ -171,5 +171,19 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Full-Structure Invariant-Preserving Rewrite",
+  "plain_aliases": [
+    "Full-Structure Invariant-Preserving Rewrite"
+  ],
+  "task_phrases": [
+    "globally incoherent drafts",
+    "broken source-to-section mapping",
+    "documents with incompatible inherited structures",
+    "outputs damaged by repeated patching"
+  ],
+  "confusable_with": [
+    "micro-repair",
+    "surgery-edit"
+  ]
 }

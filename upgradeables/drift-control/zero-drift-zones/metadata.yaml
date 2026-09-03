@@ -36,7 +36,7 @@
     "everything is marked zero-drift and no useful transformation remains"
   ],
   "triggers": [
-    "Activate when the task requires content contains fidelity-locked atoms."
+    "content contains fidelity-locked atoms"
   ],
   "non_triggers": [
     "the user explicitly authorizes change to the marked content",
@@ -185,5 +185,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Immutable Content Zones",
+  "plain_aliases": [
+    "Immutable Content Zones"
+  ],
+  "task_phrases": [
+    "legal and policy transformation",
+    "source-grounded summaries",
+    "code/API migration",
+    "safety-critical instructions"
+  ],
+  "confusable_with": [
+    "controlled-drift-corridors",
+    "drift-immunity-propagation",
+    "working-memory-lock-in"
+  ]
 }

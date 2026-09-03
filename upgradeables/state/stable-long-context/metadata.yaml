@@ -183,5 +183,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Stable Long-Context",
+  "plain_aliases": [],
+  "task_phrases": [
+    "long research projects",
+    "large document synthesis",
+    "multi-session builds",
+    "extended agent runs"
+  ],
+  "confusable_with": [
+    "sequential-memory-state-engine",
+    "state-snapshot",
+    "working-memory-lock-in"
+  ]
 }

@@ -27,23 +27,23 @@ output dimensions, invariant cells/relations, revision count, and uncertainty.
 
 ## Selected Upgradeables
 
-| Recipe role | Component | Decision | Reason |
-|---|---|---|---|
-| R | `task-set-lock-in@1.1.0` | Keep | Freeze the verified rule and output contract during construction. |
-| R | `grounding-no-invention@1.1.0` | Keep | Every rule element must be supported by the training pairs. |
-| R | `anti-tunnel-vision@1.1.0` | Keep | Seek a counterexample before committing to the first plausible pattern. |
-| R | `bounded-exit@1.1.0` | Keep | Stop unproductive hypothesis cycling with an explicit uncertain result. |
-| R | `micro-scaffolding@1.1.0` | Keep | Hold only the local rule, evidence, invariants, and row checks. |
-| A | `bidirectional-consistency@1.1.0` | Keep | Test forward prediction and backward explanatory coverage. |
-| A | `forethought-checkpoints@1.1.0` | Keep | Confirm dimensions, palette, and construction plan before emission. |
-| A | `cot-structured-state-block@1.1.0` | Drop | The smaller micro-scaffold is sufficient for ordinary puzzles. |
-| C | `decision-first-scaffold@1.1.0` | Drop | Add only when multiple rules survive falsification. |
-| C | `invariance-stress-scaffold@1.1.0` | Keep when triggered | Check unchanged cells or relations when the inferred rule preserves them. |
-| C | `counterfactual-integrity@1.1.0` | Drop | Add only when rejected candidates risk leaking into the chosen rule. |
-| O | `multiverse-reasoning@1.1.0` | Drop | Anti-Tunnel Vision supplies enough alternatives unless ambiguity persists. |
-| O | `cognitive-governor@1.1.0` | Drop | Fixed bounded passes suffice for the default case. |
-| X | `coherence-heartbeat@1.1.0` | Exclude | One puzzle does not justify periodic global checks. |
-| X | `meta-supervisor@1.1.0` | Exclude | Suite-level supervision is disproportionate. |
+| Component | Version | Decision | Active trigger | Reason |
+|---|---|---|---|---|
+| `task-set-lock-in` | `1.1.0` | Keep | a candidate rule is accepted | Freeze the verified rule and output contract during construction. |
+| `grounding-no-invention` | `1.1.0` | Keep | rule elements depend on training pairs | Keep every rule element grounded. |
+| `anti-tunnel-vision` | `1.1.0` | Keep | the first plausible pattern appears | Seek a counterexample before commitment. |
+| `bounded-exit` | `1.1.0` | Keep | hypothesis cycling stops producing evidence | Return explicit uncertainty instead of looping. |
+| `micro-scaffolding` | `1.1.0` | Keep | local construction state is needed | Hold only the rule, evidence, invariants, and row checks. |
+| `bidirectional-consistency` | `1.1.0` | Keep | a rule predicts an output | Test forward prediction and backward explanatory coverage. |
+| `forethought-checkpoints` | `1.1.0` | Keep | output construction is about to begin | Confirm dimensions, palette, and plan. |
+| `cot-structured-state-block` | `1.1.0` | Drop | not active: the micro-scaffold is sufficient | Avoid duplicate state machinery. |
+| `decision-first-scaffold` | `1.1.0` | Drop | not active: one rule survives | Add only when multiple rules survive falsification. |
+| `invariance-stress-scaffold` | `1.1.0` | Keep when triggered | the inferred rule preserves cells or relations | Verify protected invariants. |
+| `counterfactual-integrity` | `1.1.0` | Drop | not active: rejected rules remain isolated | Add only if rejected candidates leak. |
+| `multiverse-reasoning` | `1.1.0` | Drop | not active: bounded alternatives suffice | Avoid unnecessary branch expansion. |
+| `cognitive-governor` | `1.1.0` | Drop | not active: fixed passes suffice | Avoid unnecessary scheduling control. |
+| `coherence-heartbeat` | `1.1.0` | Exclude | one puzzle has no periodic long-context phase | Periodic global checks are disproportionate. |
+| `meta-supervisor` | `1.1.0` | Exclude | no multi-suite coordination exists | Suite-level supervision is disproportionate. |
 
 Also exclude Citation Fidelity (no citations), External State Automation (no
 required persistence), and prose-style controls unless the host task adds those needs.

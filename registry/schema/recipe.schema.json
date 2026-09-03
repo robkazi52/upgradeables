@@ -8,6 +8,8 @@
     "display_name",
     "version",
     "purpose",
+    "task_family",
+    "task_phrases",
     "classifications"
   ],
   "properties": {
@@ -29,6 +31,16 @@
     "purpose": {
       "type": "string",
       "minLength": 1
+    },
+    "task_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_phrases": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 2,
+      "uniqueItems": true
     },
     "classifications": {
       "type": "object",

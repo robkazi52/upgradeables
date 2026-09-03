@@ -182,5 +182,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Working-Memory Lock-In",
+  "plain_aliases": [],
+  "task_phrases": [
+    "long agent loops",
+    "high-fidelity transformations",
+    "safety-critical execution",
+    "multi-step builds"
+  ],
+  "confusable_with": [
+    "stable-long-context",
+    "task-set-lock-in",
+    "working-memory-cues"
+  ]
 }

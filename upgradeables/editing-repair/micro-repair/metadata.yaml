@@ -31,7 +31,7 @@
     "the correct local replacement depends on unresolved global decisions"
   ],
   "triggers": [
-    "Activate when the task requires a defect is localized."
+    "a specific defect has been localized"
   ],
   "non_triggers": [
     "the artifact architecture is globally wrong",
@@ -171,5 +171,21 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Minimal Local Correction",
+  "plain_aliases": [
+    "Minimal Local Correction"
+  ],
+  "task_phrases": [
+    "one unsupported claim",
+    "one missing requirement",
+    "awkward transition",
+    "local contradiction",
+    "small formatting defect"
+  ],
+  "confusable_with": [
+    "crispr-edit",
+    "regenerative-rewrite",
+    "structured-refinement"
+  ]
 }

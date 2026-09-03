@@ -37,7 +37,7 @@ Canonical package: `decision-first-scaffold@1.1.0`. ID: `JAN26-04`. Functional c
 
 ## Trigger Conditions
 
-- Activate when the task requires analysis risks becoming directionless.
+- analysis risks becoming directionless before commitment
 
 ## Non-Triggers
 

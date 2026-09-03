@@ -181,5 +181,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Domain / Mode Isolation",
+  "plain_aliases": [],
+  "task_phrases": [
+    "mixed-domain workspaces",
+    "multi-tenant assistants",
+    "regulated workflows",
+    "parallel specialist agents"
+  ],
+  "confusable_with": [
+    "mode-lock-in",
+    "scoped-loader",
+    "structured-state-projection"
+  ]
 }

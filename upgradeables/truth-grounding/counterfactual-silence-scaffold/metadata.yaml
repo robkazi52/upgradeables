@@ -158,5 +158,18 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "No-Unrequested-Scenarios Guard",
+  "plain_aliases": [
+    "No-Unrequested-Scenarios Guard"
+  ],
+  "task_phrases": [
+    "record extraction",
+    "source-faithful summarization",
+    "incident reporting",
+    "citation-bound authoring"
+  ],
+  "confusable_with": [
+    "counterfactual-integrity"
+  ]
 }

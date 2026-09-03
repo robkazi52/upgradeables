@@ -181,5 +181,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Bounded Change Rules",
+  "plain_aliases": [
+    "Bounded Change Rules"
+  ],
+  "task_phrases": [
+    "document rewriting",
+    "cross-format conversion",
+    "summarization",
+    "creative work with fixed constraints"
+  ],
+  "confusable_with": [
+    "drift-spectra-scaling",
+    "drift-suppression",
+    "zero-drift-zones"
+  ]
 }

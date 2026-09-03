@@ -17,6 +17,10 @@
     "activation_class",
     "implementation_forms",
     "purpose",
+    "plain_display_name",
+    "plain_aliases",
+    "task_phrases",
+    "confusable_with",
     "problem_solved",
     "os_role",
     "pipeline_stages",
@@ -62,6 +66,26 @@
     "display_name": {
       "type": "string",
       "minLength": 1
+    },
+    "plain_display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plain_aliases": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "task_phrases": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "confusable_with": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+      "uniqueItems": true
     },
     "version": {
       "type": "string",

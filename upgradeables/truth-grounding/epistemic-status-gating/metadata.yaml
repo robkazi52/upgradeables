@@ -160,5 +160,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Evidence-Confidence Gate",
+  "plain_aliases": [
+    "Evidence-Confidence Gate"
+  ],
+  "task_phrases": [
+    "evidence synthesis",
+    "investigation",
+    "decision support",
+    "source-grounded research",
+    "high-stakes review"
+  ],
+  "confusable_with": [
+    "grounding-no-invention"
+  ]
 }

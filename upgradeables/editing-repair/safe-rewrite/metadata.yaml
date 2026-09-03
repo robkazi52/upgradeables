@@ -176,5 +176,19 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Safe Rewrite Logic",
+  "plain_aliases": [],
+  "task_phrases": [
+    "paraphrasing",
+    "tone adjustment",
+    "format conversion",
+    "clarity polishing",
+    "audience adaptation"
+  ],
+  "confusable_with": [
+    "crispr-edit",
+    "micro-repair",
+    "style-alignment"
+  ]
 }

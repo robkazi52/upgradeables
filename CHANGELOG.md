@@ -4,6 +4,23 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-09-03
+
+### Added
+
+- Compact runtime cards, one-file recipe packs, a tiny task router, and tiered
+  offline artifacts for low-context execution.
+- Natural-language task discovery, normalized search, brief/path/runtime output
+  modes, and deterministic discovery fixtures.
+- Plain-language display aliases and a GitHub issue triage-and-fix community Skill.
+
+### Changed
+
+- Routed models to existing Skills and compact runtime packs before full packages.
+- Clarified that required recipe components may remain dormant until their phase
+  trigger, and made invariance stress conditional for code review.
+- Harmonized Skill selection tables and added generated-artifact token budgets.
+
 ## [0.2.0] - 2026-09-03
 
 ### Added

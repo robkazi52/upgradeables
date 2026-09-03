@@ -156,5 +156,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Capability and Completion Honesty Gate",
+  "plain_aliases": [
+    "Capability and Completion Honesty Gate"
+  ],
+  "task_phrases": [
+    "agentic tool use",
+    "research status reporting",
+    "coding and build completion reports",
+    "high-stakes analysis"
+  ],
+  "confusable_with": [
+    "grounding-no-invention"
+  ]
 }

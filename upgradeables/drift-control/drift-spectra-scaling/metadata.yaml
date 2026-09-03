@@ -184,5 +184,20 @@
   "activation_cost": {
     "level": "medium",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Content-Specific Change Tolerance",
+  "plain_aliases": [
+    "Content-Specific Change Tolerance"
+  ],
+  "task_phrases": [
+    "mixed-content rewriting",
+    "summaries",
+    "format migrations",
+    "multi-stage synthesis"
+  ],
+  "confusable_with": [
+    "compute-adaptive-drift",
+    "controlled-drift-corridors",
+    "domain-normalized-drift"
+  ]
 }

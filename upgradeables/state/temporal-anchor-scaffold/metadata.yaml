@@ -182,5 +182,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Temporal Anchor Scaffold",
+  "plain_aliases": [],
+  "task_phrases": [
+    "incident timelines",
+    "policy version analysis",
+    "case chronology",
+    "news or market research"
+  ],
+  "confusable_with": [
+    "micro-scaffolding",
+    "sequential-memory-state-engine",
+    "state-snapshot"
+  ]
 }

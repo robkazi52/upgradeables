@@ -181,5 +181,21 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Conservative Execution Mode",
+  "plain_aliases": [
+    "Conservative Execution Mode"
+  ],
+  "task_phrases": [
+    "source-faithful extraction",
+    "production changes",
+    "high-risk recommendations",
+    "final publication",
+    "irreversible operations"
+  ],
+  "confusable_with": [
+    "hybrid-mode",
+    "power-mode",
+    "risk-tier-scaling"
+  ]
 }

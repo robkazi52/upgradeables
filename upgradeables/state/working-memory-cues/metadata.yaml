@@ -176,5 +176,18 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Working-Memory Cues",
+  "plain_aliases": [],
+  "task_phrases": [
+    "long transformations",
+    "repetitive tool loops",
+    "tasks with a few recurring constraints",
+    "review workflows"
+  ],
+  "confusable_with": [
+    "attention-compression-scaffold",
+    "stateblock",
+    "working-memory-lock-in"
+  ]
 }

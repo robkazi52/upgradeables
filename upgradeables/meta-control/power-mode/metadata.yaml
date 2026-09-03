@@ -182,5 +182,20 @@
   "activation_cost": {
     "level": "high",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Deep Exploration Mode",
+  "plain_aliases": [
+    "Deep Exploration Mode"
+  ],
+  "task_phrases": [
+    "system architecture",
+    "novel workflow design",
+    "strategic planning",
+    "ambiguous research design"
+  ],
+  "confusable_with": [
+    "hybrid-mode",
+    "multiverse-reasoning",
+    "safe-mode"
+  ]
 }

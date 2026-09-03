@@ -37,6 +37,8 @@ class V02CompletenessTests(unittest.TestCase):
             self.assertEqual(item["version"], "1.1.0", item["slug"])
             for key in ("os_role", "pipeline_stages", "best_fit_tasks", "avoid_when", "source_refs"):
                 self.assertTrue(item[key], f"{item['slug']}: {key}")
+            for key in ("plain_display_name", "task_phrases"):
+                self.assertTrue(item[key], f"{item['slug']}: {key}")
             self.assertTrue(set(item["recommended_skill_types"]) <= self.SKILL_TYPES, item["slug"])
             self.assertNotEqual(item["recommended_skill_types"], item["best_fit_tasks"], item["slug"])
             cases = path.parent / "tests/cases.json"

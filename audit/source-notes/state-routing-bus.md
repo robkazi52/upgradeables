@@ -20,7 +20,7 @@ Represent the handoff as a typed envelope containing sender, receiver, schema ve
 
 ## Trigger and task use
 
-Triggers: Activate when the task requires multiple components exchange state.. Best-fit tasks: multi-agent workflows, modular Skills, cross-process continuation.
+Triggers: multiple components must exchange typed state. Best-fit tasks: multi-agent workflows, modular Skills, cross-process continuation.
 
 ## Interactions and failure boundary
 

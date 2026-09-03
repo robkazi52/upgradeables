@@ -180,5 +180,20 @@
   "activation_cost": {
     "level": "low",
     "notes": "Architectural burden classification; not a measured compute benchmark."
-  }
+  },
+  "plain_display_name": "Reasoning Effort Budget Controller",
+  "plain_aliases": [
+    "Reasoning Effort Budget Controller"
+  ],
+  "task_phrases": [
+    "mixed-risk queues",
+    "bounded research",
+    "iterative authoring",
+    "cost-sensitive agent workflows"
+  ],
+  "confusable_with": [
+    "dynamic-depth-allocation",
+    "reasoning-throughput-governor",
+    "risk-tier-scaling"
+  ]
 }
