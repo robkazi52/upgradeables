@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-08",
   "slug": "working-memory-lock-in",
   "display_name": "Working-Memory Lock-In",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -21,46 +21,69 @@
   "implementation_forms": [
     "state-manager"
   ],
-  "purpose": "Keep the most task-critical information in compact active state, verbatim where fidelity requires it.",
+  "purpose": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "long agent loops",
+    "high-fidelity transformations",
+    "safety-critical execution",
+    "multi-step builds"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "nothing needs continuous salience",
+    "the proposed lock is large enough to crowd out working context",
+    "values are unresolved or rapidly changing"
   ],
   "triggers": [
     "critical state competes with large context"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "nothing needs continuous salience",
+    "the proposed lock is large enough to crowd out working context",
+    "values are unresolved or rapidly changing"
   ],
   "requires": [],
   "recommended_with": [
-    "working-memory-cues",
-    "activation-budget-funnel"
+    "stateblock",
+    "task-set-lock-in",
+    "working-memory-cues"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "attention-compression-scaffold",
+    "stable-long-context"
+  ],
+  "potentially_redundant_with": [
+    "mode-lock-in",
+    "task-set-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "canonical critical fields",
+    "omission-risk ranking",
+    "state version",
+    "checkpoint triggers",
+    "release conditions"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "small active invariant set",
+    "heartbeat result",
+    "stale/conflict alert",
+    "release updates"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal heartbeat on a short single-step task",
+      "locking low-impact preferences"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "small high-consequence invariant set",
+      "canonical pointers",
+      "freshness checks",
+      "conflict stop"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not proceed when a critical locked field cannot be reconciled.",
+    "Shrink the set when lock overhead begins to reduce task performance."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +96,92 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Long or tool-heavy work may retain the archive but lose active attention to the few facts that govern every next action.",
+  "os_role": [
+    "active invariant cache",
+    "attention stability",
+    "checkpoint heartbeat"
+  ],
+  "pipeline_stages": [
+    "task initialization",
+    "before each major action",
+    "after context/tool transition",
+    "final validation"
+  ],
+  "best_fit_tasks": [
+    "long agent loops",
+    "high-fidelity transformations",
+    "safety-critical execution",
+    "multi-step builds"
+  ],
+  "avoid_when": [
+    "nothing needs continuous salience",
+    "the proposed lock is large enough to crowd out working context",
+    "values are unresolved or rapidly changing"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Select only the invariants whose omission would materially corrupt the task, store canonical pointers plus compact current values, and run a heartbeat before major actions to confirm freshness and consistency. Refresh on accepted state change; if a locked item conflicts or goes stale, block dependent work until reconciled.",
+  "procedure": [
+    "Rank candidate state by consequence of omission.",
+    "Lock the smallest critical subset with canonical field pointers and version.",
+    "Check it before major actions and after context changes.",
+    "Refresh values only from accepted canonical updates.",
+    "Block or reconcile when a locked value is missing, stale, or contradictory.",
+    "Release items when their risk window closes."
+  ],
+  "always_do": [
+    "keep the lock set small",
+    "point to canonical state",
+    "verify freshness",
+    "release completed invariants"
+  ],
+  "never_do": [
+    "lock the entire context",
+    "update values from untrusted content",
+    "continue through a high-impact lock conflict",
+    "keep obsolete locks"
+  ],
+  "interaction_reasons": {
+    "stateblock": "Owns the canonical values behind the active lock set.",
+    "task-set-lock-in": "Supplies objective and acceptance invariants commonly selected for working memory.",
+    "working-memory-cues": "Delivers moment-specific reminders drawn from the continuously protected set."
+  },
+  "counterbalance_reasons": {
+    "stable-long-context": "Moves noncritical detail to indexed long-term context.",
+    "attention-compression-scaffold": "Builds temporary context around the lock set for a local subtask."
+  },
+  "redundancy_reasons": {
+    "task-set-lock-in": "The task set defines locked truth; WM Lock should reference only the subset needing constant salience.",
+    "mode-lock-in": "Mode contract may be one lock item, but the working-memory mechanism should not duplicate its full policy."
+  },
+  "conflict_rules": [
+    "Canonical accepted state overrides cached values after validation.",
+    "A stale or contradictory safety-critical lock blocks dependent execution; lower-authority context cannot resolve it."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Working Memory Lock-In"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "Interpretation rule for the frozen T2 registry",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Working Memory Lock-In inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8. Working-Memory Lock-In Heartbeats",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Heartbeat and zero-drift fidelity workflow"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

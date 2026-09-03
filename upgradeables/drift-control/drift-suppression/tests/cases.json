@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "drift-suppression",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "drift-suppression-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The qualification is a narrow-corridor claim and the output crossed it.",
+      "expect": "The repaired summary preserves the source condition.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "drift-suppression-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "no semantic baseline or allowed corridor exists",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "drift-suppression-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Latest authorized task/source state defines the baseline, not the oldest lock by default.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "drift-suppression-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Stop publication when a high-impact deviation cannot be repaired or adjudicated.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "drift-suppression-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "source/task baseline",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "drift-suppression-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A transformed artifact differs from source both stylistically and in one qualified claim.",
+      "expect": "Accept permitted style variation, classify the claim change as drift, and repair only that region.",
+      "reject": "Reject all difference or ignore the semantic change."
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-13",
   "slug": "structured-state-projection",
   "display_name": "Structured State Projection",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,48 +21,68 @@
     "state-schema",
     "state-manager"
   ],
-  "purpose": "Project selected explicit state fields into a downstream component without exposing unrelated context.",
+  "purpose": "Reduce context, privacy, and authority leakage between components.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-agent systems",
+    "domain isolation",
+    "sensitive workflows",
+    "tool calls with narrow schemas"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "one trusted consumer legitimately needs the whole safe state",
+    "field dependencies are unknown",
+    "projection could conceal a safety-critical constraint"
   ],
   "triggers": [
     "a component needs a bounded state view"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "one trusted consumer legitimately needs the whole safe state",
+    "field dependencies are unknown",
+    "projection could conceal a safety-critical constraint"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "state-routing-bus"
+    "domain-mode-isolation",
+    "scoped-loader",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "cot-structured-state-block"
+  ],
+  "potentially_redundant_with": [
+    "attention-compression-scaffold",
+    "state-snapshot"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "canonical StateBlock version",
+    "consumer identity",
+    "field policy",
+    "sensitivity labels",
+    "required constraints"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "versioned purpose-specific state view",
+    "redaction record",
+    "write-back policy"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "materializing a separate object for a simple trusted one-consumer task",
+      "derived convenience fields"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "least privilege",
+      "mandatory constraints",
+      "version/provenance",
+      "write-back validation"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not project when required field dependencies or safety constraints are unknown.",
+    "Treat this mechanism as provisional until original concept-specific documentation is recovered."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +95,90 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Passing the full StateBlock to every agent or tool exposes irrelevant or sensitive fields and encourages unauthorized mutation.",
+  "os_role": [
+    "least-privilege state view",
+    "component boundary",
+    "context minimization"
+  ],
+  "pipeline_stages": [
+    "before component invocation",
+    "domain transfer",
+    "handoff",
+    "output merge"
+  ],
+  "best_fit_tasks": [
+    "multi-agent systems",
+    "domain isolation",
+    "sensitive workflows",
+    "tool calls with narrow schemas"
+  ],
+  "avoid_when": [
+    "one trusted consumer legitimately needs the whole safe state",
+    "field dependencies are unknown",
+    "projection could conceal a safety-critical constraint"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "A modern interpretation is to define a projection contract listing allowed fields, necessary derived values, redactions, provenance, version, and write-back rights. Materialize the view from canonical state at invocation time and merge returned deltas only through the canonical owner's validation path.",
+  "procedure": [
+    "Identify the consumer and its minimum information need.",
+    "Declare included, derived, redacted, and mandatory safety fields.",
+    "Generate the view from an identified canonical state version.",
+    "Attach provenance and freshness metadata.",
+    "Validate any returned delta against the consumer's write rights before canonical merge."
+  ],
+  "always_do": [
+    "include mandatory constraints even when they are not task content",
+    "preserve source field identity",
+    "declare freshness/version",
+    "validate write-back separately"
+  ],
+  "never_do": [
+    "copy the full state by default",
+    "grant mutation rights through a read projection",
+    "drop a constraint required for safe interpretation"
+  ],
+  "interaction_reasons": {
+    "stateblock": "Is the canonical source from which projections are derived.",
+    "domain-mode-isolation": "Provides the controlled bridge across isolated domains.",
+    "scoped-loader": "Pairs resource minimization with state minimization."
+  },
+  "counterbalance_reasons": {
+    "cot-structured-state-block": "Ensures the projected reasoning-relevant view remains inspectable without exposing private deliberation.",
+    "clarification-gateway": "Clarifies uncertain consumer needs before aggressive field removal."
+  },
+  "redundancy_reasons": {
+    "attention-compression-scaffold": "Both reduce active context; projection enforces a consumer contract, while attention compression is a temporary cognitive view.",
+    "state-snapshot": "A snapshot freezes a version; projection filters a version for use."
+  },
+  "conflict_rules": [
+    "Mandatory safety and authority fields override a consumer's request to omit them.",
+    "A returned projection delta cannot overwrite fields outside declared write scope."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Structured State Projection residual listing"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "4. December 3, 2025 — state architecture corrections",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Structured State Projection inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "6.2 T3 structured reasoning-state representation",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Shared state projections and domain isolation"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

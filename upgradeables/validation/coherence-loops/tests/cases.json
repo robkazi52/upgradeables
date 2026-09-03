@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "coherence-loops",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "coherence-loops-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The defect spans dependent artifacts and one repair may expose another.",
+      "expect": "All surfaces use one schema name with a recorded two-iteration repair path.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "coherence-loops-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the discrepancy is isolated and a single deterministic correction suffices",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "coherence-loops-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Explicit invariants outrank local convenience.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "coherence-loops-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Stop without certification when inconsistency does not decrease, repairs oscillate, or resolution requires changing a locked invariant.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "coherence-loops-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit invariants, dependency recheck, and bounded exit",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "coherence-loops-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A second repair restores one file but reintroduces the first contradiction elsewhere.",
+      "expect": "Detect oscillation, stop the loop, and report the unresolved invariant conflict.",
+      "reject": "Continue identical repair cycles indefinitely."
+    }
+  ]
+}

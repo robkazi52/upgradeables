@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "micro-repair",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "micro-repair-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The defect is local and the surrounding argument is correct.",
+      "expect": "The unsupported claim is removed with no unrelated semantic change.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "micro-repair-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the artifact architecture is globally wrong",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "micro-repair-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Do not preserve a frozen neighbor if it is proven part of the defect; explicitly widen the window instead.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "micro-repair-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "scope creep",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "micro-repair-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "smallest-fault localization",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "micro-repair-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "One local unit fails while its neighbors pass.",
+      "expect": "The skill freezes passing neighbors, changes the minimum atoms, checks boundaries, and escalates if the defect proves systemic.",
+      "reject": "The skill rewrites the section for general improvement or applies repeated local patches to broken architecture."
+    }
+  ]
+}

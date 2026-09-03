@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-08",
   "slug": "explanation-minimality-scaffold",
   "display_name": "Explanation Minimality Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -19,46 +19,68 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "Use the shortest explanation that remains accurate, sufficient, and appropriate for the audience.",
+  "purpose": "Remove explanatory material that does not change comprehension, verification, decision, or safe execution while retaining required rationale and caveats.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow"
+    "direct answers",
+    "status updates",
+    "executive summaries",
+    "routine technical guidance",
+    "high-volume assistant outputs"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the user requests a tutorial or exhaustive rationale",
+    "high-stakes action requires full assumptions and warnings",
+    "a novel argument needs its derivation to be auditable"
   ],
   "triggers": [
     "verbosity can obscure the answer"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the user requests a tutorial or exhaustive rationale",
+    "high-stakes action requires full assumptions and warnings",
+    "a novel argument needs its derivation to be auditable"
   ],
   "requires": [],
   "recommended_with": [
+    "bounded-exit",
     "pedagogical-alignment"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "citation-fidelity"
+  ],
+  "potentially_redundant_with": [
+    "pedagogical-alignment"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "answer or artifact",
+    "target reader",
+    "requested depth",
+    "risk tier",
+    "required evidence and caveats"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "minimal sufficient explanation",
+    "retained rationale and caveats",
+    "deletion-tested final response"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "an explicit deletion log",
+      "formal block labels in the final response"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "reader-and-risk calibration",
+      "mandatory-block check",
+      "deletion probe"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "terse but unactionable output",
+    "missing causal bridge",
+    "removed caveat",
+    "repetition disguised as clarity",
+    "invented historical mechanism"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +93,85 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Verbose explanations hide the answer and decision-relevant constraints, but blind shortening can remove the causal bridge, evidence, or warning a reader needs.",
+  "os_role": [
+    "output compression scaffold",
+    "sufficiency gate"
+  ],
+  "pipeline_stages": [
+    "response planning",
+    "draft compression",
+    "final readability check"
+  ],
+  "best_fit_tasks": [
+    "direct answers",
+    "status updates",
+    "executive summaries",
+    "routine technical guidance",
+    "high-volume assistant outputs"
+  ],
+  "avoid_when": [
+    "the user requests a tutorial or exhaustive rationale",
+    "high-stakes action requires full assumptions and warnings",
+    "a novel argument needs its derivation to be auditable"
+  ],
+  "mechanism_basis": "modern-interpretation",
+  "mechanism": "Set an explanation contract consisting of the outcome, the minimum causal or evidentiary bridge, required caveats, and the next action. Draft those blocks first, then test every additional sentence with a deletion probe: if removal does not impair correctness, comprehension, verification, safety, or actionability for the target reader, delete it. This mechanism is modern; only the exact historical scaffold name was recovered.",
+  "procedure": [
+    "Identify the reader, requested depth, decision or action, and risk tier.",
+    "List mandatory explanation blocks: answer, indispensable why, evidence or method needed for trust, caveats, and next action.",
+    "Draft one compact block for each mandatory need.",
+    "Run a deletion probe sentence by sentence against correctness, comprehension, verification, safety, and actionability.",
+    "Restore any deleted bridge whose absence creates a knowledge jump; stop when remaining content is necessary or explicitly requested."
+  ],
+  "always_do": [
+    "lead with the outcome",
+    "preserve qualifications that change action",
+    "include enough bridge for the target reader to verify or follow the result",
+    "label the mechanism as modern"
+  ],
+  "never_do": [
+    "equate minimality with unexplained assertion",
+    "remove safety or uncertainty language for brevity",
+    "repeat the same conclusion in several formats without need",
+    "claim this procedure is historically recovered"
+  ],
+  "interaction_reasons": {
+    "pedagogical-alignment": "Pedagogical Alignment defines what the reader needs before Minimality removes surplus explanation.",
+    "bounded-exit": "Bounded ExIt supplies the recovered marginal-value stop principle for further polishing."
+  },
+  "counterbalance_reasons": {
+    "citation-fidelity": "Citation Fidelity prevents compression from detaching claims from required source support."
+  },
+  "redundancy_reasons": {
+    "pedagogical-alignment": "Both shape explanation, but pedagogy adapts conceptual accessibility while minimality controls how much explanatory material survives."
+  },
+  "conflict_rules": [
+    "User-requested detail and risk-mandated disclosure override brevity.",
+    "When a deletion creates ambiguity about scope, uncertainty, or authority, restore the qualifying content.",
+    "Citation or evidence requirements are not optional surplus."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "9. BOUNDED EXIT — DEEPER HISTORICAL USE",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "modern-operationalization",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

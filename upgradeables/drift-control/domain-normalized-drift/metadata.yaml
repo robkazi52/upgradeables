@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-11",
   "slug": "domain-normalized-drift",
   "display_name": "Domain-Normalized Drift Field",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,45 +22,68 @@
     "guard",
     "reference-module"
   ],
-  "purpose": "Set acceptable drift according to domain rather than applying one creativity width universally.",
+  "purpose": "Avoid applying casual creative tolerance to precision domains or unnecessary rigidity to expressive domains.",
   "recommended_skill_types": [
-    "general-agent-workflow"
+    "cross-domain skills",
+    "domain-specific rewriting",
+    "regulated advice",
+    "mixed precision/creative systems"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "domain is ambiguous and stakes are high",
+    "a task-specific explicit policy already controls every region",
+    "domain stereotypes would replace evidence"
   ],
   "triggers": [
     "domains have materially different fidelity needs"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "domain is ambiguous and stakes are high",
+    "a task-specific explicit policy already controls every region",
+    "domain stereotypes would replace evidence"
   ],
   "requires": [],
   "recommended_with": [
+    "controlled-drift-corridors",
     "domain-mode-isolation",
+    "drift-spectra-scaling"
+  ],
+  "counterbalances": [
+    "clarification-gateway",
+    "zero-drift-zones"
+  ],
+  "potentially_redundant_with": [
+    "compute-adaptive-drift",
     "controlled-drift-corridors"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "domain classification",
+    "consequence assessment",
+    "versioned domain profile",
+    "task constraints",
+    "source conventions"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "domain-normalized baseline",
+    "override record",
+    "initial validation and corridor policy"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal profile loading for a simple familiar low-risk task",
+      "domain defaults fully superseded by explicit task corridors"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "consequence assessment",
+      "task override precedence",
+      "mixed-domain boundary handling",
+      "zero-drift exceptions"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "Do not select a permissive profile when domain classification or consequence is uncertain.",
+    "Escalate profile conflicts in regulated or safety-critical work."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +96,90 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "The same semantic change has different acceptability in legal, medical, coding, scientific, and creative work.",
+  "os_role": [
+    "domain risk normalization",
+    "default corridor selection",
+    "policy baseline"
+  ],
+  "pipeline_stages": [
+    "domain classification",
+    "risk assessment",
+    "corridor initialization",
+    "validation planning"
+  ],
+  "best_fit_tasks": [
+    "cross-domain skills",
+    "domain-specific rewriting",
+    "regulated advice",
+    "mixed precision/creative systems"
+  ],
+  "avoid_when": [
+    "domain is ambiguous and stakes are high",
+    "a task-specific explicit policy already controls every region",
+    "domain stereotypes would replace evidence"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Classify the operative domain and consequence classes, load a versioned domain profile describing default treatment of facts, terminology, citations, uncertainty, formatting, and creative latitude, then override it with explicit task instructions and region-level evidence. The profile supplies defaults only; it never determines truth or authority.",
+  "procedure": [
+    "Identify the operative domain and mixed-domain boundaries.",
+    "Assess consequences of factual, terminological, structural, and stylistic drift.",
+    "Select a versioned domain default profile.",
+    "Apply higher-authority task constraints and source-specific requirements.",
+    "Instantiate region-level corridors and validation checks.",
+    "Record overrides and reassess if the domain changes."
+  ],
+  "always_do": [
+    "treat domain values as defaults",
+    "version the profile",
+    "override with explicit authority and evidence",
+    "separate mixed domains"
+  ],
+  "never_do": [
+    "assume a domain from keywords alone when stakes matter",
+    "use domain norms to invent facts",
+    "let a broad profile erase task-specific constraints"
+  ],
+  "interaction_reasons": {
+    "domain-mode-isolation": "Keeps different domain profiles from leaking across boundaries.",
+    "controlled-drift-corridors": "Turns the domain baseline into task-specific enforceable widths.",
+    "drift-spectra-scaling": "Refines the baseline across content types inside the domain."
+  },
+  "counterbalance_reasons": {
+    "clarification-gateway": "Resolves ambiguous domain or intended audience before normalization.",
+    "zero-drift-zones": "Overrides any permissive domain default for immutable items."
+  },
+  "redundancy_reasons": {
+    "compute-adaptive-drift": "Domain normalization sets semantic defaults; compute adaptation changes runtime control overhead.",
+    "controlled-drift-corridors": "Once explicit corridors exist, do not enforce a second conflicting domain bound."
+  },
+  "conflict_rules": [
+    "Explicit task/source authority outranks the domain profile.",
+    "For mixed-domain content, apply the stricter relevant profile at shared boundaries unless an authorized rule says otherwise."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "Domain-Normalized Drift",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Domain-Normalized Drift inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.3 Drift widths",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Domain isolation, drift widths, and risk profiles"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "fermionic-veto",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "fermionic-veto-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Rollback capability is a declared non-compensable condition.",
+      "expect": "The candidate remains quarantined until the fatal condition is removed.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "fermionic-veto-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the alleged defect is merely a soft preference",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "fermionic-veto-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Verified veto evidence outranks aggregate score or validator majority.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "fermionic-veto-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not certify or execute a candidate while a verified non-compensable predicate remains active.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "fermionic-veto-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "independent hard-constraint check whenever aggregate scoring is used",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "fermionic-veto-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A candidate scores 98/100 but violates one declared legal prohibition.",
+      "expect": "Veto regardless of the aggregate score.",
+      "reject": "Subtract two points and approve."
+    }
+  ]
+}

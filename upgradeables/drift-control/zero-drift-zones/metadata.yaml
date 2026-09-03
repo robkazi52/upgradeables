@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-14",
   "slug": "zero-drift-zones",
   "display_name": "Zero-Drift Zones",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,48 +23,69 @@
     "guard",
     "state-schema"
   ],
-  "purpose": "Mark quotes, definitions, citation metadata, numbers, and exact policy language that may not be creatively transformed.",
+  "purpose": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "legal and policy transformation",
+    "source-grounded summaries",
+    "code/API migration",
+    "safety-critical instructions"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the user explicitly authorizes change to the marked content",
+    "immutability scope cannot be identified",
+    "everything is marked zero-drift and no useful transformation remains"
   ],
   "triggers": [
-    "content contains fidelity-locked atoms"
+    "Activate when the task requires content contains fidelity-locked atoms."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the user explicitly authorizes change to the marked content",
+    "immutability scope cannot be identified",
+    "everything is marked zero-drift and no useful transformation remains"
   ],
   "requires": [],
   "recommended_with": [
-    "safe-rewrite",
-    "controlled-drift-corridors"
+    "controlled-drift-corridors",
+    "drift-immunity-propagation",
+    "drift-suppression"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "drift-spectra-scaling"
+  ],
+  "potentially_redundant_with": [
+    "mode-lock-in",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "authoritative source spans",
+    "high-consequence atom classification",
+    "preservation rule",
+    "allowed formatting changes",
+    "validation tools"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "identified zero-drift zones",
+    "stable atom IDs",
+    "equivalence tests",
+    "violation report or validated derivative"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "exact-string checks for plainly nonverbatim meaning-equivalence zones",
+      "formal IDs for a single short quoted value"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "minimal immutable atoms",
+      "qualifier/unit preservation",
+      "source pointers",
+      "blocking validation"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Block release when a required zone fails validation.",
+    "Do not claim semantic equivalence where domain expertise or source context is insufficient."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +98,92 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Even careful paraphrase can alter numbers, negation, qualifiers, identities, or binding language that must remain unchanged.",
+  "os_role": [
+    "immutable semantic region",
+    "fidelity boundary",
+    "high-consequence validation"
+  ],
+  "pipeline_stages": [
+    "source annotation",
+    "transformation planning",
+    "generation guard",
+    "final verification"
+  ],
+  "best_fit_tasks": [
+    "legal and policy transformation",
+    "source-grounded summaries",
+    "code/API migration",
+    "safety-critical instructions"
+  ],
+  "avoid_when": [
+    "the user explicitly authorizes change to the marked content",
+    "immutability scope cannot be identified",
+    "everything is marked zero-drift and no useful transformation remains"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Identify minimal semantic atoms whose alteration would invalidate the task, assign stable IDs and source spans, and specify their preservation rule: exact text, exact value/unit, or meaning-equivalent statement with required qualifiers. Carry the IDs through all transforms and require a deterministic check or source-grounded review before acceptance.",
+  "procedure": [
+    "Locate high-consequence atoms such as names, numbers, negations, conditions, quotations, obligations, and safety thresholds.",
+    "Minimize each zone so surrounding exposition can still change.",
+    "Choose exact-string, structured-value, or semantic-equivalence preservation rules.",
+    "Attach stable source pointers and propagate the zone contract downstream.",
+    "Validate every derivative and block or repair failures.",
+    "Remove or change a zone only through explicit source/task authority."
+  ],
+  "always_do": [
+    "keep zones minimal and explicit",
+    "include units, qualifiers, and negation",
+    "preserve provenance",
+    "validate before acceptance"
+  ],
+  "never_do": [
+    "declare the whole artifact immutable by convenience",
+    "paraphrase an exact-quote zone",
+    "round or normalize values without authorization",
+    "silently drop a failed zone"
+  ],
+  "interaction_reasons": {
+    "controlled-drift-corridors": "Zero-drift is the zero-width endpoint embedded among more flexible corridors.",
+    "drift-immunity-propagation": "Carries zone contracts through downstream derivatives.",
+    "drift-suppression": "Detects and repairs zone violations."
+  },
+  "counterbalance_reasons": {
+    "drift-spectra-scaling": "Prevents zero-drift from being over-applied by assigning flexible content to other bands.",
+    "clarification-gateway": "Clarifies whether exact wording or semantic equivalence is required."
+  },
+  "redundancy_reasons": {
+    "working-memory-lock-in": "WM Lock keeps critical items salient; zero-drift zones define their transformation invariance.",
+    "mode-lock-in": "A mode may mandate fidelity globally, but zones identify and test concrete immutable atoms."
+  },
+  "conflict_rules": [
+    "Latest authorized source correction may replace a zone, with version history retained.",
+    "When exact wording and required target format conflict, preserve the semantic atom and surface the formatting exception for authority review."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Zero-Drift Zones"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Zero-Drift Zones inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "Zero-drift",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Zero-drift fidelity workflow and drift-width mapping"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

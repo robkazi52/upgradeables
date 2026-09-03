@@ -1,10 +1,31 @@
-# Basic composition example
+# Bounded ExIt — Basic Example
 
-**Situation:** a draft needs iterative improvement.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `bounded-exit`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Revise a policy memo before publication.
+
+## Why this Upgradeable activates
+
+The memo is sound but can absorb an unknown number of polish passes.
+
+## Inputs / state
+
+Accuracy and required sections pass; one unclear paragraph and several optional style improvements remain; two passes are budgeted.
+
+## What it does
+
+Repairs the unclear paragraph, rechecks the criteria, and exits because the remaining style gain is below its review cost.
+
+## What it does not do
+
+Rewrite the whole memo or continue polishing synonyms after acceptance.
+
+## Result / state change
+
+A publishable memo and an explicit diminishing-return exit.
+
+## Interaction with companion components
+
+['structured-refinement', 'micro-repair']

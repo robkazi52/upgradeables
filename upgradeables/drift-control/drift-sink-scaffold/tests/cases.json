@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "drift-sink-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "drift-sink-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The branch consumes attention and contaminates new summaries.",
+      "expect": "Automatic retrieval stops resurfacing the disproven branch while auditability remains.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "drift-sink-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the branch is unresolved rather than rejected",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "drift-sink-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Higher-authority evidence or audit obligations can force restoration.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "drift-sink-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not quarantine unresolved contrary evidence or safety-critical information.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "drift-sink-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "reversibility",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "drift-sink-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A formally superseded branch repeatedly re-enters active retrieval but must remain auditable.",
+      "expect": "Quarantine it reversibly with authority, provenance, dependencies, and a restore trigger, then retire the local scaffold at task end.",
+      "reject": "Delete it, hide contrary evidence, or claim an undocumented ECL algorithm."
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-06",
   "slug": "truth-priority-hierarchy",
   "display_name": "Truth Priority Hierarchy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,49 +21,56 @@
     "orchestrator",
     "validator"
   ],
-  "purpose": "Resolve evidence conflicts with an explicit domain hierarchy in which verified evidence outranks fluency.",
+  "purpose": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "multi-source research",
+    "policy and regulatory analysis",
+    "multi-validator workflows",
+    "domain decisions with mixed evidence classes"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "no material evidence or authority conflict exists",
+    "the domain lacks an authorized hierarchy and inventing one would decide the outcome"
   ],
   "triggers": [
     "evidence classes or authorities conflict"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "no material evidence or authority conflict exists",
+    "the domain lacks an authorized hierarchy and inventing one would decide the outcome"
   ],
   "requires": [],
-  "recommended_with": [],
+  "recommended_with": [
+    "epistemic-status-gating",
+    "multi-truth-gating",
+    "parallel-qms"
+  ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "fermionic-veto"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "conflicting claims or validator outcomes",
+    "evidence provenance",
+    "epistemic status",
+    "authorized domain hierarchy"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "precedence decision",
+    "narrowed synthesis",
+    "unresolved conflict record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "restating obvious precedence where one direct authoritative source controls"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "evidence and authority, not fluency or optimization, determine conflict resolution"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If a material conflict has no defensible domain/authority ordering, the resolver must not select a winner."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +83,80 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents ad hoc conflict resolution and hidden selection of whichever claim best fits the draft.",
+  "os_role": [
+    "truth-conflict-resolver",
+    "authority-ordering"
+  ],
+  "pipeline_stages": [
+    "task-framing",
+    "evidence-conflict-resolution",
+    "qms-collapse"
+  ],
+  "best_fit_tasks": [
+    "multi-source research",
+    "policy and regulatory analysis",
+    "multi-validator workflows",
+    "domain decisions with mixed evidence classes"
+  ],
+  "avoid_when": [
+    "no material evidence or authority conflict exists",
+    "the domain lacks an authorized hierarchy and inventing one would decide the outcome"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Before resolving a conflict, declare a domain-appropriate ordering such as host safety over task optimization, direct source fact over inference, and verified evidence over stylistic fluency. Map each conflicting claim to its evidence and authority class, apply the ordering, and preserve unresolved ties rather than silently choosing.",
+  "procedure": [
+    "Identify the conflicting propositions or validator outcomes.",
+    "Record the source, authority, epistemic status, and domain applicability of each.",
+    "Load or declare the authorized domain hierarchy.",
+    "Apply the hierarchy and any hard vetoes.",
+    "Document the winning, narrowed, or unresolved result.",
+    "Recheck that the selected claim remains supported in its original context."
+  ],
+  "always_do": [
+    "Make domain-specific precedence explicit.",
+    "Separate evidence authority from rhetorical confidence.",
+    "Preserve unresolved ties that affect the conclusion."
+  ],
+  "never_do": [
+    "Assume one universal evidence hierarchy for every domain.",
+    "Let a weighted score override a hard constraint.",
+    "Choose the more fluent claim when evidence authority favors the other."
+  ],
+  "interaction_reasons": {
+    "multi-truth-gating": "Provides the resolution rule when independent anchors disagree.",
+    "parallel-qms": "Resolves material disagreement among QMS modes or evaluators.",
+    "epistemic-status-gating": "Supplies fact/inference/hypothesis classes used by the hierarchy."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "fermionic-veto": "A veto defines a hard blocking condition; Truth Priority Hierarchy orders competing non-veto evidence and authorities."
+  },
+  "conflict_rules": [
+    "Host/system safety and organization policy remain above repository-level truth ordering.",
+    "If no authorized rule distinguishes materially conflicting claims, return unresolved rather than fabricate priority."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-06. Truth Priority Hierarchy",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "15.2 Historical Meta-OS template",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-07",
   "slug": "power-mode",
   "display_name": "POWER Mode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,47 +20,71 @@
   "implementation_forms": [
     "parent-skill-mode"
   ],
-  "purpose": "Use broad bounded exploration, deeper planning, candidate comparison, and system-level architecture reasoning.",
+  "purpose": "Increase solution search and architectural depth before commitment when the problem is genuinely ambiguous or system-wide.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "system architecture",
+    "novel workflow design",
+    "strategic planning",
+    "ambiguous research design"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task is a precise grounded execution step",
+    "a hard constraint leaves only one valid action",
+    "broad exploration would delay urgent containment"
   ],
   "triggers": [
     "architecture or design benefits from broad exploration"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task is a precise grounded execution step",
+    "a hard constraint leaves only one valid action",
+    "broad exploration would delay urgent containment"
   ],
   "requires": [],
   "recommended_with": [
+    "hybrid-mode",
     "multiverse-reasoning",
     "parallel-qms"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "bounded-exit",
+    "safe-mode"
+  ],
+  "potentially_redundant_with": [
+    "hybrid-mode",
+    "multiverse-reasoning"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "design problem",
+    "locked constraints",
+    "exploration budget",
+    "candidate evidence",
+    "QMS rubric"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "bounded design alternatives",
+    "system-level tradeoff analysis",
+    "selected architecture",
+    "SAFE-ready decision record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "explicitly printing every intermediate branch detail when the final decision record preserves material tradeoffs"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "bounded alternatives",
+      "common QMS",
+      "collapse",
+      "execution boundary"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "unbounded ideation",
+    "architecture theater",
+    "unequal branch development",
+    "premature execution",
+    "branch assumption leakage"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +97,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Narrow execution modes prematurely commit to the first workable design and fail to compare architectures, long-horizon effects, or alternative plans.",
+  "os_role": [
+    "broad design mode",
+    "architecture exploration profile"
+  ],
+  "pipeline_stages": [
+    "problem framing",
+    "candidate generation",
+    "system analysis",
+    "QMS collapse"
+  ],
+  "best_fit_tasks": [
+    "system architecture",
+    "novel workflow design",
+    "strategic planning",
+    "ambiguous research design"
+  ],
+  "avoid_when": [
+    "the task is a precise grounded execution step",
+    "a hard constraint leaves only one valid action",
+    "broad exploration would delay urgent containment"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Declare a bounded exploration budget, open two or three materially distinct plans under identical goals and constraints, reason at system or Cosmic scale only where dependencies justify it, and evaluate all candidates with QMS before collapse. POWER produces a selected design and uncertainty map; it does not authorize consequential execution without an explicit transition to SAFE or another execution profile.",
+  "procedure": [
+    "Declare POWER, the design question, non-negotiable constraints, and exploration budget.",
+    "Generate two or three materially distinct plans or architectures.",
+    "Develop system dependencies, long-horizon effects, reversibility, and risks for each to equal decision depth.",
+    "Evaluate candidates using a common QMS rubric and hard vetoes.",
+    "Select or compatibly synthesize one design and retire losing assumptions.",
+    "Emit a decision record suitable for a SAFE handoff rather than executing speculative changes."
+  ],
+  "always_do": [
+    "bound exploration",
+    "keep shared constraints across branches",
+    "use a common evaluation rubric",
+    "collapse before handoff"
+  ],
+  "never_do": [
+    "equate POWER with unconstrained creativity",
+    "execute all branches",
+    "outvote a truth or safety veto",
+    "use Cosmic analysis on every local detail"
+  ],
+  "interaction_reasons": {
+    "multiverse-reasoning": "Multiverse maintains the bounded alternative plans.",
+    "parallel-qms": "Parallel-QMS evaluates branches consistently before commitment.",
+    "hybrid-mode": "HYBRID supplies the controlled transition from POWER planning to SAFE execution."
+  },
+  "counterbalance_reasons": {
+    "safe-mode": "SAFE narrows drift and grounds implementation after POWER's design is selected.",
+    "bounded-exit": "Bounded ExIt prevents architectural exploration from expanding indefinitely."
+  },
+  "redundancy_reasons": {
+    "multiverse-reasoning": "Multiverse is one candidate-management mechanism; POWER is the wider planning profile that also controls depth and architecture scope.",
+    "hybrid-mode": "HYBRID sequences POWER and SAFE; POWER alone is only the planning phase."
+  },
+  "conflict_rules": [
+    "Hard constraints and vetoes apply equally in broad exploration.",
+    "No branch may mutate consequential external state before collapse and execution authorization.",
+    "If one plan is dictated by evidence, de-escalate rather than fabricate alternatives."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-07. POWER Mode",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.4 Multiverse / plan generation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

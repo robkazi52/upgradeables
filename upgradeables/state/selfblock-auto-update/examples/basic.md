@@ -1,10 +1,31 @@
-# Basic composition example
+# SelfBlock Auto-Update — Basic Example
 
-**Situation:** the host can update explicit state after steps.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `selfblock-auto-update`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+An agent finishes validating dataset column types.
+
+## Why this Upgradeable activates
+
+The completion and two discovered anomalies change live task state.
+
+## Inputs / state
+
+State version 8, validation output, immutable objective, and mutable progress/anomaly fields.
+
+## What it does
+
+Writes a version-checked delta marking validation complete and adding cited anomalies.
+
+## What it does not do
+
+It does not rewrite the objective or infer that the entire project is complete.
+
+## Result / state change
+
+Version 9 accurately reflects progress and exceptions.
+
+## Interaction with companion components
+
+['stateblock', 'sequential-memory-state-engine', 'working-memory-lock-in']

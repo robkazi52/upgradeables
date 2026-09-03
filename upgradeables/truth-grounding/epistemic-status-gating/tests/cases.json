@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "epistemic-status-gating",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "epistemic-status-gating-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Observed evidence and causal inference have different certainty.",
+      "expect": "A review finding with calibrated certainty and a verification step.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "epistemic-status-gating-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task contains only direct transformation with no inferential claims",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "epistemic-status-gating-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Direct source evidence outranks an unlabeled model inference.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "epistemic-status-gating-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "If a decision-critical proposition has no defensible status or evidence pointer, it cannot support the conclusion.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "epistemic-status-gating-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "the distinction between source fact, inference, framing, and hypothesis",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "epistemic-status-gating-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A conclusion repeats an inference as if quoted from the source.",
+      "expect": "Block the status promotion and label or remove the inference.",
+      "reject": "A generic factuality pass that does not preserve proposition status."
+    }
+  ]
+}

@@ -1,10 +1,31 @@
-# Basic composition example
+# SAFE Mode — Basic Example
 
-**Situation:** execution is factual, consequential, or uncertain.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `safe-mode`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Publish a validated repository after architecture is selected.
+
+## Why this Upgradeable activates
+
+File changes and remote publication require exact state, credentials, and validation.
+
+## Inputs / state
+
+The chosen plan, current Git state, test commands, repository name, and authenticated account are known.
+
+## What it does
+
+Applies only planned changes, verifies tests and diff, confirms remote target and visibility, publishes, and checks the public URL.
+
+## What it does not do
+
+Invent credentials, redesign the repository during push, or claim publication before remote verification.
+
+## Result / state change
+
+A grounded public release or a precise fail-closed blocker.
+
+## Interaction with companion components
+
+['critical-atomic-verification', 'grounding-no-invention', 'hybrid-mode']

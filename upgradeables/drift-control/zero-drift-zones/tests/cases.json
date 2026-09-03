@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "zero-drift-zones",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "zero-drift-zones-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Dose, units, contraindication, and exception clause cannot drift while explanation can compress.",
+      "expect": "A shorter card with verified critical content.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "zero-drift-zones-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the user explicitly authorizes change to the marked content",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "zero-drift-zones-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Latest authorized source correction may replace a zone, with version history retained.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "zero-drift-zones-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Block release when a required zone fails validation.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "zero-drift-zones-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "minimal immutable atoms",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "zero-drift-zones-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A source contains flexible explanation plus one qualified threshold and an exact required warning.",
+      "expect": "Freeze the threshold with qualifiers and the warning verbatim, while allowing bounded edits elsewhere.",
+      "reject": "Mark everything immutable or paraphrase the warning and round the threshold."
+    }
+  ]
+}

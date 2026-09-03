@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-08",
   "slug": "two-truths-and-corridor",
   "display_name": "Two Truths + Corridor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,48 +21,60 @@
     "plugin-bundle-component",
     "guard"
   ],
-  "purpose": "Combine two independent anchors with an explicitly permitted synthesis corridor.",
+  "purpose": "Enable useful synthesis without losing redundant factual grounding.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "comparative research",
+    "evidence-grounded authoring",
+    "policy synthesis",
+    "explanatory integration of two sources"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "only one defensible anchor exists",
+    "the task requires exact extraction with zero interpretive drift",
+    "the task permits unconstrained creative ideation"
   ],
   "triggers": [
     "source-grounded synthesis permits bounded interpretation"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "only one defensible anchor exists",
+    "the task requires exact extraction with zero interpretive drift",
+    "the task permits unconstrained creative ideation"
   ],
   "requires": [],
   "recommended_with": [
-    "truth-redundancy",
-    "controlled-drift-corridors"
+    "controlled-drift-corridors",
+    "multi-truth-gating",
+    "truth-redundancy"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "grounding-no-invention"
+  ],
+  "potentially_redundant_with": [
+    "truth-redundancy"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "two independent anchors",
+    "locked truth atoms",
+    "declared corridor width",
+    "synthesis objective"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "bounded source-traceable synthesis",
+    "corridor-breach report",
+    "unresolved anchor conflict"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose mapping for simple one-sentence integration"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "two verified anchors and the declared transformation boundary"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "If either anchor is unverified or the synthesis requires claims outside the declared corridor, do not certify the synthesis."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +87,83 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents a synthesis from either parroting two sources without integration or drifting beyond what either anchor can support.",
+  "os_role": [
+    "grounded-synthesis-controller",
+    "drift-boundary"
+  ],
+  "pipeline_stages": [
+    "pre-synthesis",
+    "synthesis",
+    "post-synthesis-validation"
+  ],
+  "best_fit_tasks": [
+    "comparative research",
+    "evidence-grounded authoring",
+    "policy synthesis",
+    "explanatory integration of two sources"
+  ],
+  "avoid_when": [
+    "only one defensible anchor exists",
+    "the task requires exact extraction with zero interpretive drift",
+    "the task permits unconstrained creative ideation"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Verify two independent anchors, declare which atoms in them are fixed, and set the synthesis corridor to zero, micro, or bounded exploratory drift. Generate connecting interpretation only inside that corridor, then check every synthesized claim against at least one anchor and the permitted transformation width.",
+  "procedure": [
+    "Select and verify two independent anchors.",
+    "Extract the fixed facts and any material disagreement.",
+    "Declare the allowed synthesis corridor and prohibited transformations.",
+    "Create the synthesis while keeping each connection traceable.",
+    "Audit the result for unsupported bridging claims or altered anchor meaning.",
+    "Narrow or reject the synthesis when the corridor is exceeded."
+  ],
+  "always_do": [
+    "Verify both anchors before synthesis.",
+    "Declare corridor width before writing.",
+    "Keep disagreements visible rather than manufacturing harmony."
+  ],
+  "never_do": [
+    "Use a corridor to introduce a third unsupported truth.",
+    "Paraphrase exact locked atoms when zero drift applies.",
+    "Treat two dependent sources as independent anchors."
+  ],
+  "interaction_reasons": {
+    "truth-redundancy": "Supplies and checks the two independent anchors.",
+    "controlled-drift-corridors": "Defines the permitted transformation width.",
+    "multi-truth-gating": "Handles material disagreement between the anchors before synthesis is committed."
+  },
+  "counterbalance_reasons": {
+    "grounding-no-invention": "Constrains corridor-generated prose to supported interpretation."
+  },
+  "redundancy_reasons": {
+    "truth-redundancy": "Truth Redundancy stops after creating an anchor pair; this composite additionally governs the synthesis space between them."
+  },
+  "conflict_rules": [
+    "Zero-drift atoms override a wider surrounding synthesis corridor.",
+    "If the anchors materially conflict, resolve or expose the conflict before generating a unified narrative."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-08. Two Truths + Corridor",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.3 Drift widths",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

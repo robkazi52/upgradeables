@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-12",
   "slug": "dynamic-depth-allocation",
   "display_name": "Dynamic Depth Allocation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,47 +22,70 @@
   "implementation_forms": [
     "orchestrator"
   ],
-  "purpose": "Spend more reasoning depth on difficult, uncertain, or consequential regions and less on trivial ones.",
+  "purpose": "Concentrate analysis and verification where local marginal value is highest instead of applying uniform depth across a task.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "heterogeneous documents",
+    "mixed-risk code changes",
+    "large research corpora",
+    "multi-stage plans with uneven uncertainty"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "every unit has the same mandated review depth",
+    "the task is one atomic operation",
+    "regional scores cannot be observed or estimated"
   ],
   "triggers": [
     "task regions vary in difficulty or risk"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "every unit has the same mandated review depth",
+    "the task is one atomic operation",
+    "regional scores cannot be observed or estimated"
   ],
   "requires": [],
   "recommended_with": [
-    "risk-tier-scaling",
-    "cognitive-governor"
+    "cognitive-governor",
+    "reasoning-throughput-governor",
+    "risk-tier-scaling"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "meta-awareness"
+  ],
+  "potentially_redundant_with": [
+    "cognitive-governor",
+    "reasoning-throughput-governor"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "task regions",
+    "global reasoning envelope",
+    "regional uncertainty and consequence",
+    "dependency map",
+    "mandatory depth floors"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "regional depth map",
+    "method and check assignment",
+    "reallocation log",
+    "coverage or budget blocker"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "printing numeric scores when relative depth is obvious",
+      "multiple bands for a small task"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "minimum regional pass",
+      "hotspot-driven allocation",
+      "budget-bound re-scoring"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "uniform-depth default",
+    "hotspot tunnel vision",
+    "mandatory-check starvation",
+    "constant reallocation thrash",
+    "depth confused with concurrency"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +98,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Uniform review wastes effort on obvious units and leaves bottlenecks, uncertain claims, or high-risk boundaries underexamined.",
+  "os_role": [
+    "within-task depth allocator",
+    "hotspot router"
+  ],
+  "pipeline_stages": [
+    "task decomposition",
+    "regional scoring",
+    "depth routing",
+    "reallocation"
+  ],
+  "best_fit_tasks": [
+    "heterogeneous documents",
+    "mixed-risk code changes",
+    "large research corpora",
+    "multi-stage plans with uneven uncertainty"
+  ],
+  "avoid_when": [
+    "every unit has the same mandated review depth",
+    "the task is one atomic operation",
+    "regional scores cannot be observed or estimated"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Partition the task into meaningful regions, score each on difficulty, uncertainty, consequence, dependency centrality, and current evidence deficit, and assign depth bands under the Cognitive Governor's total envelope. Re-score after discoveries and move effort toward unresolved hotspots while maintaining a minimum pass everywhere. DDA decides where depth goes, not the total budget or execution concurrency.",
+  "procedure": [
+    "Decompose the task into independently inspectable regions or claims.",
+    "Score each region for uncertainty, consequence, coupling, novelty, and evidence deficit.",
+    "Reserve a minimum validation pass for all regions.",
+    "Allocate the remaining governed budget to high-score regions and choose appropriate methods for each.",
+    "Re-score when a local finding changes dependencies or risk.",
+    "Stop reallocating when all mandatory regional thresholds pass or escalate if the global budget is insufficient."
+  ],
+  "always_do": [
+    "maintain a minimum pass everywhere",
+    "use explicit hotspot signals",
+    "reallocate when evidence changes the map",
+    "stay within or explicitly renegotiate the global budget"
+  ],
+  "never_do": [
+    "equate length with difficulty",
+    "starve low-score regions of mandatory checks",
+    "hide budget overruns as local depth",
+    "confuse more parallel workers with deeper reasoning"
+  ],
+  "interaction_reasons": {
+    "cognitive-governor": "The governor supplies the total envelope that DDA redistributes.",
+    "risk-tier-scaling": "Risk tiers set mandatory regional floors.",
+    "reasoning-throughput-governor": "Throughput schedules regional work at an efficient rate after depth is assigned."
+  },
+  "counterbalance_reasons": {
+    "meta-awareness": "Meta-Awareness detects whether depth allocation itself is causing neglect, loops, or module conflict."
+  },
+  "redundancy_reasons": {
+    "cognitive-governor": "Governor determines total effort; DDA determines local concentration.",
+    "reasoning-throughput-governor": "Throughput chooses pace and breadth; DDA chooses analytical depth per region."
+  },
+  "conflict_rules": [
+    "A high-risk mandatory check receives its floor even if its estimated uncertainty is low.",
+    "When every region exceeds the available envelope, escalate the budget or narrow scope rather than fabricate coverage.",
+    "Reallocation cannot erase already discovered unresolved defects."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-12. Dynamic Depth Allocation (DDA)",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8.2 QMS-RTS — Risk-Tier-Split QMS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

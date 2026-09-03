@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-05",
   "slug": "ultimate-suite-supervisor",
   "display_name": "Ultimate Suite Supervisor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,76 @@
   "implementation_forms": [
     "orchestrator"
   ],
-  "purpose": "Declare modes, enforce the core stack, select local versus global editing, resolve pack conflicts, and run post-output health checks.",
+  "purpose": "Keep a large OS or skill suite operating as one authority-consistent system across planning, execution, repair, and finalization.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "large modular OS execution",
+    "multi-mode skill suites",
+    "complex authoring or research systems",
+    "architecture plus execution pipelines"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "one small skill can complete the task",
+    "only process-health repair is needed",
+    "the suite manifest or authority rules are unavailable"
   ],
   "triggers": [
     "a large suite needs top-level coordination"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "one small skill can complete the task",
+    "only process-health repair is needed",
+    "the suite manifest or authority rules are unavailable"
   ],
   "requires": [],
   "recommended_with": [
-    "meta-supervisor",
-    "hybrid-mode"
+    "behavior-gene-builder",
+    "domain-core-builder",
+    "hybrid-mode",
+    "meta-supervisor"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "reasoning-throughput-governor",
+    "scoped-loader"
+  ],
+  "potentially_redundant_with": [
+    "architect-orchestrator",
+    "meta-supervisor"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "suite manifest",
+    "task and risk",
+    "host capabilities",
+    "Core, Gene, and module contracts",
+    "authority and health criteria"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "suite execution contract",
+    "declared mode and stack",
+    "resolved module routing",
+    "edit-class and intensity decisions",
+    "final suite health status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose suite contract rendering when a machine-readable manifest already captures it",
+      "top-level supervision for a one-component low-risk task"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "mode declaration",
+      "required-stack check",
+      "global conflict authority",
+      "edit-scale choice",
+      "final health gate"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "monolithic full-suite loading",
+    "supervisor role collapse",
+    "implicit mode",
+    "authority race",
+    "wrong edit scale",
+    "rubber-stamp final health"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +103,93 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A suite can have individually sound modules yet fail globally when modes are implicit, required Cores are skipped, editors overlap, packs conflict, or no owner performs the final health decision.",
+  "os_role": [
+    "top-level suite supervisor",
+    "global mode and authority arbiter"
+  ],
+  "pipeline_stages": [
+    "suite activation",
+    "mode and stack declaration",
+    "global routing",
+    "conflict resolution",
+    "post-output health gate"
+  ],
+  "best_fit_tasks": [
+    "large modular OS execution",
+    "multi-mode skill suites",
+    "complex authoring or research systems",
+    "architecture plus execution pipelines"
+  ],
+  "avoid_when": [
+    "one small skill can complete the task",
+    "only process-health repair is needed",
+    "the suite manifest or authority rules are unavailable"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Build a suite execution contract that declares active mode, required Core and Gene stack, authorized modules, authority precedence, edit class, duration and intensity, transition rules, and final health criteria. Delegate local process monitoring and repair to Meta-Supervisor, but retain decisions that affect the whole suite: POWER/SAFE/HYBRID, required stack enforcement, CRISPR versus Surgery, cross-pack conflicts, and post-output acceptance. Emit one authoritative routing state and fail closed on unresolved global conflict.",
+  "procedure": [
+    "Load the suite manifest, task, host capabilities, risk, and authority rules.",
+    "Declare the active operating mode and required Core, Gene, Upgradeable, state, and validation stack.",
+    "Resolve activation conflicts and select local CRISPR or global Surgery editing when changes arise.",
+    "Set duration, intensity, transition gates, and one owner for each component result.",
+    "Delegate process-health monitoring and bounded repairs to Meta-Supervisor while retaining global authority decisions.",
+    "Run post-output checks for grounding, contradiction, tone, drift, stack compliance, and unresolved conflicts; commit or fail closed."
+  ],
+  "always_do": [
+    "declare mode explicitly",
+    "enforce the required Core stack",
+    "resolve authority before activation",
+    "choose edit scale explicitly",
+    "own the final suite health decision"
+  ],
+  "never_do": [
+    "activate the full suite by default",
+    "duplicate Meta-Supervisor's local repair work",
+    "allow two packs authority over the same decision",
+    "approve output with unresolved global conflict"
+  ],
+  "interaction_reasons": {
+    "meta-supervisor": "Meta-Supervisor handles runtime health diagnosis and bounded repair under the suite contract.",
+    "hybrid-mode": "Ultimate Suite declares and gates POWER-to-SAFE transitions.",
+    "behavior-gene-builder": "Built Genes are loaded only when required by the declared Core and task stack.",
+    "domain-core-builder": "The required Core stack supplies domain knowledge separate from behaviors."
+  },
+  "counterbalance_reasons": {
+    "scoped-loader": "Scoped loading prevents top-level supervision from becoming full-suite activation.",
+    "reasoning-throughput-governor": "Throughput constrains coordination overhead and active breadth."
+  },
+  "redundancy_reasons": {
+    "meta-supervisor": "Meta-Supervisor monitors and repairs process health; Ultimate Suite controls global modes, stack, edit class, cross-pack authority, intensity, and final acceptance.",
+    "architect-orchestrator": "Architect designs or assembles systems; Ultimate Suite operates and governs an instantiated suite."
+  },
+  "conflict_rules": [
+    "Truth, safety, and explicit user authority outrank suite preferences.",
+    "A cross-pack authority conflict blocks the affected action until resolved.",
+    "Meta-Supervisor cannot change global mode or Core stack without escalation.",
+    "Unavailable required components produce a fallback or blocker, never simulated activation."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-05. Ultimate Suite Supervisor",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "15.2 Historical Meta-OS template",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

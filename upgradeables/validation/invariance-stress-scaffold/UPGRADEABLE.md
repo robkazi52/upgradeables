@@ -2,22 +2,38 @@
 
 ## Summary
 
-Test whether protected behavior and facts outside a change remain unchanged.
+A provisional scaffold for testing whether a result retains its claimed core properties under controlled, meaning-preserving perturbations.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A conclusion may depend on incidental wording, ordering, or representation despite claiming to be robust to those changes.
+
+## Where It Fits in the OS
+
+Roles: provisional-robustness-probe, representation-sensitivity-detector. Pipeline stages: post-draft validation, pre-release stress testing.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- prompt robustness checks
+- policy interpretation
+- classification stability
+- summary validation
+
+## When Not to Use
+
+- the transformed feature is itself decision-relevant
+- the invariants cannot be stated
+- the task requires the unrecovered historical implementation
 
 ## Scope
 
-Functional classes: validation, editing-repair. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `invariance-stress-scaffold@1.1.0`. ID: `JAN26-09`. Functional classes: validation, editing-repair. Activation: `U1-common-conditional`. Mechanism basis: `modern-interpretation`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,100 +41,139 @@ Functional classes: validation, editing-repair. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the transformed feature is itself decision-relevant
+- the invariants cannot be stated
+- the task requires the unrecovered historical implementation
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- artifact or prompt
+- declared invariants
+- bounded perturbations
+- meaning-changing controls
+- comparison metrics
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- invariance matrix
+- sensitivity findings
+- narrowed robustness claim
+- unresolved source-gap notice
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
+Define the properties claimed invariant, generate a small controlled set of transformations that should preserve those properties—such as reordering independent facts, paraphrasing without modal change, or changing irrelevant formatting—and compare outputs. Any decision-relevant change is reported as sensitivity; this is a modern stress-test interpretation, not a recovered historical algorithm.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. State the claimed invariant and observable pass condition.
+2. Separate semantics-preserving perturbations from meaning-changing controls.
+3. Construct a bounded perturbation set and preserve provenance.
+4. Run the task independently on original and perturbed inputs.
+5. Compare conclusions, confidence, constraints, and safety behavior.
+6. Classify differences as acceptable presentation variation or invariant breach.
+7. Report sensitivity and narrow the original robustness claim.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Declare why each perturbation should preserve the target property.
+- Include at least one meaning-changing control to confirm the test can detect legitimate change.
+- Label this mechanism as modern interpretation.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Call arbitrary input changes invariance tests.
+- Require identical wording when only conclusions should be invariant.
+- Attribute this procedure to unrecovered historical source.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `safe-rewrite`
+
+Defines transformations intended to preserve meaning.
+
+### `crispr-edit`
+
+Can isolate a single controlled perturbation.
+
+### `multi-layer-consistency`
+
+Checks whether discovered sensitivity propagates across representation layers.
 
 ## Compatible Upgradeables
 
-- `crispr-edit`
-- `safe-rewrite`
+- `safe-rewrite` — Defines transformations intended to preserve meaning.
+- `crispr-edit` — Can isolate a single controlled perturbation.
+- `multi-layer-consistency` — Checks whether discovered sensitivity propagates across representation layers.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `controlled-drift-corridors`
+
+Prevents an overly rigid invariant definition from banning harmless surface variation inside a declared corridor.
 
 ## Potential Redundancy
 
-- `None declared`
+### `parallel-qms`
+
+Monte QMS perturbs assumptions, wording, or structure as a validator mode; this scaffold is a standalone, explicitly provisional invariance protocol.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Meaning-changing controls are not invariant breaches.
+- Safety behavior must remain at least as conservative under semantics-preserving perturbations.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- large perturbation suites for low-risk one-off output
+
+Keep mandatory:
+
+- explicit invariant and at least one controlled counterfactual comparison when robustness is claimed
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- prompt robustness checks
+- policy interpretation
+- classification stability
+- summary validation
 
 ## Example Composition
 
-Activate `invariance-stress-scaffold` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A review classifier is claimed to find unsafe assumptions regardless of bullet order.
+
+**Why it activates:** Order is supposed to be irrelevant to the safety judgment.
+
+**Inputs/state:** Original review, reordered version, faithful paraphrase, and one version removing a safety fact as control.
+
+**Action:** Compares findings across preserving variants and confirms the control legitimately changes the result.
+
+**Does not:** Treat removal of a safety fact as a preserving perturbation.
+
+**Result/state change:** A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.
+
+**Companions:** ['safe-rewrite', 'crispr-edit', 'multi-layer-consistency']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-09` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: None.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-09` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: None.
+
+Source support: `source-gap`. Mechanism basis: `modern-interpretation`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — Invariance Stress Scaffold (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 20. RECOVERY GAPS AFTER DEEP PASS 2.0 (historical_assistant_artifact)

@@ -2,22 +2,38 @@
 
 ## Summary
 
-Encode recurring cross-module coupling rules as compact Behavior Genes with explicit authority boundaries.
+Builds a compact Behavior Gene that coordinates a recurring relationship among already-defined modules while preserving authority and suppressing irrelevant effects.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Make useful cross-module reinforcement explicit and reusable without merging modules, duplicating content, or granting hidden communication.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+The same module combinations repeatedly need ordering, data handoff, reinforcement, or conflict suppression, but ad hoc coupling becomes implicit and inconsistent.
+
+## Where It Fits in the OS
+
+Roles: cross-module coupling-rule builder, specialized Behavior Gene factory. Pipeline stages: relationship observation, coupling specification, composition testing, versioned publication.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- recurring validator-generator pairings
+- stable Core-Gene couplings
+- multi-module evidence workflows
+- repeated authority-sensitive compositions
+
+## When Not to Use
+
+- the need is a general task behavior unrelated to module coupling
+- the modules interact only once
+- the host lacks an explicit state or data-transfer path
 
 ## Scope
 
-Functional classes: meta-control, orchestration. Activation:
-`U4-meta-architecture`. This modern classification is not a historical tier.
+Canonical package: `resonance-gene-builder@1.1.0`. ID: `A-06`. Functional classes: meta-control, orchestration. Activation: `U4-meta-architecture`. Mechanism basis: `normalized-from-recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,150 @@ Functional classes: meta-control, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the need is a general task behavior unrelated to module coupling
+- the modules interact only once
+- the host lacks an explicit state or data-transfer path
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- recurring module relationship
+- participant interfaces
+- authority order
+- state or evidence flow
+- success and failure examples
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- versioned Resonance Gene
+- coupling and suppression rules
+- compatibility matrix
+- composition tests
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Identify a repeated module relationship and encode a narrow coupling Gene containing activation pattern, participants, directional inputs and outputs, ordering, reinforcement rule, suppression rule, authority precedence, termination, and failure behavior. Test the coupling with one participant absent, with conflicting instructions, and with irrelevant output. Reinforcement means clearer coordination through real state or context, never repeated claims or imagined latent links.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Collect repeated cases where the same modules should coordinate and isolate the stable relationship.
+2. Name participants, trigger, direction of state or evidence flow, and completion condition.
+3. Specify which outputs reinforce the next module and which irrelevant or conflicting effects are suppressed.
+4. Declare authority ordering, unavailable-module behavior, and conflict escalation.
+5. Test normal coupling, missing participant, conflict, repetition, and termination cases.
+6. Package the coupling as a versioned Behavior Gene with provenance and compatibility notes.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- use explicit host-supported interfaces
+- preserve module identities and authority
+- define both reinforcement and suppression
+- test termination and missing-module behavior
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- claim hidden inter-module communication
+- use repetition as amplification
+- merge the coupled modules into one opaque component
+- use this builder for ordinary standalone behavior
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `behavior-gene-builder`
+
+The general builder supplies the Gene schema; Resonance Gene Builder specializes it for module coupling.
+
+### `resonance`
+
+Resonance identifies and coordinates reinforcing module effects that the Gene makes reusable.
+
+### `architect-orchestrator`
+
+The architect loads the coupling only when its participant pattern is active.
 
 ## Compatible Upgradeables
 
-- `behavior-gene-builder`
-- `resonance`
+- `behavior-gene-builder` — The general builder supplies the Gene schema; Resonance Gene Builder specializes it for module coupling.
+- `resonance` — Resonance identifies and coordinates reinforcing module effects that the Gene makes reusable.
+- `architect-orchestrator` — The architect loads the coupling only when its participant pattern is active.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `domain-mode-isolation`
+
+Isolation prevents the coupling from leaking across unrelated domains or modes.
 
 ## Potential Redundancy
 
-- `None declared`
+### `behavior-gene-builder`
+
+General versus specialized: Behavior Gene Builder creates any recurring behavior; Resonance Gene Builder creates only cross-module relationship rules.
+
+### `resonance`
+
+Resonance executes coordination; the builder authors and validates reusable coupling genes.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Global authority ordering outranks a coupling's preferred flow.
+- Missing participants disable or degrade the coupling explicitly rather than being hallucinated.
+- Conflicting participant outputs are surfaced to the declared resolver, not amplified.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- implicit coupling
+- repetition amplification
+- hidden-channel claims
+- authority inversion
+- nonterminating module feedback
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose prose around a compact coupling manifest
+
+Keep mandatory:
+
+- explicit interfaces
+- authority rule
+- suppression behavior
+- termination test
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- recurring validator-generator pairings
+- stable Core-Gene couplings
+- multi-module evidence workflows
+- repeated authority-sensitive compositions
 
 ## Example Composition
 
-Activate `resonance-gene-builder` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Citation Fidelity should validate claims immediately after Safe Rewrite in every evidence-grounded authoring flow.
+
+**Why it activates:** The same directional module relationship recurs across several authoring Genes.
+
+**Inputs/state:** Both module contracts, claim-citation state, failure statuses, and authority rules are defined.
+
+**Action:** Builds a coupling Gene that passes changed claims to the validator, blocks finalization on mismatch, suppresses duplicate style output, and terminates after pass or explicit repair route.
+
+**Does not:** Merge rewriting and citation logic or claim they communicate outside explicit state.
+
+**Result/state change:** One reusable, testable module relationship.
+
+**Companions:** ['behavior-gene-builder', 'resonance', 'architect-orchestrator']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `A-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: Resonance Genes.
+Primary source ID: `A-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: Resonance Genes.
+
+Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-06. Resonance Genes (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 14. BEHAVIOR GENE + CORE SEPARATION — HISTORICAL GENESIS (historical_assistant_artifact)

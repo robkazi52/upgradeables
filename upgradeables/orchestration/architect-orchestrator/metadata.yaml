@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "O-01",
   "slug": "architect-orchestrator",
   "display_name": "Architect Orchestrator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,48 +21,55 @@
   "implementation_forms": [
     "orchestrator"
   ],
-  "purpose": "Plan modular systems, select components, resolve conflicts, coordinate execution and critique, then emit a compact state snapshot.",
+  "purpose": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "Skill and OS architecture",
+    "workflow design",
+    "framework refactoring"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task is a narrow domain execution job with no architecture decision",
+    "a single existing component already performs the complete bounded task"
   ],
   "triggers": [
     "designing or refactoring a Skill, OS, framework, or workflow"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task is a narrow domain execution job with no architecture decision",
+    "a single existing component already performs the complete bounded task"
   ],
   "requires": [],
   "recommended_with": [
     "scoped-loader",
-    "parallel-qms",
     "state-snapshot"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "cognitive-governor"
+  ],
+  "potentially_redundant_with": [
+    "ultimate-suite-supervisor"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "locked architecture goal and constraints",
+    "available component manifests and interfaces",
+    "authority and completion criteria"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "modular architecture and execution plan",
+    "critiqued synthesis with compact continuation state"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose role-by-role narration when one agent can execute the modular plan directly"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit modular interfaces, authority resolution, independent critique, and continuation state"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "required module interfaces or authority relationships cannot be resolved",
+    "the requested work is domain execution outside the orchestrator's design scope"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +82,69 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Complex architecture work fails when planning, component selection, execution, critique, and state handoff occur without one explicit modular workflow.",
+  "os_role": [
+    "architecture orchestration",
+    "task-level coordination"
+  ],
+  "pipeline_stages": [
+    "intake and framing",
+    "modular planning",
+    "execution coordination",
+    "critique and synthesis",
+    "state handoff"
+  ],
+  "best_fit_tasks": [
+    "Skill and OS architecture",
+    "workflow design",
+    "framework refactoring"
+  ],
+  "avoid_when": [
+    "the task is a narrow domain execution job with no architecture decision",
+    "a single existing component already performs the complete bounded task"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Translate the locked goal and constraints into a modular plan, select only the necessary OS layers, Genes, Cores, Upgradeables, references, and validators, then coordinate their ordered execution. After execution, run a separate critique, route localized defects to bounded repair, synthesize one result, and emit the minimum continuation state. The orchestrator owns coordination, not every domain operation.",
+  "procedure": [
+    "Lock the goal, constraints, deliverable, authority, and completion criteria.",
+    "Decompose the architecture into modules with explicit interfaces and dependencies.",
+    "Select the minimum required components and resolve authority, conflict, and load order.",
+    "Coordinate execution or delegation while passing only explicit bounded state.",
+    "Critique the assembled result, apply localized repair, synthesize, and emit a compact state snapshot."
+  ],
+  "always_do": [
+    "Preserve the defining invariant: explicit modular interfaces, authority resolution, independent critique, and continuation state.",
+    "Record material routing, transition, and failure decisions in explicit task state."
+  ],
+  "never_do": [
+    "returning a flat component list or impersonating the domain execution agent",
+    "Never claim hidden state, unavailable host capability, or authority beyond the active Skill."
+  ],
+  "interaction_reasons": {
+    "scoped-loader": "Activates only the modules selected by the architecture plan.",
+    "state-snapshot": "Captures the goal, locked decisions, active modules, open issues, and next step after synthesis."
+  },
+  "counterbalance_reasons": {
+    "cognitive-governor": "Bounds architectural exploration and prevents orchestration from becoming endless redesign."
+  },
+  "redundancy_reasons": {
+    "ultimate-suite-supervisor": "The suite supervisor governs modes and pack health in an existing full OS; Architect Orchestrator designs and coordinates the task architecture itself."
+  },
+  "conflict_rules": [
+    "Host, system, domain, and explicit user authority take precedence over this component.",
+    "If required module interfaces or authority relationships cannot be resolved, stop or escalate rather than forcing a nominal success."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "O-01. Architect Orchestrator",
+      "source_kind": "current_consolidated_catalog"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

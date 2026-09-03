@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-05",
   "slug": "epistemic-status-gating",
   "display_name": "Epistemic Status Gating",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,49 +21,57 @@
     "guard",
     "validator"
   ],
-  "purpose": "Label and gate statements as fact, inference, framing, or hypothesis before they influence conclusions.",
+  "purpose": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "evidence synthesis",
+    "investigation",
+    "decision support",
+    "source-grounded research",
+    "high-stakes review"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task contains only direct transformation with no inferential claims",
+    "labels would be exposed as private chain-of-thought rather than concise epistemic status"
   ],
   "triggers": [
     "claims of mixed certainty are present"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task contains only direct transformation with no inferential claims",
+    "labels would be exposed as private chain-of-thought rather than concise epistemic status"
   ],
   "requires": [],
   "recommended_with": [
-    "grounding-no-invention"
+    "counterfactual-integrity",
+    "grounding-no-invention",
+    "truth-priority-hierarchy"
   ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "counterfactual-integrity"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "material propositions",
+    "source/evidence pointers",
+    "semantic phase",
+    "topic or compartment"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "status-labeled propositions",
+    "blocked status promotions",
+    "uncertainty or repair request"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "visible labels for routine, obviously sourced statements"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "the distinction between source fact, inference, framing, and hypothesis"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If a decision-critical proposition has no defensible status or evidence pointer, it cannot support the conclusion."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +84,81 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Prevents unmarked certainty upgrades as information moves from source intake through reasoning and synthesis.",
+  "os_role": [
+    "truth-state-classifier",
+    "validation-gate"
+  ],
+  "pipeline_stages": [
+    "evidence-capture",
+    "reasoning",
+    "pre-output-verification"
+  ],
+  "best_fit_tasks": [
+    "evidence synthesis",
+    "investigation",
+    "decision support",
+    "source-grounded research",
+    "high-stakes review"
+  ],
+  "avoid_when": [
+    "the task contains only direct transformation with no inferential claims",
+    "labels would be exposed as private chain-of-thought rather than concise epistemic status"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Represent material propositions with an explicit status drawn from factual, evaluative/inferential, framing, or hypothetical phases, plus their evidence pointer and topic. A downstream conclusion may consume a proposition only under rules appropriate to that status; unsupported status promotion is rejected or surfaced as uncertainty.",
+  "procedure": [
+    "Split the candidate reasoning product into material propositions.",
+    "Assign each proposition a status and evidence pointer.",
+    "Check whether downstream conclusions use each status permissibly.",
+    "Flag any inference or hypothesis presented as direct fact.",
+    "Downgrade, relabel, remove, or seek evidence for the offending proposition.",
+    "Emit concise status labels only where they help the user audit the answer."
+  ],
+  "always_do": [
+    "Keep evidence pointers with factual claims.",
+    "Make uncertainty visible when status affects the conclusion.",
+    "Maintain topic and phase isolation for stored propositions."
+  ],
+  "never_do": [
+    "Treat plausibility as factual status.",
+    "Promote a hypothesis because several later statements depend on it.",
+    "Claim access to hidden chain-of-thought."
+  ],
+  "interaction_reasons": {
+    "grounding-no-invention": "Grounding supplies the evidence boundary used to assign factual status.",
+    "counterfactual-integrity": "Consumes the hypothesis labels to prevent phase leakage.",
+    "truth-priority-hierarchy": "Uses epistemic status when resolving conflicts among evidence and inference."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "counterfactual-integrity": "Epistemic gating classifies all material propositions; counterfactual integrity specifically governs the factual/hypothetical boundary."
+  },
+  "conflict_rules": [
+    "Direct source evidence outranks an unlabeled model inference.",
+    "A domain policy may define finer statuses but may not silently promote unsupported content."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "6.2 T3 structured reasoning-state representation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

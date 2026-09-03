@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "meta-supervisor",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "meta-supervisor-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Two distinct health defects require ordered bounded repairs.",
+      "expect": "Scoped repairs coordinated under one health supervisor.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "meta-supervisor-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task needs suite-wide mode declaration and Core-stack governance",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "meta-supervisor-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Suite-wide mode or authority conflicts escalate to Ultimate Suite Supervisor.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "meta-supervisor-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "supervisor recursion",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "meta-supervisor-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "diagnosis-before-repair",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "meta-supervisor-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An active scaffold shows a repeated failed path or local contradiction.",
+      "expect": "The skill classifies the health defect, routes the smallest repair pack, preserves state, and rechecks.",
+      "reject": "The skill declares POWER/SAFE, enforces the full Core stack, or behaves like the Ultimate Suite Supervisor."
+    }
+  ]
+}

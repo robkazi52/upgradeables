@@ -1,10 +1,31 @@
-# Basic composition example
+# Clarification Gateway — Basic Example
 
-**Situation:** required variables are missing or instructions conflict.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `clarification-gateway`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A user asks for a shipping quote but gives a city shared by two states.
+
+## Why this Upgradeable activates
+
+Destination changes price and feasibility.
+
+## Inputs / state
+
+City supplied; state and postal code absent; questions permitted.
+
+## What it does
+
+Asks one focused destination question before pricing and records the answer.
+
+## What it does not do
+
+It does not guess the state or ask unrelated preference questions.
+
+## Result / state change
+
+A resolved destination field or an explicit inability to quote.
+
+## Interaction with companion components
+
+['task-set-lock-in']

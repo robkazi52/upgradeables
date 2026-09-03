@@ -2,22 +2,38 @@
 
 ## Summary
 
-Prototype new capability as a detachable adapter and promote it only after evaluation.
+Tests a new capability behind a detachable boundary and promotes it into the base only after comparative evidence shows stable value.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Protect a working OS or workflow from speculative capabilities while preserving a path for evidence-based evolution.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Directly rewriting the base for every experiment couples unproven behavior to production, obscures evaluation, and makes rollback difficult.
+
+## Where It Fits in the OS
+
+Roles: architecture experiment controller, promotion gate. Pipeline stages: experiment design, detached trial, evaluation, promotion or retirement.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- new loader or validator trials
+- tool integrations
+- alternative routing logic
+- model-specific optimization
+
+## When Not to Use
+
+- the change is a mandatory security repair
+- no stable interface can isolate the capability
+- the experiment cannot be measured against the base
 
 ## Scope
 
-Functional classes: meta-control, orchestration. Activation:
-`U4-meta-architecture`. This modern classification is not a historical tier.
+Canonical package: `adapter-first-experimentation@1.1.0`. ID: `T2-21`. Functional classes: meta-control, orchestration. Activation: `U4-meta-architecture`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,141 @@ Functional classes: meta-control, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the change is a mandatory security repair
+- no stable interface can isolate the capability
+- the experiment cannot be measured against the base
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- capability hypothesis
+- base workflow
+- adapter interface
+- test cohort
+- acceptance metrics and invariants
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- detached experimental adapter
+- base-versus-adapter evidence
+- promote, revise, or retire decision
+- rollback record
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Define an adapter contract around the proposed capability, route only an explicit test cohort through it, and preserve the unchanged base as control and rollback. Compare quality, cost, latency, drift, and failure behavior against predeclared acceptance thresholds; promote only the demonstrated stable interface, otherwise revise or retire the adapter without contaminating core rules.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. State the hypothesis, acceptance metrics, test cohort, and non-negotiable invariants.
+2. Expose the smallest stable interface needed by the capability.
+3. Implement or specify it as a detachable adapter with base-path fallback and isolated state.
+4. Run representative and adversarial trials against the unchanged base.
+5. Compare benefit, regressions, operating cost, and rollback behavior.
+6. Promote the stable behavior only after thresholds pass; otherwise revise or remove the adapter and retain the base.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- keep the base path available during evaluation
+- predeclare promotion criteria
+- isolate experimental state and authority
+- record promotion or retirement evidence
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- declare an experiment core because it is novel
+- let adapter-only assumptions leak into the base
+- promote on one favorable example
+- remove rollback before stability is demonstrated
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `architect-orchestrator`
+
+The architect defines the adapter boundary and routes the controlled cohort.
+
+### `future-proof-mode-selector`
+
+A model- or environment-specific capability can remain an adapter selected only where supported.
 
 ## Compatible Upgradeables
 
-- `architect-orchestrator`
+- `architect-orchestrator` — The architect defines the adapter boundary and routes the controlled cohort.
+- `future-proof-mode-selector` — A model- or environment-specific capability can remain an adapter selected only where supported.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `meta-stability`
+
+Meta-Stability freezes the base and suppresses experimental activation when coherence is already degrading.
 
 ## Potential Redundancy
 
-- `None declared`
+### `crispr-edit`
+
+CRISPR changes an established component precisely; Adapter-First evaluates an unproven capability without changing that component.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Security and integrity repairs follow their mandated path rather than waiting for experimental promotion.
+- If the adapter cannot be isolated from base state or authority, do not trial it in production.
+- A benefit score cannot override a failed invariant or rollback test.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- base contamination
+- unmeasured promotion
+- hidden experimental state
+- interface sprawl
+- irreversible trial
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- a heavyweight experiment document for a local reversible sandbox test
+
+Keep mandatory:
+
+- detachable boundary
+- control comparison
+- invariant gate
+- explicit promotion decision
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- new loader or validator trials
+- tool integrations
+- alternative routing logic
+- model-specific optimization
 
 ## Example Composition
 
-Activate `adapter-first-experimentation` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Try semantic search in a repository skill loader.
+
+**Why it activates:** Search may improve discovery but could add latency and unstable ranking to a working deterministic loader.
+
+**Inputs/state:** The current resolver, a candidate search adapter, representative queries, and latency and precision thresholds are available.
+
+**Action:** Routes a test cohort through the adapter, compares it with deterministic resolution, tests fallback, and promotes only the stable query interface after thresholds pass.
+
+**Does not:** Replace the base resolver before evaluation or let the adapter mutate registry records.
+
+**Result/state change:** Evidence-backed adoption or clean retirement with the original loader intact.
+
+**Companions:** ['architect-orchestrator', 'meta-stability']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-21` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-21` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-21. Adapter-First Experimentation (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 19.5 OS / Skill construction (historical_assistant_artifact)

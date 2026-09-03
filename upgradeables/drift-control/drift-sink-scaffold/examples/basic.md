@@ -1,10 +1,31 @@
-# Basic composition example
+# Drift Sink Scaffold — Basic Example
 
-**Situation:** discarded branches keep resurfacing.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `drift-sink-scaffold`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+An investigation repeatedly retrieves an obsolete draft theory after it was disproven.
+
+## Why this Upgradeable activates
+
+The branch consumes attention and contaminates new summaries.
+
+## Inputs / state
+
+Disproof evidence, decision authority, dependency map, and retention requirement.
+
+## What it does
+
+Places the theory in a reversible task-local sink with its disproof, pointer, and restore condition.
+
+## What it does not do
+
+It does not delete the branch or sink unresolved evidence that challenges the current theory.
+
+## Result / state change
+
+Automatic retrieval stops resurfacing the disproven branch while auditability remains.
+
+## Interaction with companion components
+
+['non-authoritative-branch-suppression', 'stable-long-context', 'state-snapshot']

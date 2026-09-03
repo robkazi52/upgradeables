@@ -2,22 +2,36 @@
 
 ## Summary
 
-Narrow exploration through comparison and selection into precise execution as decisions become locked.
+Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A task can remain indefinitely exploratory or switch abruptly into execution while discarded possibilities still influence active state.
+
+## Where It Fits in the OS
+
+Roles: mode transition control, commitment shaping. Pipeline stages: exploration, candidate comparison, decision lock, execution handoff.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- design-to-implementation workflows
+- iterative planning
+- creative work with a committed deliverable
+
+## When Not to Use
+
+- the task is purely exploratory and requires no commitment
+- the task begins with one already locked deterministic procedure
 
 ## Scope
 
-Functional classes: orchestration, planning-reasoning. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `progressive-mode-shaping@1.1.0`. ID: `T2-06`. Functional classes: orchestration, planning-reasoning. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +39,121 @@ Functional classes: orchestration, planning-reasoning. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task is purely exploratory and requires no commitment
+- the task begins with one already locked deterministic procedure
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- current phase and open decisions
+- candidate set and comparison evidence
+- locked constraints and transition criteria
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- narrowed active mode
+- retired alternatives and locked execution plan
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Track which choices remain open and progressively reduce permitted breadth as evidence and decisions accumulate. Move through explore, compare, choose, plan, execute, and validate states; at each transition retire losing branches, lock accepted constraints, and lower drift. Unlike a hard two-mode switch, shaping may narrow in several evidence-backed increments.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Declare the initial exploration boundary and the decisions that must eventually lock.
+2. Generate only the breadth justified at the current phase.
+3. Compare candidates and record evidence for accepted and rejected choices.
+4. Lock decisions and reduce allowed alternatives and drift at each phase transition.
+5. Enter execution with one active plan, then validate against the locked state.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve the defining invariant: evidence-backed narrowing and retirement of losing branches before execution.
+- Record material routing, transition, and failure decisions in explicit task state.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- keeping every alternative active through execution or narrowing without evidence
+- Never claim hidden state, unavailable host capability, or authority beyond the active Skill.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `stateblock`
+
+Records phase, decisions, active branches, and transition evidence.
+
+### `mode-lock-in`
+
+Prevents a completed transition from silently reopening discarded modes.
 
 ## Compatible Upgradeables
 
-- `mode-lock-in`
-- `hybrid-mode`
+- `stateblock` — Records phase, decisions, active branches, and transition evidence.
+- `mode-lock-in` — Prevents a completed transition from silently reopening discarded modes.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `anti-tunnel-vision`
+
+Ensures early narrowing does not occur before a plausible alternative is considered.
 
 ## Potential Redundancy
 
-- `None declared`
+### `hybrid-mode`
+
+HYBRID uses a distinct POWER-to-SAFE gate; Progressive Mode Shaping supports multiple gradual narrowing transitions.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Host, system, domain, and explicit user authority take precedence over this component.
+- If transition criteria are absent or accepted decisions cannot be distinguished from open options, stop or escalate rather than forcing a nominal success.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- transition criteria are absent or accepted decisions cannot be distinguished from open options
+- narrowing would discard a materially plausible path before comparison
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- intermediate shaping stages for a trivial two-step task
+
+Keep mandatory:
+
+- evidence-backed narrowing and retirement of losing branches before execution
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- design-to-implementation workflows
+- iterative planning
+- creative work with a committed deliverable
 
 ## Example Composition
 
-Activate `progressive-mode-shaping` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A product team moves from broad feature concepts to one implementation specification.
+
+**Why it activates:** Exploration is useful early but must not persist into engineering execution.
+
+**Inputs/state:** Candidate features, criteria, decisions, constraints, and current phase.
+
+**Action:** Narrows from ideation to comparison to one plan, locking decisions at each transition.
+
+**Does not:** Does not keep rejected features active or force a premature choice without comparison.
+
+**Result/state change:** Engineering receives one precise specification with traceable retired alternatives.
+
+**Companions:** StateBlock records locks; Anti-Tunnel Vision protects early comparison.
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-06. Progressive Mode Shaping (current_consolidated_catalog)

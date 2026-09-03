@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "PQ-00",
   "slug": "parallel-qms",
   "display_name": "Parallel Quality Management System",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,52 +23,77 @@
     "validator",
     "parent-skill-mode"
   ],
-  "purpose": "Run one or more independent validation modes, compare results, and approve, reject, request repair, or abstain without adding facts.",
+  "purpose": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "high-stakes synthesis",
+    "complex repository validation",
+    "multiverse collapse",
+    "long-form factual work",
+    "safety-sensitive decisions"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "one low-risk deterministic check is sufficient",
+    "the caller cannot define a decision criterion or bounded exit",
+    "distributed isolation is only nominal"
   ],
   "triggers": [
     "a composed workflow needs structured quality evaluation"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "one low-risk deterministic check is sufficient",
+    "the caller cannot define a decision criterion or bounded exit",
+    "distributed isolation is only nominal"
   ],
   "requires": [],
   "recommended_with": [
     "bounded-exit",
+    "critical-atomic-verification",
+    "cross-universe-consistency",
+    "fermionic-veto",
     "multi-layer-consistency"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "crispr-edit",
+    "dynamic-depth-allocation"
+  ],
+  "potentially_redundant_with": [
+    "cross-checking-chains",
+    "multi-layer-consistency"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "candidate output or branches",
+    "critical truths",
+    "risk model",
+    "selected mode plan",
+    "independence boundaries",
+    "veto predicates",
+    "exit budget"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "per-mode validation ledger",
+    "agreement and conflict map",
+    "repair requests",
+    "veto record",
+    "global collapse decision",
+    "convergence reason"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "modes with no distinct failure hypothesis",
+      "formal orchestration for a low-risk deterministic check"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "mode distinction",
+      "critical-truth agreement",
+      "conflict preservation",
+      "veto survival",
+      "bounded convergence",
+      "honest independence labels"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not certify while a crucial truth is disputed, a safety/ethical veto is active, validator independence is falsely claimed, or bounded repair fails to converge."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -81,5 +106,100 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A single evaluator misses correlated errors, while indiscriminate parallel review duplicates work, conceals disagreement, and can recurse without convergence.",
+  "os_role": [
+    "validator-family-orchestrator",
+    "multi-perspective-quality-gate",
+    "global-collapse-controller"
+  ],
+  "pipeline_stages": [
+    "validation design",
+    "parallel or staged evaluation",
+    "repair",
+    "global QMS collapse"
+  ],
+  "best_fit_tasks": [
+    "high-stakes synthesis",
+    "complex repository validation",
+    "multiverse collapse",
+    "long-form factual work",
+    "safety-sensitive decisions"
+  ],
+  "avoid_when": [
+    "one low-risk deterministic check is sufficient",
+    "the caller cannot define a decision criterion or bounded exit",
+    "distributed isolation is only nominal"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Select modes by distinct failure hypotheses, run them with separated evidence where independence matters, preserve typed outputs, and collapse only after resolving material disagreement and honoring vetoes. Mirror QMS compares two independently derived answers; Risk-Tier-Split allocates shallow, medium, or deep checks by consequence; Cross-Phase separately inspects factual, evaluative, framing, and hypothetical phases; Redundancy QMS seeks logical, structural, narrative, and safety corroboration; ExIt-Integrated couples scores to bounded repair and convergence; Hierarchical validates atom, paragraph/component, section/subsystem, and global levels; Transversal cuts across temporal, causal, modal, and logical dimensions; Heterogeneous assigns coherence, evidence, relevance, and safety to different validator lenses; Monte QMS perturbs assumptions, wording, or structure without claiming formal Monte Carlo; Inversion reasons from a proposed conclusion backward to required evidence; Conflict-Resolution classifies and adjudicates validator disagreement; Distributed QMS runs actually isolated instances before comparison; Meta-QMS evaluates validator consensus, consistency, calibration, and safety; Semantic Glass-Box exposes reasoning checkpoints and evidence paths; Ethical QMS applies a non-compensable harm or policy veto. Global collapse requires agreement on crucial truths, explicit treatment of conflicts, and survival of all safety vetoes—never majority alone.",
+  "procedure": [
+    "State the decision, critical truths, risk tier, and stop conditions.",
+    "Choose only modes tied to plausible distinct failures: QMS-M for independent-answer agreement; QMS-RTS for consequence-scaled depth; QMS-XP for factual/evaluative/framing/hypothetical separation; QMS-R for logical/structural/narrative/safety redundancy; QMS-EI for bounded repair convergence; HQMS for atom-to-global hierarchy; T-QMS for temporal/causal/modal/logical cuts; hQMS for coherence/evidence/relevance/safety heterogeneity; mQMS for bounded perturbation; Inv-QMS for conclusion-to-evidence reversal; CR-QMS for disagreement resolution; dQMS only for real isolation; QMS² for evaluator-of-evaluators; SG-QMS for inspectable evidence paths; E-QMS for ethical veto.",
+    "Define inputs, independence boundaries, and typed pass/fail output for each selected mode.",
+    "Run independent modes without sharing draft conclusions when contamination would defeat the purpose.",
+    "Collect disagreements without averaging them away.",
+    "Use CR-QMS to classify factual, criteria, scope, or value conflict and request targeted repair.",
+    "Use QMS-EI to rerun only affected modes within a fixed budget and stop on convergence or stable failure.",
+    "Perform Global QMS Collapse: require crucial-truth agreement, cross-mode consistency, and no unresolved safety or ethical veto.",
+    "Return a decision plus per-mode ledger, minority findings, unresolved conflicts, and stop reason."
+  ],
+  "always_do": [
+    "Select modes by failure hypothesis, not quantity.",
+    "Keep QMS-M and dQMS genuinely independent when claimed.",
+    "Preserve mode-specific minority findings through collapse.",
+    "Apply E-QMS and other hard vetoes outside weighted averaging.",
+    "Bound ExIt repair cycles."
+  ],
+  "never_do": [
+    "Call repeated passes by one shared-context evaluator distributed QMS.",
+    "Describe mQMS as formal Monte Carlo without actual stochastic simulation.",
+    "Collapse by simple majority.",
+    "Let Meta-QMS replace primary evidence checks.",
+    "Run every mode by default."
+  ],
+  "interaction_reasons": {
+    "multi-layer-consistency": "Provides the standalone vertical invariant model used by HQMS.",
+    "cross-universe-consistency": "Uses QMS evidence during branch collapse and checks cross-branch assumptions.",
+    "fermionic-veto": "Ensures a decisive contradiction survives aggregate scoring.",
+    "critical-atomic-verification": "Supplies critical truths that all selected modes must preserve.",
+    "bounded-exit": "Terminates QMS-EI refinement."
+  },
+  "counterbalance_reasons": {
+    "dynamic-depth-allocation": "Limits mode count and depth to consequence.",
+    "crispr-edit": "Constrains repair requested by validators to precise causal changes."
+  },
+  "redundancy_reasons": {
+    "cross-checking-chains": "Chains are ordered dependencies; Parallel QMS is a selectable set of independent, cross-cutting, hierarchical, perturbative, reverse, meta, and veto topologies.",
+    "multi-layer-consistency": "HQMS is one mode inside the family, not the entire family."
+  },
+  "conflict_rules": [
+    "Crucial factual conflict must be resolved or surfaced before collapse.",
+    "Safety and ethical vetoes cannot be outvoted.",
+    "Dependent validators do not count as independent consensus.",
+    "If Meta-QMS finds correlated evidence or inconsistent criteria, reduce confidence and rerun with corrected separation.",
+    "Stable disagreement at the iteration limit yields abstention or an external decision, not fabricated consensus."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "PART VII. PARALLEL-QMS FAMILY",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "9. Parallel-QMS recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8. PARALLEL-QMS — DEEP HISTORICAL OPERATING DETAILS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

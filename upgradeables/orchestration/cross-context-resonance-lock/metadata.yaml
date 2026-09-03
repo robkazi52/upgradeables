@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-11",
   "slug": "cross-context-resonance-lock",
   "display_name": "Cross-Context Resonance Lock",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,48 +23,55 @@
     "guard",
     "state-manager"
   ],
-  "purpose": "Preserve an explicit alignment relationship between related source contexts while respecting their boundaries.",
+  "purpose": "Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "long-context-corpus",
-    "multi-agent-orchestration"
+    "multi-document synthesis",
+    "multi-agent handoffs",
+    "parallel workstream integration"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the contexts are unrelated",
+    "the relationship is speculative or would require merging incompatible authority domains"
   ],
   "triggers": [
     "related contexts must stay aligned across a long task"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the contexts are unrelated",
+    "the relationship is speculative or would require merging incompatible authority domains"
   ],
   "requires": [],
   "recommended_with": [
-    "resonance",
-    "domain-mode-isolation"
+    "domain-mode-isolation",
+    "state-routing-bus"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "anti-tunnel-vision"
+  ],
+  "potentially_redundant_with": [
+    "resonance"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "two or more bounded context states",
+    "declared relationship and allowed transfers",
+    "source and authority metadata"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "validated cross-context link",
+    "boundary-preserving handoff or rejected transfer"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a single-context task has no cross-boundary relationship to preserve"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "separate provenance and authority for every linked context"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "the relationship cannot be supported independently in both contexts",
+    "maintaining alignment would require transferring incompatible authority or unverified state"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +84,74 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Multi-document and multi-agent work can either lose an important cross-context dependency or merge separate contexts into an unsupported composite.",
+  "os_role": [
+    "cross-context coordination",
+    "boundary-preserving state control"
+  ],
+  "pipeline_stages": [
+    "context intake",
+    "cross-context handoff",
+    "synthesis verification"
+  ],
+  "best_fit_tasks": [
+    "multi-document synthesis",
+    "multi-agent handoffs",
+    "parallel workstream integration"
+  ],
+  "avoid_when": [
+    "the contexts are unrelated",
+    "the relationship is speculative or would require merging incompatible authority domains"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "Modern operational interpretation: represent each context as a separately identified state with its own source and authority, then store only the declared relationship as a typed link between them. On update or synthesis, refresh the link if both endpoints still support it and reject transfers that copy unverified facts or authority across the boundary.",
+  "procedure": [
+    "Identify each context, its source boundary, authority, and current state.",
+    "State the exact relationship that must remain aligned across contexts.",
+    "Store a typed link without copying the full contents of either context.",
+    "Revalidate both endpoints and the relationship when either context changes.",
+    "During synthesis, transfer only explicitly supported fields and preserve provenance."
+  ],
+  "always_do": [
+    "Preserve the defining invariant: separate provenance and authority for every linked context.",
+    "Record material routing, transition, and failure decisions in explicit task state."
+  ],
+  "never_do": [
+    "merging both contexts or transferring unsupported assumptions",
+    "Never claim hidden state, unavailable host capability, or authority beyond the active Skill."
+  ],
+  "interaction_reasons": {
+    "state-routing-bus": "Carries the explicitly permitted linked fields between modules.",
+    "domain-mode-isolation": "Prevents the lock from collapsing separate domain or authority states."
+  },
+  "counterbalance_reasons": {
+    "anti-tunnel-vision": "Challenges an assumed relationship when fixation could make unrelated contexts appear aligned."
+  },
+  "redundancy_reasons": {
+    "resonance": "Resonance coordinates reinforcing modules generally; Cross-Context Resonance Lock preserves one explicit relationship across bounded contexts."
+  },
+  "conflict_rules": [
+    "Host, system, domain, and explicit user authority take precedence over this component.",
+    "If the relationship cannot be supported independently in both contexts, stop or escalate rather than forcing a nominal success."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Pack-derived Upgradeables — Resonance Upgradeable / Cross-Context Resonance Lock"
+    },
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Pack-derived exact names — Resonance Upgradeable / Cross-Context Resonance Lock"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

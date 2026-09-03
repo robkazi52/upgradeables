@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "cross-checking-chains",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "cross-checking-chains-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Identity, extraction, interpretation, and corroboration must all hold in order.",
+      "expect": "The chain stops at a unit mismatch before the unsafe conclusion is released.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "cross-checking-chains-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "one direct authoritative check fully resolves a low-risk atom",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "cross-checking-chains-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Prerequisite failure blocks dependent links from certifying the claim.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "cross-checking-chains-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not certify when a mandatory link fails, is skipped, or depends on the same untested assumption as its supposed corroborator.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "cross-checking-chains-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "dependency order",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "cross-checking-chains-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "The corroboration link passes, but the first link identified the wrong source version.",
+      "expect": "Keep the chain failed at provenance and rerun downstream links on the correct version.",
+      "reject": "Use later agreement to cancel the upstream failure."
+    }
+  ]
+}

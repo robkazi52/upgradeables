@@ -1,10 +1,31 @@
-# Basic composition example
+# Anti-Tunnel Vision — Basic Example
 
-**Situation:** premature fixation is plausible.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `anti-tunnel-vision`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A service is slow after a deployment.
+
+## Why this Upgradeable activates
+
+The team has fixated on the new database query although saturation and cache invalidation are also plausible.
+
+## Inputs / state
+
+Latency rose at deploy time; query timing, CPU saturation, and cache hit-rate data are available.
+
+## What it does
+
+Compares query regression against cache invalidation using the cheapest discriminating metrics, then selects the explanation supported by timing and cache data.
+
+## What it does not do
+
+List every imaginable outage cause or preserve the query hypothesis after contrary evidence.
+
+## Result / state change
+
+A bounded, evidence-selected diagnosis with one residual uncertainty noted.
+
+## Interaction with companion components
+
+['dominant-driver-isolation-scaffold', 'multiverse-reasoning']

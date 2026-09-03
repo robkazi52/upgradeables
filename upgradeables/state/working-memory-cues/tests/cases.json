@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "working-memory-cues",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "working-memory-cues-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The same capitalization rule is easy to forget after many clauses.",
+      "expect": "The recurring error is prevented with little context cost.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "working-memory-cues-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the cue duplicates already salient text",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "working-memory-cues-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Canonical state and higher-authority instructions override stale cues.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "working-memory-cues-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not cue an unverified claim as fact.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "working-memory-cues-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "highest-risk cue at transition points",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "working-memory-cues-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "One canonical constraint is repeatedly missed at a predictable step.",
+      "expect": "Surface a short pointer/reminder only at that step and remove it when obsolete.",
+      "reject": "Reload the complete state or create an independent remembered value."
+    }
+  ]
+}

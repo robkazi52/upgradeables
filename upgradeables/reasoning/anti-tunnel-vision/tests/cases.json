@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "anti-tunnel-vision",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "anti-tunnel-vision-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The team has fixated on the new database query although saturation and cache invalidation are also plausible.",
+      "expect": "A bounded, evidence-selected diagnosis with one residual uncertainty noted.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "anti-tunnel-vision-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the answer is directly established by a locked source",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "anti-tunnel-vision-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "If a hard veto eliminates a branch, do not keep it alive for balance.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "anti-tunnel-vision-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "unbounded ideation",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "anti-tunnel-vision-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicitly test at least one plausible rival before a costly commitment",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "anti-tunnel-vision-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A draft commits to the first plausible cause in an ambiguous incident.",
+      "expect": "The skill names a materially different rival and a decisive evidence check before commitment.",
+      "reject": "The skill merely says to think broadly or produces an unbounded brainstorm."
+    }
+  ]
+}

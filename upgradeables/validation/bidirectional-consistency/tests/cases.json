@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "bidirectional-consistency",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "bidirectional-consistency-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The code-to-requirement story may be plausible without every criterion actually being entailed.",
+      "expect": "One missing error-handling criterion is found despite a plausible forward explanation.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "bidirectional-consistency-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the transformation is intentionally irreversible and no reverse contract is claimed",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "bidirectional-consistency-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "The declared transformation contract determines which information may be lost.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "bidirectional-consistency-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not certify when a material source constraint has no forward image or when the result implies a contradictory source condition.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "bidirectional-consistency-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "independent backward reconstruction for lossy or high-stakes transformations",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "bidirectional-consistency-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A summary reads plausibly from a report but, read alone, implies the opposite scope limitation.",
+      "expect": "Fail the reverse pass and identify the scope inversion.",
+      "reject": "Pass solely because every report section was mentioned."
+    }
+  ]
+}

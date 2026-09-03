@@ -2,22 +2,38 @@
 
 ## Summary
 
-Separate factual, structural, style, and final-validation revision passes while preserving accepted decisions.
+Revises an artifact in ordered, non-mixing passes: factual correction, structural repair, style repair, then final validation.
 
 ## Purpose
 
-Provide a reusable `skill-component` mechanism rather than
-a complete task identity or monolithic prompt.
+Prevent one revision pass from trading away correctness while improving structure or style.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Mixed editing objectives make it hard to know whether factual, structural, and stylistic defects were fixed or newly introduced.
+
+## Where It Fits in the OS
+
+Roles: multi-pass revision scaffold, defect-class separator. Pipeline stages: factual pass, structural pass, style pass, release validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- drafts with several defect classes
+- reports requiring source and style review
+- prompt or specification cleanup
+- publication preparation
+
+## When Not to Use
+
+- only one bounded defect exists
+- the artifact requires complete regeneration
+- the source truth is not yet established
 
 ## Scope
 
-Functional classes: editing-repair, validation. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `structured-refinement@1.1.0`. ID: `T2-02`. Functional classes: editing-repair, validation. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,98 +41,144 @@ Functional classes: editing-repair, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- only one bounded defect exists
+- the artifact requires complete regeneration
+- the source truth is not yet established
 
 ## Inputs / Required State
 
-- source artifact
-- authorized change request
-- protected facts and invariants
+- artifact
+- defect inventory
+- locked facts and decisions
+- style target
+- acceptance criteria
 
 ## Outputs / Produced State
 
-- bounded patch or revised artifact
-- preservation and validation status
+- pass-separated revisions
+- frozen semantic ledger
+- final cross-class validation
 
 ## Mechanism
 
-Classify the defect and apply the smallest authorized edit that can restore correctness while protecting facts, citations, and invariants.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Classify defects before editing and run passes in dependency order: facts and source mapping first, structure and requirement coverage second, style and pedagogy third, final validation last. Accepted decisions are locked between passes, and a later pass may not silently reopen an earlier one.
 
 ## Procedure
 
-1. Locate and classify the defect.
-2. Lock surrounding facts and invariants.
-3. Apply the smallest sufficient repair class.
-4. Compare the result with the source and requested change.
-5. Escalate or stop if the protected invariants cannot be preserved.
+1. Inventory defects and assign each to factual, structural, stylistic, or validation class.
+2. Correct facts, citations, and locked constraints; freeze the accepted semantic ledger.
+3. Repair ordering, dependencies, section roles, and requirement coverage without changing the frozen facts.
+4. Adjust voice, clarity, and pedagogy without changing facts or structure except where explicitly authorized.
+5. Run an independent final check across all classes and use Bounded ExIt to decide whether another pass is justified.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- separate defect classes
+- fix upstream factual issues before downstream polish
+- lock accepted decisions between passes
+- perform a cross-class final validation
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- combine fact correction and free stylistic invention
+- let a later pass silently undo an earlier one
+- polish a structure already known to be globally invalid
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `safe-rewrite`
+
+Safe Rewrite protects frozen semantics during style and format passes.
+
+### `bounded-exit`
+
+Bounded ExIt decides whether another class-specific pass has sufficient value.
+
+### `micro-repair`
+
+Micro-Repair implements each localized correction selected within a pass.
 
 ## Compatible Upgradeables
 
-- `safe-rewrite`
-- `bounded-exit`
+- `safe-rewrite` — Safe Rewrite protects frozen semantics during style and format passes.
+- `bounded-exit` — Bounded ExIt decides whether another class-specific pass has sufficient value.
+- `micro-repair` — Micro-Repair implements each localized correction selected within a pass.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `regenerative-rewrite`
+
+Regeneration replaces the entire cycle when architecture or source mapping is systemically unrecoverable.
 
 ## Potential Redundancy
 
-- `None declared`
+### `bounded-exit`
+
+Both govern iteration, but Structured Refinement defines pass content and order while Bounded ExIt controls continuation.
+
+### `safe-rewrite`
+
+Safe Rewrite is one preservation rule used inside multiple refinement passes.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Factual correctness outranks structural elegance and style.
+- A later pass that discovers an upstream defect returns explicitly to the relevant pass and revalidates downstream results.
+- If the defect inventory shows architecture failure, stop the cycle and escalate.
 
 ## Failure Boundary
 
-- escalate the repair class or stop when protected invariants cannot be preserved
+- mixed-objective drift
+- later-pass regression
+- style masking factual defects
+- cycling on globally broken structure
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- physically separate drafts for each pass when an auditable diff is available
+
+Keep mandatory:
+
+- dependency order
+- between-pass locks
+- final cross-class review
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- drafts with several defect classes
+- reports requiring source and style review
+- prompt or specification cleanup
+- publication preparation
 
 ## Example Composition
 
-Activate `structured-refinement` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Prepare a sourced public guide for release.
+
+**Why it activates:** The draft has two incorrect dates, a duplicated section, and inconsistent voice.
+
+**Inputs/state:** Authoritative dates, required section list, and style guide are available.
+
+**Action:** Fixes dates and citations, then removes structural duplication, then aligns voice, and finally checks all three classes.
+
+**Does not:** Rewrite the dated sentences for tone before establishing correct dates.
+
+**Result/state change:** A release-ready guide with traceable pass boundaries and no semantic regression.
+
+**Companions:** ['safe-rewrite', 'bounded-exit', 'micro-repair']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-02. Structured Refinement Cycles (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

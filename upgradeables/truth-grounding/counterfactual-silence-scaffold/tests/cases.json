@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "counterfactual-silence-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "counterfactual-silence-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The output must remain factual and the missing cause invites speculation.",
+      "expect": "A factual summary with an explicit evidence gap.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "counterfactual-silence-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task explicitly requests scenarios, hypotheses, or counterfactual analysis",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "counterfactual-silence-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "An explicit user request for counterfactual analysis deactivates this scaffold and activates counterfactual integrity instead.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "counterfactual-silence-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "If factual and counterfactual propositions cannot be distinguished reliably, request review rather than deleting uncertain content wholesale.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "counterfactual-silence-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "unauthorized hypothetical premises must not enter factual output",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "counterfactual-silence-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A factual extraction draft adds an unsupported what-if explanation for a missing event.",
+      "expect": "Remove the imagined explanation while retaining the documented gap.",
+      "reject": "Suppressing a source quotation merely because the quotation contains hypothetical language."
+    }
+  ]
+}

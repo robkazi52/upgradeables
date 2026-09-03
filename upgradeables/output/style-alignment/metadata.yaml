@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-15",
   "slug": "style-alignment",
   "display_name": "Style-Alignment Module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -19,47 +19,72 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "Match an authorized style without changing facts, evidence relationships, or reasoning integrity.",
+  "purpose": "Make artifacts consistent with audience, publication, or organizational style while keeping truth and requirements dominant.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow"
+    "house-style editing",
+    "voice matching",
+    "channel adaptation",
+    "consistent multi-author documents",
+    "format and tone normalization"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the requested style impersonates a living person or conflicts with policy",
+    "exact quoted language must remain untouched",
+    "facts or reasoning are not yet stable"
   ],
   "triggers": [
     "a style or voice is specified"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the requested style impersonates a living person or conflicts with policy",
+    "exact quoted language must remain untouched",
+    "facts or reasoning are not yet stable"
   ],
   "requires": [],
   "recommended_with": [
-    "safe-rewrite",
-    "citation-fidelity"
+    "citation-fidelity",
+    "pedagogical-alignment",
+    "safe-rewrite"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "explanation-minimality-scaffold",
+    "grounding-no-invention"
+  ],
+  "potentially_redundant_with": [
+    "pedagogical-alignment",
+    "safe-rewrite"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "artifact",
+    "authorized style guide or exemplar",
+    "semantic invariant ledger",
+    "exact-text zones",
+    "task and channel constraints"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "style-aligned artifact",
+    "style conformance assessment",
+    "semantic and citation preservation check"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "publishing the full style vector for a short answer",
+      "scoring every sentence independently"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit target dimensions",
+      "truth and task veto",
+      "semantic and citation back-check"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "fact drift for tone",
+    "vague imitation",
+    "citation detachment",
+    "over-stylization",
+    "conflicting style authorities",
+    "modification of exact-text zones"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -72,5 +97,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Style can be inconsistent or inappropriate, but style imitation and polishing can also distort claims, citations, uncertainty, or required structure.",
+  "os_role": [
+    "output style constraint",
+    "surface-form adapter"
+  ],
+  "pipeline_stages": [
+    "style contract extraction",
+    "surface transformation",
+    "semantic and style validation"
+  ],
+  "best_fit_tasks": [
+    "house-style editing",
+    "voice matching",
+    "channel adaptation",
+    "consistent multi-author documents",
+    "format and tone normalization"
+  ],
+  "avoid_when": [
+    "the requested style impersonates a living person or conflicts with policy",
+    "exact quoted language must remain untouched",
+    "facts or reasoning are not yet stable"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Translate the authorized style request into an observable style vector—tone, formality, sentence rhythm, vocabulary level, structure, formatting, and disallowed tendencies—while extracting a separate semantic invariant ledger. Transform surface choices toward the style vector, protect quoted and zero-drift zones, then score both conformance and semantic preservation; truth, task, and citation constraints veto any stylistic gain.",
+  "procedure": [
+    "Extract the authorized style source and convert it into observable positive and negative constraints.",
+    "Lock facts, reasoning relations, requirements, citations, uncertainty, and exact-text zones.",
+    "Revise diction, rhythm, organization, and formatting only where the style contract permits.",
+    "Compare the result against the style vector using representative passages rather than vague resemblance.",
+    "Run a semantic and citation diff; revert any stylistic change that alters truth, logic, or attribution."
+  ],
+  "always_do": [
+    "use explicit style dimensions",
+    "keep style subordinate to truth and task",
+    "protect quotes and zero-drift zones",
+    "validate semantic preservation after styling"
+  ],
+  "never_do": [
+    "invent facts or confidence to sound more authoritative",
+    "mimic unauthorized personal quirks",
+    "let brand voice erase required warnings",
+    "treat subjective vibe as the only acceptance test"
+  ],
+  "interaction_reasons": {
+    "safe-rewrite": "Safe Rewrite provides the semantic invariant checks during style transformation.",
+    "pedagogical-alignment": "Pedagogical Alignment adjusts conceptual accessibility independently of voice.",
+    "citation-fidelity": "Citation Fidelity ensures moved or rewritten claims remain correctly supported."
+  },
+  "counterbalance_reasons": {
+    "grounding-no-invention": "Grounding vetoes stylish additions that lack source support.",
+    "explanation-minimality-scaffold": "Minimality prevents style requirements from producing ornamental excess."
+  },
+  "redundancy_reasons": {
+    "safe-rewrite": "Safe Rewrite governs preservation across any rewrite; Style Alignment supplies the specific target dimensions and conformance check.",
+    "pedagogical-alignment": "Both adapt to users, but style changes voice and form while pedagogy changes conceptual scaffolding."
+  },
+  "conflict_rules": [
+    "Truth, safety, citation fidelity, and explicit task constraints outrank the style guide.",
+    "Exact quotations and legally controlled text are excluded from stylistic transformation.",
+    "When two style authorities conflict, use the source explicitly designated for this artifact or ask rather than blend them silently."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-15. Style-Alignment Module",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "19.1 Evidence-grounded authoring",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,10 +1,31 @@
-# Basic composition example
+# External State Automation — Basic Example
 
-**Situation:** continuation requires real external state.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `external-state-automation`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A multi-day literature review must resume after context resets.
+
+## Why this Upgradeable activates
+
+Verified decisions and source pointers need durable continuation.
+
+## Inputs / state
+
+State snapshot, project file permission, schema version, provenance, and retention policy.
+
+## What it does
+
+Writes the compact snapshot to an authorized file, verifies it, and validates it on resume.
+
+## What it does not do
+
+Does not claim persistence before the write succeeds or store the whole conversation by default.
+
+## Result / state change
+
+The next session restores traceable state or receives an explicit failure/staleness warning.
+
+## Interaction with companion components
+
+State Snapshot creates the payload; State Routing Bus delivers it after restore.

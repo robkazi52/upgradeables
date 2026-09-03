@@ -2,22 +2,38 @@
 
 ## Summary
 
-Compress verified, task-relevant context into a smaller indexed representation without changing meaning.
+A provisional scaffold for replacing bulky active context with a smaller, indexed, meaning-preserving representation.
 
 ## Purpose
 
-Provide a reusable `state-manager` mechanism rather than
-a complete task identity or monolithic prompt.
+Reduce attention burden while retaining the facts, constraints, provenance, and retrieval pointers required by the current subtask.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Addresses a workspace that is too large to reason over reliably, without treating lossy summarization as equivalent to source preservation.
+
+## Where It Fits in the OS
+
+Roles: context-retrieval, state projection, attention control. Pipeline stages: post-retrieval, pre-synthesis, context refresh.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- long-context analysis
+- large codebase navigation
+- multi-document synthesis
+- stateful agent workflows
+
+## When Not to Use
+
+- the original context is already small
+- exact source wording must remain live
+- no provenance pointers exist for re-expansion
 
 ## Scope
 
-Functional classes: context-retrieval, state. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `attention-compression-scaffold@1.1.0`. ID: `JAN26-02`. Functional classes: context-retrieval, state. Activation: `U1-common-conditional`. Mechanism basis: `provisional`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,140 @@ Functional classes: context-retrieval, state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the original context is already small
+- exact source wording must remain live
+- no provenance pointers exist for re-expansion
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- large source or state context
+- current task
+- protected atoms
+- source pointers
+- compression budget
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- compact indexed context
+- verbatim protected subset
+- reload pointers
+- compression validation status
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
+Modern operational interpretation: select task-relevant facts, locked literals, decisions, open questions, and source pointers from a larger context; encode them in a compact indexed view; validate that protected meaning and provenance remain recoverable; and keep a route back to the original material. Compression changes representation size, not truth status or authority.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Define the current subtask and protected atoms that compression must preserve.
+2. Partition context into retain verbatim, summarize with provenance, pointer-only, and retire classes.
+3. Build a compact indexed view with stable source references.
+4. Check every locked atom and decision against the original context.
+5. Use the compact view for the subtask while retaining reload pointers.
+6. Refresh or invalidate the view when the task, source, or authoritative state changes.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve exact literals that cannot tolerate paraphrase.
+- Retain source pointers for every compressed factual unit.
+- Label the mechanism as a modern interpretation because only the historical name is recovered.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Do not treat a summary as an immutable source.
+- Do not drop unresolved conflicts to make the view smaller.
+- Do not claim the historical procedure was recovered.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `activation-budget-funnel`
+
+ABF determines when captured evidence should leave the live pull set; compression creates the compact representation it enters.
+
+### `stateblock`
+
+Provides canonical fields and locked atoms that the compressed view must preserve.
 
 ## Compatible Upgradeables
 
-- `activation-budget-funnel`
+- `activation-budget-funnel` — ABF determines when captured evidence should leave the live pull set; compression creates the compact representation it enters.
+- `stateblock` — Provides canonical fields and locked atoms that the compressed view must preserve.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `zero-drift-zones`
+
+Marks content that must stay verbatim rather than be compressed semantically.
 
 ## Potential Redundancy
 
-- `None declared`
+### `structured-state-projection`
+
+Projection limits fields for one consumer; compression reduces the representation of a broader relevant set.
+
+### `working-memory-cues`
+
+Cues are a few reminders, while this scaffold can carry a larger indexed evidence/state view.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Zero-drift and source-fidelity requirements override compression goals.
+- If meaning preservation cannot be verified, use the original context or a pointer rather than a lossy substitute.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Do not activate the compressed view when a protected fact, conflict, or provenance link is lost or unverifiable.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- explicit compression for contexts that fit reliably
+- verbose category labels when preservation can be demonstrated compactly
+
+Keep mandatory:
+
+- protected-atom preservation
+- provenance and reloadability
+- invalidation on state change
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- long-context analysis
+- large codebase navigation
+- multi-document synthesis
+- stateful agent workflows
 
 ## Example Composition
 
-Activate `attention-compression-scaffold` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Analyze a 200-file codebase while debugging one service.
+
+**Why it activates:** Full repository context exceeds the active workspace.
+
+**Inputs/state:** Relevant interfaces, failing trace, service dependencies, and file paths.
+
+**Action:** Keeps exact signatures and errors, summarizes surrounding behavior with file pointers, and retires unrelated modules.
+
+**Does not:** It does not rewrite signatures, discard conflicting traces, or pretend summaries are source files.
+
+**Result/state change:** A compact debug context that can be expanded back to authoritative files.
+
+**Companions:** ['activation-budget-funnel', 'zero-drift-zones']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: None.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-02` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: None.
+
+Source support: `source-gap`. Mechanism basis: `provisional`.
+
+Structured source references:
+
+- OS_Upgradeables_Historical_Recovery_Inventory.md — Initial named Upgradeables (historical_recovery_inventory)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — T2-040 — Attention Corridor Narrowing (historical_assistant_artifact)

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "meta-awareness",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "meta-awareness-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The process may be stuck even though each agent reports activity.",
+      "expect": "A grounded process-health diagnosis ready for supervisor action.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "meta-awareness-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a simple task has no meaningful process state",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "meta-awareness-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "An unverifiable signal cannot be reported as a failure or a pass.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "meta-awareness-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "anthropomorphic narratives",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "meta-awareness-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "observable-only claims",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "meta-awareness-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A complex workflow may be looping or using conflicting modules.",
+      "expect": "The skill reports observable health evidence and a bounded status without identity claims or unauthorized repair.",
+      "reject": "The skill anthropomorphizes the system, infers hidden mental state, or silently reroutes modules."
+    }
+  ]
+}

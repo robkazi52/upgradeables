@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-08",
   "slug": "surgery-edit",
   "display_name": "Surgery Editing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,52 +21,76 @@
     "skill-component",
     "orchestrator"
   ],
-  "purpose": "Perform controlled structural replacement when a local patch cannot address an architecture-level change.",
+  "purpose": "Make macro changes to layers, cores, workflows, or incompatible interfaces without losing invariants, dependents, or rollback control.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "layer reorganization",
+    "Core replacement",
+    "major workflow change",
+    "large incompatible refactor",
+    "schema or public interface migration"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a localized invariant-preserving patch suffices",
+    "the replacement architecture lacks acceptance criteria",
+    "migration or rollback cannot be made safe",
+    "the desired outcome is only prose polish"
   ],
   "triggers": [
     "layers, Cores, or workflows require major replacement"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a localized invariant-preserving patch suffices",
+    "the replacement architecture lacks acceptance criteria",
+    "migration or rollback cannot be made safe",
+    "the desired outcome is only prose polish"
   ],
   "requires": [],
   "recommended_with": [
+    "forethought-checkpoints",
     "regenerative-rewrite",
     "task-set-lock-in"
   ],
   "counterbalances": [
-    "crispr-edit"
+    "crispr-edit",
+    "micro-repair"
   ],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "regenerative-rewrite"
+  ],
   "conflicts": [],
   "inputs": [
-    "source artifact",
-    "authorized change request",
-    "protected facts and invariants"
+    "current architecture",
+    "failure evidence",
+    "interface and dependency inventory",
+    "replacement design",
+    "invariants",
+    "migration and rollback constraints"
   ],
   "outputs": [
-    "bounded patch or revised artifact",
-    "preservation and validation status"
+    "responsibility and interface map",
+    "replacement architecture",
+    "migration plan",
+    "validated cutover",
+    "retirement audit"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a heavyweight migration document for an internal, versioned, fully reversible refactor"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "CRISPR-insufficiency proof",
+      "interface inventory",
+      "old-to-new mapping",
+      "cutover and rollback gates"
     ]
   },
   "failure_boundary": [
-    "escalate the repair class or stop when protected invariants cannot be preserved"
+    "macro edit disguised as patch accumulation",
+    "unmapped dependents",
+    "dual-authority old and new paths",
+    "state loss",
+    "irreversible cutover without evidence",
+    "architecture astronautics"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -79,5 +103,92 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Large structural changes fail when treated as accumulated local edits: hidden interfaces break, old and new architectures coexist ambiguously, and rollback becomes impossible.",
+  "os_role": [
+    "macro-architecture editor",
+    "structural migration operator"
+  ],
+  "pipeline_stages": [
+    "structural diagnosis",
+    "interface inventory",
+    "replacement design",
+    "migration and cutover",
+    "global validation"
+  ],
+  "best_fit_tasks": [
+    "layer reorganization",
+    "Core replacement",
+    "major workflow change",
+    "large incompatible refactor",
+    "schema or public interface migration"
+  ],
+  "avoid_when": [
+    "a localized invariant-preserving patch suffices",
+    "the replacement architecture lacks acceptance criteria",
+    "migration or rollback cannot be made safe",
+    "the desired outcome is only prose polish"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Declare the failing structural boundary and why CRISPR cannot preserve it, inventory every inbound and outbound interface, and define a replacement architecture with mapped invariants. Plan old-to-new state migration, adapters, staged cutover, observability, and rollback; change the structure in bounded phases, validate each dependent contract, then remove the old path only after the replacement passes global checks.",
+  "procedure": [
+    "Document the architecture-level failure and evidence that local editing is insufficient.",
+    "Inventory components, state, public and internal interfaces, dependents, precedence rules, and invariants.",
+    "Design the replacement structure and map every old responsibility and interface to retain, adapt, retire, or explicitly reject.",
+    "Define migration order, compatibility adapters, checkpoints, observability, rollback, and cutover criteria.",
+    "Implement or specify the replacement in stages while validating each interface and state transfer.",
+    "Cut over only when criteria pass; remove the old structure, audit for orphaned references, and record irreversible decisions."
+  ],
+  "always_do": [
+    "prove macro scope",
+    "inventory interfaces before cutting",
+    "map invariants and state migration",
+    "stage cutover with rollback",
+    "audit orphaned dependents"
+  ],
+  "never_do": [
+    "invoke Surgery for a local defect",
+    "replace structure without a responsibility map",
+    "run old and new precedence rules ambiguously",
+    "remove the old path before dependent contracts pass"
+  ],
+  "interaction_reasons": {
+    "regenerative-rewrite": "Regenerative Rewrite can repopulate a replaced structure from locked truth after Surgery defines the new architecture.",
+    "task-set-lock-in": "Task-Set Lock-In preserves objectives and non-negotiable invariants across the migration.",
+    "forethought-checkpoints": "Forethought gates irreversible cutover and retirement steps."
+  },
+  "counterbalance_reasons": {
+    "crispr-edit": "CRISPR is preferred when the change fits a bounded invariant-preserving patch and prevents unnecessary surgery.",
+    "micro-repair": "Micro-Repair handles isolated defects without architecture disruption."
+  },
+  "redundancy_reasons": {
+    "regenerative-rewrite": "Both operate globally; Surgery changes structural components and interfaces, while Regenerative Rewrite rebuilds content against a locked ledger."
+  },
+  "conflict_rules": [
+    "Use CRISPR when all required behavior can coexist with current interfaces inside a bounded patch.",
+    "A hard invariant without a valid old-to-new mapping blocks cutover.",
+    "If rollback is impossible, raise the validation threshold and obtain explicit authority before commitment."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-08. Surgery Editing",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "19.5 OS / Skill construction",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

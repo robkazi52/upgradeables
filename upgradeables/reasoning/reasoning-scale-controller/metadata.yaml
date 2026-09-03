@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "RS-00",
   "slug": "reasoning-scale-controller",
   "display_name": "Reasoning-Scale Controller",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,47 +21,69 @@
     "parent-skill-mode",
     "orchestrator"
   ],
-  "purpose": "Select Subatomic, Atomic, Nano, Micro, QMS, or Cosmic decomposition and verification granularity without exposing private reasoning.",
+  "purpose": "Match reasoning depth and scope to the unit of work instead of applying either shallow local analysis or system-wide architecture indiscriminately.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "mixed-complexity workflows",
+    "long-form construction",
+    "system design",
+    "quality evaluation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a governing workflow already fixes the required scale",
+    "the unit is safety-critical and policy mandates the highest review tier",
+    "scale labels would replace rather than guide actual reasoning"
   ],
   "triggers": [
     "task complexity or risk requires depth selection"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a governing workflow already fixes the required scale",
+    "the unit is safety-critical and policy mandates the highest review tier",
+    "scale labels would replace rather than guide actual reasoning"
   ],
   "requires": [],
   "recommended_with": [
     "cognitive-governor",
+    "dynamic-depth-allocation",
+    "micro-scaffolding"
+  ],
+  "counterbalances": [
+    "bounded-exit",
+    "critical-atomic-verification"
+  ],
+  "potentially_redundant_with": [
     "dynamic-depth-allocation"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "task unit",
+    "dependency span",
+    "uncertainty",
+    "risk and reversibility",
+    "quality requirements"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "selected reasoning scale",
+    "escalation or de-escalation decisions",
+    "scope-appropriate reasoning artifact"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "printing scale names on routine tasks",
+      "stepping through every intermediate scale when direct routing is obvious"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "smallest-adequate-scope selection",
+      "explicit escalation signals",
+      "global-to-local decomposition"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "scale theater",
+    "chronic overthinking",
+    "local reasoning that ignores global dependencies",
+    "invented Nano mechanics",
+    "global plans without local verification"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -74,5 +96,86 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": "Nano is retained as a lightweight intermediate mode; its historical detailed specification is unresolved."
+  },
+  "problem_solved": "Models overthink simple transformations, underthink coupled high-risk tasks, or mix local sentence repair with global architecture decisions.",
+  "os_role": [
+    "reasoning depth controller",
+    "scope router"
+  ],
+  "pipeline_stages": [
+    "task triage",
+    "reasoning execution",
+    "escalation and de-escalation"
+  ],
+  "best_fit_tasks": [
+    "mixed-complexity workflows",
+    "long-form construction",
+    "system design",
+    "quality evaluation"
+  ],
+  "avoid_when": [
+    "a governing workflow already fixes the required scale",
+    "the unit is safety-critical and policy mandates the highest review tier",
+    "scale labels would replace rather than guide actual reasoning"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Route work through one controller: Subatomic for a fact, local relation, constraint, or sentence decision; Atomic for a small verified inference or action; Nano as a light intermediate structure whose detailed historical spec remains unrecovered; Micro for task-local scaffolds and dependencies; QMS for quality evaluation; Cosmic for global architecture, strategy, or long-horizon planning. Escalate when dependency span, ambiguity, irreversibility, or risk exceeds the current scale; de-escalate after the larger question is resolved.",
+  "procedure": [
+    "Identify the unit of work, dependency radius, uncertainty, and consequence of error.",
+    "Choose the lowest scale that can represent all relevant dependencies.",
+    "Execute only the operations appropriate to that scale.",
+    "Escalate one or more levels when local reasoning exposes unresolved cross-unit dependencies, competing quality dimensions, or global architecture effects.",
+    "After the higher-scale decision, return local implementation to the smallest adequate scale and record the boundary."
+  ],
+  "always_do": [
+    "start at the smallest adequate scale",
+    "escalate on concrete signals rather than prestige",
+    "preserve global constraints when returning to local work",
+    "keep Nano semantics modest because its detailed historical specification is unrecovered"
+  ],
+  "never_do": [
+    "use Cosmic for a sentence edit",
+    "solve architecture from isolated facts without aggregation",
+    "invent a detailed historical Nano algorithm",
+    "confuse QMS evaluation with generation"
+  ],
+  "interaction_reasons": {
+    "cognitive-governor": "The governor budgets effort after the scale controller identifies the required scope.",
+    "dynamic-depth-allocation": "Dynamic allocation varies effort within the selected scale as evidence and difficulty change.",
+    "micro-scaffolding": "Micro-Scaffolding structures task-local dependencies when the controller selects Micro scale."
+  },
+  "counterbalance_reasons": {
+    "bounded-exit": "Bounded ExIt caps repeated work at any selected scale.",
+    "critical-atomic-verification": "Atomic verification prevents scale escalation from resting on bad fact-level units."
+  },
+  "redundancy_reasons": {
+    "dynamic-depth-allocation": "Both tune reasoning effort, but the scale controller selects semantic scope while dynamic allocation adjusts depth or budget."
+  },
+  "conflict_rules": [
+    "Risk-mandated review overrides the desire to stay at a cheaper scale.",
+    "Cosmic conclusions must be decomposed back into verifiable local units before execution.",
+    "Nano may be used only as a light intermediate label until historical mechanics are recovered."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "PART V. REASONING-SCALE STACK",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.5 Section / paragraph micro-scaffolding",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

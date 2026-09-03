@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "stateblock",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "stateblock-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "They need a shared current objective, source set, status, and unresolved-risk record.",
+      "expect": "Coordination and validation use the same current task truth.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "stateblock-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a trivial one-turn task needs no persistent state",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "stateblock-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "System and explicit task authority govern locked fields; evidence updates factual fields only through their declared owners.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "stateblock-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not proceed on dependent actions when required state is contradictory or unknown.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "stateblock-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "single source of truth",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "stateblock-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Several workers need current constraints, progress, and decisions.",
+      "expect": "Maintain one schema-defined, versioned canonical state with controlled projections.",
+      "reject": "Rely on scattered narrative summaries or multiple competing truth records."
+    }
+  ]
+}

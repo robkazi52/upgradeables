@@ -1,10 +1,31 @@
-# Basic composition example
+# Drift-Stability Scaling with Model Size — Basic Example
 
-**Situation:** adapting a workflow across model capability levels.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `model-size-drift-scaling`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Move a skill suite from an older model to a more reliable frontier model.
+
+## Why this Upgradeable activates
+
+Repeated planning reminders may be unnecessary, but source fidelity and tool-state checks remain essential.
+
+## Inputs / state
+
+Matched evaluations, control inventory, risk tiers, and rollback profiles are available.
+
+## What it does
+
+Compresses proven-redundant planning prompts, retains grounding and state checks, runs regressions, and publishes a reversible frontier profile.
+
+## What it does not do
+
+Remove citations and safety gates because the new model is larger.
+
+## Result / state change
+
+Lower overhead without loss of measured integrity.
+
+## Interaction with companion components
+
+['future-proof-mode-selector', 'risk-tier-scaling']

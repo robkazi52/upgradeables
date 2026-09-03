@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-03",
   "slug": "stuck-pattern-reset",
   "display_name": "Stuck-Pattern Reset Pack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,70 @@
     "guard",
     "skill-component"
   ],
-  "purpose": "Detect repeated failed approaches and reset only the failed path while preserving locked facts and constraints.",
+  "purpose": "Break nonproductive loops without erasing the trustworthy task context needed for a genuinely different next attempt.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "repeated tool failures",
+    "recursive revision loops",
+    "stale debugging hypotheses",
+    "nonconverging planning"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a second attempt has new evidence or a materially changed method",
+    "the whole task state is corrupted",
+    "a mandatory retry protocol has not been exhausted"
   ],
   "triggers": [
     "reasoning loops or stale approaches repeat"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a second attempt has new evidence or a materially changed method",
+    "the whole task state is corrupted",
+    "a mandatory retry protocol has not been exhausted"
   ],
   "requires": [],
   "recommended_with": [
     "bounded-exit",
+    "meta-supervisor",
     "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "forethought-checkpoints"
+  ],
+  "potentially_redundant_with": [
+    "anti-tunnel-vision",
+    "meta-stability"
+  ],
   "conflicts": [],
   "inputs": [
-    "source artifact",
-    "authorized change request",
-    "protected facts and invariants"
+    "attempt history",
+    "state versions",
+    "locked facts and constraints",
+    "observed failures",
+    "alternative methods and retry limit"
   ],
   "outputs": [
-    "bounded patch or revised artifact",
-    "preservation and validation status"
+    "stuck-pattern determination",
+    "preserved-state snapshot",
+    "quarantined path",
+    "materially different next attempt or escalation"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal fingerprints when two attempts are obviously identical and logged"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "trusted-state preservation",
+      "material-difference test",
+      "retry bound",
+      "external-blocker escalation"
     ]
   },
   "failure_boundary": [
-    "escalate the repair class or stop when protected invariants cannot be preserved"
+    "false loop detection",
+    "full-context amnesia",
+    "cosmetic retries",
+    "unbounded reset cycle",
+    "destructive alternative without checkpoint"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +97,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A solver can repeat the same search, edit, tool call, or reasoning pattern with superficial variations, consuming budget without changing the blocking condition.",
+  "os_role": [
+    "loop-break repair pack",
+    "failed-path reset controller"
+  ],
+  "pipeline_stages": [
+    "repetition detection",
+    "state preservation",
+    "path quarantine",
+    "alternative restart"
+  ],
+  "best_fit_tasks": [
+    "repeated tool failures",
+    "recursive revision loops",
+    "stale debugging hypotheses",
+    "nonconverging planning"
+  ],
+  "avoid_when": [
+    "a second attempt has new evidence or a materially changed method",
+    "the whole task state is corrupted",
+    "a mandatory retry protocol has not been exhausted"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Fingerprint attempts by goal, assumptions, method, inputs, and failure result rather than wording. When a predeclared repetition threshold is met without new evidence or state change, snapshot locked facts and accepted results, quarantine the failed path and its unsupported assumptions, state the recurring blocker, and restart from a materially different method or escalate. Only the failed reasoning path resets.",
+  "procedure": [
+    "Record each attempt's goal, method, key assumptions, state version, and observed failure.",
+    "Compare the new attempt with prior fingerprints and test whether evidence, inputs, or method materially changed.",
+    "On repeated failure, freeze locked facts, constraints, accepted outputs, and unresolved evidence.",
+    "Quarantine the failed path and name the blocker it could not overcome.",
+    "Choose a different hypothesis, tool, decomposition, or escalation route with a new success test.",
+    "Run one bounded attempt and recheck; escalate if the same blocker persists."
+  ],
+  "always_do": [
+    "detect semantic repetition rather than repeated wording",
+    "preserve trusted state",
+    "make the replacement path materially different",
+    "set a bounded retry limit"
+  ],
+  "never_do": [
+    "reset facts or user constraints",
+    "call normal iteration stuckness",
+    "retry with cosmetic prompt changes",
+    "erase failure evidence that should inform the next path"
+  ],
+  "interaction_reasons": {
+    "bounded-exit": "Bounded ExIt supplies the threshold for stopping low-value repeated passes.",
+    "stateblock": "StateBlock preserves the trustworthy context before the path is reset.",
+    "meta-supervisor": "Meta-Supervisor validates the stuck diagnosis and routes the reset."
+  },
+  "counterbalance_reasons": {
+    "forethought-checkpoints": "Forethought prevents the alternative restart from repeating the same costly commitment without a new prerequisite."
+  },
+  "redundancy_reasons": {
+    "meta-stability": "Reset isolates one failed path; Meta-Stability reconciles broader state and module instability.",
+    "anti-tunnel-vision": "Anti-Tunnel prevents early fixation; Stuck Reset acts after repetition proves fixation persistent."
+  },
+  "conflict_rules": [
+    "Locked facts and constraints survive the reset.",
+    "If every materially distinct path shares the same external blocker, escalate rather than keep resetting.",
+    "A destructive alternative requires its own pre-commit authorization."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-03. Stuck-Pattern Reset Pack",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "9. BOUNDED EXIT — DEEPER HISTORICAL USE",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

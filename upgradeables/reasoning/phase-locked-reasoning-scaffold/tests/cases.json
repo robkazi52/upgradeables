@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "phase-locked-reasoning-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "phase-locked-reasoning-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The sources report observations, while the requested conclusion requires interpretation and uncertainty.",
+      "expect": "A readable conclusion whose evidence, inference, and uncertainty remain distinguishable.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "phase-locked-reasoning-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a single atomic transformation has no phase transition",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "phase-locked-reasoning-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A transition cannot increase certainty beyond its evidence without an explicit warrant.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "phase-locked-reasoning-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "phase leakage",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "phase-locked-reasoning-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "internal claim-status separation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "phase-locked-reasoning-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A source fact is used to support a probabilistic recommendation.",
+      "expect": "The skill records and labels the transition rather than presenting the recommendation as quoted fact.",
+      "reject": "The skill either mixes statuses silently or walls phases off without checking consistency."
+    }
+  ]
+}

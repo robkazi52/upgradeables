@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-19",
   "slug": "anti-tunnel-vision",
   "display_name": "Anti-Tunnel Vision",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,62 @@
     "guard",
     "skill-component"
   ],
-  "purpose": "Test a favored interpretation against a small plausible alternative set before committing.",
+  "purpose": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "ambiguous diagnosis",
+    "architecture choice with two credible patterns",
+    "research synthesis with competing explanations"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the answer is directly established by a locked source",
+    "a safety or policy veto already determines the outcome",
+    "branching cost exceeds the bounded decision value"
   ],
   "triggers": [
-    "premature fixation is plausible"
+    "Activate when the task requires premature fixation is plausible."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the answer is directly established by a locked source",
+    "a safety or policy veto already determines the outcome",
+    "branching cost exceeds the bounded decision value"
   ],
   "requires": [],
   "recommended_with": [
-    "multiverse-reasoning",
-    "neuro-focus"
+    "dominant-driver-isolation-scaffold",
+    "multiverse-reasoning"
   ],
   "counterbalances": [
     "neuro-focus"
   ],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "multiverse-reasoning"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "favored candidate",
+    "task constraints",
+    "available discriminating evidence",
+    "exploration budget"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "bounded rival set",
+    "discriminating comparison",
+    "selected path or explicit residual uncertainty"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "writing a formal comparison table when only one quick rival check is needed"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicitly test at least one plausible rival before a costly commitment",
+      "retain the stop rule"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "unbounded ideation",
+    "token alternatives with no material difference",
+    "false balance after decisive evidence",
+    "analysis paralysis"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +89,75 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A favored hypothesis can silently determine evidence selection, diagnosis, and design even when a nearby alternative explains the same facts better.",
+  "os_role": [
+    "reasoning control",
+    "premature-convergence guard"
+  ],
+  "pipeline_stages": [
+    "hypothesis formation",
+    "plan selection",
+    "pre-commit review"
+  ],
+  "best_fit_tasks": [
+    "ambiguous diagnosis",
+    "architecture choice with two credible patterns",
+    "research synthesis with competing explanations"
+  ],
+  "avoid_when": [
+    "the answer is directly established by a locked source",
+    "a safety or policy veto already determines the outcome",
+    "branching cost exceeds the bounded decision value"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Name the leading path and at least one genuinely plausible competitor, specify the observation that would distinguish them, and compare only on that discriminating evidence. The controller is bounded: it prevents first-path lock-in without turning every task into open-ended brainstorming.",
+  "procedure": [
+    "State the current favored hypothesis or plan and the evidence supporting it.",
+    "Generate one or two materially different competitors, not cosmetic restatements.",
+    "For each candidate, identify its strongest confirming signal and strongest disconfirming signal.",
+    "Acquire or inspect the cheapest decisive evidence available.",
+    "Select, synthesize, or explicitly preserve uncertainty; retire alternatives that lose on the discriminating evidence."
+  ],
+  "always_do": [
+    "make the favored path explicit",
+    "require competitors to differ in causal account or implementation strategy",
+    "define a stopping condition before expanding the search"
+  ],
+  "never_do": [
+    "invent weak straw alternatives merely to satisfy a count",
+    "keep rejected branches active after decisive evidence",
+    "override a hard truth or safety constraint in the name of exploration"
+  ],
+  "interaction_reasons": {
+    "multiverse-reasoning": "Multiverse supplies bounded candidates; Anti-Tunnel Vision checks that the candidate set is not just the initial idea in several phrasings.",
+    "dominant-driver-isolation-scaffold": "Driver isolation can test which rival causal explanation accounts for the highest-impact evidence."
+  },
+  "counterbalance_reasons": {
+    "neuro-focus": "Neuro-Focus narrows attention after Anti-Tunnel Vision has ensured that narrowing is earned."
+  },
+  "redundancy_reasons": {
+    "multiverse-reasoning": "Both resist premature commitment, but this module is a fixation guard while Multiverse is a branch-generation and selection procedure."
+  },
+  "conflict_rules": [
+    "If a hard veto eliminates a branch, do not keep it alive for balance.",
+    "When evidence cannot discriminate within budget, report unresolved alternatives instead of manufacturing certainty."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-19. Anti-Tunnel Vision",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "model-size-drift-scaling",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "model-size-drift-scaling-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Repeated planning reminders may be unnecessary, but source fidelity and tool-state checks remain essential.",
+      "expect": "Lower overhead without loss of measured integrity.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "model-size-drift-scaling-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "there is no comparative reliability evidence",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "model-size-drift-scaling-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Invariant controls do not scale away.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "model-size-drift-scaling-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "size-as-capability assumption",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "model-size-drift-scaling-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "truth and safety gates",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "model-size-drift-scaling-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A stronger model may need less scaffolding.",
+      "expect": "The skill classifies controls, uses task-relevant reliability tests, removes only compensatory controls, preserves invariants, and defines reactivation.",
+      "reject": "The skill chooses the whole host mode or drops controls solely from model size or brand."
+    }
+  ]
+}

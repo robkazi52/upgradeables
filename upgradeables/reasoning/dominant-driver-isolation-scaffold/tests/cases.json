@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "dominant-driver-isolation-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "dominant-driver-isolation-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Price, onboarding failures, outages, and seasonality all correlate with churn.",
+      "expect": "A defensible intervention priority and limits on the causal claim.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "dominant-driver-isolation-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the system is known to require irreducibly joint causes",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "dominant-driver-isolation-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A safety-critical factor is not discarded solely because its probability or average effect is lower.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "dominant-driver-isolation-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "correlation presented as cause",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "dominant-driver-isolation-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "rival test",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "dominant-driver-isolation-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Five plausible factors are listed for one outcome.",
+      "expect": "The skill estimates unique leverage, checks a rival and interactions, and permits a no-single-driver result.",
+      "reject": "The skill simply ranks factors by intuition or claims recovered details not present in the corpus."
+    }
+  ]
+}

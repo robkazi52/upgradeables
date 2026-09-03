@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "style-alignment",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "style-alignment-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Voice and formatting vary while facts and citations are already approved.",
+      "expect": "A consistent guide that retains the approved semantic record.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "style-alignment-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the requested style impersonates a living person or conflicts with policy",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "style-alignment-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Truth, safety, citation fidelity, and explicit task constraints outrank the style guide.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "style-alignment-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "fact drift for tone",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "style-alignment-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit target dimensions",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "style-alignment-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A factual draft must match a defined house style.",
+      "expect": "The skill extracts observable style dimensions, transforms only surface form, protects exact zones, and validates facts and citations.",
+      "reject": "The skill claims generic polish, alters reasoning for voice, or judges success only by subjective resemblance."
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-11",
   "slug": "selfblock-auto-update",
   "display_name": "SelfBlock Auto-Update",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -19,46 +19,68 @@
   "implementation_forms": [
     "state-manager"
   ],
-  "purpose": "Maintain task working state automatically without creating an identity narrative or unsupported memory.",
+  "purpose": "Reduce stale state and forgotten deltas during iterative work.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "agent loops",
+    "long editing sessions",
+    "tool-rich workflows",
+    "multi-step investigations"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the host cannot write persistent state",
+    "every token would trigger an update",
+    "untrusted content could directly mutate authority-bearing fields"
   ],
   "triggers": [
     "the host can update explicit state after steps"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the host cannot write persistent state",
+    "every token would trigger an update",
+    "untrusted content could directly mutate authority-bearing fields"
   ],
   "requires": [],
   "recommended_with": [
+    "state-snapshot",
     "stateblock",
-    "external-state-automation"
+    "working-memory-lock-in"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "drift-suppression"
+  ],
+  "potentially_redundant_with": [
+    "sequential-memory-state-engine",
+    "stateblock"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "current state version",
+    "action result",
+    "mutable-field policy",
+    "locked fields",
+    "provenance"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "validated state delta",
+    "updated SelfBlock version",
+    "change record",
+    "rejected-delta notice"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "updates after semantically empty turns",
+      "persistent writes in a short stateless exchange"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "delta discipline",
+      "locked-field protection",
+      "version/provenance checks"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Disable automatic writes when atomicity, schema validation, or authority checks are unavailable.",
+    "Escalate ambiguous changes to task identity or permissions."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +93,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A live state block becomes misleading when completed steps, new constraints, and invalidated assumptions are not incorporated promptly.",
+  "os_role": [
+    "automatic state maintenance",
+    "checkpoint hook",
+    "staleness control"
+  ],
+  "pipeline_stages": [
+    "after meaningful action",
+    "after tool result",
+    "before handoff",
+    "before resume"
+  ],
+  "best_fit_tasks": [
+    "agent loops",
+    "long editing sessions",
+    "tool-rich workflows",
+    "multi-step investigations"
+  ],
+  "avoid_when": [
+    "the host cannot write persistent state",
+    "every token would trigger an update",
+    "untrusted content could directly mutate authority-bearing fields"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Attach an update hook to defined events, compute the smallest state delta, validate it against schema and authority, then atomically merge it into the live SelfBlock while retaining provenance or a change note. The updater may change status and observations but not silently rewrite locked goals, permissions, or immutable evidence.",
+  "procedure": [
+    "Define update-triggering events and mutable fields.",
+    "After an event, derive only the factual delta from the result.",
+    "Reject or quarantine changes to locked or authority-bearing fields.",
+    "Validate the delta against schema, provenance, and current version.",
+    "Apply atomically and record timestamp/version or concise change note."
+  ],
+  "always_do": [
+    "update by delta",
+    "protect locked fields",
+    "validate before commit",
+    "retain change provenance"
+  ],
+  "never_do": [
+    "rewrite the whole block from memory",
+    "let retrieved text alter permissions",
+    "mark work complete without supporting result state"
+  ],
+  "interaction_reasons": {
+    "stateblock": "SelfBlock Auto-Update is the maintenance hook for a canonical block.",
+    "working-memory-lock-in": "Refreshes the critical subset after accepted state changes.",
+    "state-snapshot": "Snapshots stable versions at important checkpoints."
+  },
+  "counterbalance_reasons": {
+    "drift-suppression": "Audits update deltas for semantic drift.",
+    "clarification-gateway": "Requires human clarification instead of auto-updating ambiguous authority fields."
+  },
+  "redundancy_reasons": {
+    "sequential-memory-state-engine": "SMSE manages the broader ingest/update lifecycle; use its commit stage as the hook instead of a parallel updater.",
+    "stateblock": "The updater must not become a second state store."
+  },
+  "conflict_rules": [
+    "Locked goal, authority, and permission fields cannot be auto-mutated by lower-authority observations.",
+    "Concurrent deltas require version checking or merge arbitration rather than last-write-wins."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "SelfBlock Auto-Update",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "SelfBlock Auto-Update inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "11.1 Kernel / State Block",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "State maintenance and heartbeat patterns"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

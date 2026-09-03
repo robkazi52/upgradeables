@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "scoped-loader",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "scoped-loader-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Multiple Genes, Cores, sources, and validators are available.",
+      "expect": "A small authority-ordered active stack with an auditable load record.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "scoped-loader-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the workflow has one small fixed instruction set",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "scoped-loader-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host/system and task authority determine eligibility; relevance alone cannot authorize a module.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "scoped-loader-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not load a component when its trigger, authority, dependency, or host capability cannot be established.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "scoped-loader-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "task-first selection",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "scoped-loader-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A registry with ten components, three relevant to the locked task and one relevant but unauthorized.",
+      "expect": "Load the three authorized relevant components in task/behavior/knowledge/control/validation order and exclude the rest.",
+      "reject": "Load all ten or admit the unauthorized component because its name appears relevant."
+    }
+  ]
+}

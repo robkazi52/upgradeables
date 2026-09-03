@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "state-snapshot",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "state-snapshot-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The second session must know exactly which sources and claims were accepted at handoff.",
+      "expect": "The review resumes from a reproducible checkpoint.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "state-snapshot-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a snapshot would persist prohibited sensitive data",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "state-snapshot-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A newer validated canonical state outranks an older snapshot.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "state-snapshot-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not restore when integrity, task identity, or schema compatibility cannot be established.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "state-snapshot-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "immutable version identity",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "state-snapshot-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Live state may change after an agent handoff begins.",
+      "expect": "Freeze and identify one validated version, then reconcile later events on resume.",
+      "reject": "Copy an unversioned mutable summary and call it current state."
+    }
+  ]
+}

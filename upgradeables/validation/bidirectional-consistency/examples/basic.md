@@ -1,10 +1,31 @@
-# Basic composition example
+# Bidirectional Consistency — Basic Example
 
-**Situation:** causal, logical, quantitative, or evidence claims are central.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `bidirectional-consistency`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A pull-request implementation claims to satisfy six acceptance criteria.
+
+## Why this Upgradeable activates
+
+The code-to-requirement story may be plausible without every criterion actually being entailed.
+
+## Inputs / state
+
+Six locked criteria, changed code, and allowed implementation freedom.
+
+## What it does
+
+Maps criteria to behavior, then reconstructs satisfied criteria from observed behavior alone.
+
+## What it does not do
+
+Count a criterion as satisfied because the PR description repeats it.
+
+## Result / state change
+
+One missing error-handling criterion is found despite a plausible forward explanation.
+
+## Interaction with companion components
+
+['critical-atomic-verification', 'citation-fidelity']

@@ -2,22 +2,38 @@
 
 ## Summary
 
-Set acceptable drift according to domain rather than applying one creativity width universally.
+Set the initial drift tolerance from domain consequences and conventions, then refine it for the specific task.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Avoid applying casual creative tolerance to precision domains or unnecessary rigidity to expressive domains.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+The same semantic change has different acceptability in legal, medical, coding, scientific, and creative work.
+
+## Where It Fits in the OS
+
+Roles: domain risk normalization, default corridor selection, policy baseline. Pipeline stages: domain classification, risk assessment, corridor initialization, validation planning.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- cross-domain skills
+- domain-specific rewriting
+- regulated advice
+- mixed precision/creative systems
+
+## When Not to Use
+
+- domain is ambiguous and stakes are high
+- a task-specific explicit policy already controls every region
+- domain stereotypes would replace evidence
 
 ## Scope
 
-Functional classes: drift-control. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `domain-normalized-drift@1.1.0`. ID: `T4-11`. Functional classes: drift-control. Activation: `U2-specialized`. Mechanism basis: `normalized-from-recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,92 +41,149 @@ Functional classes: drift-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- domain is ambiguous and stakes are high
+- a task-specific explicit policy already controls every region
+- domain stereotypes would replace evidence
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- domain classification
+- consequence assessment
+- versioned domain profile
+- task constraints
+- source conventions
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- domain-normalized baseline
+- override record
+- initial validation and corridor policy
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Classify the operative domain and consequence classes, load a versioned domain profile describing default treatment of facts, terminology, citations, uncertainty, formatting, and creative latitude, then override it with explicit task instructions and region-level evidence. The profile supplies defaults only; it never determines truth or authority.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Identify the operative domain and mixed-domain boundaries.
+2. Assess consequences of factual, terminological, structural, and stylistic drift.
+3. Select a versioned domain default profile.
+4. Apply higher-authority task constraints and source-specific requirements.
+5. Instantiate region-level corridors and validation checks.
+6. Record overrides and reassess if the domain changes.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- treat domain values as defaults
+- version the profile
+- override with explicit authority and evidence
+- separate mixed domains
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- assume a domain from keywords alone when stakes matter
+- use domain norms to invent facts
+- let a broad profile erase task-specific constraints
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `domain-mode-isolation`
+
+Keeps different domain profiles from leaking across boundaries.
+
+### `controlled-drift-corridors`
+
+Turns the domain baseline into task-specific enforceable widths.
+
+### `drift-spectra-scaling`
+
+Refines the baseline across content types inside the domain.
 
 ## Compatible Upgradeables
 
-- `domain-mode-isolation`
-- `controlled-drift-corridors`
+- `domain-mode-isolation` — Keeps different domain profiles from leaking across boundaries.
+- `controlled-drift-corridors` — Turns the domain baseline into task-specific enforceable widths.
+- `drift-spectra-scaling` — Refines the baseline across content types inside the domain.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `clarification-gateway`
+
+Resolves ambiguous domain or intended audience before normalization.
+
+### `zero-drift-zones`
+
+Overrides any permissive domain default for immutable items.
 
 ## Potential Redundancy
 
-- `None declared`
+### `compute-adaptive-drift`
+
+Domain normalization sets semantic defaults; compute adaptation changes runtime control overhead.
+
+### `controlled-drift-corridors`
+
+Once explicit corridors exist, do not enforce a second conflicting domain bound.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Explicit task/source authority outranks the domain profile.
+- For mixed-domain content, apply the stricter relevant profile at shared boundaries unless an authorized rule says otherwise.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- Do not select a permissive profile when domain classification or consequence is uncertain.
+- Escalate profile conflicts in regulated or safety-critical work.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal profile loading for a simple familiar low-risk task
+- domain defaults fully superseded by explicit task corridors
+
+Keep mandatory:
+
+- consequence assessment
+- task override precedence
+- mixed-domain boundary handling
+- zero-drift exceptions
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
+- cross-domain skills
+- domain-specific rewriting
+- regulated advice
+- mixed precision/creative systems
 
 ## Example Composition
 
-Activate `domain-normalized-drift` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Rewrite both clinical cautions and patient-facing welcome copy.
+
+**Why it activates:** The artifact crosses a precision domain and a low-stakes expressive region.
+
+**Inputs/state:** Healthcare domain profile, brand style, cited cautions, and explicit audience.
+
+**Action:** Starts with narrow clinical defaults and broader stylistic defaults, then applies section-specific corridors.
+
+**Does not:** It does not let brand tone soften contraindications or force clinical prose rigidity onto the greeting.
+
+**Result/state change:** Domain-appropriate drift limits across one mixed artifact.
+
+**Companions:** ['domain-mode-isolation', 'controlled-drift-corridors', 'zero-drift-zones']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: DNDF.
+Primary source ID: `T4-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: DNDF.
+
+Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — Domain-Normalized Drift (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — ECL / Drift Sink (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.3 Drift widths (historical_assistant_artifact)

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-06",
   "slug": "progressive-mode-shaping",
   "display_name": "Progressive Mode Shaping",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,47 +21,55 @@
     "orchestrator",
     "parent-skill-mode"
   ],
-  "purpose": "Narrow exploration through comparison and selection into precise execution as decisions become locked.",
+  "purpose": "Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "design-to-implementation workflows",
+    "iterative planning",
+    "creative work with a committed deliverable"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task is purely exploratory and requires no commitment",
+    "the task begins with one already locked deterministic procedure"
   ],
   "triggers": [
     "work moves from design to execution"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task is purely exploratory and requires no commitment",
+    "the task begins with one already locked deterministic procedure"
   ],
   "requires": [],
   "recommended_with": [
     "mode-lock-in",
+    "stateblock"
+  ],
+  "counterbalances": [
+    "anti-tunnel-vision"
+  ],
+  "potentially_redundant_with": [
     "hybrid-mode"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "current phase and open decisions",
+    "candidate set and comparison evidence",
+    "locked constraints and transition criteria"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "narrowed active mode",
+    "retired alternatives and locked execution plan"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "intermediate shaping stages for a trivial two-step task"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "evidence-backed narrowing and retirement of losing branches before execution"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "transition criteria are absent or accepted decisions cannot be distinguished from open options",
+    "narrowing would discard a materially plausible path before comparison"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -74,5 +82,68 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A task can remain indefinitely exploratory or switch abruptly into execution while discarded possibilities still influence active state.",
+  "os_role": [
+    "mode transition control",
+    "commitment shaping"
+  ],
+  "pipeline_stages": [
+    "exploration",
+    "candidate comparison",
+    "decision lock",
+    "execution handoff"
+  ],
+  "best_fit_tasks": [
+    "design-to-implementation workflows",
+    "iterative planning",
+    "creative work with a committed deliverable"
+  ],
+  "avoid_when": [
+    "the task is purely exploratory and requires no commitment",
+    "the task begins with one already locked deterministic procedure"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Track which choices remain open and progressively reduce permitted breadth as evidence and decisions accumulate. Move through explore, compare, choose, plan, execute, and validate states; at each transition retire losing branches, lock accepted constraints, and lower drift. Unlike a hard two-mode switch, shaping may narrow in several evidence-backed increments.",
+  "procedure": [
+    "Declare the initial exploration boundary and the decisions that must eventually lock.",
+    "Generate only the breadth justified at the current phase.",
+    "Compare candidates and record evidence for accepted and rejected choices.",
+    "Lock decisions and reduce allowed alternatives and drift at each phase transition.",
+    "Enter execution with one active plan, then validate against the locked state."
+  ],
+  "always_do": [
+    "Preserve the defining invariant: evidence-backed narrowing and retirement of losing branches before execution.",
+    "Record material routing, transition, and failure decisions in explicit task state."
+  ],
+  "never_do": [
+    "keeping every alternative active through execution or narrowing without evidence",
+    "Never claim hidden state, unavailable host capability, or authority beyond the active Skill."
+  ],
+  "interaction_reasons": {
+    "stateblock": "Records phase, decisions, active branches, and transition evidence.",
+    "mode-lock-in": "Prevents a completed transition from silently reopening discarded modes."
+  },
+  "counterbalance_reasons": {
+    "anti-tunnel-vision": "Ensures early narrowing does not occur before a plausible alternative is considered."
+  },
+  "redundancy_reasons": {
+    "hybrid-mode": "HYBRID uses a distinct POWER-to-SAFE gate; Progressive Mode Shaping supports multiple gradual narrowing transitions."
+  },
+  "conflict_rules": [
+    "Host, system, domain, and explicit user authority take precedence over this component.",
+    "If transition criteria are absent or accepted decisions cannot be distinguished from open options, stop or escalate rather than forcing a nominal success."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-06. Progressive Mode Shaping",
+      "source_kind": "current_consolidated_catalog"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

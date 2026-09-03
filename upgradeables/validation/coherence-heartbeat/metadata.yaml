@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-04",
   "slug": "coherence-heartbeat",
   "display_name": "Global Coherence Heartbeat",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,51 +20,58 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Periodically verify that active plan, state, modules, and output remain globally coherent during long workflows.",
+  "purpose": "Detect long-horizon drift early without rerunning a full review after every step.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "long-context-corpus",
-    "research",
-    "source-grounded-analysis"
+    "long coding sessions",
+    "multi-stage research",
+    "agent orchestration",
+    "large document production"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task completes in one obvious operation",
+    "a full coherence loop is already required at the same boundary"
   ],
   "triggers": [
     "a workflow is long or multi-stage"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task completes in one obvious operation",
+    "a full coherence loop is already required at the same boundary"
   ],
   "requires": [],
   "recommended_with": [
+    "coherence-loops",
     "stable-long-context",
     "state-snapshot"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "dynamic-depth-allocation"
+  ],
+  "potentially_redundant_with": [
+    "coherence-loops"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "baseline snapshot",
+    "current state",
+    "checkpoint trigger",
+    "accepted change log"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "aligned/warning/repair signal",
+    "state delta",
+    "loop escalation request"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "scheduled pulses during very short tasks"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "event-triggered pulse after major state changes in long work"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Escalate when a hard constraint, core objective, or accepted decision no longer matches current work."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +84,81 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Extended work can remain locally competent while silently departing from the task, overwriting earlier decisions, or losing state continuity.",
+  "os_role": [
+    "continuous-coherence-monitor",
+    "drift-early-warning"
+  ],
+  "pipeline_stages": [
+    "during long execution",
+    "after milestones",
+    "before irreversible steps"
+  ],
+  "best_fit_tasks": [
+    "long coding sessions",
+    "multi-stage research",
+    "agent orchestration",
+    "large document production"
+  ],
+  "avoid_when": [
+    "the task completes in one obvious operation",
+    "a full coherence loop is already required at the same boundary"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "At predefined cadence or meaningful state transitions, compare a compact current-state snapshot against four anchors: objective, hard constraints, accepted decisions, and outstanding obligations. Emit a small delta signal—aligned, warning, or repair-required—and escalate to a full coherence loop only when the pulse detects material divergence.",
+  "procedure": [
+    "Capture a compact baseline of objective, constraints, decisions, and open obligations.",
+    "Choose event-based or interval checkpoints proportional to task length.",
+    "At each checkpoint, compare current state with every anchor.",
+    "Classify differences as intended progress, harmless update, or drift.",
+    "Repair small drift immediately; invoke a coherence loop for systemic mismatch.",
+    "Refresh the baseline only after the change is explicitly accepted."
+  ],
+  "always_do": [
+    "Keep the pulse cheap enough to run repeatedly.",
+    "Distinguish authorized state change from drift.",
+    "Escalate material discrepancies."
+  ],
+  "never_do": [
+    "Silently rewrite the baseline to match current behavior.",
+    "Use the heartbeat as a substitute for deep final validation."
+  ],
+  "interaction_reasons": {
+    "state-snapshot": "Provides the compact state compared on each pulse.",
+    "coherence-loops": "Receives escalations when a pulse finds systemic drift.",
+    "stable-long-context": "Supplies persistent anchors over long execution."
+  },
+  "counterbalance_reasons": {
+    "dynamic-depth-allocation": "Keeps routine pulses lightweight and spends depth only on detected risk."
+  },
+  "redundancy_reasons": {
+    "coherence-loops": "Heartbeat is frequent detection; loops are bounded diagnosis and repair."
+  },
+  "conflict_rules": [
+    "Hard constraints and explicit user updates outrank the stored baseline.",
+    "Do not accept a baseline refresh merely to clear an unresolved warning."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-04. Global Coherence Heartbeat",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "A-04. Global Coherence Heartbeat",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "Coherence Heartbeat",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

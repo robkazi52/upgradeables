@@ -1,10 +1,31 @@
-# Basic composition example
+# Micro-Repair — Basic Example
 
-**Situation:** a defect is localized.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `micro-repair`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A grant narrative contains one unsupported sentence between two accepted paragraphs.
+
+## Why this Upgradeable activates
+
+The defect is local and the surrounding argument is correct.
+
+## Inputs / state
+
+The sentence overstates the cited study; the source supports a narrower claim.
+
+## What it does
+
+Freezes both paragraphs, replaces only the overstated clause with source-supported wording, and checks both transitions and citation fit.
+
+## What it does not do
+
+Reframe the whole section or add new evidence claims.
+
+## Result / state change
+
+The unsupported claim is removed with no unrelated semantic change.
+
+## Interaction with companion components
+
+['safe-rewrite', 'citation-fidelity']

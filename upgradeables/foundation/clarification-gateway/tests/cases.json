@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "clarification-gateway",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "clarification-gateway-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Destination changes price and feasibility.",
+      "expect": "A resolved destination field or an explicit inability to quote.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "clarification-gateway-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the missing detail cannot change a valid result",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "clarification-gateway-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A higher-authority instruction not to ask questions converts the gate into assumption selection, not permission to ignore ambiguity.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "clarification-gateway-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Stop or narrow when a required variable has multiple materially different interpretations and neither clarification nor a safe assumption is available.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "clarification-gateway-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "materiality test",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "clarification-gateway-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Two ambiguities, one cosmetic and one that changes a regulated decision.",
+      "expect": "Continue past the cosmetic ambiguity and clarify or fail closed on the regulated one.",
+      "reject": "Ask about both, guess the regulated value, or halt without assessing materiality."
+    }
+  ]
+}

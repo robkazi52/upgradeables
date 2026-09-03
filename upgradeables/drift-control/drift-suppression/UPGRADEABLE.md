@@ -2,22 +2,38 @@
 
 ## Summary
 
-Detect and correct gradual movement away from the active goal, constraints, terminology, or evidence boundary.
+Detect deviation from locked task meaning or allowed corridors, diagnose its source, and restore the work to the last validated state.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep execution aligned after distracting context, repeated transformation, or model error.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Goals, claims, terminology, and constraints can shift gradually without an obvious single failure point.
+
+## Where It Fits in the OS
+
+Roles: drift detection, semantic correction, recovery control. Pipeline stages: before action, after transformation, at checkpoints, final acceptance.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- long agent workflows
+- high-fidelity editing
+- multi-stage synthesis
+- policy-bound generation
+
+## When Not to Use
+
+- no semantic baseline or allowed corridor exists
+- creative divergence is the explicit objective
+- the checker would use the same unsupported summary as the generator
 
 ## Scope
 
-Functional classes: drift-control, validation. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `drift-suppression@1.1.0`. ID: `T1-02`. Functional classes: drift-control, validation. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,97 +41,151 @@ Functional classes: drift-control, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- no semantic baseline or allowed corridor exists
+- creative divergence is the explicit objective
+- the checker would use the same unsupported summary as the generator
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- locked task and state anchors
+- authoritative sources
+- corridor map
+- current artifact
+- last validated version
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- drift classification
+- minimal repair or rollback
+- tightened control
+- drift incident record
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Compare current plan, state, or artifact against locked task fields, authoritative source anchors, and region-specific corridor tests. Classify each deviation as authorized change, benign variation, or drift; for drift, restore the smallest affected region from the last validated state, reapply the transform under tighter constraints, and record the cause so recurrence can be prevented.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Establish baseline anchors and permitted drift corridors before substantive transformation.
+2. Run checks at risk-based checkpoints and after context transitions.
+3. Compare objective, entities, claims, quantities, obligations, uncertainty, and required structure.
+4. Classify discrepancies using authority and corridor rules.
+5. Rollback the smallest affected region, tighten the relevant control, and regenerate or request review.
+6. Validate the repaired result and record the drift signature.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- compare to authoritative baselines
+- distinguish authorized change from drift
+- repair minimally
+- record recurring drift signatures
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- declare drift from stylistic difference alone
+- correct toward a stale summary
+- silently accept a failed invariant
+- rewrite unaffected regions during repair
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `task-set-lock-in`
+
+Provides objective and acceptance anchors.
+
+### `controlled-drift-corridors`
+
+Defines which deviations are actually outside bounds.
+
+### `zero-drift-zones`
+
+Supplies immutable items requiring exact or equivalence checks.
 
 ## Compatible Upgradeables
 
-- `task-set-lock-in`
-- `stateblock`
+- `task-set-lock-in` — Provides objective and acceptance anchors.
+- `controlled-drift-corridors` — Defines which deviations are actually outside bounds.
+- `zero-drift-zones` — Supplies immutable items requiring exact or equivalence checks.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `drift-sink-scaffold`
+
+Quarantines recurring stale branches identified as drift causes.
+
+### `compute-adaptive-drift`
+
+Scales checkpoint frequency and scaffolding while preserving tests.
 
 ## Potential Redundancy
 
-- `None declared`
+### `mode-lock-in`
+
+Mode lock prevents silent regime shifts; suppression is the general detect/repair loop and can enforce that lock.
+
+### `working-memory-lock-in`
+
+WM Lock prevents omission through salience; suppression corrects deviations that still occur.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Latest authorized task/source state defines the baseline, not the oldest lock by default.
+- When automated checks and cited source inspection disagree, hold the output and resolve the checker or source version.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- Stop publication when a high-impact deviation cannot be repaired or adjudicated.
+- Do not claim suppression if no independent baseline survives the transformation.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- high-frequency low-risk checks after demonstrated stability
+- verbose drift logs for trivial corrected style variance
+
+Keep mandatory:
+
+- source/task baseline
+- risk-based checks
+- minimal rollback
+- high-impact stop condition
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- long agent workflows
+- high-fidelity editing
+- multi-stage synthesis
+- policy-bound generation
 
 ## Example Composition
 
-Activate `drift-suppression` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Repeated summarization makes a vendor's conditional warranty sound unconditional.
+
+**Why it activates:** The qualification is a narrow-corridor claim and the output crossed it.
+
+**Inputs/state:** Cited source clause, claim corridor, summary draft, and last validated version.
+
+**Action:** Flags the lost condition, restores that claim, regenerates locally, and records qualification loss as a drift signature.
+
+**Does not:** It does not rewrite the whole report or accept the smoother but inaccurate claim.
+
+**Result/state change:** The repaired summary preserves the source condition.
+
+**Companions:** ['controlled-drift-corridors', 'zero-drift-zones', 'task-set-lock-in']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-02. Drift Suppression (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — ECL / Drift Sink (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — `DRIFT_MONITOR_T1` (historical_assistant_artifact)

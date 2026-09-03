@@ -2,22 +2,38 @@
 
 ## Summary
 
-Maintain compact reminders of the current objective and constraints without repeatedly loading the full instruction set.
+Place tiny, actionable reminders at decision points to re-surface a constraint, definition, or next check without reloading full state.
 
 ## Purpose
 
-Provide a reusable `state-schema` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep easily forgotten but relevant information salient during execution.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Even when state is stored correctly, a model may fail to attend to the right item at the moment it matters.
+
+## Where It Fits in the OS
+
+Roles: attention prompt, state pointer, checkpoint reminder. Pipeline stages: before risky step, after context switch, before output, at known failure points.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- long transformations
+- repetitive tool loops
+- tasks with a few recurring constraints
+- review workflows
+
+## When Not to Use
+
+- the cue duplicates already salient text
+- too many cues would become noise
+- the cue would substitute for canonical state
 
 ## Scope
 
-Functional classes: state. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `working-memory-cues@1.1.0`. ID: `T1-09`. Functional classes: state. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,146 @@ Functional classes: state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the cue duplicates already salient text
+- too many cues would become noise
+- the cue would substitute for canonical state
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- canonical state pointer
+- known omission risk
+- trigger step
+- cue retirement condition
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- short contextual reminder
+- state/source pointer
+- cue lifecycle status
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Derive a very short cue from canonical state and attach it to the step where omission is likely: a field pointer, invariant, question, or validation instruction. Retire the cue when its trigger or risk disappears; changes to truth occur in canonical state, never inside the cue.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Identify a recurrent omission risk and its decision point.
+2. Select the smallest canonical state item that prevents it.
+3. Write an imperative cue with a stable field or source pointer.
+4. Present it only at the triggering step.
+5. Measure whether it prevents the omission and remove stale or redundant cues.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- keep cues short
+- link them to canonical state
+- scope them to a trigger
+- remove stale cues
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- use cues as a second truth store
+- flood every step with all constraints
+- leave a cue active after its source changes
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `stateblock`
+
+Provides the authoritative value or pointer behind each cue.
+
+### `working-memory-lock-in`
+
+Cues can refresh locked critical items at specific moments.
+
+### `stable-long-context`
+
+Surfaces a detail from the long-context index without expanding all context.
 
 ## Compatible Upgradeables
 
-- `stateblock`
-- `working-memory-lock-in`
+- `stateblock` — Provides the authoritative value or pointer behind each cue.
+- `working-memory-lock-in` — Cues can refresh locked critical items at specific moments.
+- `stable-long-context` — Surfaces a detail from the long-context index without expanding all context.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `attention-compression-scaffold`
+
+Provides a richer local view when one-line reminders are insufficient.
+
+### `clarification-gateway`
+
+Converts unresolved ambiguity into a question rather than an asserted cue.
 
 ## Potential Redundancy
 
-- `None declared`
+### `working-memory-lock-in`
+
+Use cues for momentary reminders and lock-in for continuously critical state; do not duplicate both verbatim everywhere.
+
+### `mode-lock-in`
+
+A cue may point to the mode but does not define or enforce it.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Canonical state and higher-authority instructions override stale cues.
+- When multiple cues compete, surface the one tied to the highest-risk immediate decision.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Do not cue an unverified claim as fact.
+- Escalate to a larger state view when the decision cannot be represented safely in a short reminder.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- explicit cues for a short simple task
+- reminders for reliably salient constraints
+
+Keep mandatory:
+
+- highest-risk cue at transition points
+- canonical pointer
+- retirement discipline
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- long transformations
+- repetitive tool loops
+- tasks with a few recurring constraints
+- review workflows
 
 ## Example Composition
 
-Activate `working-memory-cues` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Edit fifty contract clauses while preserving defined terms.
+
+**Why it activates:** The same capitalization rule is easy to forget after many clauses.
+
+**Inputs/state:** Canonical glossary field and a pre-clause validation trigger.
+
+**Action:** Shows a one-line cue to verify defined-term capitalization before each clause is accepted.
+
+**Does not:** It does not copy the whole glossary into every step or edit the glossary itself.
+
+**Result/state change:** The recurring error is prevented with little context cost.
+
+**Companions:** ['stateblock', 'working-memory-lock-in', 'drift-suppression']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-09` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-09` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 2. November 28, 2025 — frozen T1-Core Bundle v1 (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8. Working-Memory Lock-In Heartbeats (historical_assistant_artifact)

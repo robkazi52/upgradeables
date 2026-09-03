@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "regenerative-rewrite",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "regenerative-rewrite-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Multiple local edits have not restored coherent source mapping.",
+      "expect": "A coherent report whose claims map back to verified source atoms.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "regenerative-rewrite-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "one sentence or field is wrong",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "regenerative-rewrite-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Verified facts, citations, and non-negotiable requirements survive even if they complicate the new structure.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "regenerative-rewrite-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "unnecessary global rewrite",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "regenerative-rewrite-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "locked-atom extraction",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "regenerative-rewrite-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A document has systemic architecture and source-mapping failure.",
+      "expect": "The skill proves local insufficiency, extracts locked atoms, sets aside the failed wording, and reconstructs against the ledger.",
+      "reject": "The skill performs a large paraphrase of the old draft or invokes regeneration for a single local defect."
+    }
+  ]
+}

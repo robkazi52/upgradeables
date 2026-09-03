@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-01",
   "slug": "micro-scaffolding",
   "display_name": "Micro-Scaffolding",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,46 +23,67 @@
     "skill-component",
     "parent-skill-mode"
   ],
-  "purpose": "Create only the smallest temporary checkpoints needed to preserve goals, constraints, evidence boundaries, and the next step.",
+  "purpose": "Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "high-constraint rewriting",
+    "source-grounded paragraph construction",
+    "localized code changes",
+    "multi-step transformations",
+    "complex formatting"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a one-step task has no fragile constraints",
+    "the proposed scaffold repeats the full StateBlock or source corpus",
+    "the subtask is already complete"
   ],
   "triggers": [
-    "multi-step or high-constraint work"
+    "Activate when the task requires multi-step or high-constraint work."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a one-step task has no fragile constraints",
+    "the proposed scaffold repeats the full StateBlock or source corpus",
+    "the subtask is already complete"
   ],
   "requires": [],
   "recommended_with": [
+    "drift-suppression",
     "task-set-lock-in",
-    "drift-suppression"
+    "working-memory-cues"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "cognitive-governor"
+  ],
+  "potentially_redundant_with": [
+    "stateblock",
+    "working-memory-cues"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "current subtask",
+    "locked global constraints",
+    "local failure risks",
+    "relevant evidence pointers"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "temporary local checklist or mini-outline",
+    "local verification result",
+    "durable decisions promoted to StateBlock",
+    "retirement marker"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "writing the scaffold out when two or three local invariants can be held reliably",
+      "multiple framing candidates for a routine paragraph"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "identify the fragile local invariants",
+      "verify them after the step",
+      "retire temporary scaffolding"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "Escalate when the required control cannot remain local or when the scaffold grows into a duplicate of the parent plan/state.",
+    "Reject the local result if any protected item was lost or changed without authorization."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +96,86 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents a model from dropping a local requirement during a constrained rewrite, paragraph build, transformation, or multi-step judgment while avoiding heavyweight planning for simple work.",
+  "os_role": [
+    "planning-reasoning",
+    "task-local state",
+    "execution support"
+  ],
+  "pipeline_stages": [
+    "pre-subtask planning",
+    "execution",
+    "subtask completion"
+  ],
+  "best_fit_tasks": [
+    "high-constraint rewriting",
+    "source-grounded paragraph construction",
+    "localized code changes",
+    "multi-step transformations",
+    "complex formatting"
+  ],
+  "avoid_when": [
+    "a one-step task has no fragile constraints",
+    "the proposed scaffold repeats the full StateBlock or source corpus",
+    "the subtask is already complete"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "At the start of a fragile subtask, extract only the few invariants and checkpoints that could be lost locally, such as preserve all numbers, preserve citation mapping, change tone only, and do not alter the conclusion. Use that compact scaffold while performing the step, check the local result against it, then retire the scaffold immediately when the subtask is accepted. It remains strictly smaller and shorter-lived than the workflow's canonical StateBlock.",
+  "procedure": [
+    "Identify the current subtask and the specific failure risks within it.",
+    "Select the minimum local invariants, evidence pointers, and next-step checkpoints needed to control those risks.",
+    "Write a compact scaffold; do not copy unrelated global rules or full source material into it.",
+    "Execute the subtask while checking decisions against the scaffold.",
+    "Verify the local output against each scaffold item.",
+    "Merge only durable decisions into StateBlock, then delete or mark the temporary scaffold retired."
+  ],
+  "always_do": [
+    "Keep the scaffold task-local and smaller than canonical workflow state.",
+    "Use concrete protected items rather than vague reminders.",
+    "Retire it after the subtask so stale constraints cannot leak forward."
+  ],
+  "never_do": [
+    "Do not expose private chain-of-thought.",
+    "Do not build an elaborate visible plan for a trivial step.",
+    "Do not let a local scaffold redefine global task authority or persist as canonical state."
+  ],
+  "interaction_reasons": {
+    "task-set-lock-in": "Supplies the global task contract from which the local scaffold selects only currently fragile invariants.",
+    "drift-suppression": "Uses the local checklist to detect divergence during execution and re-anchor without reloading the whole task.",
+    "working-memory-cues": "Can express the few scaffold items as concise active reminders while the subtask runs."
+  },
+  "counterbalance_reasons": {
+    "cognitive-governor": "Suppresses unnecessary scaffold creation when the local risk does not justify the added structure."
+  },
+  "redundancy_reasons": {
+    "stateblock": "StateBlock is durable canonical task state; Micro-Scaffolding is disposable subtask state and should not duplicate it.",
+    "working-memory-cues": "Cues are reminders; a micro-scaffold also defines a local sequence or acceptance checklist."
+  },
+  "conflict_rules": [
+    "Global task locks and source boundaries outrank a local scaffold.",
+    "If the subtask expands into an architecture-level problem, retire the scaffold and re-plan at the parent task level."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T1-01. Micro-Scaffolding",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.5 Section / paragraph micro-scaffolding",
+      "source_kind": "historical_assistant_artifact"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "January 5 scaffolding classification",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "cross-context-resonance-lock",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "cross-context-resonance-lock-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Their decisions must align on the feature identifier, but their evidence and authority differ.",
+      "expect": "The synthesis aligns on the feature while retaining two auditable contexts.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "cross-context-resonance-lock-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the contexts are unrelated",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "cross-context-resonance-lock-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host, system, domain, and explicit user authority take precedence over this component.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "cross-context-resonance-lock-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "the relationship cannot be supported independently in both contexts",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "cross-context-resonance-lock-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "separate provenance and authority for every linked context",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "cross-context-resonance-lock-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "related workstreams must stay aligned on one declared dependency",
+      "expect": "the relationship is stored as a typed link while evidence and authority stay separated",
+      "reject": "merging both contexts or transferring unsupported assumptions"
+    }
+  ]
+}

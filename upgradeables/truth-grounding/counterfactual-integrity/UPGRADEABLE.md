@@ -2,22 +2,37 @@
 
 ## Summary
 
-Keep hypothetical and counterfactual reasoning explicitly separated from factual claims.
+A phase-boundary gate that permits hypothetical reasoning while preventing hypothetical premises or results from being restated as observed facts.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Make counterfactual exploration safe and auditable by preserving an explicit boundary between factual, evaluative, framing, and hypothetical phases.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents a useful what-if branch from contaminating evidence state or being cited later as something that actually happened.
+
+## Where It Fits in the OS
+
+Roles: hypothesis-safety, semantic-phase-control. Pipeline stages: candidate-generation, state-update, pre-output-verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- scenario analysis
+- causal counterfactuals
+- planning under alternatives
+- creative work mixed with factual sources
+
+## When Not to Use
+
+- the task contains no hypothetical branch
+- the user explicitly requires purely factual extraction, where counterfactual-silence is the narrower control
 
 ## Scope
 
-Functional classes: truth-grounding, drift-control. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `counterfactual-integrity@1.1.0`. ID: `T3-12`. Functional classes: truth-grounding, drift-control. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,97 +40,133 @@ Functional classes: truth-grounding, drift-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task contains no hypothetical branch
+- the user explicitly requires purely factual extraction, where counterfactual-silence is the narrower control
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- factual baseline
+- counterfactual premise
+- semantic phase labels
+- candidate conclusions
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- isolated hypothetical branch
+- phase-labeled conclusions
+- contamination failure status
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Tag each proposition by semantic phase and keep hypothetical premises, derived consequences, and branch-local assumptions in a separate compartment. Any transfer from a hypothetical branch into factual state requires independent factual support; otherwise the proposition remains labeled hypothetical or is excluded from the factual output.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Declare the factual baseline and the allowed counterfactual question.
+2. Tag introduced premises as hypothetical and retain their branch identity.
+3. Derive consequences only inside that branch.
+4. Check the draft for branch-local material presented without a hypothesis label.
+5. Move a proposition into factual state only when independent evidence supports it.
+6. Return factual findings and counterfactual results in visibly separate output regions.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve the original factual baseline.
+- Label hypothetical assumptions and consequences.
+- Require evidence for any transition from hypothetical to factual status.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Treat a simulated outcome as observed evidence.
+- Let hypothetical details update canonical factual state.
+- Erase uncertainty merely because a counterfactual narrative is coherent.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `domain-mode-isolation`
+
+Provides separate state compartments for factual and hypothetical modes.
+
+### `controlled-drift-corridors`
+
+Defines how much interpretive movement is permitted inside the hypothetical branch.
+
+### `epistemic-status-gating`
+
+Supplies proposition-level fact/inference/hypothesis labels used by the gate.
 
 ## Compatible Upgradeables
 
-- `domain-mode-isolation`
-- `controlled-drift-corridors`
+- `domain-mode-isolation` — Provides separate state compartments for factual and hypothetical modes.
+- `controlled-drift-corridors` — Defines how much interpretive movement is permitted inside the hypothetical branch.
+- `epistemic-status-gating` — Supplies proposition-level fact/inference/hypothesis labels used by the gate.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `grounding-no-invention`
+
+Grounding prevents the exploratory branch from being mistaken for evidence.
 
 ## Potential Redundancy
 
-- `None declared`
+### `counterfactual-silence-scaffold`
+
+Silence suppresses unauthorized counterfactual content entirely; integrity allows authorized counterfactuals but isolates and labels them.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A factual-only task boundary overrides permission to explore counterfactuals.
+- A stylistic request to write hypotheticals as certain cannot override phase labels.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- If branch-local assumptions cannot be separated from factual claims, do not certify the mixed output.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose phase headings when proposition status is already unmistakable
+
+Keep mandatory:
+
+- no hypothetical premise or consequence may silently become fact
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- scenario analysis
+- causal counterfactuals
+- planning under alternatives
+- creative work mixed with factual sources
 
 ## Example Composition
 
-Activate `counterfactual-integrity` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A policy analyst asks what might happen if a threshold were doubled while also requesting a summary of current policy.
+
+**Why it activates:** The answer combines factual and counterfactual modes.
+
+**Inputs/state:** Current threshold from the source plus an explicitly hypothetical doubled threshold.
+
+**Action:** Keeps the current rule factual and reports projected effects under a labeled hypothetical branch.
+
+**Does not:** State that the threshold was actually changed.
+
+**Result/state change:** Two separated sections with no phase leakage.
+
+**Companions:** ['domain-mode-isolation', 'epistemic-status-gating', 'grounding-no-invention']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-12` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-12` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-12. Counterfactual Integrity Gate (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.2 Semantic phase separation (historical_assistant_artifact)

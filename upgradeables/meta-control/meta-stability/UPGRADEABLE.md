@@ -2,22 +2,38 @@
 
 ## Summary
 
-Enter a stability-preserving mode when repeated changes, long context, or module conflicts threaten coherence.
+Temporarily freezes optional change and restores a coherent checkpoint when repeated edits, long context, or module conflict destabilizes the workflow.
 
 ## Purpose
 
-Provide a reusable `parent-skill-mode` mechanism rather than
-a complete task identity or monolithic prompt.
+Preserve a trusted task state while isolating drift sources and resuming from one explicit authority-consistent configuration.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A workflow can become progressively less coherent as state versions diverge, optional modules compete, and repeated changes invalidate assumptions faster than validation catches them.
+
+## Where It Fits in the OS
+
+Roles: stability-preserving operating mode, coherence recovery boundary. Pipeline stages: instability detection, change freeze, checkpoint restoration, controlled resume.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- long-context drift
+- conflicting module activation
+- repeated change cycles
+- multi-agent state divergence
+
+## When Not to Use
+
+- one local defect can be repaired directly
+- the trusted checkpoint is itself invalid
+- freezing would delay urgent containment
 
 ## Scope
 
-Functional classes: meta-control, state. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `meta-stability@1.1.0`. ID: `T4-15`. Functional classes: meta-control, state. Activation: `U2-specialized`. Mechanism basis: `normalized-from-recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,95 +41,150 @@ Functional classes: meta-control, state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- one local defect can be repaired directly
+- the trusted checkpoint is itself invalid
+- freezing would delay urgent containment
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- instability evidence
+- current state
+- last verified checkpoint
+- module and authority map
+- exit criteria
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- stabilized checkpoint
+- quarantined delta set
+- resolved authority configuration
+- controlled resume plan
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+On a defined instability signal, freeze optional activations and structural changes, select the latest verified state snapshot, and compare active goals, modules, decisions, and open issues against that checkpoint. Quarantine conflicting deltas, re-establish one authority order and next step, run a coherence check, then resume changes one at a time with observation; MSM stabilizes state, not content by force.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Confirm an instability trigger such as state divergence, repeated regression, or unresolved module conflict.
+2. Pause optional changes and capture the current state without overwriting the last verified checkpoint.
+3. Compare goals, decisions, modules, sources, and open issues with the verified snapshot.
+4. Quarantine unverified deltas and resolve authority conflicts explicitly.
+5. Run coherence, state-version, and invariant checks on the restored configuration.
+6. Resume one bounded change at a time and exit MSM only after consecutive stable checkpoints.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- preserve the last verified checkpoint
+- freeze optional change before diagnosis
+- quarantine rather than erase disputed deltas
+- define exit evidence
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- call ordinary uncertainty instability
+- restore an unverified snapshot
+- silently discard user-approved changes
+- remain permanently frozen after exit criteria pass
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `coherence-heartbeat`
+
+The heartbeat supplies global coherence evidence before exit.
+
+### `drift-suppression`
+
+Drift Suppression holds task and source boundaries while state is stabilized.
+
+### `stateblock`
+
+StateBlock provides explicit versioned snapshots for comparison and restoration.
 
 ## Compatible Upgradeables
 
-- `coherence-heartbeat`
-- `drift-suppression`
+- `coherence-heartbeat` — The heartbeat supplies global coherence evidence before exit.
+- `drift-suppression` — Drift Suppression holds task and source boundaries while state is stabilized.
+- `stateblock` — StateBlock provides explicit versioned snapshots for comparison and restoration.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `adapter-first-experimentation`
+
+Experiments should pause during instability and resume only after the base state is stable.
 
 ## Potential Redundancy
 
-- `None declared`
+### `stuck-pattern-reset`
+
+Reset abandons one failed reasoning path; Meta-Stability freezes and reconciles the whole active configuration.
+
+### `safe-mode`
+
+SAFE governs consequential execution; Meta-Stability governs recovery from scaffold and state instability.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A user-approved newer decision is not rolled back solely because an older checkpoint is internally coherent.
+- Urgent safety containment may proceed through a predeclared minimal path while optional work remains frozen.
+- If no verified checkpoint exists, build one from authoritative state rather than fabricate restoration.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- stability theater
+- loss of newer valid state
+- permanent freeze
+- unverified rollback
+- resuming all changes simultaneously
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal mode activation for a single reversible regression
+
+Keep mandatory:
+
+- verified checkpoint
+- optional-change freeze
+- authority reconciliation
+- exit test
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `long-context-corpus`
-- `multi-agent-orchestration`
+- long-context drift
+- conflicting module activation
+- repeated change cycles
+- multi-agent state divergence
 
 ## Example Composition
 
-Activate `meta-stability` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Several agents edit a registry from different state versions and validations alternate between two failures.
+
+**Why it activates:** Repeated changes and divergent state threaten global coherence.
+
+**Inputs/state:** A last passing commit, agent diffs, current registry, and authority rules are available.
+
+**Action:** Freezes new edits, compares each diff to the passing state, quarantines conflicting changes, rebuilds one authoritative state, validates it, then resumes changes sequentially.
+
+**Does not:** Delete all recent work or keep launching more repair agents.
+
+**Result/state change:** One coherent baseline and a controlled resume queue.
+
+**Companions:** ['stateblock', 'coherence-heartbeat', 'meta-supervisor']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-15` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: MSM.
+Primary source ID: `T4-15` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: MSM.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-15. Meta-Stability Mode (MSM) (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 6.1 SMSE — Sequential Memory State Engine (historical_assistant_artifact)

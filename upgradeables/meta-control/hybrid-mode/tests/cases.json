@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "hybrid-mode",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "hybrid-mode-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Several architectures deserve exploration, but repository edits and publication require precise validated execution.",
+      "expect": "Broad design quality with a controlled, auditable execution path.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "hybrid-mode-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task needs only narrow execution",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "hybrid-mode-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "No POWER branch may execute until one plan passes collapse and handoff validation.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "hybrid-mode-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "mode leakage",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "hybrid-mode-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit collapse",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "hybrid-mode-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A task needs broad design and consequential execution.",
+      "expect": "The skill runs explicit POWER planning, collapse, supervised state handoff, then SAFE execution with a gated return path.",
+      "reject": "The skill merely averages exploratory and conservative behavior or switches modes implicitly."
+    }
+  ]
+}

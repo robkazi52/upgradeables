@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "cross-universe-consistency",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "cross-universe-consistency-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "A final proposal might incorrectly combine offline guarantees with cloud-only observability.",
+      "expect": "The final design states one coherent assumption set and conditional alternative.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "cross-universe-consistency-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "only one branch was explored",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "cross-universe-consistency-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A branch-conditional claim cannot be imported without its enabling assumptions.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "cross-universe-consistency-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Block the collapse when it combines mutually exclusive assumptions or strips a claim from conditions required for its validity.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "cross-universe-consistency-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "assumption provenance and compatibility check for any hybrid",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "cross-universe-consistency-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A final design imports latency from branch A and durability from branch B, but their storage assumptions conflict.",
+      "expect": "Reject the hybrid or require a new branch proving coexistence.",
+      "reject": "Average the branch scores and approve."
+    }
+  ]
+}

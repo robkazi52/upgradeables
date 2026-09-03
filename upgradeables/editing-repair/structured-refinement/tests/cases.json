@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "structured-refinement",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "structured-refinement-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The draft has two incorrect dates, a duplicated section, and inconsistent voice.",
+      "expect": "A release-ready guide with traceable pass boundaries and no semantic regression.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "structured-refinement-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "only one bounded defect exists",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "structured-refinement-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Factual correctness outranks structural elegance and style.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "structured-refinement-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "mixed-objective drift",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "structured-refinement-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "dependency order",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "structured-refinement-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An artifact has factual, structural, and stylistic defects.",
+      "expect": "The skill classifies them, fixes them in dependency order, locks prior-pass decisions, and validates across classes.",
+      "reject": "The skill performs one blended rewrite or iterates without pass boundaries."
+    }
+  ]
+}

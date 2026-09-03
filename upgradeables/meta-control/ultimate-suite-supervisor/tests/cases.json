@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "ultimate-suite-supervisor",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "ultimate-suite-supervisor-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The workflow needs a Domain Core, authoring Gene, POWER planning, SAFE drafting, repair packs, and final grounding and style checks.",
+      "expect": "One authority-consistent suite execution with an auditable final gate.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "ultimate-suite-supervisor-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "one small skill can complete the task",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "ultimate-suite-supervisor-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Truth, safety, and explicit user authority outrank suite preferences.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "ultimate-suite-supervisor-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "monolithic full-suite loading",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "ultimate-suite-supervisor-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "mode declaration",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "ultimate-suite-supervisor-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A large suite needs global mode, stack, edit-class, pack-authority, intensity, and final-health decisions.",
+      "expect": "The skill creates one suite contract, delegates local health repair, resolves global conflicts, and owns final acceptance.",
+      "reject": "The skill only monitors loops and contradictions like Meta-Supervisor or activates every component indiscriminately."
+    }
+  ]
+}

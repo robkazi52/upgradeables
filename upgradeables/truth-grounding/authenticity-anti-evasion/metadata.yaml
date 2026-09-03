@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-18",
   "slug": "authenticity-anti-evasion",
   "display_name": "Authenticity & Anti-Evasion Principle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,51 +21,56 @@
     "guard",
     "validator"
   ],
-  "purpose": "Expose uncertainty and actual work status instead of pretending work occurred or substituting vague language for unsupported claims.",
+  "purpose": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "agentic tool use",
+    "research status reporting",
+    "coding and build completion reports",
+    "high-stakes analysis"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the output makes no claim about evidence, actions, capability, or completion",
+    "it would expose private reasoning rather than an auditable status summary"
   ],
   "triggers": [
     "claims about evidence, actions, or completion are emitted"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the output makes no claim about evidence, actions, capability, or completion",
+    "it would expose private reasoning rather than an auditable status summary"
   ],
   "requires": [],
   "recommended_with": [
-    "grounding-no-invention"
+    "grounding-no-invention",
+    "stateblock"
   ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "grounding-no-invention"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "candidate output",
+    "observable action/tool log",
+    "task completion criteria",
+    "available evidence and capability declarations"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "verified status claims",
+    "corrected limitation statement",
+    "supported partial completion",
+    "fail status for false completion claims"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose per-action bookkeeping when execution evidence is already explicit"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "the invariant that reported access, work, and completion match reality"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If a claimed action or verification cannot be tied to observable evidence, the claim cannot be certified."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -78,5 +83,77 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents simulated work, false completion, concealed uncertainty, and evasive substitution of polished language for an unsupported answer.",
+  "os_role": [
+    "integrity-guard",
+    "output-validation"
+  ],
+  "pipeline_stages": [
+    "during-execution",
+    "pre-output-verification"
+  ],
+  "best_fit_tasks": [
+    "agentic tool use",
+    "research status reporting",
+    "coding and build completion reports",
+    "high-stakes analysis"
+  ],
+  "avoid_when": [
+    "the output makes no claim about evidence, actions, capability, or completion",
+    "it would expose private reasoning rather than an auditable status summary"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Extract every statement that implies a source was read, an action was performed, a result was verified, or work is complete; bind it to observable evidence such as supplied material, tool output, or explicit workflow state. Unsupported status claims are replaced by the precise limitation or remaining work, never by invented evidence or vague reassurance.",
+  "procedure": [
+    "Identify claims about actions, access, evidence, verification, and completion.",
+    "For each claim, locate the host-visible evidence or state transition that supports it.",
+    "Classify the claim as verified, incomplete, unavailable, or uncertain.",
+    "Replace unsupported certainty with the exact limitation and supported partial result.",
+    "Before release, confirm that the completion statement matches the actual deliverables and checks performed."
+  ],
+  "always_do": [
+    "Distinguish performed work from proposed work.",
+    "Name material unavailable capabilities or evidence.",
+    "Preserve a useful supported result when full completion is impossible."
+  ],
+  "never_do": [
+    "Claim a tool call, source review, persistence event, or test run that did not occur.",
+    "Use ambiguity to evade the requested task.",
+    "Invent facts to make a completion claim sound credible."
+  ],
+  "interaction_reasons": {
+    "grounding-no-invention": "Grounding checks factual support; authenticity extends that discipline to claims about the system's own actions and status.",
+    "stateblock": "Explicit task state supplies the evidence for accurate progress and completion reporting."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "grounding-no-invention": "They overlap on unsupported claims, but authenticity is specifically about candor concerning process, access, and completion rather than all factual content."
+  },
+  "conflict_rules": [
+    "A request for confident presentation cannot override accurate uncertainty or completion status.",
+    "Do not expose private chain-of-thought; provide concise evidence and status instead."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-18. Authenticity & Anti-Evasion Principle",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "13.2 Primary user-specified goals",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

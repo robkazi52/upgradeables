@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "sequential-memory-state-engine",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "sequential-memory-state-engine-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The new event supersedes part of current state but history must remain auditable.",
+      "expect": "Current state is corrected with a traceable transition.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "sequential-memory-state-engine-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a one-shot task has no state evolution",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "sequential-memory-state-engine-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Authority outranks recency unless the authoritative source explicitly delegates update power.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "sequential-memory-state-engine-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Stop dependent actions when a safety-critical contradiction cannot be resolved.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "sequential-memory-state-engine-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "ordered transitions",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "sequential-memory-state-engine-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A later, higher-authority event contradicts one current field.",
+      "expect": "Apply an ordered, provenance-preserving delta and retain the old value as history.",
+      "reject": "Append both values to undifferentiated memory or rewrite all state."
+    }
+  ]
+}

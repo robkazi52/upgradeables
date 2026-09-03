@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-02",
   "slug": "drift-suppression",
   "display_name": "Drift Suppression",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,69 @@
     "validator",
     "skill-component"
   ],
-  "purpose": "Detect and correct gradual movement away from the active goal, constraints, terminology, or evidence boundary.",
+  "purpose": "Keep execution aligned after distracting context, repeated transformation, or model error.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "long agent workflows",
+    "high-fidelity editing",
+    "multi-stage synthesis",
+    "policy-bound generation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "no semantic baseline or allowed corridor exists",
+    "creative divergence is the explicit objective",
+    "the checker would use the same unsupported summary as the generator"
   ],
   "triggers": [
     "long, branching, or iterative work"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "no semantic baseline or allowed corridor exists",
+    "creative divergence is the explicit objective",
+    "the checker would use the same unsupported summary as the generator"
   ],
   "requires": [],
   "recommended_with": [
+    "controlled-drift-corridors",
     "task-set-lock-in",
-    "stateblock"
+    "zero-drift-zones"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "compute-adaptive-drift",
+    "drift-sink-scaffold"
+  ],
+  "potentially_redundant_with": [
+    "mode-lock-in",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "locked task and state anchors",
+    "authoritative sources",
+    "corridor map",
+    "current artifact",
+    "last validated version"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "drift classification",
+    "minimal repair or rollback",
+    "tightened control",
+    "drift incident record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "high-frequency low-risk checks after demonstrated stability",
+      "verbose drift logs for trivial corrected style variance"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "source/task baseline",
+      "risk-based checks",
+      "minimal rollback",
+      "high-impact stop condition"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Stop publication when a high-impact deviation cannot be repaired or adjudicated.",
+    "Do not claim suppression if no independent baseline survives the transformation."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +96,91 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Goals, claims, terminology, and constraints can shift gradually without an obvious single failure point.",
+  "os_role": [
+    "drift detection",
+    "semantic correction",
+    "recovery control"
+  ],
+  "pipeline_stages": [
+    "before action",
+    "after transformation",
+    "at checkpoints",
+    "final acceptance"
+  ],
+  "best_fit_tasks": [
+    "long agent workflows",
+    "high-fidelity editing",
+    "multi-stage synthesis",
+    "policy-bound generation"
+  ],
+  "avoid_when": [
+    "no semantic baseline or allowed corridor exists",
+    "creative divergence is the explicit objective",
+    "the checker would use the same unsupported summary as the generator"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Compare current plan, state, or artifact against locked task fields, authoritative source anchors, and region-specific corridor tests. Classify each deviation as authorized change, benign variation, or drift; for drift, restore the smallest affected region from the last validated state, reapply the transform under tighter constraints, and record the cause so recurrence can be prevented.",
+  "procedure": [
+    "Establish baseline anchors and permitted drift corridors before substantive transformation.",
+    "Run checks at risk-based checkpoints and after context transitions.",
+    "Compare objective, entities, claims, quantities, obligations, uncertainty, and required structure.",
+    "Classify discrepancies using authority and corridor rules.",
+    "Rollback the smallest affected region, tighten the relevant control, and regenerate or request review.",
+    "Validate the repaired result and record the drift signature."
+  ],
+  "always_do": [
+    "compare to authoritative baselines",
+    "distinguish authorized change from drift",
+    "repair minimally",
+    "record recurring drift signatures"
+  ],
+  "never_do": [
+    "declare drift from stylistic difference alone",
+    "correct toward a stale summary",
+    "silently accept a failed invariant",
+    "rewrite unaffected regions during repair"
+  ],
+  "interaction_reasons": {
+    "task-set-lock-in": "Provides objective and acceptance anchors.",
+    "controlled-drift-corridors": "Defines which deviations are actually outside bounds.",
+    "zero-drift-zones": "Supplies immutable items requiring exact or equivalence checks."
+  },
+  "counterbalance_reasons": {
+    "drift-sink-scaffold": "Quarantines recurring stale branches identified as drift causes.",
+    "compute-adaptive-drift": "Scales checkpoint frequency and scaffolding while preserving tests."
+  },
+  "redundancy_reasons": {
+    "mode-lock-in": "Mode lock prevents silent regime shifts; suppression is the general detect/repair loop and can enforce that lock.",
+    "working-memory-lock-in": "WM Lock prevents omission through salience; suppression corrects deviations that still occur."
+  },
+  "conflict_rules": [
+    "Latest authorized task/source state defines the baseline, not the oldest lock by default.",
+    "When automated checks and cited source inspection disagree, hold the output and resolve the checker or source version."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T1-02. Drift Suppression",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Drift Suppression inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "`DRIFT_MONITOR_T1`",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Stability guards, semantic anchoring, and fidelity workflows"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

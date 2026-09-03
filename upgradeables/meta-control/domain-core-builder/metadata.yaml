@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "C-00",
   "slug": "domain-core-builder",
   "display_name": "Domain Core Builder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,48 +21,71 @@
     "orchestrator",
     "reference-module"
   ],
-  "purpose": "Create high-density domain reasoning and evidence references that remain distinct from behavior instructions.",
+  "purpose": "Give multiple behaviors a shared, sourced domain substrate without duplicating knowledge across Genes or turning a Core into an OS.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "long-context-corpus",
-    "multi-agent-orchestration"
+    "recurring specialist domains",
+    "evidence-intensive decisions",
+    "policy or technical reference systems",
+    "multi-Gene domain bundles"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the need is purely behavioral",
+    "the source corpus is too weak to support a domain model",
+    "a small on-demand reference is sufficient"
   ],
   "triggers": [
     "a recurring domain needs structured knowledge and decision logic"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the need is purely behavioral",
+    "the source corpus is too weak to support a domain model",
+    "a small on-demand reference is sufficient"
   ],
   "requires": [],
   "recommended_with": [
     "behavior-gene-builder",
-    "citation-fidelity"
+    "citation-fidelity",
+    "scoped-loader"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "behavior-gene-builder"
+  ],
+  "potentially_redundant_with": [
+    "stateblock"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "domain scope",
+    "authoritative corpus",
+    "entities and variables",
+    "decision requirements",
+    "Gene and validator needs"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "versioned Domain Core",
+    "reasoning and evidence maps",
+    "typed interfaces",
+    "source-fidelity tests"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose explanatory prose around a compact machine-readable map",
+      "loading examples when the query is fully specified"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "source provenance",
+      "evidence hierarchy",
+      "Core/Gene separation",
+      "interface contract",
+      "conflict representation"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "knowledge-behavior conflation",
+    "unsourced compression",
+    "overbroad domain scope",
+    "whole-Core context dumping",
+    "unstated evidence conflict"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +98,87 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Domain facts, evidence standards, variables, and decision patterns become scattered through prompts, drift across versions, and cannot be independently validated.",
+  "os_role": [
+    "domain knowledge compiler",
+    "Core schema enforcer"
+  ],
+  "pipeline_stages": [
+    "domain scoping",
+    "source and variable modeling",
+    "Core construction",
+    "interface validation"
+  ],
+  "best_fit_tasks": [
+    "recurring specialist domains",
+    "evidence-intensive decisions",
+    "policy or technical reference systems",
+    "multi-Gene domain bundles"
+  ],
+  "avoid_when": [
+    "the need is purely behavioral",
+    "the source corpus is too weak to support a domain model",
+    "a small on-demand reference is sufficient"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Compile sourced domain material into the recovered Core fields: scope, entities and variables, reasoning map, required data, evidence hierarchy, decision logic, failure modes, canonical examples, Gene and validator interfaces, and version provenance. Keep prescriptive behavior in Genes, expose queries and typed outputs rather than dumping the entire Core into every task, and validate both source fidelity and interface sufficiency. The C-00 builder wrapper is a modern normalization of the recovered Core schema.",
+  "procedure": [
+    "Define domain boundaries, target decisions, and excluded neighboring domains.",
+    "Inventory authoritative sources, entities, variables, required data, and uncertainty.",
+    "Build reasoning and evidence maps with provenance at the smallest maintainable units.",
+    "Encode decision logic, failure modes, and canonical examples without adding behavioral voice rules.",
+    "Declare query interfaces for Genes and validation interfaces for truth and citation checks.",
+    "Test retrieval sufficiency, source fidelity, conflicting evidence, and version migration; publish with provenance."
+  ],
+  "always_do": [
+    "separate knowledge from behavior",
+    "preserve source and version provenance",
+    "state required data and evidence hierarchy",
+    "declare interfaces rather than assume whole-Core loading"
+  ],
+  "never_do": [
+    "present generated domain inference as sourced knowledge",
+    "embed writing style and task behavior into the Core",
+    "load the whole Core when a narrow query suffices",
+    "claim C-00 is a directly recovered historical ID"
+  ],
+  "interaction_reasons": {
+    "behavior-gene-builder": "Behavior Genes consume Core knowledge through declared interfaces without owning it.",
+    "citation-fidelity": "Citation Fidelity validates that Core atoms remain tied to their sources.",
+    "scoped-loader": "The loader retrieves only the Core sections relevant to the active task."
+  },
+  "counterbalance_reasons": {
+    "behavior-gene-builder": "The Gene boundary prevents the Core from accumulating behavioral instructions."
+  },
+  "redundancy_reasons": {
+    "stateblock": "StateBlock stores current task state; a Domain Core stores reusable domain knowledge and decision structure."
+  },
+  "conflict_rules": [
+    "Source evidence outranks a convenient decision map.",
+    "Conflicting authoritative sources remain represented with scope and uncertainty rather than silently merged.",
+    "Genes may select presentation or procedure but may not mutate sourced Core atoms."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "PART X. REASONING / SINGULARITY CORES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "13. Reasoning / Singularity Cores",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "14. BEHAVIOR GENE + CORE SEPARATION — HISTORICAL GENESIS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

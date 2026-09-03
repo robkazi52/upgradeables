@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-09",
   "slug": "fermionic-veto",
   "display_name": "Fermionic Veto Strengthening",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,51 +21,60 @@
     "validator",
     "guard"
   ],
-  "purpose": "Block commitment when a critical contradiction, safety condition, or integrity failure is detected.",
+  "purpose": "Preserve non-compensable constraints during aggregation and synthesis.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "safety reviews",
+    "constraint-heavy planning",
+    "security decisions",
+    "branch collapse",
+    "truth-conflict resolution"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the alleged defect is merely a soft preference",
+    "the veto predicate cannot be defined or evidenced"
   ],
   "triggers": [
     "a defined critical condition must have veto authority"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the alleged defect is merely a soft preference",
+    "the veto predicate cannot be defined or evidenced"
   ],
   "requires": [],
   "recommended_with": [
+    "cross-universe-consistency",
+    "fail-closed-abstention",
+    "parallel-qms"
+  ],
+  "counterbalances": [
+    "multi-truth-gating"
+  ],
+  "potentially_redundant_with": [
     "fail-closed-abstention"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "candidate",
+    "declared veto predicates",
+    "evidence",
+    "aggregate evaluation"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "veto/clear status",
+    "predicate evidence record",
+    "repair requirement",
+    "quarantine decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "veto layer for consequence-free creative alternatives"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "independent hard-constraint check whenever aggregate scoring is used"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not certify or execute a candidate while a verified non-compensable predicate remains active."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -78,5 +87,83 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Weighted scores and majority agreement can conceal a fatal defect by averaging it with many positive attributes.",
+  "os_role": [
+    "non-compensable-veto",
+    "hard-constraint-enforcer"
+  ],
+  "pipeline_stages": [
+    "candidate evaluation",
+    "QMS collapse",
+    "pre-action safety gate"
+  ],
+  "best_fit_tasks": [
+    "safety reviews",
+    "constraint-heavy planning",
+    "security decisions",
+    "branch collapse",
+    "truth-conflict resolution"
+  ],
+  "avoid_when": [
+    "the alleged defect is merely a soft preference",
+    "the veto predicate cannot be defined or evidenced"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Declare a narrow set of exclusion predicates before scoring. Evaluate them independently of aggregate quality; if any predicate is evidenced, quarantine the candidate and require removal of the disqualifying state plus revalidation. The fermionic metaphor is operational only: incompatible states do not share the certified result, and the veto is never diluted by votes or averages.",
+  "procedure": [
+    "Define non-compensable predicates and required evidence.",
+    "Run veto checks independently from quality scoring.",
+    "Record the exact predicate, evidence, and affected candidate.",
+    "Exclude or quarantine any triggered candidate.",
+    "Permit repair only if the disqualifying state is removed rather than relabeled.",
+    "Rerun the veto check before reconsidering certification."
+  ],
+  "always_do": [
+    "Keep veto predicates narrow and inspectable.",
+    "Preserve minority evidence of a decisive defect.",
+    "Require proof of removal before clearing a veto."
+  ],
+  "never_do": [
+    "Average a triggered veto into a composite score.",
+    "Use the metaphor as a scientific claim.",
+    "Turn aesthetic disagreement into a hard veto."
+  ],
+  "interaction_reasons": {
+    "fail-closed-abstention": "Defines the safe response when a veto cannot be repaired or resolved.",
+    "parallel-qms": "Preserves hard failures during global validator collapse.",
+    "cross-universe-consistency": "Blocks branch hybrids with impossible coexisting assumptions."
+  },
+  "counterbalance_reasons": {
+    "multi-truth-gating": "Tests whether an apparent truth contradiction can be resolved before permanent exclusion."
+  },
+  "redundancy_reasons": {
+    "fail-closed-abstention": "Fermionic Veto detects non-compensable exclusion; Fail-Closed determines action under unresolved safety."
+  },
+  "conflict_rules": [
+    "Verified veto evidence outranks aggregate score or validator majority.",
+    "If veto evidence conflicts, quarantine pending targeted adjudication rather than silently clearing it."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-09. Fermionic Veto Strengthening",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "T3-09. Fermionic Veto Strengthening",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "11.4 Variables / Criteria / MCDM",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

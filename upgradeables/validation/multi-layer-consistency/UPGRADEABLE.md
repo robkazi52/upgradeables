@@ -2,22 +2,37 @@
 
 ## Summary
 
-Check that system, project, task, Gene, Core, evidence, and output layers do not contradict one another.
+Checks that atom, paragraph or component, section or subsystem, and global-artifact representations agree without hiding contradictions between levels.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Maintain vertical consistency from local facts and operations to the overall conclusion or system behavior.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Each local unit can look valid while their aggregate contradicts the stated architecture, thesis, policy, or global constraint.
+
+## Where It Fits in the OS
+
+Roles: vertical-consistency-validator, cross-scale-invariant-check. Pipeline stages: integration, hierarchical validation, pre-release.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- large documents
+- modular software
+- policy hierarchies
+- multi-step analytical conclusions
+
+## When Not to Use
+
+- the artifact has only one meaningful level
+- levels are intentionally alternative rather than nested
 
 ## Scope
 
-Functional classes: validation, orchestration. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `multi-layer-consistency@1.1.0`. ID: `T2-05`. Functional classes: validation, orchestration. Activation: `U1-common-conditional`. Mechanism basis: `normalized-from-recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,99 +40,132 @@ Functional classes: validation, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the artifact has only one meaningful level
+- levels are intentionally alternative rather than nested
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- layer map
+- local facts or tests
+- intermediate claims
+- global objective and constraints
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- cross-layer trace
+- boundary mismatch list
+- coherent hierarchy or repair request
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Define nested levels and invariants linking them, then validate both upward and downward: atoms must support their containing unit, units must compose into section or subsystem claims, and the global result must not assert anything contradicted below; conversely global constraints must be realized in the relevant lower layers. A pass requires agreement across boundaries, not independent passes at each level.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Map the artifact into atom, local unit, intermediate group, and global levels.
+2. State invariants and claimed summaries at each boundary.
+3. Check upward support from atoms to local and global claims.
+4. Check downward realization of global constraints in lower levels.
+5. Locate contradictions, orphan claims, and locally valid but globally incompatible parts.
+6. Repair at the earliest causal level and rerun affected boundaries.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Check boundary relationships, not only each level in isolation.
+- Trace global claims to lower-level support.
+- Propagate lower-level uncertainty upward.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Infer global consistency from all local tests passing.
+- Force consistency by deleting legitimate local exceptions without explanation.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `parallel-qms`
+
+HQMS is the specialized QMS mode that runs these hierarchical checks.
+
+### `bidirectional-consistency`
+
+Strengthens upward support with downward realization.
+
+### `coherence-loops`
+
+Repairs contradictions that span multiple layers.
 
 ## Compatible Upgradeables
 
-- `domain-mode-isolation`
-- `parallel-qms`
+- `parallel-qms` — HQMS is the specialized QMS mode that runs these hierarchical checks.
+- `bidirectional-consistency` — Strengthens upward support with downward realization.
+- `coherence-loops` — Repairs contradictions that span multiple layers.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `domain-mode-isolation`
+
+Prevents constraints from one domain layer leaking into an unrelated one.
 
 ## Potential Redundancy
 
-- `None declared`
+### `cross-universe-consistency`
+
+Multi-Layer checks nested scales within one artifact; CUCM checks alternative branch worlds.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A lower-level verified contradiction defeats an unsupported global summary.
+- An explicit global hard constraint requires lower-layer implementation or a documented exception.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- Do not certify when a global claim lacks lower-layer support or a lower-layer fact violates an undeclared global exception.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal four-level labeling for a tiny artifact
+
+Keep mandatory:
+
+- at least one upward and one downward boundary check in hierarchical work
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `multi-agent-orchestration`
-- `research`
-- `source-grounded-analysis`
+- large documents
+- modular software
+- policy hierarchies
+- multi-step analytical conclusions
 
 ## Example Composition
 
-Activate `multi-layer-consistency` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Every module test passes, but the application claims all writes are transactional.
+
+**Why it activates:** The global guarantee depends on cross-module composition.
+
+**Inputs/state:** Module behaviors, integration flow, and transactional invariant.
+
+**Action:** Traces the invariant down and finds one inter-module path committing before validation.
+
+**Does not:** Approve because each module is locally correct.
+
+**Result/state change:** A cross-layer mismatch blocks the global guarantee until integration behavior changes.
+
+**Companions:** ['parallel-qms', 'bidirectional-consistency', 'coherence-loops']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-05. Multi-Layer Consistency (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — T2-05. Multi-Layer Consistency (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.6 HQMS — Hierarchical QMS (historical_assistant_artifact)

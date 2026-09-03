@@ -2,22 +2,39 @@
 
 ## Summary
 
-Discover and load only the task-relevant Genes, Cores, Upgradeables, references, tools, and validators in authority order.
+A deterministic load-order controller that admits only the task shell, behavior, knowledge, controls, references, tools, and validators needed for the active job.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents authority confusion, context bloat, irrelevant rule activation, and premature access to references or tools that the current task does not require.
+
+## Where It Fits in the OS
+
+Roles: context-retrieval, orchestration, capability routing. Pipeline stages: task classification, pre-retrieval, on-demand loading, pre-commit validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- modular Skill execution
+- agent routing
+- large reference libraries
+- domain OS selection
+- multi-stage research
+
+## When Not to Use
+
+- the workflow has one small fixed instruction set
+- selection criteria are unavailable
+- loading a component would exceed host capability or authority
 
 ## Scope
 
-Functional classes: context-retrieval, orchestration. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `scoped-loader@1.1.0`. ID: `T1-07`. Functional classes: context-retrieval, orchestration. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,95 +42,136 @@ Functional classes: context-retrieval, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the workflow has one small fixed instruction set
+- selection criteria are unavailable
+- loading a component would exceed host capability or authority
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- task classification
+- authority hierarchy
+- component manifests
+- trigger/dependency data
+- host capabilities
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- ordered minimal load plan
+- active component list
+- deferred resource pointers
+- activation rationale and unresolved conflicts
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Resolve the active task first, then load in recovered authority/function order: task shell, applicable Behavior Gene, authorized Core, only triggered Upgradeables, references or resources on demand, and validators before commitment. Record what was loaded and why; leave unrelated modules inactive so their rules and context cannot leak into the task.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Classify the task, domain, mode, risk, and output contract.
+2. Load the task shell and its authority constraints.
+3. Load at most the required Behavior Gene and authorized Core/reference layer.
+4. Evaluate Upgradeable triggers and dependencies, then activate only the minimal matching set.
+5. Fetch deep references, resources, or tools only when a retained component needs them.
+6. Activate applicable validators before final commitment and emit a load record.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Resolve authority before loading lower-level behavior.
+- Document activation reasons and unavailable capabilities.
+- Prefer deterministic indexes or manifests when the host supports them.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Do not load the entire component library by default.
+- Do not treat routing to a reference as proof that its contents apply.
+- Do not let a loaded component override the task or host policy.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `activation-budget-funnel`
+
+After the loader selects relevant material, ABF stages how much of it may be active and processed at once.
+
+### `task-set-lock-in`
+
+Supplies the task identity and constraints used to make load decisions.
 
 ## Compatible Upgradeables
 
-- `activation-budget-funnel`
-- `task-set-lock-in`
+- `activation-budget-funnel` — After the loader selects relevant material, ABF stages how much of it may be active and processed at once.
+- `task-set-lock-in` — Supplies the task identity and constraints used to make load decisions.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `anti-tunnel-vision`
+
+Checks whether narrow loading excluded a plausible source or capability needed for the result.
 
 ## Potential Redundancy
 
-- `None declared`
+### `activation-budget-funnel`
+
+Both reduce context burden, but loader decides relevance/order while ABF controls concurrent activation and processing stages.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Host/system and task authority determine eligibility; relevance alone cannot authorize a module.
+- If two loaders disagree, prefer the route tied to the locked task and explicit manifests, or escalate rather than merging all candidates.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- Do not load a component when its trigger, authority, dependency, or host capability cannot be established.
+- Escalate when required components conflict and precedence cannot resolve them.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose load manifests for a tiny fixed workflow
+- separate loading calls when the host safely bundles a small compatible set
+
+Keep mandatory:
+
+- task-first selection
+- authority-ordered loading
+- inactive-by-default treatment of unrelated modules
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `long-context-corpus`
-- `multi-agent-orchestration`
+- modular Skill execution
+- agent routing
+- large reference libraries
+- domain OS selection
+- multi-stage research
 
 ## Example Composition
 
-Activate `scoped-loader` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Answer a legal research question from a mixed policy library.
+
+**Why it activates:** Multiple Genes, Cores, sources, and validators are available.
+
+**Inputs/state:** Locked jurisdiction, research question, component index, and source permissions.
+
+**Action:** Loads the research shell, applicable legal references, grounding and citation controls, then the needed sources and final validators.
+
+**Does not:** It does not load medical Cores, creative modes, or the complete policy archive.
+
+**Result/state change:** A small authority-ordered active stack with an auditable load record.
+
+**Companions:** ['task-set-lock-in', 'activation-budget-funnel']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-07` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: Loader Sequencing, Loader.
+Primary source ID: `T1-07` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: Loader Sequencing, Loader.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-07. Loader Sequencing (current_consolidated_catalog)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 11.2 Research Intake / Corpus Map (historical_assistant_artifact)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — Canonical current consolidated inventory (historical_recovery_inventory)

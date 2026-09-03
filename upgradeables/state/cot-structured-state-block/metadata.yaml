@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "STATE-2025-12-03-T3",
   "slug": "cot-structured-state-block",
   "display_name": "CoT-Structured State Block",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -19,46 +19,69 @@
   "implementation_forms": [
     "state-schema"
   ],
-  "purpose": "Represent task and reasoning state explicitly without claiming access to hidden or private chain-of-thought.",
+  "purpose": "Make reasoning-relevant state portable and auditable while preserving the boundary between useful state and hidden internal deliberation.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-agent research",
+    "long investigations",
+    "regulated decisions",
+    "work requiring resumable rationale"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a one-turn answer has no meaningful state",
+    "the request seeks hidden chain-of-thought",
+    "sensitive reasoning details should not be persisted"
   ],
   "triggers": [
     "structured intermediate task state must survive across steps"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a one-turn answer has no meaningful state",
+    "the request seeks hidden chain-of-thought",
+    "sensitive reasoning details should not be persisted"
   ],
   "requires": [],
   "recommended_with": [
+    "state-snapshot",
     "stateblock",
-    "sequential-memory-state-engine"
+    "structured-state-projection"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "micro-scaffolding",
+    "working-memory-cues"
+  ],
+  "potentially_redundant_with": [
+    "state-snapshot",
+    "stateblock"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "verified evidence",
+    "task constraints",
+    "declared assumptions",
+    "current conclusions",
+    "open questions"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "structured reasoning-state record",
+    "provenance links",
+    "next-action field",
+    "confidence and uncertainty labels"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "frequent serialization during a short uninterrupted task",
+      "fields irrelevant to the consumer"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "fact/inference separation",
+      "provenance",
+      "explicit uncertainty",
+      "privacy boundary"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Stop treating the block as authoritative if provenance is missing or fields are stale.",
+    "Do not use the pattern to satisfy requests for hidden chain-of-thought."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +94,88 @@
     "canonicality": "accepted",
     "recovery_confidence": "high",
     "notes": "Exact recovered name and role; modern implementations expose task state only."
+  },
+  "problem_solved": "Long or multi-agent work otherwise loses the basis of conclusions, confuses facts with inferences, or demands inappropriate internal reasoning traces.",
+  "os_role": [
+    "state representation",
+    "handoff boundary",
+    "audit support"
+  ],
+  "pipeline_stages": [
+    "after evidence intake",
+    "at decision points",
+    "before handoff or resume"
+  ],
+  "best_fit_tasks": [
+    "multi-agent research",
+    "long investigations",
+    "regulated decisions",
+    "work requiring resumable rationale"
+  ],
+  "avoid_when": [
+    "a one-turn answer has no meaningful state",
+    "the request seeks hidden chain-of-thought",
+    "sensitive reasoning details should not be persisted"
+  ],
+  "mechanism_basis": "modern-interpretation",
+  "mechanism": "Maintain an explicit schema of externally useful reasoning state: verified facts with provenance, user-provided constraints, labeled assumptions, concise conclusion summaries, unresolved questions, confidence, and next action. The block records what another worker needs to continue; it never stores token-level private deliberation or presents inference as evidence.",
+  "procedure": [
+    "Define the minimum state schema and sensitivity boundary.",
+    "Populate facts only from cited or user-provided material and label assumptions separately.",
+    "Record concise decision rationales and confidence rather than hidden reasoning traces.",
+    "Update changed fields at checkpoints and preserve provenance.",
+    "Project only the fields needed by the next consumer."
+  ],
+  "always_do": [
+    "separate facts, assumptions, and conclusions",
+    "attach provenance to evidence-bearing fields",
+    "keep the record concise and inspectable"
+  ],
+  "never_do": [
+    "request or reveal private chain-of-thought",
+    "store unsupported inference as a fact",
+    "persist secrets merely because they appeared in context"
+  ],
+  "interaction_reasons": {
+    "stateblock": "Provides a specialized reasoning-state view within the broader canonical state schema.",
+    "structured-state-projection": "Supplies fields that can be projected safely to a particular consumer.",
+    "state-snapshot": "Can be serialized at a checkpoint for handoff."
+  },
+  "counterbalance_reasons": {
+    "working-memory-cues": "Cues keep attention light when the structured block would be excessive.",
+    "micro-scaffolding": "A short-lived local scaffold can precede durable structured-state updates."
+  },
+  "redundancy_reasons": {
+    "stateblock": "Do not maintain a second competing canonical record; embed or derive this view.",
+    "state-snapshot": "A snapshot is a frozen instance, not another live state owner."
+  },
+  "conflict_rules": [
+    "Canonical cited evidence overrides stale state summaries.",
+    "If a requested field would expose private reasoning, provide a concise rationale or evidence ledger instead."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Recovered residual upgradeables and orchestration/state listings"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "4. December 3, 2025 — state architecture corrections",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Recovered state-management inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "6.2 T3 structured reasoning-state representation",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Structured state, provenance, and projection patterns"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "BG-00",
   "slug": "behavior-gene-builder",
   "display_name": "Behavior Gene Builder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,47 +23,70 @@
     "orchestrator",
     "reference-module"
   ],
-  "purpose": "Create and validate reusable behavior and reasoning patterns without embedding domain knowledge dumps.",
+  "purpose": "Turn repeatable behavior, logic, evidence handling, and output contracts into swappable components that compose with Cores and validators.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "recurring reasoning patterns",
+    "domain-specific writing behavior",
+    "tone or risk-emphasis modules",
+    "research synthesis behaviors"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the content is primarily domain knowledge",
+    "the behavior occurs only once",
+    "the proposed gene duplicates a general invariant better kept global"
   ],
   "triggers": [
     "a recurring task family needs reusable behavior"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the content is primarily domain knowledge",
+    "the behavior occurs only once",
+    "the proposed gene duplicates a general invariant better kept global"
   ],
   "requires": [],
   "recommended_with": [
+    "architect-orchestrator",
     "domain-core-builder",
-    "architect-orchestrator"
+    "resonance-gene-builder"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "domain-core-builder"
+  ],
+  "potentially_redundant_with": [
+    "resonance-gene-builder"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "recurring task pattern",
+    "behavior examples and failures",
+    "Gene schema",
+    "Core and validator interfaces",
+    "authority rules"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "versioned Behavior Gene",
+    "activation and non-trigger rules",
+    "composition contract",
+    "behavioral tests"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "long narrative rationale when the schema fields and tests are self-explanatory"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "behavior/Core separation",
+      "trigger contract",
+      "always/avoid rules",
+      "compatibility tests",
+      "version metadata"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "behavior-knowledge conflation",
+    "monolithic Gene",
+    "vague activation",
+    "undeclared conflicts",
+    "untested output contract"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +99,87 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Behavior rules become duplicated, monolithic, or entangled with domain facts, making reuse, testing, versioning, and conflict resolution unreliable.",
+  "os_role": [
+    "behavior-module factory",
+    "composition schema enforcer"
+  ],
+  "pipeline_stages": [
+    "recurrence analysis",
+    "gene specification",
+    "validation",
+    "versioned publication"
+  ],
+  "best_fit_tasks": [
+    "recurring reasoning patterns",
+    "domain-specific writing behavior",
+    "tone or risk-emphasis modules",
+    "research synthesis behaviors"
+  ],
+  "avoid_when": [
+    "the content is primarily domain knowledge",
+    "the behavior occurs only once",
+    "the proposed gene duplicates a general invariant better kept global"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Extract the invariant behavior shared by a task family and encode it in the recovered Gene schema: name/version, purpose, scope, triggers, always and avoid rules, reasoning pattern, evidence handling, Core interface, output contract, and compatibility notes. Test activation and non-activation cases, conflict precedence, and behavior with representative Cores; publish the behavior separately from knowledge and loader policy.",
+  "procedure": [
+    "Collect repeated successful and failed task instances and isolate the stable behavior rather than domain facts.",
+    "Define scope, activation conditions, and explicit non-triggers.",
+    "Specify always-do, never-do, reasoning pattern, evidence handling, and output contract.",
+    "Declare Core, validator, and other-Gene interfaces plus authority and conflict rules.",
+    "Test positive activation, false activation, missing-Core, and conflicting-Gene cases.",
+    "Version and publish the Gene with provenance and composition notes."
+  ],
+  "always_do": [
+    "keep behavior separate from domain knowledge",
+    "make activation and output contracts testable",
+    "declare compatibility and precedence",
+    "version behavioral changes"
+  ],
+  "never_do": [
+    "turn a Gene into a full OS",
+    "copy a domain corpus into behavior instructions",
+    "collapse materially distinct task families into one giant Gene",
+    "claim hidden behavior outside the loaded module"
+  ],
+  "interaction_reasons": {
+    "domain-core-builder": "The Gene queries or consumes a Core while remaining responsible only for behavior and output shape.",
+    "architect-orchestrator": "The architect loads and composes the right Gene for the task.",
+    "resonance-gene-builder": "Resonance Gene Builder creates a special coupling Gene when recurring cross-module coordination, not task behavior alone, is the target."
+  },
+  "counterbalance_reasons": {
+    "domain-core-builder": "The Core boundary prevents behavior modules from becoming knowledge dumps."
+  },
+  "redundancy_reasons": {
+    "resonance-gene-builder": "Both emit Genes, but the Resonance builder is limited to stable coupling rules among modules; this builder covers task and writing behaviors generally."
+  },
+  "conflict_rules": [
+    "Global truth, safety, and authorization rules outrank any Gene.",
+    "A Gene may query a Core but cannot silently redefine its sourced domain facts.",
+    "Conflicting Genes require declared precedence or explicit orchestration rather than blended instructions."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "PART IX. BEHAVIOR GENE OS",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "12. Behavior Gene OS and known Genes",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "14. BEHAVIOR GENE + CORE SEPARATION — HISTORICAL GENESIS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

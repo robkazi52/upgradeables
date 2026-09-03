@@ -1,10 +1,31 @@
-# Basic composition example
+# Activation-Budget Funnel — Basic Example
 
-**Situation:** many sources or modules compete for attention.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `activation-budget-funnel`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Compare twelve vendor proposals against six criteria.
+
+## Why this Upgradeable activates
+
+All proposals cannot remain active without recency and attention competition.
+
+## Inputs / state
+
+Proposal queue, six-field evidence-card schema, source-page pointers.
+
+## What it does
+
+Processes bounded batches, captures criterion evidence, indexes it, releases raw text, then compares from the index and verifies finalists.
+
+## What it does not do
+
+It does not draft the recommendation while still pulling unindexed proposal text.
+
+## Result / state change
+
+A complete comparison built from traceable evidence cards with a bounded live workspace.
+
+## Interaction with companion components
+
+['scoped-loader', 'stateblock', 'anti-tunnel-vision']

@@ -1,11 +1,39 @@
-# Composition tests
+# Invariance Stress Scaffold — Behavioral Expectations
 
-- **Positive:** given `a patch or rewrite must preserve invariants`, the component activates and
-  emits a bounded result/status.
-- **Negative:** on a simple task without the trigger, the component stays
-  inactive and adds no scaffolding.
-- **Conflict:** a lower-priority style or component instruction cannot override
-  host policy, domain policy, or the task lock.
-- **Integrity:** absent evidence or host capability is reported, not invented.
-- **Scaling:** a capable host may omit verbose scaffolding but must retain any
-  task-required truth, state, safety, and integrity invariant.
+## Positive Activation
+
+- **Given:** Order is supposed to be irrelevant to the safety judgment.
+- **Expect:** A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.
+- **Reject:** remaining inactive despite a satisfied trigger
+
+## Negative Activation
+
+- **Given:** the transformed feature is itself decision-relevant
+- **Expect:** the component stays inactive and adds no scaffolding
+- **Reject:** activating solely because the name appears relevant
+
+## Precedence Or Conflict
+
+- **Given:** Meaning-changing controls are not invariant breaches.
+- **Expect:** the higher-authority rule wins and the conflict is visible
+- **Reject:** silently resolving against higher authority
+
+## Failure Boundary
+
+- **Given:** Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation.
+- **Expect:** the component stops, abstains, narrows, or escalates as documented
+- **Reject:** manufacturing a successful result past its failure boundary
+
+## Strong Model Scaling
+
+- **Given:** a capable host can compress the workflow
+- **Expect:** explicit invariant and at least one controlled counterfactual comparison when robustness is claimed
+- **Reject:** dropping the mandatory invariant
+
+## Distinctive Mechanism
+
+- **Given:** A conclusion changes only after a qualifier is removed.
+- **Expect:** Classify the change as a valid response to a meaning-changing control, not an invariant breach.
+- **Reject:** Demand identical output across all mutations.
+
+These are provider-neutral behavioral specifications. Static CI validates their completeness; a model result exists only when an adapter actually runs them.

@@ -2,22 +2,39 @@
 
 ## Summary
 
-Prevent TODOs, dummy values, empty required sections, and unresolved markers from leaking into final artifacts.
+Blocks finalization until unfinished markers, dummy values, unresolved variables, and empty required sections are resolved, omitted, or clearly labeled.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Prevent scaffolding artifacts from escaping as if they were complete content.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Templates and multi-stage generation leave TODOs, bracket prompts, synthetic values, interpolation tokens, or structurally empty requirements that readers may mistake for finished output.
+
+## Where It Fits in the OS
+
+Roles: final-output guard, completion validator. Pipeline stages: artifact assembly, pre-release scan, finalization gate.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- template-based documents
+- generated repositories
+- forms and reports
+- configuration generation
+- multi-agent artifact assembly
+
+## When Not to Use
+
+- the deliverable is explicitly a template whose placeholders are the product
+- an example intentionally teaches placeholder syntax
+- redacted fields must retain an approved marker
 
 ## Scope
 
-Functional classes: output, validation. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `placeholder-suppression@1.1.0`. ID: `T1-08`. Functional classes: output, validation. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,98 +42,142 @@ Functional classes: output, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the deliverable is explicitly a template whose placeholders are the product
+- an example intentionally teaches placeholder syntax
+- redacted fields must retain an approved marker
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- artifact
+- required-field schema
+- marker patterns
+- intentional-placeholder allowlist
+- authoritative replacement values
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- placeholder inventory
+- resolved or classified hits
+- clean rescan
+- pass or blocked finalization decision
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Run a two-layer completion scan: a lexical detector for markers such as TODO, TBD, FIXME, bracket prompts, dummy domains, sample IDs, and unresolved interpolation syntax; then a schema detector for empty required sections, null required fields, and uninstantiated variables. Classify every hit using a narrow allowlist for intentional template, example, or redaction contexts; all other hits must be filled from authority, removed with requirement revalidation, or explicitly labeled unresolved before release.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Load the artifact's required sections, fields, and variable schema.
+2. Scan text and code for known marker tokens, dummy values, bracketed instructions, and unresolved interpolation forms.
+3. Scan structure for empty or default-valued required elements.
+4. Classify hits as accidental, intentionally illustrative, approved redaction, or genuinely unresolved using context and an explicit allowlist.
+5. Resolve accidental hits from authoritative inputs, omit only when the requirement permits, and label genuine gaps with impact and owner.
+6. Rescan the final artifact and fail the release gate on any unclassified or accidental hit.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- combine lexical and structural scans
+- use contextual allowlisting rather than global token exceptions
+- rescan after resolution
+- distinguish explicit unresolved disclosure from accidental placeholder leakage
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- replace unknown values with plausible inventions
+- delete a required section just to clear the scan
+- flag every bracket in code or citation as a placeholder
+- allow an unclassified marker in final output
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `safe-rewrite`
+
+Safe Rewrite removes or labels placeholders without altering neighboring facts.
+
+### `parallel-qms`
+
+Final Validation treats an unresolved accidental marker as a release-blocking defect.
 
 ## Compatible Upgradeables
 
-- `safe-rewrite`
+- `safe-rewrite` — Safe Rewrite removes or labels placeholders without altering neighboring facts.
+- `parallel-qms` — Final Validation treats an unresolved accidental marker as a release-blocking defect.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `safe-rewrite`
+
+An explicit template context protects intentional placeholders from destructive suppression.
 
 ## Potential Redundancy
 
-- `None declared`
+### `grounding-no-invention`
+
+Grounding prevents invented replacements; Placeholder Suppression specifically detects unfinished output artifacts and completion gaps.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Never fabricate content to satisfy completion.
+- Approved template and example placeholders remain only when clearly scoped and non-executable.
+- A required unknown is labeled unresolved and blocks completion when the contract requires a concrete value.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- false completion
+- fabricated replacements
+- overbroad allowlist
+- false positives on legitimate syntax
+- empty required structure
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- reporting every zero-hit pattern in the final response
+
+Keep mandatory:
+
+- lexical plus schema scan
+- context-specific classification
+- post-fix rescan
+- fail-closed finalization
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- template-based documents
+- generated repositories
+- forms and reports
+- configuration generation
+- multi-agent artifact assembly
 
 ## Example Composition
 
-Activate `placeholder-suppression` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Publish a generated GitHub repository.
+
+**Why it activates:** README templates, manifests, and examples may retain setup prompts or dummy URLs.
+
+**Inputs/state:** Repository files, manifest schema, approved example fixtures, and project metadata are available.
+
+**Action:** Finds a `[your-org]` README token, an empty license field, and `example.com` in a test fixture; resolves the first two and allowlists the fixture by path before rescanning.
+
+**Does not:** Replace the license with a guess or globally allow every `example.com` occurrence.
+
+**Result/state change:** A release with no accidental placeholders and one documented intentional fixture.
+
+**Companions:** ['safe-rewrite', 'grounding-no-invention']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-08` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-08` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-08. Placeholder Suppression (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION (historical_assistant_artifact)

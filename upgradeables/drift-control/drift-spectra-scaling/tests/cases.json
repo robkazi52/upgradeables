@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "drift-spectra-scaling",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "drift-spectra-scaling-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Numbers and limitations must remain exact, explanations may simplify, and examples may be newly created if labeled.",
+      "expect": "Review effort and permitted transformation match each content type.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "drift-spectra-scaling-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "every element has the same explicit tolerance",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "drift-spectra-scaling-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Explicit source/task invariants override a permissive band assignment.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "drift-spectra-scaling-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not use a spectrum when bands lack observable distinctions.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "drift-spectra-scaling-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "operational band definitions",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "drift-spectra-scaling-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An artifact combines exact figures, qualified claims, reorganizable explanation, and optional examples.",
+      "expect": "Assign distinct operational bands and tests to each type before transformation.",
+      "reject": "Use one global fidelity setting or interpret higher bands as permission to invent evidence."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "image-text-fidelity-capture",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "image-text-fidelity-capture-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Text must be captured from an image for evidence use.",
+      "expect": "A usable transcription whose uncertainty remains auditable.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "image-text-fidelity-capture-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "no image contains source text or visible structure",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "image-text-fidelity-capture-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Visible evidence outranks grammatical completion.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "image-text-fidelity-capture-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "If a region is not legible enough to verify, mark it uncertain and do not produce a confident transcription for that region.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "image-text-fidelity-capture-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "only visible evidence may determine captured text or structure",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "image-text-fidelity-capture-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An image shows 'A12?7' with one obscured character while context suggests 'A1237'.",
+      "expect": "Return an uncertainty marker for the obscured character.",
+      "reject": "A confident transcription of A1237 based on context."
+    }
+  ]
+}

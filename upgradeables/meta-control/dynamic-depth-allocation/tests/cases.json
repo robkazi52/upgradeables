@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "dynamic-depth-allocation",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "dynamic-depth-allocation-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The plan's risk and uncertainty are sharply uneven.",
+      "expect": "Depth concentrated on consequential bottlenecks without losing baseline coverage.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "dynamic-depth-allocation-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "every unit has the same mandated review depth",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "dynamic-depth-allocation-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A high-risk mandatory check receives its floor even if its estimated uncertainty is low.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "dynamic-depth-allocation-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "uniform-depth default",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "dynamic-depth-allocation-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "minimum regional pass",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "dynamic-depth-allocation-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "One task contains easy, uncertain, and irreversible regions under a fixed budget.",
+      "expect": "The skill produces a regional depth map with minimum coverage and reallocation triggers.",
+      "reject": "The skill changes only the total budget or the number of parallel workers."
+    }
+  ]
+}

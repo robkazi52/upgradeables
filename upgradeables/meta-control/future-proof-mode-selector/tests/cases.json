@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "future-proof-mode-selector",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "future-proof-mode-selector-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The hosts differ in filesystem, command, context, and state capabilities.",
+      "expect": "Portable behavior with explicit host-specific execution profiles.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "future-proof-mode-selector-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the host and task profile are fixed",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "future-proof-mode-selector-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Task-risk requirements override host convenience.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "future-proof-mode-selector-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "capability hallucination",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "future-proof-mode-selector-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "risk overlay",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "future-proof-mode-selector-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "The same workflow targets hosts with different tools, state, context, and reliability.",
+      "expect": "The skill probes capabilities, overlays risk, selects a named profile, and provides fallback without dropping invariants.",
+      "reject": "The skill merely scales controls by model size or assumes every host supports the same features."
+    }
+  ]
+}

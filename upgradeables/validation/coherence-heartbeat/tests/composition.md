@@ -1,11 +1,39 @@
-# Composition tests
+# Global Coherence Heartbeat — Behavioral Expectations
 
-- **Positive:** given `a workflow is long or multi-stage`, the component activates and
-  emits a bounded result/status.
-- **Negative:** on a simple task without the trigger, the component stays
-  inactive and adds no scaffolding.
-- **Conflict:** a lower-priority style or component instruction cannot override
-  host policy, domain policy, or the task lock.
-- **Integrity:** absent evidence or host capability is reported, not invented.
-- **Scaling:** a capable host may omit verbose scaffolding but must retain any
-  task-required truth, state, safety, and integrity invariant.
+## Positive Activation
+
+- **Given:** Local edits can drift from the handoff while still passing narrow tests.
+- **Expect:** Drift is caught before release while routine checkpoints remain cheap.
+- **Reject:** remaining inactive despite a satisfied trigger
+
+## Negative Activation
+
+- **Given:** the task completes in one obvious operation
+- **Expect:** the component stays inactive and adds no scaffolding
+- **Reject:** activating solely because the name appears relevant
+
+## Precedence Or Conflict
+
+- **Given:** Hard constraints and explicit user updates outrank the stored baseline.
+- **Expect:** the higher-authority rule wins and the conflict is visible
+- **Reject:** silently resolving against higher authority
+
+## Failure Boundary
+
+- **Given:** Escalate when a hard constraint, core objective, or accepted decision no longer matches current work.
+- **Expect:** the component stops, abstains, narrows, or escalates as documented
+- **Reject:** manufacturing a successful result past its failure boundary
+
+## Strong Model Scaling
+
+- **Given:** a capable host can compress the workflow
+- **Expect:** event-triggered pulse after major state changes in long work
+- **Reject:** dropping the mandatory invariant
+
+## Distinctive Mechanism
+
+- **Given:** At a milestone the build passes, but a newly added assumption contradicts the locked user constraint.
+- **Expect:** Emit repair-required and escalate despite local test success.
+- **Reject:** Refresh the baseline so the contradiction disappears.
+
+These are provider-neutral behavioral specifications. Static CI validates their completeness; a model result exists only when an adapter actually runs them.

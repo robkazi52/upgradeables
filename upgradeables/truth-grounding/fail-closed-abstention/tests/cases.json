@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "fail-closed-abstention",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "fail-closed-abstention-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "A required decision anchor is missing.",
+      "expect": "A useful bounded summary without unsupported closure.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "fail-closed-abstention-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the failed condition is optional and does not affect the supported deliverable",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "fail-closed-abstention-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A request for a definitive answer cannot override a failed required truth gate.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "fail-closed-abstention-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "A conclusion cannot be committed while any indispensable evidence or integrity condition remains failed or unverifiable.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "fail-closed-abstention-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "no essential failed gate may be bypassed by fluency or confidence",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "fail-closed-abstention-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "One indispensable truth gate is unverifiable while several optional checks pass.",
+      "expect": "Withhold the affected conclusion and return only independently supported content.",
+      "reject": "Majority voting that commits because more checks passed than failed."
+    }
+  ]
+}

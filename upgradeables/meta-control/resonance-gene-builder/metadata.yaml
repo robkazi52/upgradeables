@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-06",
   "slug": "resonance-gene-builder",
   "display_name": "Resonance Gene Builder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,47 +23,70 @@
     "orchestrator",
     "reference-module"
   ],
-  "purpose": "Encode recurring cross-module coupling rules as compact Behavior Genes with explicit authority boundaries.",
+  "purpose": "Make useful cross-module reinforcement explicit and reusable without merging modules, duplicating content, or granting hidden communication.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "recurring validator-generator pairings",
+    "stable Core-Gene couplings",
+    "multi-module evidence workflows",
+    "repeated authority-sensitive compositions"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the need is a general task behavior unrelated to module coupling",
+    "the modules interact only once",
+    "the host lacks an explicit state or data-transfer path"
   ],
   "triggers": [
     "the same module relationship recurs"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the need is a general task behavior unrelated to module coupling",
+    "the modules interact only once",
+    "the host lacks an explicit state or data-transfer path"
   ],
   "requires": [],
   "recommended_with": [
+    "architect-orchestrator",
     "behavior-gene-builder",
     "resonance"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "domain-mode-isolation"
+  ],
+  "potentially_redundant_with": [
+    "behavior-gene-builder",
+    "resonance"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "recurring module relationship",
+    "participant interfaces",
+    "authority order",
+    "state or evidence flow",
+    "success and failure examples"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "versioned Resonance Gene",
+    "coupling and suppression rules",
+    "compatibility matrix",
+    "composition tests"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose prose around a compact coupling manifest"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit interfaces",
+      "authority rule",
+      "suppression behavior",
+      "termination test"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "implicit coupling",
+    "repetition amplification",
+    "hidden-channel claims",
+    "authority inversion",
+    "nonterminating module feedback"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +99,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "The same module combinations repeatedly need ordering, data handoff, reinforcement, or conflict suppression, but ad hoc coupling becomes implicit and inconsistent.",
+  "os_role": [
+    "cross-module coupling-rule builder",
+    "specialized Behavior Gene factory"
+  ],
+  "pipeline_stages": [
+    "relationship observation",
+    "coupling specification",
+    "composition testing",
+    "versioned publication"
+  ],
+  "best_fit_tasks": [
+    "recurring validator-generator pairings",
+    "stable Core-Gene couplings",
+    "multi-module evidence workflows",
+    "repeated authority-sensitive compositions"
+  ],
+  "avoid_when": [
+    "the need is a general task behavior unrelated to module coupling",
+    "the modules interact only once",
+    "the host lacks an explicit state or data-transfer path"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Identify a repeated module relationship and encode a narrow coupling Gene containing activation pattern, participants, directional inputs and outputs, ordering, reinforcement rule, suppression rule, authority precedence, termination, and failure behavior. Test the coupling with one participant absent, with conflicting instructions, and with irrelevant output. Reinforcement means clearer coordination through real state or context, never repeated claims or imagined latent links.",
+  "procedure": [
+    "Collect repeated cases where the same modules should coordinate and isolate the stable relationship.",
+    "Name participants, trigger, direction of state or evidence flow, and completion condition.",
+    "Specify which outputs reinforce the next module and which irrelevant or conflicting effects are suppressed.",
+    "Declare authority ordering, unavailable-module behavior, and conflict escalation.",
+    "Test normal coupling, missing participant, conflict, repetition, and termination cases.",
+    "Package the coupling as a versioned Behavior Gene with provenance and compatibility notes."
+  ],
+  "always_do": [
+    "use explicit host-supported interfaces",
+    "preserve module identities and authority",
+    "define both reinforcement and suppression",
+    "test termination and missing-module behavior"
+  ],
+  "never_do": [
+    "claim hidden inter-module communication",
+    "use repetition as amplification",
+    "merge the coupled modules into one opaque component",
+    "use this builder for ordinary standalone behavior"
+  ],
+  "interaction_reasons": {
+    "behavior-gene-builder": "The general builder supplies the Gene schema; Resonance Gene Builder specializes it for module coupling.",
+    "resonance": "Resonance identifies and coordinates reinforcing module effects that the Gene makes reusable.",
+    "architect-orchestrator": "The architect loads the coupling only when its participant pattern is active."
+  },
+  "counterbalance_reasons": {
+    "domain-mode-isolation": "Isolation prevents the coupling from leaking across unrelated domains or modes."
+  },
+  "redundancy_reasons": {
+    "behavior-gene-builder": "General versus specialized: Behavior Gene Builder creates any recurring behavior; Resonance Gene Builder creates only cross-module relationship rules.",
+    "resonance": "Resonance executes coordination; the builder authors and validates reusable coupling genes."
+  },
+  "conflict_rules": [
+    "Global authority ordering outranks a coupling's preferred flow.",
+    "Missing participants disable or degrade the coupling explicitly rather than being hallucinated.",
+    "Conflicting participant outputs are surfaced to the declared resolver, not amplified."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-06. Resonance Genes",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "14. BEHAVIOR GENE + CORE SEPARATION — HISTORICAL GENESIS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "controlled-drift-corridors",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "controlled-drift-corridors-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Narrative order and length may change, but dates, causal uncertainty, and remediation commitments must not.",
+      "expect": "A shorter readable brief whose protected meanings remain intact.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "controlled-drift-corridors-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "all content is zero-drift",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "controlled-drift-corridors-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Higher-authority task constraints and zero-drift fields override corridor permissions.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "controlled-drift-corridors-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Stop transformation when invariants cannot be measured or recovered.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "controlled-drift-corridors-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit allowed dimensions",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "controlled-drift-corridors-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "One artifact contains flexible exposition and immutable factual/contractual regions.",
+      "expect": "Assign named, testable corridor widths by region and revert excursions.",
+      "reject": "Use one global creativity level or choose exact copy for everything."
+    }
+  ]
+}

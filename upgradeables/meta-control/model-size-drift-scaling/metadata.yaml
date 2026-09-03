@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-18",
   "slug": "model-size-drift-scaling",
   "display_name": "Drift-Stability Scaling with Model Size",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,46 +23,69 @@
     "guard",
     "reference-module"
   ],
-  "purpose": "Reduce unnecessary scaffolding as base-model reliability grows while preserving required truth, safety, and state controls.",
+  "purpose": "Avoid fossilized over-scaffolding on more reliable models without mistaking model strength for permission to remove essential controls.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "cross-model deployments",
+    "model upgrades",
+    "prompt simplification",
+    "reliability-sensitive drift control"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "there is no comparative reliability evidence",
+    "the control is a non-negotiable invariant",
+    "environment limitations rather than model behavior are the dominant issue"
   ],
   "triggers": [
     "adapting a workflow across model capability levels"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "there is no comparative reliability evidence",
+    "the control is a non-negotiable invariant",
+    "environment limitations rather than model behavior are the dominant issue"
   ],
   "requires": [],
   "recommended_with": [
+    "future-proof-mode-selector",
+    "risk-tier-scaling"
+  ],
+  "counterbalances": [
+    "meta-awareness"
+  ],
+  "potentially_redundant_with": [
+    "cognitive-governor",
     "future-proof-mode-selector"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "model reliability evidence",
+    "control inventory and classification",
+    "task family",
+    "regression thresholds",
+    "risk requirements"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "model-specific scaffold tier",
+    "retained and compressed control map",
+    "regression evidence",
+    "reactivation rules"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "redundant restatement and low-value self-reminders proven unnecessary for the task family"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "truth and safety gates",
+      "explicit external-state checks",
+      "task-relevant regression tests",
+      "reactivation path"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "size-as-capability assumption",
+    "invariant removal",
+    "benchmark overgeneralization",
+    "irreversible simplification",
+    "regression without reactivation"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +98,87 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Static prompts can burden stronger models with redundant repetition, while naive capability optimism can strip grounding and state guards that remain necessary.",
+  "os_role": [
+    "model-reliability scaling policy",
+    "scaffold simplification controller"
+  ],
+  "pipeline_stages": [
+    "model evaluation",
+    "control classification",
+    "scaffold scaling",
+    "regression monitoring"
+  ],
+  "best_fit_tasks": [
+    "cross-model deployments",
+    "model upgrades",
+    "prompt simplification",
+    "reliability-sensitive drift control"
+  ],
+  "avoid_when": [
+    "there is no comparative reliability evidence",
+    "the control is a non-negotiable invariant",
+    "environment limitations rather than model behavior are the dominant issue"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Classify controls as invariant, compensatory, or convenience scaffolds; measure each target model on task-relevant drift, instruction retention, state consistency, and validation behavior; reduce only compensatory repetition whose function is demonstrably supplied by the base model. Preserve invariant truth, safety, authority, and external-state checks and restore removed scaffolds automatically when regression thresholds fail. DSS-MS scales control density by measured reliability; FPMS decides the wider host profile.",
+  "procedure": [
+    "Inventory controls and classify each as invariant, compensatory, or convenience.",
+    "Evaluate the target model on representative drift, state, truth, and failure cases.",
+    "Map measured reliability to a predeclared scaffold tier.",
+    "Remove or compress one compensatory control class at a time while retaining invariants.",
+    "Run regression and adversarial tests against the prior configuration.",
+    "Publish the model-specific profile with reactivation thresholds and monitor for regressions."
+  ],
+  "always_do": [
+    "use task-relevant evidence rather than size labels alone",
+    "preserve invariants",
+    "change one control class at a time",
+    "keep reactivation thresholds"
+  ],
+  "never_do": [
+    "assume frontier means drift-free",
+    "remove external capability checks",
+    "treat benchmark score as universal reliability",
+    "drop safety or truth controls for latency"
+  ],
+  "interaction_reasons": {
+    "future-proof-mode-selector": "FPMS combines this reliability profile with tools, state, environment, and risk to choose an operating mode.",
+    "risk-tier-scaling": "Risk tiers can require heavy validation even on a highly reliable model."
+  },
+  "counterbalance_reasons": {
+    "meta-awareness": "Meta-Awareness detects process regressions that should reactivate compensatory scaffolds."
+  },
+  "redundancy_reasons": {
+    "future-proof-mode-selector": "DSS-MS generates model-reliability scaling; FPMS performs the broader multi-factor selection.",
+    "cognitive-governor": "Cognitive Governor budgets effort per task; DSS-MS configures scaffold density per model profile."
+  },
+  "conflict_rules": [
+    "Invariant controls do not scale away.",
+    "High task risk may force a heavier profile than average model reliability suggests.",
+    "If evidence is absent or mixed, retain the prior conservative control tier."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-18. Drift-Stability Scaling with Model Size (DSS-MS)",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "16. COPILOT / DOCUMENT-BASED IMPLEMENTATION CONSTRAINTS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

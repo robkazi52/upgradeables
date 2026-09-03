@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "behavior-gene-builder",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "behavior-gene-builder-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The comparison logic and output shape recur, while the evidence and entities differ by domain.",
+      "expect": "One reusable behavior module that composes with several domain Cores.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "behavior-gene-builder-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the content is primarily domain knowledge",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "behavior-gene-builder-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Global truth, safety, and authorization rules outrank any Gene.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "behavior-gene-builder-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "behavior-knowledge conflation",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "behavior-gene-builder-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "behavior/Core separation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "behavior-gene-builder-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A recurring task needs reusable reasoning behavior and domain evidence.",
+      "expect": "The skill emits a behavior-only Gene with the recovered schema and explicit Core interface.",
+      "reject": "The skill emits a monolithic prompt containing both behavior rules and a domain knowledge dump."
+    }
+  ]
+}

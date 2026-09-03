@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-09",
   "slug": "working-memory-cues",
   "display_name": "Working-Memory Cues",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,46 +20,66 @@
     "state-schema",
     "skill-component"
   ],
-  "purpose": "Maintain compact reminders of the current objective and constraints without repeatedly loading the full instruction set.",
+  "purpose": "Keep easily forgotten but relevant information salient during execution.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "long transformations",
+    "repetitive tool loops",
+    "tasks with a few recurring constraints",
+    "review workflows"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the cue duplicates already salient text",
+    "too many cues would become noise",
+    "the cue would substitute for canonical state"
   ],
   "triggers": [
     "many constraints must remain active"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the cue duplicates already salient text",
+    "too many cues would become noise",
+    "the cue would substitute for canonical state"
   ],
   "requires": [],
   "recommended_with": [
+    "stable-long-context",
     "stateblock",
     "working-memory-lock-in"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "attention-compression-scaffold",
+    "clarification-gateway"
+  ],
+  "potentially_redundant_with": [
+    "mode-lock-in",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "canonical state pointer",
+    "known omission risk",
+    "trigger step",
+    "cue retirement condition"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "short contextual reminder",
+    "state/source pointer",
+    "cue lifecycle status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "explicit cues for a short simple task",
+      "reminders for reliably salient constraints"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "highest-risk cue at transition points",
+      "canonical pointer",
+      "retirement discipline"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not cue an unverified claim as fact.",
+    "Escalate to a larger state view when the decision cannot be represented safely in a short reminder."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -72,5 +92,90 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Even when state is stored correctly, a model may fail to attend to the right item at the moment it matters.",
+  "os_role": [
+    "attention prompt",
+    "state pointer",
+    "checkpoint reminder"
+  ],
+  "pipeline_stages": [
+    "before risky step",
+    "after context switch",
+    "before output",
+    "at known failure points"
+  ],
+  "best_fit_tasks": [
+    "long transformations",
+    "repetitive tool loops",
+    "tasks with a few recurring constraints",
+    "review workflows"
+  ],
+  "avoid_when": [
+    "the cue duplicates already salient text",
+    "too many cues would become noise",
+    "the cue would substitute for canonical state"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Derive a very short cue from canonical state and attach it to the step where omission is likely: a field pointer, invariant, question, or validation instruction. Retire the cue when its trigger or risk disappears; changes to truth occur in canonical state, never inside the cue.",
+  "procedure": [
+    "Identify a recurrent omission risk and its decision point.",
+    "Select the smallest canonical state item that prevents it.",
+    "Write an imperative cue with a stable field or source pointer.",
+    "Present it only at the triggering step.",
+    "Measure whether it prevents the omission and remove stale or redundant cues."
+  ],
+  "always_do": [
+    "keep cues short",
+    "link them to canonical state",
+    "scope them to a trigger",
+    "remove stale cues"
+  ],
+  "never_do": [
+    "use cues as a second truth store",
+    "flood every step with all constraints",
+    "leave a cue active after its source changes"
+  ],
+  "interaction_reasons": {
+    "stateblock": "Provides the authoritative value or pointer behind each cue.",
+    "working-memory-lock-in": "Cues can refresh locked critical items at specific moments.",
+    "stable-long-context": "Surfaces a detail from the long-context index without expanding all context."
+  },
+  "counterbalance_reasons": {
+    "attention-compression-scaffold": "Provides a richer local view when one-line reminders are insufficient.",
+    "clarification-gateway": "Converts unresolved ambiguity into a question rather than an asserted cue."
+  },
+  "redundancy_reasons": {
+    "working-memory-lock-in": "Use cues for momentary reminders and lock-in for continuously critical state; do not duplicate both verbatim everywhere.",
+    "mode-lock-in": "A cue may point to the mode but does not define or enforce it."
+  },
+  "conflict_rules": [
+    "Canonical state and higher-authority instructions override stale cues.",
+    "When multiple cues compete, surface the one tied to the highest-risk immediate decision."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Working Memory Cues"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "2. November 28, 2025 — frozen T1-Core Bundle v1",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Working Memory Cues inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8. Working-Memory Lock-In Heartbeats",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Semantic anchors and heartbeat context"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

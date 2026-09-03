@@ -2,117 +2,174 @@
 
 ## Summary
 
-State the decision target and criteria before collecting supporting analysis.
+Provisional scaffold that makes the decision to be produced explicit before collecting supporting analysis.
 
 ## Purpose
 
-Provide a reusable `skill-component` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A solver can perform substantial analysis without defining what choice, recommendation, or commitment the analysis must support.
+
+## Where It Fits in the OS
+
+Roles: reasoning scaffold, decision framing. Pipeline stages: task framing, pre-analysis.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- recommendations
+- go/no-go reviews
+- option selection
+- resource allocation
+
+## When Not to Use
+
+- the task asks only for faithful extraction or description
+- the decision owner or available options are unknown
+- framing a decision would falsely narrow an exploratory task
 
 ## Scope
 
-Functional classes: planning-reasoning, output. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `decision-first-scaffold@1.1.0`. ID: `JAN26-04`. Functional classes: planning-reasoning, output. Activation: `U1-common-conditional`. Mechanism basis: `provisional`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
-- analysis risks becoming directionless
+- Activate when the task requires analysis risks becoming directionless.
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task asks only for faithful extraction or description
+- the decision owner or available options are unknown
+- framing a decision would falsely narrow an exploratory task
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- decision request
+- decision owner
+- candidate options
+- constraints
+- criteria
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- decision frame
+- criterion-linked analysis plan
+- recommendation or evidence-gap decision
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
+Modern conservative interpretation: write a decision sentence with owner, options, criteria, and deadline or commitment point; then admit analysis only when it changes an option score, exposes a constraint, or reduces a named uncertainty. The historical corpus recovers the exact name but not this mechanism.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. State the decision in one sentence, including who will act.
+2. List viable options, including defer or gather-more-evidence where legitimate.
+3. Lock decision criteria and non-negotiable constraints.
+4. Map each analysis question to a criterion or uncertainty.
+5. Produce a recommendation with the evidence and unresolved uncertainty that drives it.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- label the procedure as a modern interpretation
+- distinguish decision criteria from supporting information
+- preserve an explicit no-decision outcome when evidence is insufficient
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- claim the procedure is historically recovered
+- force a decision into a descriptive task
+- bury the actual decision below background analysis
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `task-set-lock-in`
+
+Task-Set Lock-In preserves the framed decision and constraints across a long run.
+
+### `dominant-driver-isolation-scaffold`
+
+Driver isolation can identify which criterion should dominate the recommendation.
 
 ## Compatible Upgradeables
 
-- `task-set-lock-in`
+- `task-set-lock-in` — Task-Set Lock-In preserves the framed decision and constraints across a long run.
+- `dominant-driver-isolation-scaffold` — Driver isolation can identify which criterion should dominate the recommendation.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `anti-tunnel-vision`
+
+Anti-Tunnel Vision prevents a decision-first frame from becoming first-option lock-in.
 
 ## Potential Redundancy
 
-- `None declared`
+### `task-set-lock-in`
+
+Both stabilize direction, but this provisional scaffold defines the decision while Task-Set Lock-In preserves an already defined task.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- If the user requests exploration without commitment, do not impose a final choice.
+- If evidence cannot support any option, return the missing evidence rather than a fabricated recommendation.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- invented historical mechanics
+- premature option closure
+- analysis unrelated to a criterion
+- false certainty
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- a formal decision matrix for a simple binary choice
+
+Keep mandatory:
+
+- explicit decision statement
+- criterion linkage
+- uncertainty-aware outcome
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
+- recommendations
+- go/no-go reviews
+- option selection
+- resource allocation
 
 ## Example Composition
 
-Activate `decision-first-scaffold` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Choose whether to migrate a service this quarter.
+
+**Why it activates:** The team has collected architecture notes without defining the commitment.
+
+**Inputs/state:** Two target platforms, a deadline, compliance constraints, and uncertain migration effort are known.
+
+**Action:** Frames the quarter-specific go/no-go decision, maps compliance, cost, and migration risk to the two options, and recommends a gated pilot.
+
+**Does not:** Treat every platform fact as equally decision-relevant.
+
+**Result/state change:** A criterion-linked recommendation with a named evidence gate.
+
+**Companions:** ['anti-tunnel-vision', 'task-set-lock-in']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-04` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: None.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-04` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: None.
+
+Source support: `source-gap`. Mechanism basis: `provisional`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)

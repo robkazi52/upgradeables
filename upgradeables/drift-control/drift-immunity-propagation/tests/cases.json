@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "drift-immunity-propagation",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "drift-immunity-propagation-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Each stage could round, relabel, or detach the figures from their period.",
+      "expect": "Final figures retain source identity and protected semantics through the pipeline.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "drift-immunity-propagation-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "no downstream artifact derives from protected material",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "drift-immunity-propagation-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Original verified source and higher-authority constraints outrank downstream paraphrases.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "drift-immunity-propagation-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not label a derivative immune when its invariant cannot be tested.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "drift-immunity-propagation-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "stable invariant identity",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "drift-immunity-propagation-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A zero-drift fact passes through three transformations and two agents.",
+      "expect": "Carry identity, provenance, scope, and predicate through every boundary and test each derivative.",
+      "reject": "Lock it only at extraction and trust later summaries to preserve it."
+    }
+  ]
+}

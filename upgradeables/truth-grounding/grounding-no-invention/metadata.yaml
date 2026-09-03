@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-04",
   "slug": "grounding-no-invention",
   "display_name": "Grounding / No-Invention",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,49 +21,59 @@
     "validator",
     "guard"
   ],
-  "purpose": "Keep factual output within supplied or verified evidence and label or omit unsupported material.",
+  "purpose": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "source-grounded research",
+    "record and chart review",
+    "policy or legal analysis",
+    "citation-bearing authoring",
+    "tool-result reporting"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "pure creative generation has no asserted factual source boundary",
+    "the task explicitly asks for labeled brainstorming rather than factual claims"
   ],
   "triggers": [
     "work relies on documents, data, external facts, or consequential claims"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "pure creative generation has no asserted factual source boundary",
+    "the task explicitly asks for labeled brainstorming rather than factual claims"
   ],
   "requires": [],
   "recommended_with": [
     "citation-fidelity",
+    "epistemic-status-gating",
     "fail-closed-abstention"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "controlled-drift-corridors"
+  ],
+  "potentially_redundant_with": [
+    "specificity-penalty-gate"
+  ],
   "conflicts": [],
   "inputs": [
+    "allowed source/evidence set",
     "candidate factual claims",
-    "supplied or verified evidence boundary"
+    "task-specific evidence rules"
   ],
   "outputs": [
-    "supported claims",
+    "supported factual claims",
     "labeled inference",
-    "omitted/uncertain unsupported claims"
+    "uncertainty or undocumented markers",
+    "omitted unsupported claims"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose source bookkeeping for trivial directly quoted facts"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "every asserted material fact must remain within the authorized evidence boundary"
     ]
   },
   "failure_boundary": [
-    "when an essential claim lacks support, fail closed instead of filling the gap"
+    "When an essential material claim lacks support inside the authorized evidence boundary, omit it or fail closed."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +86,84 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Stops plausible model completion from entering the factual record when the source is silent, incomplete, inaccessible, or ambiguous.",
+  "os_role": [
+    "truth-guard",
+    "evidence-boundary"
+  ],
+  "pipeline_stages": [
+    "evidence-intake",
+    "reasoning",
+    "draft-validation",
+    "pre-output-verification"
+  ],
+  "best_fit_tasks": [
+    "source-grounded research",
+    "record and chart review",
+    "policy or legal analysis",
+    "citation-bearing authoring",
+    "tool-result reporting"
+  ],
+  "avoid_when": [
+    "pure creative generation has no asserted factual source boundary",
+    "the task explicitly asks for labeled brainstorming rather than factual claims"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Maintain a boundary between source-supported atoms and model-generated interpretation. Each material factual claim must resolve to supplied data or verified external evidence; missing fields remain missing, and permissible inference is labeled instead of being written back as source fact.",
+  "procedure": [
+    "Declare the allowed evidence boundary.",
+    "Extract material source-supported facts without filling absent fields.",
+    "Separate facts from interpretations and hypotheses.",
+    "For each candidate factual claim, locate supporting evidence inside the boundary.",
+    "Label, narrow, omit, or fail closed on unsupported claims.",
+    "Recheck that repair or style changes did not introduce new facts."
+  ],
+  "always_do": [
+    "Mark material uncertainty and undocumented fields.",
+    "Keep factual claims traceable to evidence.",
+    "Return the supported subset when full closure is impossible."
+  ],
+  "never_do": [
+    "Invent a source, quotation, measurement, policy, patient detail, or tool result.",
+    "Convert a likely value into a documented value.",
+    "Let a validator manufacture facts to make an answer pass."
+  ],
+  "interaction_reasons": {
+    "citation-fidelity": "Citation Fidelity verifies the finer claim-to-citation support relationship inside the broader grounding boundary.",
+    "fail-closed-abstention": "Provides the terminal behavior when essential support is absent.",
+    "epistemic-status-gating": "Labels permitted inference so it is not confused with source fact."
+  },
+  "counterbalance_reasons": {
+    "controlled-drift-corridors": "Controlled drift permits bounded synthesis while grounding fixes the facts that may not move."
+  },
+  "redundancy_reasons": {
+    "specificity-penalty-gate": "Both reject unsupported content; specificity penalty focuses on claims that are directionally plausible but more precise than the evidence allows."
+  },
+  "conflict_rules": [
+    "Verified evidence outranks fluent completion and stylistic requests.",
+    "An explicit hypothetical mode may generate possibilities, but they remain outside factual state."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T1-04. Grounding / No-Invention",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "2. November 28, 2025 — frozen T1-Core Bundle v1",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "12.5 Retrofitted no-inference intake behavior",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

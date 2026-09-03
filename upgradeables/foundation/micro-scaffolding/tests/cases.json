@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "micro-scaffolding",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "micro-scaffolding-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Numbers, citations, and conclusion must remain unchanged while prose changes.",
+      "expect": "A clearer paragraph with all four invariants intact and no stale scaffold.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "micro-scaffolding-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a one-step task has no fragile constraints",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "micro-scaffolding-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Global task locks and source boundaries outrank a local scaffold.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "micro-scaffolding-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Escalate when the required control cannot remain local or when the scaffold grows into a duplicate of the parent plan/state.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "micro-scaffolding-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "identify the fragile local invariants",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "micro-scaffolding-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A localized rewrite with four protected atoms and a larger StateBlock already present.",
+      "expect": "Create a smaller temporary four-item control, preserve all atoms, then retire it after verification.",
+      "reject": "Copy the whole StateBlock, omit local checkpoints, or carry the scaffold into unrelated work."
+    }
+  ]
+}

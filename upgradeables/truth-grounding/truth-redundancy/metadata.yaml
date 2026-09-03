@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-03",
   "slug": "truth-redundancy",
   "display_name": "Truth Redundancy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,49 +22,55 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Use two independent truth anchors so one failure is less likely to corrupt the result.",
+  "purpose": "Reduce single-point truth failure before high-impact synthesis or decision-making.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "high-stakes evidence work",
+    "critical factual claims",
+    "source-grounded decision support",
+    "safety-relevant tradeoffs"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the claim is low risk and an authoritative primary source is decisive",
+    "a second anchor would merely repeat the first source"
   ],
   "triggers": [
     "a consequential claim can be independently checked"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the claim is low risk and an authoritative primary source is decisive",
+    "a second anchor would merely repeat the first source"
   ],
   "requires": [],
   "recommended_with": [
+    "critical-atomic-verification",
     "multi-truth-gating"
   ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "multi-truth-gating"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "consequential truth atom",
+    "primary source/check",
+    "candidate independent source/check",
+    "provenance"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "verified independent anchor pair",
+    "non-independence warning",
+    "missing-anchor status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "redundant anchoring for low-impact routine facts"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "when redundancy is claimed, the anchors must be genuinely independent"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If no genuinely independent second anchor is available, report that limitation and do not claim redundant verification."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +83,77 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents apparent confidence based on only one fragile anchor and exposes when supposed corroboration is not independent.",
+  "os_role": [
+    "evidence-redundancy",
+    "truth-safety"
+  ],
+  "pipeline_stages": [
+    "evidence-selection",
+    "pre-synthesis-validation"
+  ],
+  "best_fit_tasks": [
+    "high-stakes evidence work",
+    "critical factual claims",
+    "source-grounded decision support",
+    "safety-relevant tradeoffs"
+  ],
+  "avoid_when": [
+    "the claim is low risk and an authoritative primary source is decisive",
+    "a second anchor would merely repeat the first source"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "For a selected truth atom, establish two evidence or validation anchors whose failure modes are meaningfully independent. Record provenance and the proposition each anchor supports; the pair is then passed to a gate or resolver rather than treated as automatic proof.",
+  "procedure": [
+    "Identify the consequential truth atom.",
+    "Select the primary anchor and record its failure mode.",
+    "Select a second anchor with a distinct source or validation path.",
+    "Verify that the second does not merely derive from the first.",
+    "Record each anchor's supported scope and hand the pair to Multi-Truth Gating."
+  ],
+  "always_do": [
+    "Test independence, not just numerical multiplicity.",
+    "Keep anchor provenance and supported scope.",
+    "Apply redundancy selectively to consequential claims."
+  ],
+  "never_do": [
+    "Count copied or circular claims as independent truth.",
+    "Assume two anchors automatically resolve disagreement.",
+    "Create unsupported content to supply a missing second anchor."
+  ],
+  "interaction_reasons": {
+    "multi-truth-gating": "Evaluates whether the two anchors agree sufficiently for commitment.",
+    "critical-atomic-verification": "Identifies which small, consequential claims merit redundant anchoring."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "multi-truth-gating": "Truth Redundancy constructs an independent pair; Multi-Truth Gating compares it and determines disposition."
+  },
+  "conflict_rules": [
+    "Independence is invalid if both anchors share the same unverified upstream source.",
+    "A safety veto still controls even when two non-safety anchors agree."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-03. Truth Redundancy / Dual-Lepton Truth Redundancy",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.4 Multiverse / plan generation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

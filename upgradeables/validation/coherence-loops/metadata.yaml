@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-11",
   "slug": "coherence-loops",
   "display_name": "Coherence Loops",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,52 +21,60 @@
     "validator",
     "parent-skill-mode"
   ],
-  "purpose": "Boundedly compare local output with global goals and structure until coherence is sufficient.",
+  "purpose": "Repair cross-part inconsistencies while preventing endless self-review.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "multi-file changes",
+    "long-form documents",
+    "multi-agent synthesis",
+    "cross-component specification repair"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the discrepancy is isolated and a single deterministic correction suffices",
+    "no stable acceptance criteria exist"
   ],
   "triggers": [
     "local edits risk global inconsistency"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the discrepancy is isolated and a single deterministic correction suffices",
+    "no stable acceptance criteria exist"
   ],
   "requires": [],
   "recommended_with": [
     "bounded-exit",
+    "coherence-heartbeat",
+    "reflectos"
+  ],
+  "counterbalances": [
+    "crispr-edit"
+  ],
+  "potentially_redundant_with": [
     "coherence-heartbeat"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "coherence discrepancy",
+    "governing invariants",
+    "dependency map",
+    "iteration budget",
+    "acceptance checks"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "repaired coherent state",
+    "iteration ledger",
+    "non-convergence report",
+    "external decision request"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "multiple iterations after the first repair fully satisfies all boundary checks"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit invariants, dependency recheck, and bounded exit"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Stop without certification when inconsistency does not decrease, repairs oscillate, or resolution requires changing a locked invariant."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -79,5 +87,83 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A single patch can move contradictions elsewhere, while unbounded reflection consumes effort without a convergence rule.",
+  "os_role": [
+    "global-consistency-repair-loop",
+    "bounded-convergence-controller"
+  ],
+  "pipeline_stages": [
+    "integration",
+    "post-drift-detection",
+    "pre-release"
+  ],
+  "best_fit_tasks": [
+    "multi-file changes",
+    "long-form documents",
+    "multi-agent synthesis",
+    "cross-component specification repair"
+  ],
+  "avoid_when": [
+    "the discrepancy is isolated and a single deterministic correction suffices",
+    "no stable acceptance criteria exist"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Freeze the governing invariants, locate the smallest inconsistent dependency set, repair the highest-leverage cause, and rerun checks across affected boundaries. Continue only while measured inconsistency decreases; stop on verified convergence, a fixed iteration/depth budget, repeated unchanged failure, or a conflict requiring external authority.",
+  "procedure": [
+    "Record the detected inconsistency and governing invariants.",
+    "Trace affected dependencies and identify the earliest causal mismatch.",
+    "Choose the smallest repair expected to restore the widest agreement.",
+    "Apply or propose the repair and rerun local plus boundary checks.",
+    "Compare residual inconsistency with the prior iteration.",
+    "Exit on convergence; otherwise iterate within the explicit budget.",
+    "On non-convergence, return the stable conflict and required decision instead of looping."
+  ],
+  "always_do": [
+    "Set exit criteria before iterating.",
+    "Recheck dependent boundaries after each repair.",
+    "Preserve an audit trail of changed assumptions."
+  ],
+  "never_do": [
+    "Repeat reflection with no changed hypothesis or evidence.",
+    "Declare convergence because the iteration budget expired.",
+    "Repair symptoms while ignoring a known upstream cause."
+  ],
+  "interaction_reasons": {
+    "coherence-heartbeat": "Supplies discrepancy signals that justify a deeper loop.",
+    "bounded-exit": "Enforces convergence and stop conditions.",
+    "reflectos": "Adds reflective comparison of intended and actual process when the inconsistency is procedural."
+  },
+  "counterbalance_reasons": {
+    "crispr-edit": "Prevents a coherence repair from expanding beyond the smallest causal edit."
+  },
+  "redundancy_reasons": {
+    "coherence-heartbeat": "The heartbeat monitors; the loop performs bounded causal repair."
+  },
+  "conflict_rules": [
+    "Explicit invariants outrank local convenience.",
+    "If repairs oscillate between two states, stop and expose the underlying unresolved tradeoff."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-11. Coherence Loops",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "A-11. Coherence Loops",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "9. BOUNDED EXIT",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

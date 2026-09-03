@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-13",
   "slug": "reasoning-throughput-governor",
   "display_name": "Reasoning Throughput Governor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,47 +22,73 @@
   "implementation_forms": [
     "orchestrator"
   ],
-  "purpose": "Balance speed, breadth, and validation to avoid both underprocessing and wasteful overprocessing.",
+  "purpose": "Maximize useful completed work per unit time while respecting the Cognitive Governor's budget and every mandatory validation barrier.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "large package builds",
+    "multi-agent research",
+    "batch validation",
+    "latency-sensitive pipelines",
+    "branch-heavy planning"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task is one atomic operation",
+    "safety protocol requires a strictly serial sequence",
+    "throughput signals cannot be observed"
   ],
   "triggers": [
     "latency, breadth, and validation compete"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task is one atomic operation",
+    "safety protocol requires a strictly serial sequence",
+    "throughput signals cannot be observed"
   ],
   "requires": [],
   "recommended_with": [
     "cognitive-governor",
+    "dynamic-depth-allocation",
+    "parallel-qms"
+  ],
+  "counterbalances": [
+    "meta-awareness"
+  ],
+  "potentially_redundant_with": [
+    "cognitive-governor",
     "dynamic-depth-allocation"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "workflow dependency graph",
+    "global budget",
+    "regional depth map",
+    "latency target",
+    "completion, rework, and backlog signals"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "work-in-progress limits",
+    "batch and concurrency plan",
+    "validation cadence",
+    "backpressure decisions",
+    "useful throughput report"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal queue metrics for a short serial task",
+      "multi-stage tuning when no backlog exists"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "validation backpressure",
+      "dependency-aware concurrency",
+      "useful-completion metric",
+      "budget compliance"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "raw-volume optimization",
+    "validator starvation",
+    "parallel dependency races",
+    "queue explosion",
+    "tuning overhead greater than saved time"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +101,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Even with the right total budget and regional depth, work can be scheduled poorly: too many branches saturate validation, tiny batches add overhead, or generation runs far ahead of evidence checks.",
+  "os_role": [
+    "reasoning flow controller",
+    "pace-and-breadth governor"
+  ],
+  "pipeline_stages": [
+    "queue planning",
+    "batch and concurrency control",
+    "validation scheduling",
+    "backpressure response"
+  ],
+  "best_fit_tasks": [
+    "large package builds",
+    "multi-agent research",
+    "batch validation",
+    "latency-sensitive pipelines",
+    "branch-heavy planning"
+  ],
+  "avoid_when": [
+    "the task is one atomic operation",
+    "safety protocol requires a strictly serial sequence",
+    "throughput signals cannot be observed"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Treat planning, generation, evidence acquisition, and validation as a bounded work queue. Set limits on active branches, batch size, and how far unchecked output may accumulate; observe completion rate, rework, validator backlog, and error rate, then add backpressure, reduce breadth, or rebalance stages. RTG governs how work flows under a budget; Cognitive Governor sets total spend and DDA sets depth per region.",
+  "procedure": [
+    "Map the workflow stages, dependencies, and mandatory serial gates.",
+    "Set initial work-in-progress, branch, batch, and unchecked-output limits.",
+    "Measure useful completions, latency, rework, error rate, and validator backlog.",
+    "Increase concurrency or batch size only where independent work exists and checks keep pace.",
+    "Apply backpressure or narrow breadth when validation lags or rework rises.",
+    "Stop tuning when throughput meets the task's latency and quality target within the governed budget."
+  ],
+  "always_do": [
+    "measure useful completion rather than raw output volume",
+    "keep validation coupled to generation",
+    "respect dependency and authority serialization",
+    "apply backpressure on rising rework"
+  ],
+  "never_do": [
+    "parallelize dependent decisions",
+    "let unchecked output grow without bound",
+    "optimize speed by dropping mandatory checks",
+    "mistake more tokens or agents for higher throughput"
+  ],
+  "interaction_reasons": {
+    "cognitive-governor": "The Cognitive Governor sets the total cost and time envelope within which RTG schedules work.",
+    "dynamic-depth-allocation": "DDA specifies how much depth each region needs; RTG schedules those unequal units efficiently.",
+    "parallel-qms": "Parallel-QMS consumes validation capacity that RTG must keep synchronized with candidate production."
+  },
+  "counterbalance_reasons": {
+    "meta-awareness": "Meta-Awareness detects queue loops, stalled progress, and module contention created by aggressive throughput settings."
+  },
+  "redundancy_reasons": {
+    "cognitive-governor": "Budget versus flow: Cognitive Governor decides total effort, RTG controls work rate and work in progress.",
+    "dynamic-depth-allocation": "Depth versus scheduling: DDA decides regional inspection depth, RTG decides batching and concurrency."
+  },
+  "conflict_rules": [
+    "Mandatory serial dependencies and vetoes override concurrency goals.",
+    "When validation backlog grows, production slows before checks are weakened.",
+    "Throughput changes cannot exceed the global reasoning envelope without governor approval."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-13. Reasoning Throughput Governor (RTG)",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "9. BOUNDED EXIT — DEEPER HISTORICAL USE",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "contradiction-micro-repair",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "contradiction-micro-repair-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The dates are mutually incompatible under the same pilot identity and year.",
+      "expect": "One local correction with timeline consistency restored.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "contradiction-micro-repair-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the apparent contradiction is a legitimate difference in scope or time",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "contradiction-micro-repair-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A source-locked claim outranks an unsupported generated claim.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "contradiction-micro-repair-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "false contradiction from different scopes",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "contradiction-micro-repair-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "scope normalization",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "contradiction-micro-repair-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Two nearby statements appear inconsistent.",
+      "expect": "The skill normalizes scope and authority, edits the smallest adjudicable region, and retests both statements.",
+      "reject": "The skill performs generic proofreading or rewrites both claims without proving a contradiction."
+    }
+  ]
+}

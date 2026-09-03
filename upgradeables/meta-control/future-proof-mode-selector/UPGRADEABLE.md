@@ -2,22 +2,38 @@
 
 ## Summary
 
-Select lighter or heavier scaffolding from host capability, environment support, and task risk.
+Selects an operating profile from observed host capability, environment support, and task risk rather than hard-coding one scaffold for every model.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep workflows portable across frontier and smaller models, tool environments, and future hosts without weakening invariant controls.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A workflow tuned to one host either burdens stronger systems with obsolete scaffolding or silently assumes tools, context, state, and reliability weaker hosts do not possess.
+
+## Where It Fits in the OS
+
+Roles: host-capability mode router, portability controller. Pipeline stages: capability probe, task-risk assessment, mode selection, fallback routing.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- cross-model skill packages
+- tool-optional workflows
+- portable agent systems
+- deployments with different context and persistence support
+
+## When Not to Use
+
+- the host and task profile are fixed
+- capability cannot be tested and no conservative fallback exists
+- selection would alter non-negotiable truth or safety rules
 
 ## Scope
 
-Functional classes: meta-control, orchestration. Activation:
-`U4-meta-architecture`. This modern classification is not a historical tier.
+Canonical package: `future-proof-mode-selector@1.1.0`. ID: `T4-17`. Functional classes: meta-control, orchestration. Activation: `U4-meta-architecture`. Mechanism basis: `normalized-from-recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,146 @@ Functional classes: meta-control, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the host and task profile are fixed
+- capability cannot be tested and no conservative fallback exists
+- selection would alter non-negotiable truth or safety rules
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- host capability evidence
+- environment tools and permissions
+- state and context support
+- task risk
+- available mode profiles
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- selected operating profile
+- enabled and omitted controls
+- fallback route
+- selection rationale
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Probe real host affordances—context, tools, state persistence, structured outputs, reliability evidence, and execution permissions—then combine them with task risk to choose a named light, standard, or heavy scaffold profile. Use model-size drift scaling as one capability signal, never as the selector itself; capability claims must be observed or declared, and truth, safety, state, and integrity invariants remain mandatory in every profile.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Declare the task's risk, state, tool, and validation requirements.
+2. Probe or read the host's actual capabilities and permissions without assuming hidden persistence or tools.
+3. Map capability and risk to a predeclared operating profile with explicit enabled and omitted controls.
+4. Run a readiness check and select a conservative fallback when any required affordance is absent.
+5. Monitor failures that invalidate the profile and switch modes at a checkpoint.
+6. Record the chosen profile and reasons so behavior remains reproducible across hosts.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- test capabilities rather than infer them from brand or model size
+- preserve invariant controls across profiles
+- provide a conservative fallback
+- record selection rationale
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- assume a larger model has tools or persistence
+- remove truth or safety gates as an optimization
+- silently change modes mid-action
+- encode one vendor's interface as universal semantics
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `model-size-drift-scaling`
+
+DSS-MS supplies a reliability-to-scaffolding scaling policy that FPMS uses alongside environment and risk.
+
+### `risk-tier-scaling`
+
+Risk Tier prevents a capable host from selecting an undercontrolled profile for consequential work.
+
+### `adapter-first-experimentation`
+
+Unsupported or novel host capabilities can be integrated as optional adapters.
 
 ## Compatible Upgradeables
 
-- `model-size-drift-scaling`
-- `risk-tier-scaling`
+- `model-size-drift-scaling` — DSS-MS supplies a reliability-to-scaffolding scaling policy that FPMS uses alongside environment and risk.
+- `risk-tier-scaling` — Risk Tier prevents a capable host from selecting an undercontrolled profile for consequential work.
+- `adapter-first-experimentation` — Unsupported or novel host capabilities can be integrated as optional adapters.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `safe-mode`
+
+SAFE provides the conservative fallback when capability or environment support is uncertain.
 
 ## Potential Redundancy
 
-- `None declared`
+### `model-size-drift-scaling`
+
+DSS-MS adjusts scaffolding as model reliability changes; FPMS makes the actual multi-factor mode choice including tools, state, permissions, and task risk.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Task-risk requirements override host convenience.
+- Absent required capability routes to fallback or blocked, never simulated capability.
+- Profile changes during execution occur only at a safe checkpoint with state transfer.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- capability hallucination
+- model-brand heuristics
+- unsafe light profile
+- vendor lock-in
+- mid-action mode switch
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose capability inventory when the host contract is already machine-verified
+
+Keep mandatory:
+
+- risk overlay
+- real capability check
+- invariant preservation
+- fallback
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- cross-model skill packages
+- tool-optional workflows
+- portable agent systems
+- deployments with different context and persistence support
 
 ## Example Composition
 
-Activate `future-proof-mode-selector` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Publish one repository skill usable by Copilot, Codex, and a tool-less chat model.
+
+**Why it activates:** The hosts differ in filesystem, command, context, and state capabilities.
+
+**Inputs/state:** Host manifests, task risk, and light, standard, and tool-enabled profiles are defined.
+
+**Action:** Selects tool-enabled validation for capable agents, a document-only sequence for Copilot, and a conservative manual checklist for the tool-less model while retaining source and safety gates.
+
+**Does not:** Assume all frontier models can run shell commands or drop integrity checks on the strongest model.
+
+**Result/state change:** Portable behavior with explicit host-specific execution profiles.
+
+**Companions:** ['model-size-drift-scaling', 'adapter-first-experimentation']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-17` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: FPMS.
+Primary source ID: `T4-17` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: FPMS.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-17. Future-Proof Mode Selector (FPMS) (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 16. COPILOT / DOCUMENT-BASED IMPLEMENTATION CONSTRAINTS (historical_assistant_artifact)

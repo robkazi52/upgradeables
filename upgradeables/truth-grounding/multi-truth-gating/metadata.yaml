@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-01",
   "slug": "multi-truth-gating",
   "display_name": "Multi-Truth Gating",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,50 +20,57 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Require compatible independent anchors or checks for important conclusions; resolve disagreement or abstain.",
+  "purpose": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "high-stakes evidence synthesis",
+    "conflicting-source research",
+    "medical, legal, or policy decisions",
+    "critical architecture choices"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the claim is low consequence and one authoritative direct source is sufficient",
+    "the supposed anchors merely duplicate the same underlying source"
   ],
   "triggers": [
     "an important conclusion rests on fragile evidence"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the claim is low consequence and one authoritative direct source is sufficient",
+    "the supposed anchors merely duplicate the same underlying source"
   ],
   "requires": [],
   "recommended_with": [
-    "truth-redundancy",
-    "parallel-qms"
+    "parallel-qms",
+    "truth-priority-hierarchy",
+    "truth-redundancy"
   ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "truth-redundancy"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "decision-critical conclusion",
+    "primary anchor",
+    "independent corroborating anchor or check",
+    "evidence priority rules"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "pass to commit",
+    "narrowed conclusion",
+    "re-evaluation request",
+    "abstention or unresolved-conflict status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "redundant checks for low-risk claims with a single decisive authority"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "decision-critical claims require genuinely independent support or an explicit unresolved status"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If an important conclusion lacks an independent check or the anchors materially disagree without resolution, do not certify the conclusion."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +83,80 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents a single unnoticed evidence or reasoning failure from propagating into an important decision.",
+  "os_role": [
+    "high-risk-truth-gate",
+    "commitment-validator"
+  ],
+  "pipeline_stages": [
+    "post-analysis",
+    "pre-synthesis",
+    "pre-output-commitment"
+  ],
+  "best_fit_tasks": [
+    "high-stakes evidence synthesis",
+    "conflicting-source research",
+    "medical, legal, or policy decisions",
+    "critical architecture choices"
+  ],
+  "avoid_when": [
+    "the claim is low consequence and one authoritative direct source is sufficient",
+    "the supposed anchors merely duplicate the same underlying source"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "For each decision-critical conclusion, identify a primary factual anchor and at least one genuinely independent corroborating anchor or verification path. Compare what each supports; convergence permits commitment, while material divergence triggers re-evaluation, a narrower claim, explicit uncertainty, or abstention.",
+  "procedure": [
+    "Identify conclusions whose failure would materially change the outcome.",
+    "Record the primary evidence or reasoning anchor for each.",
+    "Select an independent corroborating source or validation path.",
+    "Check independence and compare the supported propositions.",
+    "Resolve differences by evidence and authority rules rather than averaging.",
+    "Commit, narrow, rework, or abstain according to the comparison."
+  ],
+  "always_do": [
+    "Test anchor independence.",
+    "Scope the gate to important conclusions.",
+    "Preserve unresolved material disagreement."
+  ],
+  "never_do": [
+    "Count two summaries of the same source as independent anchors.",
+    "Use majority voting to erase a critical contradiction.",
+    "Run expensive redundant checks on every trivial statement."
+  ],
+  "interaction_reasons": {
+    "truth-redundancy": "Constructs the two independent anchors consumed by the gate.",
+    "parallel-qms": "Provides independent validation modes and a controlled collapse result.",
+    "truth-priority-hierarchy": "Resolves disagreements by explicit evidence authority."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "truth-redundancy": "Truth Redundancy creates redundant anchors; Multi-Truth Gating decides whether their agreement is sufficient for commitment."
+  },
+  "conflict_rules": [
+    "A higher-authority direct source can outweigh a weaker corroborating path, but the disagreement must be recorded.",
+    "Safety vetoes are not overridable by numerical agreement among other checks."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-01. Multi-Truth Gating",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8.12 Historical global collapse rule",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

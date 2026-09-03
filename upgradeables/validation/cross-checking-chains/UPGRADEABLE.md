@@ -2,22 +2,37 @@
 
 ## Summary
 
-Validate linked dependencies where one failure could cascade into a larger conclusion.
+Verifies a claim through an explicit sequence of differently purposed checks, where each link consumes the prior link's evidence and failure state.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Make validation ordered, traceable, and resistant to repeated correlated checking.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A pile of nominal checks can repeat the same assumption, omit prerequisites, or allow later confidence to obscure an earlier failure.
+
+## Where It Fits in the OS
+
+Roles: ordered-validation-orchestrator, evidence-handoff-chain. Pipeline stages: verification planning, sequential validation, final collapse.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- high-stakes fact verification
+- data pipeline validation
+- release qualification
+- multi-source research
+
+## When Not to Use
+
+- one direct authoritative check fully resolves a low-risk atom
+- checks cannot be ordered by dependency
 
 ## Scope
 
-Functional classes: validation. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `cross-checking-chains@1.1.0`. ID: `T3-07`. Functional classes: validation. Activation: `U2-specialized`. Mechanism basis: `recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,96 +40,136 @@ Functional classes: validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- one direct authoritative check fully resolves a low-risk atom
+- checks cannot be ordered by dependency
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- critical claim
+- ordered check specification
+- evidence sources
+- resolution rules
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- link-by-link ledger
+- typed failure location
+- resolved or blocked verdict
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Design a chain whose links have distinct jobs—such as identity/provenance, extraction, entailment, independent corroboration, and consequence testing. Each link receives the claim plus the prior evidence ledger, may add evidence or a typed failure, and cannot erase an upstream failure; certification requires every mandatory link to pass or an explicit resolution branch to close the discrepancy.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Select the critical claim or atom.
+2. Enumerate its verification dependencies in causal order.
+3. Assign each link a distinct evidence source or validation lens.
+4. Define required input, pass condition, and typed failure for every link.
+5. Run links in order and preserve the accumulating ledger.
+6. Route discrepancies to repair or independent adjudication.
+7. Collapse only after all mandatory links and resolutions are complete.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Test independence between links that claim corroboration.
+- Carry upstream failures forward visibly.
+- Define an endpoint and mandatory links before running.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Count repeated use of one source as multiple corroborations.
+- Let a downstream style or plausibility check erase a provenance failure.
+- Extend the chain without a decision-relevant reason.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `critical-atomic-verification`
+
+Selects the decisive atoms around which chains are built.
+
+### `truth-redundancy`
+
+Supplies independent corroboration for a chain link.
+
+### `citation-fidelity`
+
+Can serve as the evidence-entailment link.
 
 ## Compatible Upgradeables
 
-- `critical-atomic-verification`
+- `critical-atomic-verification` — Selects the decisive atoms around which chains are built.
+- `truth-redundancy` — Supplies independent corroboration for a chain link.
+- `citation-fidelity` — Can serve as the evidence-entailment link.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `bounded-exit`
+
+Limits chain expansion and terminates unresolved cycles.
 
 ## Potential Redundancy
 
-- `None declared`
+### `parallel-qms`
+
+A chain is dependency-ordered and state-carrying; Parallel QMS runs selectable independent or orthogonal validator modes.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Prerequisite failure blocks dependent links from certifying the claim.
+- A disagreement between independent links requires explicit resolution, not majority counting.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- Do not certify when a mandatory link fails, is skipped, or depends on the same untested assumption as its supposed corroborator.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- non-material optional links once the declared endpoint is met
+
+Keep mandatory:
+
+- dependency order
+- link independence
+- failure propagation
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- high-stakes fact verification
+- data pipeline validation
+- release qualification
+- multi-source research
 
 ## Example Composition
 
-Activate `cross-checking-chains` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A dataset row is used to justify a product safety claim.
+
+**Why it activates:** Identity, extraction, interpretation, and corroboration must all hold in order.
+
+**Inputs/state:** Dataset version, row locator, calculation, paper, and safety threshold.
+
+**Action:** Checks artifact identity, recomputes the value, tests claim entailment, then corroborates with an independent source.
+
+**Does not:** Count two pages quoting the same dataset as independent proof.
+
+**Result/state change:** The chain stops at a unit mismatch before the unsafe conclusion is released.
+
+**Companions:** ['critical-atomic-verification', 'citation-fidelity', 'truth-redundancy']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-07` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-07` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-07. Cross-Checking Chains (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — T3-07. Cross-Checking Chains (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.1 QMS-M (historical_assistant_artifact)

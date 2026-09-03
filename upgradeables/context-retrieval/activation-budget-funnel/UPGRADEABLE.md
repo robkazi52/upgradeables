@@ -2,22 +2,39 @@
 
 ## Summary
 
-Stage retrieve, capture, index, transform, write, and verify so raw retrieval does not compete with synthesis; keep roughly no more than five to seven active pulls in the live workspace.
+A staged context controller that moves sources through retrieve, evidence capture, indexing, transformation, writing, and verification instead of keeping raw retrieval and synthesis active together.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents source overload, recency domination, and premature synthesis when many documents, modules, or tool results compete for the same live workspace.
+
+## Where It Fits in the OS
+
+Roles: context-retrieval, activation budgeting, state orchestration. Pipeline stages: retrieval, evidence capture, indexing, synthesis, pre-output verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-source research
+- long-document analysis
+- evidence-heavy authoring
+- policy or legal evidence review
+- large modular agent workflows
+
+## When Not to Use
+
+- a short single source fits comfortably in context
+- creative work uses no references
+- staging overhead exceeds the risk of context competition
 
 ## Scope
 
-Functional classes: context-retrieval, state. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `activation-budget-funnel@1.1.0`. ID: `T2-16`. Functional classes: context-retrieval, state. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +42,146 @@ Functional classes: context-retrieval, state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- a short single source fits comfortably in context
+- creative work uses no references
+- staging overhead exceeds the risk of context competition
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- task question
+- source/module queue
+- active-pull budget
+- evidence capture schema
+- current indexed state
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- provenance-linked evidence index
+- bounded active context
+- synthesis-ready atoms
+- verification status
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Admit only a bounded set of live source or module pulls, historically roughly five to seven, and move each through a fixed funnel: retrieve, quote or capture, index verified atoms, transform those atoms, write from the index, then verify against sources. Retire raw pulls from active attention after their durable evidence is indexed so retrieval and decision-making do not compete in one step.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Define the question and the evidence fields the task needs.
+2. Queue candidate sources or modules rather than activating all of them.
+3. Retrieve a bounded batch, keeping roughly no more than five to seven active pulls when that heuristic fits the host.
+4. Capture source-grounded quotes or facts with provenance.
+5. Index verified atoms into compact state and release unneeded raw context.
+6. Transform and synthesize from indexed evidence only after capture is complete for the batch.
+7. Write the result, then verify material claims back against the source pointers.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Separate retrieval/capture from synthesis.
+- Preserve provenance when compressing a source into indexed state.
+- Treat five-to-seven as an architectural heuristic, not a measured universal limit.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Do not summarize unsupported material into the evidence index.
+- Do not keep adding raw pulls while simultaneously committing a decision.
+- Do not discard a source pointer needed for later verification.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `scoped-loader`
+
+Chooses which sources/modules may enter the funnel and in what authority order.
+
+### `neuro-focus`
+
+Concentrates work on the highest-value active batch after ABF limits concurrent pulls.
+
+### `stateblock`
+
+Stores verified indexed atoms and their provenance between funnel stages.
 
 ## Compatible Upgradeables
 
-- `scoped-loader`
-- `neuro-focus`
+- `scoped-loader` — Chooses which sources/modules may enter the funnel and in what authority order.
+- `neuro-focus` — Concentrates work on the highest-value active batch after ABF limits concurrent pulls.
+- `stateblock` — Stores verified indexed atoms and their provenance between funnel stages.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `anti-tunnel-vision`
+
+Checks that a narrow active batch has not hidden a plausible competing source or interpretation.
 
 ## Potential Redundancy
 
-- `None declared`
+### `attention-compression-scaffold`
+
+Compression reduces representation size; ABF additionally governs stage order and concurrent activation.
+
+### `scoped-loader`
+
+Loader selects material; ABF budgets and stages its processing after selection.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Source-boundary and authority rules control what may enter the funnel.
+- If compacting an item would lose evidence needed for verification, retain or reload the source rather than forcing it through the budget.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Pause synthesis when evidence has not been captured with provenance or active pulls cannot be bounded without losing required coverage.
+- Fail verification when a synthesized claim cannot be traced back through the index.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- explicit queue bookkeeping for a very small corpus
+- rigid adherence to the historical five-to-seven heuristic when the host context safely supports a different bound
+
+Keep mandatory:
+
+- retrieval-before-synthesis separation
+- provenance-preserving indexing
+- claim-to-source verification
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- multi-source research
+- long-document analysis
+- evidence-heavy authoring
+- policy or legal evidence review
+- large modular agent workflows
 
 ## Example Composition
 
-Activate `activation-budget-funnel` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Compare twelve vendor proposals against six criteria.
+
+**Why it activates:** All proposals cannot remain active without recency and attention competition.
+
+**Inputs/state:** Proposal queue, six-field evidence-card schema, source-page pointers.
+
+**Action:** Processes bounded batches, captures criterion evidence, indexes it, releases raw text, then compares from the index and verifies finalists.
+
+**Does not:** It does not draft the recommendation while still pulling unindexed proposal text.
+
+**Result/state change:** A complete comparison built from traceable evidence cards with a bounded live workspace.
+
+**Companions:** ['scoped-loader', 'stateblock', 'anti-tunnel-vision']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-16` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: ABF.
+Primary source ID: `T2-16` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: ABF.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-16. ABF — Activation-Budget Funnel (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — ABF — Activation-Budget Funnel (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 18. ABF — DEEP CONTEXT IMPLICATION (historical_assistant_artifact)

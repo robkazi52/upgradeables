@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "working-memory-lock-in",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "working-memory-lock-in-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Tool output and many generated files can displace the non-negotiable constraints.",
+      "expect": "Critical requirements remain active through the whole build.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "working-memory-lock-in-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "nothing needs continuous salience",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "working-memory-lock-in-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Canonical accepted state overrides cached values after validation.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "working-memory-lock-in-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not proceed when a critical locked field cannot be reconciled.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "working-memory-lock-in-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "small high-consequence invariant set",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "working-memory-lock-in-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A long workflow has three high-consequence invariants among hundreds of facts.",
+      "expect": "Keep only those three actively refreshed from canonical state and stop on conflict.",
+      "reject": "Treat all facts as locked or rely on eventual retrieval after an error."
+    }
+  ]
+}

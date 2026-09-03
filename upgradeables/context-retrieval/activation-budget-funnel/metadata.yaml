@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-16",
   "slug": "activation-budget-funnel",
   "display_name": "Activation-Budget Funnel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,46 +23,68 @@
     "orchestrator",
     "state-manager"
   ],
-  "purpose": "Stage retrieve, capture, index, transform, write, and verify so raw retrieval does not compete with synthesis; keep roughly no more than five to seven active pulls in the live workspace.",
+  "purpose": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-source research",
+    "long-document analysis",
+    "evidence-heavy authoring",
+    "policy or legal evidence review",
+    "large modular agent workflows"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a short single source fits comfortably in context",
+    "creative work uses no references",
+    "staging overhead exceeds the risk of context competition"
   ],
   "triggers": [
     "many sources or modules compete for attention"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a short single source fits comfortably in context",
+    "creative work uses no references",
+    "staging overhead exceeds the risk of context competition"
   ],
   "requires": [],
   "recommended_with": [
+    "neuro-focus",
     "scoped-loader",
-    "neuro-focus"
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "anti-tunnel-vision"
+  ],
+  "potentially_redundant_with": [
+    "attention-compression-scaffold",
+    "scoped-loader"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "task question",
+    "source/module queue",
+    "active-pull budget",
+    "evidence capture schema",
+    "current indexed state"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "provenance-linked evidence index",
+    "bounded active context",
+    "synthesis-ready atoms",
+    "verification status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "explicit queue bookkeeping for a very small corpus",
+      "rigid adherence to the historical five-to-seven heuristic when the host context safely supports a different bound"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "retrieval-before-synthesis separation",
+      "provenance-preserving indexing",
+      "claim-to-source verification"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Pause synthesis when evidence has not been captured with provenance or active pulls cannot be bounded without losing required coverage.",
+    "Fail verification when a synthesized claim cannot be traced back through the index."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +97,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents source overload, recency domination, and premature synthesis when many documents, modules, or tool results compete for the same live workspace.",
+  "os_role": [
+    "context-retrieval",
+    "activation budgeting",
+    "state orchestration"
+  ],
+  "pipeline_stages": [
+    "retrieval",
+    "evidence capture",
+    "indexing",
+    "synthesis",
+    "pre-output verification"
+  ],
+  "best_fit_tasks": [
+    "multi-source research",
+    "long-document analysis",
+    "evidence-heavy authoring",
+    "policy or legal evidence review",
+    "large modular agent workflows"
+  ],
+  "avoid_when": [
+    "a short single source fits comfortably in context",
+    "creative work uses no references",
+    "staging overhead exceeds the risk of context competition"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Admit only a bounded set of live source or module pulls, historically roughly five to seven, and move each through a fixed funnel: retrieve, quote or capture, index verified atoms, transform those atoms, write from the index, then verify against sources. Retire raw pulls from active attention after their durable evidence is indexed so retrieval and decision-making do not compete in one step.",
+  "procedure": [
+    "Define the question and the evidence fields the task needs.",
+    "Queue candidate sources or modules rather than activating all of them.",
+    "Retrieve a bounded batch, keeping roughly no more than five to seven active pulls when that heuristic fits the host.",
+    "Capture source-grounded quotes or facts with provenance.",
+    "Index verified atoms into compact state and release unneeded raw context.",
+    "Transform and synthesize from indexed evidence only after capture is complete for the batch.",
+    "Write the result, then verify material claims back against the source pointers."
+  ],
+  "always_do": [
+    "Separate retrieval/capture from synthesis.",
+    "Preserve provenance when compressing a source into indexed state.",
+    "Treat five-to-seven as an architectural heuristic, not a measured universal limit."
+  ],
+  "never_do": [
+    "Do not summarize unsupported material into the evidence index.",
+    "Do not keep adding raw pulls while simultaneously committing a decision.",
+    "Do not discard a source pointer needed for later verification."
+  ],
+  "interaction_reasons": {
+    "scoped-loader": "Chooses which sources/modules may enter the funnel and in what authority order.",
+    "neuro-focus": "Concentrates work on the highest-value active batch after ABF limits concurrent pulls.",
+    "stateblock": "Stores verified indexed atoms and their provenance between funnel stages."
+  },
+  "counterbalance_reasons": {
+    "anti-tunnel-vision": "Checks that a narrow active batch has not hidden a plausible competing source or interpretation."
+  },
+  "redundancy_reasons": {
+    "attention-compression-scaffold": "Compression reduces representation size; ABF additionally governs stage order and concurrent activation.",
+    "scoped-loader": "Loader selects material; ABF budgets and stages its processing after selection."
+  },
+  "conflict_rules": [
+    "Source-boundary and authority rules control what may enter the funnel.",
+    "If compacting an item would lose evidence needed for verification, retain or reload the source rather than forcing it through the budget."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-16. ABF — Activation-Budget Funnel",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ABF — Activation-Budget Funnel",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "18. ABF — DEEP CONTEXT IMPLICATION",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "O-03",
   "slug": "state-snapshot",
   "display_name": "State Snapshot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,46 +21,68 @@
     "state-schema",
     "state-manager"
   ],
-  "purpose": "Capture the smallest sufficient goal, architecture, locked decisions, active modules, open issues, and next step for continuation.",
+  "purpose": "Create a stable checkpoint that can be resumed or audited after interruption.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-session projects",
+    "agent handoffs",
+    "rollback-sensitive workflows",
+    "audits"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a snapshot would persist prohibited sensitive data",
+    "state is invalid or mid-transaction",
+    "a one-turn task needs no recovery"
   ],
   "triggers": [
     "a workflow pauses, hands off, or persists"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a snapshot would persist prohibited sensitive data",
+    "state is invalid or mid-transaction",
+    "a one-turn task needs no recovery"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "external-state-automation"
+    "sequential-memory-state-engine",
+    "stable-long-context",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "scoped-loader",
+    "selfblock-auto-update"
+  ],
+  "potentially_redundant_with": [
+    "stateblock",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "validated StateBlock version",
+    "schema version",
+    "provenance index",
+    "unresolved obligations",
+    "retention policy"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "immutable snapshot",
+    "integrity and lineage metadata",
+    "resume instructions"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "durable snapshots for short disposable work",
+      "full evidence embedding when stable pointers suffice"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "immutable version identity",
+      "unresolved items",
+      "provenance pointers",
+      "resume reconciliation"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not restore when integrity, task identity, or schema compatibility cannot be established.",
+    "Exclude or redact fields that cannot legally or safely persist."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +95,90 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Live state can change during a handoff, crash, or review, leaving no reproducible account of what was believed and pending at that moment.",
+  "os_role": [
+    "checkpoint",
+    "recovery artifact",
+    "handoff package"
+  ],
+  "pipeline_stages": [
+    "milestone completion",
+    "before risky transition",
+    "handoff",
+    "recovery"
+  ],
+  "best_fit_tasks": [
+    "multi-session projects",
+    "agent handoffs",
+    "rollback-sensitive workflows",
+    "audits"
+  ],
+  "avoid_when": [
+    "a snapshot would persist prohibited sensitive data",
+    "state is invalid or mid-transaction",
+    "a one-turn task needs no recovery"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "At an explicit checkpoint, validate and freeze the canonical state version together with schema version, timestamp, task identity, provenance pointers, unresolved items, and a link to any previous snapshot. Consumers resume by verifying lineage and reconciling newer events; the snapshot itself remains immutable.",
+  "procedure": [
+    "Choose a transaction-safe checkpoint.",
+    "Validate required fields and unresolved-state labels.",
+    "Serialize the state plus schema/version, time, identity, and provenance pointers.",
+    "Compute or record an integrity identifier and predecessor link.",
+    "On resume, verify integrity and reconcile all post-snapshot events before acting."
+  ],
+  "always_do": [
+    "freeze an identified state version",
+    "record unresolved work",
+    "verify lineage on restore",
+    "apply retention and sensitivity policy"
+  ],
+  "never_do": [
+    "snapshot a half-applied transition",
+    "mutate a stored snapshot",
+    "resume without checking for newer authoritative events"
+  ],
+  "interaction_reasons": {
+    "stateblock": "Captures one validated version of canonical state.",
+    "sequential-memory-state-engine": "Uses the snapshot as a checkpoint between ordered event transitions.",
+    "stable-long-context": "Provides a compact resume anchor for long work."
+  },
+  "counterbalance_reasons": {
+    "selfblock-auto-update": "Returns restored state to controlled live updates after recovery.",
+    "scoped-loader": "Loads only snapshot-linked detail needed for the resumed task."
+  },
+  "redundancy_reasons": {
+    "stateblock": "The snapshot is immutable history, never a parallel live StateBlock.",
+    "working-memory-lock-in": "The lock may be reconstructed from a snapshot but should not be snapshotted independently as another authority."
+  },
+  "conflict_rules": [
+    "A newer validated canonical state outranks an older snapshot.",
+    "If snapshot identity or lineage fails verification, rebuild from authoritative events instead of guessing."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "State Snapshot and orchestration snapshot references"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "4. December 3, 2025 — state architecture corrections",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "State Snapshot inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "4. State Growth",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Heartbeat, checkpoint, and OS flow state"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

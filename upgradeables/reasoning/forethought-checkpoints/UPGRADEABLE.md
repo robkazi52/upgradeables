@@ -2,22 +2,38 @@
 
 ## Summary
 
-Before irreversible or costly actions, predict likely downstream failures and verify prerequisites.
+Places predictive checks immediately before costly, irreversible, or dependency-sensitive actions.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Catch missing prerequisites and foreseeable downstream failure while reversal is still cheap.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A locally valid next step can commit the workflow to an expensive path whose dependencies, blast radius, or rollback conditions were never checked.
+
+## Where It Fits in the OS
+
+Roles: pre-commit control, risk checkpoint. Pipeline stages: before external action, before destructive change, before dependency handoff.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- deployments
+- schema or API changes
+- financial or external communications
+- multi-stage automation
+
+## When Not to Use
+
+- reversible low-cost local edits
+- the checkpoint would duplicate an already enforced transaction guard
+- urgent containment requires a preauthorized emergency procedure
 
 ## Scope
 
-Functional classes: planning-reasoning, validation. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `forethought-checkpoints@1.1.0`. ID: `T2-17`. Functional classes: planning-reasoning, validation. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,133 @@ Functional classes: planning-reasoning, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- reversible low-cost local edits
+- the checkpoint would duplicate an already enforced transaction guard
+- urgent containment requires a preauthorized emergency procedure
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- planned action
+- dependencies
+- risk tier
+- prerequisites
+- rollback capability
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- checkpoint decision
+- predicted failure
+- verified prerequisites
+- post-action observation
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+At each consequential boundary, predict the most likely downstream failure, verify the prerequisite that would prevent it, define observable success and rollback, then commit and check the result. Checkpoints are placed by consequence rather than at every trivial step.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Identify the next irreversible, high-cost, or dependency-sensitive action.
+2. Name the plausible downstream failure and affected dependency.
+3. Verify prerequisites, authority, backups, and rollback path proportionate to risk.
+4. Define the immediate post-action observation that indicates success or failure.
+5. Commit only if the checkpoint passes, then inspect the result before continuing.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- tie each checkpoint to a concrete consequence
+- verify prerequisite before commitment
+- define post-commit observation
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- turn every minor step into ceremonial review
+- treat a prediction as verified fact
+- continue past a failed prerequisite without escalation
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `risk-tier-scaling`
+
+Risk Tier Scaling determines how deep the checkpoint must be.
+
+### `bounded-exit`
+
+Bounded ExIt prevents repeated checkpoint analysis once required evidence and safeguards are sufficient.
 
 ## Compatible Upgradeables
 
-- `risk-tier-scaling`
+- `risk-tier-scaling` — Risk Tier Scaling determines how deep the checkpoint must be.
+- `bounded-exit` — Bounded ExIt prevents repeated checkpoint analysis once required evidence and safeguards are sufficient.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `reasoning-scale-controller`
+
+Proportionality keeps checkpoint overhead aligned to actual consequence.
 
 ## Potential Redundancy
 
-- `None declared`
+### `risk-tier-scaling`
+
+Risk tier sets rigor globally; Forethought performs the concrete pre-commit prediction and prerequisite check.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A failed hard prerequisite blocks commitment regardless of schedule pressure.
+- During urgent containment, use the approved emergency checkpoint rather than omitting checks entirely.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- ritual checklists unrelated to risk
+- analysis after commitment instead of before
+- missing rollback for destructive action
+- unchecked dependency assumptions
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- explicit checkpoint prose for a fully reversible in-memory operation
+
+Keep mandatory:
+
+- pre-commit prerequisite check for consequential actions
+- success and rollback observation
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- deployments
+- schema or API changes
+- financial or external communications
+- multi-stage automation
 
 ## Example Composition
 
-Activate `forethought-checkpoints` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Rename a production API field.
+
+**Why it activates:** The change can break downstream consumers and is costly to reverse after rollout.
+
+**Inputs/state:** Consumer inventory, compatibility plan, telemetry, and rollback deployment exist.
+
+**Action:** Verifies consumer migration, stages compatibility, sets an error-rate threshold, deploys, and checks telemetry before removing the old field.
+
+**Does not:** Approve the rename because the local service tests pass.
+
+**Result/state change:** A gated rollout with evidence before irreversible cleanup.
+
+**Companions:** ['risk-tier-scaling', 'multi-layer-consistency']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-17` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-17` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-17. Forethought / Checkpoints (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

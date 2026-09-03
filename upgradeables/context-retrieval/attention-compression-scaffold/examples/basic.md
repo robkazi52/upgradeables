@@ -1,10 +1,31 @@
-# Basic composition example
+# Attention Compression Scaffold — Basic Example
 
-**Situation:** source volume exceeds the active workspace.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `attention-compression-scaffold`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Analyze a 200-file codebase while debugging one service.
+
+## Why this Upgradeable activates
+
+Full repository context exceeds the active workspace.
+
+## Inputs / state
+
+Relevant interfaces, failing trace, service dependencies, and file paths.
+
+## What it does
+
+Keeps exact signatures and errors, summarizes surrounding behavior with file pointers, and retires unrelated modules.
+
+## What it does not do
+
+It does not rewrite signatures, discard conflicting traces, or pretend summaries are source files.
+
+## Result / state change
+
+A compact debug context that can be expanded back to authoritative files.
+
+## Interaction with companion components
+
+['activation-budget-funnel', 'zero-drift-zones']

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-06",
   "slug": "task-set-lock-in",
   "display_name": "Task-Set Lock-In",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,46 +21,71 @@
     "state-schema",
     "state-manager"
   ],
-  "purpose": "Lock the goal, deliverable, constraints, terminology, source boundaries, current subtask, and completion criteria.",
+  "purpose": "Prevent scope substitution and goal drift during execution.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-step builds",
+    "contracted deliverables",
+    "long research",
+    "tasks with exclusions"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task is still materially ambiguous",
+    "open-ended ideation intentionally has no fixed deliverable",
+    "the user explicitly authorizes dynamic exploration"
   ],
   "triggers": [
     "multi-step work begins or scope changes"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task is still materially ambiguous",
+    "open-ended ideation intentionally has no fixed deliverable",
+    "the user explicitly authorizes dynamic exploration"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "drift-suppression"
+    "clarification-gateway",
+    "mode-lock-in",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "controlled-drift-corridors",
+    "micro-scaffolding"
+  ],
+  "potentially_redundant_with": [
+    "mode-lock-in",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "clarified request",
+    "deliverables",
+    "constraints",
+    "acceptance criteria",
+    "non-goals",
+    "change authority"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "versioned task-set contract",
+    "scope-gated plan",
+    "acceptance checklist",
+    "scope-change record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal serialization for a tiny clear request",
+      "repeating the full contract during every action"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "objective",
+      "required deliverables",
+      "constraints and non-goals",
+      "acceptance evidence",
+      "explicit change control"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not claim completion when a required artifact or quality gate lacks evidence.",
+    "Unlock and clarify when task identity changes materially."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +98,91 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A model can optimize a nearby but different problem, quietly add deliverables, or forget the success criteria after extensive context.",
+  "os_role": [
+    "task identity",
+    "scope control",
+    "acceptance gate"
+  ],
+  "pipeline_stages": [
+    "after clarification",
+    "before planning",
+    "at scope-change requests",
+    "final acceptance"
+  ],
+  "best_fit_tasks": [
+    "multi-step builds",
+    "contracted deliverables",
+    "long research",
+    "tasks with exclusions"
+  ],
+  "avoid_when": [
+    "the task is still materially ambiguous",
+    "open-ended ideation intentionally has no fixed deliverable",
+    "the user explicitly authorizes dynamic exploration"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority. Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision.",
+  "procedure": [
+    "Extract the objective, required artifacts, constraints, success tests, and exclusions.",
+    "Resolve material ambiguity before locking.",
+    "Record the task set as locked fields with a version and change authority.",
+    "Gate planned actions and newly proposed work against the set.",
+    "For legitimate changes, record the requester, rationale, and new version.",
+    "Use acceptance criteria to close the task."
+  ],
+  "always_do": [
+    "include non-goals",
+    "define completion evidence",
+    "record authorized scope changes",
+    "check final output against the locked set"
+  ],
+  "never_do": [
+    "lock unresolved ambiguity",
+    "expand scope because related work is interesting",
+    "silently weaken acceptance criteria"
+  ],
+  "interaction_reasons": {
+    "clarification-gateway": "Produces the unambiguous task set that can safely be locked.",
+    "mode-lock-in": "Stabilizes the operating method used for the locked task.",
+    "stateblock": "Stores the task set as protected canonical fields."
+  },
+  "counterbalance_reasons": {
+    "micro-scaffolding": "Allows disposable local structure inside the fixed task without expanding the task itself.",
+    "controlled-drift-corridors": "Permits explicitly bounded flexibility in parts of the deliverable."
+  },
+  "redundancy_reasons": {
+    "mode-lock-in": "Combine overlapping contract fields but preserve the what-versus-how distinction.",
+    "working-memory-lock-in": "Refresh a pointer or small critical subset rather than copying the entire task set."
+  },
+  "conflict_rules": [
+    "System and latest explicit authorized user scope changes override older task-set versions.",
+    "When a new request conflicts with locked acceptance criteria, pause for a scope-change decision."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T1-05. Task Set Lock-In"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "3. November 28, 2025 — frozen Tier-2 master set",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Task Set Lock-In inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8. Working-Memory Lock-In Heartbeats",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Task anchoring and stability controls"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

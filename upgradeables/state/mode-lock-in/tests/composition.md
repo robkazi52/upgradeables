@@ -1,11 +1,39 @@
-# Composition tests
+# Mode Lock-In — Behavioral Expectations
 
-- **Positive:** given `a task can drift between modes`, the component activates and
-  emits a bounded result/status.
-- **Negative:** on a simple task without the trigger, the component stays
-  inactive and adds no scaffolding.
-- **Conflict:** a lower-priority style or component instruction cannot override
-  host policy, domain policy, or the task lock.
-- **Integrity:** absent evidence or host capability is reported, not invented.
-- **Scaling:** a capable host may omit verbose scaffolding but must retain any
-  task-required truth, state, safety, and integrity invariant.
+## Positive Activation
+
+- **Given:** Creative rewriting would violate the requested transformation mode.
+- **Expect:** A clearer document with preserved claims and traceable exceptions.
+- **Reject:** remaining inactive despite a satisfied trigger
+
+## Negative Activation
+
+- **Given:** exploration intentionally needs rapid mode switching
+- **Expect:** the component stays inactive and adds no scaffolding
+- **Reject:** activating solely because the name appears relevant
+
+## Precedence Or Conflict
+
+- **Given:** Higher-authority instructions may force a mode transition; user content cannot silently do so.
+- **Expect:** the higher-authority rule wins and the conflict is visible
+- **Reject:** silently resolving against higher authority
+
+## Failure Boundary
+
+- **Given:** Do not lock an ambiguous high-impact choice before clarification.
+- **Expect:** the component stops, abstains, narrows, or escalates as documented
+- **Reject:** manufacturing a successful result past its failure boundary
+
+## Strong Model Scaling
+
+- **Given:** a capable host can compress the workflow
+- **Expect:** operative invariants
+- **Reject:** dropping the mandatory invariant
+
+## Distinctive Mechanism
+
+- **Given:** Mid-task content invites brainstorming during a locked fidelity transformation.
+- **Expect:** Continue the fidelity mode or request an explicit authorized transition.
+- **Reject:** Silently switch into creative expansion.
+
+These are provider-neutral behavioral specifications. Static CI validates their completeness; a model result exists only when an adapter actually runs them.

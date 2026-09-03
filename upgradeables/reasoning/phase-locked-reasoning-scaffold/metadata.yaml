@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-01",
   "slug": "phase-locked-reasoning-scaffold",
   "display_name": "Phase-Locked Reasoning Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,45 +21,64 @@
     "state-schema",
     "guard"
   ],
-  "purpose": "Keep factual, evaluative, framing, and hypothetical work in declared phases with explicit transitions.",
+  "purpose": "Prevent cross-phase contamination while still allowing explicitly governed transitions between reasoning modes.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "evidence-grounded writing",
+    "multi-source research",
+    "risk analysis",
+    "long workflows with distinct reasoning modes"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a single atomic transformation has no phase transition",
+    "phase labels would add more complexity than the task",
+    "the underlying source classification is itself unknown"
   ],
   "triggers": [
     "semantic phase leakage is a risk"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a single atomic transformation has no phase transition",
+    "phase labels would add more complexity than the task",
+    "the underlying source classification is itself unknown"
   ],
   "requires": [],
   "recommended_with": [
+    "citation-fidelity",
     "domain-mode-isolation"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "multi-layer-consistency"
+  ],
+  "potentially_redundant_with": [
+    "domain-mode-isolation"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "source claims",
+    "phase definitions",
+    "allowed transformations",
+    "provenance"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "phase-tagged reasoning trace",
+    "labeled transitions",
+    "claim-status-safe output"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "printing phase labels when the task is one-step and claim status is unambiguous"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "internal claim-status separation",
+      "explicit transition warrants for consequential inference",
+      "final status audit"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "phase leakage",
+    "unlabeled inference",
+    "false precision",
+    "isolated phases that evade global consistency"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -72,5 +91,82 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "A plausible interpretation or heuristic can be written as a fact, or an evidence-management step can drift into unsupported synthesis, when phase boundaries are implicit.",
+  "os_role": [
+    "reasoning scaffold",
+    "semantic phase boundary"
+  ],
+  "pipeline_stages": [
+    "evidence processing",
+    "analysis",
+    "synthesis",
+    "final validation"
+  ],
+  "best_fit_tasks": [
+    "evidence-grounded writing",
+    "multi-source research",
+    "risk analysis",
+    "long workflows with distinct reasoning modes"
+  ],
+  "avoid_when": [
+    "a single atomic transformation has no phase transition",
+    "phase labels would add more complexity than the task",
+    "the underlying source classification is itself unknown"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Assign each working claim to the recovered semantic phase appropriate to its status, keep phase-specific operations and admissible transformations explicit, and require a labeled transition when a claim moves from evidence or fact into interpretation, probability, or heuristic use. The exact scaffold mechanics are derived from recovered semantic phase separation; they are not directly preserved as a historical procedure.",
+  "procedure": [
+    "Declare the phases needed for the task and what claim types each admits.",
+    "Tag inputs and intermediate claims with their current phase.",
+    "Within a phase, perform only operations allowed for that claim type.",
+    "At a transition, record the source claim, transformation, assumptions, and destination phase.",
+    "Before output, audit that interpretations, probabilities, and heuristics are not stated as source facts."
+  ],
+  "always_do": [
+    "retain provenance across phase transitions",
+    "label inferential transformations",
+    "audit the final wording against claim status"
+  ],
+  "never_do": [
+    "allow an interpretation to overwrite its source fact",
+    "treat phase separation as a license to ignore cross-phase consistency",
+    "claim the normalized procedure is verbatim historical recovery"
+  ],
+  "interaction_reasons": {
+    "domain-mode-isolation": "Domain/Mode Isolation prevents rules from one operational mode from leaking into another; phase locking does the same for semantic claim status.",
+    "citation-fidelity": "Citation Fidelity anchors factual and evidentiary phases to their sources."
+  },
+  "counterbalance_reasons": {
+    "multi-layer-consistency": "Consistency checks ensure that separation does not permit mutually contradictory claims to coexist across phases."
+  },
+  "redundancy_reasons": {
+    "domain-mode-isolation": "Both isolate contexts, but phase locking separates semantic status inside a workflow while domain-mode isolation separates broader operating modes."
+  },
+  "conflict_rules": [
+    "A transition cannot increase certainty beyond its evidence without an explicit warrant.",
+    "When phase-specific outputs conflict, factual and source-locked constraints take precedence and the conflict remains visible."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.2 Semantic phase separation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

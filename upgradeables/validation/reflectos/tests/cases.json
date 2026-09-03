@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "reflectos",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "reflectos-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Completion requires more than generation: schemas, tests, docs, Git, and publication must match the handoff.",
+      "expect": "The release decision is tied to requirements and evidence with a bounded repair history.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "reflectos-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a deterministic fix is already known and reflection adds no decision value",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "reflectos-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Explicit requirements and evidence outrank the reflector's preference.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "reflectos-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not accept when a material requirement is unmet; do not revise with invented facts; stop and surface the dependency when progress requires external authority.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "reflectos-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "goal comparison, requirement audit, explicit transition, and state update for long or risky work",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "reflectos-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An output is polished but misses one explicit deliverable and the loop budget has one revision left.",
+      "expect": "Choose revise, correct the deliverable, retest, then update StateBlock.",
+      "reject": "Offer generic self-criticism or accept based on polish."
+    }
+  ]
+}

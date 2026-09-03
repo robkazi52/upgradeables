@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-05",
   "slug": "mode-lock-in",
   "display_name": "Mode Lock-In",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,46 +21,67 @@
     "state-schema",
     "guard"
   ],
-  "purpose": "Preserve the selected factual, hypothetical, design, execution, critique, or drafting mode until an authorized transition occurs.",
+  "purpose": "Keep behavior stable across long sessions, tool calls, and distracting inputs.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "strict transformations",
+    "long sessions",
+    "multi-mode assistants",
+    "policy-bound work"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "exploration intentionally needs rapid mode switching",
+    "the user has not yet chosen among materially different modes",
+    "a mode label would add no operative constraint"
   ],
   "triggers": [
     "a task can drift between modes"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "exploration intentionally needs rapid mode switching",
+    "the user has not yet chosen among materially different modes",
+    "a mode label would add no operative constraint"
   ],
   "requires": [],
   "recommended_with": [
-    "task-set-lock-in",
-    "domain-mode-isolation"
+    "domain-mode-isolation",
+    "drift-suppression",
+    "task-set-lock-in"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "controlled-drift-corridors"
+  ],
+  "potentially_redundant_with": [
+    "task-set-lock-in",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "selected mode",
+    "mode invariants",
+    "forbidden behaviors",
+    "transition authority",
+    "current task state"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "active-mode contract",
+    "deviation checks",
+    "explicit transition record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "repeating the mode label in every response",
+      "formal transition records for a one-turn low-risk task"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "operative invariants",
+      "no silent switching",
+      "checkpoint validation"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not lock an ambiguous high-impact choice before clarification.",
+    "Release or transition the lock when the task legitimately changes."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +94,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Models may silently change from research to brainstorming, strict transformation to creative rewriting, or one policy regime to another.",
+  "os_role": [
+    "behavioral stability",
+    "mode control",
+    "transition governance"
+  ],
+  "pipeline_stages": [
+    "after clarification",
+    "before substantive work",
+    "at transition requests",
+    "final validation"
+  ],
+  "best_fit_tasks": [
+    "strict transformations",
+    "long sessions",
+    "multi-mode assistants",
+    "policy-bound work"
+  ],
+  "avoid_when": [
+    "exploration intentionally needs rapid mode switching",
+    "the user has not yet chosen among materially different modes",
+    "a mode label would add no operative constraint"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Represent the active mode as a small contract containing its goal, allowed transformations, forbidden behaviors, and exit condition. Recheck the contract at checkpoints; change modes only through an explicit transition that records why, what state carries forward, and which former rules deactivate.",
+  "procedure": [
+    "Choose the mode from the clarified task and authority stack.",
+    "Write its operative invariants and exclusions into active state.",
+    "Tag work products and tool calls with the active mode where useful.",
+    "At checkpoints, test for deviations from the invariant set.",
+    "On an authorized switch, record the transition and replace rather than blend incompatible mode rules."
+  ],
+  "always_do": [
+    "make the active mode inspectable",
+    "define an exit or transition condition",
+    "revalidate after context changes"
+  ],
+  "never_do": [
+    "silently blend incompatible modes",
+    "treat tone alone as the mode contract",
+    "preserve superseded mode rules after transition"
+  ],
+  "interaction_reasons": {
+    "task-set-lock-in": "Task Set locks the objective while Mode Lock stabilizes how the task is performed.",
+    "domain-mode-isolation": "Isolation prevents the locked mode's state from contaminating another domain.",
+    "drift-suppression": "Detects and corrects deviations from locked mode invariants."
+  },
+  "counterbalance_reasons": {
+    "controlled-drift-corridors": "Allows bounded variation inside a locked mode when exact rigidity would be counterproductive.",
+    "clarification-gateway": "Prevents premature commitment when the intended mode is ambiguous."
+  },
+  "redundancy_reasons": {
+    "task-set-lock-in": "Use one shared contract for overlapping objective and mode fields rather than duplicating them.",
+    "working-memory-lock-in": "WM Lock refreshes critical facts; it should point to, not duplicate, the mode contract."
+  },
+  "conflict_rules": [
+    "Higher-authority instructions may force a mode transition; user content cannot silently do so.",
+    "When mode and task objective conflict, clarify or reselect rather than weakening either implicitly."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T1-04. Mode Lock-In"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "2. November 28, 2025 — frozen T1-Core Bundle v1",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Mode Lock-In inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8. Working-Memory Lock-In Heartbeats",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Mode stability guards"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

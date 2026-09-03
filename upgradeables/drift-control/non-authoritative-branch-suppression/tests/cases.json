@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "non-authoritative-branch-suppression",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "non-authoritative-branch-suppression-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "All are topically relevant but only one governs work.",
+      "expect": "Actions follow the authoritative branch while alternatives remain auditable.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "non-authoritative-branch-suppression-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "authority is unresolved",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "non-authoritative-branch-suppression-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "System, explicit task, and declared source authority order govern branch selection; topical relevance never creates authority.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "non-authoritative-branch-suppression-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not suppress unresolved contrary evidence or fabricate an authority ranking.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "non-authoritative-branch-suppression-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "instruction-versus-evidence distinction",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "non-authoritative-branch-suppression-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Three relevant branches differ in authority and one contains useful contrary evidence.",
+      "expect": "Let only the authoritative branch govern actions while retaining contrary evidence for evaluation.",
+      "reject": "Obey the most recent/relevant text or hide the contrary evidence."
+    }
+  ]
+}

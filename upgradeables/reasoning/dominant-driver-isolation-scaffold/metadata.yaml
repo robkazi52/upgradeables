@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-03",
   "slug": "dominant-driver-isolation-scaffold",
   "display_name": "Dominant-Driver Isolation Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -19,44 +19,66 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "Identify the factor most responsible for an observed failure or decision before choosing an intervention.",
+  "purpose": "Separate high-leverage causes or constraints from correlated, downstream, or low-impact factors.",
   "recommended_skill_types": [
-    "general-agent-workflow"
+    "root-cause analysis",
+    "business driver analysis",
+    "performance bottleneck diagnosis",
+    "risk prioritization"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the system is known to require irreducibly joint causes",
+    "available evidence supports only correlation",
+    "the task requires a complete safety hazard inventory rather than prioritization"
   ],
   "triggers": [
-    "many possible causes compete"
+    "Activate when the task requires many possible causes compete."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the system is known to require irreducibly joint causes",
+    "available evidence supports only correlation",
+    "the task requires a complete safety hazard inventory rather than prioritization"
   ],
   "requires": [],
   "recommended_with": [
+    "anti-tunnel-vision",
+    "critical-atomic-verification"
+  ],
+  "counterbalances": [
+    "multi-layer-consistency"
+  ],
+  "potentially_redundant_with": [
     "anti-tunnel-vision"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "target outcome",
+    "candidate causes or constraints",
+    "measurements",
+    "system boundary",
+    "intervention options"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "ranked drivers",
+    "evidence for marginal leverage",
+    "single-driver or coupled-driver conclusion",
+    "intervention focus"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal scoring when one measured bottleneck overwhelmingly dominates"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "rival test",
+      "interaction check",
+      "causal-evidence label"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "correlation presented as cause",
+    "single-factor oversimplification",
+    "ranking without an outcome definition",
+    "ignoring interactions"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -69,5 +91,76 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "When many causes are plausible, analysis can spread effort evenly and miss the factor that controls the decision or failure.",
+  "os_role": [
+    "causal reasoning scaffold",
+    "attention allocator"
+  ],
+  "pipeline_stages": [
+    "diagnosis",
+    "prioritization",
+    "intervention selection"
+  ],
+  "best_fit_tasks": [
+    "root-cause analysis",
+    "business driver analysis",
+    "performance bottleneck diagnosis",
+    "risk prioritization"
+  ],
+  "avoid_when": [
+    "the system is known to require irreducibly joint causes",
+    "available evidence supports only correlation",
+    "the task requires a complete safety hazard inventory rather than prioritization"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "Modern conservative interpretation: enumerate candidate drivers, define the target outcome, estimate each candidate's unique explanatory or intervention leverage, and test the leading driver against the strongest alternative and interaction effects. The historical sources recover only the scaffold's exact name.",
+  "procedure": [
+    "Define the outcome and the time or system boundary.",
+    "List candidate drivers and distinguish causes, constraints, symptoms, and proxies.",
+    "Estimate each candidate's marginal effect using available comparisons, traces, or counterfactuals.",
+    "Test the leader against the strongest rival and check whether a pairwise interaction changes the ranking.",
+    "Select the dominant driver or report that no single driver is defensible; route effort accordingly."
+  ],
+  "always_do": [
+    "state the target outcome before ranking drivers",
+    "separate causal evidence from correlation",
+    "test the top-ranked driver against at least one rival"
+  ],
+  "never_do": [
+    "claim single-cause dominance when evidence supports a coupled system",
+    "drop safety-critical minority risks",
+    "present the provisional mechanics as recovered"
+  ],
+  "interaction_reasons": {
+    "anti-tunnel-vision": "Anti-Tunnel Vision supplies a rival-driver check against fixation.",
+    "critical-atomic-verification": "Critical Atomic Verification can verify the key measurements on which driver ranking depends."
+  },
+  "counterbalance_reasons": {
+    "multi-layer-consistency": "Multi-Layer Consistency checks whether local driver selection neglects a conflicting system-level dependency."
+  },
+  "redundancy_reasons": {
+    "anti-tunnel-vision": "Both compare alternatives, but Driver Isolation ranks causal leverage while Anti-Tunnel Vision guards search breadth."
+  },
+  "conflict_rules": [
+    "A safety-critical factor is not discarded solely because its probability or average effect is lower.",
+    "If interaction terms dominate marginal effects, return a coupled-driver result rather than forcing one winner."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,10 +1,31 @@
-# Basic composition example
+# Stuck-Pattern Reset Pack — Basic Example
 
-**Situation:** reasoning loops or stale approaches repeat.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `stuck-pattern-reset`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Three searches use rephrased queries but return the same irrelevant repository results.
+
+## Why this Upgradeable activates
+
+The method and corpus are unchanged despite different wording.
+
+## Inputs / state
+
+Query logs, target identifiers, accepted facts, and local source files are available.
+
+## What it does
+
+Preserves the target and findings, quarantines web query reformulation, switches to identifier search inside the local archive, and sets one success check.
+
+## What it does not do
+
+Forget the verified target or issue a fourth cosmetic query.
+
+## Result / state change
+
+A materially different recovery path or an explicit source blocker.
+
+## Interaction with companion components
+
+['bounded-exit', 'stateblock', 'meta-supervisor']

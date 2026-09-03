@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-02",
   "slug": "controlled-drift-corridors",
   "display_name": "Controlled Drift Corridors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,48 +21,68 @@
     "guard",
     "parent-skill-mode"
   ],
-  "purpose": "Declare zero, micro, or bounded exploratory transformation width according to task and risk.",
+  "purpose": "Enable adaptation, compression, or creativity without surrendering semantic control.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "document rewriting",
+    "cross-format conversion",
+    "summarization",
+    "creative work with fixed constraints"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "all content is zero-drift",
+    "allowed dimensions cannot be tested",
+    "the user expects unconstrained ideation"
   ],
   "triggers": [
     "synthesis or creativity must coexist with fidelity"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "all content is zero-drift",
+    "allowed dimensions cannot be tested",
+    "the user expects unconstrained ideation"
   ],
   "requires": [],
   "recommended_with": [
-    "grounding-no-invention",
-    "counterfactual-integrity"
+    "drift-spectra-scaling",
+    "drift-suppression",
+    "zero-drift-zones"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "mode-lock-in"
+  ],
+  "potentially_redundant_with": [
+    "compute-adaptive-drift",
+    "domain-normalized-drift"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "source regions",
+    "allowed-change dimensions",
+    "locked invariants",
+    "semantic tests",
+    "rollback threshold"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "region-specific corridor map",
+    "validated transformed regions",
+    "exception and rollback record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "numeric corridor scoring when qualitative tests are decisive",
+      "per-sentence checks in a low-risk uniform region"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit allowed dimensions",
+      "locked invariants",
+      "region-specific validation",
+      "rollback boundary"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "Stop transformation when invariants cannot be measured or recovered.",
+    "Revert regions that cross the boundary instead of rationalizing post hoc."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +95,90 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A binary exact-copy versus free-rewrite choice is too crude for work where wording may change but claims, obligations, or structure have different tolerances.",
+  "os_role": [
+    "bounded transformation policy",
+    "regional drift control",
+    "acceptance envelope"
+  ],
+  "pipeline_stages": [
+    "task decomposition",
+    "transformation planning",
+    "generation",
+    "semantic validation"
+  ],
+  "best_fit_tasks": [
+    "document rewriting",
+    "cross-format conversion",
+    "summarization",
+    "creative work with fixed constraints"
+  ],
+  "avoid_when": [
+    "all content is zero-drift",
+    "allowed dimensions cannot be tested",
+    "the user expects unconstrained ideation"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Partition the artifact into regions or claim types and assign each a corridor specifying fixed invariants, allowed dimensions of change, maximum semantic distance, evidence requirements, and rollback trigger. Transform only after the corridor is explicit, then compare output to the source and tighten or revert any region outside bounds.",
+  "procedure": [
+    "Segment the task into regions with materially different tolerance.",
+    "For each region, list invariants and allowed changes such as tone, length, order, or abstraction.",
+    "Set validation metrics or review questions and a rollback threshold.",
+    "Transform one region inside its corridor.",
+    "Compare claims, obligations, entities, and required structure to source.",
+    "Accept, tighten, or revert; record any authorized exception."
+  ],
+  "always_do": [
+    "make drift opt-in and dimension-specific",
+    "protect source meaning",
+    "test each region",
+    "define rollback"
+  ],
+  "never_do": [
+    "treat a corridor as permission for new unsupported claims",
+    "assign one width to heterogeneous content",
+    "expand the corridor after a failure without authority"
+  ],
+  "interaction_reasons": {
+    "zero-drift-zones": "Marks regions whose corridor width is zero.",
+    "drift-spectra-scaling": "Provides the map used to choose different corridor widths.",
+    "drift-suppression": "Detects excursions and restores content to the corridor."
+  },
+  "counterbalance_reasons": {
+    "mode-lock-in": "Keeps the overall transformation regime stable while bounded local variation occurs.",
+    "clarification-gateway": "Resolves unspecified transformation freedoms before assigning a corridor."
+  },
+  "redundancy_reasons": {
+    "domain-normalized-drift": "Domain normalization supplies a default corridor; the task-specific corridor should override it explicitly rather than layering two bounds.",
+    "compute-adaptive-drift": "Compute adaptation changes enforcement process, not the allowed semantic boundary."
+  },
+  "conflict_rules": [
+    "Higher-authority task constraints and zero-drift fields override corridor permissions.",
+    "If validation signals disagree, apply the narrowest supported corridor or request review."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "Controlled Drift Corridors",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Controlled Drift Corridors inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.3 Drift widths",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Opt-in drift widths and corridor mapping"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

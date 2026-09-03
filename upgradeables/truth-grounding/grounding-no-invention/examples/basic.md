@@ -1,10 +1,31 @@
-# Basic composition example
+# Grounding / No-Invention — Basic Example
 
-**Situation:** work relies on documents, data, external facts, or consequential claims.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `grounding-no-invention`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+An intake record omits a required date.
+
+## Why this Upgradeable activates
+
+The workflow must extract structured facts from supplied records.
+
+## Inputs / state
+
+A fixed record set with no documented date.
+
+## What it does
+
+Marks the field Not documented and continues with supported fields.
+
+## What it does not do
+
+Infer the date from the surrounding chronology.
+
+## Result / state change
+
+A source-faithful intake object with an explicit gap.
+
+## Interaction with companion components
+
+['epistemic-status-gating', 'fail-closed-abstention']

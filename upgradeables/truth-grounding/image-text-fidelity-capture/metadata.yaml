@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-14A",
   "slug": "image-text-fidelity-capture",
   "display_name": "Image Text Fidelity Capture",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,51 +23,57 @@
     "skill-component",
     "validator"
   ],
-  "purpose": "Extract text and visible structure from images without inferring missing content.",
+  "purpose": "Create a source-faithful textual representation of image-borne evidence for downstream indexing, analysis, or copying.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "long-context-corpus",
-    "research",
-    "source-grounded-analysis"
+    "document image transcription",
+    "figure or screenshot capture",
+    "scanned-record intake",
+    "long-document source fidelity"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "no image contains source text or visible structure",
+    "the task asks for visual interpretation rather than faithful capture and that different mode is not declared"
   ],
   "triggers": [
     "an image contains source text to transcribe"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "no image contains source text or visible structure",
+    "the task asks for visual interpretation rather than faithful capture and that different mode is not declared"
   ],
   "requires": [],
   "recommended_with": [
+    "citation-fidelity",
     "grounding-no-invention",
     "zero-drift-zones"
   ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "grounding-no-invention"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "source image",
+    "page/image identifier",
+    "reading-order or region instructions",
+    "fidelity requirements"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "verified transcription",
+    "visible-structure map",
+    "location-specific uncertainty markers",
+    "capture verification status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose region narration for a short, plainly legible image"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "only visible evidence may determine captured text or structure"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If a region is not legible enough to verify, mark it uncertain and do not produce a confident transcription for that region."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -80,5 +86,80 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": "Distinct from the unresolved Intent/Task Framing Controller use of ITFC."
+  },
+  "problem_solved": "Prevents OCR-like completion, inferred missing words, and invented structural relationships from entering the source record.",
+  "os_role": [
+    "evidence-capture",
+    "image-fidelity-guard"
+  ],
+  "pipeline_stages": [
+    "source-intake",
+    "evidence-capture",
+    "capture-validation"
+  ],
+  "best_fit_tasks": [
+    "document image transcription",
+    "figure or screenshot capture",
+    "scanned-record intake",
+    "long-document source fidelity"
+  ],
+  "avoid_when": [
+    "no image contains source text or visible structure",
+    "the task asks for visual interpretation rather than faithful capture and that different mode is not declared"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Traverse the image in a declared order, transcribe only visible characters, and reconstruct headings, rows, columns, or spatial groups only where visible evidence supports them. Unreadable regions receive explicit illegible/uncertain markers linked to their location; context is never used to silently complete missing text.",
+  "procedure": [
+    "Record the image/page identifier and reading order.",
+    "Segment visible text and structural regions.",
+    "Transcribe characters exactly, preserving capitalization, numbers, and punctuation where legible.",
+    "Represent visible layout without inferring hidden cells or labels.",
+    "Mark obscured or ambiguous regions with location-specific uncertainty.",
+    "Run a second pass against the image and finalize only verified capture."
+  ],
+  "always_do": [
+    "Preserve visible spelling, numbers, labels, and structure.",
+    "Mark uncertainty at the exact region.",
+    "Keep the ITFC acronym collision explicit in provenance."
+  ],
+  "never_do": [
+    "Autocomplete an obscured word from context.",
+    "Invent a table cell or reading order not visible in the image.",
+    "Merge this package with the unresolved Intent/Task Framing Controller sense of ITFC."
+  ],
+  "interaction_reasons": {
+    "grounding-no-invention": "Prevents contextual guessing during capture.",
+    "zero-drift-zones": "Locks verified transcription atoms against later rewriting.",
+    "citation-fidelity": "Can verify later claims or quotations against the captured source region."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "grounding-no-invention": "Grounding supplies the general no-invention rule; Image Text Fidelity Capture adds image segmentation, reading order, and legibility handling."
+  },
+  "conflict_rules": [
+    "Visible evidence outranks grammatical completion.",
+    "If layout and lexical readings conflict, preserve both uncertainty and coordinates rather than choosing silently."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-14. ITFC — Historical Acronym Collision",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "7. ABF, ITFC, OCG, ECL — corrections and collisions",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

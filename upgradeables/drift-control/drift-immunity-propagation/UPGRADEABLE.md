@@ -2,22 +2,38 @@
 
 ## Summary
 
-Carry locked constraints and invariants through downstream modules so resolved drift does not reappear.
+Carry protected invariants and their validation rules through every derivative artifact and downstream component so later transformations cannot silently weaken them.
 
 ## Purpose
 
-Provide a reusable `state-manager` mechanism rather than
-a complete task identity or monolithic prompt.
+Preserve established drift resistance across pipelines rather than only at the original source boundary.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A fact may be locked in the first stage yet lose its protection when summarized, projected, handed off, or transformed again.
+
+## Where It Fits in the OS
+
+Roles: invariant propagation, derivation lineage, downstream validation. Pipeline stages: artifact derivation, state projection, agent handoff, final aggregation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-stage generation
+- agent pipelines
+- source-to-summary-to-decision workflows
+- format conversion chains
+
+## When Not to Use
+
+- no downstream artifact derives from protected material
+- protection metadata cannot accompany data and downstream validation is impossible
+- the claimed invariant was never verified
 
 ## Scope
 
-Functional classes: drift-control, state. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `drift-immunity-propagation@1.1.0`. ID: `T4-14`. Functional classes: drift-control, state. Activation: `U2-specialized`. Mechanism basis: `normalized-from-recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,150 @@ Functional classes: drift-control, state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- no downstream artifact derives from protected material
+- protection metadata cannot accompany data and downstream validation is impossible
+- the claimed invariant was never verified
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- verified invariant records
+- source provenance
+- derivation graph
+- consumer contracts
+- validation predicates
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- invariant-bearing derivatives
+- lineage graph
+- boundary validation results
+- explicit rejection record
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Represent each verified invariant with an identifier, source/provenance, scope, permitted transformations, and validation predicate. When producing a derived artifact or state projection, copy the applicable invariant contract and lineage pointer, require the receiver to acknowledge it, and test the derivative before it can become an upstream source for another stage.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Identify verified invariants and assign stable identifiers.
+2. Define the derivation scope and validation predicate for each.
+3. Attach applicable invariant contracts to every downstream projection or artifact.
+4. Require receiving components to preserve or explicitly reject unsupported contracts.
+5. Validate each derivative before further propagation.
+6. Trace final claims back through lineage to the original protected source.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- propagate provenance with protection
+- scope invariants to applicable fields
+- validate at every derivative boundary
+- make rejection explicit
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- propagate an unverified claim as immune
+- copy labels without validation predicates
+- assume protection survives a lossy transform automatically
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `zero-drift-zones`
+
+Supplies the invariants whose immunity must travel downstream.
+
+### `structured-state-projection`
+
+Carries the invariant contract with the filtered state view.
+
+### `drift-suppression`
+
+Tests and repairs downstream deviations.
 
 ## Compatible Upgradeables
 
-- `stateblock`
-- `domain-mode-isolation`
+- `zero-drift-zones` — Supplies the invariants whose immunity must travel downstream.
+- `structured-state-projection` — Carries the invariant contract with the filtered state view.
+- `drift-suppression` — Tests and repairs downstream deviations.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `controlled-drift-corridors`
+
+Limits propagation to fixed dimensions while allowing explicit change elsewhere.
+
+### `scoped-loader`
+
+Loads only applicable invariant contracts, avoiding global constraint pollution.
 
 ## Potential Redundancy
 
-- `None declared`
+### `working-memory-lock-in`
+
+WM Lock protects current attention; propagation protects lineage across component boundaries.
+
+### `zero-drift-zones`
+
+Zero-drift defines immutability; propagation ensures that definition survives derivation.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Original verified source and higher-authority constraints outrank downstream paraphrases.
+- If two inherited invariant contracts conflict, stop derivation and resolve lineage/authority before merging.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Do not label a derivative immune when its invariant cannot be tested.
+- Stop propagation across a component that cannot preserve required provenance or semantics.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose contract restatement inside a single atomic transformation
+- manual acknowledgements where typed interfaces enforce them
+
+Keep mandatory:
+
+- stable invariant identity
+- lineage
+- boundary tests
+- no immunity for unverified claims
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- multi-stage generation
+- agent pipelines
+- source-to-summary-to-decision workflows
+- format conversion chains
 
 ## Example Composition
 
-Activate `drift-immunity-propagation` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Cited financial figures move from extraction to analysis to an executive slide.
+
+**Why it activates:** Each stage could round, relabel, or detach the figures from their period.
+
+**Inputs/state:** Verified figure IDs, source cells, period/currency constraints, and equality/tolerance tests.
+
+**Action:** Carries those contracts into analysis and slide projections and validates each derivative.
+
+**Does not:** It does not propagate a confidence label without the source period or allow silent unit changes.
+
+**Result/state change:** Final figures retain source identity and protected semantics through the pipeline.
+
+**Companions:** ['zero-drift-zones', 'structured-state-projection', 'drift-suppression']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-14` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: DIP.
+Primary source ID: `T4-14` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: DIP.
+
+Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — Drift Immunity Propagation (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — ECL / Drift Sink (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — Zero-drift (historical_assistant_artifact)

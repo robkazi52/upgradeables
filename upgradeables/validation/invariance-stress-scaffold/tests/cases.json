@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "invariance-stress-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "invariance-stress-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Order is supposed to be irrelevant to the safety judgment.",
+      "expect": "A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "invariance-stress-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the transformed feature is itself decision-relevant",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "invariance-stress-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Meaning-changing controls are not invariant breaches.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "invariance-stress-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "invariance-stress-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit invariant and at least one controlled counterfactual comparison when robustness is claimed",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "invariance-stress-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A conclusion changes only after a qualifier is removed.",
+      "expect": "Classify the change as a valid response to a meaning-changing control, not an invariant breach.",
+      "reject": "Demand identical output across all mutations."
+    }
+  ]
+}

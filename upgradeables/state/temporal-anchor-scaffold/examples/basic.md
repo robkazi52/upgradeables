@@ -1,10 +1,31 @@
-# Basic composition example
+# Temporal Anchor Scaffold — Basic Example
 
-**Situation:** time or chronology affects correctness.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `temporal-anchor-scaffold`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Determine which of three policy versions governed an incident.
+
+## Why this Upgradeable activates
+
+Publication date, effective date, and incident time differ.
+
+## Inputs / state
+
+Three cited version notices, incident timestamp, timezone, and one ambiguous relative phrase.
+
+## What it does
+
+Builds a temporary typed timeline, flags the ambiguity, and tests applicability windows.
+
+## What it does not do
+
+It does not equate publication with effectiveness or guess the relative date.
+
+## Result / state change
+
+The applicable version is identified with an explicit uncertainty branch.
+
+## Interaction with companion components
+
+['clarification-gateway', 'sequential-memory-state-engine', 'state-snapshot']

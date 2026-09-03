@@ -2,22 +2,37 @@
 
 ## Summary
 
-Use two independent truth anchors so one failure is less likely to corrupt the result.
+A two-anchor safety pattern that deliberately obtains independent support for a consequential truth atom so one failed source or reasoning path cannot silently control the result.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Reduce single-point truth failure before high-impact synthesis or decision-making.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents apparent confidence based on only one fragile anchor and exposes when supposed corroboration is not independent.
+
+## Where It Fits in the OS
+
+Roles: evidence-redundancy, truth-safety. Pipeline stages: evidence-selection, pre-synthesis-validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- high-stakes evidence work
+- critical factual claims
+- source-grounded decision support
+- safety-relevant tradeoffs
+
+## When Not to Use
+
+- the claim is low risk and an authoritative primary source is decisive
+- a second anchor would merely repeat the first source
 
 ## Scope
 
-Functional classes: truth-grounding, validation. Activation:
-`U3-high-risk-expensive`. This modern classification is not a historical tier.
+Canonical package: `truth-redundancy@1.1.0`. ID: `T3-03`. Functional classes: truth-grounding, validation. Activation: `U3-high-risk-expensive`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,96 +40,125 @@ Functional classes: truth-grounding, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the claim is low risk and an authoritative primary source is decisive
+- a second anchor would merely repeat the first source
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- consequential truth atom
+- primary source/check
+- candidate independent source/check
+- provenance
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- verified independent anchor pair
+- non-independence warning
+- missing-anchor status
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+For a selected truth atom, establish two evidence or validation anchors whose failure modes are meaningfully independent. Record provenance and the proposition each anchor supports; the pair is then passed to a gate or resolver rather than treated as automatic proof.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Identify the consequential truth atom.
+2. Select the primary anchor and record its failure mode.
+3. Select a second anchor with a distinct source or validation path.
+4. Verify that the second does not merely derive from the first.
+5. Record each anchor's supported scope and hand the pair to Multi-Truth Gating.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Test independence, not just numerical multiplicity.
+- Keep anchor provenance and supported scope.
+- Apply redundancy selectively to consequential claims.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Count copied or circular claims as independent truth.
+- Assume two anchors automatically resolve disagreement.
+- Create unsupported content to supply a missing second anchor.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `multi-truth-gating`
+
+Evaluates whether the two anchors agree sufficiently for commitment.
+
+### `critical-atomic-verification`
+
+Identifies which small, consequential claims merit redundant anchoring.
 
 ## Compatible Upgradeables
 
-- `multi-truth-gating`
+- `multi-truth-gating` — Evaluates whether the two anchors agree sufficiently for commitment.
+- `critical-atomic-verification` — Identifies which small, consequential claims merit redundant anchoring.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+No natural counterbalance was identified after review; ordinary authority, scope, and validation controls still apply.
 
 ## Potential Redundancy
 
-- `None declared`
+### `multi-truth-gating`
+
+Truth Redundancy constructs an independent pair; Multi-Truth Gating compares it and determines disposition.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Independence is invalid if both anchors share the same unverified upstream source.
+- A safety veto still controls even when two non-safety anchors agree.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- If no genuinely independent second anchor is available, report that limitation and do not claim redundant verification.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- redundant anchoring for low-impact routine facts
+
+Keep mandatory:
+
+- when redundancy is claimed, the anchors must be genuinely independent
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- high-stakes evidence work
+- critical factual claims
+- source-grounded decision support
+- safety-relevant tradeoffs
 
 ## Example Composition
 
-Activate `truth-redundancy` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A high-impact numerical claim drives a decision.
+
+**Why it activates:** A single transcription or calculation error could change the outcome.
+
+**Inputs/state:** The source table and an independently reproduced calculation.
+
+**Action:** Records both anchors and checks their independence.
+
+**Does not:** Treat two paragraphs citing the same table as independent.
+
+**Result/state change:** An anchor pair ready for Multi-Truth Gating.
+
+**Companions:** ['critical-atomic-verification', 'multi-truth-gating']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: Dual-Lepton Truth Redundancy.
+Primary source ID: `T3-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: Dual-Lepton Truth Redundancy.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-03. Truth Redundancy / Dual-Lepton Truth Redundancy (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.4 Multiverse / plan generation (historical_assistant_artifact)

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-09",
   "slug": "invariance-stress-scaffold",
   "display_name": "Invariance Stress Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,52 +21,62 @@
     "validator",
     "deterministic-script"
   ],
-  "purpose": "Test whether protected behavior and facts outside a change remain unchanged.",
+  "purpose": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "prompt robustness checks",
+    "policy interpretation",
+    "classification stability",
+    "summary validation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the transformed feature is itself decision-relevant",
+    "the invariants cannot be stated",
+    "the task requires the unrecovered historical implementation"
   ],
   "triggers": [
     "a patch or rewrite must preserve invariants"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the transformed feature is itself decision-relevant",
+    "the invariants cannot be stated",
+    "the task requires the unrecovered historical implementation"
   ],
   "requires": [],
   "recommended_with": [
     "crispr-edit",
+    "multi-layer-consistency",
     "safe-rewrite"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "controlled-drift-corridors"
+  ],
+  "potentially_redundant_with": [
+    "parallel-qms"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "artifact or prompt",
+    "declared invariants",
+    "bounded perturbations",
+    "meaning-changing controls",
+    "comparison metrics"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "invariance matrix",
+    "sensitivity findings",
+    "narrowed robustness claim",
+    "unresolved source-gap notice"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "large perturbation suites for low-risk one-off output"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit invariant and at least one controlled counterfactual comparison when robustness is claimed"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -79,5 +89,83 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "A conclusion may depend on incidental wording, ordering, or representation despite claiming to be robust to those changes.",
+  "os_role": [
+    "provisional-robustness-probe",
+    "representation-sensitivity-detector"
+  ],
+  "pipeline_stages": [
+    "post-draft validation",
+    "pre-release stress testing"
+  ],
+  "best_fit_tasks": [
+    "prompt robustness checks",
+    "policy interpretation",
+    "classification stability",
+    "summary validation"
+  ],
+  "avoid_when": [
+    "the transformed feature is itself decision-relevant",
+    "the invariants cannot be stated",
+    "the task requires the unrecovered historical implementation"
+  ],
+  "mechanism_basis": "modern-interpretation",
+  "mechanism": "Define the properties claimed invariant, generate a small controlled set of transformations that should preserve those properties—such as reordering independent facts, paraphrasing without modal change, or changing irrelevant formatting—and compare outputs. Any decision-relevant change is reported as sensitivity; this is a modern stress-test interpretation, not a recovered historical algorithm.",
+  "procedure": [
+    "State the claimed invariant and observable pass condition.",
+    "Separate semantics-preserving perturbations from meaning-changing controls.",
+    "Construct a bounded perturbation set and preserve provenance.",
+    "Run the task independently on original and perturbed inputs.",
+    "Compare conclusions, confidence, constraints, and safety behavior.",
+    "Classify differences as acceptable presentation variation or invariant breach.",
+    "Report sensitivity and narrow the original robustness claim."
+  ],
+  "always_do": [
+    "Declare why each perturbation should preserve the target property.",
+    "Include at least one meaning-changing control to confirm the test can detect legitimate change.",
+    "Label this mechanism as modern interpretation."
+  ],
+  "never_do": [
+    "Call arbitrary input changes invariance tests.",
+    "Require identical wording when only conclusions should be invariant.",
+    "Attribute this procedure to unrecovered historical source."
+  ],
+  "interaction_reasons": {
+    "safe-rewrite": "Defines transformations intended to preserve meaning.",
+    "crispr-edit": "Can isolate a single controlled perturbation.",
+    "multi-layer-consistency": "Checks whether discovered sensitivity propagates across representation layers."
+  },
+  "counterbalance_reasons": {
+    "controlled-drift-corridors": "Prevents an overly rigid invariant definition from banning harmless surface variation inside a declared corridor."
+  },
+  "redundancy_reasons": {
+    "parallel-qms": "Monte QMS perturbs assumptions, wording, or structure as a validator mode; this scaffold is a standalone, explicitly provisional invariance protocol."
+  },
+  "conflict_rules": [
+    "Meaning-changing controls are not invariant breaches.",
+    "Safety behavior must remain at least as conservative under semantics-preserving perturbations."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "Invariance Stress Scaffold",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "20. RECOVERY GAPS AFTER DEEP PASS 2.0",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

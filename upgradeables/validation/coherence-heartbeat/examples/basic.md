@@ -1,10 +1,31 @@
-# Basic composition example
+# Global Coherence Heartbeat — Basic Example
 
-**Situation:** a workflow is long or multi-stage.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `coherence-heartbeat`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+An agent is implementing a repository across several hours and many files.
+
+## Why this Upgradeable activates
+
+Local edits can drift from the handoff while still passing narrow tests.
+
+## Inputs / state
+
+A baseline naming public-community use, canonical sources, and no invented history.
+
+## What it does
+
+After generation, notices several files imply unsupported provenance and triggers repair.
+
+## What it does not do
+
+Rerun every test suite after each file edit.
+
+## Result / state change
+
+Drift is caught before release while routine checkpoints remain cheap.
+
+## Interaction with companion components
+
+['state-snapshot', 'coherence-loops', 'stable-long-context']

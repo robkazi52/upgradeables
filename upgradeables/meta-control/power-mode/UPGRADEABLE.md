@@ -2,22 +2,38 @@
 
 ## Summary
 
-Use broad bounded exploration, deeper planning, candidate comparison, and system-level architecture reasoning.
+Runs broad but bounded design exploration using deeper planning, Multiverse alternatives, QMS evaluation, and system-level reasoning.
 
 ## Purpose
 
-Provide a reusable `parent-skill-mode` mechanism rather than
-a complete task identity or monolithic prompt.
+Increase solution search and architectural depth before commitment when the problem is genuinely ambiguous or system-wide.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Narrow execution modes prematurely commit to the first workable design and fail to compare architectures, long-horizon effects, or alternative plans.
+
+## Where It Fits in the OS
+
+Roles: broad design mode, architecture exploration profile. Pipeline stages: problem framing, candidate generation, system analysis, QMS collapse.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- system architecture
+- novel workflow design
+- strategic planning
+- ambiguous research design
+
+## When Not to Use
+
+- the task is a precise grounded execution step
+- a hard constraint leaves only one valid action
+- broad exploration would delay urgent containment
 
 ## Scope
 
-Functional classes: meta-control, planning-reasoning. Activation:
-`U4-meta-architecture`. This modern classification is not a historical tier.
+Canonical package: `power-mode@1.1.0`. ID: `T4-07`. Functional classes: meta-control, planning-reasoning. Activation: `U4-meta-architecture`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,154 @@ Functional classes: meta-control, planning-reasoning. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task is a precise grounded execution step
+- a hard constraint leaves only one valid action
+- broad exploration would delay urgent containment
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- design problem
+- locked constraints
+- exploration budget
+- candidate evidence
+- QMS rubric
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- bounded design alternatives
+- system-level tradeoff analysis
+- selected architecture
+- SAFE-ready decision record
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Declare a bounded exploration budget, open two or three materially distinct plans under identical goals and constraints, reason at system or Cosmic scale only where dependencies justify it, and evaluate all candidates with QMS before collapse. POWER produces a selected design and uncertainty map; it does not authorize consequential execution without an explicit transition to SAFE or another execution profile.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Declare POWER, the design question, non-negotiable constraints, and exploration budget.
+2. Generate two or three materially distinct plans or architectures.
+3. Develop system dependencies, long-horizon effects, reversibility, and risks for each to equal decision depth.
+4. Evaluate candidates using a common QMS rubric and hard vetoes.
+5. Select or compatibly synthesize one design and retire losing assumptions.
+6. Emit a decision record suitable for a SAFE handoff rather than executing speculative changes.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- bound exploration
+- keep shared constraints across branches
+- use a common evaluation rubric
+- collapse before handoff
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- equate POWER with unconstrained creativity
+- execute all branches
+- outvote a truth or safety veto
+- use Cosmic analysis on every local detail
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `multiverse-reasoning`
+
+Multiverse maintains the bounded alternative plans.
+
+### `parallel-qms`
+
+Parallel-QMS evaluates branches consistently before commitment.
+
+### `hybrid-mode`
+
+HYBRID supplies the controlled transition from POWER planning to SAFE execution.
 
 ## Compatible Upgradeables
 
-- `multiverse-reasoning`
-- `parallel-qms`
+- `multiverse-reasoning` — Multiverse maintains the bounded alternative plans.
+- `parallel-qms` — Parallel-QMS evaluates branches consistently before commitment.
+- `hybrid-mode` — HYBRID supplies the controlled transition from POWER planning to SAFE execution.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `safe-mode`
+
+SAFE narrows drift and grounds implementation after POWER's design is selected.
+
+### `bounded-exit`
+
+Bounded ExIt prevents architectural exploration from expanding indefinitely.
 
 ## Potential Redundancy
 
-- `None declared`
+### `multiverse-reasoning`
+
+Multiverse is one candidate-management mechanism; POWER is the wider planning profile that also controls depth and architecture scope.
+
+### `hybrid-mode`
+
+HYBRID sequences POWER and SAFE; POWER alone is only the planning phase.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Hard constraints and vetoes apply equally in broad exploration.
+- No branch may mutate consequential external state before collapse and execution authorization.
+- If one plan is dictated by evidence, de-escalate rather than fabricate alternatives.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- unbounded ideation
+- architecture theater
+- unequal branch development
+- premature execution
+- branch assumption leakage
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- explicitly printing every intermediate branch detail when the final decision record preserves material tradeoffs
+
+Keep mandatory:
+
+- bounded alternatives
+- common QMS
+- collapse
+- execution boundary
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- system architecture
+- novel workflow design
+- strategic planning
+- ambiguous research design
 
 ## Example Composition
 
-Activate `power-mode` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Choose a governance architecture for an open community skill registry.
+
+**Why it activates:** Central, federated, and open-PR models create different trust and scaling behavior.
+
+**Inputs/state:** Vendor neutrality, contributor ease, provenance, abuse controls, and maintainer cost are locked criteria.
+
+**Action:** Builds three architectures, evaluates governance and failure modes at system scale, selects one, and packages it for SAFE implementation.
+
+**Does not:** Create repository settings or publish before the chosen design is validated.
+
+**Result/state change:** A deeply compared architecture with a bounded execution handoff.
+
+**Companions:** ['multiverse-reasoning', 'parallel-qms', 'hybrid-mode']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-07` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T4-07` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-07. POWER Mode (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.4 Multiverse / plan generation (historical_assistant_artifact)

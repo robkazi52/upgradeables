@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "counterfactual-integrity",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "counterfactual-integrity-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The answer combines factual and counterfactual modes.",
+      "expect": "Two separated sections with no phase leakage.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "counterfactual-integrity-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task contains no hypothetical branch",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "counterfactual-integrity-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A factual-only task boundary overrides permission to explore counterfactuals.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "counterfactual-integrity-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "If branch-local assumptions cannot be separated from factual claims, do not certify the mixed output.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "counterfactual-integrity-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "no hypothetical premise or consequence may silently become fact",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "counterfactual-integrity-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A counterfactual branch assumes intervention X and the final factual summary says X occurred.",
+      "expect": "Flag phase contamination and remove or relabel the claim.",
+      "reject": "A pass based only on internal logical consistency of the hypothetical branch."
+    }
+  ]
+}

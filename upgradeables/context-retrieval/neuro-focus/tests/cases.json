@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "neuro-focus",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "neuro-focus-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The trace and recent change isolate a narrow high-value area.",
+      "expect": "A bounded root-cause analysis with an explicit expansion condition.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "neuro-focus-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task requires broad discovery before a target is known",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "neuro-focus-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Source coverage and truth gates override the desire to stay narrowly focused.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "neuro-focus-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Relax or move focus when a credible alternative, uncovered dependency, or counterevidence lies outside the corridor.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "neuro-focus-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit focus boundary",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "neuro-focus-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A large corpus with one high-signal region and a plausible competing region.",
+      "expect": "Deeply process the high-signal region while preserving and checking the competing pointer before commitment.",
+      "reject": "Treat all regions equally or discard the competing region without review."
+    }
+  ]
+}

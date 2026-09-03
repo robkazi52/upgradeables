@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-10",
   "slug": "drift-sink-scaffold",
   "display_name": "Drift Sink Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,45 +20,69 @@
   "implementation_forms": [
     "guard"
   ],
-  "purpose": "Capture and retire irrelevant branches so they no longer compete with active task state.",
+  "purpose": "Stop known drift attractors from repeatedly re-entering active reasoning without destroying potentially useful history.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "long branching investigations",
+    "iterative drafting",
+    "agent workflows with recurring stale branches",
+    "large mixed-authority contexts"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the branch is unresolved rather than rejected",
+    "quarantine would conceal contrary evidence",
+    "retention or audit policy requires it to remain actively visible"
   ],
   "triggers": [
-    "discarded branches keep resurfacing"
+    "Activate when the task requires discarded branches keep resurfacing."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the branch is unresolved rather than rejected",
+    "quarantine would conceal contrary evidence",
+    "retention or audit policy requires it to remain actively visible"
   ],
   "requires": [],
   "recommended_with": [
-    "drift-suppression"
+    "drift-suppression",
+    "non-authoritative-branch-suppression",
+    "stable-long-context"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "state-snapshot"
+  ],
+  "potentially_redundant_with": [
+    "non-authoritative-branch-suppression",
+    "stable-long-context"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "candidate branch",
+    "authority and relevance classification",
+    "dependency graph",
+    "retention policy",
+    "review triggers"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "reversible quarantine entry",
+    "active-retrieval exclusion",
+    "restore pointer",
+    "review record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a formal sink for a single harmless rejected idea",
+      "persistent quarantine after a disposable task ends"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "reversibility",
+      "authority/reason record",
+      "dependency check",
+      "no concealment of contrary evidence"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "Do not quarantine unresolved contrary evidence or safety-critical information.",
+    "Treat the mechanism as provisional until original concept-specific documentation is recovered."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +95,92 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Distinct exact-name snapshot entry; do not infer the unresolved ECL expansion. Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Superseded drafts, rejected hypotheses, and irrelevant branches can keep resurfacing and pulling work away from the current task.",
+  "os_role": [
+    "drift quarantine",
+    "task-local scaffold",
+    "retired-branch containment"
+  ],
+  "pipeline_stages": [
+    "conflict resolution",
+    "context compaction",
+    "branch retirement",
+    "review or restore"
+  ],
+  "best_fit_tasks": [
+    "long branching investigations",
+    "iterative drafting",
+    "agent workflows with recurring stale branches",
+    "large mixed-authority contexts"
+  ],
+  "avoid_when": [
+    "the branch is unresolved rather than rejected",
+    "quarantine would conceal contrary evidence",
+    "retention or audit policy requires it to remain actively visible"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "A cautious modern interpretation is a reversible quarantine ledger: move an explicitly classified branch out of the active view, record why, by whose authority, its provenance, dependencies, review condition, and stable pointer, then block automatic retrieval unless a matching review trigger fires. The sink is neither deletion nor a semantic garbage collector, and the unrecovered ECL label must not be expanded speculatively.",
+  "procedure": [
+    "Identify a branch that repeatedly causes drift and classify it as superseded, rejected, irrelevant, or low-authority.",
+    "Check whether any active claim depends on it and whether contrary-evidence duties require visibility.",
+    "Create a task-local sink entry with reason, authority, provenance, dependencies, and restore trigger.",
+    "Remove it from automatic active retrieval while retaining its stable pointer.",
+    "Review the sink at milestone or trigger events.",
+    "Restore, archive, or delete only under the applicable authority and retention policy; retire the scaffold when the task ends."
+  ],
+  "always_do": [
+    "make quarantine reversible",
+    "retain provenance and reason",
+    "check dependencies",
+    "define review and retirement triggers"
+  ],
+  "never_do": [
+    "use the sink to hide inconvenient evidence",
+    "equate quarantine with deletion",
+    "expand ECL or claim an unrecovered historical algorithm",
+    "sink unresolved safety-critical branches"
+  ],
+  "interaction_reasons": {
+    "non-authoritative-branch-suppression": "Can classify lower-authority branches that qualify for reversible quarantine.",
+    "stable-long-context": "Excludes sink entries from the active view while preserving indexed history.",
+    "drift-suppression": "Identifies recurring deviations whose causal branch may be quarantined."
+  },
+  "counterbalance_reasons": {
+    "clarification-gateway": "Prevents sinking a branch whose relevance or authority is merely unclear.",
+    "state-snapshot": "Preserves a pre-quarantine checkpoint for recovery."
+  },
+  "redundancy_reasons": {
+    "non-authoritative-branch-suppression": "Suppression blocks a class at selection time; the sink records and contains repeatedly problematic instances.",
+    "stable-long-context": "Long-context compaction marks history; the sink adds an explicit no-auto-retrieval quarantine and review lifecycle."
+  },
+  "conflict_rules": [
+    "Higher-authority evidence or audit obligations can force restoration.",
+    "When a branch contains both obsolete and still-relevant facts, split it rather than sinking the whole branch."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Drift Sink Scaffold residual listings"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Drift Sink Scaffold and ECL inventory entries"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.3 Drift widths",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "State lifecycle, authority, and drift architecture"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

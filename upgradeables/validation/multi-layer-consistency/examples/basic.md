@@ -1,10 +1,31 @@
-# Basic composition example
+# Multi-Layer Consistency — Basic Example
 
-**Situation:** multiple authority layers are composed.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `multi-layer-consistency`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Every module test passes, but the application claims all writes are transactional.
+
+## Why this Upgradeable activates
+
+The global guarantee depends on cross-module composition.
+
+## Inputs / state
+
+Module behaviors, integration flow, and transactional invariant.
+
+## What it does
+
+Traces the invariant down and finds one inter-module path committing before validation.
+
+## What it does not do
+
+Approve because each module is locally correct.
+
+## Result / state change
+
+A cross-layer mismatch blocks the global guarantee until integration behavior changes.
+
+## Interaction with companion components
+
+['parallel-qms', 'bidirectional-consistency', 'coherence-loops']

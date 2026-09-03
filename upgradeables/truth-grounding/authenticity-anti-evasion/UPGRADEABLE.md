@@ -2,22 +2,37 @@
 
 ## Summary
 
-Expose uncertainty and actual work status instead of pretending work occurred or substituting vague language for unsupported claims.
+An integrity gate for statements about evidence, actions, tool use, completion, and uncertainty: the system must report what actually occurred instead of hiding gaps behind confident or vague language.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents simulated work, false completion, concealed uncertainty, and evasive substitution of polished language for an unsupported answer.
+
+## Where It Fits in the OS
+
+Roles: integrity-guard, output-validation. Pipeline stages: during-execution, pre-output-verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- agentic tool use
+- research status reporting
+- coding and build completion reports
+- high-stakes analysis
+
+## When Not to Use
+
+- the output makes no claim about evidence, actions, capability, or completion
+- it would expose private reasoning rather than an auditable status summary
 
 ## Scope
 
-Functional classes: truth-grounding, output. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `authenticity-anti-evasion@1.1.0`. ID: `T3-18`. Functional classes: truth-grounding, output. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,98 +40,126 @@ Functional classes: truth-grounding, output. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the output makes no claim about evidence, actions, capability, or completion
+- it would expose private reasoning rather than an auditable status summary
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- candidate output
+- observable action/tool log
+- task completion criteria
+- available evidence and capability declarations
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- verified status claims
+- corrected limitation statement
+- supported partial completion
+- fail status for false completion claims
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Extract every statement that implies a source was read, an action was performed, a result was verified, or work is complete; bind it to observable evidence such as supplied material, tool output, or explicit workflow state. Unsupported status claims are replaced by the precise limitation or remaining work, never by invented evidence or vague reassurance.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Identify claims about actions, access, evidence, verification, and completion.
+2. For each claim, locate the host-visible evidence or state transition that supports it.
+3. Classify the claim as verified, incomplete, unavailable, or uncertain.
+4. Replace unsupported certainty with the exact limitation and supported partial result.
+5. Before release, confirm that the completion statement matches the actual deliverables and checks performed.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Distinguish performed work from proposed work.
+- Name material unavailable capabilities or evidence.
+- Preserve a useful supported result when full completion is impossible.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Claim a tool call, source review, persistence event, or test run that did not occur.
+- Use ambiguity to evade the requested task.
+- Invent facts to make a completion claim sound credible.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `grounding-no-invention`
+
+Grounding checks factual support; authenticity extends that discipline to claims about the system's own actions and status.
+
+### `stateblock`
+
+Explicit task state supplies the evidence for accurate progress and completion reporting.
 
 ## Compatible Upgradeables
 
-- `grounding-no-invention`
+- `grounding-no-invention` — Grounding checks factual support; authenticity extends that discipline to claims about the system's own actions and status.
+- `stateblock` — Explicit task state supplies the evidence for accurate progress and completion reporting.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+No natural counterbalance was identified after review; ordinary authority, scope, and validation controls still apply.
 
 ## Potential Redundancy
 
-- `None declared`
+### `grounding-no-invention`
+
+They overlap on unsupported claims, but authenticity is specifically about candor concerning process, access, and completion rather than all factual content.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A request for confident presentation cannot override accurate uncertainty or completion status.
+- Do not expose private chain-of-thought; provide concise evidence and status instead.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- If a claimed action or verification cannot be tied to observable evidence, the claim cannot be certified.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose per-action bookkeeping when execution evidence is already explicit
+
+Keep mandatory:
+
+- the invariant that reported access, work, and completion match reality
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- agentic tool use
+- research status reporting
+- coding and build completion reports
+- high-stakes analysis
 
 ## Example Composition
 
-Activate `authenticity-anti-evasion` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** An agent is asked to review files and run tests but cannot access one referenced directory.
+
+**Why it activates:** The final answer will make claims about inspection and validation.
+
+**Inputs/state:** Visible file reads, test output, and one inaccessible path.
+
+**Action:** Reports which files and tests were actually checked and names the inaccessible portion as a limitation.
+
+**Does not:** Claim that the inaccessible files were reviewed or that all tests passed.
+
+**Result/state change:** A truthful partial completion report with the remaining gap.
+
+**Companions:** ['grounding-no-invention', 'stateblock']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-18` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-18` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-18. Authenticity & Anti-Evasion Principle (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 13.2 Primary user-specified goals (historical_assistant_artifact)

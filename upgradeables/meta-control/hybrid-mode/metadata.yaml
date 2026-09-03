@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-08",
   "slug": "hybrid-mode",
   "display_name": "HYBRID Mode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,47 +21,70 @@
     "parent-skill-mode",
     "orchestrator"
   ],
-  "purpose": "Use POWER for planning and SAFE for execution with explicit supervisor-controlled transitions.",
+  "purpose": "Combine broad planning capability with conservative implementation without letting speculative branch assumptions leak into committed work.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "architecture followed by implementation",
+    "research plan followed by evidence extraction",
+    "migration design followed by cutover",
+    "complex repository builds"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task needs only narrow execution",
+    "the task is pure open exploration with no commitment",
+    "no supervisor can define and validate the transition state"
   ],
   "triggers": [
     "work includes both broad design and grounded execution"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task needs only narrow execution",
+    "the task is pure open exploration with no commitment",
+    "no supervisor can define and validate the transition state"
   ],
   "requires": [],
   "recommended_with": [
     "power-mode",
+    "safe-mode",
+    "ultimate-suite-supervisor"
+  ],
+  "counterbalances": [
+    "meta-stability"
+  ],
+  "potentially_redundant_with": [
+    "power-mode",
     "safe-mode"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "task and constraints",
+    "planning rubric",
+    "transition-state schema",
+    "execution evidence",
+    "supervisor authority"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "selected plan",
+    "validated POWER-to-SAFE handoff",
+    "grounded execution result",
+    "mode-transition record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose phase narration for a compact two-step task"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit collapse",
+      "handoff state",
+      "supervisor gate",
+      "narrow execution"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "mode leakage",
+    "uncollapsed execution",
+    "lost constraints at handoff",
+    "silent oscillation",
+    "POWER used to bypass SAFE evidence rules"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -74,5 +97,83 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A workflow often needs creative architecture search and precise execution, but one undifferentiated mode either narrows planning too early or executes unverified ideas too freely.",
+  "os_role": [
+    "dual-mode workflow",
+    "planning-to-execution transition controller"
+  ],
+  "pipeline_stages": [
+    "POWER planning",
+    "collapse and handoff",
+    "SAFE execution",
+    "post-execution validation"
+  ],
+  "best_fit_tasks": [
+    "architecture followed by implementation",
+    "research plan followed by evidence extraction",
+    "migration design followed by cutover",
+    "complex repository builds"
+  ],
+  "avoid_when": [
+    "the task needs only narrow execution",
+    "the task is pure open exploration with no commitment",
+    "no supervisor can define and validate the transition state"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Run POWER only to generate and compare bounded plans, then collapse to one plan and construct a handoff containing locked goals, selected decisions, rejected assumptions, evidence needs, risks, and execution invariants. A supervisor validates the handoff before activating SAFE, which executes only the committed plan with narrow drift and atomic checks. Re-enter POWER only through a checkpoint when execution exposes an architecture-level defect.",
+  "procedure": [
+    "Declare HYBRID and define separate planning and execution completion criteria.",
+    "Use POWER to generate, evaluate, and collapse candidate plans.",
+    "Create a transition state with the selected plan, locked constraints, evidence, risks, unresolved items, and retired branches.",
+    "Have the supervisor verify that the plan is executable and no speculative assumptions remain active.",
+    "Switch explicitly to SAFE and execute with grounding, narrow drift, and atomic validation.",
+    "If execution uncovers a design failure, checkpoint state and deliberately return to POWER rather than improvising."
+  ],
+  "always_do": [
+    "declare the active phase",
+    "collapse branches before execution",
+    "transfer locked state explicitly",
+    "gate every POWER-to-SAFE and SAFE-to-POWER transition"
+  ],
+  "never_do": [
+    "execute directly from multiple POWER branches",
+    "carry exploratory assumptions into SAFE as facts",
+    "silently switch modes mid-action",
+    "use HYBRID when one mode suffices"
+  ],
+  "interaction_reasons": {
+    "power-mode": "POWER supplies bounded design and candidate comparison in the first phase.",
+    "safe-mode": "SAFE supplies grounded, conservative execution after commitment.",
+    "ultimate-suite-supervisor": "The suite supervisor owns phase declaration, conflict resolution, and transition authorization."
+  },
+  "counterbalance_reasons": {
+    "meta-stability": "Meta-Stability can freeze transition state when repeated mode switching threatens coherence."
+  },
+  "redundancy_reasons": {
+    "power-mode": "POWER alone does not define the safe execution transition.",
+    "safe-mode": "SAFE alone does not provide broad architectural search."
+  },
+  "conflict_rules": [
+    "No POWER branch may execute until one plan passes collapse and handoff validation.",
+    "SAFE findings can reopen design only through a recorded checkpoint.",
+    "Truth and safety vetoes survive both modes and cannot be relaxed by transition."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-08. HYBRID Mode",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

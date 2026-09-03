@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "bounded-exit",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "bounded-exit-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The memo is sound but can absorb an unknown number of polish passes.",
+      "expect": "A publishable memo and an explicit diminishing-return exit.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "bounded-exit-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a mandatory validator has not yet passed",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "bounded-exit-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Mandatory acceptance checks outrank a pass budget; if budget expires first, return blocked rather than pass.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "bounded-exit-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "endless recursive polishing",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "bounded-exit-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "predeclared exit rule",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "bounded-exit-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An artifact can always be improved a little more.",
+      "expect": "The skill selects the highest-value next repair and emits a reasoned stop decision tied to threshold, budget, or marginal value.",
+      "reject": "The skill says iterate until good without a measurable exit."
+    }
+  ]
+}

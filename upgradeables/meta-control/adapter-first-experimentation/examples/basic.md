@@ -1,10 +1,31 @@
-# Basic composition example
+# Adapter-First Experimentation — Basic Example
 
-**Situation:** a new capability may destabilize a base workflow.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `adapter-first-experimentation`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Try semantic search in a repository skill loader.
+
+## Why this Upgradeable activates
+
+Search may improve discovery but could add latency and unstable ranking to a working deterministic loader.
+
+## Inputs / state
+
+The current resolver, a candidate search adapter, representative queries, and latency and precision thresholds are available.
+
+## What it does
+
+Routes a test cohort through the adapter, compares it with deterministic resolution, tests fallback, and promotes only the stable query interface after thresholds pass.
+
+## What it does not do
+
+Replace the base resolver before evaluation or let the adapter mutate registry records.
+
+## Result / state change
+
+Evidence-backed adoption or clean retirement with the original loader intact.
+
+## Interaction with companion components
+
+['architect-orchestrator', 'meta-stability']

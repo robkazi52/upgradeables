@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-09",
   "slug": "stateblock",
   "display_name": "StateBlock",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -19,46 +19,69 @@
   "implementation_forms": [
     "state-schema"
   ],
-  "purpose": "Represent goal, phase, constraints, decisions, uncertainties, active modules, completed work, and next step explicitly.",
+  "purpose": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-step execution",
+    "agent orchestration",
+    "complex editing",
+    "auditable workflows"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a trivial one-turn task needs no persistent state",
+    "the proposed schema would collect unnecessary sensitive data",
+    "multiple writers cannot coordinate versions"
   ],
   "triggers": [
     "work spans multiple steps or components"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a trivial one-turn task needs no persistent state",
+    "the proposed schema would collect unnecessary sensitive data",
+    "multiple writers cannot coordinate versions"
   ],
   "requires": [],
   "recommended_with": [
+    "selfblock-auto-update",
     "sequential-memory-state-engine",
-    "state-snapshot"
+    "structured-state-projection"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "micro-scaffolding",
+    "working-memory-cues"
+  ],
+  "potentially_redundant_with": [
+    "cot-structured-state-block",
+    "task-set-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "clarified task contract",
+    "authority hierarchy",
+    "state schema",
+    "evidence references",
+    "accepted deltas"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "versioned canonical state",
+    "field-level provenance",
+    "consumer projections",
+    "validation surface"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a formal serialized object for a tiny task",
+      "unused optional fields"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "single source of truth",
+      "locked-field authority",
+      "explicit unknowns",
+      "versioned updates"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not proceed on dependent actions when required state is contradictory or unknown.",
+    "Fall back to an explicit local checklist if the host cannot maintain a reliable shared block."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +94,91 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Critical constraints, progress, decisions, and open issues otherwise remain scattered across prose and become inconsistent.",
+  "os_role": [
+    "canonical state model",
+    "coordination substrate",
+    "validation target"
+  ],
+  "pipeline_stages": [
+    "task initialization",
+    "after accepted state changes",
+    "before action",
+    "handoff and recovery"
+  ],
+  "best_fit_tasks": [
+    "multi-step execution",
+    "agent orchestration",
+    "complex editing",
+    "auditable workflows"
+  ],
+  "avoid_when": [
+    "a trivial one-turn task needs no persistent state",
+    "the proposed schema would collect unnecessary sensitive data",
+    "multiple writers cannot coordinate versions"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Define a typed block with identity, objective, authority, constraints, active mode, progress, evidence pointers, decisions, uncertainties, open actions, and version metadata. Assign each field an owner and mutability rule; update through validated deltas, and derive views from this block so no consumer silently becomes a second authority.",
+  "procedure": [
+    "Select only fields required to execute and verify the task.",
+    "Declare field types, authority, mutability, and sensitivity.",
+    "Initialize values from clarified instructions and canonical sources.",
+    "Route changes through validated versioned deltas.",
+    "Expose least-privilege projections to consumers.",
+    "Validate outputs against current locked fields and checkpoint major versions."
+  ],
+  "always_do": [
+    "maintain one canonical owner",
+    "version meaningful changes",
+    "label unknown and unresolved fields",
+    "protect authority-bearing values"
+  ],
+  "never_do": [
+    "duplicate divergent canonical blocks",
+    "silently fill unknown fields",
+    "let untrusted content rewrite task authority",
+    "store unnecessary secrets"
+  ],
+  "interaction_reasons": {
+    "sequential-memory-state-engine": "Provides the ordered mutation lifecycle.",
+    "selfblock-auto-update": "Applies safe bounded deltas after events.",
+    "structured-state-projection": "Creates consumer-specific views without duplicating ownership."
+  },
+  "counterbalance_reasons": {
+    "micro-scaffolding": "Uses a lighter disposable structure before information deserves promotion to canonical state.",
+    "working-memory-cues": "Keeps attention on a few fields without repeatedly loading the whole block."
+  },
+  "redundancy_reasons": {
+    "cot-structured-state-block": "Embed the structured reasoning view or derive it; do not create a competing source of task truth.",
+    "task-set-lock-in": "Represent the locked task subset inside StateBlock rather than separately."
+  },
+  "conflict_rules": [
+    "System and explicit task authority govern locked fields; evidence updates factual fields only through their declared owners.",
+    "Version conflicts must be resolved before action; never merge incompatible values by concatenation."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "StateBlock",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "Interpretation rule for the frozen T2 registry",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "StateBlock and StateBlock SmartUpdate entries"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "T2-038 — High-Coherence State Induction",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "State kernel and SMSE reconstruction"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

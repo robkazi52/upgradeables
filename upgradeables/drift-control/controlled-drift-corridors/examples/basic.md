@@ -1,10 +1,31 @@
-# Basic composition example
+# Controlled Drift Corridors — Basic Example
 
-**Situation:** synthesis or creativity must coexist with fidelity.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `controlled-drift-corridors`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Turn a technical incident report into an executive brief.
+
+## Why this Upgradeable activates
+
+Narrative order and length may change, but dates, causal uncertainty, and remediation commitments must not.
+
+## Inputs / state
+
+Source report, zero-drift facts, tone/length permissions, and claim-level tests.
+
+## What it does
+
+Assigns a wider corridor to prose compression and zero/narrow corridors to dates, causal claims, and commitments.
+
+## What it does not do
+
+It does not make causality sound certain for fluency.
+
+## Result / state change
+
+A shorter readable brief whose protected meanings remain intact.
+
+## Interaction with companion components
+
+['zero-drift-zones', 'drift-suppression', 'drift-spectra-scaling']

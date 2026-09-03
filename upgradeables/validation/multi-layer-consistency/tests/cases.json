@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "multi-layer-consistency",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "multi-layer-consistency-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The global guarantee depends on cross-module composition.",
+      "expect": "A cross-layer mismatch blocks the global guarantee until integration behavior changes.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "multi-layer-consistency-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the artifact has only one meaningful level",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "multi-layer-consistency-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A lower-level verified contradiction defeats an unsupported global summary.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "multi-layer-consistency-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not certify when a global claim lacks lower-layer support or a lower-layer fact violates an undeclared global exception.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "multi-layer-consistency-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "at least one upward and one downward boundary check in hierarchical work",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "multi-layer-consistency-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "All paragraphs are factually correct but the conclusion reverses their shared limitation.",
+      "expect": "Fail the paragraph-to-global boundary.",
+      "reject": "Pass because no paragraph contains a false sentence."
+    }
+  ]
+}

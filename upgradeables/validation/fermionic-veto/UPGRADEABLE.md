@@ -2,22 +2,38 @@
 
 ## Summary
 
-Block commitment when a critical contradiction, safety condition, or integrity failure is detected.
+A hard exclusion rule under which one decisive contradiction, unsafe state, or impossible coexistence blocks an otherwise high-scoring candidate.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Preserve non-compensable constraints during aggregation and synthesis.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Weighted scores and majority agreement can conceal a fatal defect by averaging it with many positive attributes.
+
+## Where It Fits in the OS
+
+Roles: non-compensable-veto, hard-constraint-enforcer. Pipeline stages: candidate evaluation, QMS collapse, pre-action safety gate.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- safety reviews
+- constraint-heavy planning
+- security decisions
+- branch collapse
+- truth-conflict resolution
+
+## When Not to Use
+
+- the alleged defect is merely a soft preference
+- the veto predicate cannot be defined or evidenced
 
 ## Scope
 
-Functional classes: validation, meta-control. Activation:
-`U3-high-risk-expensive`. This modern classification is not a historical tier.
+Canonical package: `fermionic-veto@1.1.0`. ID: `T3-09`. Functional classes: validation, meta-control. Activation: `U3-high-risk-expensive`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,98 +41,135 @@ Functional classes: validation, meta-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the alleged defect is merely a soft preference
+- the veto predicate cannot be defined or evidenced
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- candidate
+- declared veto predicates
+- evidence
+- aggregate evaluation
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- veto/clear status
+- predicate evidence record
+- repair requirement
+- quarantine decision
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Declare a narrow set of exclusion predicates before scoring. Evaluate them independently of aggregate quality; if any predicate is evidenced, quarantine the candidate and require removal of the disqualifying state plus revalidation. The fermionic metaphor is operational only: incompatible states do not share the certified result, and the veto is never diluted by votes or averages.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Define non-compensable predicates and required evidence.
+2. Run veto checks independently from quality scoring.
+3. Record the exact predicate, evidence, and affected candidate.
+4. Exclude or quarantine any triggered candidate.
+5. Permit repair only if the disqualifying state is removed rather than relabeled.
+6. Rerun the veto check before reconsidering certification.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Keep veto predicates narrow and inspectable.
+- Preserve minority evidence of a decisive defect.
+- Require proof of removal before clearing a veto.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Average a triggered veto into a composite score.
+- Use the metaphor as a scientific claim.
+- Turn aesthetic disagreement into a hard veto.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `fail-closed-abstention`
+
+Defines the safe response when a veto cannot be repaired or resolved.
+
+### `parallel-qms`
+
+Preserves hard failures during global validator collapse.
+
+### `cross-universe-consistency`
+
+Blocks branch hybrids with impossible coexisting assumptions.
 
 ## Compatible Upgradeables
 
-- `fail-closed-abstention`
+- `fail-closed-abstention` — Defines the safe response when a veto cannot be repaired or resolved.
+- `parallel-qms` — Preserves hard failures during global validator collapse.
+- `cross-universe-consistency` — Blocks branch hybrids with impossible coexisting assumptions.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `multi-truth-gating`
+
+Tests whether an apparent truth contradiction can be resolved before permanent exclusion.
 
 ## Potential Redundancy
 
-- `None declared`
+### `fail-closed-abstention`
+
+Fermionic Veto detects non-compensable exclusion; Fail-Closed determines action under unresolved safety.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Verified veto evidence outranks aggregate score or validator majority.
+- If veto evidence conflicts, quarantine pending targeted adjudication rather than silently clearing it.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- Do not certify or execute a candidate while a verified non-compensable predicate remains active.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- veto layer for consequence-free creative alternatives
+
+Keep mandatory:
+
+- independent hard-constraint check whenever aggregate scoring is used
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `multi-agent-orchestration`
-- `research`
-- `source-grounded-analysis`
+- safety reviews
+- constraint-heavy planning
+- security decisions
+- branch collapse
+- truth-conflict resolution
 
 ## Example Composition
 
-Activate `fermionic-veto` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Five validators score a deployment highly, but one finds that rollback is impossible under the stated safety policy.
+
+**Why it activates:** Rollback capability is a declared non-compensable condition.
+
+**Inputs/state:** Validator reports, policy predicate, and deployment plan.
+
+**Action:** Vetoes deployment and requires a tested rollback path before rescoring.
+
+**Does not:** Approve because four of five validators passed.
+
+**Result/state change:** The candidate remains quarantined until the fatal condition is removed.
+
+**Companions:** ['fail-closed-abstention', 'parallel-qms', 'multi-truth-gating']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-09` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-09` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-09. Fermionic Veto Strengthening (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — T3-09. Fermionic Veto Strengthening (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 11.4 Variables / Criteria / MCDM (historical_assistant_artifact)

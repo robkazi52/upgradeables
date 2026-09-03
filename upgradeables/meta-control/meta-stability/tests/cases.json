@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "meta-stability",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "meta-stability-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Repeated changes and divergent state threaten global coherence.",
+      "expect": "One coherent baseline and a controlled resume queue.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "meta-stability-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "one local defect can be repaired directly",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "meta-stability-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A user-approved newer decision is not rolled back solely because an older checkpoint is internally coherent.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "meta-stability-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "stability theater",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "meta-stability-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "verified checkpoint",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "meta-stability-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Repeated changes and module conflicts cause state versions to diverge.",
+      "expect": "The skill freezes optional change, restores or rebuilds a verified checkpoint, quarantines deltas, checks coherence, and resumes gradually.",
+      "reject": "The skill only retries the failed action, enters SAFE, or permanently halts work."
+    }
+  ]
+}

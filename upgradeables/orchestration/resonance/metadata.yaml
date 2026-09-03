@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-05",
   "slug": "resonance",
   "display_name": "Resonance",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,47 +23,55 @@
     "orchestrator",
     "guard"
   ],
-  "purpose": "Coordinate mutually reinforcing modules, suppress irrelevant effects, and preserve authority boundaries.",
+  "purpose": "Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "multi-module Skills",
+    "evidence-to-state coordination",
+    "composed agent workflows"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "only one module is active",
+    "the proposed reinforcement would amplify repetition, exaggeration, or an authority conflict"
   ],
   "triggers": [
     "several active modules must align"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "only one module is active",
+    "the proposed reinforcement would amplify repetition, exaggeration, or an authority conflict"
   ],
   "requires": [],
   "recommended_with": [
     "domain-mode-isolation",
-    "multi-layer-consistency"
+    "state-routing-bus"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "domain-mode-isolation"
+  ],
+  "potentially_redundant_with": [
+    "cross-context-resonance-lock"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "active module contracts and outputs",
+    "declared coupling relationship",
+    "authority and boundary rules"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "coordinated module handoff",
+    "suppressed noise and explicit unresolved conflicts"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal coupling state when one obvious handoff is sufficient"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit relationship, bounded effect, noise suppression, and authority preservation"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "the modules have incompatible authority or source boundaries",
+    "the coupling produces repetition or exaggeration instead of clearer coordination"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +84,67 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Useful modules can produce noisy, duplicated, or conflicting effects when their interactions are left implicit.",
+  "os_role": [
+    "cross-module alignment",
+    "interaction control"
+  ],
+  "pipeline_stages": [
+    "post-selection coordination",
+    "mid-process coupling",
+    "pre-synthesis alignment"
+  ],
+  "best_fit_tasks": [
+    "multi-module Skills",
+    "evidence-to-state coordination",
+    "composed agent workflows"
+  ],
+  "avoid_when": [
+    "only one module is active",
+    "the proposed reinforcement would amplify repetition, exaggeration, or an authority conflict"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Identify the specific outputs or constraints through which selected modules should reinforce one another, declare the direction and limit of that coupling, and suppress unrelated effects. Check hierarchy before amplification so a lower-authority module cannot become stronger through repetition. Amplification means clearer coordination and usable handoff, not duplicated content.",
+  "procedure": [
+    "List active modules and the exact relationship that should be reinforced.",
+    "Verify their authority, source, and state boundaries are compatible.",
+    "Define the bounded handoff or mutual constraint that creates the useful coupling.",
+    "Suppress duplicate, irrelevant, or conflicting module effects.",
+    "Check the coordinated result and dissolve the coupling when its trigger ends."
+  ],
+  "always_do": [
+    "Preserve the defining invariant: explicit relationship, bounded effect, noise suppression, and authority preservation.",
+    "Record material routing, transition, and failure decisions in explicit task state."
+  ],
+  "never_do": [
+    "amplifying content through repetition or fusing modules into one authority",
+    "Never claim hidden state, unavailable host capability, or authority beyond the active Skill."
+  ],
+  "interaction_reasons": {
+    "state-routing-bus": "Carries the explicit state fields used in the coupling.",
+    "domain-mode-isolation": "Keeps reinforcement from crossing incompatible domain boundaries."
+  },
+  "counterbalance_reasons": {
+    "domain-mode-isolation": "Stops a useful coupling from becoming uncontrolled context blending."
+  },
+  "redundancy_reasons": {
+    "cross-context-resonance-lock": "The lock preserves one cross-context relationship; Resonance coordinates reinforcing effects among active modules more broadly."
+  },
+  "conflict_rules": [
+    "Host, system, domain, and explicit user authority take precedence over this component.",
+    "If the modules have incompatible authority or source boundaries, stop or escalate rather than forcing a nominal success."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-05. Resonance",
+      "source_kind": "current_consolidated_catalog"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

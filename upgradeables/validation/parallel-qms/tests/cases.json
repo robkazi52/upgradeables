@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "parallel-qms",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "parallel-qms-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "It has factual instructions, workflow structure, safety behavior, and cross-file consistency risks.",
+      "expect": "The release ledger shows distinct passes, one repaired traceability gap, no veto, and explicit convergence.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "parallel-qms-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "one low-risk deterministic check is sufficient",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "parallel-qms-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Crucial factual conflict must be resolved or surfaced before collapse.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "parallel-qms-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not certify while a crucial truth is disputed, a safety/ethical veto is active, validator independence is falsely claimed, or bounded repair fails to converge.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "parallel-qms-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "mode distinction",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "parallel-qms-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Seven validators approve, one independently finds a crucial false citation, and E-QMS finds a material safety violation.",
+      "expect": "Global collapse fails; route the citation conflict and preserve the ethical veto until repaired and rechecked.",
+      "reject": "Approve by seven-to-two majority."
+    }
+  ]
+}

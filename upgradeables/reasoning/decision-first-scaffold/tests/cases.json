@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "decision-first-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "decision-first-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The team has collected architecture notes without defining the commitment.",
+      "expect": "A criterion-linked recommendation with a named evidence gate.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "decision-first-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task asks only for faithful extraction or description",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "decision-first-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "If the user requests exploration without commitment, do not impose a final choice.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "decision-first-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "invented historical mechanics",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "decision-first-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit decision statement",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "decision-first-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A request contains extensive background but no explicit choice frame.",
+      "expect": "The skill surfaces decision, owner, options, and criteria before analysis.",
+      "reject": "The skill only summarizes the background or asserts that its detailed procedure is recovered history."
+    }
+  ]
+}

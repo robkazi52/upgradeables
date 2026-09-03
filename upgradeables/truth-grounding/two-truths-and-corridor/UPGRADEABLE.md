@@ -2,22 +2,38 @@
 
 ## Summary
 
-Combine two independent anchors with an explicitly permitted synthesis corridor.
+A composite synthesis control that locks two independent factual anchors and permits only a declared width of interpretation between or around them.
 
 ## Purpose
 
-Provide a reusable `plugin-bundle-component` mechanism rather than
-a complete task identity or monolithic prompt.
+Enable useful synthesis without losing redundant factual grounding.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents a synthesis from either parroting two sources without integration or drifting beyond what either anchor can support.
+
+## Where It Fits in the OS
+
+Roles: grounded-synthesis-controller, drift-boundary. Pipeline stages: pre-synthesis, synthesis, post-synthesis-validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- comparative research
+- evidence-grounded authoring
+- policy synthesis
+- explanatory integration of two sources
+
+## When Not to Use
+
+- only one defensible anchor exists
+- the task requires exact extraction with zero interpretive drift
+- the task permits unconstrained creative ideation
 
 ## Scope
 
-Functional classes: truth-grounding, drift-control. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `two-truths-and-corridor@1.1.0`. ID: `T3-08`. Functional classes: truth-grounding, drift-control. Activation: `U2-specialized`. Mechanism basis: `normalized-from-recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,95 +41,134 @@ Functional classes: truth-grounding, drift-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- only one defensible anchor exists
+- the task requires exact extraction with zero interpretive drift
+- the task permits unconstrained creative ideation
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- two independent anchors
+- locked truth atoms
+- declared corridor width
+- synthesis objective
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- bounded source-traceable synthesis
+- corridor-breach report
+- unresolved anchor conflict
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Verify two independent anchors, declare which atoms in them are fixed, and set the synthesis corridor to zero, micro, or bounded exploratory drift. Generate connecting interpretation only inside that corridor, then check every synthesized claim against at least one anchor and the permitted transformation width.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Select and verify two independent anchors.
+2. Extract the fixed facts and any material disagreement.
+3. Declare the allowed synthesis corridor and prohibited transformations.
+4. Create the synthesis while keeping each connection traceable.
+5. Audit the result for unsupported bridging claims or altered anchor meaning.
+6. Narrow or reject the synthesis when the corridor is exceeded.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Verify both anchors before synthesis.
+- Declare corridor width before writing.
+- Keep disagreements visible rather than manufacturing harmony.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Use a corridor to introduce a third unsupported truth.
+- Paraphrase exact locked atoms when zero drift applies.
+- Treat two dependent sources as independent anchors.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `truth-redundancy`
+
+Supplies and checks the two independent anchors.
+
+### `controlled-drift-corridors`
+
+Defines the permitted transformation width.
+
+### `multi-truth-gating`
+
+Handles material disagreement between the anchors before synthesis is committed.
 
 ## Compatible Upgradeables
 
-- `truth-redundancy`
-- `controlled-drift-corridors`
+- `truth-redundancy` — Supplies and checks the two independent anchors.
+- `controlled-drift-corridors` — Defines the permitted transformation width.
+- `multi-truth-gating` — Handles material disagreement between the anchors before synthesis is committed.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `grounding-no-invention`
+
+Constrains corridor-generated prose to supported interpretation.
 
 ## Potential Redundancy
 
-- `None declared`
+### `truth-redundancy`
+
+Truth Redundancy stops after creating an anchor pair; this composite additionally governs the synthesis space between them.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Zero-drift atoms override a wider surrounding synthesis corridor.
+- If the anchors materially conflict, resolve or expose the conflict before generating a unified narrative.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- If either anchor is unverified or the synthesis requires claims outside the declared corridor, do not certify the synthesis.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose mapping for simple one-sentence integration
+
+Keep mandatory:
+
+- two verified anchors and the declared transformation boundary
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- comparative research
+- evidence-grounded authoring
+- policy synthesis
+- explanatory integration of two sources
 
 ## Example Composition
 
-Activate `two-truths-and-corridor` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Two studies support complementary mechanisms and the writer must explain their relationship.
+
+**Why it activates:** The task needs bounded interpretation across two sources.
+
+**Inputs/state:** Verified findings from each study and a micro-drift corridor allowing connective explanation.
+
+**Action:** Links compatible findings and labels a remaining disagreement.
+
+**Does not:** Invent a causal mechanism neither study supports.
+
+**Result/state change:** An integrated but source-bounded paragraph.
+
+**Companions:** ['truth-redundancy', 'controlled-drift-corridors', 'multi-truth-gating']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-08` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-08` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-08. Two Truths + Corridor (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.3 Drift widths (historical_assistant_artifact)

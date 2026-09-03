@@ -1,10 +1,31 @@
-# Basic composition example
+# Decision-First Scaffold — Basic Example
 
-**Situation:** analysis risks becoming directionless.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `decision-first-scaffold`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Choose whether to migrate a service this quarter.
+
+## Why this Upgradeable activates
+
+The team has collected architecture notes without defining the commitment.
+
+## Inputs / state
+
+Two target platforms, a deadline, compliance constraints, and uncertain migration effort are known.
+
+## What it does
+
+Frames the quarter-specific go/no-go decision, maps compliance, cost, and migration risk to the two options, and recommends a gated pilot.
+
+## What it does not do
+
+Treat every platform fact as equally decision-relevant.
+
+## Result / state change
+
+A criterion-linked recommendation with a named evidence gate.
+
+## Interaction with companion components
+
+['anti-tunnel-vision', 'task-set-lock-in']

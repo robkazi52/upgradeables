@@ -2,22 +2,38 @@
 
 ## Summary
 
-Project selected explicit state fields into a downstream component without exposing unrelated context.
+Produce a read-limited, purpose-specific view of canonical state for one consumer while preserving field identity and provenance.
 
 ## Purpose
 
-Provide a reusable `state-schema` mechanism rather than
-a complete task identity or monolithic prompt.
+Reduce context, privacy, and authority leakage between components.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Passing the full StateBlock to every agent or tool exposes irrelevant or sensitive fields and encourages unauthorized mutation.
+
+## Where It Fits in the OS
+
+Roles: least-privilege state view, component boundary, context minimization. Pipeline stages: before component invocation, domain transfer, handoff, output merge.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-agent systems
+- domain isolation
+- sensitive workflows
+- tool calls with narrow schemas
+
+## When Not to Use
+
+- one trusted consumer legitimately needs the whole safe state
+- field dependencies are unknown
+- projection could conceal a safety-critical constraint
 
 ## Scope
 
-Functional classes: state, output. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `structured-state-projection@1.1.0`. ID: `JAN26-13`. Functional classes: state, output. Activation: `U2-specialized`. Mechanism basis: `provisional`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,96 +41,150 @@ Functional classes: state, output. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- one trusted consumer legitimately needs the whole safe state
+- field dependencies are unknown
+- projection could conceal a safety-critical constraint
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- canonical StateBlock version
+- consumer identity
+- field policy
+- sensitivity labels
+- required constraints
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- versioned purpose-specific state view
+- redaction record
+- write-back policy
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
+A modern interpretation is to define a projection contract listing allowed fields, necessary derived values, redactions, provenance, version, and write-back rights. Materialize the view from canonical state at invocation time and merge returned deltas only through the canonical owner's validation path.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Identify the consumer and its minimum information need.
+2. Declare included, derived, redacted, and mandatory safety fields.
+3. Generate the view from an identified canonical state version.
+4. Attach provenance and freshness metadata.
+5. Validate any returned delta against the consumer's write rights before canonical merge.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- include mandatory constraints even when they are not task content
+- preserve source field identity
+- declare freshness/version
+- validate write-back separately
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- copy the full state by default
+- grant mutation rights through a read projection
+- drop a constraint required for safe interpretation
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `stateblock`
+
+Is the canonical source from which projections are derived.
+
+### `domain-mode-isolation`
+
+Provides the controlled bridge across isolated domains.
+
+### `scoped-loader`
+
+Pairs resource minimization with state minimization.
 
 ## Compatible Upgradeables
 
-- `stateblock`
-- `state-routing-bus`
+- `stateblock` — Is the canonical source from which projections are derived.
+- `domain-mode-isolation` — Provides the controlled bridge across isolated domains.
+- `scoped-loader` — Pairs resource minimization with state minimization.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `cot-structured-state-block`
+
+Ensures the projected reasoning-relevant view remains inspectable without exposing private deliberation.
+
+### `clarification-gateway`
+
+Clarifies uncertain consumer needs before aggressive field removal.
 
 ## Potential Redundancy
 
-- `None declared`
+### `attention-compression-scaffold`
+
+Both reduce active context; projection enforces a consumer contract, while attention compression is a temporary cognitive view.
+
+### `state-snapshot`
+
+A snapshot freezes a version; projection filters a version for use.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Mandatory safety and authority fields override a consumer's request to omit them.
+- A returned projection delta cannot overwrite fields outside declared write scope.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Do not project when required field dependencies or safety constraints are unknown.
+- Treat this mechanism as provisional until original concept-specific documentation is recovered.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- materializing a separate object for a simple trusted one-consumer task
+- derived convenience fields
+
+Keep mandatory:
+
+- least privilege
+- mandatory constraints
+- version/provenance
+- write-back validation
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `long-context-corpus`
+- multi-agent systems
+- domain isolation
+- sensitive workflows
+- tool calls with narrow schemas
 
 ## Example Composition
 
-Activate `structured-state-projection` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A citation checker reviews a report produced from sensitive case state.
+
+**Why it activates:** It needs claims and source pointers, not identities or strategy notes.
+
+**Inputs/state:** Canonical version 17 with claim, source, identity, permissions, and strategy fields.
+
+**Action:** Projects claims, citations, relevant constraints, and version metadata with no mutation rights.
+
+**Does not:** It does not expose identities or allow the checker to edit task authority.
+
+**Result/state change:** Citation checking occurs with minimal disclosure and safe merge boundaries.
+
+**Companions:** ['stateblock', 'domain-mode-isolation', 'scoped-loader']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-13` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: None.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-13` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: None.
+
+Source support: `source-gap`. Mechanism basis: `provisional`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 4. December 3, 2025 — state architecture corrections (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 6.2 T3 structured reasoning-state representation (historical_assistant_artifact)

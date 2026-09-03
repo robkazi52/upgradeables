@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "domain-normalized-drift",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "domain-normalized-drift-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The artifact crosses a precision domain and a low-stakes expressive region.",
+      "expect": "Domain-appropriate drift limits across one mixed artifact.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "domain-normalized-drift-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "domain is ambiguous and stakes are high",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "domain-normalized-drift-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Explicit task/source authority outranks the domain profile.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "domain-normalized-drift-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not select a permissive profile when domain classification or consequence is uncertain.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "domain-normalized-drift-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "consequence assessment",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "domain-normalized-drift-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "The same paraphrase operation is applied to legal obligations and fictional dialogue.",
+      "expect": "Choose different domain baselines, then refine them with task-specific corridors.",
+      "reject": "Use one universal tolerance or treat the domain default as overriding explicit instructions."
+    }
+  ]
+}

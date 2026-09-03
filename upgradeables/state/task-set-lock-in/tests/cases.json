@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "task-set-lock-in",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "task-set-lock-in-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Many attractive documentation additions could distract from required build and validation outputs.",
+      "expect": "Completion is evaluated against the original concrete specification.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "task-set-lock-in-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task is still materially ambiguous",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "task-set-lock-in-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "System and latest explicit authorized user scope changes override older task-set versions.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "task-set-lock-in-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not claim completion when a required artifact or quality gate lacks evidence.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "task-set-lock-in-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "objective",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "task-set-lock-in-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "During execution, a related but non-required feature appears useful.",
+      "expect": "Keep it out of scope unless an authorized scope-change updates the task set.",
+      "reject": "Replace a required deliverable with the attractive adjacent feature."
+    }
+  ]
+}

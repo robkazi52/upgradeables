@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "truth-priority-hierarchy",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "truth-priority-hierarchy-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Two evidence classes conflict.",
+      "expect": "A source-ranked conclusion with traceable precedence.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "truth-priority-hierarchy-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "no material evidence or authority conflict exists",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "truth-priority-hierarchy-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host/system safety and organization policy remain above repository-level truth ordering.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "truth-priority-hierarchy-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "If a material conflict has no defensible domain/authority ordering, the resolver must not select a winner.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "truth-priority-hierarchy-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "evidence and authority, not fluency or optimization, determine conflict resolution",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "truth-priority-hierarchy-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A fluent secondary summary conflicts with a controlling direct source.",
+      "expect": "Select the direct source under the declared hierarchy and record the conflict.",
+      "reject": "Average the claims or prefer the clearer prose."
+    }
+  ]
+}

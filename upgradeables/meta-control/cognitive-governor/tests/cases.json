@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "cognitive-governor",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "cognitive-governor-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Complete line-by-line deep review is expensive, but schema and source accuracy are mandatory.",
+      "expect": "A risk-funded review plan with a defensible completion boundary.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "cognitive-governor-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a mandatory protocol fixes the review budget",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "cognitive-governor-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Risk-mandated validation overrides a lower convenience budget.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "cognitive-governor-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "over-polishing",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "cognitive-governor-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "risk-based validation floor",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "cognitive-governor-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A workflow has limited compute and mixed consequence.",
+      "expect": "The skill sets a total envelope, protects required validation, reviews marginal value, and emits an exit or escalation decision.",
+      "reject": "The skill only says to think harder on hard parts or merely increases parallelism."
+    }
+  ]
+}

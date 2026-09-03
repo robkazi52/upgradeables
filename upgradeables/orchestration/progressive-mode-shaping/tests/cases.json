@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "progressive-mode-shaping",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "progressive-mode-shaping-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Exploration is useful early but must not persist into engineering execution.",
+      "expect": "Engineering receives one precise specification with traceable retired alternatives.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "progressive-mode-shaping-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task is purely exploratory and requires no commitment",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "progressive-mode-shaping-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host, system, domain, and explicit user authority take precedence over this component.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "progressive-mode-shaping-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "transition criteria are absent or accepted decisions cannot be distinguished from open options",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "progressive-mode-shaping-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "evidence-backed narrowing and retirement of losing branches before execution",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "progressive-mode-shaping-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "a workflow must turn broad exploration into one executable plan over several phases",
+      "expect": "allowed breadth shrinks as decisions lock and losing branches are retired",
+      "reject": "keeping every alternative active through execution or narrowing without evidence"
+    }
+  ]
+}

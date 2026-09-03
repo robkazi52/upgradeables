@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "state-routing-bus",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "state-routing-bus-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The writer needs decisions and source pointers but not the worker's full context.",
+      "expect": "The writer receives traceable state or the workflow reports a handoff failure.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "state-routing-bus-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "all work occurs inside one uninterrupted component",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "state-routing-bus-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host, system, domain, and explicit user authority take precedence over this component.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "state-routing-bus-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "no real host-supported handoff channel exists",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "state-routing-bus-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit payload, provenance, receiver boundary, and delivery status",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "state-routing-bus-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "separate modules need to transfer task state across a real boundary",
+      "expect": "a typed provenance-bearing envelope is validated, transmitted, and acknowledged",
+      "reject": "claiming hidden shared memory or passing an unbounded context dump"
+    }
+  ]
+}

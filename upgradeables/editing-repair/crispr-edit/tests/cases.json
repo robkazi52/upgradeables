@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "crispr-edit",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "crispr-edit-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "One trigger rule changes while safety, citation, and other browsing rules must remain stable.",
+      "expect": "A narrow behavioral change with invariant evidence.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "crispr-edit-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the governing structure is wrong",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "crispr-edit-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Locked safety, truth, and authorization invariants cannot be included in the requested delta.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "crispr-edit-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "collateral semantic drift",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "crispr-edit-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit invariant set",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "crispr-edit-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A small behavior change is requested in a structured artifact with many neighboring invariants.",
+      "expect": "The skill defines target, delta, invariants, dependency boundary, minimal diff, and positive/negative tests.",
+      "reject": "The skill returns a broad rewrite, a syntax-only check, or an unbounded series of adjacent cleanups."
+    }
+  ]
+}

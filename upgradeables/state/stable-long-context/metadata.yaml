@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-07",
   "slug": "stable-long-context",
   "display_name": "Stable Long-Context",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,46 +23,69 @@
     "state-manager",
     "guard"
   ],
-  "purpose": "Preserve decisions, terminology, constraints, and source meaning across large contexts while retiring obsolete branches.",
+  "purpose": "Extend usable context duration without treating the entire transcript as equally current or important.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "long research projects",
+    "large document synthesis",
+    "multi-session builds",
+    "extended agent runs"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "all relevant material fits clearly in one short exchange",
+    "lossless verbatim retention is required for every item",
+    "no reliable source pointers exist for compressed material"
   ],
   "triggers": [
     "large corpus or long-running workflow"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "all relevant material fits clearly in one short exchange",
+    "lossless verbatim retention is required for every item",
+    "no reliable source pointers exist for compressed material"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "coherence-heartbeat"
+    "attention-compression-scaffold",
+    "sequential-memory-state-engine",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "drift-suppression",
+    "scoped-loader"
+  ],
+  "potentially_redundant_with": [
+    "state-snapshot",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "task anchors",
+    "versioned state",
+    "indexed evidence",
+    "supersession markers",
+    "retrieval need"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "compact current context",
+    "stable evidence index",
+    "superseded-state ledger",
+    "resume package"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal compaction in a short task",
+      "persistent indices when source set is tiny"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "anchored invariants",
+      "current-versus-superseded distinction",
+      "retrievable provenance",
+      "resume validation"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not compact evidence beyond recoverability when precise citation is required.",
+    "Rebuild from canonical sources when anchor integrity or version lineage is uncertain."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +98,90 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Long contexts accumulate stale decisions, duplicate facts, buried constraints, and recency bias that can displace the task's real invariants.",
+  "os_role": [
+    "long-horizon context control",
+    "semantic anchoring",
+    "memory compaction"
+  ],
+  "pipeline_stages": [
+    "initial anchoring",
+    "periodic compaction",
+    "context re-entry",
+    "final consistency check"
+  ],
+  "best_fit_tasks": [
+    "long research projects",
+    "large document synthesis",
+    "multi-session builds",
+    "extended agent runs"
+  ],
+  "avoid_when": [
+    "all relevant material fits clearly in one short exchange",
+    "lossless verbatim retention is required for every item",
+    "no reliable source pointers exist for compressed material"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Maintain an invariant anchor containing task, authority, definitions, accepted decisions, and open obligations; keep detailed material behind stable indexed pointers; periodically reconcile new state, mark superseded items, and regenerate a compact current view. Retrieval expands only the region needed for the next step, and final validation checks output against the anchors rather than conversational recency.",
+  "procedure": [
+    "Establish task, authority, terminology, and zero-drift facts as anchors.",
+    "Index detailed evidence and prior artifacts with stable identifiers.",
+    "At checkpoints, merge accepted deltas and mark replaced state as superseded.",
+    "Compact the active view while preserving pointers and unresolved items.",
+    "On resume, load the anchor first, then retrieve only the relevant detail.",
+    "Validate major outputs against the current anchors and source records."
+  ],
+  "always_do": [
+    "distinguish current, superseded, and unresolved state",
+    "keep stable retrieval pointers",
+    "re-anchor after major transitions"
+  ],
+  "never_do": [
+    "summarize away locked constraints",
+    "treat the newest statement as automatically authoritative",
+    "carry the full transcript as active working state"
+  ],
+  "interaction_reasons": {
+    "stateblock": "Holds the compact current-state anchor.",
+    "sequential-memory-state-engine": "Supplies ordered deltas and current/history distinction.",
+    "attention-compression-scaffold": "Builds a smaller task-local view from the indexed long context."
+  },
+  "counterbalance_reasons": {
+    "scoped-loader": "Prevents resume from eagerly loading the entire archive.",
+    "drift-suppression": "Detects meaning changes introduced by repeated compaction."
+  },
+  "redundancy_reasons": {
+    "working-memory-lock-in": "WM Lock should be the critical active subset of the long-context anchor, not a parallel truth store.",
+    "state-snapshot": "Snapshots preserve versions; stable context manages which version and detail remain active."
+  },
+  "conflict_rules": [
+    "Explicit authority and accepted state transitions outrank recency.",
+    "If compaction cannot preserve a high-impact nuance, retain the original excerpt or pointer in the active view."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Stable Long Context"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "Interpretation rule for the frozen T2 registry",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Stable Long Context inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "19.4 Long-context source fidelity",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Semantic anchoring and context stability"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

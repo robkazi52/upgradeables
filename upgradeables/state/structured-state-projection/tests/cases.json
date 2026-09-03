@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "structured-state-projection",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "structured-state-projection-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "It needs claims and source pointers, not identities or strategy notes.",
+      "expect": "Citation checking occurs with minimal disclosure and safe merge boundaries.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "structured-state-projection-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "one trusted consumer legitimately needs the whole safe state",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "structured-state-projection-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Mandatory safety and authority fields override a consumer's request to omit them.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "structured-state-projection-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not project when required field dependencies or safety constraints are unknown.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "structured-state-projection-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "least privilege",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "structured-state-projection-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A narrow validator needs three of twenty canonical fields.",
+      "expect": "Create a versioned three-field view plus mandatory constraints and validate any response separately.",
+      "reject": "Send all twenty fields or let the view become an independent state owner."
+    }
+  ]
+}

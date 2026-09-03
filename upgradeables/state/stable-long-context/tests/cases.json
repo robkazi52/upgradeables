@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "stable-long-context",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "stable-long-context-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The working context must stay small without losing binding definitions and decisions.",
+      "expect": "Each session resumes coherently with traceable detail.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "stable-long-context-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "all relevant material fits clearly in one short exchange",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "stable-long-context-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Explicit authority and accepted state transitions outrank recency.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "stable-long-context-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not compact evidence beyond recoverability when precise citation is required.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "stable-long-context-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "anchored invariants",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "stable-long-context-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A long transcript contains an old decision, a formally superseding decision, and extensive discussion.",
+      "expect": "Activate the superseding decision, preserve the old one as history, and keep pointers to relevant discussion.",
+      "reject": "Use whichever decision appears nearest the end or include the entire transcript as live state."
+    }
+  ]
+}

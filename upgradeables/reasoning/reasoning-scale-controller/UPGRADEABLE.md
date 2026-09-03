@@ -2,22 +2,38 @@
 
 ## Summary
 
-Select Subatomic, Atomic, Nano, Micro, QMS, or Cosmic decomposition and verification granularity without exposing private reasoning.
+Selects the smallest adequate reasoning scale from fact-level inspection through global architecture, then changes scale only on explicit complexity or risk signals.
 
 ## Purpose
 
-Provide a reusable `parent-skill-mode` mechanism rather than
-a complete task identity or monolithic prompt.
+Match reasoning depth and scope to the unit of work instead of applying either shallow local analysis or system-wide architecture indiscriminately.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Models overthink simple transformations, underthink coupled high-risk tasks, or mix local sentence repair with global architecture decisions.
+
+## Where It Fits in the OS
+
+Roles: reasoning depth controller, scope router. Pipeline stages: task triage, reasoning execution, escalation and de-escalation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- mixed-complexity workflows
+- long-form construction
+- system design
+- quality evaluation
+
+## When Not to Use
+
+- a governing workflow already fixes the required scale
+- the unit is safety-critical and policy mandates the highest review tier
+- scale labels would replace rather than guide actual reasoning
 
 ## Scope
 
-Functional classes: planning-reasoning, meta-control. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `reasoning-scale-controller@1.1.0`. ID: `RS-00`. Functional classes: planning-reasoning, meta-control. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,95 +41,148 @@ Functional classes: planning-reasoning, meta-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- a governing workflow already fixes the required scale
+- the unit is safety-critical and policy mandates the highest review tier
+- scale labels would replace rather than guide actual reasoning
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- task unit
+- dependency span
+- uncertainty
+- risk and reversibility
+- quality requirements
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- selected reasoning scale
+- escalation or de-escalation decisions
+- scope-appropriate reasoning artifact
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Route work through one controller: Subatomic for a fact, local relation, constraint, or sentence decision; Atomic for a small verified inference or action; Nano as a light intermediate structure whose detailed historical spec remains unrecovered; Micro for task-local scaffolds and dependencies; QMS for quality evaluation; Cosmic for global architecture, strategy, or long-horizon planning. Escalate when dependency span, ambiguity, irreversibility, or risk exceeds the current scale; de-escalate after the larger question is resolved.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Identify the unit of work, dependency radius, uncertainty, and consequence of error.
+2. Choose the lowest scale that can represent all relevant dependencies.
+3. Execute only the operations appropriate to that scale.
+4. Escalate one or more levels when local reasoning exposes unresolved cross-unit dependencies, competing quality dimensions, or global architecture effects.
+5. After the higher-scale decision, return local implementation to the smallest adequate scale and record the boundary.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- start at the smallest adequate scale
+- escalate on concrete signals rather than prestige
+- preserve global constraints when returning to local work
+- keep Nano semantics modest because its detailed historical specification is unrecovered
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- use Cosmic for a sentence edit
+- solve architecture from isolated facts without aggregation
+- invent a detailed historical Nano algorithm
+- confuse QMS evaluation with generation
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `cognitive-governor`
+
+The governor budgets effort after the scale controller identifies the required scope.
+
+### `dynamic-depth-allocation`
+
+Dynamic allocation varies effort within the selected scale as evidence and difficulty change.
+
+### `micro-scaffolding`
+
+Micro-Scaffolding structures task-local dependencies when the controller selects Micro scale.
 
 ## Compatible Upgradeables
 
-- `cognitive-governor`
-- `dynamic-depth-allocation`
+- `cognitive-governor` — The governor budgets effort after the scale controller identifies the required scope.
+- `dynamic-depth-allocation` — Dynamic allocation varies effort within the selected scale as evidence and difficulty change.
+- `micro-scaffolding` — Micro-Scaffolding structures task-local dependencies when the controller selects Micro scale.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `bounded-exit`
+
+Bounded ExIt caps repeated work at any selected scale.
+
+### `critical-atomic-verification`
+
+Atomic verification prevents scale escalation from resting on bad fact-level units.
 
 ## Potential Redundancy
 
-- `None declared`
+### `dynamic-depth-allocation`
+
+Both tune reasoning effort, but the scale controller selects semantic scope while dynamic allocation adjusts depth or budget.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Risk-mandated review overrides the desire to stay at a cheaper scale.
+- Cosmic conclusions must be decomposed back into verifiable local units before execution.
+- Nano may be used only as a light intermediate label until historical mechanics are recovered.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- scale theater
+- chronic overthinking
+- local reasoning that ignores global dependencies
+- invented Nano mechanics
+- global plans without local verification
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- printing scale names on routine tasks
+- stepping through every intermediate scale when direct routing is obvious
+
+Keep mandatory:
+
+- smallest-adequate-scope selection
+- explicit escalation signals
+- global-to-local decomposition
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- mixed-complexity workflows
+- long-form construction
+- system design
+- quality evaluation
 
 ## Example Composition
 
-Activate `reasoning-scale-controller` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Correct one citation in a long report whose architecture is already accepted.
+
+**Why it activates:** The surrounding artifact is large, but the actual defect is local and source-verifiable.
+
+**Inputs/state:** The correct source passage and locked report structure are available.
+
+**Action:** Routes source verification to Subatomic, the citation replacement to Atomic, and avoids Cosmic redesign unless the correction exposes a section-wide provenance failure.
+
+**Does not:** Re-outline the report because the document is long.
+
+**Result/state change:** A proportional local correction with an explicit escalation condition.
+
+**Companions:** ['critical-atomic-verification', 'micro-repair']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `RS-00` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
-Nano is retained as a lightweight intermediate mode; its historical detailed specification is unresolved.
+Primary source ID: `RS-00` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — PART V. REASONING-SCALE STACK (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.5 Section / paragraph micro-scaffolding (historical_assistant_artifact)

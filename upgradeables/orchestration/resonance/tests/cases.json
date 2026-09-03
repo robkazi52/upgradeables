@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "resonance",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "resonance-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Their outputs should reinforce source fidelity without duplicating the source corpus.",
+      "expect": "Synthesis receives compact grounded state and no duplicate noise.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "resonance-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "only one module is active",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "resonance-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host, system, domain, and explicit user authority take precedence over this component.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "resonance-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "the modules have incompatible authority or source boundaries",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "resonance-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit relationship, bounded effect, noise suppression, and authority preservation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "resonance-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "several active modules have a declared beneficial interaction",
+      "expect": "the component reinforces only that bounded relationship while suppressing noise and preserving hierarchy",
+      "reject": "amplifying content through repetition or fusing modules into one authority"
+    }
+  ]
+}

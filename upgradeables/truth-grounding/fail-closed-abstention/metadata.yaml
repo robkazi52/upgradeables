@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-11",
   "slug": "fail-closed-abstention",
   "display_name": "Fail-Closed Abstention",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -24,52 +24,56 @@
     "guard",
     "validator"
   ],
-  "purpose": "Narrow or stop a conclusion when required evidence or integrity gates fail, returning only supported content.",
+  "purpose": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "medical, legal, or policy analysis",
+    "citation-bearing research",
+    "safety-critical decisions",
+    "source transcription and fidelity work"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the failed condition is optional and does not affect the supported deliverable",
+    "a harmless creative task has no factual commitment gate"
   ],
   "triggers": [
     "required evidence cannot be verified"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the failed condition is optional and does not affect the supported deliverable",
+    "a harmless creative task has no factual commitment gate"
   ],
   "requires": [],
   "recommended_with": [
+    "fermionic-veto",
     "grounding-no-invention",
-    "fermionic-veto"
+    "parallel-qms"
   ],
   "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "fermionic-veto"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "candidate conclusion",
+    "required gate list",
+    "validator outcomes",
+    "supported claim subset"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "committed supported subset",
+    "narrowed conclusion",
+    "abstention with unresolved dependency"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose explanation of nonmaterial optional failures"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "no essential failed gate may be bypassed by fluency or confidence"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "A conclusion cannot be committed while any indispensable evidence or integrity condition remains failed or unverifiable."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -82,5 +86,78 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents a workflow from converting uncertainty, validator disagreement, or absent evidence into a confident final answer.",
+  "os_role": [
+    "commit-gate",
+    "abstention-controller"
+  ],
+  "pipeline_stages": [
+    "post-validation",
+    "pre-output-commitment"
+  ],
+  "best_fit_tasks": [
+    "medical, legal, or policy analysis",
+    "citation-bearing research",
+    "safety-critical decisions",
+    "source transcription and fidelity work"
+  ],
+  "avoid_when": [
+    "the failed condition is optional and does not affect the supported deliverable",
+    "a harmless creative task has no factual commitment gate"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Consume explicit validator outcomes and distinguish essential from optional failures. If an essential condition is failed or unverifiable, block the affected conclusion, preserve any independently supported subset, and state the unresolved dependency; never synthesize a missing fact merely to obtain a pass.",
+  "procedure": [
+    "List the conditions required to commit the conclusion.",
+    "Read each condition's pass, fail, or unverifiable result.",
+    "Determine which failures invalidate only one claim and which invalidate the whole conclusion.",
+    "Remove or narrow invalidated claims while preserving independently supported content.",
+    "Return the supported subset plus the unresolved dependency or an explicit abstention."
+  ],
+  "always_do": [
+    "Tie abstention scope to the failed requirement.",
+    "Return supported partial results when safe and useful.",
+    "Name the blocking dependency concisely."
+  ],
+  "never_do": [
+    "Invent evidence to clear a gate.",
+    "Turn every minor uncertainty into total refusal.",
+    "Hide the fact that a required gate failed."
+  ],
+  "interaction_reasons": {
+    "grounding-no-invention": "Supplies unsupported-claim failures that may require abstention.",
+    "fermionic-veto": "The veto raises a non-overridable block; fail-closed abstention determines the safe output after that block.",
+    "parallel-qms": "Persistent crucial disagreement from QMS becomes an abstain, rework, or uncertainty disposition."
+  },
+  "counterbalance_reasons": {},
+  "redundancy_reasons": {
+    "fermionic-veto": "Veto detects and asserts a blocking condition; fail-closed abstention specifies how output is narrowed or withheld after the block."
+  },
+  "conflict_rules": [
+    "A request for a definitive answer cannot override a failed required truth gate.",
+    "Preserve supported content unless higher authority requires withholding the entire output."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-11. Fail-Closed Tier-3 Abstention",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8.12 Historical global collapse rule",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

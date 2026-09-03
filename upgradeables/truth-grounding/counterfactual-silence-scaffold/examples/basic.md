@@ -1,10 +1,31 @@
-# Basic composition example
+# Counterfactual Silence Scaffold — Basic Example
 
-**Situation:** factual output could be contaminated by hypothetical content.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `counterfactual-silence-scaffold`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Summarize an incident report that does not identify a cause.
+
+## Why this Upgradeable activates
+
+The output must remain factual and the missing cause invites speculation.
+
+## Inputs / state
+
+Incident chronology with no causal finding and a factual-only output contract.
+
+## What it does
+
+Reports the chronology and marks cause as undetermined.
+
+## What it does not do
+
+Add what might have happened if a different operator acted.
+
+## Result / state change
+
+A factual summary with an explicit evidence gap.
+
+## Interaction with companion components
+
+['mode-lock-in', 'grounding-no-invention']

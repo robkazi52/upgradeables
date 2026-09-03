@@ -2,22 +2,37 @@
 
 ## Summary
 
-Extract text and visible structure from images without inferring missing content.
+The Image Text Fidelity Capture sense of ITFC transcribes visible text and reconstructs visible layout from images while marking, rather than guessing, obscured or illegible content.
 
 ## Purpose
 
-Provide a reusable `skill-component` mechanism rather than
-a complete task identity or monolithic prompt.
+Create a source-faithful textual representation of image-borne evidence for downstream indexing, analysis, or copying.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents OCR-like completion, inferred missing words, and invented structural relationships from entering the source record.
+
+## Where It Fits in the OS
+
+Roles: evidence-capture, image-fidelity-guard. Pipeline stages: source-intake, evidence-capture, capture-validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- document image transcription
+- figure or screenshot capture
+- scanned-record intake
+- long-document source fidelity
+
+## When Not to Use
+
+- no image contains source text or visible structure
+- the task asks for visual interpretation rather than faithful capture and that different mode is not declared
 
 ## Scope
 
-Functional classes: context-retrieval, truth-grounding. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `image-text-fidelity-capture@1.1.0`. ID: `T2-14A`. Functional classes: context-retrieval, truth-grounding. Activation: `U2-specialized`. Mechanism basis: `recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,99 +40,132 @@ Functional classes: context-retrieval, truth-grounding. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- no image contains source text or visible structure
+- the task asks for visual interpretation rather than faithful capture and that different mode is not declared
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- source image
+- page/image identifier
+- reading-order or region instructions
+- fidelity requirements
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- verified transcription
+- visible-structure map
+- location-specific uncertainty markers
+- capture verification status
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Traverse the image in a declared order, transcribe only visible characters, and reconstruct headings, rows, columns, or spatial groups only where visible evidence supports them. Unreadable regions receive explicit illegible/uncertain markers linked to their location; context is never used to silently complete missing text.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Record the image/page identifier and reading order.
+2. Segment visible text and structural regions.
+3. Transcribe characters exactly, preserving capitalization, numbers, and punctuation where legible.
+4. Represent visible layout without inferring hidden cells or labels.
+5. Mark obscured or ambiguous regions with location-specific uncertainty.
+6. Run a second pass against the image and finalize only verified capture.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve visible spelling, numbers, labels, and structure.
+- Mark uncertainty at the exact region.
+- Keep the ITFC acronym collision explicit in provenance.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Autocomplete an obscured word from context.
+- Invent a table cell or reading order not visible in the image.
+- Merge this package with the unresolved Intent/Task Framing Controller sense of ITFC.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `grounding-no-invention`
+
+Prevents contextual guessing during capture.
+
+### `zero-drift-zones`
+
+Locks verified transcription atoms against later rewriting.
+
+### `citation-fidelity`
+
+Can verify later claims or quotations against the captured source region.
 
 ## Compatible Upgradeables
 
-- `grounding-no-invention`
-- `zero-drift-zones`
+- `grounding-no-invention` — Prevents contextual guessing during capture.
+- `zero-drift-zones` — Locks verified transcription atoms against later rewriting.
+- `citation-fidelity` — Can verify later claims or quotations against the captured source region.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+No natural counterbalance was identified after review; ordinary authority, scope, and validation controls still apply.
 
 ## Potential Redundancy
 
-- `None declared`
+### `grounding-no-invention`
+
+Grounding supplies the general no-invention rule; Image Text Fidelity Capture adds image segmentation, reading order, and legibility handling.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Visible evidence outranks grammatical completion.
+- If layout and lexical readings conflict, preserve both uncertainty and coordinates rather than choosing silently.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- If a region is not legible enough to verify, mark it uncertain and do not produce a confident transcription for that region.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose region narration for a short, plainly legible image
+
+Keep mandatory:
+
+- only visible evidence may determine captured text or structure
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `long-context-corpus`
-- `research`
-- `source-grounded-analysis`
+- document image transcription
+- figure or screenshot capture
+- scanned-record intake
+- long-document source fidelity
 
 ## Example Composition
 
-Activate `image-text-fidelity-capture` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A scanned form has one partly obscured account number and visible row labels.
+
+**Why it activates:** Text must be captured from an image for evidence use.
+
+**Inputs/state:** The page image and a requirement for exact transcription.
+
+**Action:** Transcribes legible digits, preserves row order, and marks the obscured digits with their location.
+
+**Does not:** Infer the missing digits from another identifier.
+
+**Result/state change:** A usable transcription whose uncertainty remains auditable.
+
+**Companions:** ['grounding-no-invention', 'zero-drift-zones']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-14A` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: ITFC.
-Distinct from the unresolved Intent/Task Framing Controller use of ITFC.
+Primary source ID: `T2-14A` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: ITFC.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-14. ITFC — Historical Acronym Collision (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 7. ABF, ITFC, OCG, ECL — corrections and collisions (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION (historical_assistant_artifact)

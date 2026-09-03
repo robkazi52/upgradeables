@@ -1,10 +1,31 @@
-# Basic composition example
+# Fermionic Veto Strengthening — Basic Example
 
-**Situation:** a defined critical condition must have veto authority.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `fermionic-veto`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Five validators score a deployment highly, but one finds that rollback is impossible under the stated safety policy.
+
+## Why this Upgradeable activates
+
+Rollback capability is a declared non-compensable condition.
+
+## Inputs / state
+
+Validator reports, policy predicate, and deployment plan.
+
+## What it does
+
+Vetoes deployment and requires a tested rollback path before rescoring.
+
+## What it does not do
+
+Approve because four of five validators passed.
+
+## Result / state change
+
+The candidate remains quarantined until the fatal condition is removed.
+
+## Interaction with companion components
+
+['fail-closed-abstention', 'parallel-qms', 'multi-truth-gating']

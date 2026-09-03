@@ -2,22 +2,36 @@
 
 ## Summary
 
-Preserve an explicit alignment relationship between related source contexts while respecting their boundaries.
+Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Multi-document and multi-agent work can either lose an important cross-context dependency or merge separate contexts into an unsupported composite.
+
+## Where It Fits in the OS
+
+Roles: cross-context coordination, boundary-preserving state control. Pipeline stages: context intake, cross-context handoff, synthesis verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-document synthesis
+- multi-agent handoffs
+- parallel workstream integration
+
+## When Not to Use
+
+- the contexts are unrelated
+- the relationship is speculative or would require merging incompatible authority domains
 
 ## Scope
 
-Functional classes: orchestration, state. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `cross-context-resonance-lock@1.1.0`. ID: `JAN26-11`. Functional classes: orchestration, state. Activation: `U2-specialized`. Mechanism basis: `provisional`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,96 +39,124 @@ Functional classes: orchestration, state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the contexts are unrelated
+- the relationship is speculative or would require merging incompatible authority domains
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- two or more bounded context states
+- declared relationship and allowed transfers
+- source and authority metadata
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- validated cross-context link
+- boundary-preserving handoff or rejected transfer
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
+Modern operational interpretation: represent each context as a separately identified state with its own source and authority, then store only the declared relationship as a typed link between them. On update or synthesis, refresh the link if both endpoints still support it and reject transfers that copy unverified facts or authority across the boundary.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Identify each context, its source boundary, authority, and current state.
+2. State the exact relationship that must remain aligned across contexts.
+3. Store a typed link without copying the full contents of either context.
+4. Revalidate both endpoints and the relationship when either context changes.
+5. During synthesis, transfer only explicitly supported fields and preserve provenance.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve the defining invariant: separate provenance and authority for every linked context.
+- Record material routing, transition, and failure decisions in explicit task state.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- merging both contexts or transferring unsupported assumptions
+- Never claim hidden state, unavailable host capability, or authority beyond the active Skill.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `state-routing-bus`
+
+Carries the explicitly permitted linked fields between modules.
+
+### `domain-mode-isolation`
+
+Prevents the lock from collapsing separate domain or authority states.
 
 ## Compatible Upgradeables
 
-- `resonance`
-- `domain-mode-isolation`
+- `state-routing-bus` — Carries the explicitly permitted linked fields between modules.
+- `domain-mode-isolation` — Prevents the lock from collapsing separate domain or authority states.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `anti-tunnel-vision`
+
+Challenges an assumed relationship when fixation could make unrelated contexts appear aligned.
 
 ## Potential Redundancy
 
-- `None declared`
+### `resonance`
+
+Resonance coordinates reinforcing modules generally; Cross-Context Resonance Lock preserves one explicit relationship across bounded contexts.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Host, system, domain, and explicit user authority take precedence over this component.
+- If the relationship cannot be supported independently in both contexts, stop or escalate rather than forcing a nominal success.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- the relationship cannot be supported independently in both contexts
+- maintaining alignment would require transferring incompatible authority or unverified state
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- a single-context task has no cross-boundary relationship to preserve
+
+Keep mandatory:
+
+- separate provenance and authority for every linked context
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `long-context-corpus`
-- `multi-agent-orchestration`
+- multi-document synthesis
+- multi-agent handoffs
+- parallel workstream integration
 
 ## Example Composition
 
-Activate `cross-context-resonance-lock` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Two agents analyze technical feasibility and legal constraints for the same feature.
+
+**Why it activates:** Their decisions must align on the feature identifier, but their evidence and authority differ.
+
+**Inputs/state:** Two scoped states, shared feature key, allowed handoff fields, and provenance.
+
+**Action:** Maintains the feature link and transfers only the declared decision fields with sources.
+
+**Does not:** Does not merge legal claims into technical evidence or give one agent the other's authority.
+
+**Result/state change:** The synthesis aligns on the feature while retaining two auditable contexts.
+
+**Companions:** State Routing Bus carries allowed fields; Domain Isolation preserves boundaries.
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: Resonance Upgradeable.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-11` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: Resonance Upgradeable.
+
+Source support: `source-gap`. Mechanism basis: `provisional`.
+
+Structured source references:
+
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)

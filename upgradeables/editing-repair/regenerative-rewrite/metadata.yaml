@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-03",
   "slug": "regenerative-rewrite",
   "display_name": "Regenerative Rewrite",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [
     "A-10"
@@ -21,50 +21,67 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "Rebuild an output when local repair cannot restore global structure or coherence, while preserving locked truths.",
+  "purpose": "Replace a systemically broken expression or structure without losing verified content, requirements, provenance, or accepted decisions.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow"
+    "globally incoherent drafts",
+    "broken source-to-section mapping",
+    "documents with incompatible inherited structures",
+    "outputs damaged by repeated patching"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "one sentence or field is wrong",
+    "the existing architecture is sound",
+    "locked atoms and provenance cannot yet be separated from generated content"
   ],
   "triggers": [
     "architecture or source mapping is globally broken"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "one sentence or field is wrong",
+    "the existing architecture is sound",
+    "locked atoms and provenance cannot yet be separated from generated content"
   ],
   "requires": [],
   "recommended_with": [
-    "task-set-lock-in",
-    "surgery-edit"
+    "citation-fidelity",
+    "surgery-edit",
+    "task-set-lock-in"
   ],
   "counterbalances": [
     "micro-repair"
   ],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "surgery-edit"
+  ],
   "conflicts": [],
   "inputs": [
-    "source artifact",
-    "authorized change request",
-    "protected facts and invariants"
+    "failed artifact",
+    "systemic-failure evidence",
+    "locked truth ledger",
+    "requirements",
+    "source map"
   ],
   "outputs": [
-    "bounded patch or revised artifact",
-    "preservation and validation status"
+    "freshly structured artifact",
+    "coverage and provenance validation",
+    "discarded-material record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose quarantine ceremony when the failed draft is already versioned"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "locked-atom extraction",
+      "fresh-structure reconstruction",
+      "ledger-based global validation"
     ]
   },
   "failure_boundary": [
-    "escalate the repair class or stop when protected invariants cannot be preserved"
+    "unnecessary global rewrite",
+    "loss of locked facts",
+    "source laundering",
+    "reimporting the failed architecture",
+    "regeneration from unverified memory"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +94,82 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "An artifact can be locally polished yet remain globally incoherent because its architecture is wrong, sections conflict, or evidence-to-claim mapping has collapsed.",
+  "os_role": [
+    "global content rebuilder",
+    "systemic-failure recovery"
+  ],
+  "pipeline_stages": [
+    "failure diagnosis",
+    "truth-and-constraint extraction",
+    "fresh reconstruction",
+    "global validation"
+  ],
+  "best_fit_tasks": [
+    "globally incoherent drafts",
+    "broken source-to-section mapping",
+    "documents with incompatible inherited structures",
+    "outputs damaged by repeated patching"
+  ],
+  "avoid_when": [
+    "one sentence or field is wrong",
+    "the existing architecture is sound",
+    "locked atoms and provenance cannot yet be separated from generated content"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Quarantine the failed artifact, extract a ledger of verified facts, citations, requirements, decisions, and protected wording, and design a fresh structure from that ledger rather than editing the old prose in place. Reintroduce each locked atom with provenance, validate global coherence and coverage, and compare against the ledger—not against the failed wording—as the acceptance baseline.",
+  "procedure": [
+    "Demonstrate systemic failure: wrong architecture, cross-section contradiction, or broken source mapping that resists bounded repair.",
+    "Extract and classify locked facts, citations, constraints, requirements, and accepted decisions.",
+    "Set the failed draft aside and create a new outline or artifact structure from the locked ledger.",
+    "Rebuild content section by section, attaching every factual claim to its source or ledger atom.",
+    "Validate requirement coverage, global coherence, citation mapping, and absence of imported failed assumptions.",
+    "Compare the rebuilt artifact with the locked ledger and record intentionally discarded generated material."
+  ],
+  "always_do": [
+    "prove local repair is insufficient",
+    "build a locked-atom ledger before rewriting",
+    "reconstruct from verified state rather than memory of the old prose",
+    "validate global source mapping"
+  ],
+  "never_do": [
+    "use regeneration for one awkward sentence",
+    "discard accepted decisions because the wording is inconvenient",
+    "copy incoherent passages wholesale into the new structure",
+    "claim historical wording was preserved when only semantics were locked"
+  ],
+  "interaction_reasons": {
+    "task-set-lock-in": "Task-Set Lock-In preserves the goals and requirements during reconstruction.",
+    "surgery-edit": "Surgery can replace the artifact's architecture before Regenerative Rewrite repopulates it.",
+    "citation-fidelity": "Citation Fidelity ensures the rebuilt claims remain mapped to original sources."
+  },
+  "counterbalance_reasons": {
+    "micro-repair": "Micro-Repair should be tried first for bounded defects and prevents unnecessary regeneration."
+  },
+  "redundancy_reasons": {
+    "surgery-edit": "Both address macro failure, but Surgery changes structural interfaces while Regenerative Rewrite reconstructs content from locked truth and constraints."
+  },
+  "conflict_rules": [
+    "Verified facts, citations, and non-negotiable requirements survive even if they complicate the new structure.",
+    "If the architecture alone is defective, Surgery may define the replacement skeleton; regeneration then fills it.",
+    "If no reliable locked ledger can be formed, stop for source recovery rather than regenerate from guesses."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-03. Regenerative Rewrite",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

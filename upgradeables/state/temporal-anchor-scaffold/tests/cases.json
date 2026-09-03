@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "temporal-anchor-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "temporal-anchor-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Publication date, effective date, and incident time differ.",
+      "expect": "The applicable version is identified with an explicit uncertainty branch.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "temporal-anchor-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "time has no bearing on the answer",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "temporal-anchor-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Source-stated timestamps outrank inferred order; higher-authority corrections supersede earlier dates while retaining history.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "temporal-anchor-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not assert total order from partial temporal evidence.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "temporal-anchor-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "time-type distinction",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "temporal-anchor-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Sources provide event, publication, and effective dates plus one unknown ordering relation.",
+      "expect": "Keep time types separate, preserve the unknown relation, and retire the task-local timeline after validation.",
+      "reject": "Sort all dates into one confident chronology and retain it as permanent truth."
+    }
+  ]
+}

@@ -2,22 +2,38 @@
 
 ## Summary
 
-Preserve the selected factual, hypothetical, design, execution, critique, or drafting mode until an authorized transition occurs.
+Select one operating mode for the task, record its invariants, and require an explicit transition rather than allowing style or policy drift.
 
 ## Purpose
 
-Provide a reusable `state-schema` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep behavior stable across long sessions, tool calls, and distracting inputs.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Models may silently change from research to brainstorming, strict transformation to creative rewriting, or one policy regime to another.
+
+## Where It Fits in the OS
+
+Roles: behavioral stability, mode control, transition governance. Pipeline stages: after clarification, before substantive work, at transition requests, final validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- strict transformations
+- long sessions
+- multi-mode assistants
+- policy-bound work
+
+## When Not to Use
+
+- exploration intentionally needs rapid mode switching
+- the user has not yet chosen among materially different modes
+- a mode label would add no operative constraint
 
 ## Scope
 
-Functional classes: state, drift-control. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `mode-lock-in@1.1.0`. ID: `T1-05`. Functional classes: state, drift-control. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,146 @@ Functional classes: state, drift-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- exploration intentionally needs rapid mode switching
+- the user has not yet chosen among materially different modes
+- a mode label would add no operative constraint
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- selected mode
+- mode invariants
+- forbidden behaviors
+- transition authority
+- current task state
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- active-mode contract
+- deviation checks
+- explicit transition record
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Represent the active mode as a small contract containing its goal, allowed transformations, forbidden behaviors, and exit condition. Recheck the contract at checkpoints; change modes only through an explicit transition that records why, what state carries forward, and which former rules deactivate.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Choose the mode from the clarified task and authority stack.
+2. Write its operative invariants and exclusions into active state.
+3. Tag work products and tool calls with the active mode where useful.
+4. At checkpoints, test for deviations from the invariant set.
+5. On an authorized switch, record the transition and replace rather than blend incompatible mode rules.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- make the active mode inspectable
+- define an exit or transition condition
+- revalidate after context changes
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- silently blend incompatible modes
+- treat tone alone as the mode contract
+- preserve superseded mode rules after transition
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `task-set-lock-in`
+
+Task Set locks the objective while Mode Lock stabilizes how the task is performed.
+
+### `domain-mode-isolation`
+
+Isolation prevents the locked mode's state from contaminating another domain.
+
+### `drift-suppression`
+
+Detects and corrects deviations from locked mode invariants.
 
 ## Compatible Upgradeables
 
-- `task-set-lock-in`
-- `domain-mode-isolation`
+- `task-set-lock-in` — Task Set locks the objective while Mode Lock stabilizes how the task is performed.
+- `domain-mode-isolation` — Isolation prevents the locked mode's state from contaminating another domain.
+- `drift-suppression` — Detects and corrects deviations from locked mode invariants.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `controlled-drift-corridors`
+
+Allows bounded variation inside a locked mode when exact rigidity would be counterproductive.
+
+### `clarification-gateway`
+
+Prevents premature commitment when the intended mode is ambiguous.
 
 ## Potential Redundancy
 
-- `None declared`
+### `task-set-lock-in`
+
+Use one shared contract for overlapping objective and mode fields rather than duplicating them.
+
+### `working-memory-lock-in`
+
+WM Lock refreshes critical facts; it should point to, not duplicate, the mode contract.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Higher-authority instructions may force a mode transition; user content cannot silently do so.
+- When mode and task objective conflict, clarify or reselect rather than weakening either implicitly.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Do not lock an ambiguous high-impact choice before clarification.
+- Release or transition the lock when the task legitimately changes.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- repeating the mode label in every response
+- formal transition records for a one-turn low-risk task
+
+Keep mandatory:
+
+- operative invariants
+- no silent switching
+- checkpoint validation
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- strict transformations
+- long sessions
+- multi-mode assistants
+- policy-bound work
 
 ## Example Composition
 
-Activate `mode-lock-in` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Transform policy text without changing meaning.
+
+**Why it activates:** Creative rewriting would violate the requested transformation mode.
+
+**Inputs/state:** A fidelity-first mode with preserve-meaning and no-new-claims invariants.
+
+**Action:** Checks each revision against the locked transformation contract.
+
+**Does not:** It does not drift into persuasive copywriting after seeing marketing language.
+
+**Result/state change:** A clearer document with preserved claims and traceable exceptions.
+
+**Companions:** ['task-set-lock-in', 'drift-suppression', 'zero-drift-zones']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 2. November 28, 2025 — frozen T1-Core Bundle v1 (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8. Working-Memory Lock-In Heartbeats (historical_assistant_artifact)

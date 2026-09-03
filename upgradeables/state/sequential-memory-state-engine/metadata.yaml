@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-10",
   "slug": "sequential-memory-state-engine",
   "display_name": "Sequential Memory State Engine (SMSE)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,46 +22,70 @@
   "implementation_forms": [
     "state-manager"
   ],
-  "purpose": "Update StateBlock incrementally while preserving source chunk boundaries, provenance, and locked state.",
+  "purpose": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "long-lived agents",
+    "case management",
+    "iterative research",
+    "multi-source evolving records"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a one-shot task has no state evolution",
+    "event ordering cannot be established and ordering is safety-critical",
+    "the host needs a simpler immutable evidence log"
   ],
   "triggers": [
     "state changes across steps or source chunks"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a one-shot task has no state evolution",
+    "event ordering cannot be established and ordering is safety-critical",
+    "the host needs a simpler immutable evidence log"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
+    "selfblock-auto-update",
+    "state-snapshot",
+    "stateblock"
+  ],
+  "counterbalances": [
+    "drift-suppression",
     "stable-long-context"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "selfblock-auto-update",
+    "working-memory-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "ordered events",
+    "current state version",
+    "schema",
+    "authority hierarchy",
+    "conflict policy"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "new state version",
+    "transition record",
+    "resolved current view",
+    "consumer projections",
+    "unresolved-conflict flags"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "persistent event machinery for short linear work",
+      "materialized projections when one consumer uses the full safe state"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "ordered transitions",
+      "provenance",
+      "current/history separation",
+      "explicit conflict resolution"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Stop dependent actions when a safety-critical contradiction cannot be resolved.",
+    "Do not assert chronological correctness when timestamps or event identity are missing."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -74,5 +98,95 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Appending everything to context loses temporal order, retains superseded facts, and makes concurrent or contradictory updates hard to reconcile.",
+  "os_role": [
+    "state transition engine",
+    "memory lifecycle",
+    "provenance and conflict control"
+  ],
+  "pipeline_stages": [
+    "ingest",
+    "normalize",
+    "classify",
+    "compare",
+    "resolve",
+    "commit",
+    "project",
+    "checkpoint"
+  ],
+  "best_fit_tasks": [
+    "long-lived agents",
+    "case management",
+    "iterative research",
+    "multi-source evolving records"
+  ],
+  "avoid_when": [
+    "a one-shot task has no state evolution",
+    "event ordering cannot be established and ordering is safety-critical",
+    "the host needs a simpler immutable evidence log"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "For each event, preserve source and time, normalize it into the state schema, classify affected fields, compare with the current version, resolve contradiction by authority and recency rules, commit an atomic delta, derive consumer-specific projections, and emit a checkpoint. History remains available, but only the resolved current state drives action.",
+  "procedure": [
+    "Ingest one event with source, time, and authority metadata.",
+    "Normalize it without discarding the original payload pointer.",
+    "Classify affected state fields and compare against the current version.",
+    "Resolve additions, updates, contradictions, and retractions using explicit precedence.",
+    "Commit the delta atomically and increment the version.",
+    "Refresh downstream projections and checkpoint the transition."
+  ],
+  "always_do": [
+    "preserve event order and provenance",
+    "distinguish current state from history",
+    "resolve contradictions before projection",
+    "version commits"
+  ],
+  "never_do": [
+    "append contradictory facts as simultaneously current",
+    "let arrival order override higher authority",
+    "erase prior state without a trace"
+  ],
+  "interaction_reasons": {
+    "stateblock": "SMSE evolves the canonical StateBlock.",
+    "selfblock-auto-update": "Can implement the bounded commit hook after each accepted event.",
+    "state-snapshot": "Serializes milestone versions for recovery."
+  },
+  "counterbalance_reasons": {
+    "stable-long-context": "Adds lifecycle pruning and salience controls when history grows.",
+    "drift-suppression": "Checks that normalized transitions retain source meaning."
+  },
+  "redundancy_reasons": {
+    "selfblock-auto-update": "Use Auto-Update as SMSE's commit hook, not a competing transition engine.",
+    "working-memory-lock-in": "WM Lock should derive its active subset from SMSE state."
+  },
+  "conflict_rules": [
+    "Authority outranks recency unless the authoritative source explicitly delegates update power.",
+    "Unresolvable contradictions remain labeled and block dependent actions rather than being averaged."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Sequential Memory State Engine (SMSE)"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "4. December 3, 2025 — state architecture corrections",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Sequential Memory State Engine family"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "6.1 SMSE — Sequential Memory State Engine",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Sequential Memory State Engine reconstruction"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

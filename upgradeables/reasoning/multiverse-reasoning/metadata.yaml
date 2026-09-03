@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-01",
   "slug": "multiverse-reasoning",
   "display_name": "Multiverse Engine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,45 +20,71 @@
     "orchestrator",
     "parent-skill-mode"
   ],
-  "purpose": "Generate two or three materially distinct candidate paths, evaluate them, and collapse to one bounded result.",
+  "purpose": "Obtain real alternative search without losing control of truth, constraints, cost, or convergence.",
   "recommended_skill_types": [
-    "general-agent-workflow"
+    "ambiguous design choices",
+    "research plans",
+    "narrative or document architectures",
+    "competing causal models"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a locked source dictates a single faithful transformation",
+    "one hard constraint eliminates all but one path",
+    "the task is too small for branch overhead"
   ],
   "triggers": [
     "competing hypotheses or designs would add value"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a locked source dictates a single faithful transformation",
+    "one hard constraint eliminates all but one path",
+    "the task is too small for branch overhead"
   ],
   "requires": [],
   "recommended_with": [
+    "anti-tunnel-vision",
     "parallel-qms",
-    "anti-tunnel-vision"
+    "task-set-lock-in"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "bounded-exit",
+    "neuro-focus"
+  ],
+  "potentially_redundant_with": [
+    "anti-tunnel-vision",
+    "parallel-qms"
+  ],
   "conflicts": [],
   "inputs": [
     "locked task state",
-    "available component manifests and authority rules"
+    "shared evidence",
+    "branch budget",
+    "common evaluation rubric",
+    "hard vetoes"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "two or three branch records",
+    "cross-branch evaluation",
+    "selected or synthesized plan",
+    "retirement record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "separate long-form prose for every branch when compact branch records expose the tradeoffs"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "material branch distinctness",
+      "shared rubric",
+      "hard-veto precedence",
+      "explicit collapse and retirement"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "cosmetic branch variants",
+    "unbounded branching",
+    "unequal evaluation depth",
+    "majority voting over a hard veto",
+    "assumption leakage from retired branches"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +97,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A single-path solver can overfit its first plan; an unconstrained multi-agent or brainstorming process can instead proliferate branches without a defensible collapse.",
+  "os_role": [
+    "bounded parallel reasoning engine",
+    "candidate selection controller"
+  ],
+  "pipeline_stages": [
+    "planning",
+    "hypothesis comparison",
+    "architecture selection",
+    "pre-draft outline selection"
+  ],
+  "best_fit_tasks": [
+    "ambiguous design choices",
+    "research plans",
+    "narrative or document architectures",
+    "competing causal models"
+  ],
+  "avoid_when": [
+    "a locked source dictates a single faithful transformation",
+    "one hard constraint eliminates all but one path",
+    "the task is too small for branch overhead"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Open exactly two or three branch records that differ in strategy, causal model, or architecture. Give every branch the same locked facts, requirements, risk limits, and evaluation rubric; develop each only far enough to expose its decisive tradeoffs. Score them, apply hard vetoes before soft preferences, select or synthesize one committed path, and mark every losing branch retired so its assumptions cannot leak into execution.",
+  "procedure": [
+    "Lock shared facts, goals, constraints, risk boundaries, and a branch budget of two or three.",
+    "Define branches with a one-sentence strategy, distinctive assumption, predicted advantage, and disconfirming condition.",
+    "Develop each branch to the same decision depth; do not let the favored branch consume the entire budget.",
+    "Evaluate all branches on the same dimensions, such as truth, requirement coverage, coherence, cost, risk, and reversibility.",
+    "Veto any branch that violates a hard constraint, then select the strongest survivor or synthesize only compatible components.",
+    "Emit one committed plan plus a retirement record naming rejected branches and why they must not influence downstream work."
+  ],
+  "always_do": [
+    "make branches materially distinct",
+    "use a common rubric",
+    "apply hard constraints before aggregate scores",
+    "retire losing branches explicitly"
+  ],
+  "never_do": [
+    "create unbounded universes",
+    "score one branch on easier criteria",
+    "blend mutually inconsistent assumptions during synthesis",
+    "carry losing-branch instructions into the chosen execution state"
+  ],
+  "interaction_reasons": {
+    "parallel-qms": "Parallel-QMS provides the shared multidimensional scoring and collapse gate.",
+    "anti-tunnel-vision": "Anti-Tunnel Vision audits whether branch diversity is real and whether the favorite was preselected.",
+    "task-set-lock-in": "Task-Set Lock-In gives all branches identical goals and non-negotiable constraints."
+  },
+  "counterbalance_reasons": {
+    "bounded-exit": "Bounded ExIt prevents branch development or comparison from continuing after the decision value falls below cost.",
+    "neuro-focus": "After collapse, Neuro-Focus narrows execution to the selected universe."
+  },
+  "redundancy_reasons": {
+    "anti-tunnel-vision": "Both counter first-path fixation; Multiverse manages full candidate state and collapse, while Anti-Tunnel can be a lighter rival check.",
+    "parallel-qms": "QMS evaluates alternatives but does not itself generate or retire branch worlds."
+  },
+  "conflict_rules": [
+    "A hard truth, safety, or authorization veto cannot be outvoted by soft quality scores.",
+    "Synthesis is allowed only when selected components share compatible assumptions and interfaces.",
+    "If no branch passes, return the blocking constraint or request evidence rather than select the least-invalid branch."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-01. Multiverse Engine",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.4 Multiverse / plan generation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

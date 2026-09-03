@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-03",
   "slug": "clarification-gateway",
   "display_name": "Clarification Gateway",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -24,46 +24,63 @@
     "orchestrator",
     "guard"
   ],
-  "purpose": "Distinguish ambiguity that can be resolved safely from ambiguity that materially blocks correct execution.",
+  "purpose": "Keep clarification proportional: ask only for materially blocking information, otherwise continue with the narrowest explicit assumption or bounded partial result.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "requirements intake",
+    "ambiguous data transformation",
+    "multi-constraint planning",
+    "high-stakes evidence work"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the missing detail cannot change a valid result",
+    "the host forbids questions and a bounded assumption is safe",
+    "the user already supplied an authoritative value"
   ],
   "triggers": [
     "required variables are missing or instructions conflict"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the missing detail cannot change a valid result",
+    "the host forbids questions and a bounded assumption is safe",
+    "the user already supplied an authoritative value"
   ],
   "requires": [],
   "recommended_with": [
     "task-set-lock-in"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "bounded-exit"
+  ],
+  "potentially_redundant_with": [
+    "task-set-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "task request",
+    "known variables",
+    "authority constraints",
+    "candidate interpretations",
+    "output contract"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "proceed decision",
+    "focused clarification request",
+    "labeled assumption",
+    "bounded partial-result or abstention status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "an explicit ambiguity table for straightforward cases",
+      "asking when context uniquely resolves the variable"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "materiality test",
+      "assumption labeling",
+      "authority-sensitive fallback"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "Stop or narrow when a required variable has multiple materially different interpretations and neither clarification nor a safe assumption is available."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +93,82 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Avoids both confident execution on missing critical variables and reflexive questioning that stalls work the model could safely complete.",
+  "os_role": [
+    "framing-intake",
+    "routing",
+    "guard"
+  ],
+  "pipeline_stages": [
+    "intake",
+    "pre-execution",
+    "exception-routing"
+  ],
+  "best_fit_tasks": [
+    "requirements intake",
+    "ambiguous data transformation",
+    "multi-constraint planning",
+    "high-stakes evidence work"
+  ],
+  "avoid_when": [
+    "the missing detail cannot change a valid result",
+    "the host forbids questions and a bounded assumption is safe",
+    "the user already supplied an authoritative value"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Classify each ambiguity by decision impact. If different plausible values would materially change correctness, authority, safety, or the requested deliverable, route to clarification when permitted. Otherwise choose the narrowest labeled assumption, preserve the unresolved field, or return the supported subset; do not turn every uncertainty into a user interruption.",
+  "procedure": [
+    "Extract missing variables, ambiguous terms, and instruction conflicts before substantive execution.",
+    "For each item, compare plausible interpretations against the output contract and authority rules.",
+    "Mark an item blocking only when the interpretations lead to materially different valid actions or conclusions.",
+    "Ask one focused question for blocking items when interaction is available; otherwise state the narrow assumption or limit the result.",
+    "Record the answer or assumption in task state so the same ambiguity is not reopened without new evidence."
+  ],
+  "always_do": [
+    "Explain why a requested clarification changes the result.",
+    "Prefer one consolidated, answerable question over serial interrogation.",
+    "Label assumptions and unsupported branches."
+  ],
+  "never_do": [
+    "Do not ask for information already present in the supplied state.",
+    "Do not silently select a consequential interpretation.",
+    "Do not use clarification as a substitute for ordinary analysis."
+  ],
+  "interaction_reasons": {
+    "task-set-lock-in": "Writes confirmed answers and bounded assumptions into the locked task definition so downstream work uses one interpretation."
+  },
+  "counterbalance_reasons": {
+    "bounded-exit": "Prevents clarification loops by terminating once the minimum blocking information is obtained or a bounded fallback is selected."
+  },
+  "redundancy_reasons": {
+    "task-set-lock-in": "Task-Set Lock-In stores resolved task fields; Clarification Gateway decides which unresolved fields require intervention."
+  },
+  "conflict_rules": [
+    "A higher-authority instruction not to ask questions converts the gate into assumption selection, not permission to ignore ambiguity.",
+    "If no safe bounded assumption exists for a consequential decision, return the supported subset or abstain."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T1-03. Clarification Gateway / Clarification-First",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "January 5 scaffolding classification",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "`UPGRADEABLE_ACTIVATION_TIERS_T1`",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Clarification, ambiguity, and authority-gated activation patterns"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

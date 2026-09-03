@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-02",
   "slug": "structured-refinement",
   "display_name": "Structured Refinement Cycles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,51 +20,67 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "Separate factual, structural, style, and final-validation revision passes while preserving accepted decisions.",
+  "purpose": "Prevent one revision pass from trading away correctness while improving structure or style.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "drafts with several defect classes",
+    "reports requiring source and style review",
+    "prompt or specification cleanup",
+    "publication preparation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "only one bounded defect exists",
+    "the artifact requires complete regeneration",
+    "the source truth is not yet established"
   ],
   "triggers": [
     "revision has multiple defect classes"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "only one bounded defect exists",
+    "the artifact requires complete regeneration",
+    "the source truth is not yet established"
   ],
   "requires": [],
   "recommended_with": [
-    "safe-rewrite",
-    "bounded-exit"
+    "bounded-exit",
+    "micro-repair",
+    "safe-rewrite"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "regenerative-rewrite"
+  ],
+  "potentially_redundant_with": [
+    "bounded-exit",
+    "safe-rewrite"
+  ],
   "conflicts": [],
   "inputs": [
-    "source artifact",
-    "authorized change request",
-    "protected facts and invariants"
+    "artifact",
+    "defect inventory",
+    "locked facts and decisions",
+    "style target",
+    "acceptance criteria"
   ],
   "outputs": [
-    "bounded patch or revised artifact",
-    "preservation and validation status"
+    "pass-separated revisions",
+    "frozen semantic ledger",
+    "final cross-class validation"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "physically separate drafts for each pass when an auditable diff is available"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "dependency order",
+      "between-pass locks",
+      "final cross-class review"
     ]
   },
   "failure_boundary": [
-    "escalate the repair class or stop when protected invariants cannot be preserved"
+    "mixed-objective drift",
+    "later-pass regression",
+    "style masking factual defects",
+    "cycling on globally broken structure"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +93,81 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Mixed editing objectives make it hard to know whether factual, structural, and stylistic defects were fixed or newly introduced.",
+  "os_role": [
+    "multi-pass revision scaffold",
+    "defect-class separator"
+  ],
+  "pipeline_stages": [
+    "factual pass",
+    "structural pass",
+    "style pass",
+    "release validation"
+  ],
+  "best_fit_tasks": [
+    "drafts with several defect classes",
+    "reports requiring source and style review",
+    "prompt or specification cleanup",
+    "publication preparation"
+  ],
+  "avoid_when": [
+    "only one bounded defect exists",
+    "the artifact requires complete regeneration",
+    "the source truth is not yet established"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Classify defects before editing and run passes in dependency order: facts and source mapping first, structure and requirement coverage second, style and pedagogy third, final validation last. Accepted decisions are locked between passes, and a later pass may not silently reopen an earlier one.",
+  "procedure": [
+    "Inventory defects and assign each to factual, structural, stylistic, or validation class.",
+    "Correct facts, citations, and locked constraints; freeze the accepted semantic ledger.",
+    "Repair ordering, dependencies, section roles, and requirement coverage without changing the frozen facts.",
+    "Adjust voice, clarity, and pedagogy without changing facts or structure except where explicitly authorized.",
+    "Run an independent final check across all classes and use Bounded ExIt to decide whether another pass is justified."
+  ],
+  "always_do": [
+    "separate defect classes",
+    "fix upstream factual issues before downstream polish",
+    "lock accepted decisions between passes",
+    "perform a cross-class final validation"
+  ],
+  "never_do": [
+    "combine fact correction and free stylistic invention",
+    "let a later pass silently undo an earlier one",
+    "polish a structure already known to be globally invalid"
+  ],
+  "interaction_reasons": {
+    "safe-rewrite": "Safe Rewrite protects frozen semantics during style and format passes.",
+    "bounded-exit": "Bounded ExIt decides whether another class-specific pass has sufficient value.",
+    "micro-repair": "Micro-Repair implements each localized correction selected within a pass."
+  },
+  "counterbalance_reasons": {
+    "regenerative-rewrite": "Regeneration replaces the entire cycle when architecture or source mapping is systemically unrecoverable."
+  },
+  "redundancy_reasons": {
+    "bounded-exit": "Both govern iteration, but Structured Refinement defines pass content and order while Bounded ExIt controls continuation.",
+    "safe-rewrite": "Safe Rewrite is one preservation rule used inside multiple refinement passes."
+  },
+  "conflict_rules": [
+    "Factual correctness outranks structural elegance and style.",
+    "A later pass that discovers an upstream defect returns explicitly to the relevant pass and revalidates downstream results.",
+    "If the defect inventory shows architecture failure, stop the cycle and escalate."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-02. Structured Refinement Cycles",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

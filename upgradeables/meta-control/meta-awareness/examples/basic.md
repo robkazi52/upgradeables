@@ -1,10 +1,31 @@
-# Basic composition example
+# Meta-Awareness Pack — Basic Example
 
-**Situation:** process failure signals must be observed.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `meta-awareness`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A multi-agent build repeats validation without changing the failing files.
+
+## Why this Upgradeable activates
+
+The process may be stuck even though each agent reports activity.
+
+## Inputs / state
+
+Command logs, state versions, active-agent tasks, and the same recurring error are observable.
+
+## What it does
+
+Detects unchanged state and repeated action signatures, emits repair-required with evidence, and routes the finding to Meta-Supervisor.
+
+## What it does not do
+
+Claim the agents are confused or reset their work directly.
+
+## Result / state change
+
+A grounded process-health diagnosis ready for supervisor action.
+
+## Interaction with companion components
+
+['meta-supervisor', 'stuck-pattern-reset']

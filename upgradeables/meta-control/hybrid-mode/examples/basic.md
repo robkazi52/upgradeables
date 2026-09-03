@@ -1,10 +1,31 @@
-# Basic composition example
+# HYBRID Mode — Basic Example
 
-**Situation:** work includes both broad design and grounded execution.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `hybrid-mode`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Design and publish a new plugin architecture.
+
+## Why this Upgradeable activates
+
+Several architectures deserve exploration, but repository edits and publication require precise validated execution.
+
+## Inputs / state
+
+Requirements, candidate patterns, validation suite, and publishing authority are known.
+
+## What it does
+
+Uses POWER for three architectures, collapses to one, records interfaces and rejected assumptions, then switches to SAFE for file edits, tests, and publication.
+
+## What it does not do
+
+Mix components from losing designs during implementation without reopening the design gate.
+
+## Result / state change
+
+Broad design quality with a controlled, auditable execution path.
+
+## Interaction with companion components
+
+['power-mode', 'safe-mode', 'ultimate-suite-supervisor']

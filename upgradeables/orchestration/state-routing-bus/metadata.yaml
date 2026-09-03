@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-02",
   "slug": "state-routing-bus",
   "display_name": "State Routing Bus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,48 +23,55 @@
     "state-manager",
     "orchestrator"
   ],
-  "purpose": "Pass explicit task state, decisions, evidence pointers, and module outputs through host-supported handoffs.",
+  "purpose": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "long-context-corpus",
-    "multi-agent-orchestration"
+    "multi-agent workflows",
+    "modular Skills",
+    "cross-process continuation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "all work occurs inside one uninterrupted component",
+    "the host provides no real file, message, context, or structured-state handoff"
   ],
   "triggers": [
-    "multiple components exchange state"
+    "Activate when the task requires multiple components exchange state."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "all work occurs inside one uninterrupted component",
+    "the host provides no real file, message, context, or structured-state handoff"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "state-snapshot"
+    "state-snapshot",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "scoped-loader"
+  ],
+  "potentially_redundant_with": [
+    "external-state-automation"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "typed source state and provenance",
+    "sender/receiver interface and permissions",
+    "available host transport"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "delivered bounded state envelope",
+    "acknowledgement or explicit handoff failure"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "transport envelopes when components share one already typed local state object"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit payload, provenance, receiver boundary, and delivery status"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "no real host-supported handoff channel exists",
+    "payload schema, authority, provenance, or receiver acknowledgement fails"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +84,67 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Modules lose context or invent secret coordination when no typed, visible path carries only the state each receiver is authorized to consume.",
+  "os_role": [
+    "state transport",
+    "module handoff"
+  ],
+  "pipeline_stages": [
+    "post-module emission",
+    "inter-module routing",
+    "handoff verification"
+  ],
+  "best_fit_tasks": [
+    "multi-agent workflows",
+    "modular Skills",
+    "cross-process continuation"
+  ],
+  "avoid_when": [
+    "all work occurs inside one uninterrupted component",
+    "the host provides no real file, message, context, or structured-state handoff"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Represent the handoff as a typed envelope containing sender, receiver, schema version, authority, provenance, payload, and unresolved status. Validate the envelope and receiver permissions, transmit it through an actual host mechanism such as context, file, message, or database, then require acknowledgement. No latent pointer or hidden channel is assumed.",
+  "procedure": [
+    "Define the sender, receiver, state schema, and permitted payload fields.",
+    "Package decisions, evidence pointers, module outputs, provenance, and unresolved items in a bounded envelope.",
+    "Validate schema, authority, size, and receiver permissions.",
+    "Transmit through an available explicit host channel and record delivery status.",
+    "Require acknowledgement or fail with a recoverable handoff record."
+  ],
+  "always_do": [
+    "Preserve the defining invariant: explicit payload, provenance, receiver boundary, and delivery status.",
+    "Record material routing, transition, and failure decisions in explicit task state."
+  ],
+  "never_do": [
+    "claiming hidden shared memory or passing an unbounded context dump",
+    "Never claim hidden state, unavailable host capability, or authority beyond the active Skill."
+  ],
+  "interaction_reasons": {
+    "stateblock": "Provides the structured state fields carried by the bus.",
+    "state-snapshot": "Compresses continuation state when the full live StateBlock should not move."
+  },
+  "counterbalance_reasons": {
+    "scoped-loader": "Limits what the receiver loads from the delivered state."
+  },
+  "redundancy_reasons": {
+    "external-state-automation": "External State persists state in storage; the bus routes state between modules and may use that storage as one transport."
+  },
+  "conflict_rules": [
+    "Host, system, domain, and explicit user authority take precedence over this component.",
+    "If no real host-supported handoff channel exists, stop or escalate rather than forcing a nominal success."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-02. Teleport Bus",
+      "source_kind": "current_consolidated_catalog"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

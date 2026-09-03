@@ -1,10 +1,31 @@
-# Basic composition example
+# Contradiction Micro-Repair Pack — Basic Example
 
-**Situation:** a localized contradiction is detected.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `contradiction-micro-repair`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A report says a pilot starts in June and later says it concluded in May of the same year.
+
+## Why this Upgradeable activates
+
+The dates are mutually incompatible under the same pilot identity and year.
+
+## Inputs / state
+
+The approved schedule says the pilot starts in March and ends in May; the June sentence is generated prose.
+
+## What it does
+
+Confirms same scope and year, replaces June with March in the single clause, and rechecks the timeline and conclusion.
+
+## What it does not do
+
+Rewrite the entire schedule section or preserve both dates as perspectives.
+
+## Result / state change
+
+One local correction with timeline consistency restored.
+
+## Interaction with companion components
+
+['micro-repair', 'bidirectional-consistency']

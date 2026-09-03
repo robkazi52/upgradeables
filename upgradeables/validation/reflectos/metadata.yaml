@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-12",
   "slug": "reflectos",
   "display_name": "Work Reflection Loop OS / ReflectOS",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -24,52 +24,63 @@
     "validator",
     "parent-skill-mode"
   ],
-  "purpose": "Run a bounded goal-anchored reflect, test, revise loop that corrects process errors without inventing facts.",
+  "purpose": "Correct process and output errors at meaningful checkpoints without turning reflection into unbounded rumination or invented content.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "multi-step implementation",
+    "research synthesis",
+    "document revision",
+    "agent handoffs",
+    "recovery after test failure"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a deterministic fix is already known and reflection adds no decision value",
+    "the caller asks for unconstrained ideation rather than requirement checking"
   ],
   "triggers": [
     "output needs a deliberate quality pass"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a deterministic fix is already known and reflection adds no decision value",
+    "the caller asks for unconstrained ideation rather than requirement checking"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "bounded-exit"
+    "bounded-exit",
+    "coherence-loops",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "crispr-edit"
+  ],
+  "potentially_redundant_with": [
+    "coherence-loops"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "session goal",
+    "current subgoal",
+    "requirements",
+    "current output",
+    "test evidence",
+    "risk signals",
+    "StateBlock"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "accept/revise/escalate decision",
+    "requirement-linked corrections",
+    "updated StateBlock",
+    "stop reason"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal reflection on a trivial already-verified operation"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "goal comparison, requirement audit, explicit transition, and state update for long or risky work"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not accept when a material requirement is unmet; do not revise with invented facts; stop and surface the dependency when progress requires external authority."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -82,5 +93,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Work can continue after requirements, contradictions, missing items, or risk have changed, while generic self-critique tends to loop or generate unsupported improvements.",
+  "os_role": [
+    "goal-anchored-work-reflection",
+    "bounded-qa-controller",
+    "state-update-trigger"
+  ],
+  "pipeline_stages": [
+    "milestone review",
+    "pre-delivery",
+    "after failed validation"
+  ],
+  "best_fit_tasks": [
+    "multi-step implementation",
+    "research synthesis",
+    "document revision",
+    "agent handoffs",
+    "recovery after test failure"
+  ],
+  "avoid_when": [
+    "a deterministic fix is already known and reflection adds no decision value",
+    "the caller asks for unconstrained ideation rather than requirement checking"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "At a bounded checkpoint, re-read the session goal and current subgoal, compare the actual output to explicit requirements, audit contradictions, omissions, and risk, then select exactly one transition: accept, revise, or ask/escalate where permitted. After the transition, update the StateBlock to reflect task reality; reflection may correct process errors but may not invent facts or construct an identity narrative.",
+  "procedure": [
+    "Recheck the session goal and current subgoal.",
+    "Compare the produced artifact or action with every explicit requirement.",
+    "Audit contradictions, missing requirements, failed evidence, and material risk.",
+    "Choose accept, revise, or ask/escalate when permitted.",
+    "If revising, make the smallest requirement-linked correction and retest.",
+    "Stop on acceptance, external dependency, or the declared loop budget.",
+    "Update StateBlock with actual progress, decisions, remaining work, and evidence."
+  ],
+  "always_do": [
+    "Anchor every critique to the goal, requirements, or observed risk.",
+    "Choose an explicit loop transition.",
+    "Update task state after the decision.",
+    "Use a bounded iteration budget."
+  ],
+  "never_do": [
+    "Invent facts to make the output appear complete.",
+    "Reflect indefinitely without new evidence or a changed action.",
+    "Build an identity or self-story in StateBlock.",
+    "Expand scope merely because reflection found optional improvements."
+  ],
+  "interaction_reasons": {
+    "stateblock": "Receives the updated factual work state after each loop decision.",
+    "bounded-exit": "Enforces stop conditions on revise cycles.",
+    "coherence-loops": "Handles broader cross-artifact inconsistencies identified during the audit."
+  },
+  "counterbalance_reasons": {
+    "crispr-edit": "Restricts revisions to requirement-linked corrections."
+  },
+  "redundancy_reasons": {
+    "coherence-loops": "ReflectOS decides whether work should be accepted, revised, or escalated; coherence loops specifically repair systemic inconsistency."
+  },
+  "conflict_rules": [
+    "Explicit requirements and evidence outrank the reflector's preference.",
+    "When a missing fact cannot be recovered, escalate or qualify rather than fabricate.",
+    "A fixed loop budget stops revision but does not convert failure into acceptance."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-12. WRL / ReflectOS",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "T2-12. WRL / ReflectOS",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "bounded WRL / ReflectOS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

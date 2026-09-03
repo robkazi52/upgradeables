@@ -2,22 +2,37 @@
 
 ## Summary
 
-Require compatible independent anchors or checks for important conclusions; resolve disagreement or abstain.
+A commitment gate for important conclusions that requires compatible independent truth anchors or validation paths and refuses to force agreement when they materially diverge.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents a single unnoticed evidence or reasoning failure from propagating into an important decision.
+
+## Where It Fits in the OS
+
+Roles: high-risk-truth-gate, commitment-validator. Pipeline stages: post-analysis, pre-synthesis, pre-output-commitment.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- high-stakes evidence synthesis
+- conflicting-source research
+- medical, legal, or policy decisions
+- critical architecture choices
+
+## When Not to Use
+
+- the claim is low consequence and one authoritative direct source is sufficient
+- the supposed anchors merely duplicate the same underlying source
 
 ## Scope
 
-Functional classes: truth-grounding, validation. Activation:
-`U3-high-risk-expensive`. This modern classification is not a historical tier.
+Canonical package: `multi-truth-gating@1.1.0`. ID: `T3-01`. Functional classes: truth-grounding, validation. Activation: `U3-high-risk-expensive`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,97 +40,132 @@ Functional classes: truth-grounding, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the claim is low consequence and one authoritative direct source is sufficient
+- the supposed anchors merely duplicate the same underlying source
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- decision-critical conclusion
+- primary anchor
+- independent corroborating anchor or check
+- evidence priority rules
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- pass to commit
+- narrowed conclusion
+- re-evaluation request
+- abstention or unresolved-conflict status
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+For each decision-critical conclusion, identify a primary factual anchor and at least one genuinely independent corroborating anchor or verification path. Compare what each supports; convergence permits commitment, while material divergence triggers re-evaluation, a narrower claim, explicit uncertainty, or abstention.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Identify conclusions whose failure would materially change the outcome.
+2. Record the primary evidence or reasoning anchor for each.
+3. Select an independent corroborating source or validation path.
+4. Check independence and compare the supported propositions.
+5. Resolve differences by evidence and authority rules rather than averaging.
+6. Commit, narrow, rework, or abstain according to the comparison.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Test anchor independence.
+- Scope the gate to important conclusions.
+- Preserve unresolved material disagreement.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Count two summaries of the same source as independent anchors.
+- Use majority voting to erase a critical contradiction.
+- Run expensive redundant checks on every trivial statement.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `truth-redundancy`
+
+Constructs the two independent anchors consumed by the gate.
+
+### `parallel-qms`
+
+Provides independent validation modes and a controlled collapse result.
+
+### `truth-priority-hierarchy`
+
+Resolves disagreements by explicit evidence authority.
 
 ## Compatible Upgradeables
 
-- `truth-redundancy`
-- `parallel-qms`
+- `truth-redundancy` — Constructs the two independent anchors consumed by the gate.
+- `parallel-qms` — Provides independent validation modes and a controlled collapse result.
+- `truth-priority-hierarchy` — Resolves disagreements by explicit evidence authority.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+No natural counterbalance was identified after review; ordinary authority, scope, and validation controls still apply.
 
 ## Potential Redundancy
 
-- `None declared`
+### `truth-redundancy`
+
+Truth Redundancy creates redundant anchors; Multi-Truth Gating decides whether their agreement is sufficient for commitment.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A higher-authority direct source can outweigh a weaker corroborating path, but the disagreement must be recorded.
+- Safety vetoes are not overridable by numerical agreement among other checks.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- If an important conclusion lacks an independent check or the anchors materially disagree without resolution, do not certify the conclusion.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- redundant checks for low-risk claims with a single decisive authority
+
+Keep mandatory:
+
+- decision-critical claims require genuinely independent support or an explicit unresolved status
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- high-stakes evidence synthesis
+- conflicting-source research
+- medical, legal, or policy decisions
+- critical architecture choices
 
 ## Example Composition
 
-Activate `multi-truth-gating` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A policy recommendation rests on a reported outcome and a causal interpretation.
+
+**Why it activates:** The recommendation is consequential and one reasoning path may be fragile.
+
+**Inputs/state:** Primary study result, independent dataset or reverse-consistency check, and authority rules.
+
+**Action:** Compares independent support and narrows the recommendation if causal support diverges.
+
+**Does not:** Treat repeated citations to the same study as multiple truths.
+
+**Result/state change:** A committed or bounded recommendation with its support status.
+
+**Companions:** ['truth-redundancy', 'parallel-qms', 'truth-priority-hierarchy']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-01` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-01` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-01. Multi-Truth Gating (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.12 Historical global collapse rule (historical_assistant_artifact)

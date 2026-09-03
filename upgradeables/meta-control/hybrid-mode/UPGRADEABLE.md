@@ -2,22 +2,38 @@
 
 ## Summary
 
-Use POWER for planning and SAFE for execution with explicit supervisor-controlled transitions.
+Uses POWER for bounded design exploration, then crosses an explicit supervisor gate into SAFE for grounded execution.
 
 ## Purpose
 
-Provide a reusable `parent-skill-mode` mechanism rather than
-a complete task identity or monolithic prompt.
+Combine broad planning capability with conservative implementation without letting speculative branch assumptions leak into committed work.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A workflow often needs creative architecture search and precise execution, but one undifferentiated mode either narrows planning too early or executes unverified ideas too freely.
+
+## Where It Fits in the OS
+
+Roles: dual-mode workflow, planning-to-execution transition controller. Pipeline stages: POWER planning, collapse and handoff, SAFE execution, post-execution validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- architecture followed by implementation
+- research plan followed by evidence extraction
+- migration design followed by cutover
+- complex repository builds
+
+## When Not to Use
+
+- the task needs only narrow execution
+- the task is pure open exploration with no commitment
+- no supervisor can define and validate the transition state
 
 ## Scope
 
-Functional classes: meta-control, orchestration. Activation:
-`U4-meta-architecture`. This modern classification is not a historical tier.
+Canonical package: `hybrid-mode@1.1.0`. ID: `T4-08`. Functional classes: meta-control, orchestration. Activation: `U4-meta-architecture`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,149 @@ Functional classes: meta-control, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task needs only narrow execution
+- the task is pure open exploration with no commitment
+- no supervisor can define and validate the transition state
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- task and constraints
+- planning rubric
+- transition-state schema
+- execution evidence
+- supervisor authority
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- selected plan
+- validated POWER-to-SAFE handoff
+- grounded execution result
+- mode-transition record
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Run POWER only to generate and compare bounded plans, then collapse to one plan and construct a handoff containing locked goals, selected decisions, rejected assumptions, evidence needs, risks, and execution invariants. A supervisor validates the handoff before activating SAFE, which executes only the committed plan with narrow drift and atomic checks. Re-enter POWER only through a checkpoint when execution exposes an architecture-level defect.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Declare HYBRID and define separate planning and execution completion criteria.
+2. Use POWER to generate, evaluate, and collapse candidate plans.
+3. Create a transition state with the selected plan, locked constraints, evidence, risks, unresolved items, and retired branches.
+4. Have the supervisor verify that the plan is executable and no speculative assumptions remain active.
+5. Switch explicitly to SAFE and execute with grounding, narrow drift, and atomic validation.
+6. If execution uncovers a design failure, checkpoint state and deliberately return to POWER rather than improvising.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- declare the active phase
+- collapse branches before execution
+- transfer locked state explicitly
+- gate every POWER-to-SAFE and SAFE-to-POWER transition
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- execute directly from multiple POWER branches
+- carry exploratory assumptions into SAFE as facts
+- silently switch modes mid-action
+- use HYBRID when one mode suffices
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `power-mode`
+
+POWER supplies bounded design and candidate comparison in the first phase.
+
+### `safe-mode`
+
+SAFE supplies grounded, conservative execution after commitment.
+
+### `ultimate-suite-supervisor`
+
+The suite supervisor owns phase declaration, conflict resolution, and transition authorization.
 
 ## Compatible Upgradeables
 
-- `power-mode`
-- `safe-mode`
+- `power-mode` — POWER supplies bounded design and candidate comparison in the first phase.
+- `safe-mode` — SAFE supplies grounded, conservative execution after commitment.
+- `ultimate-suite-supervisor` — The suite supervisor owns phase declaration, conflict resolution, and transition authorization.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `meta-stability`
+
+Meta-Stability can freeze transition state when repeated mode switching threatens coherence.
 
 ## Potential Redundancy
 
-- `None declared`
+### `power-mode`
+
+POWER alone does not define the safe execution transition.
+
+### `safe-mode`
+
+SAFE alone does not provide broad architectural search.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- No POWER branch may execute until one plan passes collapse and handoff validation.
+- SAFE findings can reopen design only through a recorded checkpoint.
+- Truth and safety vetoes survive both modes and cannot be relaxed by transition.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- mode leakage
+- uncollapsed execution
+- lost constraints at handoff
+- silent oscillation
+- POWER used to bypass SAFE evidence rules
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose phase narration for a compact two-step task
+
+Keep mandatory:
+
+- explicit collapse
+- handoff state
+- supervisor gate
+- narrow execution
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- architecture followed by implementation
+- research plan followed by evidence extraction
+- migration design followed by cutover
+- complex repository builds
 
 ## Example Composition
 
-Activate `hybrid-mode` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Design and publish a new plugin architecture.
+
+**Why it activates:** Several architectures deserve exploration, but repository edits and publication require precise validated execution.
+
+**Inputs/state:** Requirements, candidate patterns, validation suite, and publishing authority are known.
+
+**Action:** Uses POWER for three architectures, collapses to one, records interfaces and rejected assumptions, then switches to SAFE for file edits, tests, and publication.
+
+**Does not:** Mix components from losing designs during implementation without reopening the design gate.
+
+**Result/state change:** Broad design quality with a controlled, auditable execution path.
+
+**Companions:** ['power-mode', 'safe-mode', 'ultimate-suite-supervisor']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-08` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T4-08` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-08. HYBRID Mode (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)

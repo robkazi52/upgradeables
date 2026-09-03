@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-01",
   "slug": "meta-supervisor",
   "display_name": "Meta-Supervisor Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -22,51 +22,70 @@
     "orchestrator",
     "plugin-bundle-component"
   ],
-  "purpose": "Monitor process health, active modes, state, loops, contradictions, and module interactions.",
+  "purpose": "Coordinate Meta-Awareness, Stuck-Pattern Reset, and Contradiction Micro-Repair without becoming the suite-wide mode and architecture authority.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "complex iterative scaffolds",
+    "multi-module reasoning",
+    "repeated failures",
+    "runtime process-health supervision"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task needs suite-wide mode declaration and Core-stack governance",
+    "one module can handle an obvious local issue",
+    "no observable process-health signal exists"
   ],
   "triggers": [
     "complex scaffolding itself needs supervision"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task needs suite-wide mode declaration and Core-stack governance",
+    "one module can handle an obvious local issue",
+    "no observable process-health signal exists"
   ],
   "requires": [],
   "recommended_with": [
+    "contradiction-micro-repair",
     "meta-awareness",
     "stuck-pattern-reset",
-    "contradiction-micro-repair"
+    "ultimate-suite-supervisor"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "reasoning-throughput-governor"
+  ],
+  "potentially_redundant_with": [
+    "ultimate-suite-supervisor"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "process-health snapshot",
+    "active module and state map",
+    "locked constraints",
+    "repair-pack capabilities",
+    "escalation rules"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "failure classification",
+    "bounded repair route",
+    "repair ownership",
+    "post-repair health decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal routing when one obvious repair pack is already explicitly requested"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "diagnosis-before-repair",
+      "smallest-pack selection",
+      "locked-state preservation",
+      "post-repair observation"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "supervisor recursion",
+    "repair-pack races",
+    "suite-authority overreach",
+    "mutation from unverifiable diagnosis",
+    "health checks without termination"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -79,5 +98,85 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Health monitors and repair packs can detect different failures but conflict, duplicate work, or act without a common diagnosis and repair boundary.",
+  "os_role": [
+    "scaffold health orchestrator",
+    "diagnostic repair router"
+  ],
+  "pipeline_stages": [
+    "health intake",
+    "failure classification",
+    "repair routing",
+    "recheck"
+  ],
+  "best_fit_tasks": [
+    "complex iterative scaffolds",
+    "multi-module reasoning",
+    "repeated failures",
+    "runtime process-health supervision"
+  ],
+  "avoid_when": [
+    "the task needs suite-wide mode declaration and Core-stack governance",
+    "one module can handle an obvious local issue",
+    "no observable process-health signal exists"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Collect evidence from Meta-Awareness, classify it as loop/stale path, localized contradiction, broader state instability, or unverifiable, and activate only the smallest matching repair pack. Preserve locked state, serialize repair ownership so packs do not race, then re-observe the affected process. Meta-Supervisor manages health diagnosis and repair; Ultimate Suite Supervisor remains responsible for global modes, stack enforcement, edit-class selection, and suite conflicts.",
+  "procedure": [
+    "Request or read an evidence-bearing process-health snapshot.",
+    "Classify the failure and identify the smallest responsible state or reasoning region.",
+    "Select no action, Stuck-Pattern Reset, Contradiction Micro-Repair, or escalation to Meta-Stability or suite supervision.",
+    "Lock facts, constraints, and unaffected modules; assign one repair owner.",
+    "Run the bounded repair and request a fresh health observation.",
+    "Close on pass, repeat only with new evidence, or escalate when the failure crosses the scaffold boundary."
+  ],
+  "always_do": [
+    "route from observable diagnosis",
+    "choose the smallest repair pack",
+    "preserve locked state",
+    "recheck after repair",
+    "escalate suite-wide conflicts"
+  ],
+  "never_do": [
+    "declare global operating modes",
+    "rewrite architecture under a health-repair pretext",
+    "run competing repair packs on the same region",
+    "anthropomorphize process failures"
+  ],
+  "interaction_reasons": {
+    "meta-awareness": "Meta-Awareness supplies observable health status and evidence.",
+    "stuck-pattern-reset": "Reset handles repeated failed reasoning paths selected by the supervisor.",
+    "contradiction-micro-repair": "Contradiction repair handles localized incompatible claims.",
+    "ultimate-suite-supervisor": "Ultimate Suite receives mode, Core-stack, duration, and cross-pack authority conflicts beyond health routing."
+  },
+  "counterbalance_reasons": {
+    "reasoning-throughput-governor": "Throughput prevents supervision and repair checks from consuming the entire work budget."
+  },
+  "redundancy_reasons": {
+    "ultimate-suite-supervisor": "Meta-Supervisor is the health-and-repair bundle; Ultimate Suite is the top-level operating authority across modes, stacks, editing classes, and final health."
+  },
+  "conflict_rules": [
+    "Suite-wide mode or authority conflicts escalate to Ultimate Suite Supervisor.",
+    "One repair owner controls a failed region at a time.",
+    "An unverifiable health signal cannot authorize mutation.",
+    "Locked truth and safety constraints survive every routed repair."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-01. Meta-Supervisor Bundle",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

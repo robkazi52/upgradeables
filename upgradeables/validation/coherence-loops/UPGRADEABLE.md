@@ -2,22 +2,37 @@
 
 ## Summary
 
-Boundedly compare local output with global goals and structure until coherence is sufficient.
+A bounded diagnose-repair-recheck cycle for restoring global agreement after a coherence discrepancy is detected.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Repair cross-part inconsistencies while preventing endless self-review.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A single patch can move contradictions elsewhere, while unbounded reflection consumes effort without a convergence rule.
+
+## Where It Fits in the OS
+
+Roles: global-consistency-repair-loop, bounded-convergence-controller. Pipeline stages: integration, post-drift-detection, pre-release.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-file changes
+- long-form documents
+- multi-agent synthesis
+- cross-component specification repair
+
+## When Not to Use
+
+- the discrepancy is isolated and a single deterministic correction suffices
+- no stable acceptance criteria exist
 
 ## Scope
 
-Functional classes: validation, editing-repair. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `coherence-loops@1.1.0`. ID: `A-11`. Functional classes: validation, editing-repair. Activation: `U2-specialized`. Mechanism basis: `recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,99 +40,136 @@ Functional classes: validation, editing-repair. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the discrepancy is isolated and a single deterministic correction suffices
+- no stable acceptance criteria exist
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- coherence discrepancy
+- governing invariants
+- dependency map
+- iteration budget
+- acceptance checks
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- repaired coherent state
+- iteration ledger
+- non-convergence report
+- external decision request
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Freeze the governing invariants, locate the smallest inconsistent dependency set, repair the highest-leverage cause, and rerun checks across affected boundaries. Continue only while measured inconsistency decreases; stop on verified convergence, a fixed iteration/depth budget, repeated unchanged failure, or a conflict requiring external authority.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Record the detected inconsistency and governing invariants.
+2. Trace affected dependencies and identify the earliest causal mismatch.
+3. Choose the smallest repair expected to restore the widest agreement.
+4. Apply or propose the repair and rerun local plus boundary checks.
+5. Compare residual inconsistency with the prior iteration.
+6. Exit on convergence; otherwise iterate within the explicit budget.
+7. On non-convergence, return the stable conflict and required decision instead of looping.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Set exit criteria before iterating.
+- Recheck dependent boundaries after each repair.
+- Preserve an audit trail of changed assumptions.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Repeat reflection with no changed hypothesis or evidence.
+- Declare convergence because the iteration budget expired.
+- Repair symptoms while ignoring a known upstream cause.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `coherence-heartbeat`
+
+Supplies discrepancy signals that justify a deeper loop.
+
+### `bounded-exit`
+
+Enforces convergence and stop conditions.
+
+### `reflectos`
+
+Adds reflective comparison of intended and actual process when the inconsistency is procedural.
 
 ## Compatible Upgradeables
 
-- `bounded-exit`
-- `coherence-heartbeat`
+- `coherence-heartbeat` — Supplies discrepancy signals that justify a deeper loop.
+- `bounded-exit` — Enforces convergence and stop conditions.
+- `reflectos` — Adds reflective comparison of intended and actual process when the inconsistency is procedural.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `crispr-edit`
+
+Prevents a coherence repair from expanding beyond the smallest causal edit.
 
 ## Potential Redundancy
 
-- `None declared`
+### `coherence-heartbeat`
+
+The heartbeat monitors; the loop performs bounded causal repair.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Explicit invariants outrank local convenience.
+- If repairs oscillate between two states, stop and expose the underlying unresolved tradeoff.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- Stop without certification when inconsistency does not decrease, repairs oscillate, or resolution requires changing a locked invariant.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- multiple iterations after the first repair fully satisfies all boundary checks
+
+Keep mandatory:
+
+- explicit invariants, dependency recheck, and bounded exit
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- multi-file changes
+- long-form documents
+- multi-agent synthesis
+- cross-component specification repair
 
 ## Example Composition
 
-Activate `coherence-loops` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A schema rename fixes code but leaves documentation, fixtures, and a contribution template inconsistent.
+
+**Why it activates:** The defect spans dependent artifacts and one repair may expose another.
+
+**Inputs/state:** Rename invariant, affected-file map, validation commands, and a three-pass budget.
+
+**Action:** Repairs the schema source, regenerates dependents, checks docs and fixtures, then exits when all agree.
+
+**Does not:** Keep rewriting unrelated prose after convergence.
+
+**Result/state change:** All surfaces use one schema name with a recorded two-iteration repair path.
+
+**Companions:** ['coherence-heartbeat', 'bounded-exit', 'crispr-edit']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `A-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `A-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-11. Coherence Loops (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — A-11. Coherence Loops (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 9. BOUNDED EXIT (historical_assistant_artifact)

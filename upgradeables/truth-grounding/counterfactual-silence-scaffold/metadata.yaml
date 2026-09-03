@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-06",
   "slug": "counterfactual-silence-scaffold",
   "display_name": "Counterfactual Silence Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,49 +20,56 @@
   "implementation_forms": [
     "guard"
   ],
-  "purpose": "Suppress counterfactual additions when the task does not authorize hypothetical reasoning.",
+  "purpose": "Protect factual extraction and reporting tasks from unsolicited counterfactual elaboration.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "record extraction",
+    "source-faithful summarization",
+    "incident reporting",
+    "citation-bound authoring"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task explicitly requests scenarios, hypotheses, or counterfactual analysis",
+    "creative generation is the primary authorized mode"
   ],
   "triggers": [
     "factual output could be contaminated by hypothetical content"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task explicitly requests scenarios, hypotheses, or counterfactual analysis",
+    "creative generation is the primary authorized mode"
   ],
   "requires": [],
   "recommended_with": [
+    "counterfactual-integrity",
+    "mode-lock-in"
+  ],
+  "counterbalances": [
+    "controlled-drift-corridors"
+  ],
+  "potentially_redundant_with": [
     "counterfactual-integrity"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "locked factual-only task mode",
+    "source boundary",
+    "candidate output"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "factual-only candidate",
+    "list of quarantined speculative statements",
+    "mode-conflict status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "explicit lexical cue scanning when semantic mode separation is already reliable"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "unauthorized hypothetical premises must not enter factual output"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "If factual and counterfactual propositions cannot be distinguished reliably, request review rather than deleting uncertain content wholesale."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +82,80 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Prevents plausible alternate scenarios from filling missing evidence or distracting from a factual-only deliverable.",
+  "os_role": [
+    "factual-mode-guard",
+    "output-filter"
+  ],
+  "pipeline_stages": [
+    "task-framing",
+    "draft-validation",
+    "pre-output-verification"
+  ],
+  "best_fit_tasks": [
+    "record extraction",
+    "source-faithful summarization",
+    "incident reporting",
+    "citation-bound authoring"
+  ],
+  "avoid_when": [
+    "the task explicitly requests scenarios, hypotheses, or counterfactual analysis",
+    "creative generation is the primary authorized mode"
+  ],
+  "mechanism_basis": "modern-interpretation",
+  "mechanism": "After a factual-only mode is locked, inspect the candidate for propositions introduced through if, might-have, imagined, alternative-history, or unstated causal premises. Remove those propositions unless they are explicitly reported as source content; preserve ordinary uncertainty statements and supported inference rather than suppressing all modal language.",
+  "procedure": [
+    "Confirm that the task contract excludes hypothetical reasoning.",
+    "Identify candidate statements that introduce a non-source counterfactual premise or imagined outcome.",
+    "Distinguish those statements from source-reported hypotheticals and honest uncertainty.",
+    "Delete or quarantine unauthorized counterfactual additions.",
+    "Recheck that the factual answer remains complete and does not fill gaps by implication."
+  ],
+  "always_do": [
+    "Tie activation to an explicit factual-only boundary.",
+    "Preserve source-authored hypothetical statements as attributed source content.",
+    "Preserve uncertainty labels that accurately describe missing evidence."
+  ],
+  "never_do": [
+    "Suppress a counterfactual the user explicitly requested.",
+    "Treat every use of could or may as contamination.",
+    "Replace removed speculation with a different unsupported claim."
+  ],
+  "interaction_reasons": {
+    "counterfactual-integrity": "Integrity handles explicitly authorized hypothetical branches; silence is the stricter no-branch mode.",
+    "mode-lock-in": "Provides the factual-only task mode that activates this filter."
+  },
+  "counterbalance_reasons": {
+    "controlled-drift-corridors": "Where bounded exploration is authorized, controlled drift prevents silence from over-constraining useful reasoning."
+  },
+  "redundancy_reasons": {
+    "counterfactual-integrity": "Both prevent fact/hypothesis leakage, but silence excludes unauthorized branches while integrity preserves authorized ones with labels."
+  },
+  "conflict_rules": [
+    "An explicit user request for counterfactual analysis deactivates this scaffold and activates counterfactual integrity instead.",
+    "Source fidelity outranks a blanket silence rule when the source itself discusses a hypothetical."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "6.2 T3 structured reasoning-state representation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

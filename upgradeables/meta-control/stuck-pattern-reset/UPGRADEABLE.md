@@ -2,22 +2,38 @@
 
 ## Summary
 
-Detect repeated failed approaches and reset only the failed path while preserving locked facts and constraints.
+Detects repeated failed reasoning and abandons only that path while preserving locked facts, constraints, accepted work, and explicit state.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Break nonproductive loops without erasing the trustworthy task context needed for a genuinely different next attempt.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A solver can repeat the same search, edit, tool call, or reasoning pattern with superficial variations, consuming budget without changing the blocking condition.
+
+## Where It Fits in the OS
+
+Roles: loop-break repair pack, failed-path reset controller. Pipeline stages: repetition detection, state preservation, path quarantine, alternative restart.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- repeated tool failures
+- recursive revision loops
+- stale debugging hypotheses
+- nonconverging planning
+
+## When Not to Use
+
+- a second attempt has new evidence or a materially changed method
+- the whole task state is corrupted
+- a mandatory retry protocol has not been exhausted
 
 ## Scope
 
-Functional classes: meta-control, editing-repair. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `stuck-pattern-reset@1.1.0`. ID: `T4-03`. Functional classes: meta-control, editing-repair. Activation: `U2-specialized`. Mechanism basis: `recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,97 +41,150 @@ Functional classes: meta-control, editing-repair. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- a second attempt has new evidence or a materially changed method
+- the whole task state is corrupted
+- a mandatory retry protocol has not been exhausted
 
 ## Inputs / Required State
 
-- source artifact
-- authorized change request
-- protected facts and invariants
+- attempt history
+- state versions
+- locked facts and constraints
+- observed failures
+- alternative methods and retry limit
 
 ## Outputs / Produced State
 
-- bounded patch or revised artifact
-- preservation and validation status
+- stuck-pattern determination
+- preserved-state snapshot
+- quarantined path
+- materially different next attempt or escalation
 
 ## Mechanism
 
-Classify the defect and apply the smallest authorized edit that can restore correctness while protecting facts, citations, and invariants.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Fingerprint attempts by goal, assumptions, method, inputs, and failure result rather than wording. When a predeclared repetition threshold is met without new evidence or state change, snapshot locked facts and accepted results, quarantine the failed path and its unsupported assumptions, state the recurring blocker, and restart from a materially different method or escalate. Only the failed reasoning path resets.
 
 ## Procedure
 
-1. Locate and classify the defect.
-2. Lock surrounding facts and invariants.
-3. Apply the smallest sufficient repair class.
-4. Compare the result with the source and requested change.
-5. Escalate or stop if the protected invariants cannot be preserved.
+1. Record each attempt's goal, method, key assumptions, state version, and observed failure.
+2. Compare the new attempt with prior fingerprints and test whether evidence, inputs, or method materially changed.
+3. On repeated failure, freeze locked facts, constraints, accepted outputs, and unresolved evidence.
+4. Quarantine the failed path and name the blocker it could not overcome.
+5. Choose a different hypothesis, tool, decomposition, or escalation route with a new success test.
+6. Run one bounded attempt and recheck; escalate if the same blocker persists.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- detect semantic repetition rather than repeated wording
+- preserve trusted state
+- make the replacement path materially different
+- set a bounded retry limit
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- reset facts or user constraints
+- call normal iteration stuckness
+- retry with cosmetic prompt changes
+- erase failure evidence that should inform the next path
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `bounded-exit`
+
+Bounded ExIt supplies the threshold for stopping low-value repeated passes.
+
+### `stateblock`
+
+StateBlock preserves the trustworthy context before the path is reset.
+
+### `meta-supervisor`
+
+Meta-Supervisor validates the stuck diagnosis and routes the reset.
 
 ## Compatible Upgradeables
 
-- `bounded-exit`
-- `stateblock`
+- `bounded-exit` — Bounded ExIt supplies the threshold for stopping low-value repeated passes.
+- `stateblock` — StateBlock preserves the trustworthy context before the path is reset.
+- `meta-supervisor` — Meta-Supervisor validates the stuck diagnosis and routes the reset.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `forethought-checkpoints`
+
+Forethought prevents the alternative restart from repeating the same costly commitment without a new prerequisite.
 
 ## Potential Redundancy
 
-- `None declared`
+### `meta-stability`
+
+Reset isolates one failed path; Meta-Stability reconciles broader state and module instability.
+
+### `anti-tunnel-vision`
+
+Anti-Tunnel prevents early fixation; Stuck Reset acts after repetition proves fixation persistent.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Locked facts and constraints survive the reset.
+- If every materially distinct path shares the same external blocker, escalate rather than keep resetting.
+- A destructive alternative requires its own pre-commit authorization.
 
 ## Failure Boundary
 
-- escalate the repair class or stop when protected invariants cannot be preserved
+- false loop detection
+- full-context amnesia
+- cosmetic retries
+- unbounded reset cycle
+- destructive alternative without checkpoint
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal fingerprints when two attempts are obviously identical and logged
+
+Keep mandatory:
+
+- trusted-state preservation
+- material-difference test
+- retry bound
+- external-blocker escalation
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- repeated tool failures
+- recursive revision loops
+- stale debugging hypotheses
+- nonconverging planning
 
 ## Example Composition
 
-Activate `stuck-pattern-reset` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Three searches use rephrased queries but return the same irrelevant repository results.
+
+**Why it activates:** The method and corpus are unchanged despite different wording.
+
+**Inputs/state:** Query logs, target identifiers, accepted facts, and local source files are available.
+
+**Action:** Preserves the target and findings, quarantines web query reformulation, switches to identifier search inside the local archive, and sets one success check.
+
+**Does not:** Forget the verified target or issue a fourth cosmetic query.
+
+**Result/state change:** A materially different recovery path or an explicit source blocker.
+
+**Companions:** ['bounded-exit', 'stateblock', 'meta-supervisor']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T4-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-03. Stuck-Pattern Reset Pack (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 9. BOUNDED EXIT — DEEPER HISTORICAL USE (historical_assistant_artifact)

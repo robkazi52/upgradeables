@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-15",
   "slug": "specificity-penalty-gate",
   "display_name": "Specificity Penalty Gate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,50 +20,62 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Reject detail whose specificity exceeds the available evidence.",
+  "purpose": "Provide a conservative modern interpretation of the recovered name while keeping the historical source gap explicit.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "research answers",
+    "estimates",
+    "incident explanations",
+    "requirements derived from incomplete evidence",
+    "source recovery"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "exact values are directly provided and verified",
+    "a formal specification requires exactness and the evidence supports it",
+    "the user needs the unrecovered historical mechanism"
   ],
   "triggers": [
     "precise details may be plausible but unsupported"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "exact values are directly provided and verified",
+    "a formal specification requires exactness and the evidence supports it",
+    "the user needs the unrecovered historical mechanism"
   ],
   "requires": [],
   "recommended_with": [
-    "grounding-no-invention",
-    "epistemic-status-gating"
+    "citation-fidelity",
+    "epistemic-status-gating",
+    "grounding-no-invention"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "critical-atomic-verification"
+  ],
+  "potentially_redundant_with": [
+    "grounding-no-invention"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "draft claims",
+    "evidence and its resolution",
+    "epistemic labels",
+    "task precision requirement"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "overprecision flags",
+    "support-to-specificity map",
+    "generalized or qualified claims",
+    "source-gap notice"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal scoring when all specificity atoms are direct user-provided constants"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "support-versus-resolution comparison for generated dates, numbers, causes, and identities"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not release a material exact claim when the available evidence supports only a broader range, class, or uncertainty state."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +88,85 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Models often replace uncertainty with exact dates, quantities, identities, causes, or implementation details that sound useful but are not supported.",
+  "os_role": [
+    "provisional-overprecision-gate",
+    "evidence-resolution-matcher"
+  ],
+  "pipeline_stages": [
+    "drafting",
+    "claim validation",
+    "pre-release"
+  ],
+  "best_fit_tasks": [
+    "research answers",
+    "estimates",
+    "incident explanations",
+    "requirements derived from incomplete evidence",
+    "source recovery"
+  ],
+  "avoid_when": [
+    "exact values are directly provided and verified",
+    "a formal specification requires exactness and the evidence supports it",
+    "the user needs the unrecovered historical mechanism"
+  ],
+  "mechanism_basis": "modern-interpretation",
+  "mechanism": "Tag specificity-bearing atoms—numbers, dates, named causes, unique identities, fine-grained scope, and certainty language—and compare each with the resolution of available evidence and actual task need. Unsupported precision receives a penalty that forces one of four actions: cite stronger evidence, widen to a supported range or class, label the detail provisional, or remove it. This scoring/gating procedure is not claimed as historical reconstruction.",
+  "procedure": [
+    "Identify all atoms whose precision materially narrows the claim.",
+    "Record the evidence resolution and confidence for each atom.",
+    "Ask whether the task outcome requires that degree of precision.",
+    "Flag atoms more precise than evidence or need.",
+    "Resolve each flag by stronger evidence, supported generalization, explicit provisional labeling, or removal.",
+    "Recheck that generalization has not erased a decision-critical distinction."
+  ],
+  "always_do": [
+    "Penalize precision mismatch rather than detail itself.",
+    "Preserve verified exact values when decision-relevant.",
+    "Label the mechanism and thresholds as modern interpretation."
+  ],
+  "never_do": [
+    "Replace an unsupported exact number with a different guessed range.",
+    "Make all writing vague by default.",
+    "Attribute penalty weights or thresholds to unrecovered history."
+  ],
+  "interaction_reasons": {
+    "grounding-no-invention": "Removes details that have no supporting evidence.",
+    "epistemic-status-gating": "Supplies confidence and fact/inference/hypothesis labels.",
+    "citation-fidelity": "Tests whether a citation supports the claimed degree of precision."
+  },
+  "counterbalance_reasons": {
+    "critical-atomic-verification": "Protects exact details that are both supported and essential rather than generalizing them away."
+  },
+  "redundancy_reasons": {
+    "grounding-no-invention": "Grounding rejects unsupported facts; this provisional gate specifically compares claim resolution to evidence resolution and task need."
+  },
+  "conflict_rules": [
+    "A verified decision-critical exact atom is not penalized merely for being specific.",
+    "When evidence supports only a bound or category, that weaker form outranks a fluent point estimate.",
+    "Safety-relevant uncertainty must remain visible."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "Pack-derived exact names",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "Specificity Penalty Gate",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "20. RECOVERY GAPS AFTER DEEP PASS 2.0",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

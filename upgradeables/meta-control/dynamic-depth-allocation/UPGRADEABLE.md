@@ -2,22 +2,38 @@
 
 ## Summary
 
-Spend more reasoning depth on difficult, uncertain, or consequential regions and less on trivial ones.
+Redistributes a fixed or governed reasoning budget so difficult, uncertain, or consequential regions receive deeper work than routine regions.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Concentrate analysis and verification where local marginal value is highest instead of applying uniform depth across a task.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Uniform review wastes effort on obvious units and leaves bottlenecks, uncertain claims, or high-risk boundaries underexamined.
+
+## Where It Fits in the OS
+
+Roles: within-task depth allocator, hotspot router. Pipeline stages: task decomposition, regional scoring, depth routing, reallocation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- heterogeneous documents
+- mixed-risk code changes
+- large research corpora
+- multi-stage plans with uneven uncertainty
+
+## When Not to Use
+
+- every unit has the same mandated review depth
+- the task is one atomic operation
+- regional scores cannot be observed or estimated
 
 ## Scope
 
-Functional classes: meta-control, planning-reasoning. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `dynamic-depth-allocation@1.1.0`. ID: `T4-12`. Functional classes: meta-control, planning-reasoning. Activation: `U1-common-conditional`. Mechanism basis: `normalized-from-recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,150 @@ Functional classes: meta-control, planning-reasoning. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- every unit has the same mandated review depth
+- the task is one atomic operation
+- regional scores cannot be observed or estimated
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- task regions
+- global reasoning envelope
+- regional uncertainty and consequence
+- dependency map
+- mandatory depth floors
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- regional depth map
+- method and check assignment
+- reallocation log
+- coverage or budget blocker
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Partition the task into meaningful regions, score each on difficulty, uncertainty, consequence, dependency centrality, and current evidence deficit, and assign depth bands under the Cognitive Governor's total envelope. Re-score after discoveries and move effort toward unresolved hotspots while maintaining a minimum pass everywhere. DDA decides where depth goes, not the total budget or execution concurrency.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Decompose the task into independently inspectable regions or claims.
+2. Score each region for uncertainty, consequence, coupling, novelty, and evidence deficit.
+3. Reserve a minimum validation pass for all regions.
+4. Allocate the remaining governed budget to high-score regions and choose appropriate methods for each.
+5. Re-score when a local finding changes dependencies or risk.
+6. Stop reallocating when all mandatory regional thresholds pass or escalate if the global budget is insufficient.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- maintain a minimum pass everywhere
+- use explicit hotspot signals
+- reallocate when evidence changes the map
+- stay within or explicitly renegotiate the global budget
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- equate length with difficulty
+- starve low-score regions of mandatory checks
+- hide budget overruns as local depth
+- confuse more parallel workers with deeper reasoning
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `cognitive-governor`
+
+The governor supplies the total envelope that DDA redistributes.
+
+### `risk-tier-scaling`
+
+Risk tiers set mandatory regional floors.
+
+### `reasoning-throughput-governor`
+
+Throughput schedules regional work at an efficient rate after depth is assigned.
 
 ## Compatible Upgradeables
 
-- `risk-tier-scaling`
-- `cognitive-governor`
+- `cognitive-governor` — The governor supplies the total envelope that DDA redistributes.
+- `risk-tier-scaling` — Risk tiers set mandatory regional floors.
+- `reasoning-throughput-governor` — Throughput schedules regional work at an efficient rate after depth is assigned.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `meta-awareness`
+
+Meta-Awareness detects whether depth allocation itself is causing neglect, loops, or module conflict.
 
 ## Potential Redundancy
 
-- `None declared`
+### `cognitive-governor`
+
+Governor determines total effort; DDA determines local concentration.
+
+### `reasoning-throughput-governor`
+
+Throughput chooses pace and breadth; DDA chooses analytical depth per region.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A high-risk mandatory check receives its floor even if its estimated uncertainty is low.
+- When every region exceeds the available envelope, escalate the budget or narrow scope rather than fabricate coverage.
+- Reallocation cannot erase already discovered unresolved defects.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- uniform-depth default
+- hotspot tunnel vision
+- mandatory-check starvation
+- constant reallocation thrash
+- depth confused with concurrency
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- printing numeric scores when relative depth is obvious
+- multiple bands for a small task
+
+Keep mandatory:
+
+- minimum regional pass
+- hotspot-driven allocation
+- budget-bound re-scoring
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- heterogeneous documents
+- mixed-risk code changes
+- large research corpora
+- multi-stage plans with uneven uncertainty
 
 ## Example Composition
 
-Activate `dynamic-depth-allocation` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Review a migration plan with 40 routine steps and three irreversible cutovers.
+
+**Why it activates:** The plan's risk and uncertainty are sharply uneven.
+
+**Inputs/state:** A fixed review envelope, dependency graph, rollback data, and cutover owners exist.
+
+**Action:** Runs a baseline check on all steps, assigns deep failure and rollback analysis to the three cutovers, and reallocates when one exposes a shared dependency.
+
+**Does not:** Spend equal time on renaming a label and switching production data.
+
+**Result/state change:** Depth concentrated on consequential bottlenecks without losing baseline coverage.
+
+**Companions:** ['cognitive-governor', 'risk-tier-scaling']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-12` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: DDA.
+Primary source ID: `T4-12` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: DDA.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-12. Dynamic Depth Allocation (DDA) (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.2 QMS-RTS — Risk-Tier-Split QMS (historical_assistant_artifact)

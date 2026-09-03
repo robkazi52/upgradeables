@@ -2,118 +2,168 @@
 
 ## Summary
 
-Test a favored interpretation against a small plausible alternative set before committing.
+Keeps a solver from treating its first plausible explanation or plan as settled before testing a small number of credible rivals.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A favored hypothesis can silently determine evidence selection, diagnosis, and design even when a nearby alternative explains the same facts better.
+
+## Where It Fits in the OS
+
+Roles: reasoning control, premature-convergence guard. Pipeline stages: hypothesis formation, plan selection, pre-commit review.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- ambiguous diagnosis
+- architecture choice with two credible patterns
+- research synthesis with competing explanations
+
+## When Not to Use
+
+- the answer is directly established by a locked source
+- a safety or policy veto already determines the outcome
+- branching cost exceeds the bounded decision value
 
 ## Scope
 
-Functional classes: planning-reasoning, validation. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `anti-tunnel-vision@1.1.0`. ID: `T2-19`. Functional classes: planning-reasoning, validation. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
-- premature fixation is plausible
+- Activate when the task requires premature fixation is plausible.
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the answer is directly established by a locked source
+- a safety or policy veto already determines the outcome
+- branching cost exceeds the bounded decision value
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- favored candidate
+- task constraints
+- available discriminating evidence
+- exploration budget
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- bounded rival set
+- discriminating comparison
+- selected path or explicit residual uncertainty
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Name the leading path and at least one genuinely plausible competitor, specify the observation that would distinguish them, and compare only on that discriminating evidence. The controller is bounded: it prevents first-path lock-in without turning every task into open-ended brainstorming.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. State the current favored hypothesis or plan and the evidence supporting it.
+2. Generate one or two materially different competitors, not cosmetic restatements.
+3. For each candidate, identify its strongest confirming signal and strongest disconfirming signal.
+4. Acquire or inspect the cheapest decisive evidence available.
+5. Select, synthesize, or explicitly preserve uncertainty; retire alternatives that lose on the discriminating evidence.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- make the favored path explicit
+- require competitors to differ in causal account or implementation strategy
+- define a stopping condition before expanding the search
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- invent weak straw alternatives merely to satisfy a count
+- keep rejected branches active after decisive evidence
+- override a hard truth or safety constraint in the name of exploration
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `multiverse-reasoning`
+
+Multiverse supplies bounded candidates; Anti-Tunnel Vision checks that the candidate set is not just the initial idea in several phrasings.
+
+### `dominant-driver-isolation-scaffold`
+
+Driver isolation can test which rival causal explanation accounts for the highest-impact evidence.
 
 ## Compatible Upgradeables
 
-- `multiverse-reasoning`
-- `neuro-focus`
+- `multiverse-reasoning` — Multiverse supplies bounded candidates; Anti-Tunnel Vision checks that the candidate set is not just the initial idea in several phrasings.
+- `dominant-driver-isolation-scaffold` — Driver isolation can test which rival causal explanation accounts for the highest-impact evidence.
 
 ## Counterbalancing Upgradeables
 
-- `neuro-focus`
+### `neuro-focus`
+
+Neuro-Focus narrows attention after Anti-Tunnel Vision has ensured that narrowing is earned.
 
 ## Potential Redundancy
 
-- `None declared`
+### `multiverse-reasoning`
+
+Both resist premature commitment, but this module is a fixation guard while Multiverse is a branch-generation and selection procedure.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- If a hard veto eliminates a branch, do not keep it alive for balance.
+- When evidence cannot discriminate within budget, report unresolved alternatives instead of manufacturing certainty.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- unbounded ideation
+- token alternatives with no material difference
+- false balance after decisive evidence
+- analysis paralysis
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- writing a formal comparison table when only one quick rival check is needed
+
+Keep mandatory:
+
+- explicitly test at least one plausible rival before a costly commitment
+- retain the stop rule
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- ambiguous diagnosis
+- architecture choice with two credible patterns
+- research synthesis with competing explanations
 
 ## Example Composition
 
-Activate `anti-tunnel-vision` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A service is slow after a deployment.
+
+**Why it activates:** The team has fixated on the new database query although saturation and cache invalidation are also plausible.
+
+**Inputs/state:** Latency rose at deploy time; query timing, CPU saturation, and cache hit-rate data are available.
+
+**Action:** Compares query regression against cache invalidation using the cheapest discriminating metrics, then selects the explanation supported by timing and cache data.
+
+**Does not:** List every imaginable outage cause or preserve the query hypothesis after contrary evidence.
+
+**Result/state change:** A bounded, evidence-selected diagnosis with one residual uncertainty noted.
+
+**Companions:** ['dominant-driver-isolation-scaffold', 'multiverse-reasoning']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-19` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-19` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-19. Anti-Tunnel Vision (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

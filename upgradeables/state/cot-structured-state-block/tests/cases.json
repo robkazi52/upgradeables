@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "cot-structured-state-block",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "cot-structured-state-block-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The handoff needs the basis and open issues, not a transcript of private reasoning.",
+      "expect": "The next analyst can resume and audit the decision basis.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "cot-structured-state-block-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a one-turn answer has no meaningful state",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "cot-structured-state-block-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Canonical cited evidence overrides stale state summaries.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "cot-structured-state-block-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Stop treating the block as authoritative if provenance is missing or fields are stale.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "cot-structured-state-block-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "fact/inference separation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "cot-structured-state-block-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A model has evidence, an assumption, and a tentative conclusion before handoff.",
+      "expect": "Expose each in a separately labeled, provenance-aware state record with a next step.",
+      "reject": "Return a free-form chain-of-thought transcript or merge the assumption into the facts."
+    }
+  ]
+}

@@ -2,22 +2,37 @@
 
 ## Summary
 
-Suppress counterfactual additions when the task does not authorize hypothetical reasoning.
+A modern factual-mode output guard built from an exactly recovered name: when hypothetical reasoning is not authorized, it removes newly introduced what-if premises and imagined outcomes from the candidate output.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Protect factual extraction and reporting tasks from unsolicited counterfactual elaboration.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents plausible alternate scenarios from filling missing evidence or distracting from a factual-only deliverable.
+
+## Where It Fits in the OS
+
+Roles: factual-mode-guard, output-filter. Pipeline stages: task-framing, draft-validation, pre-output-verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- record extraction
+- source-faithful summarization
+- incident reporting
+- citation-bound authoring
+
+## When Not to Use
+
+- the task explicitly requests scenarios, hypotheses, or counterfactual analysis
+- creative generation is the primary authorized mode
 
 ## Scope
 
-Functional classes: truth-grounding, output. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `counterfactual-silence-scaffold@1.1.0`. ID: `JAN26-06`. Functional classes: truth-grounding, output. Activation: `U2-specialized`. Mechanism basis: `modern-interpretation`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,97 +40,128 @@ Functional classes: truth-grounding, output. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task explicitly requests scenarios, hypotheses, or counterfactual analysis
+- creative generation is the primary authorized mode
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- locked factual-only task mode
+- source boundary
+- candidate output
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- factual-only candidate
+- list of quarantined speculative statements
+- mode-conflict status
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
+After a factual-only mode is locked, inspect the candidate for propositions introduced through if, might-have, imagined, alternative-history, or unstated causal premises. Remove those propositions unless they are explicitly reported as source content; preserve ordinary uncertainty statements and supported inference rather than suppressing all modal language.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Confirm that the task contract excludes hypothetical reasoning.
+2. Identify candidate statements that introduce a non-source counterfactual premise or imagined outcome.
+3. Distinguish those statements from source-reported hypotheticals and honest uncertainty.
+4. Delete or quarantine unauthorized counterfactual additions.
+5. Recheck that the factual answer remains complete and does not fill gaps by implication.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Tie activation to an explicit factual-only boundary.
+- Preserve source-authored hypothetical statements as attributed source content.
+- Preserve uncertainty labels that accurately describe missing evidence.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Suppress a counterfactual the user explicitly requested.
+- Treat every use of could or may as contamination.
+- Replace removed speculation with a different unsupported claim.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `counterfactual-integrity`
+
+Integrity handles explicitly authorized hypothetical branches; silence is the stricter no-branch mode.
+
+### `mode-lock-in`
+
+Provides the factual-only task mode that activates this filter.
 
 ## Compatible Upgradeables
 
-- `counterfactual-integrity`
+- `counterfactual-integrity` — Integrity handles explicitly authorized hypothetical branches; silence is the stricter no-branch mode.
+- `mode-lock-in` — Provides the factual-only task mode that activates this filter.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `controlled-drift-corridors`
+
+Where bounded exploration is authorized, controlled drift prevents silence from over-constraining useful reasoning.
 
 ## Potential Redundancy
 
-- `None declared`
+### `counterfactual-integrity`
+
+Both prevent fact/hypothesis leakage, but silence excludes unauthorized branches while integrity preserves authorized ones with labels.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- An explicit user request for counterfactual analysis deactivates this scaffold and activates counterfactual integrity instead.
+- Source fidelity outranks a blanket silence rule when the source itself discusses a hypothetical.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- If factual and counterfactual propositions cannot be distinguished reliably, request review rather than deleting uncertain content wholesale.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- explicit lexical cue scanning when semantic mode separation is already reliable
+
+Keep mandatory:
+
+- unauthorized hypothetical premises must not enter factual output
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- record extraction
+- source-faithful summarization
+- incident reporting
+- citation-bound authoring
 
 ## Example Composition
 
-Activate `counterfactual-silence-scaffold` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Summarize an incident report that does not identify a cause.
+
+**Why it activates:** The output must remain factual and the missing cause invites speculation.
+
+**Inputs/state:** Incident chronology with no causal finding and a factual-only output contract.
+
+**Action:** Reports the chronology and marks cause as undetermined.
+
+**Does not:** Add what might have happened if a different operator acted.
+
+**Result/state change:** A factual summary with an explicit evidence gap.
+
+**Companions:** ['mode-lock-in', 'grounding-no-invention']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: None.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-06` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: None.
+
+Source support: `source-gap`. Mechanism basis: `modern-interpretation`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 6.2 T3 structured reasoning-state representation (historical_assistant_artifact)

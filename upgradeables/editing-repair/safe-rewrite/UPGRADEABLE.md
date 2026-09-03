@@ -2,22 +2,39 @@
 
 ## Summary
 
-Rewrite authorized dimensions while preserving locked facts, meaning, citations, numbers, names, and constraints.
+Changes only requested presentation dimensions while preserving locked meaning, facts, constraints, names, numbers, dates, quotes, and citations.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Fluent rewriting can introduce factual drift, altered modality, citation mismatch, or lost requirements even when the request is purely stylistic.
+
+## Where It Fits in the OS
+
+Roles: editing guard, semantic preservation layer. Pipeline stages: rewrite planning, controlled transformation, atom-level comparison.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- paraphrasing
+- tone adjustment
+- format conversion
+- clarity polishing
+- audience adaptation
+
+## When Not to Use
+
+- the user asks to change substantive meaning
+- the source is internally contradictory and needs adjudication
+- global structure is broken
 
 ## Scope
 
-Functional classes: editing-repair, truth-grounding. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `safe-rewrite@1.1.0`. ID: `T1-10`. Functional classes: editing-repair, truth-grounding. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,98 +42,146 @@ Functional classes: editing-repair, truth-grounding. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the user asks to change substantive meaning
+- the source is internally contradictory and needs adjudication
+- global structure is broken
 
 ## Inputs / Required State
 
 - source artifact
-- authorized change request
-- protected facts and invariants
+- authorized change dimensions
+- locked atom ledger
+- target style or format
 
 ## Outputs / Produced State
 
-- bounded patch or revised artifact
-- preservation and validation status
+- rewritten artifact
+- atom-preservation check
+- reported transformation conflicts
 
 ## Mechanism
 
-Classify the defect and apply the smallest authorized edit that can restore correctness while protecting facts, citations, and invariants.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Extract a before-state ledger of factual and constraint atoms, mark the dimensions authorized to change, perform the rewrite only along those dimensions, then compare names, numbers, dates, quotes, citations, modality, requirements, and causal claims. Any atom difference not explicitly authorized is reverted or surfaced for approval.
 
 ## Procedure
 
-1. Locate and classify the defect.
-2. Lock surrounding facts and invariants.
-3. Apply the smallest sufficient repair class.
-4. Compare the result with the source and requested change.
-5. Escalate or stop if the protected invariants cannot be preserved.
+1. Identify authorized change dimensions such as tone, length, format, or reading level.
+2. Extract locked atoms: claims, entities, numbers, dates, quotations, citations, requirements, negations, and uncertainty markers.
+3. Rewrite without adding evidence or changing the locked atoms.
+4. Diff the rewritten artifact against the atom ledger and inspect citation-to-claim fit.
+5. Restore unauthorized changes and report any requested transformation that cannot preserve meaning.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- separate semantic atoms from surface form
+- preserve modality and uncertainty
+- recheck citations against the rewritten claims
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- add plausible facts for smoothness
+- alter numbers or named entities silently
+- turn qualified language into certainty
+- move a citation so it appears to support a different claim
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `micro-repair`
+
+Micro-Repair bounds the rewritten region when only one passage is defective.
+
+### `citation-fidelity`
+
+Citation Fidelity performs the source-to-claim validation required after wording changes.
+
+### `style-alignment`
+
+Style Alignment specifies one authorized surface dimension while Safe Rewrite protects semantics.
 
 ## Compatible Upgradeables
 
-- `micro-repair`
-- `citation-fidelity`
+- `micro-repair` — Micro-Repair bounds the rewritten region when only one passage is defective.
+- `citation-fidelity` — Citation Fidelity performs the source-to-claim validation required after wording changes.
+- `style-alignment` — Style Alignment specifies one authorized surface dimension while Safe Rewrite protects semantics.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `regenerative-rewrite`
+
+Regenerative Rewrite is needed when preservation of the old structure prevents a coherent result.
 
 ## Potential Redundancy
 
-- `None declared`
+### `style-alignment`
+
+Style Alignment selects the target voice; Safe Rewrite is the preservation guard across any transformation dimension.
+
+### `crispr-edit`
+
+CRISPR changes a named semantic rule while preserving other invariants; Safe Rewrite generally forbids semantic change and transforms expression.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Truth and locked constraints outrank requested style.
+- If shortening would remove a required qualification, keep the qualification or report the conflict.
+- Exact quotations remain exact unless the user authorizes conversion to paraphrase.
 
 ## Failure Boundary
 
-- escalate the repair class or stop when protected invariants cannot be preserved
+- semantic drift
+- citation drift
+- lost negation or uncertainty
+- unrequested content addition
+- meaning change hidden as polish
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- printing the full atom ledger for a tiny rewrite
+
+Keep mandatory:
+
+- internal atom extraction
+- authorized-dimension discipline
+- post-rewrite names/numbers/dates/quotes/citations check
 
 ## Recommended Skill Types
 
-- `authoring`
-- `coding-debugging`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- paraphrasing
+- tone adjustment
+- format conversion
+- clarity polishing
+- audience adaptation
 
 ## Example Composition
 
-Activate `safe-rewrite` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Shorten a technical update for executives.
+
+**Why it activates:** Length and jargon may change, but findings and uncertainty must not.
+
+**Inputs/state:** The update contains three metrics, one date, two caveats, and a citation.
+
+**Action:** Condenses explanations, preserves all metrics and caveats, and confirms the citation still supports the adjacent claim.
+
+**Does not:** Round the numbers, drop uncertainty, or add a business implication absent from the source.
+
+**Result/state change:** A shorter update with unchanged factual atoms.
+
+**Companions:** ['style-alignment', 'citation-fidelity']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-10` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-10` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-10. Safe Rewrite Logic (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION (historical_assistant_artifact)

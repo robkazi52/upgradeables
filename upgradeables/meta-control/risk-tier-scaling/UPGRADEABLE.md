@@ -2,22 +2,38 @@
 
 ## Summary
 
-Increase reasoning depth, verification, and veto strength as consequence, uncertainty, or irreversibility rises.
+Raises reasoning depth, independent verification, and veto strength as consequence, uncertainty, or irreversibility increases.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Uniform validation either wastes effort on low-consequence work or exposes consequential decisions to the same weak checks used for routine output.
+
+## Where It Fits in the OS
+
+Roles: risk classifier, mandatory-rigor controller. Pipeline stages: risk triage, control selection, pre-commit validation, risk reclassification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- medical, legal, financial, or safety-sensitive work
+- irreversible changes
+- uncertain external actions
+- mixed-risk artifacts
+
+## When Not to Use
+
+- a binding protocol already specifies the exact controls
+- the task is harmless and fully reversible
+- risk labels cannot change any behavior
 
 ## Scope
 
-Functional classes: meta-control, validation. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `risk-tier-scaling@1.1.0`. ID: `T3-05`. Functional classes: meta-control, validation. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,97 +41,149 @@ Functional classes: meta-control, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- a binding protocol already specifies the exact controls
+- the task is harmless and fully reversible
+- risk labels cannot change any behavior
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- potential consequences
+- uncertainty and evidence quality
+- reversibility
+- scope of impact
+- tier-control matrix
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- task and regional risk tiers
+- mandatory control set
+- reclassification record
+- commit, abstain, or escalate decision
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Classify the whole task and any higher-risk subregions using consequence, uncertainty, reversibility, scope of impact, and evidence quality. Map the result to explicit control floors: light single-path checks for routine work, stronger source and consistency checks for material work, and independent verification, hard vetoes, checkpointing, and fail-closed behavior for high-risk work. Reclassify when new evidence raises or lowers risk.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Identify potential harms, affected parties, uncertainty, reversibility, and blast radius.
+2. Assign a risk tier to the task and separately to any exceptional subregion.
+3. Select the tier's mandatory reasoning, evidence, independent-check, and veto controls.
+4. Fund those controls through Cognitive Governor and route depth with DDA.
+5. Reassess risk before irreversible action and whenever new evidence changes consequence or uncertainty.
+6. Commit only when the tier's acceptance gates pass; otherwise abstain, escalate, or narrow the action.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- assess consequence and uncertainty separately
+- use the highest applicable tier at mixed-risk boundaries
+- make tier controls observable
+- reclassify on new evidence
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- assign risk from domain label alone
+- lower a tier to fit budget
+- average away a safety-critical minority risk
+- use high rigor everywhere without consequence
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `dynamic-depth-allocation`
+
+DDA concentrates extra work on high-tier regions while preserving baseline coverage.
+
+### `fail-closed-abstention`
+
+High-tier unverifiable results route to abstention instead of forced output.
+
+### `cognitive-governor`
+
+The governor reserves enough total budget to meet the tier's mandatory floor.
 
 ## Compatible Upgradeables
 
-- `dynamic-depth-allocation`
-- `fail-closed-abstention`
+- `dynamic-depth-allocation` — DDA concentrates extra work on high-tier regions while preserving baseline coverage.
+- `fail-closed-abstention` — High-tier unverifiable results route to abstention instead of forced output.
+- `cognitive-governor` — The governor reserves enough total budget to meet the tier's mandatory floor.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `reasoning-throughput-governor`
+
+Throughput preserves efficiency for low-tier work without weakening high-tier gates.
 
 ## Potential Redundancy
 
-- `None declared`
+### `dynamic-depth-allocation`
+
+Risk Tier sets mandatory rigor; DDA distributes discretionary and required depth among regions.
+
+### `safe-mode`
+
+SAFE is an execution profile appropriate to consequential work; Risk Tier decides when and how much rigor is required.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A required tier cannot be lowered because of cost or deadline.
+- When tier controls cannot be completed, return blocked or abstain.
+- Mixed-risk tasks use local higher tiers without forcing unrelated routine regions into maximum review.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- domain-label risk
+- budget-driven downgrading
+- maximum-rigor default
+- stale risk classification
+- soft score overriding hard veto
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal tier narration for obviously low-risk routine output
+
+Keep mandatory:
+
+- consequence and uncertainty assessment
+- high-risk independent checks
+- hard veto and fail-closed behavior
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `multi-agent-orchestration`
-- `research`
-- `source-grounded-analysis`
+- medical, legal, financial, or safety-sensitive work
+- irreversible changes
+- uncertain external actions
+- mixed-risk artifacts
 
 ## Example Composition
 
-Activate `risk-tier-scaling` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Update a README and rotate a production signing key in one release.
+
+**Why it activates:** The tasks share a release but have radically different consequence and reversibility.
+
+**Inputs/state:** Documentation tests, key owners, backup key, audit log, and rollback procedure exist.
+
+**Action:** Applies a light review to README wording and high-tier independent verification, checkpoints, and fail-closed cutover to the key rotation.
+
+**Does not:** Average both tasks into a medium tier or burden README punctuation with key-rotation controls.
+
+**Result/state change:** Proportionate rigor with the irreversible boundary fully protected.
+
+**Companions:** ['dynamic-depth-allocation', 'fail-closed-abstention', 'cognitive-governor']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-05. Risk-Tier Scaling (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.2 QMS-RTS — Risk-Tier-Split QMS (historical_assistant_artifact)

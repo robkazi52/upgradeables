@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-10",
   "slug": "compute-adaptive-drift",
   "display_name": "Compute-Adaptive Drift Constraining",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,47 +22,70 @@
   "implementation_forms": [
     "guard"
   ],
-  "purpose": "Adjust drift constraints as reasoning depth or compute allocation changes.",
+  "purpose": "Maintain semantic reliability across weak and strong runtimes without burdening every runtime identically.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "cross-model skills",
+    "variable tool availability",
+    "cost-limited execution",
+    "mixed-capability agents"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "adaptation would weaken factual or safety invariants",
+    "runtime capability is unknown in a high-risk task",
+    "the task already uses the strict minimum safe protocol"
   ],
   "triggers": [
     "compute/depth varies across a task"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "adaptation would weaken factual or safety invariants",
+    "runtime capability is unknown in a high-risk task",
+    "the task already uses the strict minimum safe protocol"
   ],
   "requires": [],
   "recommended_with": [
-    "dynamic-depth-allocation",
+    "controlled-drift-corridors",
+    "drift-suppression",
+    "micro-scaffolding"
+  ],
+  "counterbalances": [
+    "future-proof-mode-selector",
+    "zero-drift-zones"
+  ],
+  "potentially_redundant_with": [
+    "domain-normalized-drift",
     "drift-spectra-scaling"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "task risk",
+    "zero-drift invariants",
+    "runtime capability evidence",
+    "tool availability",
+    "calibration results"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "runtime-specific control profile",
+    "checkpoint schedule",
+    "step and corridor settings",
+    "unchanged semantic acceptance tests"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "step-by-step micro-scaffolds after calibration",
+      "redundant intermediate restatement",
+      "high-frequency checks for low-drift regions"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "zero-drift fields",
+      "authority hierarchy",
+      "source grounding",
+      "outcome-level semantic tests"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "Do not relax controls for high-impact claims without demonstrated validation performance.",
+    "Fall back to the strict profile when runtime behavior is unstable or unobservable."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +98,91 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A light model may need explicit checkpoints and narrow transformations, while a strong model can safely compress process; a fixed protocol either under-controls or overburdens.",
+  "os_role": [
+    "capability adaptation",
+    "drift-control scaling",
+    "runtime policy"
+  ],
+  "pipeline_stages": [
+    "runtime assessment",
+    "plan construction",
+    "checkpoint scheduling",
+    "validation"
+  ],
+  "best_fit_tasks": [
+    "cross-model skills",
+    "variable tool availability",
+    "cost-limited execution",
+    "mixed-capability agents"
+  ],
+  "avoid_when": [
+    "adaptation would weaken factual or safety invariants",
+    "runtime capability is unknown in a high-risk task",
+    "the task already uses the strict minimum safe protocol"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Classify the task risk and runtime's demonstrated capacity, then choose an enforcement profile: weaker or unverified runtimes receive smaller steps, explicit state, more frequent source checks, and tighter drift corridors; stronger verified runtimes may combine steps and reduce scaffolding. The semantic acceptance tests, authority hierarchy, citations, and zero-drift fields never relax.",
+  "procedure": [
+    "Classify consequence of drift and identify non-negotiable invariants.",
+    "Assess demonstrated context, reasoning, tool, and verification capacity without trusting branding alone.",
+    "Choose checkpoint frequency, step size, scaffold depth, and corridor width.",
+    "Run a calibration or early sample against the same semantic tests.",
+    "Tighten controls on failure; relax only process overhead after repeated success.",
+    "Record the chosen profile and validate the final result identically across runtimes."
+  ],
+  "always_do": [
+    "hold truth and authority invariants constant",
+    "adapt from observed capability",
+    "tighten on uncertainty",
+    "use identical outcome tests"
+  ],
+  "never_do": [
+    "treat more compute as permission to invent",
+    "weaken citations or safety gates",
+    "infer capability solely from model name",
+    "hide which controls were relaxed"
+  ],
+  "interaction_reasons": {
+    "controlled-drift-corridors": "Changes permitted transformation width as one dimension of the runtime profile.",
+    "drift-suppression": "Scales detection and correction frequency.",
+    "micro-scaffolding": "Adds task-local structure for runtimes that need more execution support."
+  },
+  "counterbalance_reasons": {
+    "zero-drift-zones": "Keeps immutable fields fixed regardless of compute.",
+    "future-proof-mode-selector": "May remove redundant ceremony after outcome capability is demonstrated."
+  },
+  "redundancy_reasons": {
+    "domain-normalized-drift": "Domain defaults set the baseline; compute adaptation adjusts process around that baseline, not the domain truth standard.",
+    "drift-spectra-scaling": "Spectra maps task regions; compute adaptation maps runtime capacity."
+  },
+  "conflict_rules": [
+    "Task risk and zero-drift requirements cap any relaxation due to compute.",
+    "When capability evidence conflicts, use the stricter profile until a calibration passes."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "Compute-Adaptive Drift",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Compute-Adaptive Drift inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.3 Drift widths",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Drift widths, stability guards, and capability scaling"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

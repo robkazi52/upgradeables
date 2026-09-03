@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "attention-compression-scaffold",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "attention-compression-scaffold-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Full repository context exceeds the active workspace.",
+      "expect": "A compact debug context that can be expanded back to authoritative files.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "attention-compression-scaffold-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the original context is already small",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "attention-compression-scaffold-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Zero-drift and source-fidelity requirements override compression goals.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "attention-compression-scaffold-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not activate the compressed view when a protected fact, conflict, or provenance link is lost or unverifiable.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "attention-compression-scaffold-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "protected-atom preservation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "attention-compression-scaffold-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A large corpus containing an exact number, an unresolved contradiction, and source locations.",
+      "expect": "Preserve the number verbatim, retain the contradiction, and attach reload pointers in a smaller view.",
+      "reject": "Smooth away the contradiction or lose the exact number/source link."
+    }
+  ]
+}

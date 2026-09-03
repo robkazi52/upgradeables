@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "activation-budget-funnel",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "activation-budget-funnel-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "All proposals cannot remain active without recency and attention competition.",
+      "expect": "A complete comparison built from traceable evidence cards with a bounded live workspace.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "activation-budget-funnel-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a short single source fits comfortably in context",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "activation-budget-funnel-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Source-boundary and authority rules control what may enter the funnel.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "activation-budget-funnel-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Pause synthesis when evidence has not been captured with provenance or active pulls cannot be bounded without losing required coverage.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "activation-budget-funnel-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "retrieval-before-synthesis separation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "activation-budget-funnel-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Ten sources and a request for an evidence-grounded decision.",
+      "expect": "Capture and index evidence in bounded batches before synthesis, then verify the decision against source pointers.",
+      "reject": "Load all sources and interleave retrieval with unsupported decision writing."
+    }
+  ]
+}

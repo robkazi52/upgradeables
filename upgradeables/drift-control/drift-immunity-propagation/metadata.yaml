@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-14",
   "slug": "drift-immunity-propagation",
   "display_name": "Drift Immunity Propagation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,46 +23,69 @@
     "state-manager",
     "guard"
   ],
-  "purpose": "Carry locked constraints and invariants through downstream modules so resolved drift does not reappear.",
+  "purpose": "Preserve established drift resistance across pipelines rather than only at the original source boundary.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-stage generation",
+    "agent pipelines",
+    "source-to-summary-to-decision workflows",
+    "format conversion chains"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "no downstream artifact derives from protected material",
+    "protection metadata cannot accompany data and downstream validation is impossible",
+    "the claimed invariant was never verified"
   ],
   "triggers": [
     "many downstream modules consume locked decisions"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "no downstream artifact derives from protected material",
+    "protection metadata cannot accompany data and downstream validation is impossible",
+    "the claimed invariant was never verified"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock",
-    "domain-mode-isolation"
+    "drift-suppression",
+    "structured-state-projection",
+    "zero-drift-zones"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "controlled-drift-corridors",
+    "scoped-loader"
+  ],
+  "potentially_redundant_with": [
+    "working-memory-lock-in",
+    "zero-drift-zones"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "verified invariant records",
+    "source provenance",
+    "derivation graph",
+    "consumer contracts",
+    "validation predicates"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "invariant-bearing derivatives",
+    "lineage graph",
+    "boundary validation results",
+    "explicit rejection record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose contract restatement inside a single atomic transformation",
+      "manual acknowledgements where typed interfaces enforce them"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "stable invariant identity",
+      "lineage",
+      "boundary tests",
+      "no immunity for unverified claims"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not label a derivative immune when its invariant cannot be tested.",
+    "Stop propagation across a component that cannot preserve required provenance or semantics."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +98,90 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A fact may be locked in the first stage yet lose its protection when summarized, projected, handed off, or transformed again.",
+  "os_role": [
+    "invariant propagation",
+    "derivation lineage",
+    "downstream validation"
+  ],
+  "pipeline_stages": [
+    "artifact derivation",
+    "state projection",
+    "agent handoff",
+    "final aggregation"
+  ],
+  "best_fit_tasks": [
+    "multi-stage generation",
+    "agent pipelines",
+    "source-to-summary-to-decision workflows",
+    "format conversion chains"
+  ],
+  "avoid_when": [
+    "no downstream artifact derives from protected material",
+    "protection metadata cannot accompany data and downstream validation is impossible",
+    "the claimed invariant was never verified"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Represent each verified invariant with an identifier, source/provenance, scope, permitted transformations, and validation predicate. When producing a derived artifact or state projection, copy the applicable invariant contract and lineage pointer, require the receiver to acknowledge it, and test the derivative before it can become an upstream source for another stage.",
+  "procedure": [
+    "Identify verified invariants and assign stable identifiers.",
+    "Define the derivation scope and validation predicate for each.",
+    "Attach applicable invariant contracts to every downstream projection or artifact.",
+    "Require receiving components to preserve or explicitly reject unsupported contracts.",
+    "Validate each derivative before further propagation.",
+    "Trace final claims back through lineage to the original protected source."
+  ],
+  "always_do": [
+    "propagate provenance with protection",
+    "scope invariants to applicable fields",
+    "validate at every derivative boundary",
+    "make rejection explicit"
+  ],
+  "never_do": [
+    "propagate an unverified claim as immune",
+    "copy labels without validation predicates",
+    "assume protection survives a lossy transform automatically"
+  ],
+  "interaction_reasons": {
+    "zero-drift-zones": "Supplies the invariants whose immunity must travel downstream.",
+    "structured-state-projection": "Carries the invariant contract with the filtered state view.",
+    "drift-suppression": "Tests and repairs downstream deviations."
+  },
+  "counterbalance_reasons": {
+    "controlled-drift-corridors": "Limits propagation to fixed dimensions while allowing explicit change elsewhere.",
+    "scoped-loader": "Loads only applicable invariant contracts, avoiding global constraint pollution."
+  },
+  "redundancy_reasons": {
+    "working-memory-lock-in": "WM Lock protects current attention; propagation protects lineage across component boundaries.",
+    "zero-drift-zones": "Zero-drift defines immutability; propagation ensures that definition survives derivation."
+  },
+  "conflict_rules": [
+    "Original verified source and higher-authority constraints outrank downstream paraphrases.",
+    "If two inherited invariant contracts conflict, stop derivation and resolve lineage/authority before merging."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "Drift Immunity Propagation",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Drift Immunity Propagation inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "Zero-drift",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Semantic anchors, state projections, and fidelity checks"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

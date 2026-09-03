@@ -2,115 +2,175 @@
 
 ## Summary
 
-Identify the factor most responsible for an observed failure or decision before choosing an intervention.
+Provisional scaffold for identifying the smallest set of variables that accounts for most of an outcome.
 
 ## Purpose
 
-Provide a reusable `skill-component` mechanism rather than
-a complete task identity or monolithic prompt.
+Separate high-leverage causes or constraints from correlated, downstream, or low-impact factors.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+When many causes are plausible, analysis can spread effort evenly and miss the factor that controls the decision or failure.
+
+## Where It Fits in the OS
+
+Roles: causal reasoning scaffold, attention allocator. Pipeline stages: diagnosis, prioritization, intervention selection.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- root-cause analysis
+- business driver analysis
+- performance bottleneck diagnosis
+- risk prioritization
+
+## When Not to Use
+
+- the system is known to require irreducibly joint causes
+- available evidence supports only correlation
+- the task requires a complete safety hazard inventory rather than prioritization
 
 ## Scope
 
-Functional classes: planning-reasoning. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `dominant-driver-isolation-scaffold@1.1.0`. ID: `JAN26-03`. Functional classes: planning-reasoning. Activation: `U1-common-conditional`. Mechanism basis: `provisional`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
-- many possible causes compete
+- Activate when the task requires many possible causes compete.
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the system is known to require irreducibly joint causes
+- available evidence supports only correlation
+- the task requires a complete safety hazard inventory rather than prioritization
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- target outcome
+- candidate causes or constraints
+- measurements
+- system boundary
+- intervention options
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- ranked drivers
+- evidence for marginal leverage
+- single-driver or coupled-driver conclusion
+- intervention focus
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
+Modern conservative interpretation: enumerate candidate drivers, define the target outcome, estimate each candidate's unique explanatory or intervention leverage, and test the leading driver against the strongest alternative and interaction effects. The historical sources recover only the scaffold's exact name.
 
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+**Modern operational interpretation:** The procedure below is useful current guidance, not a claim that the full historical mechanism was recovered.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Define the outcome and the time or system boundary.
+2. List candidate drivers and distinguish causes, constraints, symptoms, and proxies.
+3. Estimate each candidate's marginal effect using available comparisons, traces, or counterfactuals.
+4. Test the leader against the strongest rival and check whether a pairwise interaction changes the ranking.
+5. Select the dominant driver or report that no single driver is defensible; route effort accordingly.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- state the target outcome before ranking drivers
+- separate causal evidence from correlation
+- test the top-ranked driver against at least one rival
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- claim single-cause dominance when evidence supports a coupled system
+- drop safety-critical minority risks
+- present the provisional mechanics as recovered
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `anti-tunnel-vision`
+
+Anti-Tunnel Vision supplies a rival-driver check against fixation.
+
+### `critical-atomic-verification`
+
+Critical Atomic Verification can verify the key measurements on which driver ranking depends.
 
 ## Compatible Upgradeables
 
-- `anti-tunnel-vision`
+- `anti-tunnel-vision` — Anti-Tunnel Vision supplies a rival-driver check against fixation.
+- `critical-atomic-verification` — Critical Atomic Verification can verify the key measurements on which driver ranking depends.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `multi-layer-consistency`
+
+Multi-Layer Consistency checks whether local driver selection neglects a conflicting system-level dependency.
 
 ## Potential Redundancy
 
-- `None declared`
+### `anti-tunnel-vision`
+
+Both compare alternatives, but Driver Isolation ranks causal leverage while Anti-Tunnel Vision guards search breadth.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A safety-critical factor is not discarded solely because its probability or average effect is lower.
+- If interaction terms dominate marginal effects, return a coupled-driver result rather than forcing one winner.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- correlation presented as cause
+- single-factor oversimplification
+- ranking without an outcome definition
+- ignoring interactions
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal scoring when one measured bottleneck overwhelmingly dominates
+
+Keep mandatory:
+
+- rival test
+- interaction check
+- causal-evidence label
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
+- root-cause analysis
+- business driver analysis
+- performance bottleneck diagnosis
+- risk prioritization
 
 ## Example Composition
 
-Activate `dominant-driver-isolation-scaffold` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Subscription churn increased.
+
+**Why it activates:** Price, onboarding failures, outages, and seasonality all correlate with churn.
+
+**Inputs/state:** Cohort data and incident timing permit marginal comparisons.
+
+**Action:** Defines 30-day churn, separates the onboarding failure cohort, compares it with price-change cohorts, and reports onboarding failure as dominant only after interaction checks.
+
+**Does not:** Choose the most salient anecdote or suppress a smaller safety-related concern.
+
+**Result/state change:** A defensible intervention priority and limits on the causal claim.
+
+**Companions:** ['anti-tunnel-vision', 'critical-atomic-verification']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `JAN26-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`training-scaffolding-2026-01-05`. Aliases: None.
-Exact name recovery; operational mechanism is a conservative modern interpretation.
+Primary source ID: `JAN26-03` in `OS_Upgradeables_Historical_Recovery_Inventory.md`. Registry generation: `training-scaffolding-2026-01-05`. Historical aliases: None.
+
+Source support: `source-gap`. Mechanism basis: `provisional`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)

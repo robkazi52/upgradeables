@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-17",
   "slug": "future-proof-mode-selector",
   "display_name": "Future-Proof Mode Selector",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -22,47 +22,69 @@
   "implementation_forms": [
     "orchestrator"
   ],
-  "purpose": "Select lighter or heavier scaffolding from host capability, environment support, and task risk.",
+  "purpose": "Keep workflows portable across frontier and smaller models, tool environments, and future hosts without weakening invariant controls.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "cross-model skill packages",
+    "tool-optional workflows",
+    "portable agent systems",
+    "deployments with different context and persistence support"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the host and task profile are fixed",
+    "capability cannot be tested and no conservative fallback exists",
+    "selection would alter non-negotiable truth or safety rules"
   ],
   "triggers": [
     "an implementation targets models with different capabilities"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the host and task profile are fixed",
+    "capability cannot be tested and no conservative fallback exists",
+    "selection would alter non-negotiable truth or safety rules"
   ],
   "requires": [],
   "recommended_with": [
+    "adapter-first-experimentation",
     "model-size-drift-scaling",
     "risk-tier-scaling"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "safe-mode"
+  ],
+  "potentially_redundant_with": [
+    "model-size-drift-scaling"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "host capability evidence",
+    "environment tools and permissions",
+    "state and context support",
+    "task risk",
+    "available mode profiles"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "selected operating profile",
+    "enabled and omitted controls",
+    "fallback route",
+    "selection rationale"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose capability inventory when the host contract is already machine-verified"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "risk overlay",
+      "real capability check",
+      "invariant preservation",
+      "fallback"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "capability hallucination",
+    "model-brand heuristics",
+    "unsafe light profile",
+    "vendor lock-in",
+    "mid-action mode switch"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +97,87 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A workflow tuned to one host either burdens stronger systems with obsolete scaffolding or silently assumes tools, context, state, and reliability weaker hosts do not possess.",
+  "os_role": [
+    "host-capability mode router",
+    "portability controller"
+  ],
+  "pipeline_stages": [
+    "capability probe",
+    "task-risk assessment",
+    "mode selection",
+    "fallback routing"
+  ],
+  "best_fit_tasks": [
+    "cross-model skill packages",
+    "tool-optional workflows",
+    "portable agent systems",
+    "deployments with different context and persistence support"
+  ],
+  "avoid_when": [
+    "the host and task profile are fixed",
+    "capability cannot be tested and no conservative fallback exists",
+    "selection would alter non-negotiable truth or safety rules"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Probe real host affordances—context, tools, state persistence, structured outputs, reliability evidence, and execution permissions—then combine them with task risk to choose a named light, standard, or heavy scaffold profile. Use model-size drift scaling as one capability signal, never as the selector itself; capability claims must be observed or declared, and truth, safety, state, and integrity invariants remain mandatory in every profile.",
+  "procedure": [
+    "Declare the task's risk, state, tool, and validation requirements.",
+    "Probe or read the host's actual capabilities and permissions without assuming hidden persistence or tools.",
+    "Map capability and risk to a predeclared operating profile with explicit enabled and omitted controls.",
+    "Run a readiness check and select a conservative fallback when any required affordance is absent.",
+    "Monitor failures that invalidate the profile and switch modes at a checkpoint.",
+    "Record the chosen profile and reasons so behavior remains reproducible across hosts."
+  ],
+  "always_do": [
+    "test capabilities rather than infer them from brand or model size",
+    "preserve invariant controls across profiles",
+    "provide a conservative fallback",
+    "record selection rationale"
+  ],
+  "never_do": [
+    "assume a larger model has tools or persistence",
+    "remove truth or safety gates as an optimization",
+    "silently change modes mid-action",
+    "encode one vendor's interface as universal semantics"
+  ],
+  "interaction_reasons": {
+    "model-size-drift-scaling": "DSS-MS supplies a reliability-to-scaffolding scaling policy that FPMS uses alongside environment and risk.",
+    "risk-tier-scaling": "Risk Tier prevents a capable host from selecting an undercontrolled profile for consequential work.",
+    "adapter-first-experimentation": "Unsupported or novel host capabilities can be integrated as optional adapters."
+  },
+  "counterbalance_reasons": {
+    "safe-mode": "SAFE provides the conservative fallback when capability or environment support is uncertain."
+  },
+  "redundancy_reasons": {
+    "model-size-drift-scaling": "DSS-MS adjusts scaffolding as model reliability changes; FPMS makes the actual multi-factor mode choice including tools, state, permissions, and task risk."
+  },
+  "conflict_rules": [
+    "Task-risk requirements override host convenience.",
+    "Absent required capability routes to fallback or blocked, never simulated capability.",
+    "Profile changes during execution occur only at a safe checkpoint with state transfer."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-17. Future-Proof Mode Selector (FPMS)",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "16. COPILOT / DOCUMENT-BASED IMPLEMENTATION CONSTRAINTS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

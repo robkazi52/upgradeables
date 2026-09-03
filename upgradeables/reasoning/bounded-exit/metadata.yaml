@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-01",
   "slug": "bounded-exit",
   "display_name": "Bounded ExIt",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,48 +21,67 @@
     "parent-skill-mode",
     "orchestrator"
   ],
-  "purpose": "Run evaluate-repair cycles with an explicit quality threshold and iteration budget.",
+  "purpose": "Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "document revision",
+    "code or prompt refinement",
+    "multi-pass synthesis",
+    "quality-controlled drafting"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a mandatory validator has not yet passed",
+    "a hard defect requires escalation rather than iteration",
+    "the artifact is already accepted and no new requirement exists"
   ],
   "triggers": [
     "a draft needs iterative improvement"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a mandatory validator has not yet passed",
+    "a hard defect requires escalation rather than iteration",
+    "the artifact is already accepted and no new requirement exists"
   ],
   "requires": [],
   "recommended_with": [
     "micro-repair",
-    "parallel-qms"
+    "parallel-qms",
+    "structured-refinement"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "reasoning-scale-controller"
+  ],
+  "potentially_redundant_with": [
+    "structured-refinement"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "artifact",
+    "locked goals",
+    "quality criteria",
+    "iteration budget",
+    "repair cost estimates"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "improved artifact",
+    "pass-by-pass defect decisions",
+    "explicit exit reason"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose pass logs for a one-pass correction",
+      "formal scoring when the next defect is obvious and low-risk"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "predeclared exit rule",
+      "post-repair re-evaluation",
+      "mandatory-gate precedence"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "endless recursive polishing",
+    "stopping with a known blocking defect",
+    "changing accepted decisions during a repair pass",
+    "optimizing an easy metric instead of the task"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +94,82 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Revision loops either stop too early with a known high-impact defect or continue polishing low-value details indefinitely.",
+  "os_role": [
+    "refinement controller",
+    "reasoning-budget governor"
+  ],
+  "pipeline_stages": [
+    "draft review",
+    "iterative repair",
+    "release decision"
+  ],
+  "best_fit_tasks": [
+    "document revision",
+    "code or prompt refinement",
+    "multi-pass synthesis",
+    "quality-controlled drafting"
+  ],
+  "avoid_when": [
+    "a mandatory validator has not yet passed",
+    "a hard defect requires escalation rather than iteration",
+    "the artifact is already accepted and no new requirement exists"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Each pass evaluates the artifact against locked goals, chooses the single highest-value remaining defect, repairs it, and re-evaluates. Exit occurs on threshold satisfaction, budget exhaustion, or diminishing expected improvement; the historical acronym expansion is deliberately left unrecovered.",
+  "procedure": [
+    "Lock acceptance criteria and a maximum pass or cost budget.",
+    "Score the current artifact against those criteria.",
+    "Choose the highest-impact repair that can be completed without reopening accepted decisions.",
+    "Apply the repair and record whether the target metric improved.",
+    "Stop when criteria pass, no repair has positive expected value, or the budget is reached; otherwise repeat."
+  ],
+  "always_do": [
+    "define the exit condition before iterating",
+    "repair the highest-value defect first",
+    "re-evaluate after every pass"
+  ],
+  "never_do": [
+    "iterate merely because another rewrite is possible",
+    "use a quality score to waive a mandatory truth or safety check",
+    "invent an expansion for ExIt"
+  ],
+  "interaction_reasons": {
+    "micro-repair": "Micro-Repair supplies the smallest correction for the defect selected by the loop.",
+    "structured-refinement": "Structured Refinement separates defect classes; Bounded ExIt decides whether another class-specific pass is worth doing.",
+    "parallel-qms": "Parallel-QMS can score candidates or revisions on multiple quality dimensions before the exit decision."
+  },
+  "counterbalance_reasons": {
+    "reasoning-scale-controller": "The scale controller can increase depth when risk justifies it, while Bounded ExIt prevents that depth from becoming unbounded."
+  },
+  "redundancy_reasons": {
+    "structured-refinement": "Both organize revision, but Structured Refinement orders defect classes and Bounded ExIt owns continuation and termination."
+  },
+  "conflict_rules": [
+    "Mandatory acceptance checks outrank a pass budget; if budget expires first, return blocked rather than pass.",
+    "A newly discovered architecture failure hands off to Surgery or Regenerative Rewrite instead of repeating local passes."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-01. Bounded ExIt",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "9. BOUNDED EXIT — DEEPER HISTORICAL USE",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "multiverse-reasoning",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "multiverse-reasoning-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Central curation, open pull requests, and federated registries have materially different trust and maintenance tradeoffs.",
+      "expect": "One executable governance plan with two retired alternatives and explicit reasons.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "multiverse-reasoning-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a locked source dictates a single faithful transformation",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "multiverse-reasoning-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A hard truth, safety, or authorization veto cannot be outvoted by soft quality scores.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "multiverse-reasoning-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "cosmetic branch variants",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "multiverse-reasoning-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "material branch distinctness",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "multiverse-reasoning-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A task has several credible approaches.",
+      "expect": "The skill creates 2–3 materially distinct branches under shared constraints, evaluates uniformly, commits to one outcome, and retires losers.",
+      "reject": "The skill merely brainstorms options, uses cosmetic variants, or leaves multiple active plans after selection."
+    }
+  ]
+}

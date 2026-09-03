@@ -2,118 +2,158 @@
 
 ## Summary
 
-Pass explicit task state, decisions, evidence pointers, and module outputs through host-supported handoffs.
+Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.
 
 ## Purpose
 
-Provide a reusable `state-manager` mechanism rather than
-a complete task identity or monolithic prompt.
+Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Modules lose context or invent secret coordination when no typed, visible path carries only the state each receiver is authorized to consume.
+
+## Where It Fits in the OS
+
+Roles: state transport, module handoff. Pipeline stages: post-module emission, inter-module routing, handoff verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-agent workflows
+- modular Skills
+- cross-process continuation
+
+## When Not to Use
+
+- all work occurs inside one uninterrupted component
+- the host provides no real file, message, context, or structured-state handoff
 
 ## Scope
 
-Functional classes: state, orchestration. Activation:
-`U4-meta-architecture`. This modern classification is not a historical tier.
+Canonical package: `state-routing-bus@1.1.0`. ID: `A-02`. Functional classes: state, orchestration. Activation: `U4-meta-architecture`. Mechanism basis: `recovered`. Activation cost: `high` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
-- multiple components exchange state
+- Activate when the task requires multiple components exchange state.
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- all work occurs inside one uninterrupted component
+- the host provides no real file, message, context, or structured-state handoff
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- typed source state and provenance
+- sender/receiver interface and permissions
+- available host transport
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- delivered bounded state envelope
+- acknowledgement or explicit handoff failure
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Represent the handoff as a typed envelope containing sender, receiver, schema version, authority, provenance, payload, and unresolved status. Validate the envelope and receiver permissions, transmit it through an actual host mechanism such as context, file, message, or database, then require acknowledgement. No latent pointer or hidden channel is assumed.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Define the sender, receiver, state schema, and permitted payload fields.
+2. Package decisions, evidence pointers, module outputs, provenance, and unresolved items in a bounded envelope.
+3. Validate schema, authority, size, and receiver permissions.
+4. Transmit through an available explicit host channel and record delivery status.
+5. Require acknowledgement or fail with a recoverable handoff record.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve the defining invariant: explicit payload, provenance, receiver boundary, and delivery status.
+- Record material routing, transition, and failure decisions in explicit task state.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- claiming hidden shared memory or passing an unbounded context dump
+- Never claim hidden state, unavailable host capability, or authority beyond the active Skill.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `stateblock`
+
+Provides the structured state fields carried by the bus.
+
+### `state-snapshot`
+
+Compresses continuation state when the full live StateBlock should not move.
 
 ## Compatible Upgradeables
 
-- `stateblock`
-- `state-snapshot`
+- `stateblock` — Provides the structured state fields carried by the bus.
+- `state-snapshot` — Compresses continuation state when the full live StateBlock should not move.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `scoped-loader`
+
+Limits what the receiver loads from the delivered state.
 
 ## Potential Redundancy
 
-- `None declared`
+### `external-state-automation`
+
+External State persists state in storage; the bus routes state between modules and may use that storage as one transport.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Host, system, domain, and explicit user authority take precedence over this component.
+- If no real host-supported handoff channel exists, stop or escalate rather than forcing a nominal success.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- no real host-supported handoff channel exists
+- payload schema, authority, provenance, or receiver acknowledgement fails
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- transport envelopes when components share one already typed local state object
+
+Keep mandatory:
+
+- explicit payload, provenance, receiver boundary, and delivery status
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `long-context-corpus`
-- `multi-agent-orchestration`
+- multi-agent workflows
+- modular Skills
+- cross-process continuation
 
 ## Example Composition
 
-Activate `state-routing-bus` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A research worker hands verified evidence to a separate report writer.
+
+**Why it activates:** The writer needs decisions and source pointers but not the worker's full context.
+
+**Inputs/state:** Sender/receiver IDs, schema, evidence pointers, decisions, unresolved questions, and message channel.
+
+**Action:** Validates and sends a bounded envelope, then records the writer's acknowledgement.
+
+**Does not:** Does not claim secret shared memory or transfer private reasoning.
+
+**Result/state change:** The writer receives traceable state or the workflow reports a handoff failure.
+
+**Companions:** StateBlock structures payload; Scoped Loader limits receiver context.
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `A-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: Teleport Bus.
+Primary source ID: `A-02` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: Teleport Bus.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-02. Teleport Bus (current_consolidated_catalog)

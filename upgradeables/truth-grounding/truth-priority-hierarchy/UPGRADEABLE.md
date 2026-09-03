@@ -2,22 +2,37 @@
 
 ## Summary
 
-Resolve evidence conflicts with an explicit domain hierarchy in which verified evidence outranks fluency.
+A domain-explicit conflict resolver that determines which evidence, authority, or semantic class governs when candidate truths disagree.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Prevents ad hoc conflict resolution and hidden selection of whichever claim best fits the draft.
+
+## Where It Fits in the OS
+
+Roles: truth-conflict-resolver, authority-ordering. Pipeline stages: task-framing, evidence-conflict-resolution, qms-collapse.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-source research
+- policy and regulatory analysis
+- multi-validator workflows
+- domain decisions with mixed evidence classes
+
+## When Not to Use
+
+- no material evidence or authority conflict exists
+- the domain lacks an authorized hierarchy and inventing one would decide the outcome
 
 ## Scope
 
-Functional classes: truth-grounding, orchestration. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `truth-priority-hierarchy@1.1.0`. ID: `T3-06`. Functional classes: truth-grounding, orchestration. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,98 +40,131 @@ Functional classes: truth-grounding, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- no material evidence or authority conflict exists
+- the domain lacks an authorized hierarchy and inventing one would decide the outcome
 
 ## Inputs / Required State
 
-- candidate output or claim
-- applicable evidence, constraints, and invariants
+- conflicting claims or validator outcomes
+- evidence provenance
+- epistemic status
+- authorized domain hierarchy
 
 ## Outputs / Produced State
 
-- pass
-- fail
-- repair-required
-- unverifiable
+- precedence decision
+- narrowed synthesis
+- unresolved conflict record
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Before resolving a conflict, declare a domain-appropriate ordering such as host safety over task optimization, direct source fact over inference, and verified evidence over stylistic fluency. Map each conflicting claim to its evidence and authority class, apply the ordering, and preserve unresolved ties rather than silently choosing.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Identify the conflicting propositions or validator outcomes.
+2. Record the source, authority, epistemic status, and domain applicability of each.
+3. Load or declare the authorized domain hierarchy.
+4. Apply the hierarchy and any hard vetoes.
+5. Document the winning, narrowed, or unresolved result.
+6. Recheck that the selected claim remains supported in its original context.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Make domain-specific precedence explicit.
+- Separate evidence authority from rhetorical confidence.
+- Preserve unresolved ties that affect the conclusion.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Assume one universal evidence hierarchy for every domain.
+- Let a weighted score override a hard constraint.
+- Choose the more fluent claim when evidence authority favors the other.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `multi-truth-gating`
+
+Provides the resolution rule when independent anchors disagree.
+
+### `parallel-qms`
+
+Resolves material disagreement among QMS modes or evaluators.
+
+### `epistemic-status-gating`
+
+Supplies fact/inference/hypothesis classes used by the hierarchy.
 
 ## Compatible Upgradeables
 
-- `None declared`
+- `multi-truth-gating` — Provides the resolution rule when independent anchors disagree.
+- `parallel-qms` — Resolves material disagreement among QMS modes or evaluators.
+- `epistemic-status-gating` — Supplies fact/inference/hypothesis classes used by the hierarchy.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+No natural counterbalance was identified after review; ordinary authority, scope, and validation controls still apply.
 
 ## Potential Redundancy
 
-- `None declared`
+### `fermionic-veto`
+
+A veto defines a hard blocking condition; Truth Priority Hierarchy orders competing non-veto evidence and authorities.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Host/system safety and organization policy remain above repository-level truth ordering.
+- If no authorized rule distinguishes materially conflicting claims, return unresolved rather than fabricate priority.
 
 ## Failure Boundary
 
-- if the applicable condition cannot be checked, do not certify the candidate
+- If a material conflict has no defensible domain/authority ordering, the resolver must not select a winner.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- restating obvious precedence where one direct authoritative source controls
+
+Keep mandatory:
+
+- evidence and authority, not fluency or optimization, determine conflict resolution
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `multi-agent-orchestration`
-- `research`
-- `source-grounded-analysis`
+- multi-source research
+- policy and regulatory analysis
+- multi-validator workflows
+- domain decisions with mixed evidence classes
 
 ## Example Composition
 
-Activate `truth-priority-hierarchy` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A policy summary contains a current primary policy text and an older interpretive memo that disagree.
+
+**Why it activates:** Two evidence classes conflict.
+
+**Inputs/state:** Both texts, dates, applicability, and an authorized policy-source hierarchy.
+
+**Action:** Applies the hierarchy, explains the controlling source, and preserves the disagreement.
+
+**Does not:** Blend incompatible statements into a false compromise.
+
+**Result/state change:** A source-ranked conclusion with traceable precedence.
+
+**Companions:** ['multi-truth-gating', 'epistemic-status-gating']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T3-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T3-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-06. Truth Priority Hierarchy (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 15.2 Historical Meta-OS template (historical_assistant_artifact)

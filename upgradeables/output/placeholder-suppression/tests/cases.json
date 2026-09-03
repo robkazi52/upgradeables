@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "placeholder-suppression",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "placeholder-suppression-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "README templates, manifests, and examples may retain setup prompts or dummy URLs.",
+      "expect": "A release with no accidental placeholders and one documented intentional fixture.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "placeholder-suppression-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the deliverable is explicitly a template whose placeholders are the product",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "placeholder-suppression-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Never fabricate content to satisfy completion.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "placeholder-suppression-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "false completion",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "placeholder-suppression-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "lexical plus schema scan",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "placeholder-suppression-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A final artifact contains TODO text, one empty required field, and a placeholder intentionally shown in an example.",
+      "expect": "The skill catches lexical and structural defects, resolves or blocks them, and narrowly allowlists the instructional example.",
+      "reject": "The skill only searches for TODO, deletes unknowns, invents values, or suppresses the intentional example."
+    }
+  ]
+}

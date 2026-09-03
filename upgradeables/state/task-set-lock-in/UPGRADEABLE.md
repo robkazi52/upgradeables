@@ -2,22 +2,38 @@
 
 ## Summary
 
-Lock the goal, deliverable, constraints, terminology, source boundaries, current subtask, and completion criteria.
+Freeze the clarified objective, deliverables, acceptance criteria, constraints, and out-of-scope items as the active task contract.
 
 ## Purpose
 
-Provide a reusable `state-schema` mechanism rather than
-a complete task identity or monolithic prompt.
+Prevent scope substitution and goal drift during execution.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A model can optimize a nearby but different problem, quietly add deliverables, or forget the success criteria after extensive context.
+
+## Where It Fits in the OS
+
+Roles: task identity, scope control, acceptance gate. Pipeline stages: after clarification, before planning, at scope-change requests, final acceptance.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-step builds
+- contracted deliverables
+- long research
+- tasks with exclusions
+
+## When Not to Use
+
+- the task is still materially ambiguous
+- open-ended ideation intentionally has no fixed deliverable
+- the user explicitly authorizes dynamic exploration
 
 ## Scope
 
-Functional classes: framing-intake, state. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `task-set-lock-in@1.1.0`. ID: `T1-06`. Functional classes: framing-intake, state. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,152 @@ Functional classes: framing-intake, state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the task is still materially ambiguous
+- open-ended ideation intentionally has no fixed deliverable
+- the user explicitly authorizes dynamic exploration
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- clarified request
+- deliverables
+- constraints
+- acceptance criteria
+- non-goals
+- change authority
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- versioned task-set contract
+- scope-gated plan
+- acceptance checklist
+- scope-change record
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority. Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Extract the objective, required artifacts, constraints, success tests, and exclusions.
+2. Resolve material ambiguity before locking.
+3. Record the task set as locked fields with a version and change authority.
+4. Gate planned actions and newly proposed work against the set.
+5. For legitimate changes, record the requester, rationale, and new version.
+6. Use acceptance criteria to close the task.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- include non-goals
+- define completion evidence
+- record authorized scope changes
+- check final output against the locked set
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- lock unresolved ambiguity
+- expand scope because related work is interesting
+- silently weaken acceptance criteria
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `clarification-gateway`
+
+Produces the unambiguous task set that can safely be locked.
+
+### `mode-lock-in`
+
+Stabilizes the operating method used for the locked task.
+
+### `stateblock`
+
+Stores the task set as protected canonical fields.
 
 ## Compatible Upgradeables
 
-- `stateblock`
-- `drift-suppression`
+- `clarification-gateway` — Produces the unambiguous task set that can safely be locked.
+- `mode-lock-in` — Stabilizes the operating method used for the locked task.
+- `stateblock` — Stores the task set as protected canonical fields.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `micro-scaffolding`
+
+Allows disposable local structure inside the fixed task without expanding the task itself.
+
+### `controlled-drift-corridors`
+
+Permits explicitly bounded flexibility in parts of the deliverable.
 
 ## Potential Redundancy
 
-- `None declared`
+### `mode-lock-in`
+
+Combine overlapping contract fields but preserve the what-versus-how distinction.
+
+### `working-memory-lock-in`
+
+Refresh a pointer or small critical subset rather than copying the entire task set.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- System and latest explicit authorized user scope changes override older task-set versions.
+- When a new request conflicts with locked acceptance criteria, pause for a scope-change decision.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Do not claim completion when a required artifact or quality gate lacks evidence.
+- Unlock and clarify when task identity changes materially.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal serialization for a tiny clear request
+- repeating the full contract during every action
+
+Keep mandatory:
+
+- objective
+- required deliverables
+- constraints and non-goals
+- acceptance evidence
+- explicit change control
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- multi-step builds
+- contracted deliverables
+- long research
+- tasks with exclusions
 
 ## Example Composition
 
-Activate `task-set-lock-in` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** Build and validate a public repository without changing the canonical source files.
+
+**Why it activates:** Many attractive documentation additions could distract from required build and validation outputs.
+
+**Inputs/state:** Required repository, validation gates, immutable source constraint, and publication condition.
+
+**Action:** Locks those fields, gates work against them, and records any user-authorized scope change.
+
+**Does not:** It does not stop after scaffolding or rewrite the source corpus.
+
+**Result/state change:** Completion is evaluated against the original concrete specification.
+
+**Companions:** ['clarification-gateway', 'mode-lock-in', 'stateblock']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-06` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 3. November 28, 2025 — frozen Tier-2 master set (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8. Working-Memory Lock-In Heartbeats (historical_assistant_artifact)

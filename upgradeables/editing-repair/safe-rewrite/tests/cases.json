@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "safe-rewrite",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "safe-rewrite-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Length and jargon may change, but findings and uncertainty must not.",
+      "expect": "A shorter update with unchanged factual atoms.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "safe-rewrite-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the user asks to change substantive meaning",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "safe-rewrite-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Truth and locked constraints outrank requested style.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "safe-rewrite-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "semantic drift",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "safe-rewrite-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "internal atom extraction",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "safe-rewrite-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A rewrite request changes tone and length only.",
+      "expect": "The skill locks semantic atoms, transforms only tone and length, and compares sensitive facts and citations afterward.",
+      "reject": "The skill produces a fluent rewrite with altered certainty, facts, or source mapping."
+    }
+  ]
+}

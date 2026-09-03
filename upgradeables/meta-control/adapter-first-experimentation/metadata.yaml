@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-21",
   "slug": "adapter-first-experimentation",
   "display_name": "Adapter-First Experimentation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,46 +21,68 @@
     "orchestrator",
     "plugin-bundle-component"
   ],
-  "purpose": "Prototype new capability as a detachable adapter and promote it only after evaluation.",
+  "purpose": "Protect a working OS or workflow from speculative capabilities while preserving a path for evidence-based evolution.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "new loader or validator trials",
+    "tool integrations",
+    "alternative routing logic",
+    "model-specific optimization"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the change is a mandatory security repair",
+    "no stable interface can isolate the capability",
+    "the experiment cannot be measured against the base"
   ],
   "triggers": [
     "a new capability may destabilize a base workflow"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the change is a mandatory security repair",
+    "no stable interface can isolate the capability",
+    "the experiment cannot be measured against the base"
   ],
   "requires": [],
   "recommended_with": [
-    "architect-orchestrator"
+    "architect-orchestrator",
+    "future-proof-mode-selector"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "meta-stability"
+  ],
+  "potentially_redundant_with": [
+    "crispr-edit"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "capability hypothesis",
+    "base workflow",
+    "adapter interface",
+    "test cohort",
+    "acceptance metrics and invariants"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "detached experimental adapter",
+    "base-versus-adapter evidence",
+    "promote, revise, or retire decision",
+    "rollback record"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a heavyweight experiment document for a local reversible sandbox test"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "detachable boundary",
+      "control comparison",
+      "invariant gate",
+      "explicit promotion decision"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "base contamination",
+    "unmeasured promotion",
+    "hidden experimental state",
+    "interface sprawl",
+    "irreversible trial"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +95,86 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Directly rewriting the base for every experiment couples unproven behavior to production, obscures evaluation, and makes rollback difficult.",
+  "os_role": [
+    "architecture experiment controller",
+    "promotion gate"
+  ],
+  "pipeline_stages": [
+    "experiment design",
+    "detached trial",
+    "evaluation",
+    "promotion or retirement"
+  ],
+  "best_fit_tasks": [
+    "new loader or validator trials",
+    "tool integrations",
+    "alternative routing logic",
+    "model-specific optimization"
+  ],
+  "avoid_when": [
+    "the change is a mandatory security repair",
+    "no stable interface can isolate the capability",
+    "the experiment cannot be measured against the base"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Define an adapter contract around the proposed capability, route only an explicit test cohort through it, and preserve the unchanged base as control and rollback. Compare quality, cost, latency, drift, and failure behavior against predeclared acceptance thresholds; promote only the demonstrated stable interface, otherwise revise or retire the adapter without contaminating core rules.",
+  "procedure": [
+    "State the hypothesis, acceptance metrics, test cohort, and non-negotiable invariants.",
+    "Expose the smallest stable interface needed by the capability.",
+    "Implement or specify it as a detachable adapter with base-path fallback and isolated state.",
+    "Run representative and adversarial trials against the unchanged base.",
+    "Compare benefit, regressions, operating cost, and rollback behavior.",
+    "Promote the stable behavior only after thresholds pass; otherwise revise or remove the adapter and retain the base."
+  ],
+  "always_do": [
+    "keep the base path available during evaluation",
+    "predeclare promotion criteria",
+    "isolate experimental state and authority",
+    "record promotion or retirement evidence"
+  ],
+  "never_do": [
+    "declare an experiment core because it is novel",
+    "let adapter-only assumptions leak into the base",
+    "promote on one favorable example",
+    "remove rollback before stability is demonstrated"
+  ],
+  "interaction_reasons": {
+    "architect-orchestrator": "The architect defines the adapter boundary and routes the controlled cohort.",
+    "future-proof-mode-selector": "A model- or environment-specific capability can remain an adapter selected only where supported."
+  },
+  "counterbalance_reasons": {
+    "meta-stability": "Meta-Stability freezes the base and suppresses experimental activation when coherence is already degrading."
+  },
+  "redundancy_reasons": {
+    "crispr-edit": "CRISPR changes an established component precisely; Adapter-First evaluates an unproven capability without changing that component."
+  },
+  "conflict_rules": [
+    "Security and integrity repairs follow their mandated path rather than waiting for experimental promotion.",
+    "If the adapter cannot be isolated from base state or authority, do not trial it in production.",
+    "A benefit score cannot override a failed invariant or rollback test."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-21. Adapter-First Experimentation",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "19.5 OS / Skill construction",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

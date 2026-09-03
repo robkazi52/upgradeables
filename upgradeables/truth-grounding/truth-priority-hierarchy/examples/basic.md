@@ -1,10 +1,31 @@
-# Basic composition example
+# Truth Priority Hierarchy — Basic Example
 
-**Situation:** evidence classes or authorities conflict.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `truth-priority-hierarchy`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+A policy summary contains a current primary policy text and an older interpretive memo that disagree.
+
+## Why this Upgradeable activates
+
+Two evidence classes conflict.
+
+## Inputs / state
+
+Both texts, dates, applicability, and an authorized policy-source hierarchy.
+
+## What it does
+
+Applies the hierarchy, explains the controlling source, and preserves the disagreement.
+
+## What it does not do
+
+Blend incompatible statements into a false compromise.
+
+## Result / state change
+
+A source-ranked conclusion with traceable precedence.
+
+## Interaction with companion components
+
+['multi-truth-gating', 'epistemic-status-gating']

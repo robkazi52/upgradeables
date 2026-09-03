@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-05",
   "slug": "multi-layer-consistency",
   "display_name": "Multi-Layer Consistency",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,52 +20,58 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Check that system, project, task, Gene, Core, evidence, and output layers do not contradict one another.",
+  "purpose": "Maintain vertical consistency from local facts and operations to the overall conclusion or system behavior.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "large documents",
+    "modular software",
+    "policy hierarchies",
+    "multi-step analytical conclusions"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the artifact has only one meaningful level",
+    "levels are intentionally alternative rather than nested"
   ],
   "triggers": [
     "multiple authority layers are composed"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the artifact has only one meaningful level",
+    "levels are intentionally alternative rather than nested"
   ],
   "requires": [],
   "recommended_with": [
-    "domain-mode-isolation",
+    "bidirectional-consistency",
+    "coherence-loops",
     "parallel-qms"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "domain-mode-isolation"
+  ],
+  "potentially_redundant_with": [
+    "cross-universe-consistency"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "layer map",
+    "local facts or tests",
+    "intermediate claims",
+    "global objective and constraints"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "cross-layer trace",
+    "boundary mismatch list",
+    "coherent hierarchy or repair request"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal four-level labeling for a tiny artifact"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "at least one upward and one downward boundary check in hierarchical work"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not certify when a global claim lacks lower-layer support or a lower-layer fact violates an undeclared global exception."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -78,5 +84,81 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Each local unit can look valid while their aggregate contradicts the stated architecture, thesis, policy, or global constraint.",
+  "os_role": [
+    "vertical-consistency-validator",
+    "cross-scale-invariant-check"
+  ],
+  "pipeline_stages": [
+    "integration",
+    "hierarchical validation",
+    "pre-release"
+  ],
+  "best_fit_tasks": [
+    "large documents",
+    "modular software",
+    "policy hierarchies",
+    "multi-step analytical conclusions"
+  ],
+  "avoid_when": [
+    "the artifact has only one meaningful level",
+    "levels are intentionally alternative rather than nested"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Define nested levels and invariants linking them, then validate both upward and downward: atoms must support their containing unit, units must compose into section or subsystem claims, and the global result must not assert anything contradicted below; conversely global constraints must be realized in the relevant lower layers. A pass requires agreement across boundaries, not independent passes at each level.",
+  "procedure": [
+    "Map the artifact into atom, local unit, intermediate group, and global levels.",
+    "State invariants and claimed summaries at each boundary.",
+    "Check upward support from atoms to local and global claims.",
+    "Check downward realization of global constraints in lower levels.",
+    "Locate contradictions, orphan claims, and locally valid but globally incompatible parts.",
+    "Repair at the earliest causal level and rerun affected boundaries."
+  ],
+  "always_do": [
+    "Check boundary relationships, not only each level in isolation.",
+    "Trace global claims to lower-level support.",
+    "Propagate lower-level uncertainty upward."
+  ],
+  "never_do": [
+    "Infer global consistency from all local tests passing.",
+    "Force consistency by deleting legitimate local exceptions without explanation."
+  ],
+  "interaction_reasons": {
+    "parallel-qms": "HQMS is the specialized QMS mode that runs these hierarchical checks.",
+    "bidirectional-consistency": "Strengthens upward support with downward realization.",
+    "coherence-loops": "Repairs contradictions that span multiple layers."
+  },
+  "counterbalance_reasons": {
+    "domain-mode-isolation": "Prevents constraints from one domain layer leaking into an unrelated one."
+  },
+  "redundancy_reasons": {
+    "cross-universe-consistency": "Multi-Layer checks nested scales within one artifact; CUCM checks alternative branch worlds."
+  },
+  "conflict_rules": [
+    "A lower-level verified contradiction defeats an unsupported global summary.",
+    "An explicit global hard constraint requires lower-layer implementation or a documented exception."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-05. Multi-Layer Consistency",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "T2-05. Multi-Layer Consistency",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8.6 HQMS — Hierarchical QMS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

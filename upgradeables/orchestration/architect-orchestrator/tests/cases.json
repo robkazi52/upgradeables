@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "architect-orchestrator",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "architect-orchestrator-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The task requires component architecture and a validated complete package, not one isolated primitive.",
+      "expect": "A minimal coherent Skill and a compact record of decisions are produced.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "architect-orchestrator-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task is a narrow domain execution job with no architecture decision",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "architect-orchestrator-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Host, system, domain, and explicit user authority take precedence over this component.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "architect-orchestrator-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "required module interfaces or authority relationships cannot be resolved",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "architect-orchestrator-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "explicit modular interfaces, authority resolution, independent critique, and continuation state",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "architect-orchestrator-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "a design task requires several modules with dependencies and separate critique",
+      "expect": "the orchestrator produces a modular plan, coordinates execution, critiques, repairs locally, synthesizes, and emits continuation state",
+      "reject": "returning a flat component list or impersonating the domain execution agent"
+    }
+  ]
+}

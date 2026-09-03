@@ -2,22 +2,38 @@
 
 ## Summary
 
-Distinguish ambiguity that can be resolved safely from ambiguity that materially blocks correct execution.
+A decision gate that separates ambiguity the workflow can safely bound from ambiguity that prevents a correct or authorized result.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Keep clarification proportional: ask only for materially blocking information, otherwise continue with the narrowest explicit assumption or bounded partial result.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Avoids both confident execution on missing critical variables and reflexive questioning that stalls work the model could safely complete.
+
+## Where It Fits in the OS
+
+Roles: framing-intake, routing, guard. Pipeline stages: intake, pre-execution, exception-routing.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- requirements intake
+- ambiguous data transformation
+- multi-constraint planning
+- high-stakes evidence work
+
+## When Not to Use
+
+- the missing detail cannot change a valid result
+- the host forbids questions and a bounded assumption is safe
+- the user already supplied an authoritative value
 
 ## Scope
 
-Functional classes: framing-intake, orchestration. Activation:
-`U1-common-conditional`. This modern classification is not a historical tier.
+Canonical package: `clarification-gateway@1.1.0`. ID: `T1-03`. Functional classes: framing-intake, orchestration. Activation: `U1-common-conditional`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,128 @@ Functional classes: framing-intake, orchestration. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the missing detail cannot change a valid result
+- the host forbids questions and a bounded assumption is safe
+- the user already supplied an authoritative value
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- task request
+- known variables
+- authority constraints
+- candidate interpretations
+- output contract
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- proceed decision
+- focused clarification request
+- labeled assumption
+- bounded partial-result or abstention status
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Classify each ambiguity by decision impact. If different plausible values would materially change correctness, authority, safety, or the requested deliverable, route to clarification when permitted. Otherwise choose the narrowest labeled assumption, preserve the unresolved field, or return the supported subset; do not turn every uncertainty into a user interruption.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. Extract missing variables, ambiguous terms, and instruction conflicts before substantive execution.
+2. For each item, compare plausible interpretations against the output contract and authority rules.
+3. Mark an item blocking only when the interpretations lead to materially different valid actions or conclusions.
+4. Ask one focused question for blocking items when interaction is available; otherwise state the narrow assumption or limit the result.
+5. Record the answer or assumption in task state so the same ambiguity is not reopened without new evidence.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Explain why a requested clarification changes the result.
+- Prefer one consolidated, answerable question over serial interrogation.
+- Label assumptions and unsupported branches.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Do not ask for information already present in the supplied state.
+- Do not silently select a consequential interpretation.
+- Do not use clarification as a substitute for ordinary analysis.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `task-set-lock-in`
+
+Writes confirmed answers and bounded assumptions into the locked task definition so downstream work uses one interpretation.
 
 ## Compatible Upgradeables
 
-- `task-set-lock-in`
+- `task-set-lock-in` — Writes confirmed answers and bounded assumptions into the locked task definition so downstream work uses one interpretation.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `bounded-exit`
+
+Prevents clarification loops by terminating once the minimum blocking information is obtained or a bounded fallback is selected.
 
 ## Potential Redundancy
 
-- `None declared`
+### `task-set-lock-in`
+
+Task-Set Lock-In stores resolved task fields; Clarification Gateway decides which unresolved fields require intervention.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- A higher-authority instruction not to ask questions converts the gate into assumption selection, not permission to ignore ambiguity.
+- If no safe bounded assumption exists for a consequential decision, return the supported subset or abstain.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- Stop or narrow when a required variable has multiple materially different interpretations and neither clarification nor a safe assumption is available.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- an explicit ambiguity table for straightforward cases
+- asking when context uniquely resolves the variable
+
+Keep mandatory:
+
+- materiality test
+- assumption labeling
+- authority-sensitive fallback
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- requirements intake
+- ambiguous data transformation
+- multi-constraint planning
+- high-stakes evidence work
 
 ## Example Composition
 
-Activate `clarification-gateway` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** A user asks for a shipping quote but gives a city shared by two states.
+
+**Why it activates:** Destination changes price and feasibility.
+
+**Inputs/state:** City supplied; state and postal code absent; questions permitted.
+
+**Action:** Asks one focused destination question before pricing and records the answer.
+
+**Does not:** It does not guess the state or ask unrelated preference questions.
+
+**Result/state change:** A resolved destination field or an explicit inability to quote.
+
+**Companions:** ['task-set-lock-in']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: Clarification-First, Clarification-First Behavior.
+Primary source ID: `T1-03` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: Clarification-First, Clarification-First Behavior.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-03. Clarification Gateway / Clarification-First (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — January 5 scaffolding classification (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — `UPGRADEABLE_ACTIVATION_TIERS_T1` (historical_assistant_artifact)

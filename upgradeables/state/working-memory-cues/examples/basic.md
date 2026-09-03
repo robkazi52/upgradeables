@@ -1,10 +1,31 @@
-# Basic composition example
+# Working-Memory Cues — Basic Example
 
-**Situation:** many constraints must remain active.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `working-memory-cues`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Edit fifty contract clauses while preserving defined terms.
+
+## Why this Upgradeable activates
+
+The same capitalization rule is easy to forget after many clauses.
+
+## Inputs / state
+
+Canonical glossary field and a pre-clause validation trigger.
+
+## What it does
+
+Shows a one-line cue to verify defined-term capitalization before each clause is accepted.
+
+## What it does not do
+
+It does not copy the whole glossary into every step or edit the glossary itself.
+
+## Result / state change
+
+The recurring error is prevented with little context cost.
+
+## Interaction with companion components
+
+['stateblock', 'working-memory-lock-in', 'drift-suppression']

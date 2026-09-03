@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-18",
   "slug": "bidirectional-consistency",
   "display_name": "Bidirectional Consistency",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,49 +20,58 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Check reasoning forward from evidence to conclusion and backward from conclusion to required evidence.",
+  "purpose": "Expose lossy, non-invertible, or spuriously plausible transformations that one-way review misses.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "requirements-to-implementation checks",
+    "summary-to-source checks",
+    "schema migrations",
+    "plan-to-objective traceability"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the transformation is intentionally irreversible and no reverse contract is claimed",
+    "creative output has no declared source mapping"
   ],
   "triggers": [
     "causal, logical, quantitative, or evidence claims are central"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the transformation is intentionally irreversible and no reverse contract is claimed",
+    "creative output has no declared source mapping"
   ],
   "requires": [],
   "recommended_with": [
+    "citation-fidelity",
     "critical-atomic-verification"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "controlled-drift-corridors"
+  ],
+  "potentially_redundant_with": [
+    "multi-layer-consistency"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "source atoms",
+    "transformed result",
+    "transformation contract",
+    "permitted loss or abstraction"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "forward coverage map",
+    "reverse reconstruction",
+    "directional mismatch list",
+    "pass/repair decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "literal reverse paraphrase for trivial identity transformations"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "independent backward reconstruction for lossy or high-stakes transformations"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not certify when a material source constraint has no forward image or when the result implies a contradictory source condition."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -75,5 +84,78 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A result can look correct from input to output while the output cannot support the claims, constraints, or provenance attributed to it.",
+  "os_role": [
+    "transformation-validator",
+    "reverse-entailment-check"
+  ],
+  "pipeline_stages": [
+    "post-transformation",
+    "pre-release-validation"
+  ],
+  "best_fit_tasks": [
+    "requirements-to-implementation checks",
+    "summary-to-source checks",
+    "schema migrations",
+    "plan-to-objective traceability"
+  ],
+  "avoid_when": [
+    "the transformation is intentionally irreversible and no reverse contract is claimed",
+    "creative output has no declared source mapping"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Run a forward check from source conditions to proposed result, then independently read the result backward to enumerate which source conditions it actually entails. Compare the reconstructed set with the locked source atoms; missing, invented, or many-to-one-collapsed atoms fail even when the forward narrative is fluent.",
+  "procedure": [
+    "Lock the source atoms and declared transformation contract.",
+    "Verify that each source atom has a forward image in the result.",
+    "Hide the source and reconstruct its implied atoms from the result alone.",
+    "Compare reconstructed atoms with the locked set.",
+    "Classify omissions, inventions, and ambiguity introduced by the mapping.",
+    "Repair and repeat both directions."
+  ],
+  "always_do": [
+    "Keep forward and reverse judgments separately inspectable.",
+    "Test material constraints, not merely wording overlap."
+  ],
+  "never_do": [
+    "Infer reverse consistency from a passing forward check.",
+    "Demand literal reversibility when the contract permits labeled compression."
+  ],
+  "interaction_reasons": {
+    "critical-atomic-verification": "Supplies atom-level units for the two directional passes.",
+    "citation-fidelity": "Provides evidence bindings that can be traced from source to claim and reconstructed from claim to source."
+  },
+  "counterbalance_reasons": {
+    "controlled-drift-corridors": "Prevents the reverse check from treating permitted abstraction as a defect."
+  },
+  "redundancy_reasons": {
+    "multi-layer-consistency": "Multi-layer checks agreement across scales; bidirectional consistency checks the directionality of one transformation."
+  },
+  "conflict_rules": [
+    "The declared transformation contract determines which information may be lost.",
+    "A reverse contradiction on a locked atom overrides stylistic forward plausibility."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-18. Bidirectional Consistency",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "T2-18. Bidirectional Consistency",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.6 Global verification",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

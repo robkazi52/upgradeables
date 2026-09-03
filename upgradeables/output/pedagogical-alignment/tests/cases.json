@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "pedagogical-alignment",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "pedagogical-alignment-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "They need impact and rollout logic, not implementation-level type-system detail.",
+      "expect": "A technically faithful explanation that supports planning decisions.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "pedagogical-alignment-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the audience and purpose cannot be inferred and the choice materially changes content",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "pedagogical-alignment-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Accuracy, scope, and uncertainty outrank ease of explanation.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "pedagogical-alignment-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "oversimplification",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "pedagogical-alignment-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "internal prerequisite model",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "pedagogical-alignment-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "An accurate explanation assumes several prerequisites the target reader lacks.",
+      "expect": "The skill models the gap, orders prerequisites, defines terms, and back-checks simplifications.",
+      "reject": "The skill merely makes sentences shorter, changes tone, or removes technical limitations."
+    }
+  ]
+}

@@ -2,22 +2,38 @@
 
 ## Summary
 
-Keep factual output within supplied or verified evidence and label or omit unsupported material.
+A truth boundary that permits factual output only from supplied or verified evidence and keeps interpretation, uncertainty, and missing data explicit.
 
 ## Purpose
 
-Provide a reusable `validator` mechanism rather than
-a complete task identity or monolithic prompt.
+Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Stops plausible model completion from entering the factual record when the source is silent, incomplete, inaccessible, or ambiguous.
+
+## Where It Fits in the OS
+
+Roles: truth-guard, evidence-boundary. Pipeline stages: evidence-intake, reasoning, draft-validation, pre-output-verification.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- source-grounded research
+- record and chart review
+- policy or legal analysis
+- citation-bearing authoring
+- tool-result reporting
+
+## When Not to Use
+
+- pure creative generation has no asserted factual source boundary
+- the task explicitly asks for labeled brainstorming rather than factual claims
 
 ## Scope
 
-Functional classes: truth-grounding, validation. Activation:
-`U0-foundational`. This modern classification is not a historical tier.
+Canonical package: `grounding-no-invention@1.1.0`. ID: `T1-04`. Functional classes: truth-grounding, validation. Activation: `U0-foundational`. Mechanism basis: `recovered`. Activation cost: `low` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,96 +41,134 @@ Functional classes: truth-grounding, validation. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- pure creative generation has no asserted factual source boundary
+- the task explicitly asks for labeled brainstorming rather than factual claims
 
 ## Inputs / Required State
 
+- allowed source/evidence set
 - candidate factual claims
-- supplied or verified evidence boundary
+- task-specific evidence rules
 
 ## Outputs / Produced State
 
-- supported claims
+- supported factual claims
 - labeled inference
-- omitted/uncertain unsupported claims
+- uncertainty or undocumented markers
+- omitted unsupported claims
 
 ## Mechanism
 
-Evaluate the candidate against declared evidence, constraints, and invariants, then return a status or veto. Inspection never supplies missing facts.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Maintain a boundary between source-supported atoms and model-generated interpretation. Each material factual claim must resolve to supplied data or verified external evidence; missing fields remain missing, and permissible inference is labeled instead of being written back as source fact.
 
 ## Procedure
 
-1. Confirm the trigger and governing criteria.
-2. Identify the candidate units that require checking.
-3. Evaluate each unit against available evidence and invariants.
-4. Return pass, fail, repair-required, or unverifiable with defect locations.
-5. Block certification when the failure boundary is reached.
+1. Declare the allowed evidence boundary.
+2. Extract material source-supported facts without filling absent fields.
+3. Separate facts from interpretations and hypotheses.
+4. For each candidate factual claim, locate supporting evidence inside the boundary.
+5. Label, narrow, omit, or fail closed on unsupported claims.
+6. Recheck that repair or style changes did not introduce new facts.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Mark material uncertainty and undocumented fields.
+- Keep factual claims traceable to evidence.
+- Return the supported subset when full closure is impossible.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- Invent a source, quotation, measurement, policy, patient detail, or tool result.
+- Convert a likely value into a documented value.
+- Let a validator manufacture facts to make an answer pass.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `citation-fidelity`
+
+Citation Fidelity verifies the finer claim-to-citation support relationship inside the broader grounding boundary.
+
+### `fail-closed-abstention`
+
+Provides the terminal behavior when essential support is absent.
+
+### `epistemic-status-gating`
+
+Labels permitted inference so it is not confused with source fact.
 
 ## Compatible Upgradeables
 
-- `citation-fidelity`
-- `fail-closed-abstention`
+- `citation-fidelity` — Citation Fidelity verifies the finer claim-to-citation support relationship inside the broader grounding boundary.
+- `fail-closed-abstention` — Provides the terminal behavior when essential support is absent.
+- `epistemic-status-gating` — Labels permitted inference so it is not confused with source fact.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `controlled-drift-corridors`
+
+Controlled drift permits bounded synthesis while grounding fixes the facts that may not move.
 
 ## Potential Redundancy
 
-- `None declared`
+### `specificity-penalty-gate`
+
+Both reject unsupported content; specificity penalty focuses on claims that are directionally plausible but more precise than the evidence allows.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Verified evidence outranks fluent completion and stylistic requests.
+- An explicit hypothetical mode may generate possibilities, but they remain outside factual state.
 
 ## Failure Boundary
 
-- when an essential claim lacks support, fail closed instead of filling the gap
+- When an essential material claim lacks support inside the authorized evidence boundary, omit it or fail closed.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- verbose source bookkeeping for trivial directly quoted facts
+
+Keep mandatory:
+
+- every asserted material fact must remain within the authorized evidence boundary
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `high-stakes-reasoning`
-- `research`
-- `source-grounded-analysis`
+- source-grounded research
+- record and chart review
+- policy or legal analysis
+- citation-bearing authoring
+- tool-result reporting
 
 ## Example Composition
 
-Activate `grounding-no-invention` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** An intake record omits a required date.
+
+**Why it activates:** The workflow must extract structured facts from supplied records.
+
+**Inputs/state:** A fixed record set with no documented date.
+
+**Action:** Marks the field Not documented and continues with supported fields.
+
+**Does not:** Infer the date from the surrounding chronology.
+
+**Result/state change:** A source-faithful intake object with an explicit gap.
+
+**Companions:** ['epistemic-status-gating', 'fail-closed-abstention']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T1-04` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T1-04` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-04. Grounding / No-Invention (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 2. November 28, 2025 — frozen T1-Core Bundle v1 (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 12.5 Retrofitted no-inference intake behavior (historical_assistant_artifact)

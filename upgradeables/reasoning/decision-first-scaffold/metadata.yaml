@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-04",
   "slug": "decision-first-scaffold",
   "display_name": "Decision-First Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,46 +20,65 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "State the decision target and criteria before collecting supporting analysis.",
+  "purpose": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow"
+    "recommendations",
+    "go/no-go reviews",
+    "option selection",
+    "resource allocation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task asks only for faithful extraction or description",
+    "the decision owner or available options are unknown",
+    "framing a decision would falsely narrow an exploratory task"
   ],
   "triggers": [
-    "analysis risks becoming directionless"
+    "Activate when the task requires analysis risks becoming directionless."
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task asks only for faithful extraction or description",
+    "the decision owner or available options are unknown",
+    "framing a decision would falsely narrow an exploratory task"
   ],
   "requires": [],
   "recommended_with": [
+    "dominant-driver-isolation-scaffold",
     "task-set-lock-in"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "anti-tunnel-vision"
+  ],
+  "potentially_redundant_with": [
+    "task-set-lock-in"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "decision request",
+    "decision owner",
+    "candidate options",
+    "constraints",
+    "criteria"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "decision frame",
+    "criterion-linked analysis plan",
+    "recommendation or evidence-gap decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a formal decision matrix for a simple binary choice"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit decision statement",
+      "criterion linkage",
+      "uncertainty-aware outcome"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "invented historical mechanics",
+    "premature option closure",
+    "analysis unrelated to a criterion",
+    "false certainty"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -72,5 +91,75 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "A solver can perform substantial analysis without defining what choice, recommendation, or commitment the analysis must support.",
+  "os_role": [
+    "reasoning scaffold",
+    "decision framing"
+  ],
+  "pipeline_stages": [
+    "task framing",
+    "pre-analysis"
+  ],
+  "best_fit_tasks": [
+    "recommendations",
+    "go/no-go reviews",
+    "option selection",
+    "resource allocation"
+  ],
+  "avoid_when": [
+    "the task asks only for faithful extraction or description",
+    "the decision owner or available options are unknown",
+    "framing a decision would falsely narrow an exploratory task"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "Modern conservative interpretation: write a decision sentence with owner, options, criteria, and deadline or commitment point; then admit analysis only when it changes an option score, exposes a constraint, or reduces a named uncertainty. The historical corpus recovers the exact name but not this mechanism.",
+  "procedure": [
+    "State the decision in one sentence, including who will act.",
+    "List viable options, including defer or gather-more-evidence where legitimate.",
+    "Lock decision criteria and non-negotiable constraints.",
+    "Map each analysis question to a criterion or uncertainty.",
+    "Produce a recommendation with the evidence and unresolved uncertainty that drives it."
+  ],
+  "always_do": [
+    "label the procedure as a modern interpretation",
+    "distinguish decision criteria from supporting information",
+    "preserve an explicit no-decision outcome when evidence is insufficient"
+  ],
+  "never_do": [
+    "claim the procedure is historically recovered",
+    "force a decision into a descriptive task",
+    "bury the actual decision below background analysis"
+  ],
+  "interaction_reasons": {
+    "task-set-lock-in": "Task-Set Lock-In preserves the framed decision and constraints across a long run.",
+    "dominant-driver-isolation-scaffold": "Driver isolation can identify which criterion should dominate the recommendation."
+  },
+  "counterbalance_reasons": {
+    "anti-tunnel-vision": "Anti-Tunnel Vision prevents a decision-first frame from becoming first-option lock-in."
+  },
+  "redundancy_reasons": {
+    "task-set-lock-in": "Both stabilize direction, but this provisional scaffold defines the decision while Task-Set Lock-In preserves an already defined task."
+  },
+  "conflict_rules": [
+    "If the user requests exploration without commitment, do not impose a final choice.",
+    "If evidence cannot support any option, return the missing evidence rather than a fabricated recommendation."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

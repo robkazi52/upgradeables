@@ -2,22 +2,38 @@
 
 ## Summary
 
-Adjust drift constraints as reasoning depth or compute allocation changes.
+Adjust the amount of drift-checking structure to available model/tool capacity while leaving truth, authority, and zero-drift invariants unchanged.
 
 ## Purpose
 
-Provide a reusable `guard` mechanism rather than
-a complete task identity or monolithic prompt.
+Maintain semantic reliability across weak and strong runtimes without burdening every runtime identically.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A light model may need explicit checkpoints and narrow transformations, while a strong model can safely compress process; a fixed protocol either under-controls or overburdens.
+
+## Where It Fits in the OS
+
+Roles: capability adaptation, drift-control scaling, runtime policy. Pipeline stages: runtime assessment, plan construction, checkpoint scheduling, validation.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- cross-model skills
+- variable tool availability
+- cost-limited execution
+- mixed-capability agents
+
+## When Not to Use
+
+- adaptation would weaken factual or safety invariants
+- runtime capability is unknown in a high-risk task
+- the task already uses the strict minimum safe protocol
 
 ## Scope
 
-Functional classes: drift-control, meta-control. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `compute-adaptive-drift@1.1.0`. ID: `T4-10`. Functional classes: drift-control, meta-control. Activation: `U2-specialized`. Mechanism basis: `normalized-from-recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +41,152 @@ Functional classes: drift-control, meta-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- adaptation would weaken factual or safety invariants
+- runtime capability is unknown in a high-risk task
+- the task already uses the strict minimum safe protocol
 
 ## Inputs / Required State
 
-- locked task goal and constraints
-- relevant source or workflow state
+- task risk
+- zero-drift invariants
+- runtime capability evidence
+- tool availability
+- calibration results
 
 ## Outputs / Produced State
 
-- bounded component result
-- explicit uncertainty or failure status when applicable
+- runtime-specific control profile
+- checkpoint schedule
+- step and corridor settings
+- unchanged semantic acceptance tests
 
 ## Mechanism
 
-Apply the named behavior as an explicit, bounded control over the declared input and state, then record the result or failure status.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Classify the task risk and runtime's demonstrated capacity, then choose an enforcement profile: weaker or unverified runtimes receive smaller steps, explicit state, more frequent source checks, and tighter drift corridors; stronger verified runtimes may combine steps and reduce scaffolding. The semantic acceptance tests, authority hierarchy, citations, and zero-drift fields never relax.
 
 ## Procedure
 
-1. Confirm the task lock, authority layer, and trigger.
-2. Read only the required state and evidence.
-3. Apply the documented bounded behavior.
-4. Check protected truth, state, safety, and output invariants.
-5. Emit the result or an explicit unsupported/blocked status.
+1. Classify consequence of drift and identify non-negotiable invariants.
+2. Assess demonstrated context, reasoning, tool, and verification capacity without trusting branding alone.
+3. Choose checkpoint frequency, step size, scaffold depth, and corridor width.
+4. Run a calibration or early sample against the same semantic tests.
+5. Tighten controls on failure; relax only process overhead after repeated success.
+6. Record the chosen profile and validate the final result identically across runtimes.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- hold truth and authority invariants constant
+- adapt from observed capability
+- tighten on uncertainty
+- use identical outcome tests
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- treat more compute as permission to invent
+- weaken citations or safety gates
+- infer capability solely from model name
+- hide which controls were relaxed
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `controlled-drift-corridors`
+
+Changes permitted transformation width as one dimension of the runtime profile.
+
+### `drift-suppression`
+
+Scales detection and correction frequency.
+
+### `micro-scaffolding`
+
+Adds task-local structure for runtimes that need more execution support.
 
 ## Compatible Upgradeables
 
-- `dynamic-depth-allocation`
-- `drift-spectra-scaling`
+- `controlled-drift-corridors` — Changes permitted transformation width as one dimension of the runtime profile.
+- `drift-suppression` — Scales detection and correction frequency.
+- `micro-scaffolding` — Adds task-local structure for runtimes that need more execution support.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `zero-drift-zones`
+
+Keeps immutable fields fixed regardless of compute.
+
+### `future-proof-mode-selector`
+
+May remove redundant ceremony after outcome capability is demonstrated.
 
 ## Potential Redundancy
 
-- `None declared`
+### `domain-normalized-drift`
+
+Domain defaults set the baseline; compute adaptation adjusts process around that baseline, not the domain truth standard.
+
+### `drift-spectra-scaling`
+
+Spectra maps task regions; compute adaptation maps runtime capacity.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Task risk and zero-drift requirements cap any relaxation due to compute.
+- When capability evidence conflicts, use the stricter profile until a calibration passes.
 
 ## Failure Boundary
 
-- do not claim success when required evidence, state, host capability, or validation is unavailable
+- Do not relax controls for high-impact claims without demonstrated validation performance.
+- Fall back to the strict profile when runtime behavior is unstable or unobservable.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- step-by-step micro-scaffolds after calibration
+- redundant intermediate restatement
+- high-frequency checks for low-drift regions
+
+Keep mandatory:
+
+- zero-drift fields
+- authority hierarchy
+- source grounding
+- outcome-level semantic tests
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- cross-model skills
+- variable tool availability
+- cost-limited execution
+- mixed-capability agents
 
 ## Example Composition
 
-Activate `compute-adaptive-drift` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** The same source-grounded comparison skill runs on a compact model and a frontier model.
+
+**Why it activates:** They differ in reliable context handling but must meet the same evidence standard.
+
+**Inputs/state:** High-risk claims, model calibration results, source tools, and fixed citation tests.
+
+**Action:** Gives the compact model smaller source batches and per-claim checks; permits the frontier model to batch low-risk extraction after it passes calibration.
+
+**Does not:** It does not let either model omit citations or alter locked facts.
+
+**Result/state change:** Different process overhead, identical semantic acceptance boundary.
+
+**Companions:** ['controlled-drift-corridors', 'drift-suppression', 'zero-drift-zones']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T4-10` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: CADC.
+Primary source ID: `T4-10` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: CADC.
+
+Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — Compute-Adaptive Drift (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — ECL / Drift Sink (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.3 Drift widths (historical_assistant_artifact)

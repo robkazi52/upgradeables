@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "adapter-first-experimentation",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "adapter-first-experimentation-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Search may improve discovery but could add latency and unstable ranking to a working deterministic loader.",
+      "expect": "Evidence-backed adoption or clean retirement with the original loader intact.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "adapter-first-experimentation-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the change is a mandatory security repair",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "adapter-first-experimentation-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Security and integrity repairs follow their mandated path rather than waiting for experimental promotion.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "adapter-first-experimentation-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "base contamination",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "adapter-first-experimentation-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "detachable boundary",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "adapter-first-experimentation-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A promising new capability may destabilize a working workflow.",
+      "expect": "The skill creates an isolated adapter, keeps a base control and rollback, evaluates predeclared metrics, and gates promotion.",
+      "reject": "The skill directly rewrites the base or calls an informal prototype sufficient evidence."
+    }
+  ]
+}

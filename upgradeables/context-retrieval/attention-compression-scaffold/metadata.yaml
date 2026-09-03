@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-02",
   "slug": "attention-compression-scaffold",
   "display_name": "Attention Compression Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,45 +20,65 @@
   "implementation_forms": [
     "state-manager"
   ],
-  "purpose": "Compress verified, task-relevant context into a smaller indexed representation without changing meaning.",
+  "purpose": "Reduce attention burden while retaining the facts, constraints, provenance, and retrieval pointers required by the current subtask.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "long-context analysis",
+    "large codebase navigation",
+    "multi-document synthesis",
+    "stateful agent workflows"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the original context is already small",
+    "exact source wording must remain live",
+    "no provenance pointers exist for re-expansion"
   ],
   "triggers": [
     "source volume exceeds the active workspace"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the original context is already small",
+    "exact source wording must remain live",
+    "no provenance pointers exist for re-expansion"
   ],
   "requires": [],
   "recommended_with": [
-    "activation-budget-funnel"
+    "activation-budget-funnel",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "zero-drift-zones"
+  ],
+  "potentially_redundant_with": [
+    "structured-state-projection",
+    "working-memory-cues"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "large source or state context",
+    "current task",
+    "protected atoms",
+    "source pointers",
+    "compression budget"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "compact indexed context",
+    "verbatim protected subset",
+    "reload pointers",
+    "compression validation status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "explicit compression for contexts that fit reliably",
+      "verbose category labels when preservation can be demonstrated compactly"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "protected-atom preservation",
+      "provenance and reloadability",
+      "invalidation on state change"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "Do not activate the compressed view when a protected fact, conflict, or provenance link is lost or unverifiable."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -71,5 +91,86 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Addresses a workspace that is too large to reason over reliably, without treating lossy summarization as equivalent to source preservation.",
+  "os_role": [
+    "context-retrieval",
+    "state projection",
+    "attention control"
+  ],
+  "pipeline_stages": [
+    "post-retrieval",
+    "pre-synthesis",
+    "context refresh"
+  ],
+  "best_fit_tasks": [
+    "long-context analysis",
+    "large codebase navigation",
+    "multi-document synthesis",
+    "stateful agent workflows"
+  ],
+  "avoid_when": [
+    "the original context is already small",
+    "exact source wording must remain live",
+    "no provenance pointers exist for re-expansion"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "Modern operational interpretation: select task-relevant facts, locked literals, decisions, open questions, and source pointers from a larger context; encode them in a compact indexed view; validate that protected meaning and provenance remain recoverable; and keep a route back to the original material. Compression changes representation size, not truth status or authority.",
+  "procedure": [
+    "Define the current subtask and protected atoms that compression must preserve.",
+    "Partition context into retain verbatim, summarize with provenance, pointer-only, and retire classes.",
+    "Build a compact indexed view with stable source references.",
+    "Check every locked atom and decision against the original context.",
+    "Use the compact view for the subtask while retaining reload pointers.",
+    "Refresh or invalidate the view when the task, source, or authoritative state changes."
+  ],
+  "always_do": [
+    "Preserve exact literals that cannot tolerate paraphrase.",
+    "Retain source pointers for every compressed factual unit.",
+    "Label the mechanism as a modern interpretation because only the historical name is recovered."
+  ],
+  "never_do": [
+    "Do not treat a summary as an immutable source.",
+    "Do not drop unresolved conflicts to make the view smaller.",
+    "Do not claim the historical procedure was recovered."
+  ],
+  "interaction_reasons": {
+    "activation-budget-funnel": "ABF determines when captured evidence should leave the live pull set; compression creates the compact representation it enters.",
+    "stateblock": "Provides canonical fields and locked atoms that the compressed view must preserve."
+  },
+  "counterbalance_reasons": {
+    "zero-drift-zones": "Marks content that must stay verbatim rather than be compressed semantically."
+  },
+  "redundancy_reasons": {
+    "structured-state-projection": "Projection limits fields for one consumer; compression reduces the representation of a broader relevant set.",
+    "working-memory-cues": "Cues are a few reminders, while this scaffold can carry a larger indexed evidence/state view."
+  },
+  "conflict_rules": [
+    "Zero-drift and source-fidelity requirements override compression goals.",
+    "If meaning preservation cannot be verified, use the original context or a pointer rather than a lossy substitute."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "Initial named Upgradeables",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "January 5, 2026 training / scaffolding Upgradeables"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "T2-040 — Attention Corridor Narrowing",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Semantic anchoring, context compression, and index-preserving retrieval"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

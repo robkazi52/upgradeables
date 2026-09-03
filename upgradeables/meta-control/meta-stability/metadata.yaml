@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-15",
   "slug": "meta-stability",
   "display_name": "Meta-Stability Mode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,48 +23,70 @@
     "parent-skill-mode",
     "guard"
   ],
-  "purpose": "Enter a stability-preserving mode when repeated changes, long context, or module conflicts threaten coherence.",
+  "purpose": "Preserve a trusted task state while isolating drift sources and resuming from one explicit authority-consistent configuration.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "long-context-corpus",
-    "multi-agent-orchestration"
+    "long-context drift",
+    "conflicting module activation",
+    "repeated change cycles",
+    "multi-agent state divergence"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "one local defect can be repaired directly",
+    "the trusted checkpoint is itself invalid",
+    "freezing would delay urgent containment"
   ],
   "triggers": [
     "coherence degrades under repeated change"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "one local defect can be repaired directly",
+    "the trusted checkpoint is itself invalid",
+    "freezing would delay urgent containment"
   ],
   "requires": [],
   "recommended_with": [
     "coherence-heartbeat",
-    "drift-suppression"
+    "drift-suppression",
+    "stateblock"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "adapter-first-experimentation"
+  ],
+  "potentially_redundant_with": [
+    "safe-mode",
+    "stuck-pattern-reset"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "instability evidence",
+    "current state",
+    "last verified checkpoint",
+    "module and authority map",
+    "exit criteria"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "stabilized checkpoint",
+    "quarantined delta set",
+    "resolved authority configuration",
+    "controlled resume plan"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal mode activation for a single reversible regression"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "verified checkpoint",
+      "optional-change freeze",
+      "authority reconciliation",
+      "exit test"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "stability theater",
+    "loss of newer valid state",
+    "permanent freeze",
+    "unverified rollback",
+    "resuming all changes simultaneously"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +99,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A workflow can become progressively less coherent as state versions diverge, optional modules compete, and repeated changes invalidate assumptions faster than validation catches them.",
+  "os_role": [
+    "stability-preserving operating mode",
+    "coherence recovery boundary"
+  ],
+  "pipeline_stages": [
+    "instability detection",
+    "change freeze",
+    "checkpoint restoration",
+    "controlled resume"
+  ],
+  "best_fit_tasks": [
+    "long-context drift",
+    "conflicting module activation",
+    "repeated change cycles",
+    "multi-agent state divergence"
+  ],
+  "avoid_when": [
+    "one local defect can be repaired directly",
+    "the trusted checkpoint is itself invalid",
+    "freezing would delay urgent containment"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "On a defined instability signal, freeze optional activations and structural changes, select the latest verified state snapshot, and compare active goals, modules, decisions, and open issues against that checkpoint. Quarantine conflicting deltas, re-establish one authority order and next step, run a coherence check, then resume changes one at a time with observation; MSM stabilizes state, not content by force.",
+  "procedure": [
+    "Confirm an instability trigger such as state divergence, repeated regression, or unresolved module conflict.",
+    "Pause optional changes and capture the current state without overwriting the last verified checkpoint.",
+    "Compare goals, decisions, modules, sources, and open issues with the verified snapshot.",
+    "Quarantine unverified deltas and resolve authority conflicts explicitly.",
+    "Run coherence, state-version, and invariant checks on the restored configuration.",
+    "Resume one bounded change at a time and exit MSM only after consecutive stable checkpoints."
+  ],
+  "always_do": [
+    "preserve the last verified checkpoint",
+    "freeze optional change before diagnosis",
+    "quarantine rather than erase disputed deltas",
+    "define exit evidence"
+  ],
+  "never_do": [
+    "call ordinary uncertainty instability",
+    "restore an unverified snapshot",
+    "silently discard user-approved changes",
+    "remain permanently frozen after exit criteria pass"
+  ],
+  "interaction_reasons": {
+    "coherence-heartbeat": "The heartbeat supplies global coherence evidence before exit.",
+    "drift-suppression": "Drift Suppression holds task and source boundaries while state is stabilized.",
+    "stateblock": "StateBlock provides explicit versioned snapshots for comparison and restoration."
+  },
+  "counterbalance_reasons": {
+    "adapter-first-experimentation": "Experiments should pause during instability and resume only after the base state is stable."
+  },
+  "redundancy_reasons": {
+    "stuck-pattern-reset": "Reset abandons one failed reasoning path; Meta-Stability freezes and reconciles the whole active configuration.",
+    "safe-mode": "SAFE governs consequential execution; Meta-Stability governs recovery from scaffold and state instability."
+  },
+  "conflict_rules": [
+    "A user-approved newer decision is not rolled back solely because an older checkpoint is internally coherent.",
+    "Urgent safety containment may proceed through a predeclared minimal path while optional work remains frozen.",
+    "If no verified checkpoint exists, build one from authoritative state rather than fabricate restoration."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-15. Meta-Stability Mode (MSM)",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "6.1 SMSE — Sequential Memory State Engine",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

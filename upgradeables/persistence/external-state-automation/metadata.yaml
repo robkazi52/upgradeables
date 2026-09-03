@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-20",
   "slug": "external-state-automation",
   "display_name": "External State Automation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,46 +21,55 @@
     "state-manager",
     "deterministic-script"
   ],
-  "purpose": "Serialize task state to real files, memory, databases, or project documents only when the host provides persistence.",
+  "purpose": "Serialize and restore important task state through real files, memory stores, databases, or project documents when the host supports persistence.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "long-context-corpus"
+    "multi-session projects",
+    "durable agent workflows",
+    "long document production"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task ends in one session and needs no continuation",
+    "the host exposes no authorized persistent storage"
   ],
   "triggers": [
     "continuation requires real external state"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task ends in one session and needs no continuation",
+    "the host exposes no authorized persistent storage"
   ],
   "requires": [],
   "recommended_with": [
-    "state-snapshot",
-    "stateblock"
+    "state-routing-bus",
+    "state-snapshot"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "authority-anchor-enforcement"
+  ],
+  "potentially_redundant_with": [
+    "state-snapshot"
+  ],
   "conflicts": [],
   "inputs": [
-    "current explicit task state",
-    "authorized state update or source event"
+    "explicit task state and continuation requirements",
+    "authorized storage capability and policy",
+    "state schema and provenance"
   ],
   "outputs": [
-    "updated explicit state",
-    "conflict or unavailable-persistence status"
+    "verified persisted state reference",
+    "validated restored state or explicit persistence failure"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "durable writes for a short task with no continuation need"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "capability declaration, minimum-state serialization, write verification, and restore validation"
     ]
   },
   "failure_boundary": [
-    "do not claim state was retained or persisted without a real host-visible mechanism"
+    "no authorized storage capability is available",
+    "write verification, schema validation, integrity, freshness, or restoration reconciliation fails"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +82,68 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Long-running work loses decisions across sessions when state exists only in transient context, while false persistence claims make continuation unreliable.",
+  "os_role": [
+    "persistence interface",
+    "continuation state management"
+  ],
+  "pipeline_stages": [
+    "state checkpoint",
+    "external write",
+    "session restoration",
+    "consistency verification"
+  ],
+  "best_fit_tasks": [
+    "multi-session projects",
+    "durable agent workflows",
+    "long document production"
+  ],
+  "avoid_when": [
+    "the task ends in one session and needs no continuation",
+    "the host exposes no authorized persistent storage"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Declare the actual storage capability and a versioned state schema, serialize only the minimum continuation fields with provenance and timestamp, write through an authorized host operation, and verify the write. On restoration, validate version and integrity before merging; never treat a requested or imagined write as persisted state.",
+  "procedure": [
+    "Confirm an authorized storage mechanism, location, lifetime, and data policy.",
+    "Select the minimum state fields needed for continuation and serialize them with schema and provenance.",
+    "Write through the real host capability and verify the stored representation.",
+    "On resume, read and validate schema, integrity, freshness, and authority.",
+    "Reconcile restored state with current instructions and report any failed or stale persistence."
+  ],
+  "always_do": [
+    "Preserve the defining invariant: capability declaration, minimum-state serialization, write verification, and restore validation.",
+    "Record material routing, transition, and failure decisions in explicit task state."
+  ],
+  "never_do": [
+    "claiming memory without a real write or storing unbounded conversation data",
+    "Never claim hidden state, unavailable host capability, or authority beyond the active Skill."
+  ],
+  "interaction_reasons": {
+    "state-snapshot": "Produces the minimum continuation representation to serialize.",
+    "state-routing-bus": "Moves restored state to the authorized receiving module."
+  },
+  "counterbalance_reasons": {
+    "authority-anchor-enforcement": "Limits sensitive or unnecessary fields before durable storage."
+  },
+  "redundancy_reasons": {
+    "state-snapshot": "Snapshot defines the representation; External State Automation performs and verifies real persistence."
+  },
+  "conflict_rules": [
+    "Host, system, domain, and explicit user authority take precedence over this component.",
+    "If no authorized storage capability is available, stop or escalate rather than forcing a nominal success."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-20. External State Automation",
+      "source_kind": "current_consolidated_catalog"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

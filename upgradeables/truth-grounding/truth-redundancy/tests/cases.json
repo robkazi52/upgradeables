@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "truth-redundancy",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "truth-redundancy-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "A single transcription or calculation error could change the outcome.",
+      "expect": "An anchor pair ready for Multi-Truth Gating.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "truth-redundancy-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the claim is low risk and an authoritative primary source is decisive",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "truth-redundancy-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Independence is invalid if both anchors share the same unverified upstream source.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "truth-redundancy-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "If no genuinely independent second anchor is available, report that limitation and do not claim redundant verification.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "truth-redundancy-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "when redundancy is claimed, the anchors must be genuinely independent",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "truth-redundancy-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Two validators both rely on the same incorrect extracted value.",
+      "expect": "Reject the pair as non-independent.",
+      "reject": "Certify redundancy solely because two validators returned pass."
+    }
+  ]
+}

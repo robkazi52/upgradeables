@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "reasoning-throughput-governor",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "reasoning-throughput-governor-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "Generation can run in parallel, but source review and schema validation can become bottlenecks.",
+      "expect": "Steady validated output without queue or review collapse.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "reasoning-throughput-governor-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the task is one atomic operation",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "reasoning-throughput-governor-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Mandatory serial dependencies and vetoes override concurrency goals.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "reasoning-throughput-governor-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "raw-volume optimization",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "reasoning-throughput-governor-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "validation backpressure",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "reasoning-throughput-governor-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A workflow has an adequate total budget and depth plan but generation outpaces validation.",
+      "expect": "The skill adjusts work in progress, batching, concurrency, and backpressure using completion and rework signals.",
+      "reject": "The skill merely lowers total reasoning budget or reallocates depth among task regions."
+    }
+  ]
+}

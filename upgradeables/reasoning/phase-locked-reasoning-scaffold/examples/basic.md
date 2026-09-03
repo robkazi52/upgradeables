@@ -1,10 +1,31 @@
-# Basic composition example
+# Phase-Locked Reasoning Scaffold — Basic Example
 
-**Situation:** semantic phase leakage is a risk.
+**Evidence label:** Illustrative modern example. It demonstrates the v0.2 operational contract and is not presented as a recovered historical chat.
 
-**Composition:** establish a task lock, activate `phase-locked-reasoning-scaffold`, preserve
-explicit state and evidence boundaries, then pass the result through the
-workflow's applicable validator.
+## Task context
 
-**Expected:** the component performs only its documented purpose and reports
-uncertainty or failure instead of manufacturing missing support.
+Summarize evidence for a policy outcome.
+
+## Why this Upgradeable activates
+
+The sources report observations, while the requested conclusion requires interpretation and uncertainty.
+
+## Inputs / state
+
+Quoted findings, study limitations, and stakeholder heuristics are available.
+
+## What it does
+
+Keeps reported findings in the factual/evidentiary phase, labels the synthesis as interpretation, and states probability without converting it into fact.
+
+## What it does not do
+
+Attribute the synthesized policy conclusion directly to a source that did not make it.
+
+## Result / state change
+
+A readable conclusion whose evidence, inference, and uncertainty remain distinguishable.
+
+## Interaction with companion components
+
+['citation-fidelity', 'multi-layer-consistency']

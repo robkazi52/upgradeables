@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "forethought-checkpoints",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "forethought-checkpoints-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The change can break downstream consumers and is costly to reverse after rollout.",
+      "expect": "A gated rollout with evidence before irreversible cleanup.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "forethought-checkpoints-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "reversible low-cost local edits",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "forethought-checkpoints-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "A failed hard prerequisite blocks commitment regardless of schedule pressure.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "forethought-checkpoints-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "ritual checklists unrelated to risk",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "forethought-checkpoints-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "pre-commit prerequisite check for consequential actions",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "forethought-checkpoints-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A workflow is about to perform a costly dependency-sensitive action.",
+      "expect": "The skill predicts a downstream failure, checks its prerequisite and rollback, commits, then observes.",
+      "reject": "The skill offers only a generic caution or performs review after the irreversible step."
+    }
+  ]
+}

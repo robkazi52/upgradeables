@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-16",
   "slug": "cross-universe-consistency",
   "display_name": "Cross-Universe Consistency Mode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,50 +23,59 @@
     "validator",
     "parent-skill-mode"
   ],
-  "purpose": "Compare candidate branches and reject a selection that depends on an unacknowledged contradiction.",
+  "purpose": "Prevent a final synthesis from combining mutually exclusive premises harvested from different candidate worlds.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "architecture alternatives",
+    "scenario planning",
+    "multi-hypothesis research",
+    "strategy selection"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "only one branch was explored",
+    "branches are explicitly independent deliverables and will not be collapsed"
   ],
   "triggers": [
     "parallel candidate paths are compared"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "only one branch was explored",
+    "branches are explicitly independent deliverables and will not be collapsed"
   ],
   "requires": [],
   "recommended_with": [
+    "fermionic-veto",
     "multiverse-reasoning",
     "parallel-qms"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "crispr-edit"
+  ],
+  "potentially_redundant_with": [
+    "multi-layer-consistency"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "branch ledgers",
+    "assumption sets",
+    "derived claims",
+    "candidate collapse"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "cross-branch comparison matrix",
+    "invariant claim set",
+    "incompatible hybrid warnings",
+    "consistent collapse"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "full matrix when two simple branches have no overlapping claims"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "assumption provenance and compatibility check for any hybrid"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Block the collapse when it combines mutually exclusive assumptions or strips a claim from conditions required for its validity."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -79,5 +88,83 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Multiverse exploration can produce individually coherent branches, then create an incoherent winner by mixing benefits or claims that cannot coexist.",
+  "os_role": [
+    "cross-branch-consistency-validator",
+    "collapse-integrity-gate"
+  ],
+  "pipeline_stages": [
+    "after branch exploration",
+    "before branch collapse",
+    "post-synthesis"
+  ],
+  "best_fit_tasks": [
+    "architecture alternatives",
+    "scenario planning",
+    "multi-hypothesis research",
+    "strategy selection"
+  ],
+  "avoid_when": [
+    "only one branch was explored",
+    "branches are explicitly independent deliverables and will not be collapsed"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Represent each candidate universe as assumptions, invariants, derived claims, and chosen actions. Compare same-named claims across branches, label invariant conclusions versus branch-conditional conclusions, detect premise incompatibilities, and permit the final collapse to import an element only with the assumption set that makes it valid.",
+  "procedure": [
+    "Record assumptions, constraints, claims, and actions for every branch.",
+    "Align comparable claims across branches.",
+    "Mark claims invariant, compatible, conflicting, or incomparable.",
+    "Trace each proposed final element back to its branch assumptions.",
+    "Reject combinations whose assumptions cannot coexist.",
+    "Collapse to one branch or an explicitly compatible hybrid.",
+    "Run a final consistency check on the collapsed assumption set."
+  ],
+  "always_do": [
+    "Preserve branch provenance through collapse.",
+    "Separate invariant findings from conditional ones.",
+    "Check hybrid assumption compatibility explicitly."
+  ],
+  "never_do": [
+    "Combine best outcomes from incompatible premises.",
+    "Treat branch majority as proof of truth.",
+    "Erase minority safety vetoes during collapse."
+  ],
+  "interaction_reasons": {
+    "multiverse-reasoning": "Produces the candidate universes being compared.",
+    "parallel-qms": "Provides orthogonal validators for each branch and collapse.",
+    "fermionic-veto": "Can block a collapse when one branch exposes a decisive contradiction or safety failure."
+  },
+  "counterbalance_reasons": {
+    "crispr-edit": "Discourages hybridizing branches merely to include every attractive feature by favoring a precise compatible change."
+  },
+  "redundancy_reasons": {
+    "multi-layer-consistency": "Multi-layer checks scales within one artifact; CUCM checks assumption compatibility across alternative worlds."
+  },
+  "conflict_rules": [
+    "A branch-conditional claim cannot be imported without its enabling assumptions.",
+    "A decisive safety contradiction survives branch collapse even if other branches omit it."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-16. Cross-Universe Consistency Mode (CUCM)",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "T4-16. Cross-Universe Consistency Mode (CUCM)",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.4 Multiverse / plan generation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

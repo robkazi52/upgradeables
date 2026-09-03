@@ -2,22 +2,36 @@
 
 ## Summary
 
-Coordinate mutually reinforcing modules, suppress irrelevant effects, and preserve authority boundaries.
+Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.
 
 ## Purpose
 
-Provide a reusable `orchestrator` mechanism rather than
-a complete task identity or monolithic prompt.
+Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+Useful modules can produce noisy, duplicated, or conflicting effects when their interactions are left implicit.
+
+## Where It Fits in the OS
+
+Roles: cross-module alignment, interaction control. Pipeline stages: post-selection coordination, mid-process coupling, pre-synthesis alignment.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- multi-module Skills
+- evidence-to-state coordination
+- composed agent workflows
+
+## When Not to Use
+
+- only one module is active
+- the proposed reinforcement would amplify repetition, exaggeration, or an authority conflict
 
 ## Scope
 
-Functional classes: orchestration, drift-control. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `resonance@1.1.0`. ID: `A-05`. Functional classes: orchestration, drift-control. Activation: `U2-specialized`. Mechanism basis: `recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,94 +39,121 @@ Functional classes: orchestration, drift-control. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- only one module is active
+- the proposed reinforcement would amplify repetition, exaggeration, or an authority conflict
 
 ## Inputs / Required State
 
-- locked task state
-- available component manifests and authority rules
+- active module contracts and outputs
+- declared coupling relationship
+- authority and boundary rules
 
 ## Outputs / Produced State
 
-- bounded activation or routing plan
-- explicit component state and unresolved conflicts
+- coordinated module handoff
+- suppressed noise and explicit unresolved conflicts
 
 ## Mechanism
 
-Select and sequence only available components whose triggers match, pass explicit state between them, and resolve authority before execution.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Identify the specific outputs or constraints through which selected modules should reinforce one another, declare the direction and limit of that coupling, and suppress unrelated effects. Check hierarchy before amplification so a lower-authority module cannot become stronger through repetition. Amplification means clearer coordination and usable handoff, not duplicated content.
 
 ## Procedure
 
-1. Confirm task identity, risk, and authority.
-2. Inspect available component manifests and triggers.
-3. Select the minimum sufficient composition and load order.
-4. Pass explicit bounded state through the selected interfaces.
-5. Emit the plan/result plus unresolved conflicts and unavailable capabilities.
+1. List active modules and the exact relationship that should be reinforced.
+2. Verify their authority, source, and state boundaries are compatible.
+3. Define the bounded handoff or mutual constraint that creates the useful coupling.
+4. Suppress duplicate, irrelevant, or conflicting module effects.
+5. Check the coordinated result and dissolve the coupling when its trigger ends.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- Preserve the defining invariant: explicit relationship, bounded effect, noise suppression, and authority preservation.
+- Record material routing, transition, and failure decisions in explicit task state.
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- amplifying content through repetition or fusing modules into one authority
+- Never claim hidden state, unavailable host capability, or authority beyond the active Skill.
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `state-routing-bus`
+
+Carries the explicit state fields used in the coupling.
+
+### `domain-mode-isolation`
+
+Keeps reinforcement from crossing incompatible domain boundaries.
 
 ## Compatible Upgradeables
 
-- `domain-mode-isolation`
-- `multi-layer-consistency`
+- `state-routing-bus` — Carries the explicit state fields used in the coupling.
+- `domain-mode-isolation` — Keeps reinforcement from crossing incompatible domain boundaries.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `domain-mode-isolation`
+
+Stops a useful coupling from becoming uncontrolled context blending.
 
 ## Potential Redundancy
 
-- `None declared`
+### `cross-context-resonance-lock`
+
+The lock preserves one cross-context relationship; Resonance coordinates reinforcing effects among active modules more broadly.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Host, system, domain, and explicit user authority take precedence over this component.
+- If the modules have incompatible authority or source boundaries, stop or escalate rather than forcing a nominal success.
 
 ## Failure Boundary
 
-- do not activate unavailable components or silently resolve an authority conflict
+- the modules have incompatible authority or source boundaries
+- the coupling produces repetition or exaggeration instead of clearer coordination
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- formal coupling state when one obvious handoff is sufficient
+
+Keep mandatory:
+
+- explicit relationship, bounded effect, noise suppression, and authority preservation
 
 ## Recommended Skill Types
 
-- `architecture-skill-building`
-- `general-agent-workflow`
-- `multi-agent-orchestration`
+- multi-module Skills
+- evidence-to-state coordination
+- composed agent workflows
 
 ## Example Composition
 
-Activate `resonance` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** An evidence extractor and StateBlock updater must work together before synthesis.
+
+**Why it activates:** Their outputs should reinforce source fidelity without duplicating the source corpus.
+
+**Inputs/state:** Module contracts, extracted evidence pointers, state schema, and authority rules.
+
+**Action:** Routes verified evidence pointers into state and suppresses duplicate narrative output.
+
+**Does not:** Does not merge module identities, repeat evidence for emphasis, or elevate a lower-authority signal.
+
+**Result/state change:** Synthesis receives compact grounded state and no duplicate noise.
+
+**Companions:** State Routing Bus transports fields; Domain Isolation enforces boundaries.
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `A-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: Resonance Locks.
+Primary source ID: `A-05` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: Resonance Locks.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-05. Resonance (current_consolidated_catalog)

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T1-08",
   "slug": "placeholder-suppression",
   "display_name": "Placeholder Suppression",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,51 +21,69 @@
     "validator",
     "deterministic-script"
   ],
-  "purpose": "Prevent TODOs, dummy values, empty required sections, and unresolved markers from leaking into final artifacts.",
+  "purpose": "Prevent scaffolding artifacts from escaping as if they were complete content.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "template-based documents",
+    "generated repositories",
+    "forms and reports",
+    "configuration generation",
+    "multi-agent artifact assembly"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the deliverable is explicitly a template whose placeholders are the product",
+    "an example intentionally teaches placeholder syntax",
+    "redacted fields must retain an approved marker"
   ],
   "triggers": [
     "templates or staged artifacts are finalized"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the deliverable is explicitly a template whose placeholders are the product",
+    "an example intentionally teaches placeholder syntax",
+    "redacted fields must retain an approved marker"
   ],
   "requires": [],
   "recommended_with": [
+    "parallel-qms",
     "safe-rewrite"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "safe-rewrite"
+  ],
+  "potentially_redundant_with": [
+    "grounding-no-invention"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "artifact",
+    "required-field schema",
+    "marker patterns",
+    "intentional-placeholder allowlist",
+    "authoritative replacement values"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "placeholder inventory",
+    "resolved or classified hits",
+    "clean rescan",
+    "pass or blocked finalization decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "reporting every zero-hit pattern in the final response"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "lexical plus schema scan",
+      "context-specific classification",
+      "post-fix rescan",
+      "fail-closed finalization"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "false completion",
+    "fabricated replacements",
+    "overbroad allowlist",
+    "false positives on legitimate syntax",
+    "empty required structure"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -78,5 +96,86 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Templates and multi-stage generation leave TODOs, bracket prompts, synthetic values, interpolation tokens, or structurally empty requirements that readers may mistake for finished output.",
+  "os_role": [
+    "final-output guard",
+    "completion validator"
+  ],
+  "pipeline_stages": [
+    "artifact assembly",
+    "pre-release scan",
+    "finalization gate"
+  ],
+  "best_fit_tasks": [
+    "template-based documents",
+    "generated repositories",
+    "forms and reports",
+    "configuration generation",
+    "multi-agent artifact assembly"
+  ],
+  "avoid_when": [
+    "the deliverable is explicitly a template whose placeholders are the product",
+    "an example intentionally teaches placeholder syntax",
+    "redacted fields must retain an approved marker"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Run a two-layer completion scan: a lexical detector for markers such as TODO, TBD, FIXME, bracket prompts, dummy domains, sample IDs, and unresolved interpolation syntax; then a schema detector for empty required sections, null required fields, and uninstantiated variables. Classify every hit using a narrow allowlist for intentional template, example, or redaction contexts; all other hits must be filled from authority, removed with requirement revalidation, or explicitly labeled unresolved before release.",
+  "procedure": [
+    "Load the artifact's required sections, fields, and variable schema.",
+    "Scan text and code for known marker tokens, dummy values, bracketed instructions, and unresolved interpolation forms.",
+    "Scan structure for empty or default-valued required elements.",
+    "Classify hits as accidental, intentionally illustrative, approved redaction, or genuinely unresolved using context and an explicit allowlist.",
+    "Resolve accidental hits from authoritative inputs, omit only when the requirement permits, and label genuine gaps with impact and owner.",
+    "Rescan the final artifact and fail the release gate on any unclassified or accidental hit."
+  ],
+  "always_do": [
+    "combine lexical and structural scans",
+    "use contextual allowlisting rather than global token exceptions",
+    "rescan after resolution",
+    "distinguish explicit unresolved disclosure from accidental placeholder leakage"
+  ],
+  "never_do": [
+    "replace unknown values with plausible inventions",
+    "delete a required section just to clear the scan",
+    "flag every bracket in code or citation as a placeholder",
+    "allow an unclassified marker in final output"
+  ],
+  "interaction_reasons": {
+    "safe-rewrite": "Safe Rewrite removes or labels placeholders without altering neighboring facts.",
+    "parallel-qms": "Final Validation treats an unresolved accidental marker as a release-blocking defect."
+  },
+  "counterbalance_reasons": {
+    "safe-rewrite": "An explicit template context protects intentional placeholders from destructive suppression."
+  },
+  "redundancy_reasons": {
+    "grounding-no-invention": "Grounding prevents invented replacements; Placeholder Suppression specifically detects unfinished output artifacts and completion gaps."
+  },
+  "conflict_rules": [
+    "Never fabricate content to satisfy completion.",
+    "Approved template and example placeholders remain only when clearly scoped and non-executable.",
+    "A required unknown is labeled unresolved and blocks completion when the contract requires a concrete value."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T1-08. Placeholder Suppression",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "5. January 5, 2026 — training/scaffolding Upgradeables snapshot",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

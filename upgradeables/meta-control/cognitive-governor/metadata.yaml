@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-17",
   "slug": "cognitive-governor",
   "display_name": "Reasoning Budget / Cognitive Governor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,47 +20,70 @@
   "implementation_forms": [
     "orchestrator"
   ],
-  "purpose": "Allocate reasoning effort by complexity, risk, and expected value so trivial work is not overprocessed and high-risk work is not underchecked.",
+  "purpose": "Prevent both expensive overthinking of trivial work and unsafe underchecking of consequential work.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "mixed-risk queues",
+    "bounded research",
+    "iterative authoring",
+    "cost-sensitive agent workflows"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a mandatory protocol fixes the review budget",
+    "the task is a trivial deterministic transformation",
+    "budget estimation would cost more than execution"
   ],
   "triggers": [
     "effort allocation materially affects cost or quality"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a mandatory protocol fixes the review budget",
+    "the task is a trivial deterministic transformation",
+    "budget estimation would cost more than execution"
   ],
   "requires": [],
   "recommended_with": [
-    "reasoning-scale-controller",
+    "dynamic-depth-allocation",
+    "reasoning-throughput-governor",
     "risk-tier-scaling"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "bounded-exit"
+  ],
+  "potentially_redundant_with": [
+    "dynamic-depth-allocation",
+    "reasoning-throughput-governor"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "task complexity",
+    "uncertainty",
+    "risk and irreversibility",
+    "cost and latency constraints",
+    "mandatory validation floor"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "total reasoning envelope",
+    "phase budgets",
+    "budget adjustments",
+    "continue, exit, or blocked decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "visible token accounting for a simple task",
+      "formal phase budgets when one pass is clearly sufficient"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "risk-based validation floor",
+      "marginal-value review",
+      "explicit stop or escalation"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "over-polishing",
+    "premature exit",
+    "validation starvation",
+    "unbounded budget expansion",
+    "confusing global budget with local depth"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +96,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Without a governor, reasoning effort follows habit or artifact size instead of the value and consequence of additional analysis.",
+  "os_role": [
+    "global reasoning-budget controller",
+    "continuation governor"
+  ],
+  "pipeline_stages": [
+    "task triage",
+    "budget assignment",
+    "mid-run budget review",
+    "exit decision"
+  ],
+  "best_fit_tasks": [
+    "mixed-risk queues",
+    "bounded research",
+    "iterative authoring",
+    "cost-sensitive agent workflows"
+  ],
+  "avoid_when": [
+    "a mandatory protocol fixes the review budget",
+    "the task is a trivial deterministic transformation",
+    "budget estimation would cost more than execution"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Estimate a total effort envelope from complexity, uncertainty, consequence, irreversibility, and the expected value of another check. Allocate caps for planning, execution, and validation, reserve extra capacity for high-risk unknowns, and periodically compare remaining defect or uncertainty value with remaining cost. The governor owns how much total reasoning is justified; it does not choose which regions receive that effort or how much work flows concurrently.",
+  "procedure": [
+    "Classify task complexity, uncertainty, consequence, and reversibility.",
+    "Set an effort envelope and mandatory validation floor.",
+    "Divide the envelope among planning, execution, verification, and contingency.",
+    "Track evidence gained, defects removed, and budget consumed at milestones.",
+    "Increase the envelope only when newly exposed risk has positive expected value; otherwise invoke the exit rule.",
+    "Report blocked rather than declare completion if mandatory checks exceed the available budget."
+  ],
+  "always_do": [
+    "preserve a validation floor",
+    "tie budget changes to risk or expected value",
+    "distinguish optional polish from required verification",
+    "make exit or escalation explicit"
+  ],
+  "never_do": [
+    "spend the whole budget on planning",
+    "use cost pressure to waive a hard check",
+    "treat a longer artifact as automatically higher risk",
+    "micromanage per-region depth when Dynamic Depth owns that allocation"
+  ],
+  "interaction_reasons": {
+    "dynamic-depth-allocation": "Dynamic Depth distributes the governor's total envelope among unequal task regions.",
+    "reasoning-throughput-governor": "Throughput controls the rate and breadth of work performed under the envelope.",
+    "risk-tier-scaling": "Risk Tier sets the mandatory verification floor that the budget must fund."
+  },
+  "counterbalance_reasons": {
+    "bounded-exit": "Bounded ExIt operationalizes the stop decision when marginal improvement falls below cost."
+  },
+  "redundancy_reasons": {
+    "dynamic-depth-allocation": "Both concern effort, but Cognitive Governor chooses total budget and stop policy; Dynamic Depth redistributes it locally.",
+    "reasoning-throughput-governor": "Throughput tunes execution pace and concurrency, not total justified effort."
+  },
+  "conflict_rules": [
+    "Risk-mandated validation overrides a lower convenience budget.",
+    "If the envelope cannot cover hard checks, return an explicit resource or evidence blocker.",
+    "A local region may receive extra depth only by reallocation or justified budget expansion."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-17. Reasoning Budget / Cognitive Governor",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "9. BOUNDED EXIT — DEEPER HISTORICAL USE",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

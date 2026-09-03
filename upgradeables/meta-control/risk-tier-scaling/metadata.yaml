@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-05",
   "slug": "risk-tier-scaling",
   "display_name": "Risk-Tier Scaling",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,69 @@
     "orchestrator",
     "guard"
   ],
-  "purpose": "Increase reasoning depth, verification, and veto strength as consequence, uncertainty, or irreversibility rises.",
+  "purpose": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "medical, legal, financial, or safety-sensitive work",
+    "irreversible changes",
+    "uncertain external actions",
+    "mixed-risk artifacts"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a binding protocol already specifies the exact controls",
+    "the task is harmless and fully reversible",
+    "risk labels cannot change any behavior"
   ],
   "triggers": [
     "task risk varies or must be classified"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a binding protocol already specifies the exact controls",
+    "the task is harmless and fully reversible",
+    "risk labels cannot change any behavior"
   ],
   "requires": [],
   "recommended_with": [
+    "cognitive-governor",
     "dynamic-depth-allocation",
     "fail-closed-abstention"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "reasoning-throughput-governor"
+  ],
+  "potentially_redundant_with": [
+    "dynamic-depth-allocation",
+    "safe-mode"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "potential consequences",
+    "uncertainty and evidence quality",
+    "reversibility",
+    "scope of impact",
+    "tier-control matrix"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "task and regional risk tiers",
+    "mandatory control set",
+    "reclassification record",
+    "commit, abstain, or escalate decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "formal tier narration for obviously low-risk routine output"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "consequence and uncertainty assessment",
+      "high-risk independent checks",
+      "hard veto and fail-closed behavior"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "domain-label risk",
+    "budget-driven downgrading",
+    "maximum-rigor default",
+    "stale risk classification",
+    "soft score overriding hard veto"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +96,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Uniform validation either wastes effort on low-consequence work or exposes consequential decisions to the same weak checks used for routine output.",
+  "os_role": [
+    "risk classifier",
+    "mandatory-rigor controller"
+  ],
+  "pipeline_stages": [
+    "risk triage",
+    "control selection",
+    "pre-commit validation",
+    "risk reclassification"
+  ],
+  "best_fit_tasks": [
+    "medical, legal, financial, or safety-sensitive work",
+    "irreversible changes",
+    "uncertain external actions",
+    "mixed-risk artifacts"
+  ],
+  "avoid_when": [
+    "a binding protocol already specifies the exact controls",
+    "the task is harmless and fully reversible",
+    "risk labels cannot change any behavior"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Classify the whole task and any higher-risk subregions using consequence, uncertainty, reversibility, scope of impact, and evidence quality. Map the result to explicit control floors: light single-path checks for routine work, stronger source and consistency checks for material work, and independent verification, hard vetoes, checkpointing, and fail-closed behavior for high-risk work. Reclassify when new evidence raises or lowers risk.",
+  "procedure": [
+    "Identify potential harms, affected parties, uncertainty, reversibility, and blast radius.",
+    "Assign a risk tier to the task and separately to any exceptional subregion.",
+    "Select the tier's mandatory reasoning, evidence, independent-check, and veto controls.",
+    "Fund those controls through Cognitive Governor and route depth with DDA.",
+    "Reassess risk before irreversible action and whenever new evidence changes consequence or uncertainty.",
+    "Commit only when the tier's acceptance gates pass; otherwise abstain, escalate, or narrow the action."
+  ],
+  "always_do": [
+    "assess consequence and uncertainty separately",
+    "use the highest applicable tier at mixed-risk boundaries",
+    "make tier controls observable",
+    "reclassify on new evidence"
+  ],
+  "never_do": [
+    "assign risk from domain label alone",
+    "lower a tier to fit budget",
+    "average away a safety-critical minority risk",
+    "use high rigor everywhere without consequence"
+  ],
+  "interaction_reasons": {
+    "dynamic-depth-allocation": "DDA concentrates extra work on high-tier regions while preserving baseline coverage.",
+    "fail-closed-abstention": "High-tier unverifiable results route to abstention instead of forced output.",
+    "cognitive-governor": "The governor reserves enough total budget to meet the tier's mandatory floor."
+  },
+  "counterbalance_reasons": {
+    "reasoning-throughput-governor": "Throughput preserves efficiency for low-tier work without weakening high-tier gates."
+  },
+  "redundancy_reasons": {
+    "dynamic-depth-allocation": "Risk Tier sets mandatory rigor; DDA distributes discretionary and required depth among regions.",
+    "safe-mode": "SAFE is an execution profile appropriate to consequential work; Risk Tier decides when and how much rigor is required."
+  },
+  "conflict_rules": [
+    "A required tier cannot be lowered because of cost or deadline.",
+    "When tier controls cannot be completed, return blocked or abstain.",
+    "Mixed-risk tasks use local higher tiers without forcing unrelated routine regions into maximum review."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-05. Risk-Tier Scaling",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "8.2 QMS-RTS — Risk-Tier-Split QMS",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

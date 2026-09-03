@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-12",
   "slug": "counterfactual-integrity",
   "display_name": "Counterfactual Integrity Gate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,58 @@
     "guard",
     "validator"
   ],
-  "purpose": "Keep hypothetical and counterfactual reasoning explicitly separated from factual claims.",
+  "purpose": "Make counterfactual exploration safe and auditable by preserving an explicit boundary between factual, evaluative, framing, and hypothetical phases.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "scenario analysis",
+    "causal counterfactuals",
+    "planning under alternatives",
+    "creative work mixed with factual sources"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the task contains no hypothetical branch",
+    "the user explicitly requires purely factual extraction, where counterfactual-silence is the narrower control"
   ],
   "triggers": [
     "counterfactual or hypothetical reasoning is used"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the task contains no hypothetical branch",
+    "the user explicitly requires purely factual extraction, where counterfactual-silence is the narrower control"
   ],
   "requires": [],
   "recommended_with": [
+    "controlled-drift-corridors",
     "domain-mode-isolation",
-    "controlled-drift-corridors"
+    "epistemic-status-gating"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "grounding-no-invention"
+  ],
+  "potentially_redundant_with": [
+    "counterfactual-silence-scaffold"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "factual baseline",
+    "counterfactual premise",
+    "semantic phase labels",
+    "candidate conclusions"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "isolated hypothetical branch",
+    "phase-labeled conclusions",
+    "contamination failure status"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "verbose phase headings when proposition status is already unmistakable"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "no hypothetical premise or consequence may silently become fact"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "If branch-local assumptions cannot be separated from factual claims, do not certify the mixed output."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +85,82 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Prevents a useful what-if branch from contaminating evidence state or being cited later as something that actually happened.",
+  "os_role": [
+    "hypothesis-safety",
+    "semantic-phase-control"
+  ],
+  "pipeline_stages": [
+    "candidate-generation",
+    "state-update",
+    "pre-output-verification"
+  ],
+  "best_fit_tasks": [
+    "scenario analysis",
+    "causal counterfactuals",
+    "planning under alternatives",
+    "creative work mixed with factual sources"
+  ],
+  "avoid_when": [
+    "the task contains no hypothetical branch",
+    "the user explicitly requires purely factual extraction, where counterfactual-silence is the narrower control"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Tag each proposition by semantic phase and keep hypothetical premises, derived consequences, and branch-local assumptions in a separate compartment. Any transfer from a hypothetical branch into factual state requires independent factual support; otherwise the proposition remains labeled hypothetical or is excluded from the factual output.",
+  "procedure": [
+    "Declare the factual baseline and the allowed counterfactual question.",
+    "Tag introduced premises as hypothetical and retain their branch identity.",
+    "Derive consequences only inside that branch.",
+    "Check the draft for branch-local material presented without a hypothesis label.",
+    "Move a proposition into factual state only when independent evidence supports it.",
+    "Return factual findings and counterfactual results in visibly separate output regions."
+  ],
+  "always_do": [
+    "Preserve the original factual baseline.",
+    "Label hypothetical assumptions and consequences.",
+    "Require evidence for any transition from hypothetical to factual status."
+  ],
+  "never_do": [
+    "Treat a simulated outcome as observed evidence.",
+    "Let hypothetical details update canonical factual state.",
+    "Erase uncertainty merely because a counterfactual narrative is coherent."
+  ],
+  "interaction_reasons": {
+    "domain-mode-isolation": "Provides separate state compartments for factual and hypothetical modes.",
+    "controlled-drift-corridors": "Defines how much interpretive movement is permitted inside the hypothetical branch.",
+    "epistemic-status-gating": "Supplies proposition-level fact/inference/hypothesis labels used by the gate."
+  },
+  "counterbalance_reasons": {
+    "grounding-no-invention": "Grounding prevents the exploratory branch from being mistaken for evidence."
+  },
+  "redundancy_reasons": {
+    "counterfactual-silence-scaffold": "Silence suppresses unauthorized counterfactual content entirely; integrity allows authorized counterfactuals but isolates and labels them."
+  },
+  "conflict_rules": [
+    "A factual-only task boundary overrides permission to explore counterfactuals.",
+    "A stylistic request to write hypotheticals as certain cannot override phase labels."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-12. Counterfactual Integrity Gate",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "10.2 Semantic phase separation",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

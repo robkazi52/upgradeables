@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "JAN26-07",
   "slug": "temporal-anchor-scaffold",
   "display_name": "Temporal Anchor Scaffold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "training-scaffolding-2026-01-05",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,50 +21,69 @@
     "state-schema",
     "validator"
   ],
-  "purpose": "Preserve dates, sequence, effective periods, and temporal reference points during reasoning.",
+  "purpose": "Prevent chronology errors and confusion between event time, publication time, and current validity.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "long-context-corpus",
-    "research",
-    "source-grounded-analysis"
+    "incident timelines",
+    "policy version analysis",
+    "case chronology",
+    "news or market research"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "time has no bearing on the answer",
+    "dates are fabricated or inferred without support",
+    "a mature temporal database already supplies the needed view"
   ],
   "triggers": [
     "time or chronology affects correctness"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "time has no bearing on the answer",
+    "dates are fabricated or inferred without support",
+    "a mature temporal database already supplies the needed view"
   ],
   "requires": [],
   "recommended_with": [
-    "stateblock"
+    "micro-scaffolding",
+    "sequential-memory-state-engine",
+    "state-snapshot"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "stable-long-context"
+  ],
+  "potentially_redundant_with": [
+    "sequential-memory-state-engine",
+    "state-snapshot"
+  ],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "dated source excerpts",
+    "reference date",
+    "timezone",
+    "event identities",
+    "effective-window rules"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "normalized task-local timeline",
+    "ordering constraints",
+    "temporal uncertainty flags",
+    "promotable verified anchors"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a formal table when two explicit dates suffice",
+      "promotion of dates irrelevant beyond the immediate result"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "time-type distinction",
+      "source pointers",
+      "explicit unknown order",
+      "retirement after use"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "Do not assert total order from partial temporal evidence.",
+    "Treat the mechanism as provisional until original concept-specific documentation is recovered."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +96,91 @@
     "canonicality": "provisional",
     "recovery_confidence": "medium",
     "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  },
+  "problem_solved": "Documents often mix dated facts, relative phrases, revised policies, and unknown ordering; narrative context alone makes temporal mistakes likely.",
+  "os_role": [
+    "temporal normalization",
+    "task-local scaffold",
+    "sequence validation"
+  ],
+  "pipeline_stages": [
+    "source intake",
+    "timeline reconciliation",
+    "time-sensitive reasoning",
+    "final citation check"
+  ],
+  "best_fit_tasks": [
+    "incident timelines",
+    "policy version analysis",
+    "case chronology",
+    "news or market research"
+  ],
+  "avoid_when": [
+    "time has no bearing on the answer",
+    "dates are fabricated or inferred without support",
+    "a mature temporal database already supplies the needed view"
+  ],
+  "mechanism_basis": "provisional",
+  "mechanism": "A modern interpretation is a task-local table of events with normalized timestamp or interval, original temporal expression, source, event/publication/effective-time type, confidence, and before/after links. Unknown order stays unknown. Promote only durable verified temporal facts into canonical state and retire the scaffold after the timeline-dependent output is validated.",
+  "procedure": [
+    "Identify which temporal distinctions affect the decision.",
+    "Extract expressions verbatim with source pointers.",
+    "Normalize only supported dates, zones, intervals, and time types.",
+    "Build explicit ordering links and mark ambiguity or contradiction.",
+    "Use the scaffold to test time-dependent claims.",
+    "Promote verified durable dates if needed, then delete or archive the task-local scaffold."
+  ],
+  "always_do": [
+    "distinguish event, publication, observation, and effective time",
+    "retain original expressions",
+    "label uncertainty and timezone",
+    "retire the temporary scaffold"
+  ],
+  "never_do": [
+    "invent missing dates",
+    "resolve ambiguous relative time from conversational recency alone",
+    "carry the whole scaffold as permanent state by default"
+  ],
+  "interaction_reasons": {
+    "state-snapshot": "A snapshot supplies a trusted state time point against which events can be reconciled.",
+    "sequential-memory-state-engine": "Consumes ordered, provenance-bearing events after temporal normalization.",
+    "micro-scaffolding": "Provides the same temporary-build/promote/retire lifecycle specialized for chronology."
+  },
+  "counterbalance_reasons": {
+    "clarification-gateway": "Requests a reference date or timezone when ambiguity changes the answer.",
+    "stable-long-context": "Keeps only durable temporal anchors active after the local timeline work ends."
+  },
+  "redundancy_reasons": {
+    "sequential-memory-state-engine": "SMSE owns ordered state transitions; this scaffold only resolves a difficult local chronology before ingestion.",
+    "state-snapshot": "Snapshot captures one known time, not an event relationship graph."
+  },
+  "conflict_rules": [
+    "Source-stated timestamps outrank inferred order; higher-authority corrections supersede earlier dates while retaining history.",
+    "If timezone or effective date changes the conclusion and cannot be resolved, surface the branch rather than choosing one."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Temporal Anchor Scaffold residual listing"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Temporal Anchor Scaffold inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "`GLOBAL_LOCAL_ANCHOR_SPLIT_T1`",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "TIMOS temporal-state and sequencing context"
+    }
+  ],
+  "source_support": "source-gap",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

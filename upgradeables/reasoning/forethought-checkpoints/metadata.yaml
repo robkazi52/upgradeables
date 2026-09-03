@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T2-17",
   "slug": "forethought-checkpoints",
   "display_name": "Forethought / Checkpoints",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,47 +21,65 @@
     "guard",
     "skill-component"
   ],
-  "purpose": "Before irreversible or costly actions, predict likely downstream failures and verify prerequisites.",
+  "purpose": "Catch missing prerequisites and foreseeable downstream failure while reversal is still cheap.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "deployments",
+    "schema or API changes",
+    "financial or external communications",
+    "multi-stage automation"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "reversible low-cost local edits",
+    "the checkpoint would duplicate an already enforced transaction guard",
+    "urgent containment requires a preauthorized emergency procedure"
   ],
   "triggers": [
     "an action is costly, irreversible, or dependency-sensitive"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "reversible low-cost local edits",
+    "the checkpoint would duplicate an already enforced transaction guard",
+    "urgent containment requires a preauthorized emergency procedure"
   ],
   "requires": [],
   "recommended_with": [
+    "bounded-exit",
     "risk-tier-scaling"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "reasoning-scale-controller"
+  ],
+  "potentially_redundant_with": [
+    "risk-tier-scaling"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "planned action",
+    "dependencies",
+    "risk tier",
+    "prerequisites",
+    "rollback capability"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "checkpoint decision",
+    "predicted failure",
+    "verified prerequisites",
+    "post-action observation"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "explicit checkpoint prose for a fully reversible in-memory operation"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "pre-commit prerequisite check for consequential actions",
+      "success and rollback observation"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "ritual checklists unrelated to risk",
+    "analysis after commitment instead of before",
+    "missing rollback for destructive action",
+    "unchecked dependency assumptions"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -74,5 +92,76 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "A locally valid next step can commit the workflow to an expensive path whose dependencies, blast radius, or rollback conditions were never checked.",
+  "os_role": [
+    "pre-commit control",
+    "risk checkpoint"
+  ],
+  "pipeline_stages": [
+    "before external action",
+    "before destructive change",
+    "before dependency handoff"
+  ],
+  "best_fit_tasks": [
+    "deployments",
+    "schema or API changes",
+    "financial or external communications",
+    "multi-stage automation"
+  ],
+  "avoid_when": [
+    "reversible low-cost local edits",
+    "the checkpoint would duplicate an already enforced transaction guard",
+    "urgent containment requires a preauthorized emergency procedure"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "At each consequential boundary, predict the most likely downstream failure, verify the prerequisite that would prevent it, define observable success and rollback, then commit and check the result. Checkpoints are placed by consequence rather than at every trivial step.",
+  "procedure": [
+    "Identify the next irreversible, high-cost, or dependency-sensitive action.",
+    "Name the plausible downstream failure and affected dependency.",
+    "Verify prerequisites, authority, backups, and rollback path proportionate to risk.",
+    "Define the immediate post-action observation that indicates success or failure.",
+    "Commit only if the checkpoint passes, then inspect the result before continuing."
+  ],
+  "always_do": [
+    "tie each checkpoint to a concrete consequence",
+    "verify prerequisite before commitment",
+    "define post-commit observation"
+  ],
+  "never_do": [
+    "turn every minor step into ceremonial review",
+    "treat a prediction as verified fact",
+    "continue past a failed prerequisite without escalation"
+  ],
+  "interaction_reasons": {
+    "risk-tier-scaling": "Risk Tier Scaling determines how deep the checkpoint must be.",
+    "bounded-exit": "Bounded ExIt prevents repeated checkpoint analysis once required evidence and safeguards are sufficient."
+  },
+  "counterbalance_reasons": {
+    "reasoning-scale-controller": "Proportionality keeps checkpoint overhead aligned to actual consequence."
+  },
+  "redundancy_reasons": {
+    "risk-tier-scaling": "Risk tier sets rigor globally; Forethought performs the concrete pre-commit prediction and prerequisite check."
+  },
+  "conflict_rules": [
+    "A failed hard prerequisite blocks commitment regardless of schedule pressure.",
+    "During urgent containment, use the approved emergency checkpoint rather than omitting checks entirely."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T2-17. Forethought / Checkpoints",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

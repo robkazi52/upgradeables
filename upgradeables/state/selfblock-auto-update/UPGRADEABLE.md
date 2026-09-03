@@ -2,22 +2,38 @@
 
 ## Summary
 
-Maintain task working state automatically without creating an identity narrative or unsupported memory.
+Apply a small, rule-governed state maintenance pass after meaningful actions so the canonical self/task block stays current without manual reconstruction.
 
 ## Purpose
 
-Provide a reusable `state-manager` mechanism rather than
-a complete task identity or monolithic prompt.
+Reduce stale state and forgotten deltas during iterative work.
 
 ## Problem Solved
 
-Prevents the workflow failure implied by the trigger while keeping the
-intervention bounded and inspectable.
+A live state block becomes misleading when completed steps, new constraints, and invalidated assumptions are not incorporated promptly.
+
+## Where It Fits in the OS
+
+Roles: automatic state maintenance, checkpoint hook, staleness control. Pipeline stages: after meaningful action, after tool result, before handoff, before resume.
+
+This component acts within those stages; it does not take over the complete task or outrank the host Skill.
+
+## Best-Fit Activities / Tasks
+
+- agent loops
+- long editing sessions
+- tool-rich workflows
+- multi-step investigations
+
+## When Not to Use
+
+- the host cannot write persistent state
+- every token would trigger an update
+- untrusted content could directly mutate authority-bearing fields
 
 ## Scope
 
-Functional classes: state. Activation:
-`U2-specialized`. This modern classification is not a historical tier.
+Canonical package: `selfblock-auto-update@1.1.0`. ID: `T2-11`. Functional classes: state. Activation: `U2-specialized`. Mechanism basis: `recovered`. Activation cost: `medium` (architectural burden, not measured compute).
 
 ## Trigger Conditions
 
@@ -25,93 +41,148 @@ Functional classes: state. Activation:
 
 ## Non-Triggers
 
-- the declared trigger is absent or the control would add no material value
+- the host cannot write persistent state
+- every token would trigger an update
+- untrusted content could directly mutate authority-bearing fields
 
 ## Inputs / Required State
 
-- current explicit task state
-- authorized state update or source event
+- current state version
+- action result
+- mutable-field policy
+- locked fields
+- provenance
 
 ## Outputs / Produced State
 
-- updated explicit state
-- conflict or unavailable-persistence status
+- validated state delta
+- updated SelfBlock version
+- change record
+- rejected-delta notice
 
 ## Mechanism
 
-Represent or update task state through explicit host-visible fields. Reconcile changes with locked state and record unavailable persistence honestly.
-
-The name is architectural identity, not a claim of a physical, biological,
-hidden, or private-reasoning mechanism.
+Attach an update hook to defined events, compute the smallest state delta, validate it against schema and authority, then atomically merge it into the live SelfBlock while retaining provenance or a change note. The updater may change status and observations but not silently rewrite locked goals, permissions, or immutable evidence.
 
 ## Procedure
 
-1. Read the current explicit state and authority rules.
-2. Validate the proposed update against locked fields and provenance.
-3. Apply only authorized field changes.
-4. Retire or mark superseded state without erasing provenance.
-5. Emit the updated state or a conflict/unavailable-persistence status.
+1. Define update-triggering events and mutable fields.
+2. After an event, derive only the factual delta from the result.
+3. Reject or quarantine changes to locked or authority-bearing fields.
+4. Validate the delta against schema, provenance, and current version.
+5. Apply atomically and record timestamp/version or concise change note.
 
 ## Always-Do Rules
 
-- Preserve higher-authority instructions and locked facts.
-- Label assumptions and unavailable host capabilities.
-- Keep activation proportional to risk and value.
+- update by delta
+- protect locked fields
+- validate before commit
+- retain change provenance
 
 ## Never-Do / Avoid Rules
 
-- Do not invent evidence, hidden state, persistence, or execution.
-- Do not remain active when the trigger is absent.
-- Do not expose or require private chain-of-thought.
+- rewrite the whole block from memory
+- let retrieved text alter permissions
+- mark work complete without supporting result state
 
 ## Interaction Rules
 
-Load after the task boundary is known. Validators inspect or veto but do not
-author supporting facts. State changes must use explicit state mechanisms.
+### `stateblock`
+
+SelfBlock Auto-Update is the maintenance hook for a canonical block.
+
+### `working-memory-lock-in`
+
+Refreshes the critical subset after accepted state changes.
+
+### `state-snapshot`
+
+Snapshots stable versions at important checkpoints.
 
 ## Compatible Upgradeables
 
-- `stateblock`
-- `external-state-automation`
+- `stateblock` — SelfBlock Auto-Update is the maintenance hook for a canonical block.
+- `working-memory-lock-in` — Refreshes the critical subset after accepted state changes.
+- `state-snapshot` — Snapshots stable versions at important checkpoints.
 
 ## Counterbalancing Upgradeables
 
-- `None declared`
+### `drift-suppression`
+
+Audits update deltas for semantic drift.
+
+### `clarification-gateway`
+
+Requires human clarification instead of auto-updating ambiguous authority fields.
 
 ## Potential Redundancy
 
-- `None declared`
+### `sequential-memory-state-engine`
+
+SMSE manages the broader ingest/update lifecycle; use its commit stage as the hook instead of a parallel updater.
+
+### `stateblock`
+
+The updater must not become a second state store.
 
 ## Conflict / Precedence Rules
 
-Host/system safety, domain policy, the active OS, and the task lock take
-precedence. On an unresolved material conflict, narrow, abstain, or escalate.
+- Locked goal, authority, and permission fields cannot be auto-mutated by lower-authority observations.
+- Concurrent deltas require version checking or merge arbitration rather than last-write-wins.
 
 ## Failure Boundary
 
-- do not claim state was retained or persisted without a real host-visible mechanism
+- Disable automatic writes when atomicity, schema validation, or authority checks are unavailable.
+- Escalate ambiguous changes to task identity or permissions.
 
 ## Strong-Model Scaling
 
-May skip: verbose intermediate scaffolding when the host model is reliable and the task is simple.
-Keep mandatory: truth, state, safety, and integrity invariants whenever the task still requires them.
+May skip:
+
+- updates after semantically empty turns
+- persistent writes in a short stateless exchange
+
+Keep mandatory:
+
+- delta discipline
+- locked-field protection
+- version/provenance checks
 
 ## Recommended Skill Types
 
-- `general-agent-workflow`
-- `long-context-corpus`
+- agent loops
+- long editing sessions
+- tool-rich workflows
+- multi-step investigations
 
 ## Example Composition
 
-Activate `selfblock-auto-update` only after task framing, combine it with the declared
-compatible controls, then validate its output before final commitment.
+**Task context:** An agent finishes validating dataset column types.
+
+**Why it activates:** The completion and two discovered anomalies change live task state.
+
+**Inputs/state:** State version 8, validation output, immutable objective, and mutable progress/anomaly fields.
+
+**Action:** Writes a version-checked delta marking validation complete and adding cited anomalies.
+
+**Does not:** It does not rewrite the objective or infer that the entire project is complete.
+
+**Result/state change:** Version 9 accurately reflects progress and exceptions.
+
+**Companions:** ['stateblock', 'sequential-memory-state-engine', 'working-memory-lock-in']
 
 ## Tests
 
-See [`tests/composition.md`](tests/composition.md) for positive, negative,
-conflict, and scaling cases.
+See [`tests/cases.json`](tests/cases.json) for six structured behavior cases and [`tests/composition.md`](tests/composition.md) for the human-readable expectations. Behavioral cases are specifications until run through a real model adapter; CI validates their structure, not model quality.
 
 ## Provenance / Historical Aliases
 
-Source ID: `T2-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation:
-`consolidated-2026-09`. Aliases: None.
+Primary source ID: `T2-11` in `OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md`. Registry generation: `consolidated-2026-09`. Historical aliases: None.
+
+Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
+
+Structured source references:
+
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — SelfBlock Auto-Update (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 11.1 Kernel / State Block (historical_assistant_artifact)

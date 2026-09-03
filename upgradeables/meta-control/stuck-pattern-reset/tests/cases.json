@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "stuck-pattern-reset",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "stuck-pattern-reset-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The method and corpus are unchanged despite different wording.",
+      "expect": "A materially different recovery path or an explicit source blocker.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "stuck-pattern-reset-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a second attempt has new evidence or a materially changed method",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "stuck-pattern-reset-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Locked facts and constraints survive the reset.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "stuck-pattern-reset-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "false loop detection",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "stuck-pattern-reset-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "trusted-state preservation",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "stuck-pattern-reset-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Several attempts fail with the same assumptions, method, state, and result despite different wording.",
+      "expect": "The skill preserves locked state, quarantines only the failed path, chooses a materially different method, and bounds the retry.",
+      "reject": "The skill clears the whole context, repeats cosmetic variants, or enters a global stability freeze."
+    }
+  ]
+}

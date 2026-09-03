@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-13",
   "slug": "citation-fidelity",
   "display_name": "Citation Fidelity Gate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -21,49 +21,64 @@
     "validator",
     "deterministic-script"
   ],
-  "purpose": "Verify that each citation exists and actually supports its attached claim without adjacent-source borrowing or meaning drift.",
+  "purpose": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.",
   "recommended_skill_types": [
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "research",
-    "source-grounded-analysis"
+    "research reports",
+    "technical documentation",
+    "legal or policy synthesis",
+    "fact-checked public writing"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the output contains no externally attributed factual claims",
+    "the task explicitly requests unsupported fiction"
   ],
   "triggers": [
     "output contains citations or source-attributed claims"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the output contains no externally attributed factual claims",
+    "the task explicitly requests unsupported fiction"
   ],
   "requires": [],
   "recommended_with": [
+    "critical-atomic-verification",
     "grounding-no-invention",
+    "truth-priority-hierarchy"
+  ],
+  "counterbalances": [
+    "specificity-penalty-gate"
+  ],
+  "potentially_redundant_with": [
     "critical-atomic-verification"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "claim",
-    "citation",
-    "supporting source passage"
+    "claim atoms",
+    "citation locators",
+    "source artifacts",
+    "quotation/paraphrase text",
+    "version metadata"
   ],
   "outputs": [
-    "pass",
-    "fail",
-    "repair-required",
-    "unverifiable"
+    "claim-citation entailment ledger",
+    "quote comparison",
+    "unsupported-atom list",
+    "corrected citations or downgraded claims"
   ],
   "strong_model_scaling": {
-    "may_skip": [],
+    "may_skip": [
+      "formal ledger formatting for a single low-stakes citation"
+    ],
     "keep_mandatory": [
-      "a citation must actually support its attached claim"
+      "direct passage inspection",
+      "claim-level entailment",
+      "quote exactness",
+      "paraphrase scope and modality",
+      "adjacent-source separation"
     ]
   },
   "failure_boundary": [
-    "if support cannot be verified, do not certify the citation"
+    "Block any material claim whose cited artifact cannot be opened, whose passage does not entail it, or whose quote/paraphrase changes meaning."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +91,87 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Models often cite a real source that discusses the topic but does not support the exact claim, silently alter quotations, or borrow support from an adjacent citation.",
+  "os_role": [
+    "evidence-entailment-gate",
+    "quotation-integrity-validator",
+    "provenance-controller"
+  ],
+  "pipeline_stages": [
+    "evidence collection",
+    "draft validation",
+    "pre-publication"
+  ],
+  "best_fit_tasks": [
+    "research reports",
+    "technical documentation",
+    "legal or policy synthesis",
+    "fact-checked public writing"
+  ],
+  "avoid_when": [
+    "the output contains no externally attributed factual claims",
+    "the task explicitly requests unsupported fiction"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "For every citation-bearing claim, open the exact cited artifact and pass five independent tests: the artifact exists and is the represented edition; the cited passage entails the full claim including qualifiers; quoted text matches exactly; paraphrase retains scope, modality, polarity, and attribution; and evidence belongs to this claim rather than being borrowed from an adjacent citation, nearby sentence, or different source. A failure at any layer blocks the claim, even if the source is authoritative.",
+  "procedure": [
+    "Atomize each externally checkable claim and bind each citation to a specific atom.",
+    "Resolve the cited artifact, version, locator, and authorship.",
+    "Inspect the cited passage rather than relying on search snippets or secondary descriptions.",
+    "Test entailment of subject, predicate, scope, date, quantity, and modal strength.",
+    "For quotes, compare exact words and mark every omission or alteration.",
+    "For paraphrases, compare meaning, qualifiers, uncertainty, and attribution.",
+    "Check that evidence was not borrowed from an adjacent citation or adjacent passage.",
+    "Downgrade, recite, replace, or remove any unsupported atom and record the decision."
+  ],
+  "always_do": [
+    "Bind citations at claim-atom granularity.",
+    "Preserve uncertainty and limitations from the source.",
+    "Use direct primary support when the claim represents primary findings."
+  ],
+  "never_do": [
+    "Treat source existence as proof of claim support.",
+    "Use a search-result snippet as the final evidence check.",
+    "Make a paraphrase more certain or general than the source.",
+    "Let one citation silently support multiple unrelated neighboring claims."
+  ],
+  "interaction_reasons": {
+    "grounding-no-invention": "Removes unsupported facts discovered by the citation audit.",
+    "critical-atomic-verification": "Defines and checks the precise claim atoms cited.",
+    "truth-priority-hierarchy": "Resolves conflicts among primary, secondary, and stale sources."
+  },
+  "counterbalance_reasons": {
+    "specificity-penalty-gate": "Discourages unnecessary precision that the available citation cannot support."
+  },
+  "redundancy_reasons": {
+    "critical-atomic-verification": "CAV may verify from any evidence; Citation Fidelity additionally audits citation identity, attachment, quotation, and paraphrase behavior."
+  },
+  "conflict_rules": [
+    "The source passage outranks a draft's intended meaning.",
+    "A precise unsupported subclaim must be removed even when the broader sentence is supported.",
+    "A secondary source cannot be cited as if it were the primary experiment."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-13. Citation Fidelity Gate",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "T3-13. Citation Fidelity Gate",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "citation-fidelity",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "citation-fidelity-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "A real citation may not support the magnitude, population, or causal verb.",
+      "expect": "The claim becomes a correctly scoped subgroup association with a pinpoint citation.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "citation-fidelity-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "the output contains no externally attributed factual claims",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "citation-fidelity-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "The source passage outranks a draft's intended meaning.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "citation-fidelity-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Block any material claim whose cited artifact cannot be opened, whose passage does not entail it, or whose quote/paraphrase changes meaning.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "citation-fidelity-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "direct passage inspection",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "citation-fidelity-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A valid paper is cited after a sentence containing two claims, but its cited passage supports only the first and a nearby paper supports the second.",
+      "expect": "Split the sentence and attach each claim to its actual supporting source.",
+      "reject": "Pass because both papers appear in the paragraph bibliography."
+    }
+  ]
+}

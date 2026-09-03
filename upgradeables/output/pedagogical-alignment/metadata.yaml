@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T3-16",
   "slug": "pedagogical-alignment",
   "display_name": "Pedagogical Alignment Constraint",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,47 +20,69 @@
   "implementation_forms": [
     "skill-component"
   ],
-  "purpose": "Match explanation complexity and examples to the reader while preserving technical accuracy.",
+  "purpose": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow"
+    "tutorials",
+    "documentation",
+    "stakeholder briefings",
+    "technical-to-nontechnical translation",
+    "onboarding"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the audience and purpose cannot be inferred and the choice materially changes content",
+    "exact legal or technical wording must remain verbatim",
+    "simplification would conceal decision-relevant uncertainty"
   ],
   "triggers": [
     "an audience or teaching level is known"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the audience and purpose cannot be inferred and the choice materially changes content",
+    "exact legal or technical wording must remain verbatim",
+    "simplification would conceal decision-relevant uncertainty"
   ],
   "requires": [],
   "recommended_with": [
     "explanation-minimality-scaffold",
     "style-alignment"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "citation-fidelity"
+  ],
+  "potentially_redundant_with": [
+    "style-alignment"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "technical content",
+    "target audience",
+    "learning or action goal",
+    "prerequisite assumptions",
+    "terminology constraints"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "audience-aligned explanation",
+    "defined terminology",
+    "validated examples or analogies",
+    "preserved limitations"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "printing an explicit audience profile for a familiar user",
+      "examples when the concept is already concrete"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "internal prerequisite model",
+      "accuracy back-check",
+      "boundary-preserving simplification"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "oversimplification",
+    "undefined jargon",
+    "misleading analogy",
+    "missing prerequisite",
+    "correct but unusable abstraction"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -73,5 +95,85 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "An explanation can be accurate but inaccessible because it assumes missing prerequisites, uses undefined jargon, or presents abstractions before concrete anchors.",
+  "os_role": [
+    "audience adaptation constraint",
+    "instructional output shaper"
+  ],
+  "pipeline_stages": [
+    "audience modeling",
+    "explanation design",
+    "comprehension validation"
+  ],
+  "best_fit_tasks": [
+    "tutorials",
+    "documentation",
+    "stakeholder briefings",
+    "technical-to-nontechnical translation",
+    "onboarding"
+  ],
+  "avoid_when": [
+    "the audience and purpose cannot be inferred and the choice materially changes content",
+    "exact legal or technical wording must remain verbatim",
+    "simplification would conceal decision-relevant uncertainty"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Build a compact audience model—known prerequisites, target capability, jargon tolerance, and action context—then choose the smallest conceptual steps that bridge from that model to the target. Define or replace jargon at first use, order prerequisite before dependent ideas, add an example only where it resolves a likely misconception, and run an accuracy-backcheck against the unsimplified claim.",
+  "procedure": [
+    "Identify the reader's likely starting knowledge and the capability they need after reading.",
+    "List prerequisites and terms that the explanation currently assumes.",
+    "Sequence content from familiar anchor through the minimum conceptual bridge to the target.",
+    "Define necessary jargon or replace it with accurate plain language; add a representative example where abstraction alone is likely to fail.",
+    "Back-check every simplification, analogy, and example against the original technical claim and retain important limitations."
+  ],
+  "always_do": [
+    "preserve accuracy before accessibility",
+    "make prerequisite order explicit",
+    "define unavoidable jargon",
+    "check analogies for where they break"
+  ],
+  "never_do": [
+    "talk down to the reader",
+    "remove uncertainty or boundary conditions to sound simple",
+    "use an analogy that changes the mechanism",
+    "assume more domain knowledge than the audience model supports"
+  ],
+  "interaction_reasons": {
+    "explanation-minimality-scaffold": "Minimality removes surplus after Pedagogical Alignment determines which conceptual bridges the reader actually needs.",
+    "style-alignment": "Style Alignment matches authorized voice while pedagogy matches comprehension needs."
+  },
+  "counterbalance_reasons": {
+    "citation-fidelity": "Citation Fidelity keeps adapted explanations tied to evidence when wording and examples change."
+  },
+  "redundancy_reasons": {
+    "style-alignment": "Both adapt output, but style concerns voice and conventions while pedagogy concerns prerequisite knowledge and learning sequence."
+  },
+  "conflict_rules": [
+    "Accuracy, scope, and uncertainty outrank ease of explanation.",
+    "Exact source language is preserved in quoted or zero-drift zones and explained around rather than rewritten.",
+    "If audience level is materially ambiguous, provide a concise default plus an offer or branch for deeper detail."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T3-16. Pedagogical Alignment Constraint",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "8. Tier-3 / Paper-Author alignment family recovered from late-November work",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "19.1 Evidence-grounded authoring",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "low",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

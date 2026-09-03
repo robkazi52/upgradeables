@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "reasoning-scale-controller",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "reasoning-scale-controller-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The surrounding artifact is large, but the actual defect is local and source-verifiable.",
+      "expect": "A proportional local correction with an explicit escalation condition.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "reasoning-scale-controller-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "a governing workflow already fixes the required scale",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "reasoning-scale-controller-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Risk-mandated review overrides the desire to stay at a cheaper scale.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "reasoning-scale-controller-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "scale theater",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "reasoning-scale-controller-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "smallest-adequate-scope selection",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "reasoning-scale-controller-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A large artifact contains a narrow defect but might hide broader dependencies.",
+      "expect": "The skill chooses a local scale, states the signal for escalation, and returns from any global review to local execution.",
+      "reject": "The skill always applies maximum depth or treats scale names as decorative labels."
+    }
+  ]
+}

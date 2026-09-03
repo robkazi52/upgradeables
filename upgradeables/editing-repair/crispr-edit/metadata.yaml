@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "A-07",
   "slug": "crispr-edit",
   "display_name": "CRISPR Editing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,50 +20,72 @@
     "skill-component",
     "deterministic-script"
   ],
-  "purpose": "Apply a localized, invariant-preserving patch to a document, Skill, prompt, or architecture.",
+  "purpose": "Make high-confidence micro-edits to structured systems without collateral semantic or interface drift.",
   "recommended_skill_types": [
-    "authoring",
-    "coding-debugging",
-    "general-agent-workflow"
+    "one rule change in a prompt or skill",
+    "small schema-compatible config edit",
+    "precise clause replacement",
+    "localized architecture adjustment"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the governing structure is wrong",
+    "multiple interfaces must be redesigned",
+    "the target boundary cannot be isolated",
+    "the requested change conflicts with locked truth or policy"
   ],
   "triggers": [
     "a change is small and local"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the governing structure is wrong",
+    "multiple interfaces must be redesigned",
+    "the target boundary cannot be isolated",
+    "the requested change conflicts with locked truth or policy"
   ],
   "requires": [],
   "recommended_with": [
+    "critical-atomic-verification",
     "invariance-stress-scaffold",
     "micro-repair"
   ],
   "counterbalances": [
     "surgery-edit"
   ],
-  "potentially_redundant_with": [],
+  "potentially_redundant_with": [
+    "micro-repair",
+    "safe-rewrite"
+  ],
   "conflicts": [],
   "inputs": [
-    "source artifact",
-    "authorized change request",
-    "protected facts and invariants"
+    "target artifact and exact region",
+    "requested semantic delta",
+    "protected invariants",
+    "dependency map",
+    "validation probes"
   ],
   "outputs": [
-    "bounded patch or revised artifact",
-    "preservation and validation status"
+    "minimal patch",
+    "before/after diff",
+    "invariant test results",
+    "acceptance or escalation decision"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "a long written patch contract for a trivial typo with no dependencies"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "explicit invariant set",
+      "bounded dependency inspection",
+      "positive and negative probes",
+      "diff review"
     ]
   },
   "failure_boundary": [
-    "escalate the repair class or stop when protected invariants cannot be preserved"
+    "collateral semantic drift",
+    "syntactically valid but behaviorally wrong patch",
+    "unbounded patch growth",
+    "missing dependency update",
+    "false invariance claims"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +98,88 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Even a small requested change can accidentally alter neighboring rules, precedence, identifiers, citations, schemas, or behavior when treated as free-form rewriting.",
+  "os_role": [
+    "precision structural editor",
+    "invariant-preserving patch operator"
+  ],
+  "pipeline_stages": [
+    "change planning",
+    "targeted modification",
+    "invariance validation"
+  ],
+  "best_fit_tasks": [
+    "one rule change in a prompt or skill",
+    "small schema-compatible config edit",
+    "precise clause replacement",
+    "localized architecture adjustment"
+  ],
+  "avoid_when": [
+    "the governing structure is wrong",
+    "multiple interfaces must be redesigned",
+    "the target boundary cannot be isolated",
+    "the requested change conflicts with locked truth or policy"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Construct a patch contract before editing: exact target coordinates, requested semantic delta, protected invariants, allowed collateral region, and validation probes. Snapshot the target plus its immediate dependency boundary, apply the smallest diff that realizes the delta, and compare before/after behavior on both the changed case and invariant cases. A patch that requires broad remapping is rejected and escalated to Surgery rather than stretched into disguised rewrite.",
+  "procedure": [
+    "Identify the exact editable unit and the request's semantic delta.",
+    "Enumerate invariants: facts, IDs, interfaces, precedence, citations, unaffected behaviors, and formatting contracts that must not change.",
+    "Trace immediate inbound and outbound dependencies to set a finite collateral boundary.",
+    "Create and apply the smallest patch inside that boundary.",
+    "Run a positive probe for the new behavior and negative probes for each protected invariant.",
+    "Inspect the diff for unrelated changes; accept, revert-and-redesign, or escalate to Surgery if the boundary cannot hold."
+  ],
+  "always_do": [
+    "declare target and invariants before editing",
+    "keep a before-state for comparison",
+    "test both the intended change and unchanged behaviors",
+    "inspect the actual diff"
+  ],
+  "never_do": [
+    "use search-and-replace without checking semantic scope",
+    "rename or reorder unrelated elements for cleanliness",
+    "claim success from syntax alone",
+    "continue expanding the patch boundary until it becomes a macro rewrite"
+  ],
+  "interaction_reasons": {
+    "invariance-stress-scaffold": "Invariance Stress turns the protected set into explicit negative tests.",
+    "micro-repair": "Micro-Repair is the lighter local repair discipline used inside a CRISPR patch.",
+    "critical-atomic-verification": "Atomic verification validates the exact facts, tokens, or rules touched."
+  },
+  "counterbalance_reasons": {
+    "surgery-edit": "Surgery takes over when the edit cannot preserve the current architecture or interfaces within a bounded region."
+  },
+  "redundancy_reasons": {
+    "micro-repair": "Both minimize change, but CRISPR adds a structured target contract, dependency boundary, and invariant test matrix for OS-like artifacts.",
+    "safe-rewrite": "Safe Rewrite protects facts during prose transformation; CRISPR applies a precise semantic patch to any structured artifact."
+  },
+  "conflict_rules": [
+    "Locked safety, truth, and authorization invariants cannot be included in the requested delta.",
+    "If the new behavior and protected invariants cannot coexist, stop and expose the conflict.",
+    "If more than the bounded dependency region must change, route to Surgery with a migration plan."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "A-07. CRISPR Editing",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "19.5 OS / Skill construction",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

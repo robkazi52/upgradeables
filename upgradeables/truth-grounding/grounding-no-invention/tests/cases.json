@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "grounding-no-invention",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "grounding-no-invention-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "The workflow must extract structured facts from supplied records.",
+      "expect": "A source-faithful intake object with an explicit gap.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "grounding-no-invention-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "pure creative generation has no asserted factual source boundary",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "grounding-no-invention-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Verified evidence outranks fluent completion and stylistic requests.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "grounding-no-invention-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "When an essential material claim lacks support inside the authorized evidence boundary, omit it or fail closed.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "grounding-no-invention-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "every asserted material fact must remain within the authorized evidence boundary",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "grounding-no-invention-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "A plausible factual detail is absent from every authorized source.",
+      "expect": "Omit or mark the detail unsupported even if it would make the answer more complete.",
+      "reject": "Adding the detail from model priors without labeling it external or inferred."
+    }
+  ]
+}

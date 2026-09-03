@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "compute-adaptive-drift",
+  "package_version": "1.1.0",
+  "cases": [
+    {
+      "id": "compute-adaptive-drift-positive-activation",
+      "type": "positive_activation",
+      "execution": "model-required",
+      "given": "They differ in reliable context handling but must meet the same evidence standard.",
+      "expect": "Different process overhead, identical semantic acceptance boundary.",
+      "reject": "remaining inactive despite a satisfied trigger"
+    },
+    {
+      "id": "compute-adaptive-drift-negative-activation",
+      "type": "negative_activation",
+      "execution": "model-required",
+      "given": "adaptation would weaken factual or safety invariants",
+      "expect": "the component stays inactive and adds no scaffolding",
+      "reject": "activating solely because the name appears relevant"
+    },
+    {
+      "id": "compute-adaptive-drift-precedence-or-conflict",
+      "type": "precedence_or_conflict",
+      "execution": "model-required",
+      "given": "Task risk and zero-drift requirements cap any relaxation due to compute.",
+      "expect": "the higher-authority rule wins and the conflict is visible",
+      "reject": "silently resolving against higher authority"
+    },
+    {
+      "id": "compute-adaptive-drift-failure-boundary",
+      "type": "failure_boundary",
+      "execution": "model-required",
+      "given": "Do not relax controls for high-impact claims without demonstrated validation performance.",
+      "expect": "the component stops, abstains, narrows, or escalates as documented",
+      "reject": "manufacturing a successful result past its failure boundary"
+    },
+    {
+      "id": "compute-adaptive-drift-strong-model-scaling",
+      "type": "strong_model_scaling",
+      "execution": "model-required",
+      "given": "a capable host can compress the workflow",
+      "expect": "zero-drift fields",
+      "reject": "dropping the mandatory invariant"
+    },
+    {
+      "id": "compute-adaptive-drift-distinctive-mechanism",
+      "type": "distinctive_mechanism",
+      "execution": "model-required",
+      "given": "Two runtimes have different demonstrated capacity on the same drift-sensitive task.",
+      "expect": "Vary scaffold, step size, and check frequency while keeping invariant and outcome tests fixed.",
+      "reject": "Apply identical overhead blindly or lower factual standards for the weaker runtime."
+    }
+  ]
+}

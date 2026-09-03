@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-09",
   "slug": "drift-spectra-scaling",
   "display_name": "Drift-Spectra Scaling",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [
@@ -23,47 +23,69 @@
     "orchestrator",
     "guard"
   ],
-  "purpose": "Scale permitted transformation drift according to task type, evidence sensitivity, and risk.",
+  "purpose": "Allocate strictness where meaning is fragile and flexibility where variation is valuable.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "multi-agent-orchestration"
+    "mixed-content rewriting",
+    "summaries",
+    "format migrations",
+    "multi-stage synthesis"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "every element has the same explicit tolerance",
+    "classes cannot be distinguished reliably",
+    "a coarse scale would obscure safety-critical exceptions"
   ],
   "triggers": [
     "different task regions need different drift widths"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "every element has the same explicit tolerance",
+    "classes cannot be distinguished reliably",
+    "a coarse scale would obscure safety-critical exceptions"
   ],
   "requires": [],
   "recommended_with": [
     "controlled-drift-corridors",
-    "risk-tier-scaling"
+    "domain-normalized-drift",
+    "zero-drift-zones"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "clarification-gateway",
+    "drift-suppression"
+  ],
+  "potentially_redundant_with": [
+    "compute-adaptive-drift",
+    "controlled-drift-corridors"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task state",
-    "available component manifests and authority rules"
+    "content segments",
+    "drift-band definitions",
+    "consequence and authority assessment",
+    "user transformation intent",
+    "validation methods"
   ],
   "outputs": [
-    "bounded activation or routing plan",
-    "explicit component state and unresolved conflicts"
+    "content-to-band map",
+    "validation allocation",
+    "corridor initialization",
+    "exception list"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "numeric scoring when a direct band choice is obvious",
+      "formal mapping for a uniform low-risk artifact"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "operational band definitions",
+      "content-level exceptions",
+      "no-new-claims boundary",
+      "band-specific validation"
     ]
   },
   "failure_boundary": [
-    "do not activate unavailable components or silently resolve an authority conflict"
+    "Do not use a spectrum when bands lack observable distinctions.",
+    "Escalate any unit whose risk cannot be classified and whose drift could cause harm."
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +98,91 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Artifacts mix identifiers, facts, reasoning, organization, explanation, and style, each requiring a different permissible degree of change.",
+  "os_role": [
+    "drift classification",
+    "fidelity planning",
+    "validation allocation"
+  ],
+  "pipeline_stages": [
+    "content decomposition",
+    "risk classification",
+    "corridor assignment",
+    "review prioritization"
+  ],
+  "best_fit_tasks": [
+    "mixed-content rewriting",
+    "summaries",
+    "format migrations",
+    "multi-stage synthesis"
+  ],
+  "avoid_when": [
+    "every element has the same explicit tolerance",
+    "classes cannot be distinguished reliably",
+    "a coarse scale would obscure safety-critical exceptions"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Define a small ordered scale from zero movement through narrow paraphrase, bounded abstraction/reorganization, to explicitly creative variation. Classify content units by consequence, source authority, reversibility, and user intent; attach a validation method to every band, and promote exceptional high-risk units to a stricter band regardless of surrounding prose.",
+  "procedure": [
+    "Define named drift bands and the semantic changes each permits.",
+    "Segment content into units whose tolerances can be assessed independently.",
+    "Score or judge consequence, authority, reversibility, and requested freedom.",
+    "Assign each unit to a band and specify its validation test.",
+    "Translate bands into controlled corridors and review effort.",
+    "Reclassify exceptions when evidence or task intent changes."
+  ],
+  "always_do": [
+    "define bands operationally",
+    "classify at a useful content granularity",
+    "attach a test to each band",
+    "allow stricter local exceptions"
+  ],
+  "never_do": [
+    "treat the scale as aesthetic temperature",
+    "average immutable and flexible content into one band",
+    "use a higher band to permit unsupported facts"
+  ],
+  "interaction_reasons": {
+    "controlled-drift-corridors": "Converts spectral bands into enforceable region boundaries.",
+    "zero-drift-zones": "Implements the strict endpoint for immutable units.",
+    "domain-normalized-drift": "Supplies a domain baseline before content-level classification."
+  },
+  "counterbalance_reasons": {
+    "drift-suppression": "Catches actual outputs that do not match assigned bands.",
+    "clarification-gateway": "Clarifies intended flexibility when band assignment is consequential and ambiguous."
+  },
+  "redundancy_reasons": {
+    "controlled-drift-corridors": "Spectra classify; corridors enforce. Store one classification-to-boundary mapping rather than duplicate policies.",
+    "compute-adaptive-drift": "Spectra concern content tolerance, not model strength or process overhead."
+  },
+  "conflict_rules": [
+    "Explicit source/task invariants override a permissive band assignment.",
+    "When consequence classifications disagree, use the stricter band pending review."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Drift Spectra Scaling"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "ECL / Drift Sink",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Drift Spectra Scaling inventory entry"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "Zero-drift",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "Drift-width spectrum and fidelity mapping"
+    }
+  ],
+  "source_support": "strongly-derivable",
+  "activation_cost": {
+    "level": "medium",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-02",
   "slug": "meta-awareness",
   "display_name": "Meta-Awareness Pack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,51 +20,70 @@
   "implementation_forms": [
     "validator"
   ],
-  "purpose": "Monitor task-process health and active module interactions without making identity or consciousness claims.",
+  "purpose": "Turn process-health signals into explicit observations that a supervisor can route to repair, pause, or continuation.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "long multi-module workflows",
+    "multi-agent coordination",
+    "iterative reasoning",
+    "mode-rich systems"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "a simple task has no meaningful process state",
+    "the requested analysis concerns sentience or identity rather than task-process health",
+    "monitoring cannot observe the claimed signal"
   ],
   "triggers": [
     "process failure signals must be observed"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "a simple task has no meaningful process state",
+    "the requested analysis concerns sentience or identity rather than task-process health",
+    "monitoring cannot observe the claimed signal"
   ],
   "requires": [],
   "recommended_with": [
+    "contradiction-micro-repair",
+    "meta-supervisor",
+    "stuck-pattern-reset"
+  ],
+  "counterbalances": [
+    "reasoning-throughput-governor"
+  ],
+  "potentially_redundant_with": [
+    "coherence-heartbeat",
     "meta-supervisor"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
   "conflicts": [],
   "inputs": [
-    "candidate output or claim",
-    "applicable evidence, constraints, and invariants"
+    "declared mode",
+    "locked goal and state version",
+    "active module map",
+    "progress and repetition signals",
+    "health thresholds"
   ],
   "outputs": [
     "pass",
     "fail",
     "repair-required",
-    "unverifiable"
+    "unverifiable",
+    "evidence-backed health observation"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "visible health snapshots at every trivial step"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "observable-only claims",
+      "mode and state checks at consequential transitions",
+      "evidence-bearing status"
     ]
   },
   "failure_boundary": [
-    "if the applicable condition cannot be checked, do not certify the candidate"
+    "anthropomorphic narratives",
+    "unobservable-state claims",
+    "monitoring without evidence",
+    "sensor taking supervisor authority",
+    "monitoring overload"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -77,5 +96,81 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Complex scaffolding can fail through mode mismatch, stale state, loops, contradiction, or module conflict while the produced content still appears fluent.",
+  "os_role": [
+    "process-health sensor",
+    "meta-control observer"
+  ],
+  "pipeline_stages": [
+    "runtime observation",
+    "health classification",
+    "supervisor notification"
+  ],
+  "best_fit_tasks": [
+    "long multi-module workflows",
+    "multi-agent coordination",
+    "iterative reasoning",
+    "mode-rich systems"
+  ],
+  "avoid_when": [
+    "a simple task has no meaningful process state",
+    "the requested analysis concerns sentience or identity rather than task-process health",
+    "monitoring cannot observe the claimed signal"
+  ],
+  "mechanism_basis": "normalized-from-recovered",
+  "mechanism": "Maintain a small observable health frame: declared mode, current goal and state version, active modules, progress signal, repeated action signature, unresolved contradictions, and authority conflicts. Compare these observations with expected workflow state at checkpoints and emit pass, fail, repair-required, or unverifiable plus evidence; the pack diagnoses and reports but does not silently reroute or rewrite the task.",
+  "procedure": [
+    "Read declared mode, locked goal, state version, active modules, and expected next transition.",
+    "Collect observable indicators of progress, repetition, contradiction, state staleness, and module conflict.",
+    "Compare indicators with thresholds and workflow expectations.",
+    "Classify health as pass, fail, repair-required, or unverifiable and attach the triggering evidence.",
+    "Send the finding to Meta-Supervisor or the owning workflow without changing authority or inventing internal mental-state explanations."
+  ],
+  "always_do": [
+    "limit claims to observable process state",
+    "attach evidence to a health finding",
+    "distinguish detection from repair",
+    "emit unverifiable when a signal cannot be checked"
+  ],
+  "never_do": [
+    "claim consciousness, identity, hidden intention, or latent state",
+    "silently change the active mode",
+    "certify health from fluent output alone",
+    "diagnose unavailable internal processes"
+  ],
+  "interaction_reasons": {
+    "meta-supervisor": "Meta-Supervisor consumes health findings and chooses the appropriate repair or routing action.",
+    "stuck-pattern-reset": "A repeated-action finding can activate the bounded reset pack.",
+    "contradiction-micro-repair": "A localized contradiction finding can route to targeted repair."
+  },
+  "counterbalance_reasons": {
+    "reasoning-throughput-governor": "Throughput limits monitoring overhead so observation does not dominate task work."
+  },
+  "redundancy_reasons": {
+    "meta-supervisor": "Meta-Awareness senses and classifies; Meta-Supervisor decides and routes.",
+    "coherence-heartbeat": "Heartbeat checks global plan/state/output coherence; Meta-Awareness additionally observes modes, loops, and module interactions."
+  },
+  "conflict_rules": [
+    "An unverifiable signal cannot be reported as a failure or a pass.",
+    "Observed authority conflict is surfaced to the supervisor, not resolved by the sensor.",
+    "Safety-critical failure may trigger a predeclared pause but still requires explicit routing."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-02. Meta-Awareness Pack",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }

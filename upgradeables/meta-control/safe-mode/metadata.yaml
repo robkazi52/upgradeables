@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "T4-06",
   "slug": "safe-mode",
   "display_name": "SAFE Mode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "registry_generation": "consolidated-2026-09",
   "historical_ids": [],
   "historical_aliases": [],
@@ -20,50 +20,71 @@
   "implementation_forms": [
     "parent-skill-mode"
   ],
-  "purpose": "Use narrow drift, strong grounding, atomic verification, and conservative output during consequential execution.",
+  "purpose": "Protect factual and consequential execution after the plan is chosen or whenever uncertainty and impact require constrained behavior.",
   "recommended_skill_types": [
-    "architecture-skill-building",
-    "general-agent-workflow",
-    "high-stakes-reasoning",
-    "multi-agent-orchestration",
-    "research",
-    "source-grounded-analysis"
+    "source-faithful extraction",
+    "production changes",
+    "high-risk recommendations",
+    "final publication",
+    "irreversible operations"
   ],
   "usually_not_needed_for": [
-    "simple tasks where the trigger condition is absent"
+    "the primary need is broad architecture discovery",
+    "no plan or acceptance state has been committed",
+    "the task is harmless creative exploration"
   ],
   "triggers": [
     "execution is factual, consequential, or uncertain"
   ],
   "non_triggers": [
-    "the declared trigger is absent or the control would add no material value"
+    "the primary need is broad architecture discovery",
+    "no plan or acceptance state has been committed",
+    "the task is harmless creative exploration"
   ],
   "requires": [],
   "recommended_with": [
     "critical-atomic-verification",
-    "grounding-no-invention"
+    "grounding-no-invention",
+    "hybrid-mode"
   ],
-  "counterbalances": [],
-  "potentially_redundant_with": [],
+  "counterbalances": [
+    "power-mode"
+  ],
+  "potentially_redundant_with": [
+    "grounding-no-invention",
+    "risk-tier-scaling"
+  ],
   "conflicts": [],
   "inputs": [
-    "locked task goal and constraints",
-    "relevant source or workflow state"
+    "committed plan",
+    "locked sources and state",
+    "authorized action",
+    "risk controls",
+    "acceptance and rollback criteria"
   ],
   "outputs": [
-    "bounded component result",
-    "explicit uncertainty or failure status when applicable"
+    "grounded bounded action",
+    "atomic verification results",
+    "updated verified state",
+    "explicit blocker or conservative final output"
   ],
   "strong_model_scaling": {
     "may_skip": [
-      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+      "repeating the mode label before every low-risk substep"
     ],
     "keep_mandatory": [
-      "truth, state, safety, and integrity invariants whenever the task still requires them"
+      "scope and state lock",
+      "atomic checks",
+      "fail-closed evidence handling",
+      "explicit replan boundary"
     ]
   },
   "failure_boundary": [
-    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+    "speculative execution",
+    "silent scope expansion",
+    "unverified state mutation",
+    "false completion",
+    "SAFE confused with minimal reasoning"
   ],
   "supersedes": [],
   "superseded_by": [],
@@ -76,5 +97,89 @@
     "canonicality": "canonical",
     "recovery_confidence": "high",
     "notes": ""
+  },
+  "problem_solved": "Exploratory reasoning can leak new assumptions, scope changes, or unsupported content into actions that require exact state, evidence, and authorization.",
+  "os_role": [
+    "conservative execution mode",
+    "grounded commitment profile"
+  ],
+  "pipeline_stages": [
+    "execution readiness",
+    "atomic action",
+    "immediate verification",
+    "conservative finalization"
+  ],
+  "best_fit_tasks": [
+    "source-faithful extraction",
+    "production changes",
+    "high-risk recommendations",
+    "final publication",
+    "irreversible operations"
+  ],
+  "avoid_when": [
+    "the primary need is broad architecture discovery",
+    "no plan or acceptance state has been committed",
+    "the task is harmless creative exploration"
+  ],
+  "mechanism_basis": "recovered",
+  "mechanism": "Lock the committed goal, sources, state version, authorized action, and acceptance criteria; narrow allowable drift to the requested execution delta. Before each consequential step verify its atomic prerequisites and authority, perform only that step, inspect the observable result, and stop on mismatch or missing evidence. SAFE does not mean low capability: it uses deep checks where risk demands, but it forbids speculative expansion during execution.",
+  "procedure": [
+    "Declare SAFE and load the committed plan, authoritative state, permitted delta, and risk controls.",
+    "Verify prerequisites, permissions, evidence, and rollback before each consequential boundary.",
+    "Execute the smallest authorized action without reopening design alternatives.",
+    "Validate the immediate state change and protected invariants atomically.",
+    "Continue only on pass; otherwise stop, repair locally, or checkpoint for a supervised return to POWER.",
+    "Finalize conservatively with unresolved uncertainty and evidence limits visible."
+  ],
+  "always_do": [
+    "lock state and scope",
+    "verify authority and prerequisites",
+    "check each consequential result",
+    "fail closed on unavailable required evidence"
+  ],
+  "never_do": [
+    "invent missing facts to complete execution",
+    "broaden design inside an atomic action",
+    "hide uncertainty for decisiveness",
+    "treat SAFE as shallow or low-effort by definition"
+  ],
+  "interaction_reasons": {
+    "critical-atomic-verification": "Atomic verification checks decisive claims and state changes before continuation.",
+    "grounding-no-invention": "Grounding blocks unsupported content during narrow execution.",
+    "hybrid-mode": "HYBRID provides the validated handoff from POWER planning into SAFE."
+  },
+  "counterbalance_reasons": {
+    "power-mode": "POWER reopens bounded design only when execution exposes a genuine architecture-level problem."
+  },
+  "redundancy_reasons": {
+    "risk-tier-scaling": "Risk Tier selects mandatory rigor; SAFE is the concrete conservative execution profile.",
+    "grounding-no-invention": "Grounding is one invariant inside SAFE, not the entire mode."
+  },
+  "conflict_rules": [
+    "A missing required source, permission, or checkpoint blocks execution.",
+    "Design changes discovered during SAFE are checkpointed and escalated rather than improvised.",
+    "Urgency may narrow the action but cannot authorize unsupported facts or unavailable capabilities."
+  ],
+  "source_refs": [
+    {
+      "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+      "heading": "T4-06. SAFE Mode",
+      "source_kind": "current_consolidated_catalog"
+    },
+    {
+      "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+      "heading": "10. Tier-4 / Meta-Supervisor recovered family",
+      "source_kind": "historical_recovery_inventory"
+    },
+    {
+      "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION",
+      "source_kind": "historical_assistant_artifact"
+    }
+  ],
+  "source_support": "sufficiently-recovered",
+  "activation_cost": {
+    "level": "high",
+    "notes": "Architectural burden classification; not a measured compute benchmark."
   }
 }
