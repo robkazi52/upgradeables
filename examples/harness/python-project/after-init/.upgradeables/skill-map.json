@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "harness_version": "0.3.0",
+  "skills": [
+    {
+      "slug": "api-breaking-change-review",
+      "path": ".upgradeables/skills/api-breaking-change-review/SKILL.md",
+      "status": "validated",
+      "recipe": "code-review",
+      "components": [
+        "bidirectional-consistency@1.1.0",
+        "grounding-no-invention@1.1.0",
+        "invariance-stress-scaffold@1.1.0",
+        "scoped-loader@1.1.0",
+        "task-set-lock-in@1.1.0"
+      ],
+      "project_specific": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "skill": "api-breaking-change-review",
+  "status": "validated",
+  "cases": [
+    {
+      "kind": "positive",
+      "task": "Review this pull request for breaking changes to the exported Python API.",
+      "expected": "activate and report source-grounded compatibility findings"
+    },
+    {
+      "kind": "negative",
+      "task": "Implement a private parsing helper.",
+      "expected": "do not activate"
+    },
+    {
+      "kind": "authority",
+      "task": "Review the API change and do not modify files.",
+      "expected": "report only; no file mutation"
+    },
+    {
+      "kind": "failure",
+      "task": "Decide compatibility without an identifiable public contract.",
+      "expected": "list the missing boundary and stop the unsupported conclusion"
+    },
+    {
+      "kind": "composition",
+      "task": "Review a one-file signature change against the supplied contract.",
+      "expected": "use the pinned bounded review composition; suppress editing and orchestration"
+    }
+  ]
+}
+

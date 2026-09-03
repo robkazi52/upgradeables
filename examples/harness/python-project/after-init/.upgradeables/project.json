@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "0.2.1",
+  "project_root": ".",
+  "languages": ["python"],
+  "frameworks": [],
+  "project_types": ["software-development"],
+  "selected_profiles": ["software-development"],
+  "features": {
+    "git": true,
+    "tests": true,
+    "documentation": true,
+    "ci": true,
+    "pull_requests": true,
+    "long_context": false
+  },
+  "signals": [
+    {"type": "file", "value": "pyproject.toml", "reason": "Python project marker"}
+  ],
+  "likely_task_families": ["coding-debugging", "code-review", "architecture-skill-building"],
+  "host_capabilities": {
+    "shell": "available",
+    "web": "unknown",
+    "durable_state": "project-files",
+    "parallel_agents": "unknown"
+  }
+}
