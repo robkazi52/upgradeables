@@ -58,6 +58,17 @@ Skills perform jobs. Upgradeables are building blocks used inside those Skills.
 | Recipe | Suggests a minimal starting composition for a task family |
 | OS / bundle | Coordinates a larger operating environment |
 
+## How to choose Upgradeables
+
+Use one of three short discovery paths:
+
+- **Task → Recipe → Upgradeables:** start in [`recipes/`](recipes/) for a
+  reviewed task-family composition, then retain only components with active triggers.
+- **Upgradeable → Purpose / OS Fit / Tasks / Interactions:** search the compact
+  catalog, inspect a package's placement and exclusions, then follow explained links.
+- **Bundle → Curated multi-Upgradeable composition:** start in [`bundles/`](bundles/)
+  when the task genuinely needs a coordinated subsystem rather than one capability.
+
 ## Find the right building blocks
 
 - Human/model router: [START_HERE.md](START_HERE.md)
@@ -84,15 +95,23 @@ Or query the compact catalog directly:
 import json
 from pathlib import Path
 
-catalog = json.loads(Path("registry/catalog.json").read_text(encoding="utf-8"))
-research = next(recipe for recipe in catalog["recipes"] if recipe["slug"] == "research-skill")
-print(research)
+registry = json.loads(
+    Path("registry/registry.json").read_text(encoding="utf-8")
+)
+
+research = next(
+    recipe["classifications"]
+    for recipe in registry["recipes"]
+    if recipe["slug"] == "research-skill"
+)
 ```
 
 ## Build and contribute Skills
 
 Use the [Skill implementation template](templates/SKILL_IMPLEMENTATION_TEMPLATE.md)
-and the [worked research example](implementations/community/source-bounded-research/SKILL.md).
+and the [worked community examples](implementations/community/), covering research,
+coding/debugging, long-context analysis, creative ideation, high-stakes evidence,
+and Skill architecture.
 Community members and companies can contribute complete Skills without changing
 the canonical Upgradeable registry. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
 separate Skill and Upgradeable contribution paths.
@@ -110,13 +129,27 @@ are preserved rather than guessed or silently rewritten.
 Requires Python 3.11+ and no runtime dependencies:
 
 ```bash
+python scripts/build_semantic_packages.py --check
+python scripts/build_ecosystem_reviews.py --check
 python scripts/build_registry.py --check
 python scripts/validate_registry.py
+python scripts/validate_behavior_cases.py
+python scripts/run_deterministic_package_checks.py
+python scripts/audit_semantic_specificity.py
 python scripts/validate_skill.py
 python -m unittest discover -s tests -v
 python scripts/build_all_in_one.py --check
+python scripts/build_release_assets.py --check
 python scripts/check_links.py
 ```
+
+## Give this repo to an LLM
+
+Point the model to [the consumption guide](MODEL_CONSUMPTION_GUIDE.md) for the
+selection rules, [the full registry](registry/registry.json) for structured
+discovery, or [the all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) when
+it cannot clone or browse the repository. Tell it to finish the real task with
+the smallest triggered composition, not merely summarize this framework.
 
 ## Authority and safety
 

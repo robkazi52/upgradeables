@@ -40,21 +40,21 @@ high-impact corpus with citations.
 
 | Recipe role | Component | Decision | Reason |
 |---|---|---|---|
-| R | `task-set-lock-in@1.0.0` | Keep | Preserve the research question and deliverable. |
-| R | `scoped-loader@1.0.0` | Keep | Enforce the allowed source boundary. |
-| R | `stateblock@1.0.0` | Keep | Separate evidence, inference, phase, and topic. |
-| R | `grounding-no-invention@1.0.0` | Keep | Unsupported claims must not enter the answer. |
-| A | `activation-budget-funnel@1.0.0` | Drop | The selected corpus is small enough for direct loading. |
-| A | `neuro-focus@1.0.0` | Drop | Narrowing attention is not needed for this bounded task. |
-| A | `stable-long-context@1.0.0` | Drop | Long-context continuation is not triggered. |
-| A | `sequential-memory-state-engine@1.0.0` | Drop | Durable multi-chunk intake is not triggered. |
-| A | `multi-truth-gating@1.0.0` | Keep | Material claims need support and conflict checks. |
-| A | `citation-fidelity@1.0.0` | Keep | The output includes citations. |
-| A | `truth-priority-hierarchy@1.0.0` | Keep | Direct source evidence outranks interpretation. |
-| C | `critical-atomic-verification@1.0.0` | Keep | High-impact claims require atomic verification. |
-| A | `parallel-qms@1.0.0` | Keep | Run independent logical and citation checks; sequential execution is acceptable. |
-| O | `anti-tunnel-vision@1.0.0` | Keep | Test one credible competing interpretation. |
-| C | `state-snapshot@1.0.0` | Drop | No continuation handoff is requested. |
+| R | `task-set-lock-in@1.1.0` | Keep | Preserve the research question and deliverable. |
+| R | `scoped-loader@1.1.0` | Keep | Enforce the allowed source boundary. |
+| R | `stateblock@1.1.0` | Keep | Separate evidence, inference, phase, and topic. |
+| R | `grounding-no-invention@1.1.0` | Keep | Unsupported claims must not enter the answer. |
+| A | `activation-budget-funnel@1.1.0` | Drop | The selected corpus is small enough for direct loading. |
+| A | `neuro-focus@1.1.0` | Drop | Narrowing attention is not needed for this bounded task. |
+| A | `stable-long-context@1.1.0` | Drop | Long-context continuation is not triggered. |
+| A | `sequential-memory-state-engine@1.1.0` | Drop | Durable multi-chunk intake is not triggered. |
+| A | `multi-truth-gating@1.1.0` | Keep | Material claims need support and conflict checks. |
+| A | `citation-fidelity@1.1.0` | Keep | The output includes citations. |
+| A | `truth-priority-hierarchy@1.1.0` | Keep | Direct source evidence outranks interpretation. |
+| C | `critical-atomic-verification@1.1.0` | Keep | High-impact claims require atomic verification. |
+| A | `parallel-qms@1.1.0` | Keep | Run independent logical and citation checks; sequential execution is acceptable. |
+| O | `anti-tunnel-vision@1.1.0` | Keep | Test one credible competing interpretation. |
+| C | `state-snapshot@1.1.0` | Drop | No continuation handoff is requested. |
 
 ## Authority and Precedence
 
@@ -92,7 +92,7 @@ high-impact claims.
 
 ## Provenance
 
-Based on registry version `0.1.0`, the `research-skill` recipe, and the component
+Based on registry version `0.2.0`, the `research-skill` recipe, and the component
 versions listed above. Provider adaptation may change packaging, not semantics.
 
 ## Tests

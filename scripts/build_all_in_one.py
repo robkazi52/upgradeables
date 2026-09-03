@@ -64,7 +64,24 @@ def render():
     registry = json.loads((ROOT / "registry/registry.json").read_text(encoding="utf-8"))
     sections.append("# Current Registry Summaries\n")
     for item in registry["upgradeables"]:
-        sections.append(f"## {item['display_name']} (`{item['slug']}`)\n\n{item['purpose']}\n\n- ID: `{item['id']}`\n- Activation: `{item['activation_class']}`\n- Classes: {', '.join(item['functional_classes'])}\n- Forms: {', '.join(item['implementation_forms'])}\n- Package: `{item['package_path']}`\n")
+        companions = ", ".join(f"`{slug}`" for slug in item["recommended_with"]) or "none required"
+        counterbalances = ", ".join(f"`{slug}`" for slug in item["counterbalances"]) or "none identified"
+        sections.append(
+            f"## {item['display_name']} (`{item['slug']}@{item['version']}`)\n\n"
+            f"{item['purpose']}\n\n"
+            f"- ID: `{item['id']}`\n"
+            f"- OS role: {', '.join(item['os_role'])}\n"
+            f"- Pipeline stages: {', '.join(item['pipeline_stages'])}\n"
+            f"- Best-fit tasks: {', '.join(item['best_fit_tasks'])}\n"
+            f"- Trigger: {item['triggers'][0]}\n"
+            f"- When not to use: {item['avoid_when'][0]}\n"
+            f"- Mechanism basis: `{item['mechanism_basis']}`\n"
+            f"- Mechanism: {item['mechanism']}\n"
+            f"- Companions: {companions}\n"
+            f"- Counterbalances: {counterbalances}\n"
+            f"- Failure boundary: {item['failure_boundary'][0]}\n"
+            f"- Package: `{item['package_path']}`\n"
+        )
     sections.append("# Deep-Recovery Historical Index\n")
     for item in registry["historical_records"]:
         if item.get("source_document") == "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md" or item.get("additional_context_source"):

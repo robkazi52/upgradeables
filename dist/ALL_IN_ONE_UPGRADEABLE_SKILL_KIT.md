@@ -142,6 +142,13 @@ Prefer the smallest useful source:
 Do not load `archive/` for normal task execution. Archived files are provenance,
 not current operating instructions.
 
+Before activation, inspect `os_role`, `pipeline_stages`, `best_fit_tasks`,
+`avoid_when`, `mechanism_basis`, counterbalances, and potential redundancy. Do
+not activate an Upgradeable solely because its name seems relevant; confirm its
+trigger, OS placement, task fit, and exclusion conditions. When a mechanism basis
+is `modern-interpretation` or `provisional`, do not present that implementation
+as the recovered historical definition.
+
 ## Recipe roles
 
 | Role | Meaning after a recipe is selected |
@@ -365,21 +372,21 @@ high-impact corpus with citations.
 
 | Recipe role | Component | Decision | Reason |
 |---|---|---|---|
-| R | `task-set-lock-in@1.0.0` | Keep | Preserve the research question and deliverable. |
-| R | `scoped-loader@1.0.0` | Keep | Enforce the allowed source boundary. |
-| R | `stateblock@1.0.0` | Keep | Separate evidence, inference, phase, and topic. |
-| R | `grounding-no-invention@1.0.0` | Keep | Unsupported claims must not enter the answer. |
-| A | `activation-budget-funnel@1.0.0` | Drop | The selected corpus is small enough for direct loading. |
-| A | `neuro-focus@1.0.0` | Drop | Narrowing attention is not needed for this bounded task. |
-| A | `stable-long-context@1.0.0` | Drop | Long-context continuation is not triggered. |
-| A | `sequential-memory-state-engine@1.0.0` | Drop | Durable multi-chunk intake is not triggered. |
-| A | `multi-truth-gating@1.0.0` | Keep | Material claims need support and conflict checks. |
-| A | `citation-fidelity@1.0.0` | Keep | The output includes citations. |
-| A | `truth-priority-hierarchy@1.0.0` | Keep | Direct source evidence outranks interpretation. |
-| C | `critical-atomic-verification@1.0.0` | Keep | High-impact claims require atomic verification. |
-| A | `parallel-qms@1.0.0` | Keep | Run independent logical and citation checks; sequential execution is acceptable. |
-| O | `anti-tunnel-vision@1.0.0` | Keep | Test one credible competing interpretation. |
-| C | `state-snapshot@1.0.0` | Drop | No continuation handoff is requested. |
+| R | `task-set-lock-in@1.1.0` | Keep | Preserve the research question and deliverable. |
+| R | `scoped-loader@1.1.0` | Keep | Enforce the allowed source boundary. |
+| R | `stateblock@1.1.0` | Keep | Separate evidence, inference, phase, and topic. |
+| R | `grounding-no-invention@1.1.0` | Keep | Unsupported claims must not enter the answer. |
+| A | `activation-budget-funnel@1.1.0` | Drop | The selected corpus is small enough for direct loading. |
+| A | `neuro-focus@1.1.0` | Drop | Narrowing attention is not needed for this bounded task. |
+| A | `stable-long-context@1.1.0` | Drop | Long-context continuation is not triggered. |
+| A | `sequential-memory-state-engine@1.1.0` | Drop | Durable multi-chunk intake is not triggered. |
+| A | `multi-truth-gating@1.1.0` | Keep | Material claims need support and conflict checks. |
+| A | `citation-fidelity@1.1.0` | Keep | The output includes citations. |
+| A | `truth-priority-hierarchy@1.1.0` | Keep | Direct source evidence outranks interpretation. |
+| C | `critical-atomic-verification@1.1.0` | Keep | High-impact claims require atomic verification. |
+| A | `parallel-qms@1.1.0` | Keep | Run independent logical and citation checks; sequential execution is acceptable. |
+| O | `anti-tunnel-vision@1.1.0` | Keep | Test one credible competing interpretation. |
+| C | `state-snapshot@1.1.0` | Drop | No continuation handoff is requested. |
 
 ## Authority and Precedence
 
@@ -417,7 +424,7 @@ high-impact claims.
 
 ## Provenance
 
-Based on registry version `0.1.0`, the `research-skill` recipe, and the component
+Based on registry version `0.2.0`, the `research-skill` recipe, and the component
 versions listed above. Provider adaptation may change packaging, not semantics.
 
 ## Tests
@@ -900,1059 +907,1731 @@ public seed does not infer private organization content.
 # Current Registry Summaries
 ---
 
-## Activation-Budget Funnel (`activation-budget-funnel`)
+## Activation-Budget Funnel (`activation-budget-funnel@1.1.0`)
 
-Stage retrieve, capture, index, transform, write, and verify so raw retrieval does not compete with synthesis; keep roughly no more than five to seven active pulls in the live workspace.
+Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.
 
 - ID: `T2-16`
-- Activation: `U1-common-conditional`
-- Classes: context-retrieval, state
-- Forms: orchestrator, state-manager
+- OS role: context-retrieval, activation budgeting, state orchestration
+- Pipeline stages: retrieval, evidence capture, indexing, synthesis, pre-output verification
+- Best-fit tasks: multi-source research, long-document analysis, evidence-heavy authoring, policy or legal evidence review, large modular agent workflows
+- Trigger: many sources or modules compete for attention
+- When not to use: a short single source fits comfortably in context
+- Mechanism basis: `recovered`
+- Mechanism: Admit only a bounded set of live source or module pulls, historically roughly five to seven, and move each through a fixed funnel: retrieve, quote or capture, index verified atoms, transform those atoms, write from the index, then verify against sources. Retire raw pulls from active attention after their durable evidence is indexed so retrieval and decision-making do not compete in one step.
+- Companions: `neuro-focus`, `scoped-loader`, `stateblock`
+- Counterbalances: `anti-tunnel-vision`
+- Failure boundary: Pause synthesis when evidence has not been captured with provenance or active pulls cannot be bounded without losing required coverage.
 - Package: `upgradeables/context-retrieval/activation-budget-funnel/UPGRADEABLE.md`
 ---
 
-## Adapter-First Experimentation (`adapter-first-experimentation`)
+## Adapter-First Experimentation (`adapter-first-experimentation@1.1.0`)
 
-Prototype new capability as a detachable adapter and promote it only after evaluation.
+Protect a working OS or workflow from speculative capabilities while preserving a path for evidence-based evolution.
 
 - ID: `T2-21`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration
-- Forms: orchestrator, plugin-bundle-component
+- OS role: architecture experiment controller, promotion gate
+- Pipeline stages: experiment design, detached trial, evaluation, promotion or retirement
+- Best-fit tasks: new loader or validator trials, tool integrations, alternative routing logic, model-specific optimization
+- Trigger: a new capability may destabilize a base workflow
+- When not to use: the change is a mandatory security repair
+- Mechanism basis: `recovered`
+- Mechanism: Define an adapter contract around the proposed capability, route only an explicit test cohort through it, and preserve the unchanged base as control and rollback. Compare quality, cost, latency, drift, and failure behavior against predeclared acceptance thresholds; promote only the demonstrated stable interface, otherwise revise or retire the adapter without contaminating core rules.
+- Companions: `architect-orchestrator`, `future-proof-mode-selector`
+- Counterbalances: `meta-stability`
+- Failure boundary: base contamination
 - Package: `upgradeables/meta-control/adapter-first-experimentation/UPGRADEABLE.md`
 ---
 
-## Anti-Tunnel Vision (`anti-tunnel-vision`)
+## Anti-Tunnel Vision (`anti-tunnel-vision@1.1.0`)
 
-Test a favored interpretation against a small plausible alternative set before committing.
+Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates.
 
 - ID: `T2-19`
-- Activation: `U1-common-conditional`
-- Classes: planning-reasoning, validation
-- Forms: guard, skill-component
+- OS role: reasoning control, premature-convergence guard
+- Pipeline stages: hypothesis formation, plan selection, pre-commit review
+- Best-fit tasks: ambiguous diagnosis, architecture choice with two credible patterns, research synthesis with competing explanations
+- Trigger: Activate when the task requires premature fixation is plausible.
+- When not to use: the answer is directly established by a locked source
+- Mechanism basis: `recovered`
+- Mechanism: Name the leading path and at least one genuinely plausible competitor, specify the observation that would distinguish them, and compare only on that discriminating evidence. The controller is bounded: it prevents first-path lock-in without turning every task into open-ended brainstorming.
+- Companions: `dominant-driver-isolation-scaffold`, `multiverse-reasoning`
+- Counterbalances: `neuro-focus`
+- Failure boundary: unbounded ideation
 - Package: `upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md`
 ---
 
-## Architect Orchestrator (`architect-orchestrator`)
+## Architect Orchestrator (`architect-orchestrator@1.1.0`)
 
-Plan modular systems, select components, resolve conflicts, coordinate execution and critique, then emit a compact state snapshot.
+Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.
 
 - ID: `O-01`
-- Activation: `U4-meta-architecture`
-- Classes: orchestration, meta-control, planning-reasoning
-- Forms: orchestrator
+- OS role: architecture orchestration, task-level coordination
+- Pipeline stages: intake and framing, modular planning, execution coordination, critique and synthesis, state handoff
+- Best-fit tasks: Skill and OS architecture, workflow design, framework refactoring
+- Trigger: designing or refactoring a Skill, OS, framework, or workflow
+- When not to use: the task is a narrow domain execution job with no architecture decision
+- Mechanism basis: `recovered`
+- Mechanism: Translate the locked goal and constraints into a modular plan, select only the necessary OS layers, Genes, Cores, Upgradeables, references, and validators, then coordinate their ordered execution. After execution, run a separate critique, route localized defects to bounded repair, synthesize one result, and emit the minimum continuation state. The orchestrator owns coordination, not every domain operation.
+- Companions: `scoped-loader`, `state-snapshot`
+- Counterbalances: `cognitive-governor`
+- Failure boundary: required module interfaces or authority relationships cannot be resolved
 - Package: `upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md`
 ---
 
-## Attention Compression Scaffold (`attention-compression-scaffold`)
+## Attention Compression Scaffold (`attention-compression-scaffold@1.1.0`)
 
-Compress verified, task-relevant context into a smaller indexed representation without changing meaning.
+Reduce attention burden while retaining the facts, constraints, provenance, and retrieval pointers required by the current subtask.
 
 - ID: `JAN26-02`
-- Activation: `U1-common-conditional`
-- Classes: context-retrieval, state
-- Forms: state-manager
+- OS role: context-retrieval, state projection, attention control
+- Pipeline stages: post-retrieval, pre-synthesis, context refresh
+- Best-fit tasks: long-context analysis, large codebase navigation, multi-document synthesis, stateful agent workflows
+- Trigger: source volume exceeds the active workspace
+- When not to use: the original context is already small
+- Mechanism basis: `provisional`
+- Mechanism: Modern operational interpretation: select task-relevant facts, locked literals, decisions, open questions, and source pointers from a larger context; encode them in a compact indexed view; validate that protected meaning and provenance remain recoverable; and keep a route back to the original material. Compression changes representation size, not truth status or authority.
+- Companions: `activation-budget-funnel`, `stateblock`
+- Counterbalances: `zero-drift-zones`
+- Failure boundary: Do not activate the compressed view when a protected fact, conflict, or provenance link is lost or unverifiable.
 - Package: `upgradeables/context-retrieval/attention-compression-scaffold/UPGRADEABLE.md`
 ---
 
-## Authenticity & Anti-Evasion Principle (`authenticity-anti-evasion`)
+## Authenticity & Anti-Evasion Principle (`authenticity-anti-evasion@1.1.0`)
 
-Expose uncertainty and actual work status instead of pretending work occurred or substituting vague language for unsupported claims.
+Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability.
 
 - ID: `T3-18`
-- Activation: `U0-foundational`
-- Classes: truth-grounding, output
-- Forms: guard, validator
+- OS role: integrity-guard, output-validation
+- Pipeline stages: during-execution, pre-output-verification
+- Best-fit tasks: agentic tool use, research status reporting, coding and build completion reports, high-stakes analysis
+- Trigger: claims about evidence, actions, or completion are emitted
+- When not to use: the output makes no claim about evidence, actions, capability, or completion
+- Mechanism basis: `recovered`
+- Mechanism: Extract every statement that implies a source was read, an action was performed, a result was verified, or work is complete; bind it to observable evidence such as supplied material, tool output, or explicit workflow state. Unsupported status claims are replaced by the precise limitation or remaining work, never by invented evidence or vague reassurance.
+- Companions: `grounding-no-invention`, `stateblock`
+- Counterbalances: none identified
+- Failure boundary: If a claimed action or verification cannot be tied to observable evidence, the claim cannot be certified.
 - Package: `upgradeables/truth-grounding/authenticity-anti-evasion/UPGRADEABLE.md`
 ---
 
-## Authority Anchor Enforcement (`authority-anchor-enforcement`)
+## Authority Anchor Enforcement (`authority-anchor-enforcement@1.1.0`)
 
-Bind decisions to the governing authority layer and prevent lower-priority modules from overriding it.
+Bind consequential decisions and state changes to an explicit governing authority so lower-priority modules cannot silently override them.
 
 - ID: `JAN26-12`
-- Activation: `U1-common-conditional`
-- Classes: orchestration, validation
-- Forms: guard, validator
+- OS role: authority enforcement, pre-execution gate
+- Pipeline stages: intake authority capture, pre-action authorization, conflict resolution
+- Best-fit tasks: multi-module agent workflows, policy-constrained execution, delegated task routing
+- Trigger: Activate when the task requires multiple instruction authorities coexist.
+- When not to use: the workflow has no competing instruction or authority layers
+- Mechanism basis: `provisional`
+- Mechanism: Modern operational interpretation: record the governing authority, its scope, and the decisions it controls in explicit state. Before a module changes protected state or acts externally, compare the proposed action with that anchor. Reject, narrow, or escalate any action that depends on lower-priority text overriding the anchor; never infer missing authorization.
+- Companions: `non-authoritative-branch-suppression`, `task-set-lock-in`
+- Counterbalances: none identified
+- Failure boundary: the governing authority or its scope is missing or contradictory
 - Package: `upgradeables/orchestration/authority-anchor-enforcement/UPGRADEABLE.md`
 ---
 
-## Behavior Gene Builder (`behavior-gene-builder`)
+## Behavior Gene Builder (`behavior-gene-builder@1.1.0`)
 
-Create and validate reusable behavior and reasoning patterns without embedding domain knowledge dumps.
+Turn repeatable behavior, logic, evidence handling, and output contracts into swappable components that compose with Cores and validators.
 
 - ID: `BG-00`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration
-- Forms: orchestrator, reference-module
+- OS role: behavior-module factory, composition schema enforcer
+- Pipeline stages: recurrence analysis, gene specification, validation, versioned publication
+- Best-fit tasks: recurring reasoning patterns, domain-specific writing behavior, tone or risk-emphasis modules, research synthesis behaviors
+- Trigger: a recurring task family needs reusable behavior
+- When not to use: the content is primarily domain knowledge
+- Mechanism basis: `recovered`
+- Mechanism: Extract the invariant behavior shared by a task family and encode it in the recovered Gene schema: name/version, purpose, scope, triggers, always and avoid rules, reasoning pattern, evidence handling, Core interface, output contract, and compatibility notes. Test activation and non-activation cases, conflict precedence, and behavior with representative Cores; publish the behavior separately from knowledge and loader policy.
+- Companions: `architect-orchestrator`, `domain-core-builder`, `resonance-gene-builder`
+- Counterbalances: `domain-core-builder`
+- Failure boundary: behavior-knowledge conflation
 - Package: `upgradeables/meta-control/behavior-gene-builder/UPGRADEABLE.md`
 ---
 
-## Bidirectional Consistency (`bidirectional-consistency`)
+## Bidirectional Consistency (`bidirectional-consistency@1.1.0`)
 
-Check reasoning forward from evidence to conclusion and backward from conclusion to required evidence.
+Expose lossy, non-invertible, or spuriously plausible transformations that one-way review misses.
 
 - ID: `T2-18`
-- Activation: `U1-common-conditional`
-- Classes: validation, planning-reasoning
-- Forms: validator
+- OS role: transformation-validator, reverse-entailment-check
+- Pipeline stages: post-transformation, pre-release-validation
+- Best-fit tasks: requirements-to-implementation checks, summary-to-source checks, schema migrations, plan-to-objective traceability
+- Trigger: causal, logical, quantitative, or evidence claims are central
+- When not to use: the transformation is intentionally irreversible and no reverse contract is claimed
+- Mechanism basis: `recovered`
+- Mechanism: Run a forward check from source conditions to proposed result, then independently read the result backward to enumerate which source conditions it actually entails. Compare the reconstructed set with the locked source atoms; missing, invented, or many-to-one-collapsed atoms fail even when the forward narrative is fluent.
+- Companions: `citation-fidelity`, `critical-atomic-verification`
+- Counterbalances: `controlled-drift-corridors`
+- Failure boundary: Do not certify when a material source constraint has no forward image or when the result implies a contradictory source condition.
 - Package: `upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md`
 ---
 
-## Bounded ExIt (`bounded-exit`)
+## Bounded ExIt (`bounded-exit@1.1.0`)
 
-Run evaluate-repair cycles with an explicit quality threshold and iteration budget.
+Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates.
 
 - ID: `T2-01`
-- Activation: `U1-common-conditional`
-- Classes: planning-reasoning, validation
-- Forms: parent-skill-mode, orchestrator
+- OS role: refinement controller, reasoning-budget governor
+- Pipeline stages: draft review, iterative repair, release decision
+- Best-fit tasks: document revision, code or prompt refinement, multi-pass synthesis, quality-controlled drafting
+- Trigger: a draft needs iterative improvement
+- When not to use: a mandatory validator has not yet passed
+- Mechanism basis: `recovered`
+- Mechanism: Each pass evaluates the artifact against locked goals, chooses the single highest-value remaining defect, repairs it, and re-evaluates. Exit occurs on threshold satisfaction, budget exhaustion, or diminishing expected improvement; the historical acronym expansion is deliberately left unrecovered.
+- Companions: `micro-repair`, `parallel-qms`, `structured-refinement`
+- Counterbalances: `reasoning-scale-controller`
+- Failure boundary: endless recursive polishing
 - Package: `upgradeables/reasoning/bounded-exit/UPGRADEABLE.md`
 ---
 
-## Citation Fidelity Gate (`citation-fidelity`)
+## Citation Fidelity Gate (`citation-fidelity@1.1.0`)
 
-Verify that each citation exists and actually supports its attached claim without adjacent-source borrowing or meaning drift.
+Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.
 
 - ID: `T3-13`
-- Activation: `U1-common-conditional`
-- Classes: validation, truth-grounding
-- Forms: validator, deterministic-script
+- OS role: evidence-entailment-gate, quotation-integrity-validator, provenance-controller
+- Pipeline stages: evidence collection, draft validation, pre-publication
+- Best-fit tasks: research reports, technical documentation, legal or policy synthesis, fact-checked public writing
+- Trigger: output contains citations or source-attributed claims
+- When not to use: the output contains no externally attributed factual claims
+- Mechanism basis: `recovered`
+- Mechanism: For every citation-bearing claim, open the exact cited artifact and pass five independent tests: the artifact exists and is the represented edition; the cited passage entails the full claim including qualifiers; quoted text matches exactly; paraphrase retains scope, modality, polarity, and attribution; and evidence belongs to this claim rather than being borrowed from an adjacent citation, nearby sentence, or different source. A failure at any layer blocks the claim, even if the source is authoritative.
+- Companions: `critical-atomic-verification`, `grounding-no-invention`, `truth-priority-hierarchy`
+- Counterbalances: `specificity-penalty-gate`
+- Failure boundary: Block any material claim whose cited artifact cannot be opened, whose passage does not entail it, or whose quote/paraphrase changes meaning.
 - Package: `upgradeables/validation/citation-fidelity/UPGRADEABLE.md`
 ---
 
-## Clarification Gateway (`clarification-gateway`)
+## Clarification Gateway (`clarification-gateway@1.1.0`)
 
-Distinguish ambiguity that can be resolved safely from ambiguity that materially blocks correct execution.
+Keep clarification proportional: ask only for materially blocking information, otherwise continue with the narrowest explicit assumption or bounded partial result.
 
 - ID: `T1-03`
-- Activation: `U1-common-conditional`
-- Classes: framing-intake, orchestration
-- Forms: orchestrator, guard
+- OS role: framing-intake, routing, guard
+- Pipeline stages: intake, pre-execution, exception-routing
+- Best-fit tasks: requirements intake, ambiguous data transformation, multi-constraint planning, high-stakes evidence work
+- Trigger: required variables are missing or instructions conflict
+- When not to use: the missing detail cannot change a valid result
+- Mechanism basis: `recovered`
+- Mechanism: Classify each ambiguity by decision impact. If different plausible values would materially change correctness, authority, safety, or the requested deliverable, route to clarification when permitted. Otherwise choose the narrowest labeled assumption, preserve the unresolved field, or return the supported subset; do not turn every uncertainty into a user interruption.
+- Companions: `task-set-lock-in`
+- Counterbalances: `bounded-exit`
+- Failure boundary: Stop or narrow when a required variable has multiple materially different interpretations and neither clarification nor a safe assumption is available.
 - Package: `upgradeables/foundation/clarification-gateway/UPGRADEABLE.md`
 ---
 
-## Reasoning Budget / Cognitive Governor (`cognitive-governor`)
+## Reasoning Budget / Cognitive Governor (`cognitive-governor@1.1.0`)
 
-Allocate reasoning effort by complexity, risk, and expected value so trivial work is not overprocessed and high-risk work is not underchecked.
+Prevent both expensive overthinking of trivial work and unsafe underchecking of consequential work.
 
 - ID: `T3-17`
-- Activation: `U1-common-conditional`
-- Classes: meta-control, planning-reasoning
-- Forms: orchestrator
+- OS role: global reasoning-budget controller, continuation governor
+- Pipeline stages: task triage, budget assignment, mid-run budget review, exit decision
+- Best-fit tasks: mixed-risk queues, bounded research, iterative authoring, cost-sensitive agent workflows
+- Trigger: effort allocation materially affects cost or quality
+- When not to use: a mandatory protocol fixes the review budget
+- Mechanism basis: `recovered`
+- Mechanism: Estimate a total effort envelope from complexity, uncertainty, consequence, irreversibility, and the expected value of another check. Allocate caps for planning, execution, and validation, reserve extra capacity for high-risk unknowns, and periodically compare remaining defect or uncertainty value with remaining cost. The governor owns how much total reasoning is justified; it does not choose which regions receive that effort or how much work flows concurrently.
+- Companions: `dynamic-depth-allocation`, `reasoning-throughput-governor`, `risk-tier-scaling`
+- Counterbalances: `bounded-exit`
+- Failure boundary: over-polishing
 - Package: `upgradeables/meta-control/cognitive-governor/UPGRADEABLE.md`
 ---
 
-## Global Coherence Heartbeat (`coherence-heartbeat`)
+## Global Coherence Heartbeat (`coherence-heartbeat@1.1.0`)
 
-Periodically verify that active plan, state, modules, and output remain globally coherent during long workflows.
+Detect long-horizon drift early without rerunning a full review after every step.
 
 - ID: `A-04`
-- Activation: `U1-common-conditional`
-- Classes: validation, state
-- Forms: validator
+- OS role: continuous-coherence-monitor, drift-early-warning
+- Pipeline stages: during long execution, after milestones, before irreversible steps
+- Best-fit tasks: long coding sessions, multi-stage research, agent orchestration, large document production
+- Trigger: a workflow is long or multi-stage
+- When not to use: the task completes in one obvious operation
+- Mechanism basis: `recovered`
+- Mechanism: At predefined cadence or meaningful state transitions, compare a compact current-state snapshot against four anchors: objective, hard constraints, accepted decisions, and outstanding obligations. Emit a small delta signal—aligned, warning, or repair-required—and escalate to a full coherence loop only when the pulse detects material divergence.
+- Companions: `coherence-loops`, `stable-long-context`, `state-snapshot`
+- Counterbalances: `dynamic-depth-allocation`
+- Failure boundary: Escalate when a hard constraint, core objective, or accepted decision no longer matches current work.
 - Package: `upgradeables/validation/coherence-heartbeat/UPGRADEABLE.md`
 ---
 
-## Coherence Loops (`coherence-loops`)
+## Coherence Loops (`coherence-loops@1.1.0`)
 
-Boundedly compare local output with global goals and structure until coherence is sufficient.
+Repair cross-part inconsistencies while preventing endless self-review.
 
 - ID: `A-11`
-- Activation: `U2-specialized`
-- Classes: validation, editing-repair
-- Forms: validator, parent-skill-mode
+- OS role: global-consistency-repair-loop, bounded-convergence-controller
+- Pipeline stages: integration, post-drift-detection, pre-release
+- Best-fit tasks: multi-file changes, long-form documents, multi-agent synthesis, cross-component specification repair
+- Trigger: local edits risk global inconsistency
+- When not to use: the discrepancy is isolated and a single deterministic correction suffices
+- Mechanism basis: `recovered`
+- Mechanism: Freeze the governing invariants, locate the smallest inconsistent dependency set, repair the highest-leverage cause, and rerun checks across affected boundaries. Continue only while measured inconsistency decreases; stop on verified convergence, a fixed iteration/depth budget, repeated unchanged failure, or a conflict requiring external authority.
+- Companions: `bounded-exit`, `coherence-heartbeat`, `reflectos`
+- Counterbalances: `crispr-edit`
+- Failure boundary: Stop without certification when inconsistency does not decrease, repairs oscillate, or resolution requires changing a locked invariant.
 - Package: `upgradeables/validation/coherence-loops/UPGRADEABLE.md`
 ---
 
-## Compute-Adaptive Drift Constraining (`compute-adaptive-drift`)
+## Compute-Adaptive Drift Constraining (`compute-adaptive-drift@1.1.0`)
 
-Adjust drift constraints as reasoning depth or compute allocation changes.
+Maintain semantic reliability across weak and strong runtimes without burdening every runtime identically.
 
 - ID: `T4-10`
-- Activation: `U2-specialized`
-- Classes: drift-control, meta-control
-- Forms: guard
+- OS role: capability adaptation, drift-control scaling, runtime policy
+- Pipeline stages: runtime assessment, plan construction, checkpoint scheduling, validation
+- Best-fit tasks: cross-model skills, variable tool availability, cost-limited execution, mixed-capability agents
+- Trigger: compute/depth varies across a task
+- When not to use: adaptation would weaken factual or safety invariants
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Classify the task risk and runtime's demonstrated capacity, then choose an enforcement profile: weaker or unverified runtimes receive smaller steps, explicit state, more frequent source checks, and tighter drift corridors; stronger verified runtimes may combine steps and reduce scaffolding. The semantic acceptance tests, authority hierarchy, citations, and zero-drift fields never relax.
+- Companions: `controlled-drift-corridors`, `drift-suppression`, `micro-scaffolding`
+- Counterbalances: `future-proof-mode-selector`, `zero-drift-zones`
+- Failure boundary: Do not relax controls for high-impact claims without demonstrated validation performance.
 - Package: `upgradeables/drift-control/compute-adaptive-drift/UPGRADEABLE.md`
 ---
 
-## Contradiction Micro-Repair Pack (`contradiction-micro-repair`)
+## Contradiction Micro-Repair Pack (`contradiction-micro-repair@1.1.0`)
 
-Detect a contradiction and repair only the implicated region when a local fix is sufficient.
+Resolve direct logical or factual inconsistency while preserving every compatible claim and locked constraint.
 
 - ID: `T4-04`
-- Activation: `U1-common-conditional`
-- Classes: editing-repair, validation
-- Forms: validator, skill-component
+- OS role: contradiction-specific repair pack, local consistency restorer
+- Pipeline stages: consistency validation, localized repair, post-repair verification
+- Best-fit tasks: conflicting requirements, inconsistent dates or quantities, state snapshots with mutually exclusive flags, documents whose conclusion contradicts a cited premise
+- Trigger: a localized contradiction is detected
+- When not to use: the apparent contradiction is a legitimate difference in scope or time
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Represent the conflict as claim A, claim B, and the condition under which they cannot coexist; inspect scope, time, modality, and authority to decide whether it is real. If real and locally adjudicable, patch only the unsupported or misstated unit, then retest the pair and nearby dependents. If authority is insufficient, preserve the conflict explicitly instead of choosing by fluency.
+- Companions: `bidirectional-consistency`, `micro-repair`
+- Counterbalances: `multi-truth-gating`
+- Failure boundary: false contradiction from different scopes
 - Package: `upgradeables/editing-repair/contradiction-micro-repair/UPGRADEABLE.md`
 ---
 
-## Controlled Drift Corridors (`controlled-drift-corridors`)
+## Controlled Drift Corridors (`controlled-drift-corridors@1.1.0`)
 
-Declare zero, micro, or bounded exploratory transformation width according to task and risk.
+Enable adaptation, compression, or creativity without surrendering semantic control.
 
 - ID: `T3-02`
-- Activation: `U1-common-conditional`
-- Classes: drift-control, truth-grounding
-- Forms: guard, parent-skill-mode
+- OS role: bounded transformation policy, regional drift control, acceptance envelope
+- Pipeline stages: task decomposition, transformation planning, generation, semantic validation
+- Best-fit tasks: document rewriting, cross-format conversion, summarization, creative work with fixed constraints
+- Trigger: synthesis or creativity must coexist with fidelity
+- When not to use: all content is zero-drift
+- Mechanism basis: `recovered`
+- Mechanism: Partition the artifact into regions or claim types and assign each a corridor specifying fixed invariants, allowed dimensions of change, maximum semantic distance, evidence requirements, and rollback trigger. Transform only after the corridor is explicit, then compare output to the source and tighten or revert any region outside bounds.
+- Companions: `drift-spectra-scaling`, `drift-suppression`, `zero-drift-zones`
+- Counterbalances: `clarification-gateway`, `mode-lock-in`
+- Failure boundary: Stop transformation when invariants cannot be measured or recovered.
 - Package: `upgradeables/drift-control/controlled-drift-corridors/UPGRADEABLE.md`
 ---
 
-## CoT-Structured State Block (`cot-structured-state-block`)
+## CoT-Structured State Block (`cot-structured-state-block@1.1.0`)
 
-Represent task and reasoning state explicitly without claiming access to hidden or private chain-of-thought.
+Make reasoning-relevant state portable and auditable while preserving the boundary between useful state and hidden internal deliberation.
 
 - ID: `STATE-2025-12-03-T3`
-- Activation: `U1-common-conditional`
-- Classes: state
-- Forms: state-schema
+- OS role: state representation, handoff boundary, audit support
+- Pipeline stages: after evidence intake, at decision points, before handoff or resume
+- Best-fit tasks: multi-agent research, long investigations, regulated decisions, work requiring resumable rationale
+- Trigger: structured intermediate task state must survive across steps
+- When not to use: a one-turn answer has no meaningful state
+- Mechanism basis: `modern-interpretation`
+- Mechanism: Maintain an explicit schema of externally useful reasoning state: verified facts with provenance, user-provided constraints, labeled assumptions, concise conclusion summaries, unresolved questions, confidence, and next action. The block records what another worker needs to continue; it never stores token-level private deliberation or presents inference as evidence.
+- Companions: `state-snapshot`, `stateblock`, `structured-state-projection`
+- Counterbalances: `micro-scaffolding`, `working-memory-cues`
+- Failure boundary: Stop treating the block as authoritative if provenance is missing or fields are stale.
 - Package: `upgradeables/state/cot-structured-state-block/UPGRADEABLE.md`
 ---
 
-## Counterfactual Integrity Gate (`counterfactual-integrity`)
+## Counterfactual Integrity Gate (`counterfactual-integrity@1.1.0`)
 
-Keep hypothetical and counterfactual reasoning explicitly separated from factual claims.
+Make counterfactual exploration safe and auditable by preserving an explicit boundary between factual, evaluative, framing, and hypothetical phases.
 
 - ID: `T3-12`
-- Activation: `U1-common-conditional`
-- Classes: truth-grounding, drift-control
-- Forms: guard, validator
+- OS role: hypothesis-safety, semantic-phase-control
+- Pipeline stages: candidate-generation, state-update, pre-output-verification
+- Best-fit tasks: scenario analysis, causal counterfactuals, planning under alternatives, creative work mixed with factual sources
+- Trigger: counterfactual or hypothetical reasoning is used
+- When not to use: the task contains no hypothetical branch
+- Mechanism basis: `recovered`
+- Mechanism: Tag each proposition by semantic phase and keep hypothetical premises, derived consequences, and branch-local assumptions in a separate compartment. Any transfer from a hypothetical branch into factual state requires independent factual support; otherwise the proposition remains labeled hypothetical or is excluded from the factual output.
+- Companions: `controlled-drift-corridors`, `domain-mode-isolation`, `epistemic-status-gating`
+- Counterbalances: `grounding-no-invention`
+- Failure boundary: If branch-local assumptions cannot be separated from factual claims, do not certify the mixed output.
 - Package: `upgradeables/truth-grounding/counterfactual-integrity/UPGRADEABLE.md`
 ---
 
-## Counterfactual Silence Scaffold (`counterfactual-silence-scaffold`)
+## Counterfactual Silence Scaffold (`counterfactual-silence-scaffold@1.1.0`)
 
-Suppress counterfactual additions when the task does not authorize hypothetical reasoning.
+Protect factual extraction and reporting tasks from unsolicited counterfactual elaboration.
 
 - ID: `JAN26-06`
-- Activation: `U2-specialized`
-- Classes: truth-grounding, output
-- Forms: guard
+- OS role: factual-mode-guard, output-filter
+- Pipeline stages: task-framing, draft-validation, pre-output-verification
+- Best-fit tasks: record extraction, source-faithful summarization, incident reporting, citation-bound authoring
+- Trigger: factual output could be contaminated by hypothetical content
+- When not to use: the task explicitly requests scenarios, hypotheses, or counterfactual analysis
+- Mechanism basis: `modern-interpretation`
+- Mechanism: After a factual-only mode is locked, inspect the candidate for propositions introduced through if, might-have, imagined, alternative-history, or unstated causal premises. Remove those propositions unless they are explicitly reported as source content; preserve ordinary uncertainty statements and supported inference rather than suppressing all modal language.
+- Companions: `counterfactual-integrity`, `mode-lock-in`
+- Counterbalances: `controlled-drift-corridors`
+- Failure boundary: If factual and counterfactual propositions cannot be distinguished reliably, request review rather than deleting uncertain content wholesale.
 - Package: `upgradeables/truth-grounding/counterfactual-silence-scaffold/UPGRADEABLE.md`
 ---
 
-## CRISPR Editing (`crispr-edit`)
+## CRISPR Editing (`crispr-edit@1.1.0`)
 
-Apply a localized, invariant-preserving patch to a document, Skill, prompt, or architecture.
+Make high-confidence micro-edits to structured systems without collateral semantic or interface drift.
 
 - ID: `A-07`
-- Activation: `U2-specialized`
-- Classes: editing-repair
-- Forms: skill-component, deterministic-script
+- OS role: precision structural editor, invariant-preserving patch operator
+- Pipeline stages: change planning, targeted modification, invariance validation
+- Best-fit tasks: one rule change in a prompt or skill, small schema-compatible config edit, precise clause replacement, localized architecture adjustment
+- Trigger: a change is small and local
+- When not to use: the governing structure is wrong
+- Mechanism basis: `recovered`
+- Mechanism: Construct a patch contract before editing: exact target coordinates, requested semantic delta, protected invariants, allowed collateral region, and validation probes. Snapshot the target plus its immediate dependency boundary, apply the smallest diff that realizes the delta, and compare before/after behavior on both the changed case and invariant cases. A patch that requires broad remapping is rejected and escalated to Surgery rather than stretched into disguised rewrite.
+- Companions: `critical-atomic-verification`, `invariance-stress-scaffold`, `micro-repair`
+- Counterbalances: `surgery-edit`
+- Failure boundary: collateral semantic drift
 - Package: `upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md`
 ---
 
-## Critical Atomic Verification (`critical-atomic-verification`)
+## Critical Atomic Verification (`critical-atomic-verification@1.1.0`)
 
-Identify and verify the smallest claims critical to the final decision before synthesis.
+Concentrate verification on the smallest facts whose failure would invalidate the output.
 
 - ID: `T3-04`
-- Activation: `U3-high-risk-expensive`
-- Classes: validation, truth-grounding
-- Forms: validator
+- OS role: critical-atom-verifier, claim-decomposition-gate
+- Pipeline stages: pre-commitment, evidence validation, pre-release
+- Best-fit tasks: medical or legal factual synthesis, deployment decisions, financial calculations, requirements verification, citation-heavy research
+- Trigger: small factual errors could change the outcome
+- When not to use: no factual conclusion or consequential action depends on the output
+- Mechanism basis: `recovered`
+- Mechanism: Build a dependency graph from the intended conclusion back to minimal truth-bearing atoms. Mark an atom critical when its falsity, reversal, or absence would change the conclusion or safe action. Verify every critical atom directly at depth proportional to risk; propagate any failed or unknown atom forward so the dependent conclusion is repaired, qualified, or blocked.
+- Companions: `citation-fidelity`, `cross-checking-chains`, `risk-tier-scaling`
+- Counterbalances: `dynamic-depth-allocation`
+- Failure boundary: Do not certify a conclusion while any indispensable atom is false, materially conflicting, or unsupported beyond the allowed risk threshold.
 - Package: `upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md`
 ---
 
-## Cross-Checking Chains (`cross-checking-chains`)
+## Cross-Checking Chains (`cross-checking-chains@1.1.0`)
 
-Validate linked dependencies where one failure could cascade into a larger conclusion.
+Make validation ordered, traceable, and resistant to repeated correlated checking.
 
 - ID: `T3-07`
-- Activation: `U2-specialized`
-- Classes: validation
-- Forms: validator
+- OS role: ordered-validation-orchestrator, evidence-handoff-chain
+- Pipeline stages: verification planning, sequential validation, final collapse
+- Best-fit tasks: high-stakes fact verification, data pipeline validation, release qualification, multi-source research
+- Trigger: a conclusion relies on a dependency chain
+- When not to use: one direct authoritative check fully resolves a low-risk atom
+- Mechanism basis: `recovered`
+- Mechanism: Design a chain whose links have distinct jobs—such as identity/provenance, extraction, entailment, independent corroboration, and consequence testing. Each link receives the claim plus the prior evidence ledger, may add evidence or a typed failure, and cannot erase an upstream failure; certification requires every mandatory link to pass or an explicit resolution branch to close the discrepancy.
+- Companions: `citation-fidelity`, `critical-atomic-verification`, `truth-redundancy`
+- Counterbalances: `bounded-exit`
+- Failure boundary: Do not certify when a mandatory link fails, is skipped, or depends on the same untested assumption as its supposed corroborator.
 - Package: `upgradeables/validation/cross-checking-chains/UPGRADEABLE.md`
 ---
 
-## Cross-Context Resonance Lock (`cross-context-resonance-lock`)
+## Cross-Context Resonance Lock (`cross-context-resonance-lock@1.1.0`)
 
-Preserve an explicit alignment relationship between related source contexts while respecting their boundaries.
+Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.
 
 - ID: `JAN26-11`
-- Activation: `U2-specialized`
-- Classes: orchestration, state
-- Forms: guard, state-manager
+- OS role: cross-context coordination, boundary-preserving state control
+- Pipeline stages: context intake, cross-context handoff, synthesis verification
+- Best-fit tasks: multi-document synthesis, multi-agent handoffs, parallel workstream integration
+- Trigger: related contexts must stay aligned across a long task
+- When not to use: the contexts are unrelated
+- Mechanism basis: `provisional`
+- Mechanism: Modern operational interpretation: represent each context as a separately identified state with its own source and authority, then store only the declared relationship as a typed link between them. On update or synthesis, refresh the link if both endpoints still support it and reject transfers that copy unverified facts or authority across the boundary.
+- Companions: `domain-mode-isolation`, `state-routing-bus`
+- Counterbalances: `anti-tunnel-vision`
+- Failure boundary: the relationship cannot be supported independently in both contexts
 - Package: `upgradeables/orchestration/cross-context-resonance-lock/UPGRADEABLE.md`
 ---
 
-## Cross-Universe Consistency Mode (`cross-universe-consistency`)
+## Cross-Universe Consistency Mode (`cross-universe-consistency@1.1.0`)
 
-Compare candidate branches and reject a selection that depends on an unacknowledged contradiction.
+Prevent a final synthesis from combining mutually exclusive premises harvested from different candidate worlds.
 
 - ID: `T4-16`
-- Activation: `U3-high-risk-expensive`
-- Classes: validation, planning-reasoning
-- Forms: validator, parent-skill-mode
+- OS role: cross-branch-consistency-validator, collapse-integrity-gate
+- Pipeline stages: after branch exploration, before branch collapse, post-synthesis
+- Best-fit tasks: architecture alternatives, scenario planning, multi-hypothesis research, strategy selection
+- Trigger: parallel candidate paths are compared
+- When not to use: only one branch was explored
+- Mechanism basis: `recovered`
+- Mechanism: Represent each candidate universe as assumptions, invariants, derived claims, and chosen actions. Compare same-named claims across branches, label invariant conclusions versus branch-conditional conclusions, detect premise incompatibilities, and permit the final collapse to import an element only with the assumption set that makes it valid.
+- Companions: `fermionic-veto`, `multiverse-reasoning`, `parallel-qms`
+- Counterbalances: `crispr-edit`
+- Failure boundary: Block the collapse when it combines mutually exclusive assumptions or strips a claim from conditions required for its validity.
 - Package: `upgradeables/validation/cross-universe-consistency/UPGRADEABLE.md`
 ---
 
-## Decision-First Scaffold (`decision-first-scaffold`)
+## Decision-First Scaffold (`decision-first-scaffold@1.1.0`)
 
-State the decision target and criteria before collecting supporting analysis.
+Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.
 
 - ID: `JAN26-04`
-- Activation: `U1-common-conditional`
-- Classes: planning-reasoning, output
-- Forms: skill-component
+- OS role: reasoning scaffold, decision framing
+- Pipeline stages: task framing, pre-analysis
+- Best-fit tasks: recommendations, go/no-go reviews, option selection, resource allocation
+- Trigger: Activate when the task requires analysis risks becoming directionless.
+- When not to use: the task asks only for faithful extraction or description
+- Mechanism basis: `provisional`
+- Mechanism: Modern conservative interpretation: write a decision sentence with owner, options, criteria, and deadline or commitment point; then admit analysis only when it changes an option score, exposes a constraint, or reduces a named uncertainty. The historical corpus recovers the exact name but not this mechanism.
+- Companions: `dominant-driver-isolation-scaffold`, `task-set-lock-in`
+- Counterbalances: `anti-tunnel-vision`
+- Failure boundary: invented historical mechanics
 - Package: `upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md`
 ---
 
-## Domain Core Builder (`domain-core-builder`)
+## Domain Core Builder (`domain-core-builder@1.1.0`)
 
-Create high-density domain reasoning and evidence references that remain distinct from behavior instructions.
+Give multiple behaviors a shared, sourced domain substrate without duplicating knowledge across Genes or turning a Core into an OS.
 
 - ID: `C-00`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, context-retrieval
-- Forms: orchestrator, reference-module
+- OS role: domain knowledge compiler, Core schema enforcer
+- Pipeline stages: domain scoping, source and variable modeling, Core construction, interface validation
+- Best-fit tasks: recurring specialist domains, evidence-intensive decisions, policy or technical reference systems, multi-Gene domain bundles
+- Trigger: a recurring domain needs structured knowledge and decision logic
+- When not to use: the need is purely behavioral
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Compile sourced domain material into the recovered Core fields: scope, entities and variables, reasoning map, required data, evidence hierarchy, decision logic, failure modes, canonical examples, Gene and validator interfaces, and version provenance. Keep prescriptive behavior in Genes, expose queries and typed outputs rather than dumping the entire Core into every task, and validate both source fidelity and interface sufficiency. The C-00 builder wrapper is a modern normalization of the recovered Core schema.
+- Companions: `behavior-gene-builder`, `citation-fidelity`, `scoped-loader`
+- Counterbalances: `behavior-gene-builder`
+- Failure boundary: knowledge-behavior conflation
 - Package: `upgradeables/meta-control/domain-core-builder/UPGRADEABLE.md`
 ---
 
-## Domain / Mode Isolation (`domain-mode-isolation`)
+## Domain / Mode Isolation (`domain-mode-isolation@1.1.0`)
 
-Prevent assumptions, evidence standards, or hypothetical content from contaminating another domain or mode.
+Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.
 
 - ID: `T3-10`
-- Activation: `U0-foundational`
-- Classes: state, drift-control, orchestration
-- Forms: guard, state-schema
+- OS role: state partitioning, authority containment, context hygiene
+- Pipeline stages: domain classification, context loading, mode transition, output validation
+- Best-fit tasks: mixed-domain workspaces, multi-tenant assistants, regulated workflows, parallel specialist agents
+- Trigger: multiple domains or semantic modes coexist
+- When not to use: the task is genuinely single-domain
+- Mechanism basis: `recovered`
+- Mechanism: Create a named compartment for each active domain with its own instructions, terms, sources, permissions, and state. Route new material into the matching compartment; make cross-domain transfer an explicit projection with provenance, and validate the final output against the selected domain rather than the union of all modes.
+- Companions: `mode-lock-in`, `scoped-loader`, `structured-state-projection`
+- Counterbalances: `clarification-gateway`, `state-routing-bus`
+- Failure boundary: Pause when the domain is ambiguous and different classifications change safety or authority.
 - Package: `upgradeables/state/domain-mode-isolation/UPGRADEABLE.md`
 ---
 
-## Domain-Normalized Drift Field (`domain-normalized-drift`)
+## Domain-Normalized Drift Field (`domain-normalized-drift@1.1.0`)
 
-Set acceptable drift according to domain rather than applying one creativity width universally.
+Avoid applying casual creative tolerance to precision domains or unnecessary rigidity to expressive domains.
 
 - ID: `T4-11`
-- Activation: `U2-specialized`
-- Classes: drift-control
-- Forms: guard, reference-module
+- OS role: domain risk normalization, default corridor selection, policy baseline
+- Pipeline stages: domain classification, risk assessment, corridor initialization, validation planning
+- Best-fit tasks: cross-domain skills, domain-specific rewriting, regulated advice, mixed precision/creative systems
+- Trigger: domains have materially different fidelity needs
+- When not to use: domain is ambiguous and stakes are high
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Classify the operative domain and consequence classes, load a versioned domain profile describing default treatment of facts, terminology, citations, uncertainty, formatting, and creative latitude, then override it with explicit task instructions and region-level evidence. The profile supplies defaults only; it never determines truth or authority.
+- Companions: `controlled-drift-corridors`, `domain-mode-isolation`, `drift-spectra-scaling`
+- Counterbalances: `clarification-gateway`, `zero-drift-zones`
+- Failure boundary: Do not select a permissive profile when domain classification or consequence is uncertain.
 - Package: `upgradeables/drift-control/domain-normalized-drift/UPGRADEABLE.md`
 ---
 
-## Dominant-Driver Isolation Scaffold (`dominant-driver-isolation-scaffold`)
+## Dominant-Driver Isolation Scaffold (`dominant-driver-isolation-scaffold@1.1.0`)
 
-Identify the factor most responsible for an observed failure or decision before choosing an intervention.
+Separate high-leverage causes or constraints from correlated, downstream, or low-impact factors.
 
 - ID: `JAN26-03`
-- Activation: `U1-common-conditional`
-- Classes: planning-reasoning
-- Forms: skill-component
+- OS role: causal reasoning scaffold, attention allocator
+- Pipeline stages: diagnosis, prioritization, intervention selection
+- Best-fit tasks: root-cause analysis, business driver analysis, performance bottleneck diagnosis, risk prioritization
+- Trigger: Activate when the task requires many possible causes compete.
+- When not to use: the system is known to require irreducibly joint causes
+- Mechanism basis: `provisional`
+- Mechanism: Modern conservative interpretation: enumerate candidate drivers, define the target outcome, estimate each candidate's unique explanatory or intervention leverage, and test the leading driver against the strongest alternative and interaction effects. The historical sources recover only the scaffold's exact name.
+- Companions: `anti-tunnel-vision`, `critical-atomic-verification`
+- Counterbalances: `multi-layer-consistency`
+- Failure boundary: correlation presented as cause
 - Package: `upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md`
 ---
 
-## Drift Immunity Propagation (`drift-immunity-propagation`)
+## Drift Immunity Propagation (`drift-immunity-propagation@1.1.0`)
 
-Carry locked constraints and invariants through downstream modules so resolved drift does not reappear.
+Preserve established drift resistance across pipelines rather than only at the original source boundary.
 
 - ID: `T4-14`
-- Activation: `U2-specialized`
-- Classes: drift-control, state
-- Forms: state-manager, guard
+- OS role: invariant propagation, derivation lineage, downstream validation
+- Pipeline stages: artifact derivation, state projection, agent handoff, final aggregation
+- Best-fit tasks: multi-stage generation, agent pipelines, source-to-summary-to-decision workflows, format conversion chains
+- Trigger: many downstream modules consume locked decisions
+- When not to use: no downstream artifact derives from protected material
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Represent each verified invariant with an identifier, source/provenance, scope, permitted transformations, and validation predicate. When producing a derived artifact or state projection, copy the applicable invariant contract and lineage pointer, require the receiver to acknowledge it, and test the derivative before it can become an upstream source for another stage.
+- Companions: `drift-suppression`, `structured-state-projection`, `zero-drift-zones`
+- Counterbalances: `controlled-drift-corridors`, `scoped-loader`
+- Failure boundary: Do not label a derivative immune when its invariant cannot be tested.
 - Package: `upgradeables/drift-control/drift-immunity-propagation/UPGRADEABLE.md`
 ---
 
-## Drift Sink Scaffold (`drift-sink-scaffold`)
+## Drift Sink Scaffold (`drift-sink-scaffold@1.1.0`)
 
-Capture and retire irrelevant branches so they no longer compete with active task state.
+Stop known drift attractors from repeatedly re-entering active reasoning without destroying potentially useful history.
 
 - ID: `JAN26-10`
-- Activation: `U2-specialized`
-- Classes: drift-control, state
-- Forms: guard
+- OS role: drift quarantine, task-local scaffold, retired-branch containment
+- Pipeline stages: conflict resolution, context compaction, branch retirement, review or restore
+- Best-fit tasks: long branching investigations, iterative drafting, agent workflows with recurring stale branches, large mixed-authority contexts
+- Trigger: Activate when the task requires discarded branches keep resurfacing.
+- When not to use: the branch is unresolved rather than rejected
+- Mechanism basis: `provisional`
+- Mechanism: A cautious modern interpretation is a reversible quarantine ledger: move an explicitly classified branch out of the active view, record why, by whose authority, its provenance, dependencies, review condition, and stable pointer, then block automatic retrieval unless a matching review trigger fires. The sink is neither deletion nor a semantic garbage collector, and the unrecovered ECL label must not be expanded speculatively.
+- Companions: `drift-suppression`, `non-authoritative-branch-suppression`, `stable-long-context`
+- Counterbalances: `clarification-gateway`, `state-snapshot`
+- Failure boundary: Do not quarantine unresolved contrary evidence or safety-critical information.
 - Package: `upgradeables/drift-control/drift-sink-scaffold/UPGRADEABLE.md`
 ---
 
-## Drift-Spectra Scaling (`drift-spectra-scaling`)
+## Drift-Spectra Scaling (`drift-spectra-scaling@1.1.0`)
 
-Scale permitted transformation drift according to task type, evidence sensitivity, and risk.
+Allocate strictness where meaning is fragile and flexibility where variation is valuable.
 
 - ID: `T4-09`
-- Activation: `U2-specialized`
-- Classes: drift-control, meta-control
-- Forms: orchestrator, guard
+- OS role: drift classification, fidelity planning, validation allocation
+- Pipeline stages: content decomposition, risk classification, corridor assignment, review prioritization
+- Best-fit tasks: mixed-content rewriting, summaries, format migrations, multi-stage synthesis
+- Trigger: different task regions need different drift widths
+- When not to use: every element has the same explicit tolerance
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Define a small ordered scale from zero movement through narrow paraphrase, bounded abstraction/reorganization, to explicitly creative variation. Classify content units by consequence, source authority, reversibility, and user intent; attach a validation method to every band, and promote exceptional high-risk units to a stricter band regardless of surrounding prose.
+- Companions: `controlled-drift-corridors`, `domain-normalized-drift`, `zero-drift-zones`
+- Counterbalances: `clarification-gateway`, `drift-suppression`
+- Failure boundary: Do not use a spectrum when bands lack observable distinctions.
 - Package: `upgradeables/drift-control/drift-spectra-scaling/UPGRADEABLE.md`
 ---
 
-## Drift Suppression (`drift-suppression`)
+## Drift Suppression (`drift-suppression@1.1.0`)
 
-Detect and correct gradual movement away from the active goal, constraints, terminology, or evidence boundary.
+Keep execution aligned after distracting context, repeated transformation, or model error.
 
 - ID: `T1-02`
-- Activation: `U0-foundational`
-- Classes: drift-control, validation
-- Forms: validator, skill-component
+- OS role: drift detection, semantic correction, recovery control
+- Pipeline stages: before action, after transformation, at checkpoints, final acceptance
+- Best-fit tasks: long agent workflows, high-fidelity editing, multi-stage synthesis, policy-bound generation
+- Trigger: long, branching, or iterative work
+- When not to use: no semantic baseline or allowed corridor exists
+- Mechanism basis: `recovered`
+- Mechanism: Compare current plan, state, or artifact against locked task fields, authoritative source anchors, and region-specific corridor tests. Classify each deviation as authorized change, benign variation, or drift; for drift, restore the smallest affected region from the last validated state, reapply the transform under tighter constraints, and record the cause so recurrence can be prevented.
+- Companions: `controlled-drift-corridors`, `task-set-lock-in`, `zero-drift-zones`
+- Counterbalances: `compute-adaptive-drift`, `drift-sink-scaffold`
+- Failure boundary: Stop publication when a high-impact deviation cannot be repaired or adjudicated.
 - Package: `upgradeables/drift-control/drift-suppression/UPGRADEABLE.md`
 ---
 
-## Dynamic Depth Allocation (`dynamic-depth-allocation`)
+## Dynamic Depth Allocation (`dynamic-depth-allocation@1.1.0`)
 
-Spend more reasoning depth on difficult, uncertain, or consequential regions and less on trivial ones.
+Concentrate analysis and verification where local marginal value is highest instead of applying uniform depth across a task.
 
 - ID: `T4-12`
-- Activation: `U1-common-conditional`
-- Classes: meta-control, planning-reasoning
-- Forms: orchestrator
+- OS role: within-task depth allocator, hotspot router
+- Pipeline stages: task decomposition, regional scoring, depth routing, reallocation
+- Best-fit tasks: heterogeneous documents, mixed-risk code changes, large research corpora, multi-stage plans with uneven uncertainty
+- Trigger: task regions vary in difficulty or risk
+- When not to use: every unit has the same mandated review depth
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Partition the task into meaningful regions, score each on difficulty, uncertainty, consequence, dependency centrality, and current evidence deficit, and assign depth bands under the Cognitive Governor's total envelope. Re-score after discoveries and move effort toward unresolved hotspots while maintaining a minimum pass everywhere. DDA decides where depth goes, not the total budget or execution concurrency.
+- Companions: `cognitive-governor`, `reasoning-throughput-governor`, `risk-tier-scaling`
+- Counterbalances: `meta-awareness`
+- Failure boundary: uniform-depth default
 - Package: `upgradeables/meta-control/dynamic-depth-allocation/UPGRADEABLE.md`
 ---
 
-## Epistemic Status Gating (`epistemic-status-gating`)
+## Epistemic Status Gating (`epistemic-status-gating@1.1.0`)
 
-Label and gate statements as fact, inference, framing, or hypothesis before they influence conclusions.
+Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact.
 
 - ID: `JAN26-05`
-- Activation: `U1-common-conditional`
-- Classes: truth-grounding, validation
-- Forms: guard, validator
+- OS role: truth-state-classifier, validation-gate
+- Pipeline stages: evidence-capture, reasoning, pre-output-verification
+- Best-fit tasks: evidence synthesis, investigation, decision support, source-grounded research, high-stakes review
+- Trigger: claims of mixed certainty are present
+- When not to use: the task contains only direct transformation with no inferential claims
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Represent material propositions with an explicit status drawn from factual, evaluative/inferential, framing, or hypothetical phases, plus their evidence pointer and topic. A downstream conclusion may consume a proposition only under rules appropriate to that status; unsupported status promotion is rejected or surfaced as uncertainty.
+- Companions: `counterfactual-integrity`, `grounding-no-invention`, `truth-priority-hierarchy`
+- Counterbalances: none identified
+- Failure boundary: If a decision-critical proposition has no defensible status or evidence pointer, it cannot support the conclusion.
 - Package: `upgradeables/truth-grounding/epistemic-status-gating/UPGRADEABLE.md`
 ---
 
-## Explanation Minimality Scaffold (`explanation-minimality-scaffold`)
+## Explanation Minimality Scaffold (`explanation-minimality-scaffold@1.1.0`)
 
-Use the shortest explanation that remains accurate, sufficient, and appropriate for the audience.
+Remove explanatory material that does not change comprehension, verification, decision, or safe execution while retaining required rationale and caveats.
 
 - ID: `JAN26-08`
-- Activation: `U1-common-conditional`
-- Classes: output
-- Forms: skill-component
+- OS role: output compression scaffold, sufficiency gate
+- Pipeline stages: response planning, draft compression, final readability check
+- Best-fit tasks: direct answers, status updates, executive summaries, routine technical guidance, high-volume assistant outputs
+- Trigger: verbosity can obscure the answer
+- When not to use: the user requests a tutorial or exhaustive rationale
+- Mechanism basis: `modern-interpretation`
+- Mechanism: Set an explanation contract consisting of the outcome, the minimum causal or evidentiary bridge, required caveats, and the next action. Draft those blocks first, then test every additional sentence with a deletion probe: if removal does not impair correctness, comprehension, verification, safety, or actionability for the target reader, delete it. This mechanism is modern; only the exact historical scaffold name was recovered.
+- Companions: `bounded-exit`, `pedagogical-alignment`
+- Counterbalances: `citation-fidelity`
+- Failure boundary: terse but unactionable output
 - Package: `upgradeables/output/explanation-minimality-scaffold/UPGRADEABLE.md`
 ---
 
-## External State Automation (`external-state-automation`)
+## External State Automation (`external-state-automation@1.1.0`)
 
-Serialize task state to real files, memory, databases, or project documents only when the host provides persistence.
+Serialize and restore important task state through real files, memory stores, databases, or project documents when the host supports persistence.
 
 - ID: `T2-20`
-- Activation: `U2-specialized`
-- Classes: state, persistence
-- Forms: state-manager, deterministic-script
+- OS role: persistence interface, continuation state management
+- Pipeline stages: state checkpoint, external write, session restoration, consistency verification
+- Best-fit tasks: multi-session projects, durable agent workflows, long document production
+- Trigger: continuation requires real external state
+- When not to use: the task ends in one session and needs no continuation
+- Mechanism basis: `recovered`
+- Mechanism: Declare the actual storage capability and a versioned state schema, serialize only the minimum continuation fields with provenance and timestamp, write through an authorized host operation, and verify the write. On restoration, validate version and integrity before merging; never treat a requested or imagined write as persisted state.
+- Companions: `state-routing-bus`, `state-snapshot`
+- Counterbalances: `authority-anchor-enforcement`
+- Failure boundary: no authorized storage capability is available
 - Package: `upgradeables/persistence/external-state-automation/UPGRADEABLE.md`
 ---
 
-## Fail-Closed Abstention (`fail-closed-abstention`)
+## Fail-Closed Abstention (`fail-closed-abstention@1.1.0`)
 
-Narrow or stop a conclusion when required evidence or integrity gates fail, returning only supported content.
+Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.
 
 - ID: `T3-11`
-- Activation: `U3-high-risk-expensive`
-- Classes: truth-grounding, validation, output
-- Forms: guard, validator
+- OS role: commit-gate, abstention-controller
+- Pipeline stages: post-validation, pre-output-commitment
+- Best-fit tasks: medical, legal, or policy analysis, citation-bearing research, safety-critical decisions, source transcription and fidelity work
+- Trigger: required evidence cannot be verified
+- When not to use: the failed condition is optional and does not affect the supported deliverable
+- Mechanism basis: `recovered`
+- Mechanism: Consume explicit validator outcomes and distinguish essential from optional failures. If an essential condition is failed or unverifiable, block the affected conclusion, preserve any independently supported subset, and state the unresolved dependency; never synthesize a missing fact merely to obtain a pass.
+- Companions: `fermionic-veto`, `grounding-no-invention`, `parallel-qms`
+- Counterbalances: none identified
+- Failure boundary: A conclusion cannot be committed while any indispensable evidence or integrity condition remains failed or unverifiable.
 - Package: `upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md`
 ---
 
-## Fermionic Veto Strengthening (`fermionic-veto`)
+## Fermionic Veto Strengthening (`fermionic-veto@1.1.0`)
 
-Block commitment when a critical contradiction, safety condition, or integrity failure is detected.
+Preserve non-compensable constraints during aggregation and synthesis.
 
 - ID: `T3-09`
-- Activation: `U3-high-risk-expensive`
-- Classes: validation, meta-control
-- Forms: validator, guard
+- OS role: non-compensable-veto, hard-constraint-enforcer
+- Pipeline stages: candidate evaluation, QMS collapse, pre-action safety gate
+- Best-fit tasks: safety reviews, constraint-heavy planning, security decisions, branch collapse, truth-conflict resolution
+- Trigger: a defined critical condition must have veto authority
+- When not to use: the alleged defect is merely a soft preference
+- Mechanism basis: `recovered`
+- Mechanism: Declare a narrow set of exclusion predicates before scoring. Evaluate them independently of aggregate quality; if any predicate is evidenced, quarantine the candidate and require removal of the disqualifying state plus revalidation. The fermionic metaphor is operational only: incompatible states do not share the certified result, and the veto is never diluted by votes or averages.
+- Companions: `cross-universe-consistency`, `fail-closed-abstention`, `parallel-qms`
+- Counterbalances: `multi-truth-gating`
+- Failure boundary: Do not certify or execute a candidate while a verified non-compensable predicate remains active.
 - Package: `upgradeables/validation/fermionic-veto/UPGRADEABLE.md`
 ---
 
-## Forethought / Checkpoints (`forethought-checkpoints`)
+## Forethought / Checkpoints (`forethought-checkpoints@1.1.0`)
 
-Before irreversible or costly actions, predict likely downstream failures and verify prerequisites.
+Catch missing prerequisites and foreseeable downstream failure while reversal is still cheap.
 
 - ID: `T2-17`
-- Activation: `U1-common-conditional`
-- Classes: planning-reasoning, validation
-- Forms: guard, skill-component
+- OS role: pre-commit control, risk checkpoint
+- Pipeline stages: before external action, before destructive change, before dependency handoff
+- Best-fit tasks: deployments, schema or API changes, financial or external communications, multi-stage automation
+- Trigger: an action is costly, irreversible, or dependency-sensitive
+- When not to use: reversible low-cost local edits
+- Mechanism basis: `recovered`
+- Mechanism: At each consequential boundary, predict the most likely downstream failure, verify the prerequisite that would prevent it, define observable success and rollback, then commit and check the result. Checkpoints are placed by consequence rather than at every trivial step.
+- Companions: `bounded-exit`, `risk-tier-scaling`
+- Counterbalances: `reasoning-scale-controller`
+- Failure boundary: ritual checklists unrelated to risk
 - Package: `upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md`
 ---
 
-## Future-Proof Mode Selector (`future-proof-mode-selector`)
+## Future-Proof Mode Selector (`future-proof-mode-selector@1.1.0`)
 
-Select lighter or heavier scaffolding from host capability, environment support, and task risk.
+Keep workflows portable across frontier and smaller models, tool environments, and future hosts without weakening invariant controls.
 
 - ID: `T4-17`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration
-- Forms: orchestrator
+- OS role: host-capability mode router, portability controller
+- Pipeline stages: capability probe, task-risk assessment, mode selection, fallback routing
+- Best-fit tasks: cross-model skill packages, tool-optional workflows, portable agent systems, deployments with different context and persistence support
+- Trigger: an implementation targets models with different capabilities
+- When not to use: the host and task profile are fixed
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Probe real host affordances—context, tools, state persistence, structured outputs, reliability evidence, and execution permissions—then combine them with task risk to choose a named light, standard, or heavy scaffold profile. Use model-size drift scaling as one capability signal, never as the selector itself; capability claims must be observed or declared, and truth, safety, state, and integrity invariants remain mandatory in every profile.
+- Companions: `adapter-first-experimentation`, `model-size-drift-scaling`, `risk-tier-scaling`
+- Counterbalances: `safe-mode`
+- Failure boundary: capability hallucination
 - Package: `upgradeables/meta-control/future-proof-mode-selector/UPGRADEABLE.md`
 ---
 
-## Grounding / No-Invention (`grounding-no-invention`)
+## Grounding / No-Invention (`grounding-no-invention@1.1.0`)
 
-Keep factual output within supplied or verified evidence and label or omit unsupported material.
+Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.
 
 - ID: `T1-04`
-- Activation: `U0-foundational`
-- Classes: truth-grounding, validation
-- Forms: validator, guard
+- OS role: truth-guard, evidence-boundary
+- Pipeline stages: evidence-intake, reasoning, draft-validation, pre-output-verification
+- Best-fit tasks: source-grounded research, record and chart review, policy or legal analysis, citation-bearing authoring, tool-result reporting
+- Trigger: work relies on documents, data, external facts, or consequential claims
+- When not to use: pure creative generation has no asserted factual source boundary
+- Mechanism basis: `recovered`
+- Mechanism: Maintain a boundary between source-supported atoms and model-generated interpretation. Each material factual claim must resolve to supplied data or verified external evidence; missing fields remain missing, and permissible inference is labeled instead of being written back as source fact.
+- Companions: `citation-fidelity`, `epistemic-status-gating`, `fail-closed-abstention`
+- Counterbalances: `controlled-drift-corridors`
+- Failure boundary: When an essential material claim lacks support inside the authorized evidence boundary, omit it or fail closed.
 - Package: `upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md`
 ---
 
-## HYBRID Mode (`hybrid-mode`)
+## HYBRID Mode (`hybrid-mode@1.1.0`)
 
-Use POWER for planning and SAFE for execution with explicit supervisor-controlled transitions.
+Combine broad planning capability with conservative implementation without letting speculative branch assumptions leak into committed work.
 
 - ID: `T4-08`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration
-- Forms: parent-skill-mode, orchestrator
+- OS role: dual-mode workflow, planning-to-execution transition controller
+- Pipeline stages: POWER planning, collapse and handoff, SAFE execution, post-execution validation
+- Best-fit tasks: architecture followed by implementation, research plan followed by evidence extraction, migration design followed by cutover, complex repository builds
+- Trigger: work includes both broad design and grounded execution
+- When not to use: the task needs only narrow execution
+- Mechanism basis: `recovered`
+- Mechanism: Run POWER only to generate and compare bounded plans, then collapse to one plan and construct a handoff containing locked goals, selected decisions, rejected assumptions, evidence needs, risks, and execution invariants. A supervisor validates the handoff before activating SAFE, which executes only the committed plan with narrow drift and atomic checks. Re-enter POWER only through a checkpoint when execution exposes an architecture-level defect.
+- Companions: `power-mode`, `safe-mode`, `ultimate-suite-supervisor`
+- Counterbalances: `meta-stability`
+- Failure boundary: mode leakage
 - Package: `upgradeables/meta-control/hybrid-mode/UPGRADEABLE.md`
 ---
 
-## Image Text Fidelity Capture (`image-text-fidelity-capture`)
+## Image Text Fidelity Capture (`image-text-fidelity-capture@1.1.0`)
 
-Extract text and visible structure from images without inferring missing content.
+Create a source-faithful textual representation of image-borne evidence for downstream indexing, analysis, or copying.
 
 - ID: `T2-14A`
-- Activation: `U2-specialized`
-- Classes: context-retrieval, truth-grounding
-- Forms: skill-component, validator
+- OS role: evidence-capture, image-fidelity-guard
+- Pipeline stages: source-intake, evidence-capture, capture-validation
+- Best-fit tasks: document image transcription, figure or screenshot capture, scanned-record intake, long-document source fidelity
+- Trigger: an image contains source text to transcribe
+- When not to use: no image contains source text or visible structure
+- Mechanism basis: `recovered`
+- Mechanism: Traverse the image in a declared order, transcribe only visible characters, and reconstruct headings, rows, columns, or spatial groups only where visible evidence supports them. Unreadable regions receive explicit illegible/uncertain markers linked to their location; context is never used to silently complete missing text.
+- Companions: `citation-fidelity`, `grounding-no-invention`, `zero-drift-zones`
+- Counterbalances: none identified
+- Failure boundary: If a region is not legible enough to verify, mark it uncertain and do not produce a confident transcription for that region.
 - Package: `upgradeables/truth-grounding/image-text-fidelity-capture/UPGRADEABLE.md`
 ---
 
-## Invariance Stress Scaffold (`invariance-stress-scaffold`)
+## Invariance Stress Scaffold (`invariance-stress-scaffold@1.1.0`)
 
-Test whether protected behavior and facts outside a change remain unchanged.
+Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.
 
 - ID: `JAN26-09`
-- Activation: `U1-common-conditional`
-- Classes: validation, editing-repair
-- Forms: validator, deterministic-script
+- OS role: provisional-robustness-probe, representation-sensitivity-detector
+- Pipeline stages: post-draft validation, pre-release stress testing
+- Best-fit tasks: prompt robustness checks, policy interpretation, classification stability, summary validation
+- Trigger: a patch or rewrite must preserve invariants
+- When not to use: the transformed feature is itself decision-relevant
+- Mechanism basis: `modern-interpretation`
+- Mechanism: Define the properties claimed invariant, generate a small controlled set of transformations that should preserve those properties—such as reordering independent facts, paraphrasing without modal change, or changing irrelevant formatting—and compare outputs. Any decision-relevant change is reported as sensitivity; this is a modern stress-test interpretation, not a recovered historical algorithm.
+- Companions: `crispr-edit`, `multi-layer-consistency`, `safe-rewrite`
+- Counterbalances: `controlled-drift-corridors`
+- Failure boundary: Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation.
 - Package: `upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md`
 ---
 
-## Meta-Awareness Pack (`meta-awareness`)
+## Meta-Awareness Pack (`meta-awareness@1.1.0`)
 
-Monitor task-process health and active module interactions without making identity or consciousness claims.
+Turn process-health signals into explicit observations that a supervisor can route to repair, pause, or continuation.
 
 - ID: `T4-02`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, validation
-- Forms: validator
+- OS role: process-health sensor, meta-control observer
+- Pipeline stages: runtime observation, health classification, supervisor notification
+- Best-fit tasks: long multi-module workflows, multi-agent coordination, iterative reasoning, mode-rich systems
+- Trigger: process failure signals must be observed
+- When not to use: a simple task has no meaningful process state
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Maintain a small observable health frame: declared mode, current goal and state version, active modules, progress signal, repeated action signature, unresolved contradictions, and authority conflicts. Compare these observations with expected workflow state at checkpoints and emit pass, fail, repair-required, or unverifiable plus evidence; the pack diagnoses and reports but does not silently reroute or rewrite the task.
+- Companions: `contradiction-micro-repair`, `meta-supervisor`, `stuck-pattern-reset`
+- Counterbalances: `reasoning-throughput-governor`
+- Failure boundary: anthropomorphic narratives
 - Package: `upgradeables/meta-control/meta-awareness/UPGRADEABLE.md`
 ---
 
-## Meta-Stability Mode (`meta-stability`)
+## Meta-Stability Mode (`meta-stability@1.1.0`)
 
-Enter a stability-preserving mode when repeated changes, long context, or module conflicts threaten coherence.
+Preserve a trusted task state while isolating drift sources and resuming from one explicit authority-consistent configuration.
 
 - ID: `T4-15`
-- Activation: `U2-specialized`
-- Classes: meta-control, state
-- Forms: parent-skill-mode, guard
+- OS role: stability-preserving operating mode, coherence recovery boundary
+- Pipeline stages: instability detection, change freeze, checkpoint restoration, controlled resume
+- Best-fit tasks: long-context drift, conflicting module activation, repeated change cycles, multi-agent state divergence
+- Trigger: coherence degrades under repeated change
+- When not to use: one local defect can be repaired directly
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: On a defined instability signal, freeze optional activations and structural changes, select the latest verified state snapshot, and compare active goals, modules, decisions, and open issues against that checkpoint. Quarantine conflicting deltas, re-establish one authority order and next step, run a coherence check, then resume changes one at a time with observation; MSM stabilizes state, not content by force.
+- Companions: `coherence-heartbeat`, `drift-suppression`, `stateblock`
+- Counterbalances: `adapter-first-experimentation`
+- Failure boundary: stability theater
 - Package: `upgradeables/meta-control/meta-stability/UPGRADEABLE.md`
 ---
 
-## Meta-Supervisor Bundle (`meta-supervisor`)
+## Meta-Supervisor Bundle (`meta-supervisor@1.1.0`)
 
-Monitor process health, active modes, state, loops, contradictions, and module interactions.
+Coordinate Meta-Awareness, Stuck-Pattern Reset, and Contradiction Micro-Repair without becoming the suite-wide mode and architecture authority.
 
 - ID: `T4-01`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration, validation
-- Forms: orchestrator, plugin-bundle-component
+- OS role: scaffold health orchestrator, diagnostic repair router
+- Pipeline stages: health intake, failure classification, repair routing, recheck
+- Best-fit tasks: complex iterative scaffolds, multi-module reasoning, repeated failures, runtime process-health supervision
+- Trigger: complex scaffolding itself needs supervision
+- When not to use: the task needs suite-wide mode declaration and Core-stack governance
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Collect evidence from Meta-Awareness, classify it as loop/stale path, localized contradiction, broader state instability, or unverifiable, and activate only the smallest matching repair pack. Preserve locked state, serialize repair ownership so packs do not race, then re-observe the affected process. Meta-Supervisor manages health diagnosis and repair; Ultimate Suite Supervisor remains responsible for global modes, stack enforcement, edit-class selection, and suite conflicts.
+- Companions: `contradiction-micro-repair`, `meta-awareness`, `stuck-pattern-reset`, `ultimate-suite-supervisor`
+- Counterbalances: `reasoning-throughput-governor`
+- Failure boundary: supervisor recursion
 - Package: `upgradeables/meta-control/meta-supervisor/UPGRADEABLE.md`
 ---
 
-## Micro-Repair (`micro-repair`)
+## Micro-Repair (`micro-repair@1.1.0`)
 
-Correct the smallest faulty unit while preserving correct surrounding material.
+Restore local correctness or completeness with the minimum semantic blast radius.
 
 - ID: `T2-04`
-- Activation: `U0-foundational`
-- Classes: editing-repair
-- Forms: skill-component, deterministic-script
+- OS role: local repair primitive, minimal-change editor
+- Pipeline stages: defect localization, local correction, neighborhood recheck
+- Best-fit tasks: one unsupported claim, one missing requirement, awkward transition, local contradiction, small formatting defect
+- Trigger: Activate when the task requires a defect is localized.
+- When not to use: the artifact architecture is globally wrong
+- Mechanism basis: `recovered`
+- Mechanism: Define a repair window around the smallest unit that fails an explicit criterion, freeze the surrounding accepted region, patch only that unit and any directly required connective token, then compare the window before and after. Widen once only when a direct dependency proves the first window insufficient; recurring or architecture-level failure escalates instead of allowing scope creep.
+- Companions: `contradiction-micro-repair`, `invariance-stress-scaffold`, `safe-rewrite`
+- Counterbalances: `regenerative-rewrite`, `surgery-edit`
+- Failure boundary: scope creep
 - Package: `upgradeables/editing-repair/micro-repair/UPGRADEABLE.md`
 ---
 
-## Micro-Scaffolding (`micro-scaffolding`)
+## Micro-Scaffolding (`micro-scaffolding@1.1.0`)
 
-Create only the smallest temporary checkpoints needed to preserve goals, constraints, evidence boundaries, and the next step.
+Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue.
 
 - ID: `T1-01`
-- Activation: `U0-foundational`
-- Classes: planning-reasoning, state
-- Forms: skill-component, parent-skill-mode
+- OS role: planning-reasoning, task-local state, execution support
+- Pipeline stages: pre-subtask planning, execution, subtask completion
+- Best-fit tasks: high-constraint rewriting, source-grounded paragraph construction, localized code changes, multi-step transformations, complex formatting
+- Trigger: Activate when the task requires multi-step or high-constraint work.
+- When not to use: a one-step task has no fragile constraints
+- Mechanism basis: `recovered`
+- Mechanism: At the start of a fragile subtask, extract only the few invariants and checkpoints that could be lost locally, such as preserve all numbers, preserve citation mapping, change tone only, and do not alter the conclusion. Use that compact scaffold while performing the step, check the local result against it, then retire the scaffold immediately when the subtask is accepted. It remains strictly smaller and shorter-lived than the workflow's canonical StateBlock.
+- Companions: `drift-suppression`, `task-set-lock-in`, `working-memory-cues`
+- Counterbalances: `cognitive-governor`
+- Failure boundary: Escalate when the required control cannot remain local or when the scaffold grows into a duplicate of the parent plan/state.
 - Package: `upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md`
 ---
 
-## Mode Lock-In (`mode-lock-in`)
+## Mode Lock-In (`mode-lock-in@1.1.0`)
 
-Preserve the selected factual, hypothetical, design, execution, critique, or drafting mode until an authorized transition occurs.
+Keep behavior stable across long sessions, tool calls, and distracting inputs.
 
 - ID: `T1-05`
-- Activation: `U0-foundational`
-- Classes: state, drift-control
-- Forms: state-schema, guard
+- OS role: behavioral stability, mode control, transition governance
+- Pipeline stages: after clarification, before substantive work, at transition requests, final validation
+- Best-fit tasks: strict transformations, long sessions, multi-mode assistants, policy-bound work
+- Trigger: a task can drift between modes
+- When not to use: exploration intentionally needs rapid mode switching
+- Mechanism basis: `recovered`
+- Mechanism: Represent the active mode as a small contract containing its goal, allowed transformations, forbidden behaviors, and exit condition. Recheck the contract at checkpoints; change modes only through an explicit transition that records why, what state carries forward, and which former rules deactivate.
+- Companions: `domain-mode-isolation`, `drift-suppression`, `task-set-lock-in`
+- Counterbalances: `clarification-gateway`, `controlled-drift-corridors`
+- Failure boundary: Do not lock an ambiguous high-impact choice before clarification.
 - Package: `upgradeables/state/mode-lock-in/UPGRADEABLE.md`
 ---
 
-## Drift-Stability Scaling with Model Size (`model-size-drift-scaling`)
+## Drift-Stability Scaling with Model Size (`model-size-drift-scaling@1.1.0`)
 
-Reduce unnecessary scaffolding as base-model reliability grows while preserving required truth, safety, and state controls.
+Avoid fossilized over-scaffolding on more reliable models without mistaking model strength for permission to remove essential controls.
 
 - ID: `T4-18`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, drift-control
-- Forms: guard, reference-module
+- OS role: model-reliability scaling policy, scaffold simplification controller
+- Pipeline stages: model evaluation, control classification, scaffold scaling, regression monitoring
+- Best-fit tasks: cross-model deployments, model upgrades, prompt simplification, reliability-sensitive drift control
+- Trigger: adapting a workflow across model capability levels
+- When not to use: there is no comparative reliability evidence
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Classify controls as invariant, compensatory, or convenience scaffolds; measure each target model on task-relevant drift, instruction retention, state consistency, and validation behavior; reduce only compensatory repetition whose function is demonstrably supplied by the base model. Preserve invariant truth, safety, authority, and external-state checks and restore removed scaffolds automatically when regression thresholds fail. DSS-MS scales control density by measured reliability; FPMS decides the wider host profile.
+- Companions: `future-proof-mode-selector`, `risk-tier-scaling`
+- Counterbalances: `meta-awareness`
+- Failure boundary: size-as-capability assumption
 - Package: `upgradeables/meta-control/model-size-drift-scaling/UPGRADEABLE.md`
 ---
 
-## Multi-Layer Consistency (`multi-layer-consistency`)
+## Multi-Layer Consistency (`multi-layer-consistency@1.1.0`)
 
-Check that system, project, task, Gene, Core, evidence, and output layers do not contradict one another.
+Maintain vertical consistency from local facts and operations to the overall conclusion or system behavior.
 
 - ID: `T2-05`
-- Activation: `U1-common-conditional`
-- Classes: validation, orchestration
-- Forms: validator
+- OS role: vertical-consistency-validator, cross-scale-invariant-check
+- Pipeline stages: integration, hierarchical validation, pre-release
+- Best-fit tasks: large documents, modular software, policy hierarchies, multi-step analytical conclusions
+- Trigger: multiple authority layers are composed
+- When not to use: the artifact has only one meaningful level
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Define nested levels and invariants linking them, then validate both upward and downward: atoms must support their containing unit, units must compose into section or subsystem claims, and the global result must not assert anything contradicted below; conversely global constraints must be realized in the relevant lower layers. A pass requires agreement across boundaries, not independent passes at each level.
+- Companions: `bidirectional-consistency`, `coherence-loops`, `parallel-qms`
+- Counterbalances: `domain-mode-isolation`
+- Failure boundary: Do not certify when a global claim lacks lower-layer support or a lower-layer fact violates an undeclared global exception.
 - Package: `upgradeables/validation/multi-layer-consistency/UPGRADEABLE.md`
 ---
 
-## Multi-Truth Gating (`multi-truth-gating`)
+## Multi-Truth Gating (`multi-truth-gating@1.1.0`)
 
-Require compatible independent anchors or checks for important conclusions; resolve disagreement or abstain.
+Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.
 
 - ID: `T3-01`
-- Activation: `U3-high-risk-expensive`
-- Classes: truth-grounding, validation
-- Forms: validator
+- OS role: high-risk-truth-gate, commitment-validator
+- Pipeline stages: post-analysis, pre-synthesis, pre-output-commitment
+- Best-fit tasks: high-stakes evidence synthesis, conflicting-source research, medical, legal, or policy decisions, critical architecture choices
+- Trigger: an important conclusion rests on fragile evidence
+- When not to use: the claim is low consequence and one authoritative direct source is sufficient
+- Mechanism basis: `recovered`
+- Mechanism: For each decision-critical conclusion, identify a primary factual anchor and at least one genuinely independent corroborating anchor or verification path. Compare what each supports; convergence permits commitment, while material divergence triggers re-evaluation, a narrower claim, explicit uncertainty, or abstention.
+- Companions: `parallel-qms`, `truth-priority-hierarchy`, `truth-redundancy`
+- Counterbalances: none identified
+- Failure boundary: If an important conclusion lacks an independent check or the anchors materially disagree without resolution, do not certify the conclusion.
 - Package: `upgradeables/truth-grounding/multi-truth-gating/UPGRADEABLE.md`
 ---
 
-## Multiverse Engine (`multiverse-reasoning`)
+## Multiverse Engine (`multiverse-reasoning@1.1.0`)
 
-Generate two or three materially distinct candidate paths, evaluate them, and collapse to one bounded result.
+Obtain real alternative search without losing control of truth, constraints, cost, or convergence.
 
 - ID: `A-01`
-- Activation: `U3-high-risk-expensive`
-- Classes: planning-reasoning
-- Forms: orchestrator, parent-skill-mode
+- OS role: bounded parallel reasoning engine, candidate selection controller
+- Pipeline stages: planning, hypothesis comparison, architecture selection, pre-draft outline selection
+- Best-fit tasks: ambiguous design choices, research plans, narrative or document architectures, competing causal models
+- Trigger: competing hypotheses or designs would add value
+- When not to use: a locked source dictates a single faithful transformation
+- Mechanism basis: `recovered`
+- Mechanism: Open exactly two or three branch records that differ in strategy, causal model, or architecture. Give every branch the same locked facts, requirements, risk limits, and evaluation rubric; develop each only far enough to expose its decisive tradeoffs. Score them, apply hard vetoes before soft preferences, select or synthesize one committed path, and mark every losing branch retired so its assumptions cannot leak into execution.
+- Companions: `anti-tunnel-vision`, `parallel-qms`, `task-set-lock-in`
+- Counterbalances: `bounded-exit`, `neuro-focus`
+- Failure boundary: cosmetic branch variants
 - Package: `upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md`
 ---
 
-## Neuro-Focus (`neuro-focus`)
+## Neuro-Focus (`neuro-focus@1.1.0`)
 
-Concentrate processing on the highest-value active region while suppressing irrelevant context.
+Increase depth and signal quality on a bounded target when irrelevant material would otherwise dilute effort.
 
 - ID: `A-09`
-- Activation: `U1-common-conditional`
-- Classes: context-retrieval, planning-reasoning
-- Forms: orchestrator, skill-component
+- OS role: context-retrieval, focus control, planning-reasoning
+- Pipeline stages: post-intake prioritization, focused execution, checkpoint review
+- Best-fit tasks: large-corpus research, one-module debugging, targeted policy review, high-value constraint analysis
+- Trigger: large sources or a narrow debug region demand concentration
+- When not to use: the task requires broad discovery before a target is known
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Rank active regions by relevance to the locked task and expected decision impact, choose a bounded focus corridor, suppress unrelated material from the live workspace without deleting it, and periodically test whether excluded regions now contain material counterevidence. The recovered Neuro-Focus purpose and its Anti-Tunnel Vision caution support this normalized control; it is not a neurological claim.
+- Companions: `activation-budget-funnel`, `anti-tunnel-vision`
+- Counterbalances: `anti-tunnel-vision`
+- Failure boundary: Relax or move focus when a credible alternative, uncovered dependency, or counterevidence lies outside the corridor.
 - Package: `upgradeables/context-retrieval/neuro-focus/UPGRADEABLE.md`
 ---
 
-## Non-Authoritative Branch Suppression (`non-authoritative-branch-suppression`)
+## Non-Authoritative Branch Suppression (`non-authoritative-branch-suppression@1.1.0`)
 
-Prevent superseded or lower-authority branches from re-entering active decisions.
+Prevent attractive but non-governing alternatives from overriding the authoritative task branch.
 
 - ID: `JAN26-14`
-- Activation: `U2-specialized`
-- Classes: drift-control, orchestration
-- Forms: guard
+- OS role: authority-based branch gating, prompt-injection resistance, decision-path control
+- Pipeline stages: context classification, retrieval, branch selection, pre-action validation
+- Best-fit tasks: mixed-authority document sets, versioned policies, agent planning trees, retrieval with untrusted text
+- Trigger: obsolete alternatives conflict with locked decisions
+- When not to use: authority is unresolved
+- Mechanism basis: `provisional`
+- Mechanism: A modern authority-gating interpretation is to label branches by source, authority, status, scope, and version; only the currently authorized branch may supply operative instructions or state. Other branches remain available as evidence or alternatives but are excluded from action selection, and any promotion requires an explicit authority/version transition.
+- Companions: `domain-mode-isolation`, `drift-sink-scaffold`, `scoped-loader`
+- Counterbalances: `clarification-gateway`, `cot-structured-state-block`
+- Failure boundary: Do not suppress unresolved contrary evidence or fabricate an authority ranking.
 - Package: `upgradeables/drift-control/non-authoritative-branch-suppression/UPGRADEABLE.md`
 ---
 
-## Parallel Quality Management System (`parallel-qms`)
+## Parallel Quality Management System (`parallel-qms@1.1.0`)
 
-Run one or more independent validation modes, compare results, and approve, reject, request repair, or abstain without adding facts.
+Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote.
 
 - ID: `PQ-00`
-- Activation: `U1-common-conditional`
-- Classes: validation, orchestration
-- Forms: validator, parent-skill-mode
+- OS role: validator-family-orchestrator, multi-perspective-quality-gate, global-collapse-controller
+- Pipeline stages: validation design, parallel or staged evaluation, repair, global QMS collapse
+- Best-fit tasks: high-stakes synthesis, complex repository validation, multiverse collapse, long-form factual work, safety-sensitive decisions
+- Trigger: a composed workflow needs structured quality evaluation
+- When not to use: one low-risk deterministic check is sufficient
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Select modes by distinct failure hypotheses, run them with separated evidence where independence matters, preserve typed outputs, and collapse only after resolving material disagreement and honoring vetoes. Mirror QMS compares two independently derived answers; Risk-Tier-Split allocates shallow, medium, or deep checks by consequence; Cross-Phase separately inspects factual, evaluative, framing, and hypothetical phases; Redundancy QMS seeks logical, structural, narrative, and safety corroboration; ExIt-Integrated couples scores to bounded repair and convergence; Hierarchical validates atom, paragraph/component, section/subsystem, and global levels; Transversal cuts across temporal, causal, modal, and logical dimensions; Heterogeneous assigns coherence, evidence, relevance, and safety to different validator lenses; Monte QMS perturbs assumptions, wording, or structure without claiming formal Monte Carlo; Inversion reasons from a proposed conclusion backward to required evidence; Conflict-Resolution classifies and adjudicates validator disagreement; Distributed QMS runs actually isolated instances before comparison; Meta-QMS evaluates validator consensus, consistency, calibration, and safety; Semantic Glass-Box exposes reasoning checkpoints and evidence paths; Ethical QMS applies a non-compensable harm or policy veto. Global collapse requires agreement on crucial truths, explicit treatment of conflicts, and survival of all safety vetoes—never majority alone.
+- Companions: `bounded-exit`, `critical-atomic-verification`, `cross-universe-consistency`, `fermionic-veto`, `multi-layer-consistency`
+- Counterbalances: `crispr-edit`, `dynamic-depth-allocation`
+- Failure boundary: Do not certify while a crucial truth is disputed, a safety/ethical veto is active, validator independence is falsely claimed, or bounded repair fails to converge.
 - Package: `upgradeables/validation/parallel-qms/UPGRADEABLE.md`
 ---
 
-## Pedagogical Alignment Constraint (`pedagogical-alignment`)
+## Pedagogical Alignment Constraint (`pedagogical-alignment@1.1.0`)
 
-Match explanation complexity and examples to the reader while preserving technical accuracy.
+Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.
 
 - ID: `T3-16`
-- Activation: `U1-common-conditional`
-- Classes: output, framing-intake
-- Forms: skill-component
+- OS role: audience adaptation constraint, instructional output shaper
+- Pipeline stages: audience modeling, explanation design, comprehension validation
+- Best-fit tasks: tutorials, documentation, stakeholder briefings, technical-to-nontechnical translation, onboarding
+- Trigger: an audience or teaching level is known
+- When not to use: the audience and purpose cannot be inferred and the choice materially changes content
+- Mechanism basis: `recovered`
+- Mechanism: Build a compact audience model—known prerequisites, target capability, jargon tolerance, and action context—then choose the smallest conceptual steps that bridge from that model to the target. Define or replace jargon at first use, order prerequisite before dependent ideas, add an example only where it resolves a likely misconception, and run an accuracy-backcheck against the unsimplified claim.
+- Companions: `explanation-minimality-scaffold`, `style-alignment`
+- Counterbalances: `citation-fidelity`
+- Failure boundary: oversimplification
 - Package: `upgradeables/output/pedagogical-alignment/UPGRADEABLE.md`
 ---
 
-## Phase-Locked Reasoning Scaffold (`phase-locked-reasoning-scaffold`)
+## Phase-Locked Reasoning Scaffold (`phase-locked-reasoning-scaffold@1.1.0`)
 
-Keep factual, evaluative, framing, and hypothetical work in declared phases with explicit transitions.
+Prevent cross-phase contamination while still allowing explicitly governed transitions between reasoning modes.
 
 - ID: `JAN26-01`
-- Activation: `U2-specialized`
-- Classes: planning-reasoning, state
-- Forms: state-schema, guard
+- OS role: reasoning scaffold, semantic phase boundary
+- Pipeline stages: evidence processing, analysis, synthesis, final validation
+- Best-fit tasks: evidence-grounded writing, multi-source research, risk analysis, long workflows with distinct reasoning modes
+- Trigger: semantic phase leakage is a risk
+- When not to use: a single atomic transformation has no phase transition
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Assign each working claim to the recovered semantic phase appropriate to its status, keep phase-specific operations and admissible transformations explicit, and require a labeled transition when a claim moves from evidence or fact into interpretation, probability, or heuristic use. The exact scaffold mechanics are derived from recovered semantic phase separation; they are not directly preserved as a historical procedure.
+- Companions: `citation-fidelity`, `domain-mode-isolation`
+- Counterbalances: `multi-layer-consistency`
+- Failure boundary: phase leakage
 - Package: `upgradeables/reasoning/phase-locked-reasoning-scaffold/UPGRADEABLE.md`
 ---
 
-## Placeholder Suppression (`placeholder-suppression`)
+## Placeholder Suppression (`placeholder-suppression@1.1.0`)
 
-Prevent TODOs, dummy values, empty required sections, and unresolved markers from leaking into final artifacts.
+Prevent scaffolding artifacts from escaping as if they were complete content.
 
 - ID: `T1-08`
-- Activation: `U1-common-conditional`
-- Classes: output, validation
-- Forms: validator, deterministic-script
+- OS role: final-output guard, completion validator
+- Pipeline stages: artifact assembly, pre-release scan, finalization gate
+- Best-fit tasks: template-based documents, generated repositories, forms and reports, configuration generation, multi-agent artifact assembly
+- Trigger: templates or staged artifacts are finalized
+- When not to use: the deliverable is explicitly a template whose placeholders are the product
+- Mechanism basis: `recovered`
+- Mechanism: Run a two-layer completion scan: a lexical detector for markers such as TODO, TBD, FIXME, bracket prompts, dummy domains, sample IDs, and unresolved interpolation syntax; then a schema detector for empty required sections, null required fields, and uninstantiated variables. Classify every hit using a narrow allowlist for intentional template, example, or redaction contexts; all other hits must be filled from authority, removed with requirement revalidation, or explicitly labeled unresolved before release.
+- Companions: `parallel-qms`, `safe-rewrite`
+- Counterbalances: `safe-rewrite`
+- Failure boundary: false completion
 - Package: `upgradeables/output/placeholder-suppression/UPGRADEABLE.md`
 ---
 
-## POWER Mode (`power-mode`)
+## POWER Mode (`power-mode@1.1.0`)
 
-Use broad bounded exploration, deeper planning, candidate comparison, and system-level architecture reasoning.
+Increase solution search and architectural depth before commitment when the problem is genuinely ambiguous or system-wide.
 
 - ID: `T4-07`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, planning-reasoning
-- Forms: parent-skill-mode
+- OS role: broad design mode, architecture exploration profile
+- Pipeline stages: problem framing, candidate generation, system analysis, QMS collapse
+- Best-fit tasks: system architecture, novel workflow design, strategic planning, ambiguous research design
+- Trigger: architecture or design benefits from broad exploration
+- When not to use: the task is a precise grounded execution step
+- Mechanism basis: `recovered`
+- Mechanism: Declare a bounded exploration budget, open two or three materially distinct plans under identical goals and constraints, reason at system or Cosmic scale only where dependencies justify it, and evaluate all candidates with QMS before collapse. POWER produces a selected design and uncertainty map; it does not authorize consequential execution without an explicit transition to SAFE or another execution profile.
+- Companions: `hybrid-mode`, `multiverse-reasoning`, `parallel-qms`
+- Counterbalances: `bounded-exit`, `safe-mode`
+- Failure boundary: unbounded ideation
 - Package: `upgradeables/meta-control/power-mode/UPGRADEABLE.md`
 ---
 
-## Progressive Mode Shaping (`progressive-mode-shaping`)
+## Progressive Mode Shaping (`progressive-mode-shaping@1.1.0`)
 
-Narrow exploration through comparison and selection into precise execution as decisions become locked.
+Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.
 
 - ID: `T2-06`
-- Activation: `U1-common-conditional`
-- Classes: orchestration, planning-reasoning
-- Forms: orchestrator, parent-skill-mode
+- OS role: mode transition control, commitment shaping
+- Pipeline stages: exploration, candidate comparison, decision lock, execution handoff
+- Best-fit tasks: design-to-implementation workflows, iterative planning, creative work with a committed deliverable
+- Trigger: work moves from design to execution
+- When not to use: the task is purely exploratory and requires no commitment
+- Mechanism basis: `recovered`
+- Mechanism: Track which choices remain open and progressively reduce permitted breadth as evidence and decisions accumulate. Move through explore, compare, choose, plan, execute, and validate states; at each transition retire losing branches, lock accepted constraints, and lower drift. Unlike a hard two-mode switch, shaping may narrow in several evidence-backed increments.
+- Companions: `mode-lock-in`, `stateblock`
+- Counterbalances: `anti-tunnel-vision`
+- Failure boundary: transition criteria are absent or accepted decisions cannot be distinguished from open options
 - Package: `upgradeables/orchestration/progressive-mode-shaping/UPGRADEABLE.md`
 ---
 
-## Reasoning-Scale Controller (`reasoning-scale-controller`)
+## Reasoning-Scale Controller (`reasoning-scale-controller@1.1.0`)
 
-Select Subatomic, Atomic, Nano, Micro, QMS, or Cosmic decomposition and verification granularity without exposing private reasoning.
+Match reasoning depth and scope to the unit of work instead of applying either shallow local analysis or system-wide architecture indiscriminately.
 
 - ID: `RS-00`
-- Activation: `U1-common-conditional`
-- Classes: planning-reasoning, meta-control
-- Forms: parent-skill-mode, orchestrator
+- OS role: reasoning depth controller, scope router
+- Pipeline stages: task triage, reasoning execution, escalation and de-escalation
+- Best-fit tasks: mixed-complexity workflows, long-form construction, system design, quality evaluation
+- Trigger: task complexity or risk requires depth selection
+- When not to use: a governing workflow already fixes the required scale
+- Mechanism basis: `recovered`
+- Mechanism: Route work through one controller: Subatomic for a fact, local relation, constraint, or sentence decision; Atomic for a small verified inference or action; Nano as a light intermediate structure whose detailed historical spec remains unrecovered; Micro for task-local scaffolds and dependencies; QMS for quality evaluation; Cosmic for global architecture, strategy, or long-horizon planning. Escalate when dependency span, ambiguity, irreversibility, or risk exceeds the current scale; de-escalate after the larger question is resolved.
+- Companions: `cognitive-governor`, `dynamic-depth-allocation`, `micro-scaffolding`
+- Counterbalances: `bounded-exit`, `critical-atomic-verification`
+- Failure boundary: scale theater
 - Package: `upgradeables/reasoning/reasoning-scale-controller/UPGRADEABLE.md`
 ---
 
-## Reasoning Throughput Governor (`reasoning-throughput-governor`)
+## Reasoning Throughput Governor (`reasoning-throughput-governor@1.1.0`)
 
-Balance speed, breadth, and validation to avoid both underprocessing and wasteful overprocessing.
+Maximize useful completed work per unit time while respecting the Cognitive Governor's budget and every mandatory validation barrier.
 
 - ID: `T4-13`
-- Activation: `U2-specialized`
-- Classes: meta-control, planning-reasoning
-- Forms: orchestrator
+- OS role: reasoning flow controller, pace-and-breadth governor
+- Pipeline stages: queue planning, batch and concurrency control, validation scheduling, backpressure response
+- Best-fit tasks: large package builds, multi-agent research, batch validation, latency-sensitive pipelines, branch-heavy planning
+- Trigger: latency, breadth, and validation compete
+- When not to use: the task is one atomic operation
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Treat planning, generation, evidence acquisition, and validation as a bounded work queue. Set limits on active branches, batch size, and how far unchecked output may accumulate; observe completion rate, rework, validator backlog, and error rate, then add backpressure, reduce breadth, or rebalance stages. RTG governs how work flows under a budget; Cognitive Governor sets total spend and DDA sets depth per region.
+- Companions: `cognitive-governor`, `dynamic-depth-allocation`, `parallel-qms`
+- Counterbalances: `meta-awareness`
+- Failure boundary: raw-volume optimization
 - Package: `upgradeables/meta-control/reasoning-throughput-governor/UPGRADEABLE.md`
 ---
 
-## Work Reflection Loop OS / ReflectOS (`reflectos`)
+## Work Reflection Loop OS / ReflectOS (`reflectos@1.1.0`)
 
-Run a bounded goal-anchored reflect, test, revise loop that corrects process errors without inventing facts.
+Correct process and output errors at meaningful checkpoints without turning reflection into unbounded rumination or invented content.
 
 - ID: `T2-12`
-- Activation: `U1-common-conditional`
-- Classes: validation, editing-repair
-- Forms: validator, parent-skill-mode
+- OS role: goal-anchored-work-reflection, bounded-qa-controller, state-update-trigger
+- Pipeline stages: milestone review, pre-delivery, after failed validation
+- Best-fit tasks: multi-step implementation, research synthesis, document revision, agent handoffs, recovery after test failure
+- Trigger: output needs a deliberate quality pass
+- When not to use: a deterministic fix is already known and reflection adds no decision value
+- Mechanism basis: `recovered`
+- Mechanism: At a bounded checkpoint, re-read the session goal and current subgoal, compare the actual output to explicit requirements, audit contradictions, omissions, and risk, then select exactly one transition: accept, revise, or ask/escalate where permitted. After the transition, update the StateBlock to reflect task reality; reflection may correct process errors but may not invent facts or construct an identity narrative.
+- Companions: `bounded-exit`, `coherence-loops`, `stateblock`
+- Counterbalances: `crispr-edit`
+- Failure boundary: Do not accept when a material requirement is unmet; do not revise with invented facts; stop and surface the dependency when progress requires external authority.
 - Package: `upgradeables/validation/reflectos/UPGRADEABLE.md`
 ---
 
-## Regenerative Rewrite (`regenerative-rewrite`)
+## Regenerative Rewrite (`regenerative-rewrite@1.1.0`)
 
-Rebuild an output when local repair cannot restore global structure or coherence, while preserving locked truths.
+Replace a systemically broken expression or structure without losing verified content, requirements, provenance, or accepted decisions.
 
 - ID: `T2-03`
-- Activation: `U2-specialized`
-- Classes: editing-repair
-- Forms: skill-component
+- OS role: global content rebuilder, systemic-failure recovery
+- Pipeline stages: failure diagnosis, truth-and-constraint extraction, fresh reconstruction, global validation
+- Best-fit tasks: globally incoherent drafts, broken source-to-section mapping, documents with incompatible inherited structures, outputs damaged by repeated patching
+- Trigger: architecture or source mapping is globally broken
+- When not to use: one sentence or field is wrong
+- Mechanism basis: `recovered`
+- Mechanism: Quarantine the failed artifact, extract a ledger of verified facts, citations, requirements, decisions, and protected wording, and design a fresh structure from that ledger rather than editing the old prose in place. Reintroduce each locked atom with provenance, validate global coherence and coverage, and compare against the ledger—not against the failed wording—as the acceptance baseline.
+- Companions: `citation-fidelity`, `surgery-edit`, `task-set-lock-in`
+- Counterbalances: `micro-repair`
+- Failure boundary: unnecessary global rewrite
 - Package: `upgradeables/editing-repair/regenerative-rewrite/UPGRADEABLE.md`
 ---
 
-## Resonance (`resonance`)
+## Resonance (`resonance@1.1.0`)
 
-Coordinate mutually reinforcing modules, suppress irrelevant effects, and preserve authority boundaries.
+Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.
 
 - ID: `A-05`
-- Activation: `U2-specialized`
-- Classes: orchestration, drift-control
-- Forms: orchestrator, guard
+- OS role: cross-module alignment, interaction control
+- Pipeline stages: post-selection coordination, mid-process coupling, pre-synthesis alignment
+- Best-fit tasks: multi-module Skills, evidence-to-state coordination, composed agent workflows
+- Trigger: several active modules must align
+- When not to use: only one module is active
+- Mechanism basis: `recovered`
+- Mechanism: Identify the specific outputs or constraints through which selected modules should reinforce one another, declare the direction and limit of that coupling, and suppress unrelated effects. Check hierarchy before amplification so a lower-authority module cannot become stronger through repetition. Amplification means clearer coordination and usable handoff, not duplicated content.
+- Companions: `domain-mode-isolation`, `state-routing-bus`
+- Counterbalances: `domain-mode-isolation`
+- Failure boundary: the modules have incompatible authority or source boundaries
 - Package: `upgradeables/orchestration/resonance/UPGRADEABLE.md`
 ---
 
-## Resonance Gene Builder (`resonance-gene-builder`)
+## Resonance Gene Builder (`resonance-gene-builder@1.1.0`)
 
-Encode recurring cross-module coupling rules as compact Behavior Genes with explicit authority boundaries.
+Make useful cross-module reinforcement explicit and reusable without merging modules, duplicating content, or granting hidden communication.
 
 - ID: `A-06`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration
-- Forms: orchestrator, reference-module
+- OS role: cross-module coupling-rule builder, specialized Behavior Gene factory
+- Pipeline stages: relationship observation, coupling specification, composition testing, versioned publication
+- Best-fit tasks: recurring validator-generator pairings, stable Core-Gene couplings, multi-module evidence workflows, repeated authority-sensitive compositions
+- Trigger: the same module relationship recurs
+- When not to use: the need is a general task behavior unrelated to module coupling
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Identify a repeated module relationship and encode a narrow coupling Gene containing activation pattern, participants, directional inputs and outputs, ordering, reinforcement rule, suppression rule, authority precedence, termination, and failure behavior. Test the coupling with one participant absent, with conflicting instructions, and with irrelevant output. Reinforcement means clearer coordination through real state or context, never repeated claims or imagined latent links.
+- Companions: `architect-orchestrator`, `behavior-gene-builder`, `resonance`
+- Counterbalances: `domain-mode-isolation`
+- Failure boundary: implicit coupling
 - Package: `upgradeables/meta-control/resonance-gene-builder/UPGRADEABLE.md`
 ---
 
-## Risk-Tier Scaling (`risk-tier-scaling`)
+## Risk-Tier Scaling (`risk-tier-scaling@1.1.0`)
 
-Increase reasoning depth, verification, and veto strength as consequence, uncertainty, or irreversibility rises.
+Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.
 
 - ID: `T3-05`
-- Activation: `U1-common-conditional`
-- Classes: meta-control, validation
-- Forms: orchestrator, guard
+- OS role: risk classifier, mandatory-rigor controller
+- Pipeline stages: risk triage, control selection, pre-commit validation, risk reclassification
+- Best-fit tasks: medical, legal, financial, or safety-sensitive work, irreversible changes, uncertain external actions, mixed-risk artifacts
+- Trigger: task risk varies or must be classified
+- When not to use: a binding protocol already specifies the exact controls
+- Mechanism basis: `recovered`
+- Mechanism: Classify the whole task and any higher-risk subregions using consequence, uncertainty, reversibility, scope of impact, and evidence quality. Map the result to explicit control floors: light single-path checks for routine work, stronger source and consistency checks for material work, and independent verification, hard vetoes, checkpointing, and fail-closed behavior for high-risk work. Reclassify when new evidence raises or lowers risk.
+- Companions: `cognitive-governor`, `dynamic-depth-allocation`, `fail-closed-abstention`
+- Counterbalances: `reasoning-throughput-governor`
+- Failure boundary: domain-label risk
 - Package: `upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md`
 ---
 
-## SAFE Mode (`safe-mode`)
+## SAFE Mode (`safe-mode@1.1.0`)
 
-Use narrow drift, strong grounding, atomic verification, and conservative output during consequential execution.
+Protect factual and consequential execution after the plan is chosen or whenever uncertainty and impact require constrained behavior.
 
 - ID: `T4-06`
-- Activation: `U3-high-risk-expensive`
-- Classes: meta-control, truth-grounding
-- Forms: parent-skill-mode
+- OS role: conservative execution mode, grounded commitment profile
+- Pipeline stages: execution readiness, atomic action, immediate verification, conservative finalization
+- Best-fit tasks: source-faithful extraction, production changes, high-risk recommendations, final publication, irreversible operations
+- Trigger: execution is factual, consequential, or uncertain
+- When not to use: the primary need is broad architecture discovery
+- Mechanism basis: `recovered`
+- Mechanism: Lock the committed goal, sources, state version, authorized action, and acceptance criteria; narrow allowable drift to the requested execution delta. Before each consequential step verify its atomic prerequisites and authority, perform only that step, inspect the observable result, and stop on mismatch or missing evidence. SAFE does not mean low capability: it uses deep checks where risk demands, but it forbids speculative expansion during execution.
+- Companions: `critical-atomic-verification`, `grounding-no-invention`, `hybrid-mode`
+- Counterbalances: `power-mode`
+- Failure boundary: speculative execution
 - Package: `upgradeables/meta-control/safe-mode/UPGRADEABLE.md`
 ---
 
-## Safe Rewrite Logic (`safe-rewrite`)
+## Safe Rewrite Logic (`safe-rewrite@1.1.0`)
 
-Rewrite authorized dimensions while preserving locked facts, meaning, citations, numbers, names, and constraints.
+Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.
 
 - ID: `T1-10`
-- Activation: `U0-foundational`
-- Classes: editing-repair, truth-grounding
-- Forms: guard, skill-component
+- OS role: editing guard, semantic preservation layer
+- Pipeline stages: rewrite planning, controlled transformation, atom-level comparison
+- Best-fit tasks: paraphrasing, tone adjustment, format conversion, clarity polishing, audience adaptation
+- Trigger: paraphrasing, polishing, or format conversion
+- When not to use: the user asks to change substantive meaning
+- Mechanism basis: `recovered`
+- Mechanism: Extract a before-state ledger of factual and constraint atoms, mark the dimensions authorized to change, perform the rewrite only along those dimensions, then compare names, numbers, dates, quotes, citations, modality, requirements, and causal claims. Any atom difference not explicitly authorized is reverted or surfaced for approval.
+- Companions: `citation-fidelity`, `micro-repair`, `style-alignment`
+- Counterbalances: `regenerative-rewrite`
+- Failure boundary: semantic drift
 - Package: `upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md`
 ---
 
-## Scoped Loader / Loader Sequencing (`scoped-loader`)
+## Scoped Loader / Loader Sequencing (`scoped-loader@1.1.0`)
 
-Discover and load only the task-relevant Genes, Cores, Upgradeables, references, tools, and validators in authority order.
+Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.
 
 - ID: `T1-07`
-- Activation: `U0-foundational`
-- Classes: context-retrieval, orchestration
-- Forms: orchestrator, skill-component
+- OS role: context-retrieval, orchestration, capability routing
+- Pipeline stages: task classification, pre-retrieval, on-demand loading, pre-commit validation
+- Best-fit tasks: modular Skill execution, agent routing, large reference libraries, domain OS selection, multi-stage research
+- Trigger: a modular workflow has multiple available components
+- When not to use: the workflow has one small fixed instruction set
+- Mechanism basis: `recovered`
+- Mechanism: Resolve the active task first, then load in recovered authority/function order: task shell, applicable Behavior Gene, authorized Core, only triggered Upgradeables, references or resources on demand, and validators before commitment. Record what was loaded and why; leave unrelated modules inactive so their rules and context cannot leak into the task.
+- Companions: `activation-budget-funnel`, `task-set-lock-in`
+- Counterbalances: `anti-tunnel-vision`
+- Failure boundary: Do not load a component when its trigger, authority, dependency, or host capability cannot be established.
 - Package: `upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md`
 ---
 
-## SelfBlock Auto-Update (`selfblock-auto-update`)
+## SelfBlock Auto-Update (`selfblock-auto-update@1.1.0`)
 
-Maintain task working state automatically without creating an identity narrative or unsupported memory.
+Reduce stale state and forgotten deltas during iterative work.
 
 - ID: `T2-11`
-- Activation: `U2-specialized`
-- Classes: state
-- Forms: state-manager
+- OS role: automatic state maintenance, checkpoint hook, staleness control
+- Pipeline stages: after meaningful action, after tool result, before handoff, before resume
+- Best-fit tasks: agent loops, long editing sessions, tool-rich workflows, multi-step investigations
+- Trigger: the host can update explicit state after steps
+- When not to use: the host cannot write persistent state
+- Mechanism basis: `recovered`
+- Mechanism: Attach an update hook to defined events, compute the smallest state delta, validate it against schema and authority, then atomically merge it into the live SelfBlock while retaining provenance or a change note. The updater may change status and observations but not silently rewrite locked goals, permissions, or immutable evidence.
+- Companions: `state-snapshot`, `stateblock`, `working-memory-lock-in`
+- Counterbalances: `clarification-gateway`, `drift-suppression`
+- Failure boundary: Disable automatic writes when atomicity, schema validation, or authority checks are unavailable.
 - Package: `upgradeables/state/selfblock-auto-update/UPGRADEABLE.md`
 ---
 
-## Sequential Memory State Engine (SMSE) (`sequential-memory-state-engine`)
+## Sequential Memory State Engine (SMSE) (`sequential-memory-state-engine@1.1.0`)
 
-Update StateBlock incrementally while preserving source chunk boundaries, provenance, and locked state.
+Preserve sequence, provenance, relevance, and current truth across long-running work.
 
 - ID: `T2-10`
-- Activation: `U1-common-conditional`
-- Classes: state, persistence
-- Forms: state-manager
+- OS role: state transition engine, memory lifecycle, provenance and conflict control
+- Pipeline stages: ingest, normalize, classify, compare, resolve, commit, project, checkpoint
+- Best-fit tasks: long-lived agents, case management, iterative research, multi-source evolving records
+- Trigger: state changes across steps or source chunks
+- When not to use: a one-shot task has no state evolution
+- Mechanism basis: `recovered`
+- Mechanism: For each event, preserve source and time, normalize it into the state schema, classify affected fields, compare with the current version, resolve contradiction by authority and recency rules, commit an atomic delta, derive consumer-specific projections, and emit a checkpoint. History remains available, but only the resolved current state drives action.
+- Companions: `selfblock-auto-update`, `state-snapshot`, `stateblock`
+- Counterbalances: `drift-suppression`, `stable-long-context`
+- Failure boundary: Stop dependent actions when a safety-critical contradiction cannot be resolved.
 - Package: `upgradeables/state/sequential-memory-state-engine/UPGRADEABLE.md`
 ---
 
-## Specificity Penalty Gate (`specificity-penalty-gate`)
+## Specificity Penalty Gate (`specificity-penalty-gate@1.1.0`)
 
-Reject detail whose specificity exceeds the available evidence.
+Provide a conservative modern interpretation of the recovered name while keeping the historical source gap explicit.
 
 - ID: `JAN26-15`
-- Activation: `U2-specialized`
-- Classes: validation, truth-grounding
-- Forms: validator
+- OS role: provisional-overprecision-gate, evidence-resolution-matcher
+- Pipeline stages: drafting, claim validation, pre-release
+- Best-fit tasks: research answers, estimates, incident explanations, requirements derived from incomplete evidence, source recovery
+- Trigger: precise details may be plausible but unsupported
+- When not to use: exact values are directly provided and verified
+- Mechanism basis: `modern-interpretation`
+- Mechanism: Tag specificity-bearing atoms—numbers, dates, named causes, unique identities, fine-grained scope, and certainty language—and compare each with the resolution of available evidence and actual task need. Unsupported precision receives a penalty that forces one of four actions: cite stronger evidence, widen to a supported range or class, label the detail provisional, or remove it. This scoring/gating procedure is not claimed as historical reconstruction.
+- Companions: `citation-fidelity`, `epistemic-status-gating`, `grounding-no-invention`
+- Counterbalances: `critical-atomic-verification`
+- Failure boundary: Do not release a material exact claim when the available evidence supports only a broader range, class, or uncertainty state.
 - Package: `upgradeables/validation/specificity-penalty-gate/UPGRADEABLE.md`
 ---
 
-## Stable Long-Context (`stable-long-context`)
+## Stable Long-Context (`stable-long-context@1.1.0`)
 
-Preserve decisions, terminology, constraints, and source meaning across large contexts while retiring obsolete branches.
+Extend usable context duration without treating the entire transcript as equally current or important.
 
 - ID: `T2-07`
-- Activation: `U1-common-conditional`
-- Classes: state, drift-control
-- Forms: state-manager, guard
+- OS role: long-horizon context control, semantic anchoring, memory compaction
+- Pipeline stages: initial anchoring, periodic compaction, context re-entry, final consistency check
+- Best-fit tasks: long research projects, large document synthesis, multi-session builds, extended agent runs
+- Trigger: large corpus or long-running workflow
+- When not to use: all relevant material fits clearly in one short exchange
+- Mechanism basis: `recovered`
+- Mechanism: Maintain an invariant anchor containing task, authority, definitions, accepted decisions, and open obligations; keep detailed material behind stable indexed pointers; periodically reconcile new state, mark superseded items, and regenerate a compact current view. Retrieval expands only the region needed for the next step, and final validation checks output against the anchors rather than conversational recency.
+- Companions: `attention-compression-scaffold`, `sequential-memory-state-engine`, `stateblock`
+- Counterbalances: `drift-suppression`, `scoped-loader`
+- Failure boundary: Do not compact evidence beyond recoverability when precise citation is required.
 - Package: `upgradeables/state/stable-long-context/UPGRADEABLE.md`
 ---
 
-## State Routing Bus (`state-routing-bus`)
+## State Routing Bus (`state-routing-bus@1.1.0`)
 
-Pass explicit task state, decisions, evidence pointers, and module outputs through host-supported handoffs.
+Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.
 
 - ID: `A-02`
-- Activation: `U4-meta-architecture`
-- Classes: state, orchestration
-- Forms: state-manager, orchestrator
+- OS role: state transport, module handoff
+- Pipeline stages: post-module emission, inter-module routing, handoff verification
+- Best-fit tasks: multi-agent workflows, modular Skills, cross-process continuation
+- Trigger: Activate when the task requires multiple components exchange state.
+- When not to use: all work occurs inside one uninterrupted component
+- Mechanism basis: `recovered`
+- Mechanism: Represent the handoff as a typed envelope containing sender, receiver, schema version, authority, provenance, payload, and unresolved status. Validate the envelope and receiver permissions, transmit it through an actual host mechanism such as context, file, message, or database, then require acknowledgement. No latent pointer or hidden channel is assumed.
+- Companions: `state-snapshot`, `stateblock`
+- Counterbalances: `scoped-loader`
+- Failure boundary: no real host-supported handoff channel exists
 - Package: `upgradeables/orchestration/state-routing-bus/UPGRADEABLE.md`
 ---
 
-## State Snapshot (`state-snapshot`)
+## State Snapshot (`state-snapshot@1.1.0`)
 
-Capture the smallest sufficient goal, architecture, locked decisions, active modules, open issues, and next step for continuation.
+Create a stable checkpoint that can be resumed or audited after interruption.
 
 - ID: `O-03`
-- Activation: `U1-common-conditional`
-- Classes: state, persistence
-- Forms: state-schema, state-manager
+- OS role: checkpoint, recovery artifact, handoff package
+- Pipeline stages: milestone completion, before risky transition, handoff, recovery
+- Best-fit tasks: multi-session projects, agent handoffs, rollback-sensitive workflows, audits
+- Trigger: a workflow pauses, hands off, or persists
+- When not to use: a snapshot would persist prohibited sensitive data
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: At an explicit checkpoint, validate and freeze the canonical state version together with schema version, timestamp, task identity, provenance pointers, unresolved items, and a link to any previous snapshot. Consumers resume by verifying lineage and reconciling newer events; the snapshot itself remains immutable.
+- Companions: `sequential-memory-state-engine`, `stable-long-context`, `stateblock`
+- Counterbalances: `scoped-loader`, `selfblock-auto-update`
+- Failure boundary: Do not restore when integrity, task identity, or schema compatibility cannot be established.
 - Package: `upgradeables/state/state-snapshot/UPGRADEABLE.md`
 ---
 
-## StateBlock (`stateblock`)
+## StateBlock (`stateblock@1.1.0`)
 
-Represent goal, phase, constraints, decisions, uncertainties, active modules, completed work, and next step explicitly.
+Give tools, agents, validators, and handoffs a shared source of current task truth.
 
 - ID: `T2-09`
-- Activation: `U0-foundational`
-- Classes: state
-- Forms: state-schema
+- OS role: canonical state model, coordination substrate, validation target
+- Pipeline stages: task initialization, after accepted state changes, before action, handoff and recovery
+- Best-fit tasks: multi-step execution, agent orchestration, complex editing, auditable workflows
+- Trigger: work spans multiple steps or components
+- When not to use: a trivial one-turn task needs no persistent state
+- Mechanism basis: `recovered`
+- Mechanism: Define a typed block with identity, objective, authority, constraints, active mode, progress, evidence pointers, decisions, uncertainties, open actions, and version metadata. Assign each field an owner and mutability rule; update through validated deltas, and derive views from this block so no consumer silently becomes a second authority.
+- Companions: `selfblock-auto-update`, `sequential-memory-state-engine`, `structured-state-projection`
+- Counterbalances: `micro-scaffolding`, `working-memory-cues`
+- Failure boundary: Do not proceed on dependent actions when required state is contradictory or unknown.
 - Package: `upgradeables/state/stateblock/UPGRADEABLE.md`
 ---
 
-## Structured Refinement Cycles (`structured-refinement`)
+## Structured Refinement Cycles (`structured-refinement@1.1.0`)
 
-Separate factual, structural, style, and final-validation revision passes while preserving accepted decisions.
+Prevent one revision pass from trading away correctness while improving structure or style.
 
 - ID: `T2-02`
-- Activation: `U1-common-conditional`
-- Classes: editing-repair, validation
-- Forms: skill-component
+- OS role: multi-pass revision scaffold, defect-class separator
+- Pipeline stages: factual pass, structural pass, style pass, release validation
+- Best-fit tasks: drafts with several defect classes, reports requiring source and style review, prompt or specification cleanup, publication preparation
+- Trigger: revision has multiple defect classes
+- When not to use: only one bounded defect exists
+- Mechanism basis: `recovered`
+- Mechanism: Classify defects before editing and run passes in dependency order: facts and source mapping first, structure and requirement coverage second, style and pedagogy third, final validation last. Accepted decisions are locked between passes, and a later pass may not silently reopen an earlier one.
+- Companions: `bounded-exit`, `micro-repair`, `safe-rewrite`
+- Counterbalances: `regenerative-rewrite`
+- Failure boundary: mixed-objective drift
 - Package: `upgradeables/editing-repair/structured-refinement/UPGRADEABLE.md`
 ---
 
-## Structured State Projection (`structured-state-projection`)
+## Structured State Projection (`structured-state-projection@1.1.0`)
 
-Project selected explicit state fields into a downstream component without exposing unrelated context.
+Reduce context, privacy, and authority leakage between components.
 
 - ID: `JAN26-13`
-- Activation: `U2-specialized`
-- Classes: state, output
-- Forms: state-schema, state-manager
+- OS role: least-privilege state view, component boundary, context minimization
+- Pipeline stages: before component invocation, domain transfer, handoff, output merge
+- Best-fit tasks: multi-agent systems, domain isolation, sensitive workflows, tool calls with narrow schemas
+- Trigger: a component needs a bounded state view
+- When not to use: one trusted consumer legitimately needs the whole safe state
+- Mechanism basis: `provisional`
+- Mechanism: A modern interpretation is to define a projection contract listing allowed fields, necessary derived values, redactions, provenance, version, and write-back rights. Materialize the view from canonical state at invocation time and merge returned deltas only through the canonical owner's validation path.
+- Companions: `domain-mode-isolation`, `scoped-loader`, `stateblock`
+- Counterbalances: `clarification-gateway`, `cot-structured-state-block`
+- Failure boundary: Do not project when required field dependencies or safety constraints are unknown.
 - Package: `upgradeables/state/structured-state-projection/UPGRADEABLE.md`
 ---
 
-## Stuck-Pattern Reset Pack (`stuck-pattern-reset`)
+## Stuck-Pattern Reset Pack (`stuck-pattern-reset@1.1.0`)
 
-Detect repeated failed approaches and reset only the failed path while preserving locked facts and constraints.
+Break nonproductive loops without erasing the trustworthy task context needed for a genuinely different next attempt.
 
 - ID: `T4-03`
-- Activation: `U2-specialized`
-- Classes: meta-control, editing-repair
-- Forms: guard, skill-component
+- OS role: loop-break repair pack, failed-path reset controller
+- Pipeline stages: repetition detection, state preservation, path quarantine, alternative restart
+- Best-fit tasks: repeated tool failures, recursive revision loops, stale debugging hypotheses, nonconverging planning
+- Trigger: reasoning loops or stale approaches repeat
+- When not to use: a second attempt has new evidence or a materially changed method
+- Mechanism basis: `recovered`
+- Mechanism: Fingerprint attempts by goal, assumptions, method, inputs, and failure result rather than wording. When a predeclared repetition threshold is met without new evidence or state change, snapshot locked facts and accepted results, quarantine the failed path and its unsupported assumptions, state the recurring blocker, and restart from a materially different method or escalate. Only the failed reasoning path resets.
+- Companions: `bounded-exit`, `meta-supervisor`, `stateblock`
+- Counterbalances: `forethought-checkpoints`
+- Failure boundary: false loop detection
 - Package: `upgradeables/meta-control/stuck-pattern-reset/UPGRADEABLE.md`
 ---
 
-## Style-Alignment Module (`style-alignment`)
+## Style-Alignment Module (`style-alignment@1.1.0`)
 
-Match an authorized style without changing facts, evidence relationships, or reasoning integrity.
+Make artifacts consistent with audience, publication, or organizational style while keeping truth and requirements dominant.
 
 - ID: `T3-15`
-- Activation: `U1-common-conditional`
-- Classes: output
-- Forms: skill-component
+- OS role: output style constraint, surface-form adapter
+- Pipeline stages: style contract extraction, surface transformation, semantic and style validation
+- Best-fit tasks: house-style editing, voice matching, channel adaptation, consistent multi-author documents, format and tone normalization
+- Trigger: a style or voice is specified
+- When not to use: the requested style impersonates a living person or conflicts with policy
+- Mechanism basis: `recovered`
+- Mechanism: Translate the authorized style request into an observable style vector—tone, formality, sentence rhythm, vocabulary level, structure, formatting, and disallowed tendencies—while extracting a separate semantic invariant ledger. Transform surface choices toward the style vector, protect quoted and zero-drift zones, then score both conformance and semantic preservation; truth, task, and citation constraints veto any stylistic gain.
+- Companions: `citation-fidelity`, `pedagogical-alignment`, `safe-rewrite`
+- Counterbalances: `explanation-minimality-scaffold`, `grounding-no-invention`
+- Failure boundary: fact drift for tone
 - Package: `upgradeables/output/style-alignment/UPGRADEABLE.md`
 ---
 
-## Surgery Editing (`surgery-edit`)
+## Surgery Editing (`surgery-edit@1.1.0`)
 
-Perform controlled structural replacement when a local patch cannot address an architecture-level change.
+Make macro changes to layers, cores, workflows, or incompatible interfaces without losing invariants, dependents, or rollback control.
 
 - ID: `A-08`
-- Activation: `U3-high-risk-expensive`
-- Classes: editing-repair, orchestration
-- Forms: skill-component, orchestrator
+- OS role: macro-architecture editor, structural migration operator
+- Pipeline stages: structural diagnosis, interface inventory, replacement design, migration and cutover, global validation
+- Best-fit tasks: layer reorganization, Core replacement, major workflow change, large incompatible refactor, schema or public interface migration
+- Trigger: layers, Cores, or workflows require major replacement
+- When not to use: a localized invariant-preserving patch suffices
+- Mechanism basis: `recovered`
+- Mechanism: Declare the failing structural boundary and why CRISPR cannot preserve it, inventory every inbound and outbound interface, and define a replacement architecture with mapped invariants. Plan old-to-new state migration, adapters, staged cutover, observability, and rollback; change the structure in bounded phases, validate each dependent contract, then remove the old path only after the replacement passes global checks.
+- Companions: `forethought-checkpoints`, `regenerative-rewrite`, `task-set-lock-in`
+- Counterbalances: `crispr-edit`, `micro-repair`
+- Failure boundary: macro edit disguised as patch accumulation
 - Package: `upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md`
 ---
 
-## Task-Set Lock-In (`task-set-lock-in`)
+## Task-Set Lock-In (`task-set-lock-in@1.1.0`)
 
-Lock the goal, deliverable, constraints, terminology, source boundaries, current subtask, and completion criteria.
+Prevent scope substitution and goal drift during execution.
 
 - ID: `T1-06`
-- Activation: `U0-foundational`
-- Classes: framing-intake, state
-- Forms: state-schema, state-manager
+- OS role: task identity, scope control, acceptance gate
+- Pipeline stages: after clarification, before planning, at scope-change requests, final acceptance
+- Best-fit tasks: multi-step builds, contracted deliverables, long research, tasks with exclusions
+- Trigger: multi-step work begins or scope changes
+- When not to use: the task is still materially ambiguous
+- Mechanism basis: `recovered`
+- Mechanism: Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority. Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision.
+- Companions: `clarification-gateway`, `mode-lock-in`, `stateblock`
+- Counterbalances: `controlled-drift-corridors`, `micro-scaffolding`
+- Failure boundary: Do not claim completion when a required artifact or quality gate lacks evidence.
 - Package: `upgradeables/state/task-set-lock-in/UPGRADEABLE.md`
 ---
 
-## Temporal Anchor Scaffold (`temporal-anchor-scaffold`)
+## Temporal Anchor Scaffold (`temporal-anchor-scaffold@1.1.0`)
 
-Preserve dates, sequence, effective periods, and temporal reference points during reasoning.
+Prevent chronology errors and confusion between event time, publication time, and current validity.
 
 - ID: `JAN26-07`
-- Activation: `U1-common-conditional`
-- Classes: state, truth-grounding
-- Forms: state-schema, validator
+- OS role: temporal normalization, task-local scaffold, sequence validation
+- Pipeline stages: source intake, timeline reconciliation, time-sensitive reasoning, final citation check
+- Best-fit tasks: incident timelines, policy version analysis, case chronology, news or market research
+- Trigger: time or chronology affects correctness
+- When not to use: time has no bearing on the answer
+- Mechanism basis: `provisional`
+- Mechanism: A modern interpretation is a task-local table of events with normalized timestamp or interval, original temporal expression, source, event/publication/effective-time type, confidence, and before/after links. Unknown order stays unknown. Promote only durable verified temporal facts into canonical state and retire the scaffold after the timeline-dependent output is validated.
+- Companions: `micro-scaffolding`, `sequential-memory-state-engine`, `state-snapshot`
+- Counterbalances: `clarification-gateway`, `stable-long-context`
+- Failure boundary: Do not assert total order from partial temporal evidence.
 - Package: `upgradeables/state/temporal-anchor-scaffold/UPGRADEABLE.md`
 ---
 
-## Truth Priority Hierarchy (`truth-priority-hierarchy`)
+## Truth Priority Hierarchy (`truth-priority-hierarchy@1.1.0`)
 
-Resolve evidence conflicts with an explicit domain hierarchy in which verified evidence outranks fluency.
+Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.
 
 - ID: `T3-06`
-- Activation: `U1-common-conditional`
-- Classes: truth-grounding, orchestration
-- Forms: orchestrator, validator
+- OS role: truth-conflict-resolver, authority-ordering
+- Pipeline stages: task-framing, evidence-conflict-resolution, qms-collapse
+- Best-fit tasks: multi-source research, policy and regulatory analysis, multi-validator workflows, domain decisions with mixed evidence classes
+- Trigger: evidence classes or authorities conflict
+- When not to use: no material evidence or authority conflict exists
+- Mechanism basis: `recovered`
+- Mechanism: Before resolving a conflict, declare a domain-appropriate ordering such as host safety over task optimization, direct source fact over inference, and verified evidence over stylistic fluency. Map each conflicting claim to its evidence and authority class, apply the ordering, and preserve unresolved ties rather than silently choosing.
+- Companions: `epistemic-status-gating`, `multi-truth-gating`, `parallel-qms`
+- Counterbalances: none identified
+- Failure boundary: If a material conflict has no defensible domain/authority ordering, the resolver must not select a winner.
 - Package: `upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md`
 ---
 
-## Truth Redundancy (`truth-redundancy`)
+## Truth Redundancy (`truth-redundancy@1.1.0`)
 
-Use two independent truth anchors so one failure is less likely to corrupt the result.
+Reduce single-point truth failure before high-impact synthesis or decision-making.
 
 - ID: `T3-03`
-- Activation: `U3-high-risk-expensive`
-- Classes: truth-grounding, validation
-- Forms: validator
+- OS role: evidence-redundancy, truth-safety
+- Pipeline stages: evidence-selection, pre-synthesis-validation
+- Best-fit tasks: high-stakes evidence work, critical factual claims, source-grounded decision support, safety-relevant tradeoffs
+- Trigger: a consequential claim can be independently checked
+- When not to use: the claim is low risk and an authoritative primary source is decisive
+- Mechanism basis: `recovered`
+- Mechanism: For a selected truth atom, establish two evidence or validation anchors whose failure modes are meaningfully independent. Record provenance and the proposition each anchor supports; the pair is then passed to a gate or resolver rather than treated as automatic proof.
+- Companions: `critical-atomic-verification`, `multi-truth-gating`
+- Counterbalances: none identified
+- Failure boundary: If no genuinely independent second anchor is available, report that limitation and do not claim redundant verification.
 - Package: `upgradeables/truth-grounding/truth-redundancy/UPGRADEABLE.md`
 ---
 
-## Two Truths + Corridor (`two-truths-and-corridor`)
+## Two Truths + Corridor (`two-truths-and-corridor@1.1.0`)
 
-Combine two independent anchors with an explicitly permitted synthesis corridor.
+Enable useful synthesis without losing redundant factual grounding.
 
 - ID: `T3-08`
-- Activation: `U2-specialized`
-- Classes: truth-grounding, drift-control
-- Forms: plugin-bundle-component, guard
+- OS role: grounded-synthesis-controller, drift-boundary
+- Pipeline stages: pre-synthesis, synthesis, post-synthesis-validation
+- Best-fit tasks: comparative research, evidence-grounded authoring, policy synthesis, explanatory integration of two sources
+- Trigger: source-grounded synthesis permits bounded interpretation
+- When not to use: only one defensible anchor exists
+- Mechanism basis: `normalized-from-recovered`
+- Mechanism: Verify two independent anchors, declare which atoms in them are fixed, and set the synthesis corridor to zero, micro, or bounded exploratory drift. Generate connecting interpretation only inside that corridor, then check every synthesized claim against at least one anchor and the permitted transformation width.
+- Companions: `controlled-drift-corridors`, `multi-truth-gating`, `truth-redundancy`
+- Counterbalances: `grounding-no-invention`
+- Failure boundary: If either anchor is unverified or the synthesis requires claims outside the declared corridor, do not certify the synthesis.
 - Package: `upgradeables/truth-grounding/two-truths-and-corridor/UPGRADEABLE.md`
 ---
 
-## Ultimate Suite Supervisor (`ultimate-suite-supervisor`)
+## Ultimate Suite Supervisor (`ultimate-suite-supervisor@1.1.0`)
 
-Declare modes, enforce the core stack, select local versus global editing, resolve pack conflicts, and run post-output health checks.
+Keep a large OS or skill suite operating as one authority-consistent system across planning, execution, repair, and finalization.
 
 - ID: `T4-05`
-- Activation: `U4-meta-architecture`
-- Classes: meta-control, orchestration, validation
-- Forms: orchestrator
+- OS role: top-level suite supervisor, global mode and authority arbiter
+- Pipeline stages: suite activation, mode and stack declaration, global routing, conflict resolution, post-output health gate
+- Best-fit tasks: large modular OS execution, multi-mode skill suites, complex authoring or research systems, architecture plus execution pipelines
+- Trigger: a large suite needs top-level coordination
+- When not to use: one small skill can complete the task
+- Mechanism basis: `recovered`
+- Mechanism: Build a suite execution contract that declares active mode, required Core and Gene stack, authorized modules, authority precedence, edit class, duration and intensity, transition rules, and final health criteria. Delegate local process monitoring and repair to Meta-Supervisor, but retain decisions that affect the whole suite: POWER/SAFE/HYBRID, required stack enforcement, CRISPR versus Surgery, cross-pack conflicts, and post-output acceptance. Emit one authoritative routing state and fail closed on unresolved global conflict.
+- Companions: `behavior-gene-builder`, `domain-core-builder`, `hybrid-mode`, `meta-supervisor`
+- Counterbalances: `reasoning-throughput-governor`, `scoped-loader`
+- Failure boundary: monolithic full-suite loading
 - Package: `upgradeables/meta-control/ultimate-suite-supervisor/UPGRADEABLE.md`
 ---
 
-## Working-Memory Cues (`working-memory-cues`)
+## Working-Memory Cues (`working-memory-cues@1.1.0`)
 
-Maintain compact reminders of the current objective and constraints without repeatedly loading the full instruction set.
+Keep easily forgotten but relevant information salient during execution.
 
 - ID: `T1-09`
-- Activation: `U0-foundational`
-- Classes: state
-- Forms: state-schema, skill-component
+- OS role: attention prompt, state pointer, checkpoint reminder
+- Pipeline stages: before risky step, after context switch, before output, at known failure points
+- Best-fit tasks: long transformations, repetitive tool loops, tasks with a few recurring constraints, review workflows
+- Trigger: many constraints must remain active
+- When not to use: the cue duplicates already salient text
+- Mechanism basis: `recovered`
+- Mechanism: Derive a very short cue from canonical state and attach it to the step where omission is likely: a field pointer, invariant, question, or validation instruction. Retire the cue when its trigger or risk disappears; changes to truth occur in canonical state, never inside the cue.
+- Companions: `stable-long-context`, `stateblock`, `working-memory-lock-in`
+- Counterbalances: `attention-compression-scaffold`, `clarification-gateway`
+- Failure boundary: Do not cue an unverified claim as fact.
 - Package: `upgradeables/state/working-memory-cues/UPGRADEABLE.md`
 ---
 
-## Working-Memory Lock-In (`working-memory-lock-in`)
+## Working-Memory Lock-In (`working-memory-lock-in@1.1.0`)
 
-Keep the most task-critical information in compact active state, verbatim where fidelity requires it.
+Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.
 
 - ID: `T2-08`
-- Activation: `U1-common-conditional`
-- Classes: state
-- Forms: state-manager
+- OS role: active invariant cache, attention stability, checkpoint heartbeat
+- Pipeline stages: task initialization, before each major action, after context/tool transition, final validation
+- Best-fit tasks: long agent loops, high-fidelity transformations, safety-critical execution, multi-step builds
+- Trigger: critical state competes with large context
+- When not to use: nothing needs continuous salience
+- Mechanism basis: `recovered`
+- Mechanism: Select only the invariants whose omission would materially corrupt the task, store canonical pointers plus compact current values, and run a heartbeat before major actions to confirm freshness and consistency. Refresh on accepted state change; if a locked item conflicts or goes stale, block dependent work until reconciled.
+- Companions: `stateblock`, `task-set-lock-in`, `working-memory-cues`
+- Counterbalances: `attention-compression-scaffold`, `stable-long-context`
+- Failure boundary: Do not proceed when a critical locked field cannot be reconciled.
 - Package: `upgradeables/state/working-memory-lock-in/UPGRADEABLE.md`
 ---
 
-## Zero-Drift Zones (`zero-drift-zones`)
+## Zero-Drift Zones (`zero-drift-zones@1.1.0`)
 
-Mark quotes, definitions, citation metadata, numbers, and exact policy language that may not be creatively transformed.
+Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.
 
 - ID: `T3-14`
-- Activation: `U1-common-conditional`
-- Classes: drift-control, truth-grounding
-- Forms: guard, state-schema
+- OS role: immutable semantic region, fidelity boundary, high-consequence validation
+- Pipeline stages: source annotation, transformation planning, generation guard, final verification
+- Best-fit tasks: legal and policy transformation, source-grounded summaries, code/API migration, safety-critical instructions
+- Trigger: Activate when the task requires content contains fidelity-locked atoms.
+- When not to use: the user explicitly authorizes change to the marked content
+- Mechanism basis: `recovered`
+- Mechanism: Identify minimal semantic atoms whose alteration would invalidate the task, assign stable IDs and source spans, and specify their preservation rule: exact text, exact value/unit, or meaning-equivalent statement with required qualifiers. Carry the IDs through all transforms and require a deterministic check or source-grounded review before acceptance.
+- Companions: `controlled-drift-corridors`, `drift-immunity-propagation`, `drift-suppression`
+- Counterbalances: `clarification-gateway`, `drift-spectra-scaling`
+- Failure boundary: Block release when a required zone fails validation.
 - Package: `upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md`
 ---
 

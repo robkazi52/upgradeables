@@ -30,6 +30,13 @@ Prefer the smallest useful source:
 Do not load `archive/` for normal task execution. Archived files are provenance,
 not current operating instructions.
 
+Before activation, inspect `os_role`, `pipeline_stages`, `best_fit_tasks`,
+`avoid_when`, `mechanism_basis`, counterbalances, and potential redundancy. Do
+not activate an Upgradeable solely because its name seems relevant; confirm its
+trigger, OS placement, task fit, and exclusion conditions. When a mechanism basis
+is `modern-interpretation` or `provisional`, do not present that implementation
+as the recovered historical definition.
+
 ## Recipe roles
 
 | Role | Meaning after a recipe is selected |

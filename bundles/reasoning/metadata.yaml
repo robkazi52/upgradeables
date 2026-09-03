@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "reasoning",
   "display_name": "Reasoning Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Curated reasoning composition from recovered architecture.",
   "components": [
     "micro-scaffolding",
@@ -21,5 +21,25 @@
     "bidirectional-consistency",
     "multiverse-reasoning",
     "bounded-exit"
-  ]
+  ],
+  "problem_solved": "Add bounded planning, alternatives, checks, and convergence to a difficult task.",
+  "activation_boundary": "Activate controls only for complexity that direct reasoning does not already handle.",
+  "required_components": [
+    "reasoning-scale-controller"
+  ],
+  "optional_components": [
+    "micro-scaffolding",
+    "anti-tunnel-vision",
+    "forethought-checkpoints",
+    "bidirectional-consistency",
+    "multiverse-reasoning",
+    "bounded-exit"
+  ],
+  "critical_interactions": [
+    "Scale control determines depth; Bounded ExIt stops refinement and retires unused branches."
+  ],
+  "excessive_when": [
+    "Excessive for a short deterministic task or when branching cannot change the answer."
+  ],
+  "review_status": "PASS"
 }

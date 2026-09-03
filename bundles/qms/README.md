@@ -1,8 +1,19 @@
 # Parallel QMS
 
-Parallel QMS is one validator family with named modes, not fifteen unrelated
-authoring Skills. A mode may approve, reject, score, veto, request repair, or
-abstain. It cannot add unsupported facts. "Parallel" means real isolated execution
-only when the host supplies it; otherwise use clearly labeled independent passes.
+Select a named validation topology without collapsing distinct QMS modes.
 
-See [QMS variants](QMS_VARIANTS.md) and [operating rules](OPERATING_RULES.md).
+## Activation boundary
+
+Activate after defining the risk and the specific validation question.
+
+## Required and optional components
+
+- [`parallel-qms@1.1.0`](../../upgradeables/validation/parallel-qms/UPGRADEABLE.md) — required
+
+## Load order and critical interactions
+
+Use the metadata `load_order`. The package chooses only supported modes and reports whether execution was actually isolated.
+
+## Over-scaffolding boundary
+
+Excessive when every mode runs, or when sequential self-review is labeled distributed validation.

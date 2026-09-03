@@ -28,7 +28,7 @@ def payload():
     recipes = load(ROOT / "recipes/recipes.json")["recipes"]
     return {
         "schema_version": "1.0.0",
-        "registry_version": "0.1.0",
+        "registry_version": "0.2.0",
         "generated_from": "upgradeables/*/*/metadata.yaml",
         "source_corpus": [
             "archive/source/OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
@@ -58,7 +58,9 @@ def catalog_payload(data):
     """Render a compact discovery surface without duplicating canonical metadata."""
     fields = (
         "slug", "display_name", "version", "purpose", "activation_class",
-        "functional_classes", "triggers", "requires", "package_path",
+        "functional_classes", "os_role", "pipeline_stages", "best_fit_tasks",
+        "avoid_when", "mechanism_basis", "mechanism", "triggers", "requires",
+        "counterbalances", "potentially_redundant_with", "package_path",
     )
     entries = []
     for item in data["upgradeables"]:

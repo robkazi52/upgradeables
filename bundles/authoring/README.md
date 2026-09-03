@@ -1,17 +1,23 @@
 # Authoring Bundle
 
-A curated composition, not an always-on monolith. Activate components only
-when their individual triggers apply and preserve repository precedence.
+Produce controlled writing while separating style, pedagogy, evidence, and placeholders.
 
-## Components and default load order
+## Activation boundary
 
-- [`style-alignment`](../../upgradeables/output/style-alignment/UPGRADEABLE.md)
-- [`pedagogical-alignment`](../../upgradeables/output/pedagogical-alignment/UPGRADEABLE.md)
-- [`safe-rewrite`](../../upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md)
-- [`citation-fidelity`](../../upgradeables/validation/citation-fidelity/UPGRADEABLE.md)
-- [`placeholder-suppression`](../../upgradeables/output/placeholder-suppression/UPGRADEABLE.md)
+Activate only the controls demanded by the deliverable.
 
-## Composition boundary
+## Required and optional components
 
-Remove redundant or inactive controls. Validators do not add facts. Any state,
-persistence, or parallel execution must be backed by a real host mechanism.
+- [`style-alignment@1.1.0`](../../upgradeables/output/style-alignment/UPGRADEABLE.md) — required
+- [`pedagogical-alignment@1.1.0`](../../upgradeables/output/pedagogical-alignment/UPGRADEABLE.md) — optional; activate by trigger
+- [`safe-rewrite@1.1.0`](../../upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md) — optional; activate by trigger
+- [`citation-fidelity@1.1.0`](../../upgradeables/validation/citation-fidelity/UPGRADEABLE.md) — optional; activate by trigger
+- [`placeholder-suppression@1.1.0`](../../upgradeables/output/placeholder-suppression/UPGRADEABLE.md) — required
+
+## Load order and critical interactions
+
+Use the metadata `load_order`. Safe Rewrite protects locked meaning while style or pedagogy changes.
+
+## Over-scaffolding boundary
+
+Excessive for unconstrained prose with no sources, locked content, or template fields.

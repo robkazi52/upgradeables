@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "meta-control",
   "display_name": "Meta Control Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Curated meta control composition from recovered architecture.",
   "components": [
     "meta-supervisor",
@@ -39,5 +39,34 @@
     "cross-universe-consistency",
     "future-proof-mode-selector",
     "model-size-drift-scaling"
-  ]
+  ],
+  "problem_solved": "Monitor and adapt a long or unstable reasoning process.",
+  "activation_boundary": "Activate when observed instability, repeated failure, or resource pressure justifies supervision.",
+  "required_components": [
+    "meta-supervisor"
+  ],
+  "optional_components": [
+    "meta-awareness",
+    "stuck-pattern-reset",
+    "coherence-heartbeat",
+    "resonance",
+    "neuro-focus",
+    "dynamic-depth-allocation",
+    "reasoning-throughput-governor",
+    "drift-spectra-scaling",
+    "compute-adaptive-drift",
+    "domain-normalized-drift",
+    "drift-immunity-propagation",
+    "meta-stability",
+    "cross-universe-consistency",
+    "future-proof-mode-selector",
+    "model-size-drift-scaling"
+  ],
+  "critical_interactions": [
+    "The supervisor chooses a targeted correction; monitors must not all run continuously."
+  ],
+  "excessive_when": [
+    "Excessive when loaded wholesale or when no measurable instability signal exists."
+  ],
+  "review_status": "PASS"
 }

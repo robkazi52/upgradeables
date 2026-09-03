@@ -1,20 +1,26 @@
 # Foundation Bundle
 
-A curated composition, not an always-on monolith. Activate components only
-when their individual triggers apply and preserve repository precedence.
+Establish scoped task identity, state, and grounding for complex work.
 
-## Components and default load order
+## Activation boundary
 
-- [`scoped-loader`](../../upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md)
-- [`stateblock`](../../upgradeables/state/stateblock/UPGRADEABLE.md)
-- [`task-set-lock-in`](../../upgradeables/state/task-set-lock-in/UPGRADEABLE.md)
-- [`working-memory-cues`](../../upgradeables/state/working-memory-cues/UPGRADEABLE.md)
-- [`grounding-no-invention`](../../upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md)
-- [`drift-suppression`](../../upgradeables/drift-control/drift-suppression/UPGRADEABLE.md)
-- [`placeholder-suppression`](../../upgradeables/output/placeholder-suppression/UPGRADEABLE.md)
-- [`mode-lock-in`](../../upgradeables/state/mode-lock-in/UPGRADEABLE.md)
+Activate individual foundations when constraints could be lost; it is not a universal preamble.
 
-## Composition boundary
+## Required and optional components
 
-Remove redundant or inactive controls. Validators do not add facts. Any state,
-persistence, or parallel execution must be backed by a real host mechanism.
+- [`scoped-loader@1.1.0`](../../upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md) — optional; activate by trigger
+- [`stateblock@1.1.0`](../../upgradeables/state/stateblock/UPGRADEABLE.md) — optional; activate by trigger
+- [`task-set-lock-in@1.1.0`](../../upgradeables/state/task-set-lock-in/UPGRADEABLE.md) — required
+- [`working-memory-cues@1.1.0`](../../upgradeables/state/working-memory-cues/UPGRADEABLE.md) — optional; activate by trigger
+- [`grounding-no-invention@1.1.0`](../../upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md) — required
+- [`drift-suppression@1.1.0`](../../upgradeables/drift-control/drift-suppression/UPGRADEABLE.md) — optional; activate by trigger
+- [`placeholder-suppression@1.1.0`](../../upgradeables/output/placeholder-suppression/UPGRADEABLE.md) — optional; activate by trigger
+- [`mode-lock-in@1.1.0`](../../upgradeables/state/mode-lock-in/UPGRADEABLE.md) — optional; activate by trigger
+
+## Load order and critical interactions
+
+Use the metadata `load_order`. Task and mode locks constrain state; the loader may add evidence but never authority.
+
+## Over-scaffolding boundary
+
+Excessive for a simple direct request that the host can reliably complete without explicit state.

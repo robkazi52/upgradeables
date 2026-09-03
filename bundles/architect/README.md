@@ -1,21 +1,27 @@
 # Architect Bundle
 
-A curated composition, not an always-on monolith. Activate components only
-when their individual triggers apply and preserve repository precedence.
+Design or restructure a composed Skill system without losing interfaces or authority.
 
-## Components and default load order
+## Activation boundary
 
-- [`architect-orchestrator`](../../upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md)
-- [`behavior-gene-builder`](../../upgradeables/meta-control/behavior-gene-builder/UPGRADEABLE.md)
-- [`domain-core-builder`](../../upgradeables/meta-control/domain-core-builder/UPGRADEABLE.md)
-- [`adapter-first-experimentation`](../../upgradeables/meta-control/adapter-first-experimentation/UPGRADEABLE.md)
-- [`crispr-edit`](../../upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md)
-- [`surgery-edit`](../../upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md)
-- [`scoped-loader`](../../upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md)
-- [`state-snapshot`](../../upgradeables/state/state-snapshot/UPGRADEABLE.md)
-- [`ultimate-suite-supervisor`](../../upgradeables/meta-control/ultimate-suite-supervisor/UPGRADEABLE.md)
+Activate for multi-component architecture work, not a small prompt edit.
 
-## Composition boundary
+## Required and optional components
 
-Remove redundant or inactive controls. Validators do not add facts. Any state,
-persistence, or parallel execution must be backed by a real host mechanism.
+- [`architect-orchestrator@1.1.0`](../../upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md) — required
+- [`behavior-gene-builder@1.1.0`](../../upgradeables/meta-control/behavior-gene-builder/UPGRADEABLE.md) — optional; activate by trigger
+- [`domain-core-builder@1.1.0`](../../upgradeables/meta-control/domain-core-builder/UPGRADEABLE.md) — optional; activate by trigger
+- [`adapter-first-experimentation@1.1.0`](../../upgradeables/meta-control/adapter-first-experimentation/UPGRADEABLE.md) — optional; activate by trigger
+- [`crispr-edit@1.1.0`](../../upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md) — optional; activate by trigger
+- [`surgery-edit@1.1.0`](../../upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md) — optional; activate by trigger
+- [`scoped-loader@1.1.0`](../../upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md) — required
+- [`state-snapshot@1.1.0`](../../upgradeables/state/state-snapshot/UPGRADEABLE.md) — required
+- [`ultimate-suite-supervisor@1.1.0`](../../upgradeables/meta-control/ultimate-suite-supervisor/UPGRADEABLE.md) — optional; activate by trigger
+
+## Load order and critical interactions
+
+Use the metadata `load_order`. The orchestrator selects builders and edit depth; snapshots preserve handoffs.
+
+## Over-scaffolding boundary
+
+Excessive for a single bounded Skill or documentation-only change.

@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "foundation",
   "display_name": "Foundation Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Curated foundation composition from recovered architecture.",
   "components": [
     "scoped-loader",
@@ -23,5 +23,26 @@
     "drift-suppression",
     "placeholder-suppression",
     "mode-lock-in"
-  ]
+  ],
+  "problem_solved": "Establish scoped task identity, state, and grounding for complex work.",
+  "activation_boundary": "Activate individual foundations when constraints could be lost; it is not a universal preamble.",
+  "required_components": [
+    "task-set-lock-in",
+    "grounding-no-invention"
+  ],
+  "optional_components": [
+    "scoped-loader",
+    "stateblock",
+    "working-memory-cues",
+    "drift-suppression",
+    "placeholder-suppression",
+    "mode-lock-in"
+  ],
+  "critical_interactions": [
+    "Task and mode locks constrain state; the loader may add evidence but never authority."
+  ],
+  "excessive_when": [
+    "Excessive for a simple direct request that the host can reliably complete without explicit state."
+  ],
+  "review_status": "PASS"
 }

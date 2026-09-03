@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "architect",
   "display_name": "Architect Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Curated architect composition from recovered architecture.",
   "components": [
     "architect-orchestrator",
@@ -25,5 +25,27 @@
     "scoped-loader",
     "state-snapshot",
     "ultimate-suite-supervisor"
-  ]
+  ],
+  "problem_solved": "Design or restructure a composed Skill system without losing interfaces or authority.",
+  "activation_boundary": "Activate for multi-component architecture work, not a small prompt edit.",
+  "required_components": [
+    "architect-orchestrator",
+    "scoped-loader",
+    "state-snapshot"
+  ],
+  "optional_components": [
+    "behavior-gene-builder",
+    "domain-core-builder",
+    "adapter-first-experimentation",
+    "crispr-edit",
+    "surgery-edit",
+    "ultimate-suite-supervisor"
+  ],
+  "critical_interactions": [
+    "The orchestrator selects builders and edit depth; snapshots preserve handoffs."
+  ],
+  "excessive_when": [
+    "Excessive for a single bounded Skill or documentation-only change."
+  ],
+  "review_status": "PASS"
 }

@@ -1,18 +1,24 @@
 # Repair Bundle
 
-A curated composition, not an always-on monolith. Activate components only
-when their individual triggers apply and preserve repository precedence.
+Choose repair depth while protecting locked content and interfaces.
 
-## Components and default load order
+## Activation boundary
 
-- [`safe-rewrite`](../../upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md)
-- [`micro-repair`](../../upgradeables/editing-repair/micro-repair/UPGRADEABLE.md)
-- [`regenerative-rewrite`](../../upgradeables/editing-repair/regenerative-rewrite/UPGRADEABLE.md)
-- [`crispr-edit`](../../upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md)
-- [`surgery-edit`](../../upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md)
-- [`contradiction-micro-repair`](../../upgradeables/editing-repair/contradiction-micro-repair/UPGRADEABLE.md)
+Activate after locating a defect and deciding whether its scope is local, targeted, or architectural.
 
-## Composition boundary
+## Required and optional components
 
-Remove redundant or inactive controls. Validators do not add facts. Any state,
-persistence, or parallel execution must be backed by a real host mechanism.
+- [`safe-rewrite@1.1.0`](../../upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md) — required
+- [`micro-repair@1.1.0`](../../upgradeables/editing-repair/micro-repair/UPGRADEABLE.md) — optional; activate by trigger
+- [`regenerative-rewrite@1.1.0`](../../upgradeables/editing-repair/regenerative-rewrite/UPGRADEABLE.md) — optional; activate by trigger
+- [`crispr-edit@1.1.0`](../../upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md) — optional; activate by trigger
+- [`surgery-edit@1.1.0`](../../upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md) — optional; activate by trigger
+- [`contradiction-micro-repair@1.1.0`](../../upgradeables/editing-repair/contradiction-micro-repair/UPGRADEABLE.md) — optional; activate by trigger
+
+## Load order and critical interactions
+
+Use the metadata `load_order`. Failure boundaries escalate from micro repair toward surgery; deeper editors must preserve declared invariants.
+
+## Over-scaffolding boundary
+
+Excessive when multiple editors compete or an architectural rewrite is used for a local defect.

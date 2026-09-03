@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "parallel-qms",
   "display_name": "Parallel QMS",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Compose named validation modes under one bounded family.",
   "components": [
     "parallel-qms"
@@ -26,5 +26,18 @@
   ],
   "load_order": [
     "parallel-qms"
-  ]
+  ],
+  "problem_solved": "Select a named validation topology without collapsing distinct QMS modes.",
+  "activation_boundary": "Activate after defining the risk and the specific validation question.",
+  "required_components": [
+    "parallel-qms"
+  ],
+  "optional_components": [],
+  "critical_interactions": [
+    "The package chooses only supported modes and reports whether execution was actually isolated."
+  ],
+  "excessive_when": [
+    "Excessive when every mode runs, or when sequential self-review is labeled distributed validation."
+  ],
+  "review_status": "PASS"
 }

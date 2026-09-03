@@ -2,12 +2,13 @@
 
 ## Near term
 
-1. Independent review of every source-to-registry mapping and historical alias.
-2. More executable behavioral/composition fixtures and evaluator adapters.
-3. Community-authored provider integrations and example Skill packages.
+1. Independent external review of source mappings, package semantics, and aliases.
+2. Empirical evaluations across model providers using the adapter interface.
+3. Community-proposed Upgradeables and benchmark datasets with review evidence.
+4. Package dependency-resolution and conflict-explanation tooling.
 
 ## Later
 
-- Evidence-backed evaluations without claiming universal model improvement.
-- Versioned migrations and signed release artifacts.
+- A visualization/browser UI for task, recipe, package, and bundle discovery.
+- Signed provenance and release artifacts.
 - Provenance proposals for currently unresolved historical concepts.

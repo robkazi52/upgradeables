@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "truth-safety",
   "display_name": "Truth Safety Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Curated truth safety composition from recovered architecture.",
   "components": [
     "multi-truth-gating",
@@ -29,5 +29,29 @@
     "counterfactual-integrity",
     "fermionic-veto",
     "risk-tier-scaling"
-  ]
+  ],
+  "problem_solved": "Gate high-impact claims against evidence, conflict, risk, and abstention rules.",
+  "activation_boundary": "Activate proportionally to claim impact and available evidence.",
+  "required_components": [
+    "multi-truth-gating",
+    "truth-priority-hierarchy",
+    "fail-closed-abstention"
+  ],
+  "optional_components": [
+    "truth-redundancy",
+    "critical-atomic-verification",
+    "controlled-drift-corridors",
+    "domain-mode-isolation",
+    "citation-fidelity",
+    "counterfactual-integrity",
+    "fermionic-veto",
+    "risk-tier-scaling"
+  ],
+  "critical_interactions": [
+    "Risk tiers allocate checks; evidence priority and abstention resolve failures without inventing support."
+  ],
+  "excessive_when": [
+    "Excessive for low-impact source-free tasks or when redundant checks add no independent evidence."
+  ],
+  "review_status": "PASS"
 }

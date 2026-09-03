@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "slug": "authoring",
   "display_name": "Authoring Bundle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Curated authoring composition from recovered architecture.",
   "components": [
     "style-alignment",
@@ -17,5 +17,23 @@
     "safe-rewrite",
     "citation-fidelity",
     "placeholder-suppression"
-  ]
+  ],
+  "problem_solved": "Produce controlled writing while separating style, pedagogy, evidence, and placeholders.",
+  "activation_boundary": "Activate only the controls demanded by the deliverable.",
+  "required_components": [
+    "style-alignment",
+    "placeholder-suppression"
+  ],
+  "optional_components": [
+    "pedagogical-alignment",
+    "safe-rewrite",
+    "citation-fidelity"
+  ],
+  "critical_interactions": [
+    "Safe Rewrite protects locked meaning while style or pedagogy changes."
+  ],
+  "excessive_when": [
+    "Excessive for unconstrained prose with no sources, locked content, or template fields."
+  ],
+  "review_status": "PASS"
 }

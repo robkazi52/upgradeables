@@ -1,19 +1,25 @@
 # Reasoning Bundle
 
-A curated composition, not an always-on monolith. Activate components only
-when their individual triggers apply and preserve repository precedence.
+Add bounded planning, alternatives, checks, and convergence to a difficult task.
 
-## Components and default load order
+## Activation boundary
 
-- [`micro-scaffolding`](../../upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md)
-- [`reasoning-scale-controller`](../../upgradeables/reasoning/reasoning-scale-controller/UPGRADEABLE.md)
-- [`anti-tunnel-vision`](../../upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md)
-- [`forethought-checkpoints`](../../upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md)
-- [`bidirectional-consistency`](../../upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md)
-- [`multiverse-reasoning`](../../upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md)
-- [`bounded-exit`](../../upgradeables/reasoning/bounded-exit/UPGRADEABLE.md)
+Activate controls only for complexity that direct reasoning does not already handle.
 
-## Composition boundary
+## Required and optional components
 
-Remove redundant or inactive controls. Validators do not add facts. Any state,
-persistence, or parallel execution must be backed by a real host mechanism.
+- [`micro-scaffolding@1.1.0`](../../upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md) — optional; activate by trigger
+- [`reasoning-scale-controller@1.1.0`](../../upgradeables/reasoning/reasoning-scale-controller/UPGRADEABLE.md) — required
+- [`anti-tunnel-vision@1.1.0`](../../upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md) — optional; activate by trigger
+- [`forethought-checkpoints@1.1.0`](../../upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md) — optional; activate by trigger
+- [`bidirectional-consistency@1.1.0`](../../upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md) — optional; activate by trigger
+- [`multiverse-reasoning@1.1.0`](../../upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md) — optional; activate by trigger
+- [`bounded-exit@1.1.0`](../../upgradeables/reasoning/bounded-exit/UPGRADEABLE.md) — optional; activate by trigger
+
+## Load order and critical interactions
+
+Use the metadata `load_order`. Scale control determines depth; Bounded ExIt stops refinement and retires unused branches.
+
+## Over-scaffolding boundary
+
+Excessive for a short deterministic task or when branching cannot change the answer.
