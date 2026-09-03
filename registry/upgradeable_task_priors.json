@@ -1,0 +1,6135 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "0.2.1",
+  "kind": "upgradeable-selection-priors",
+  "selection_prior_disclaimer": "These reviewed mappings guide candidate selection. They do not activate components or prove effectiveness. Task-time triggers, exclusions, authority, and complexity limits still apply.",
+  "upgradeables": [
+    {
+      "slug": "activation-budget-funnel",
+      "version": "1.1.0",
+      "plain_display_name": "Progressive Context Intake",
+      "primary_task_archetypes": [
+        "content-understanding",
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "workflow-automation"
+      ],
+      "primary_failure_modes": [
+        "context-overload",
+        "evidence-coverage-gap"
+      ],
+      "secondary_failure_modes": [
+        "provenance-loss",
+        "lost-state"
+      ],
+      "pipeline_stages": [
+        "retrieval",
+        "evidence capture",
+        "indexing",
+        "synthesis",
+        "pre-output verification"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "multi_document",
+        "context_window_pressure",
+        "has_supplied_sources",
+        "persistent_work"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "long-context",
+        "medical-evidence",
+        "legal-evidence",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "constraint-reasoning"
+      ],
+      "escalates_from": [
+        "scoped-loader"
+      ],
+      "escalates_to": [
+        "attention-compression-scaffold",
+        "stable-long-context"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "anti-tunnel-vision",
+          "reason": "A narrow active batch must not hide a plausible competing source or interpretation."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Consider when many sources or modules compete for attention; exclude when one short source fits comfortably."
+    },
+    {
+      "slug": "adapter-first-experimentation",
+      "version": "1.1.0",
+      "plain_display_name": "Adapter-First Experimentation",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "invalid-validation-signal"
+      ],
+      "secondary_failure_modes": [
+        "over-branching",
+        "packaging-activation-drift"
+      ],
+      "pipeline_stages": [
+        "experiment design",
+        "detached trial",
+        "evaluation",
+        "promotion or retirement"
+      ],
+      "environment_promoters": [
+        "recurrence_pattern_stable",
+        "tools_required",
+        "durable_state_available",
+        "acceptance_criteria_present",
+        "branches_independent"
+      ],
+      "environment_demoters": [
+        "irreversible_action",
+        "high_stakes"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-understanding",
+        "content-transformation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "crispr-edit"
+      ],
+      "escalates_to": [
+        "architect-orchestrator",
+        "future-proof-mode-selector"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "meta-stability",
+          "reason": "Preserve the trusted base while the detached capability is evaluated."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A high-cost prior for measurable, interface-isolated experiments; mandatory repairs should not be routed through it."
+    },
+    {
+      "slug": "anti-tunnel-vision",
+      "version": "1.1.0",
+      "plain_display_name": "Anti-Tunnel Vision",
+      "primary_task_archetypes": [
+        "decision-support",
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "planning-design",
+        "creative-exploration"
+      ],
+      "primary_failure_modes": [
+        "premature-commitment",
+        "tunnel-vision"
+      ],
+      "secondary_failure_modes": [
+        "evidence-coverage-gap",
+        "poor-uncertainty-handling"
+      ],
+      "pipeline_stages": [
+        "hypothesis formation",
+        "plan selection",
+        "pre-commit review"
+      ],
+      "environment_promoters": [
+        "evidence_conflicting",
+        "missing_required_information",
+        "high_stakes",
+        "branches_independent"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "general",
+        "research",
+        "software-development",
+        "data-analysis"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "decision-first-scaffold"
+      ],
+      "escalates_to": [
+        "multiverse-reasoning"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "neuro-focus",
+          "reason": "Collapse breadth once evidence discriminates so search does not become unbounded."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Promotes a bounded alternative check, not open-ended branching; direct authoritative answers suppress it."
+    },
+    {
+      "slug": "architect-orchestrator",
+      "version": "1.1.0",
+      "plain_display_name": "Modular System Design Orchestrator",
+      "primary_task_archetypes": [
+        "planning-design",
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "orchestration-fragmentation",
+        "packaging-activation-drift"
+      ],
+      "secondary_failure_modes": [
+        "over-branching",
+        "mode-scope-authority-drift",
+        "poor-handoff"
+      ],
+      "pipeline_stages": [
+        "intake and framing",
+        "modular planning",
+        "execution coordination",
+        "critique and synthesis",
+        "state handoff"
+      ],
+      "environment_promoters": [
+        "recurrence_pattern_stable",
+        "persistent_work",
+        "durable_state_available",
+        "branches_independent",
+        "multi_agent_available"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-understanding",
+        "content-transformation",
+        "quantitative-analysis"
+      ],
+      "escalates_from": [
+        "decision-first-scaffold",
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "meta-supervisor",
+        "ultimate-suite-supervisor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "cognitive-governor",
+          "reason": "Architecture coordination must remain within a justified effort and continuation budget."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use for genuine Skill, OS, framework, or workflow architecture—not narrow domain execution."
+    },
+    {
+      "slug": "attention-compression-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Temporary Focused-Context View",
+      "primary_task_archetypes": [
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "software-engineering",
+        "workflow-automation"
+      ],
+      "primary_failure_modes": [
+        "context-overload",
+        "provenance-loss"
+      ],
+      "secondary_failure_modes": [
+        "lost-state",
+        "evidence-coverage-gap"
+      ],
+      "pipeline_stages": [
+        "post-retrieval",
+        "pre-synthesis",
+        "context refresh"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "multi_document",
+        "context_window_pressure",
+        "persistent_work"
+      ],
+      "environment_demoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "research",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "activation-budget-funnel",
+        "scoped-loader"
+      ],
+      "escalates_to": [
+        "stable-long-context"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "zero-drift-zones",
+          "reason": "Compression must not alter protected facts, constraints, or literals."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Use only with provenance pointers that allow re-expansion; exact wording that must remain live demotes it."
+    },
+    {
+      "slug": "authenticity-anti-evasion",
+      "version": "1.1.0",
+      "plain_display_name": "Capability and Completion Honesty Gate",
+      "primary_task_archetypes": [
+        "evaluation-audit",
+        "action-execution",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "capability-hallucination",
+        "under-verification"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "abstention-miscalibration"
+      ],
+      "pipeline_stages": [
+        "during-execution",
+        "pre-output-verification"
+      ],
+      "environment_promoters": [
+        "tools_required",
+        "external_action_allowed",
+        "evidence_unavailable",
+        "high_stakes",
+        "persistent_work"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "grounding-no-invention"
+      ],
+      "escalates_to": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Applies to auditable claims about evidence, actions, capabilities, or completion; it must not request hidden reasoning."
+    },
+    {
+      "slug": "authority-anchor-enforcement",
+      "version": "1.1.0",
+      "plain_display_name": "Authority Anchor Enforcement",
+      "primary_task_archetypes": [
+        "action-execution",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "evaluation-audit",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "mode-scope-authority-drift",
+        "action-permission-risk"
+      ],
+      "secondary_failure_modes": [
+        "domain-context-contamination",
+        "branch-contamination"
+      ],
+      "pipeline_stages": [
+        "intake authority capture",
+        "pre-action authorization",
+        "conflict resolution"
+      ],
+      "environment_promoters": [
+        "external_action_allowed",
+        "file_write_allowed",
+        "editing_requested",
+        "high_stakes",
+        "multi_agent_available"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "task-set-lock-in",
+        "mode-lock-in"
+      ],
+      "escalates_to": [
+        "non-authoritative-branch-suppression"
+      ],
+      "counterbalance_notes": [],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Requires an identifiable governing authority; capability or credential scope alone is not authorization."
+    },
+    {
+      "slug": "behavior-gene-builder",
+      "version": "1.1.0",
+      "plain_display_name": "Reusable Behavior Component Builder",
+      "primary_task_archetypes": [
+        "skill-agent-creation",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "packaging-activation-drift",
+        "version-drift"
+      ],
+      "secondary_failure_modes": [
+        "context-overload",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "recurrence analysis",
+        "gene specification",
+        "validation",
+        "versioned publication"
+      ],
+      "environment_promoters": [
+        "recurrence_pattern_stable",
+        "structured_output_required",
+        "persistent_work",
+        "has_supplied_sources"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-understanding",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "architect-orchestrator"
+      ],
+      "escalates_to": [
+        "resonance-gene-builder",
+        "domain-core-builder"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "domain-core-builder",
+          "reason": "Keep reusable behavior separate from sourced domain knowledge and decision logic."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A recurring task family and stable behavioral contract are prerequisites; one-off behavior should not become a Gene."
+    },
+    {
+      "slug": "bidirectional-consistency",
+      "version": "1.1.0",
+      "plain_display_name": "Bidirectional Consistency",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "quantitative-analysis",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "invalid-validation-signal"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "post-transformation",
+        "pre-release-validation"
+      ],
+      "environment_promoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "structured_output_required",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "documentation",
+        "software-development",
+        "data-analysis",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "citation-fidelity",
+        "critical-atomic-verification"
+      ],
+      "escalates_to": [
+        "multi-layer-consistency"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "controlled-drift-corridors",
+          "reason": "Reverse checks must respect intentionally lossy or authorized transformations."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use when a reverse mapping is meaningful; intentionally irreversible creative transformations normally exclude it."
+    },
+    {
+      "slug": "bounded-exit",
+      "version": "1.1.0",
+      "plain_display_name": "Bounded Iteration Stop Rule",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "evaluation-audit",
+        "content-authoring"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "weak-stopping-rule",
+        "over-verification"
+      ],
+      "secondary_failure_modes": [
+        "over-branching"
+      ],
+      "pipeline_stages": [
+        "draft review",
+        "iterative repair",
+        "release decision"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "context_window_pressure",
+        "tools_required"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "general",
+        "authoring",
+        "software-development",
+        "research",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "constraint-reasoning"
+      ],
+      "escalates_from": [
+        "structured-refinement"
+      ],
+      "escalates_to": [
+        "cognitive-governor",
+        "reasoning-scale-controller"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "reasoning-scale-controller",
+          "reason": "Stopping thresholds should reflect the task's justified reasoning depth."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Bounds iterative improvement but never permits exit before a mandatory validator or unresolved hard defect."
+    },
+    {
+      "slug": "citation-fidelity",
+      "version": "1.1.0",
+      "plain_display_name": "Citation Fidelity Gate",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "content-understanding"
+      ],
+      "primary_failure_modes": [
+        "citation-source-mismatch",
+        "provenance-loss"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "source-applicability-mismatch"
+      ],
+      "pipeline_stages": [
+        "evidence collection",
+        "draft validation",
+        "pre-publication"
+      ],
+      "environment_promoters": [
+        "requires_citations",
+        "has_supplied_sources",
+        "multi_document"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "grounding-no-invention"
+      ],
+      "escalates_to": [
+        "critical-atomic-verification",
+        "cross-checking-chains"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "specificity-penalty-gate",
+          "reason": "Discourage claim precision that the cited source cannot establish."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Citation presence is insufficient; the nearby claim must be directly supported. No-citation outputs normally exclude it."
+    },
+    {
+      "slug": "clarification-gateway",
+      "version": "1.1.0",
+      "plain_display_name": "Clarification Gateway",
+      "primary_task_archetypes": [
+        "knowledge-explanation",
+        "planning-design",
+        "action-execution"
+      ],
+      "secondary_task_archetypes": [
+        "constraint-reasoning",
+        "software-engineering",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "missing-required-information",
+        "task-drift"
+      ],
+      "secondary_failure_modes": [
+        "action-permission-risk",
+        "abstention-miscalibration"
+      ],
+      "pipeline_stages": [
+        "intake",
+        "pre-execution",
+        "exception-routing"
+      ],
+      "environment_promoters": [
+        "missing_required_information",
+        "evidence_unavailable",
+        "high_stakes",
+        "irreversible_action"
+      ],
+      "environment_demoters": [
+        "acceptance_criteria_present",
+        "reproduction_available"
+      ],
+      "default_complexity_min": "L0",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "research",
+        "medical-evidence",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "bounded-exit",
+          "reason": "Ask only for materially blocking information and continue or stop once the boundary is resolved."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Clarification is proportional; non-material missing detail should use a bounded explicit assumption or partial result."
+    },
+    {
+      "slug": "cognitive-governor",
+      "version": "1.1.0",
+      "plain_display_name": "Reasoning Effort Budget Controller",
+      "primary_task_archetypes": [
+        "planning-design",
+        "workflow-automation",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "software-engineering",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "over-branching",
+        "under-verification",
+        "over-verification"
+      ],
+      "secondary_failure_modes": [
+        "weak-stopping-rule",
+        "premature-commitment"
+      ],
+      "pipeline_stages": [
+        "task triage",
+        "budget assignment",
+        "mid-run budget review",
+        "exit decision"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "context_window_pressure",
+        "persistent_work",
+        "tools_required"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "research",
+        "software-development",
+        "authoring"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "reasoning-scale-controller",
+        "bounded-exit"
+      ],
+      "escalates_to": [
+        "dynamic-depth-allocation",
+        "reasoning-throughput-governor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "bounded-exit",
+          "reason": "Budget review must terminate when acceptance or diminishing-return gates are met."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use only when effort allocation materially affects quality or cost; trivial deterministic work suppresses it."
+    },
+    {
+      "slug": "coherence-heartbeat",
+      "version": "1.1.0",
+      "plain_display_name": "Periodic Whole-Task Consistency Check",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "task-drift",
+        "lost-state"
+      ],
+      "secondary_failure_modes": [
+        "stale-state",
+        "invariant-violation"
+      ],
+      "pipeline_stages": [
+        "during long execution",
+        "after milestones",
+        "before irreversible steps"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "long_context",
+        "handoff_expected",
+        "durable_state_available"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "software-development",
+        "research",
+        "agent-development",
+        "authoring"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "task-set-lock-in",
+        "state-snapshot"
+      ],
+      "escalates_to": [
+        "coherence-loops"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "dynamic-depth-allocation",
+          "reason": "Heartbeat depth and frequency should scale with actual drift risk."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A lightweight periodic check for genuinely long work; a one-operation task does not need a heartbeat."
+    },
+    {
+      "slug": "coherence-loops",
+      "version": "1.1.0",
+      "plain_display_name": "Coherence Loops",
+      "primary_task_archetypes": [
+        "evaluation-audit",
+        "workflow-automation",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "domain-context-contamination"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "weak-stopping-rule"
+      ],
+      "pipeline_stages": [
+        "integration",
+        "post-drift-detection",
+        "pre-release"
+      ],
+      "environment_promoters": [
+        "multi_document",
+        "persistent_work",
+        "handoff_expected",
+        "acceptance_criteria_present"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "software-development",
+        "long-context",
+        "authoring",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "constraint-reasoning"
+      ],
+      "escalates_from": [
+        "coherence-heartbeat"
+      ],
+      "escalates_to": [
+        "reflectos"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "crispr-edit",
+          "reason": "Repair only the inconsistent region instead of repeatedly rewriting the whole artifact."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Requires cross-part inconsistency and stable acceptance criteria; isolated deterministic corrections use a smaller repair."
+    },
+    {
+      "slug": "compute-adaptive-drift",
+      "version": "1.1.0",
+      "plain_display_name": "Runtime-Adaptive Drift Checks",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "evaluation-audit",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "over-verification"
+      ],
+      "secondary_failure_modes": [
+        "invariant-violation",
+        "capability-hallucination"
+      ],
+      "pipeline_stages": [
+        "runtime assessment",
+        "plan construction",
+        "checkpoint scheduling",
+        "validation"
+      ],
+      "environment_promoters": [
+        "tools_required",
+        "multi_agent_available",
+        "context_window_pressure",
+        "high_stakes"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "domain-normalized-drift",
+        "micro-scaffolding"
+      ],
+      "escalates_to": [
+        "drift-spectra-scaling",
+        "dynamic-depth-allocation"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "future-proof-mode-selector",
+          "reason": "Adaptation must respect the declared host mode rather than invent capability."
+        },
+        {
+          "slug": "zero-drift-zones",
+          "reason": "Runtime scaling must never weaken factual or safety invariants."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Scale checkpoint burden to runtime capability while keeping the strict minimum safe protocol intact."
+    },
+    {
+      "slug": "contradiction-micro-repair",
+      "version": "1.1.0",
+      "plain_display_name": "Contradiction Micro-Repair Pack",
+      "primary_task_archetypes": [
+        "evaluation-audit",
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "evidence-conflict-suppression",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "under-editing",
+        "source-applicability-mismatch"
+      ],
+      "pipeline_stages": [
+        "consistency validation",
+        "localized repair",
+        "post-repair verification"
+      ],
+      "environment_promoters": [
+        "evidence_conflicting",
+        "requires_exact_fidelity",
+        "structured_output_required"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "documentation",
+        "research",
+        "software-development",
+        "data-analysis"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "micro-repair"
+      ],
+      "escalates_to": [
+        "multi-truth-gating",
+        "coherence-loops"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "multi-truth-gating",
+          "reason": "Do not repair away a legitimate difference in scope, time, or governing authority."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Only a localized adjudicable contradiction qualifies; architectural or unresolved authority conflicts require escalation."
+    },
+    {
+      "slug": "controlled-drift-corridors",
+      "version": "1.1.0",
+      "plain_display_name": "Bounded Change Rules",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "constraint-loss"
+      ],
+      "secondary_failure_modes": [
+        "mode-scope-authority-drift",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "task decomposition",
+        "transformation planning",
+        "generation",
+        "semantic validation"
+      ],
+      "environment_promoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "structured_output_required"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "long-context",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "zero-drift-zones"
+      ],
+      "escalates_to": [
+        "domain-normalized-drift",
+        "drift-spectra-scaling"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "Allowed change dimensions must be explicit before applying a corridor."
+        },
+        {
+          "slug": "mode-lock-in",
+          "reason": "The authorized transformation mode constrains the corridor."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use when adaptation and fidelity coexist; all-zero-drift or unconstrained creative tasks do not need it."
+    },
+    {
+      "slug": "cot-structured-state-block",
+      "version": "1.1.0",
+      "plain_display_name": "Auditable Reasoning State",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "research-grounding",
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "action-execution",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "lost-state",
+        "poor-handoff"
+      ],
+      "secondary_failure_modes": [
+        "provenance-loss",
+        "stale-state"
+      ],
+      "pipeline_stages": [
+        "after evidence intake",
+        "at decision points",
+        "before handoff or resume"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "handoff_expected",
+        "durable_state_available",
+        "multi_agent_available"
+      ],
+      "environment_demoters": [
+        "sensitive_data"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "long-context",
+        "research",
+        "medical-evidence",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "stateblock",
+        "state-snapshot"
+      ],
+      "escalates_to": [
+        "structured-state-projection",
+        "sequential-memory-state-engine"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "micro-scaffolding",
+          "reason": "Persist only the minimum task state needed for audit and continuation."
+        },
+        {
+          "slug": "working-memory-cues",
+          "reason": "Keep task-critical state accessible without exposing hidden deliberation."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "This is an explicit task-state and handoff record, never a request for private chain-of-thought."
+    },
+    {
+      "slug": "counterfactual-integrity",
+      "version": "1.1.0",
+      "plain_display_name": "Counterfactual Integrity Gate",
+      "primary_task_archetypes": [
+        "constraint-reasoning",
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "creative-exploration",
+        "decision-support",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "branch-contamination",
+        "domain-context-contamination"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "candidate-generation",
+        "state-update",
+        "pre-output-verification"
+      ],
+      "environment_promoters": [
+        "branches_independent",
+        "requires_exact_fidelity",
+        "high_stakes"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "general",
+        "research",
+        "data-analysis",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "content-understanding",
+        "content-transformation",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "anti-tunnel-vision"
+      ],
+      "escalates_to": [
+        "cross-universe-consistency"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "grounding-no-invention",
+          "reason": "Keep factual baseline claims separate from hypothetical state."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Requires an explicit hypothetical branch and preserves factual, evaluative, and counterfactual phase boundaries."
+    },
+    {
+      "slug": "counterfactual-silence-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "No-Unrequested-Scenarios Guard",
+      "primary_task_archetypes": [
+        "content-understanding",
+        "research-grounding",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "domain-context-contamination",
+        "unsupported-claim"
+      ],
+      "secondary_failure_modes": [
+        "branch-contamination",
+        "mode-scope-authority-drift"
+      ],
+      "pipeline_stages": [
+        "task-framing",
+        "draft-validation",
+        "pre-output-verification"
+      ],
+      "environment_promoters": [
+        "has_supplied_sources",
+        "requires_citations",
+        "requires_exact_fidelity"
+      ],
+      "environment_demoters": [
+        "branches_independent"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "planning-design",
+        "constraint-reasoning"
+      ],
+      "escalates_from": [
+        "mode-lock-in"
+      ],
+      "escalates_to": [
+        "domain-mode-isolation"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "controlled-drift-corridors",
+          "reason": "Do not suppress hypothetical content when the task explicitly authorizes bounded scenarios."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "A factual-output guard only; explicit scenario, hypothesis, and creative tasks suppress it."
+    },
+    {
+      "slug": "crispr-edit",
+      "version": "1.1.0",
+      "plain_display_name": "Precision Local System Edit",
+      "primary_task_archetypes": [
+        "software-engineering",
+        "content-transformation",
+        "action-execution"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "over-editing",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "mode-scope-authority-drift",
+        "under-verification"
+      ],
+      "pipeline_stages": [
+        "change planning",
+        "targeted modification",
+        "invariance validation"
+      ],
+      "environment_promoters": [
+        "editing_requested",
+        "file_write_allowed",
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "acceptance_criteria_present",
+        "reproduction_available"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "software-development",
+        "agent-development",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "research-grounding",
+        "creative-exploration",
+        "evaluation-audit"
+      ],
+      "escalates_from": [
+        "micro-repair"
+      ],
+      "escalates_to": [
+        "surgery-edit"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "surgery-edit",
+          "reason": "Escalate only when the target boundary is no longer local or the governing structure is defective."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A precision structural edit prior; review-only work and non-isolatable architectural changes exclude it."
+    },
+    {
+      "slug": "critical-atomic-verification",
+      "version": "1.1.0",
+      "plain_display_name": "Critical Fact Verification",
+      "primary_task_archetypes": [
+        "evaluation-audit",
+        "research-grounding",
+        "quantitative-analysis"
+      ],
+      "secondary_task_archetypes": [
+        "action-execution",
+        "software-engineering",
+        "decision-support"
+      ],
+      "primary_failure_modes": [
+        "unsupported-precision",
+        "under-verification"
+      ],
+      "secondary_failure_modes": [
+        "invalid-validation-signal",
+        "unsupported-claim"
+      ],
+      "pipeline_stages": [
+        "pre-commitment",
+        "evidence validation",
+        "pre-release"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "irreversible_action",
+        "requires_exact_fidelity",
+        "requires_citations",
+        "structured_output_required"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "medical-evidence",
+        "legal-evidence",
+        "data-analysis",
+        "research",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "grounding-no-invention",
+        "citation-fidelity"
+      ],
+      "escalates_to": [
+        "cross-checking-chains",
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "dynamic-depth-allocation",
+          "reason": "Concentrate verification on outcome-changing atoms rather than checking every detail equally."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "High activation cost is justified only when a small fact can invalidate the output or action."
+    },
+    {
+      "slug": "cross-checking-chains",
+      "version": "1.1.0",
+      "plain_display_name": "Cross-Checking Chains",
+      "primary_task_archetypes": [
+        "evaluation-audit",
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "quantitative-analysis",
+        "software-engineering",
+        "action-execution"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "invalid-validation-signal"
+      ],
+      "secondary_failure_modes": [
+        "provenance-loss",
+        "evidence-coverage-gap"
+      ],
+      "pipeline_stages": [
+        "verification planning",
+        "sequential validation",
+        "final collapse"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "evidence_conflicting",
+        "multi_document",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "medical-evidence",
+        "legal-evidence",
+        "research",
+        "software-development",
+        "data-analysis"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "critical-atomic-verification"
+      ],
+      "escalates_to": [
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "bounded-exit",
+          "reason": "Stop once ordered checks establish the dependency chain; correlated repetition adds no value."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use when checks have an orderable dependency chain; one direct authoritative check suppresses it."
+    },
+    {
+      "slug": "cross-context-resonance-lock",
+      "version": "1.1.0",
+      "plain_display_name": "Cross-Context Relationship Guard",
+      "primary_task_archetypes": [
+        "content-understanding",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "domain-context-contamination",
+        "branch-contamination"
+      ],
+      "secondary_failure_modes": [
+        "poor-handoff",
+        "lost-state"
+      ],
+      "pipeline_stages": [
+        "context intake",
+        "cross-context handoff",
+        "synthesis verification"
+      ],
+      "environment_promoters": [
+        "multi_document",
+        "persistent_work",
+        "handoff_expected",
+        "multi_agent_available",
+        "tightly_shared_state"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "research",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "domain-mode-isolation"
+      ],
+      "escalates_to": [
+        "state-routing-bus"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "anti-tunnel-vision",
+          "reason": "Alignment between contexts must not erase credible differences or unresolved assumptions."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Preserves an explicit relationship without merging authority or facts; speculative relationships exclude it."
+    },
+    {
+      "slug": "cross-universe-consistency",
+      "version": "1.1.0",
+      "plain_display_name": "Alternative-Scenario Consistency Check",
+      "primary_task_archetypes": [
+        "constraint-reasoning",
+        "decision-support",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "branch-contamination",
+        "invalid-validation-signal"
+      ],
+      "secondary_failure_modes": [
+        "evidence-conflict-suppression",
+        "invariant-violation"
+      ],
+      "pipeline_stages": [
+        "after branch exploration",
+        "before branch collapse",
+        "post-synthesis"
+      ],
+      "environment_promoters": [
+        "branches_independent",
+        "evidence_conflicting",
+        "high_stakes"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "general",
+        "research",
+        "agent-development",
+        "data-analysis"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "counterfactual-integrity",
+        "multiverse-reasoning"
+      ],
+      "escalates_to": [
+        "multi-layer-consistency",
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "crispr-edit",
+          "reason": "When one branch defect is local, repair that branch rather than expanding cross-world analysis."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Only applies after multiple candidate paths will be compared or collapsed; one-branch work excludes it."
+    },
+    {
+      "slug": "decision-first-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Decision-First Scaffold",
+      "primary_task_archetypes": [
+        "decision-support",
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "evaluation-audit",
+        "quantitative-analysis"
+      ],
+      "primary_failure_modes": [
+        "task-drift",
+        "premature-commitment"
+      ],
+      "secondary_failure_modes": [
+        "over-branching",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "task framing",
+        "pre-analysis"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "structured_output_required"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "general",
+        "data-analysis",
+        "software-development",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "content-understanding",
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "dominant-driver-isolation-scaffold",
+        "anti-tunnel-vision"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "anti-tunnel-vision",
+          "reason": "Decision framing must not prematurely narrow a genuinely exploratory task."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Use when options and criteria are known and analysis risks becoming directionless; faithful description alone excludes it."
+    },
+    {
+      "slug": "domain-core-builder",
+      "version": "1.1.0",
+      "plain_display_name": "Shared Domain Knowledge Component Builder",
+      "primary_task_archetypes": [
+        "skill-agent-creation",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "content-understanding"
+      ],
+      "primary_failure_modes": [
+        "packaging-activation-drift",
+        "version-drift"
+      ],
+      "secondary_failure_modes": [
+        "provenance-loss",
+        "stale-state",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "domain scoping",
+        "source and variable modeling",
+        "Core construction",
+        "interface validation"
+      ],
+      "environment_promoters": [
+        "recurrence_pattern_stable",
+        "has_supplied_sources",
+        "multi_document",
+        "persistent_work"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "research",
+        "medical-evidence",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "creative-exploration",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "behavior-gene-builder"
+      ],
+      "escalates_to": [
+        "architect-orchestrator"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "behavior-gene-builder",
+          "reason": "Keep sourced knowledge and decision logic in the Core while reusable behavior remains in Genes."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "A high-cost packaging prior for recurring sourced domains; a small on-demand reference is normally sufficient instead."
+    },
+    {
+      "slug": "domain-mode-isolation",
+      "version": "1.1.0",
+      "plain_display_name": "Domain / Mode Isolation",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "action-execution",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "domain-context-contamination",
+        "mode-scope-authority-drift"
+      ],
+      "secondary_failure_modes": [
+        "branch-contamination",
+        "action-permission-risk"
+      ],
+      "pipeline_stages": [
+        "domain classification",
+        "context loading",
+        "mode transition",
+        "output validation"
+      ],
+      "environment_promoters": [
+        "multi_document",
+        "multi_agent_available",
+        "tightly_shared_state",
+        "high_stakes"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "medical-evidence",
+        "legal-evidence",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "mode-lock-in",
+        "scoped-loader"
+      ],
+      "escalates_to": [
+        "cross-context-resonance-lock",
+        "state-routing-bus"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "Clarify ambiguous domain or mode before isolating state."
+        },
+        {
+          "slug": "state-routing-bus",
+          "reason": "Permit only explicit reviewed transfers of shared facts between partitions."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Requires materially distinct domains or semantic modes; isolation must not hide a required cross-domain dependency."
+    },
+    {
+      "slug": "domain-normalized-drift",
+      "version": "1.1.0",
+      "plain_display_name": "Domain-Calibrated Change Tolerance",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "domain-context-contamination",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "over-verification",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "domain classification",
+        "risk assessment",
+        "corridor initialization",
+        "validation planning"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "sensitive_data"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "medical-evidence",
+        "legal-evidence",
+        "documentation",
+        "authoring",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "constraint-reasoning"
+      ],
+      "escalates_from": [
+        "controlled-drift-corridors"
+      ],
+      "escalates_to": [
+        "drift-spectra-scaling",
+        "risk-tier-scaling"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "An ambiguous high-stakes domain must be clarified rather than assigned a stereotyped tolerance."
+        },
+        {
+          "slug": "zero-drift-zones",
+          "reason": "Explicit protected regions override domain-default change tolerance."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Domain supplies a prior, never a substitute for task-specific evidence or explicit fidelity policy."
+    },
+    {
+      "slug": "dominant-driver-isolation-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Dominant-Driver Isolation Scaffold",
+      "primary_task_archetypes": [
+        "decision-support",
+        "software-engineering",
+        "quantitative-analysis"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "tunnel-vision",
+        "premature-commitment"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "diagnosis",
+        "prioritization",
+        "intervention selection"
+      ],
+      "environment_promoters": [
+        "evidence_conflicting",
+        "multi_document",
+        "high_stakes"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "software-development",
+        "data-analysis",
+        "research",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "creative-exploration",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "decision-first-scaffold",
+        "anti-tunnel-vision"
+      ],
+      "escalates_to": [
+        "critical-atomic-verification"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "multi-layer-consistency",
+          "reason": "A prioritized driver must still fit known joint causes and system-wide constraints."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Use for evidence-supported prioritization among plausible causes; correlation alone or required complete hazard inventory excludes it."
+    },
+    {
+      "slug": "drift-immunity-propagation",
+      "version": "1.1.0",
+      "plain_display_name": "Downstream Invariant Protection",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "workflow-automation",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "provenance-loss"
+      ],
+      "secondary_failure_modes": [
+        "lost-state",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "artifact derivation",
+        "state projection",
+        "agent handoff",
+        "final aggregation"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "handoff_expected",
+        "multi_document",
+        "requires_exact_fidelity",
+        "contains_protected_literals"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "agent-development",
+        "software-development",
+        "research",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "constraint-reasoning"
+      ],
+      "escalates_from": [
+        "zero-drift-zones",
+        "drift-suppression"
+      ],
+      "escalates_to": [
+        "structured-state-projection",
+        "working-memory-lock-in"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "controlled-drift-corridors",
+          "reason": "Propagate only verified invariants while preserving explicitly allowed downstream change."
+        },
+        {
+          "slug": "scoped-loader",
+          "reason": "Load protected lineage only where a downstream consumer depends on it."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Requires verified protected material and downstream derivations capable of carrying and validating lineage metadata."
+    },
+    {
+      "slug": "drift-sink-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Retired-Branch Quarantine",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "software-engineering",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "branch-contamination",
+        "stale-state"
+      ],
+      "secondary_failure_modes": [
+        "context-overload",
+        "task-drift",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "conflict resolution",
+        "context compaction",
+        "branch retirement",
+        "review or restore"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "persistent_work",
+        "context_window_pressure",
+        "corpus_mutable"
+      ],
+      "environment_demoters": [
+        "evidence_conflicting",
+        "requires_exact_fidelity"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "research",
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "quantitative-analysis"
+      ],
+      "escalates_from": [
+        "non-authoritative-branch-suppression"
+      ],
+      "escalates_to": [
+        "meta-stability"
+      ],
+      "counterbalance_notes": [
+        "Quarantine only rejected or obsolete branches; preserve unresolved counterevidence and an explicit restore path."
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Selection prior operationalizes the recovered name without claiming unrecovered historical mechanics."
+    },
+    {
+      "slug": "drift-spectra-scaling",
+      "version": "1.1.0",
+      "plain_display_name": "Content-Specific Change Tolerance",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "content-authoring"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "content-understanding"
+      ],
+      "primary_failure_modes": [
+        "constraint-loss",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "over-editing",
+        "under-editing",
+        "task-drift"
+      ],
+      "pipeline_stages": [
+        "content decomposition",
+        "risk classification",
+        "corridor assignment",
+        "review prioritization"
+      ],
+      "environment_promoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "multi_document",
+        "structured_output_required"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "long-context",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "action-execution",
+        "workflow-automation"
+      ],
+      "escalates_from": [
+        "controlled-drift-corridors"
+      ],
+      "escalates_to": [
+        "drift-suppression"
+      ],
+      "counterbalance_notes": [
+        "Use only when content classes have observable tolerance differences; protected literals remain zero-drift."
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Maps heterogeneous fidelity requirements to differentiated review depth."
+    },
+    {
+      "slug": "drift-suppression",
+      "version": "1.1.0",
+      "plain_display_name": "Drift Suppression",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "software-engineering",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "action-execution",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "task-drift",
+        "constraint-loss",
+        "stale-state"
+      ],
+      "secondary_failure_modes": [
+        "branch-contamination",
+        "invariant-violation",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "before action",
+        "after transformation",
+        "at checkpoints",
+        "final acceptance"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "persistent_work",
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "context_window_pressure",
+        "corpus_mutable"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "software-development",
+        "research",
+        "agent-development",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "meta-stability"
+      ],
+      "counterbalance_notes": [
+        "Retain declared creative corridors and do not validate against an unsupported summary of the baseline."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Broad drift control; select only when a semantic baseline and allowed corridor can be stated."
+    },
+    {
+      "slug": "dynamic-depth-allocation",
+      "version": "1.1.0",
+      "plain_display_name": "Per-Region Reasoning Depth",
+      "primary_task_archetypes": [
+        "content-understanding",
+        "research-grounding",
+        "software-engineering",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "quantitative-analysis",
+        "planning-design",
+        "decision-support"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "over-verification",
+        "evidence-coverage-gap"
+      ],
+      "secondary_failure_modes": [
+        "context-overload",
+        "weak-stopping-rule",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "task decomposition",
+        "regional scoring",
+        "depth routing",
+        "reallocation"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "multi_document",
+        "high_stakes",
+        "context_window_pressure",
+        "evidence_conflicting"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available",
+        "acceptance_criteria_present"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "research",
+        "software-development",
+        "data-analysis",
+        "medical-evidence"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "reasoning-scale-controller",
+        "risk-tier-scaling"
+      ],
+      "escalates_to": [
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        "Regional scoring must be observable enough to audit; use direct validators instead of model depth where available."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Allocates depth by local marginal value rather than applying uniform scrutiny."
+    },
+    {
+      "slug": "epistemic-status-gating",
+      "version": "1.1.0",
+      "plain_display_name": "Evidence-Confidence Gate",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "decision-support",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "knowledge-explanation",
+        "content-authoring",
+        "quantitative-analysis"
+      ],
+      "primary_failure_modes": [
+        "unsupported-claim",
+        "unsupported-precision",
+        "poor-uncertainty-handling",
+        "abstention-miscalibration"
+      ],
+      "secondary_failure_modes": [
+        "source-applicability-mismatch",
+        "evidence-conflict-suppression",
+        "capability-hallucination"
+      ],
+      "pipeline_stages": [
+        "evidence-capture",
+        "reasoning",
+        "pre-output-verification"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "evidence_conflicting",
+        "evidence_unavailable",
+        "requires_citations",
+        "time_sensitive"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "data-analysis",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "grounding-no-invention"
+      ],
+      "escalates_to": [
+        "multi-truth-gating",
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        "Expose concise claim status, not private reasoning; labels do not substitute for evidence."
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Strong direct ontology support from four primary failure-control links."
+    },
+    {
+      "slug": "explanation-minimality-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Minimum Sufficient Explanation",
+      "primary_task_archetypes": [
+        "knowledge-explanation",
+        "content-authoring"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "over-branching",
+        "weak-stopping-rule"
+      ],
+      "secondary_failure_modes": [
+        "poor-uncertainty-handling",
+        "poor-handoff",
+        "abstention-miscalibration"
+      ],
+      "pipeline_stages": [
+        "response planning",
+        "draft compression",
+        "final readability check"
+      ],
+      "environment_promoters": [
+        "structured_output_required",
+        "acceptance_criteria_present"
+      ],
+      "environment_demoters": [
+        "high_stakes",
+        "requires_citations",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L0",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "general",
+        "documentation",
+        "authoring",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "research-grounding",
+        "constraint-reasoning",
+        "action-execution"
+      ],
+      "escalates_from": [],
+      "escalates_to": [
+        "pedagogical-alignment"
+      ],
+      "counterbalance_notes": [
+        "Retain rationale, uncertainty, warnings, and verification details that change safe use or comprehension."
+      ],
+      "source_support": "modern-operationalization",
+      "review_status": "PASS",
+      "notes": "Compression prior for bounded outputs, not a mandate to omit decision-relevant support."
+    },
+    {
+      "slug": "external-state-automation",
+      "version": "1.1.0",
+      "plain_display_name": "External State Automation",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "action-execution",
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "lost-state",
+        "poor-handoff"
+      ],
+      "secondary_failure_modes": [
+        "stale-state",
+        "action-permission-risk",
+        "version-drift"
+      ],
+      "pipeline_stages": [
+        "state checkpoint",
+        "external write",
+        "session restoration",
+        "consistency verification"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "handoff_expected",
+        "durable_state_available",
+        "file_write_allowed",
+        "external_action_allowed"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "sensitive_data"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "evaluation-audit"
+      ],
+      "escalates_from": [
+        "state-snapshot",
+        "sequential-memory-state-engine"
+      ],
+      "escalates_to": [
+        "state-routing-bus"
+      ],
+      "counterbalance_notes": [
+        "Persistence requires both host capability and explicit write authority; verify restored state against the current source of truth."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Unavailable or unauthorized storage is a hard boundary, not a prompt-level capability."
+    },
+    {
+      "slug": "fail-closed-abstention",
+      "version": "1.1.0",
+      "plain_display_name": "Fail-Closed Abstention",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "action-execution",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "quantitative-analysis",
+        "knowledge-explanation"
+      ],
+      "primary_failure_modes": [
+        "abstention-miscalibration",
+        "unsupported-claim"
+      ],
+      "secondary_failure_modes": [
+        "missing-required-information",
+        "poor-uncertainty-handling",
+        "capability-hallucination",
+        "action-permission-risk",
+        "irreversible-action-risk"
+      ],
+      "pipeline_stages": [
+        "post-validation",
+        "pre-output-commitment"
+      ],
+      "environment_promoters": [
+        "irreversible_action",
+        "high_stakes",
+        "evidence_unavailable",
+        "missing_required_information"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "medical-evidence",
+        "legal-evidence",
+        "research",
+        "software-development",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "grounding-no-invention",
+        "epistemic-status-gating"
+      ],
+      "escalates_to": [
+        "fermionic-veto"
+      ],
+      "counterbalance_notes": [
+        "Return supported partial results when useful; abstain only at the unsupported or unsafe commitment boundary."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Fail closed on essential support, not on optional evidence that does not affect the deliverable."
+    },
+    {
+      "slug": "fermionic-veto",
+      "version": "1.1.0",
+      "plain_display_name": "Non-Compensable Constraint Veto",
+      "primary_task_archetypes": [
+        "constraint-reasoning",
+        "action-execution",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "irreversible-action-risk",
+        "action-permission-risk"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "evidence-conflict-suppression",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "candidate evaluation",
+        "QMS collapse",
+        "pre-action safety gate"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "irreversible_action",
+        "contains_protected_literals",
+        "requires_exact_fidelity"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "evidence_unavailable"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "medical-evidence",
+        "legal-evidence",
+        "software-development",
+        "data-analysis",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "content-authoring"
+      ],
+      "escalates_from": [
+        "critical-atomic-verification"
+      ],
+      "escalates_to": [
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        "Use only for defined, evidenced, non-compensable predicates; never promote a soft preference into a veto."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A gate in aggregation or action selection, not a general severity label."
+    },
+    {
+      "slug": "forethought-checkpoints",
+      "version": "1.1.0",
+      "plain_display_name": "Forethought / Checkpoints",
+      "primary_task_archetypes": [
+        "action-execution",
+        "planning-design",
+        "software-engineering",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "tool-misuse",
+        "action-permission-risk",
+        "irreversible-action-risk"
+      ],
+      "secondary_failure_modes": [
+        "premature-commitment",
+        "weak-stopping-rule"
+      ],
+      "pipeline_stages": [
+        "before external action",
+        "before destructive change",
+        "before dependency handoff"
+      ],
+      "environment_promoters": [
+        "tools_required",
+        "irreversible_action",
+        "human_approval_available",
+        "external_action_allowed",
+        "high_stakes"
+      ],
+      "environment_demoters": [
+        "review_only"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "software-development",
+        "agent-development",
+        "general",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "content-understanding",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        "Scale checkpoint cost to reversibility and consequence; do not duplicate an already enforced transaction guard."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Direct primary control for three tool and action failure modes."
+    },
+    {
+      "slug": "future-proof-mode-selector",
+      "version": "1.1.0",
+      "plain_display_name": "Runtime Compatibility Mode Selector",
+      "primary_task_archetypes": [
+        "skill-agent-creation",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "capability-hallucination",
+        "version-drift",
+        "packaging-activation-drift"
+      ],
+      "secondary_failure_modes": [
+        "mode-scope-authority-drift",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "capability probe",
+        "task-risk assessment",
+        "mode selection",
+        "fallback routing"
+      ],
+      "environment_promoters": [
+        "tools_required",
+        "multi_agent_available",
+        "network_available",
+        "durable_state_available"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-understanding",
+        "content-transformation",
+        "quantitative-analysis"
+      ],
+      "escalates_from": [
+        "model-size-drift-scaling"
+      ],
+      "escalates_to": [
+        "hybrid-mode"
+      ],
+      "counterbalance_notes": [
+        "Capability probes may scale scaffolding but cannot weaken truth, authority, or safety invariants."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Relevant only when one package must run across materially different hosts or model capabilities."
+    },
+    {
+      "slug": "grounding-no-invention",
+      "version": "1.1.0",
+      "plain_display_name": "Grounding / No-Invention",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "content-understanding",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "decision-support",
+        "action-execution",
+        "knowledge-explanation"
+      ],
+      "primary_failure_modes": [
+        "unsupported-claim",
+        "capability-hallucination"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-precision",
+        "citation-source-mismatch",
+        "poor-uncertainty-handling",
+        "invalid-validation-signal",
+        "abstention-miscalibration",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "evidence-intake",
+        "reasoning",
+        "draft-validation",
+        "pre-output-verification"
+      ],
+      "environment_promoters": [
+        "has_supplied_sources",
+        "requires_citations",
+        "tools_required",
+        "web_available",
+        "external_research_allowed",
+        "review_only",
+        "high_stakes"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L0",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "documentation",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration"
+      ],
+      "escalates_from": [],
+      "escalates_to": [
+        "epistemic-status-gating",
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        "Allow clearly labeled invention in creative work; do not convert source-bounded work into external research without permission."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Foundational prior whenever output depends on documents, observations, tools, or consequential factual claims."
+    },
+    {
+      "slug": "hybrid-mode",
+      "version": "1.1.0",
+      "plain_display_name": "Explore-Then-Commit Mode",
+      "primary_task_archetypes": [
+        "planning-design",
+        "software-engineering",
+        "action-execution"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "skill-agent-creation",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "premature-commitment",
+        "mode-scope-authority-drift",
+        "action-permission-risk",
+        "branch-contamination"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "task-drift",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "POWER planning",
+        "collapse and handoff",
+        "SAFE execution",
+        "post-execution validation"
+      ],
+      "environment_promoters": [
+        "editing_requested",
+        "external_action_allowed",
+        "irreversible_action",
+        "high_stakes",
+        "persistent_work"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "software-development",
+        "agent-development",
+        "research",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-understanding",
+        "evaluation-audit"
+      ],
+      "escalates_from": [
+        "power-mode",
+        "mode-lock-in"
+      ],
+      "escalates_to": [
+        "ultimate-suite-supervisor"
+      ],
+      "counterbalance_notes": [
+        "The planning-to-execution transition needs explicit authority, a collapsed state, and postcondition validation."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Select for genuine explore-then-commit workflows, not ordinary bounded implementation."
+    },
+    {
+      "slug": "image-text-fidelity-capture",
+      "version": "1.1.0",
+      "plain_display_name": "Image Text Fidelity Capture",
+      "primary_task_archetypes": [
+        "content-understanding",
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "content-transformation",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "provenance-loss",
+        "citation-source-mismatch",
+        "invariant-violation",
+        "unsupported-claim"
+      ],
+      "secondary_failure_modes": [
+        "evidence-coverage-gap",
+        "unsupported-precision"
+      ],
+      "pipeline_stages": [
+        "source-intake",
+        "evidence-capture",
+        "capture-validation"
+      ],
+      "environment_promoters": [
+        "has_supplied_sources",
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "requires_citations",
+        "multi_document",
+        "tools_required"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "research",
+        "long-context",
+        "medical-evidence",
+        "legal-evidence",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "scoped-loader"
+      ],
+      "escalates_to": [
+        "critical-atomic-verification"
+      ],
+      "counterbalance_notes": [
+        "Keep transcription separate from visual interpretation and preserve location-level provenance for uncertain capture."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use only when image-borne text or visible structure is part of the source corpus."
+    },
+    {
+      "slug": "invariance-stress-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Protected-Constraint Robustness Test",
+      "primary_task_archetypes": [
+        "software-engineering",
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "constraint-reasoning",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "over-editing",
+        "under-editing",
+        "under-verification",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "post-draft validation",
+        "pre-release stress testing"
+      ],
+      "environment_promoters": [
+        "tests_available",
+        "editing_requested",
+        "file_write_allowed",
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "software-development",
+        "documentation",
+        "authoring",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "bidirectional-consistency"
+      ],
+      "escalates_to": [
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        "Stress only declared invariants; do not treat intentionally transformed features as preservation failures."
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Operational selection prior only; the original historical mechanics remain unrecovered."
+    },
+    {
+      "slug": "meta-awareness",
+      "version": "1.1.0",
+      "plain_display_name": "Workflow Health Monitor",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "skill-agent-creation",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "orchestration-fragmentation",
+        "weak-stopping-rule",
+        "stale-state"
+      ],
+      "secondary_failure_modes": [
+        "lost-state",
+        "task-drift",
+        "over-branching"
+      ],
+      "pipeline_stages": [
+        "runtime observation",
+        "health classification",
+        "supervisor notification"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "handoff_expected",
+        "multi_agent_available",
+        "long_context"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "quantitative-analysis"
+      ],
+      "escalates_from": [
+        "forethought-checkpoints"
+      ],
+      "escalates_to": [
+        "meta-supervisor"
+      ],
+      "counterbalance_notes": [
+        "Monitor only observable process-health signals and route them to bounded repair; do not imply sentience or hidden introspection."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A high-complexity workflow monitor, not a default self-reflection layer."
+    },
+    {
+      "slug": "meta-stability",
+      "version": "1.1.0",
+      "plain_display_name": "Stable-State Recovery Mode",
+      "primary_task_archetypes": [
+        "workflow-automation",
+        "skill-agent-creation",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "stale-state",
+        "lost-state",
+        "branch-contamination"
+      ],
+      "secondary_failure_modes": [
+        "orchestration-fragmentation",
+        "version-drift",
+        "task-drift"
+      ],
+      "pipeline_stages": [
+        "instability detection",
+        "change freeze",
+        "checkpoint restoration",
+        "controlled resume"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "long_context",
+        "context_window_pressure",
+        "tightly_shared_state",
+        "corpus_mutable"
+      ],
+      "environment_demoters": [
+        "branches_independent"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "agent-development",
+        "software-development",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "quantitative-analysis"
+      ],
+      "escalates_from": [
+        "drift-suppression",
+        "state-snapshot"
+      ],
+      "escalates_to": [
+        "meta-supervisor"
+      ],
+      "counterbalance_notes": [
+        "Restore only a verified trusted checkpoint; local defects should use local repair instead of freezing the workflow."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Recovery prior for observable coherence degradation under repeated change."
+    },
+    {
+      "slug": "meta-supervisor",
+      "version": "1.1.0",
+      "plain_display_name": "Workflow Repair Supervisor",
+      "primary_task_archetypes": [
+        "skill-agent-creation",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "orchestration-fragmentation",
+        "weak-stopping-rule",
+        "over-branching"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "over-verification",
+        "task-drift",
+        "lost-state"
+      ],
+      "pipeline_stages": [
+        "health intake",
+        "failure classification",
+        "repair routing",
+        "recheck"
+      ],
+      "environment_promoters": [
+        "multi_agent_available",
+        "persistent_work",
+        "branches_independent",
+        "handoff_expected"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state",
+        "deterministic_verifier_available",
+        "review_only"
+      ],
+      "default_complexity_min": "L4",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "quantitative-analysis",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "meta-awareness",
+        "meta-stability"
+      ],
+      "escalates_to": [
+        "ultimate-suite-supervisor"
+      ],
+      "counterbalance_notes": [
+        "Use only when multiple repair modules need routing; one observable local defect should remain a local repair."
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Composition priors explicitly demote or exclude this supervisor for simple, deterministic, or tightly shared-state work."
+    },
+    {
+      "slug": "micro-repair",
+      "version": "1.1.0",
+      "plain_display_name": "Minimal Local Correction",
+      "primary_task_archetypes": [
+        "software-engineering",
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "over-editing"
+      ],
+      "secondary_failure_modes": [
+        "invariant-violation",
+        "under-editing",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "defect localization",
+        "local correction",
+        "neighborhood recheck"
+      ],
+      "environment_promoters": [
+        "editing_requested",
+        "file_write_allowed",
+        "reproduction_available",
+        "acceptance_criteria_present"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "irreversible_action"
+      ],
+      "default_complexity_min": "L0",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "software-development",
+        "documentation",
+        "authoring",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "planning-design",
+        "research-grounding",
+        "evaluation-audit"
+      ],
+      "escalates_from": [],
+      "escalates_to": [
+        "surgery-edit",
+        "regenerative-rewrite"
+      ],
+      "counterbalance_notes": [
+        "Confirm the defect is local; repeated or architectural failure requires a broader repair class."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Direct primary control for over-editing and the default prior for reproducible bounded fixes."
+    },
+    {
+      "slug": "micro-scaffolding",
+      "version": "1.1.0",
+      "plain_display_name": "Micro-Scaffolding",
+      "primary_task_archetypes": [
+        "content-transformation",
+        "software-engineering",
+        "constraint-reasoning"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "constraint-loss",
+        "invariant-violation",
+        "task-drift"
+      ],
+      "secondary_failure_modes": [
+        "context-overload",
+        "under-verification"
+      ],
+      "pipeline_stages": [
+        "pre-subtask planning",
+        "execution",
+        "subtask completion"
+      ],
+      "environment_promoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "structured_output_required",
+        "acceptance_criteria_present",
+        "high_stakes"
+      ],
+      "environment_demoters": [
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "software-development",
+        "documentation",
+        "authoring",
+        "data-analysis"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "phase-locked-reasoning-scaffold"
+      ],
+      "counterbalance_notes": [
+        "Keep the scaffold local and temporary; do not duplicate the parent StateBlock or source corpus."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Bounded local aid for fragile multi-step work, not an always-on prompt wrapper."
+    },
+    {
+      "slug": "mode-lock-in",
+      "version": "1.1.0",
+      "plain_display_name": "Mode Lock-In",
+      "primary_task_archetypes": [
+        "action-execution",
+        "evaluation-audit",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "workflow-automation",
+        "content-transformation"
+      ],
+      "primary_failure_modes": [
+        "mode-scope-authority-drift"
+      ],
+      "secondary_failure_modes": [
+        "action-permission-risk",
+        "task-drift",
+        "domain-context-contamination"
+      ],
+      "pipeline_stages": [
+        "after clarification",
+        "before substantive work",
+        "at transition requests",
+        "final validation"
+      ],
+      "environment_promoters": [
+        "review_only",
+        "editing_requested",
+        "external_action_allowed",
+        "persistent_work",
+        "high_stakes"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "software-development",
+        "agent-development",
+        "legal-evidence",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "meta-stability"
+      ],
+      "counterbalance_notes": [
+        "Clarify materially different modes before locking; explicit user-authorized transitions must remain possible."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Direct primary control for mode, scope, and authority drift."
+    },
+    {
+      "slug": "model-size-drift-scaling",
+      "version": "1.1.0",
+      "plain_display_name": "Model-Capability Scaffolding Scale",
+      "primary_task_archetypes": [
+        "skill-agent-creation",
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "packaging-activation-drift",
+        "capability-hallucination",
+        "version-drift"
+      ],
+      "secondary_failure_modes": [
+        "over-verification",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "model evaluation",
+        "control classification",
+        "scaffold scaling",
+        "regression monitoring"
+      ],
+      "environment_promoters": [
+        "tests_available",
+        "deterministic_verifier_available",
+        "multi_agent_available",
+        "tools_required"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-understanding",
+        "content-transformation",
+        "content-authoring"
+      ],
+      "escalates_from": [
+        "reasoning-scale-controller"
+      ],
+      "escalates_to": [
+        "future-proof-mode-selector"
+      ],
+      "counterbalance_notes": [
+        "Scale only controls supported by comparative evidence; never remove invariant truth, safety, or authority boundaries."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Model strength is a measured compatibility input, not blanket permission to simplify."
+    },
+    {
+      "slug": "multi-layer-consistency",
+      "version": "1.1.0",
+      "plain_display_name": "Multi-Layer Consistency",
+      "primary_task_archetypes": [
+        "software-engineering",
+        "content-authoring",
+        "constraint-reasoning"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "evaluation-audit",
+        "content-understanding"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "constraint-loss",
+        "under-editing"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "domain-context-contamination",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "integration",
+        "hierarchical validation",
+        "pre-release"
+      ],
+      "environment_promoters": [
+        "multi_document",
+        "long_context",
+        "structured_output_required",
+        "acceptance_criteria_present",
+        "requires_exact_fidelity"
+      ],
+      "environment_demoters": [],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "software-development",
+        "documentation",
+        "long-context",
+        "legal-evidence",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "bidirectional-consistency"
+      ],
+      "escalates_to": [
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        "Apply only where layers are nested or compositional; peer alternatives should remain distinct rather than forced consistent."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Vertical consistency prior for artifacts with meaningful local, module, and global levels."
+    },
+    {
+      "slug": "multi-truth-gating",
+      "version": "1.1.0",
+      "plain_display_name": "Independent Evidence Gate",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "decision-support",
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "knowledge-explanation",
+        "quantitative-analysis"
+      ],
+      "primary_failure_modes": [
+        "evidence-conflict-suppression",
+        "unsupported-claim"
+      ],
+      "secondary_failure_modes": [
+        "poor-uncertainty-handling",
+        "source-applicability-mismatch",
+        "invalid-validation-signal"
+      ],
+      "pipeline_stages": [
+        "post-analysis",
+        "pre-synthesis",
+        "pre-output-commitment"
+      ],
+      "environment_promoters": [
+        "evidence_conflicting",
+        "high_stakes",
+        "multi_document",
+        "requires_citations"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available",
+        "evidence_unavailable"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "data-analysis",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "action-execution",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "epistemic-status-gating"
+      ],
+      "escalates_to": [
+        "fermionic-veto",
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        "Require genuinely independent and applicable anchors; duplicated provenance is not multiple truth support."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "High-cost gate for consequential conclusions resting on fragile or conflicting evidence."
+    },
+    {
+      "slug": "multiverse-reasoning",
+      "version": "1.1.0",
+      "plain_display_name": "Bounded Alternative Search",
+      "primary_task_archetypes": [
+        "planning-design",
+        "creative-exploration",
+        "decision-support"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "premature-commitment",
+        "tunnel-vision"
+      ],
+      "secondary_failure_modes": [
+        "invalid-validation-signal",
+        "branch-contamination",
+        "over-branching",
+        "weak-stopping-rule"
+      ],
+      "pipeline_stages": [
+        "planning",
+        "hypothesis comparison",
+        "architecture selection",
+        "pre-draft outline selection"
+      ],
+      "environment_promoters": [
+        "branches_independent",
+        "evidence_conflicting"
+      ],
+      "environment_demoters": [
+        "requires_exact_fidelity",
+        "irreversible_action",
+        "tightly_shared_state",
+        "time_sensitive"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "agent-development",
+        "research",
+        "software-development",
+        "authoring",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "action-execution",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "anti-tunnel-vision"
+      ],
+      "escalates_to": [
+        "power-mode"
+      ],
+      "counterbalance_notes": [
+        "Bound branch count, isolate assumptions, define collapse criteria, and stop when alternatives no longer add decision value."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Expensive alternative search; never the default for a precise or single-path task."
+    },
+    {
+      "slug": "neuro-focus",
+      "version": "1.1.0",
+      "plain_display_name": "Bounded Attention Focus",
+      "primary_task_archetypes": [
+        "content-understanding",
+        "research-grounding",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "evaluation-audit",
+        "constraint-reasoning"
+      ],
+      "primary_failure_modes": [
+        "context-overload",
+        "evidence-coverage-gap"
+      ],
+      "secondary_failure_modes": [
+        "tunnel-vision",
+        "premature-commitment"
+      ],
+      "pipeline_stages": [
+        "post-intake prioritization",
+        "focused execution",
+        "checkpoint review"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "multi_document",
+        "context_window_pressure"
+      ],
+      "environment_demoters": [
+        "evidence_conflicting",
+        "branches_independent"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "long-context",
+        "research",
+        "software-development",
+        "medical-evidence",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "action-execution",
+        "workflow-automation"
+      ],
+      "escalates_from": [
+        "scoped-loader"
+      ],
+      "escalates_to": [
+        "dynamic-depth-allocation"
+      ],
+      "counterbalance_notes": [
+        "Sample decisive context before narrowing and pair with anti-tunnel-vision when plausible alternatives remain."
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Attention allocation prior for a known bounded target, not a substitute for discovery."
+    },
+    {
+      "slug": "non-authoritative-branch-suppression",
+      "version": "1.1.0",
+      "plain_display_name": "Non-Authoritative Branch Suppression",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "planning-design",
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "branch-contamination",
+        "domain-context-contamination"
+      ],
+      "secondary_failure_modes": [
+        "evidence-conflict-suppression",
+        "tunnel-vision",
+        "stale-state"
+      ],
+      "pipeline_stages": [
+        "context classification",
+        "retrieval",
+        "branch selection",
+        "pre-action validation"
+      ],
+      "environment_promoters": [
+        "has_supplied_sources",
+        "multi_document",
+        "long_context",
+        "requires_exact_fidelity"
+      ],
+      "environment_demoters": [
+        "evidence_conflicting",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "research",
+        "long-context",
+        "legal-evidence",
+        "software-development",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "drift-suppression"
+      ],
+      "escalates_to": [
+        "drift-sink-scaffold"
+      ],
+      "counterbalance_notes": [
+        "Authority must be resolved first; preserve contrary evidence even when its branch is non-governing."
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Operational prior only; original historical mechanics remain unrecovered."
+    },
+    {
+      "slug": "parallel-qms",
+      "version": "1.1.0",
+      "plain_display_name": "Parallel Validation System",
+      "primary_task_archetypes": [
+        "evaluation-audit",
+        "research-grounding",
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "action-execution",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "invalid-validation-signal"
+      ],
+      "secondary_failure_modes": [
+        "over-verification",
+        "orchestration-fragmentation",
+        "evidence-conflict-suppression"
+      ],
+      "pipeline_stages": [
+        "validation design",
+        "parallel or staged evaluation",
+        "repair",
+        "global QMS collapse"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "irreversible_action",
+        "evidence_conflicting",
+        "branches_independent",
+        "multi_agent_available"
+      ],
+      "environment_demoters": [
+        "deterministic_verifier_available",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "research",
+        "software-development",
+        "medical-evidence",
+        "legal-evidence",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "critical-atomic-verification"
+      ],
+      "escalates_to": [
+        "ultimate-suite-supervisor"
+      ],
+      "counterbalance_notes": [
+        "Validators need distinct failure targets or evidence; majority vote and correlated self-critique are not independent validation."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use only when structured multi-validator topology adds information beyond one direct check."
+    },
+    {
+      "slug": "pedagogical-alignment",
+      "version": "1.1.0",
+      "plain_display_name": "Pedagogical Alignment Constraint",
+      "primary_task_archetypes": [
+        "knowledge-explanation",
+        "content-authoring"
+      ],
+      "secondary_task_archetypes": [
+        "content-transformation"
+      ],
+      "primary_failure_modes": [
+        "task-drift",
+        "unsupported-claim"
+      ],
+      "secondary_failure_modes": [
+        "poor-uncertainty-handling",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "audience modeling",
+        "explanation design",
+        "comprehension validation"
+      ],
+      "environment_promoters": [
+        "structured_output_required",
+        "acceptance_criteria_present"
+      ],
+      "environment_demoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "high_stakes"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "documentation",
+        "authoring",
+        "general",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "action-execution",
+        "workflow-automation",
+        "evaluation-audit"
+      ],
+      "escalates_from": [
+        "explanation-minimality-scaffold"
+      ],
+      "escalates_to": [
+        "style-alignment"
+      ],
+      "counterbalance_notes": [
+        "Adapt presentation without weakening claims, erasing uncertainty, or altering protected wording."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Requires a known audience or a non-material audience assumption."
+    },
+    {
+      "slug": "phase-locked-reasoning-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Stage-Separated Reasoning Scaffold",
+      "primary_task_archetypes": [
+        "research-grounding",
+        "content-authoring",
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "evaluation-audit",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "branch-contamination",
+        "provenance-loss",
+        "evidence-conflict-suppression"
+      ],
+      "secondary_failure_modes": [
+        "premature-commitment",
+        "task-drift",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "evidence processing",
+        "analysis",
+        "synthesis",
+        "final validation"
+      ],
+      "environment_promoters": [
+        "multi_document",
+        "long_context",
+        "has_supplied_sources",
+        "requires_citations",
+        "context_window_pressure"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "long-context",
+        "medical-evidence",
+        "legal-evidence",
+        "authoring"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "mode-lock-in",
+        "micro-scaffolding"
+      ],
+      "escalates_to": [
+        "multi-layer-consistency"
+      ],
+      "counterbalance_notes": [
+        "Declare governed transitions between phases; separation must not block legitimate integration or hide source uncertainty."
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Select when evidence, analysis, synthesis, and validation have distinct contamination risks."
+    },
+    {
+      "slug": "placeholder-suppression",
+      "version": "1.1.0",
+      "plain_display_name": "Placeholder Suppression",
+      "primary_task_archetypes": [
+        "content-authoring",
+        "software-engineering",
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "content-transformation",
+        "workflow-automation"
+      ],
+      "primary_failure_modes": [
+        "under-editing",
+        "packaging-activation-drift",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "invalid-validation-signal",
+        "under-verification"
+      ],
+      "pipeline_stages": [
+        "artifact assembly",
+        "pre-release scan",
+        "finalization gate"
+      ],
+      "environment_promoters": [
+        "structured_output_required",
+        "acceptance_criteria_present",
+        "editing_requested",
+        "file_write_allowed"
+      ],
+      "environment_demoters": [
+        "requires_exact_fidelity"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L2",
+      "project_profile_priors": [
+        "documentation",
+        "software-development",
+        "agent-development",
+        "authoring"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "research-grounding",
+        "decision-support",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "critical-atomic-verification"
+      ],
+      "escalates_to": [
+        "parallel-qms"
+      ],
+      "counterbalance_notes": [
+        "Preserve placeholders when they are the declared product, approved redaction markers, or syntax examples."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Finalization check for template-driven artifacts; not a global ban on placeholder syntax."
+    },
+    {
+      "slug": "power-mode",
+      "version": "1.1.0",
+      "plain_display_name": "Deep Exploration Mode",
+      "primary_task_archetypes": [
+        "planning-design",
+        "creative-exploration"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "skill-agent-creation",
+        "decision-support",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "premature-commitment",
+        "tunnel-vision"
+      ],
+      "secondary_failure_modes": [
+        "task-drift",
+        "over-branching",
+        "weak-stopping-rule",
+        "branch-contamination"
+      ],
+      "pipeline_stages": [
+        "problem framing",
+        "candidate generation",
+        "system analysis",
+        "QMS collapse"
+      ],
+      "environment_promoters": [
+        "branches_independent",
+        "acceptance_criteria_present",
+        "persistent_work",
+        "multi_agent_available"
+      ],
+      "environment_demoters": [
+        "requires_exact_fidelity",
+        "irreversible_action",
+        "time_sensitive",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "research",
+        "authoring",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "action-execution",
+        "knowledge-explanation",
+        "evaluation-audit"
+      ],
+      "escalates_from": [
+        "multiverse-reasoning"
+      ],
+      "escalates_to": [
+        "hybrid-mode"
+      ],
+      "counterbalance_notes": [
+        "Bound exploration by decision criteria, branch budget, and collapse rules before any committed execution."
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Meta-architecture prior for genuinely ambiguous system-wide design, never ordinary grounded execution."
+    },
+    {
+      "slug": "progressive-mode-shaping",
+      "version": "1.1.0",
+      "plain_display_name": "Explore-to-Execute Transition",
+      "primary_task_archetypes": [
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "creative-exploration",
+        "action-execution"
+      ],
+      "primary_failure_modes": [
+        "premature-commitment",
+        "mode-scope-authority-drift"
+      ],
+      "secondary_failure_modes": [
+        "task-drift",
+        "poor-handoff"
+      ],
+      "pipeline_stages": [
+        "exploration",
+        "candidate comparison",
+        "decision lock",
+        "execution handoff"
+      ],
+      "environment_promoters": [
+        "acceptance_criteria_present",
+        "editing_requested",
+        "external_action_allowed"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "mode-lock-in"
+      ],
+      "escalates_to": [
+        "stateblock"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "anti-tunnel-vision",
+          "reason": "Preserves alternative consideration before the decision is locked."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Prefer only when exploration must converge into a committed execution path; selection does not itself authorize action."
+    },
+    {
+      "slug": "reasoning-scale-controller",
+      "version": "1.1.0",
+      "plain_display_name": "Task-Scope Reasoning Controller",
+      "primary_task_archetypes": [
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "constraint-reasoning",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "over-verification"
+      ],
+      "secondary_failure_modes": [
+        "weak-stopping-rule",
+        "context-overload"
+      ],
+      "pipeline_stages": [
+        "task triage",
+        "reasoning execution",
+        "escalation and de-escalation"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "acceptance_criteria_present",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "research",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "micro-scaffolding"
+      ],
+      "escalates_to": [
+        "cognitive-governor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "bounded-exit",
+          "reason": "Prevents scale adjustment from becoming an unbounded reasoning loop."
+        },
+        {
+          "slug": "critical-atomic-verification",
+          "reason": "Keeps decisive high-risk units independently checked."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use as a proportionality prior when task difficulty or risk varies; it does not prescribe hidden reasoning output."
+    },
+    {
+      "slug": "reasoning-throughput-governor",
+      "version": "1.1.0",
+      "plain_display_name": "Reasoning Efficiency Controller",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "over-branching",
+        "context-overload"
+      ],
+      "secondary_failure_modes": [
+        "weak-stopping-rule",
+        "orchestration-fragmentation"
+      ],
+      "pipeline_stages": [
+        "queue planning",
+        "batch and concurrency control",
+        "validation scheduling",
+        "backpressure response"
+      ],
+      "environment_promoters": [
+        "multi_agent_available",
+        "branches_independent",
+        "tools_required"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state",
+        "irreversible_action"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "research"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "reasoning-scale-controller"
+      ],
+      "escalates_to": [
+        "ultimate-suite-supervisor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "meta-awareness",
+          "reason": "Checks whether concurrency and batching are improving rather than degrading the run."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Promote only for observable multi-unit workloads; do not infer permission to parallelize a serial or consequential procedure."
+    },
+    {
+      "slug": "reflectos",
+      "version": "1.1.0",
+      "plain_display_name": "Checkpointed Work Reflection",
+      "primary_task_archetypes": [
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "task-drift"
+      ],
+      "secondary_failure_modes": [
+        "invalid-validation-signal",
+        "weak-stopping-rule"
+      ],
+      "pipeline_stages": [
+        "milestone review",
+        "pre-delivery",
+        "after failed validation"
+      ],
+      "environment_promoters": [
+        "acceptance_criteria_present",
+        "deterministic_verifier_available",
+        "persistent_work"
+      ],
+      "environment_demoters": [
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "authoring",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "coherence-loops"
+      ],
+      "escalates_to": [
+        "meta-supervisor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "crispr-edit",
+          "reason": "Converts detected defects into bounded corrections instead of broad rework."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Select for meaningful checkpoints, not as a mandatory reflection ritual after every trivial step."
+    },
+    {
+      "slug": "regenerative-rewrite",
+      "version": "1.1.0",
+      "plain_display_name": "Full-Structure Invariant-Preserving Rewrite",
+      "primary_task_archetypes": [
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "under-editing",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "constraint-loss",
+        "provenance-loss",
+        "over-editing"
+      ],
+      "pipeline_stages": [
+        "failure diagnosis",
+        "truth-and-constraint extraction",
+        "fresh reconstruction",
+        "global validation"
+      ],
+      "environment_promoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "acceptance_criteria_present"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "software-development",
+        "long-context"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "action-execution"
+      ],
+      "escalates_from": [
+        "safe-rewrite"
+      ],
+      "escalates_to": [
+        "surgery-edit"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "micro-repair",
+          "reason": "Suppresses full regeneration when a localized correction is sufficient."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Reserve for globally unsound structure with recoverable invariants; a small defect should rank a local edit higher."
+    },
+    {
+      "slug": "resonance",
+      "version": "1.1.0",
+      "plain_display_name": "Cross-Module Coordination",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "orchestration-fragmentation",
+        "branch-contamination"
+      ],
+      "secondary_failure_modes": [
+        "domain-context-contamination",
+        "packaging-activation-drift"
+      ],
+      "pipeline_stages": [
+        "post-selection coordination",
+        "mid-process coupling",
+        "pre-synthesis alignment"
+      ],
+      "environment_promoters": [
+        "multi_agent_available",
+        "branches_independent",
+        "durable_state_available"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state",
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [],
+      "escalates_to": [
+        "resonance-gene-builder"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "domain-mode-isolation",
+          "reason": "Prevents coordination signals from collapsing domain or authority boundaries."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Rank only when multiple active modules need an explicit coupling path; coordination is not permission to share all state."
+    },
+    {
+      "slug": "resonance-gene-builder",
+      "version": "1.1.0",
+      "plain_display_name": "Cross-Module Coordination Rule Builder",
+      "primary_task_archetypes": [
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "packaging-activation-drift",
+        "orchestration-fragmentation"
+      ],
+      "secondary_failure_modes": [
+        "domain-context-contamination",
+        "version-drift"
+      ],
+      "pipeline_stages": [
+        "relationship observation",
+        "coupling specification",
+        "composition testing",
+        "versioned publication"
+      ],
+      "environment_promoters": [
+        "recurrence_pattern_stable",
+        "durable_state_available",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L4",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-authoring",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "resonance"
+      ],
+      "escalates_to": [
+        "behavior-gene-builder"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "domain-mode-isolation",
+          "reason": "Requires explicit boundaries around every reusable coupling rule."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Prefer only after repeated module interactions establish a stable reusable pattern; do not package one-off coordination."
+    },
+    {
+      "slug": "risk-tier-scaling",
+      "version": "1.1.0",
+      "plain_display_name": "Risk-Tier Scaling",
+      "primary_task_archetypes": [
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "action-execution"
+      ],
+      "primary_failure_modes": [
+        "under-verification",
+        "irreversible-action-risk"
+      ],
+      "secondary_failure_modes": [
+        "over-verification",
+        "abstention-miscalibration"
+      ],
+      "pipeline_stages": [
+        "risk triage",
+        "control selection",
+        "pre-commit validation",
+        "risk reclassification"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "irreversible_action",
+        "external_action_allowed"
+      ],
+      "environment_demoters": [
+        "review_only"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "medical-evidence",
+        "legal-evidence",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "reasoning-scale-controller"
+      ],
+      "escalates_to": [
+        "safe-mode",
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "reasoning-throughput-governor",
+          "reason": "Avoids applying maximal controls uniformly when work units have materially different risk."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Risk classification selects scrutiny, approval, and stopping priors; it does not create authority for consequential actions."
+    },
+    {
+      "slug": "safe-mode",
+      "version": "1.1.0",
+      "plain_display_name": "Conservative Execution Mode",
+      "primary_task_archetypes": [
+        "action-execution"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "irreversible-action-risk",
+        "action-permission-risk"
+      ],
+      "secondary_failure_modes": [
+        "under-verification",
+        "capability-hallucination"
+      ],
+      "pipeline_stages": [
+        "execution readiness",
+        "atomic action",
+        "immediate verification",
+        "conservative finalization"
+      ],
+      "environment_promoters": [
+        "irreversible_action",
+        "high_stakes",
+        "human_approval_available",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "software-development",
+        "agent-development",
+        "medical-evidence",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "risk-tier-scaling"
+      ],
+      "escalates_to": [],
+      "counterbalance_notes": [
+        {
+          "slug": "power-mode",
+          "reason": "Makes explicit when broader exploratory power should remain separate from conservative execution."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A conservative execution prior requires existing action authority, a committed plan, and verifiable atomic steps."
+    },
+    {
+      "slug": "safe-rewrite",
+      "version": "1.1.0",
+      "plain_display_name": "Safe Rewrite Logic",
+      "primary_task_archetypes": [
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "constraint-loss",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "over-editing",
+        "provenance-loss"
+      ],
+      "pipeline_stages": [
+        "rewrite planning",
+        "controlled transformation",
+        "atom-level comparison"
+      ],
+      "environment_promoters": [
+        "requires_exact_fidelity",
+        "contains_protected_literals",
+        "has_supplied_sources"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "evidence_conflicting"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "long-context",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "action-execution",
+        "quantitative-analysis"
+      ],
+      "escalates_from": [
+        "micro-repair"
+      ],
+      "escalates_to": [
+        "regenerative-rewrite"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "regenerative-rewrite",
+          "reason": "Provides an explicit escalation when the structure, not merely wording, is globally unsound."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Prefer for meaning-preserving rewrites with identifiable invariants; conflicting source truth must be resolved first."
+    },
+    {
+      "slug": "scoped-loader",
+      "version": "1.1.0",
+      "plain_display_name": "Scoped Loader / Loader Sequencing",
+      "primary_task_archetypes": [
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "research-grounding",
+        "workflow-automation"
+      ],
+      "primary_failure_modes": [
+        "context-overload",
+        "evidence-coverage-gap"
+      ],
+      "secondary_failure_modes": [
+        "domain-context-contamination",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "task classification",
+        "pre-retrieval",
+        "on-demand loading",
+        "pre-commit validation"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "multi_document",
+        "context_window_pressure",
+        "tools_required"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "long-context",
+        "software-development",
+        "research",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "activation-budget-funnel"
+      ],
+      "escalates_to": [],
+      "counterbalance_notes": [
+        {
+          "slug": "anti-tunnel-vision",
+          "reason": "Counters overly narrow loading that would miss a materially relevant source or module."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Select to reduce token load through task-conditioned retrieval; required context and authority constraints remain unsuppressible."
+    },
+    {
+      "slug": "selfblock-auto-update",
+      "version": "1.1.0",
+      "plain_display_name": "Automatic Canonical-State Update",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation",
+        "action-execution"
+      ],
+      "primary_failure_modes": [
+        "stale-state",
+        "lost-state"
+      ],
+      "secondary_failure_modes": [
+        "action-permission-risk",
+        "version-drift"
+      ],
+      "pipeline_stages": [
+        "after meaningful action",
+        "after tool result",
+        "before handoff",
+        "before resume"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "durable_state_available",
+        "handoff_expected",
+        "file_write_allowed"
+      ],
+      "environment_demoters": [
+        "sensitive_data",
+        "review_only",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "stateblock"
+      ],
+      "escalates_to": [
+        "sequential-memory-state-engine"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "Blocks ambiguous updates to authority-bearing state."
+        },
+        {
+          "slug": "drift-suppression",
+          "reason": "Keeps automated state mutation aligned with the accepted task."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Selection presumes writable durable state and trusted update rules; never infer write authority from persistence alone."
+    },
+    {
+      "slug": "sequential-memory-state-engine",
+      "version": "1.1.0",
+      "plain_display_name": "Ordered Memory-State Update Engine",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation",
+        "action-execution"
+      ],
+      "primary_failure_modes": [
+        "lost-state",
+        "stale-state"
+      ],
+      "secondary_failure_modes": [
+        "branch-contamination",
+        "version-drift",
+        "poor-handoff"
+      ],
+      "pipeline_stages": [
+        "ingest",
+        "normalize",
+        "classify",
+        "compare",
+        "resolve",
+        "commit",
+        "project",
+        "checkpoint"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "durable_state_available",
+        "handoff_expected",
+        "tools_required"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state",
+        "sensitive_data"
+      ],
+      "default_complexity_min": "L4",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "stateblock",
+        "selfblock-auto-update"
+      ],
+      "escalates_to": [
+        "state-routing-bus"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "drift-suppression",
+          "reason": "Guards ordered commits against task and constraint drift."
+        },
+        {
+          "slug": "stable-long-context",
+          "reason": "Preserves recoverable context around the compact canonical state."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use for ordered, evolving state across multiple steps; a one-shot response should suppress this machinery."
+    },
+    {
+      "slug": "specificity-penalty-gate",
+      "version": "1.1.0",
+      "plain_display_name": "Unsupported Precision Gate",
+      "primary_task_archetypes": [
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "evaluation-audit",
+        "decision-support"
+      ],
+      "primary_failure_modes": [
+        "unsupported-precision",
+        "unsupported-claim"
+      ],
+      "secondary_failure_modes": [
+        "poor-uncertainty-handling",
+        "citation-source-mismatch"
+      ],
+      "pipeline_stages": [
+        "drafting",
+        "claim validation",
+        "pre-release"
+      ],
+      "environment_promoters": [
+        "requires_citations",
+        "high_stakes",
+        "time_sensitive",
+        "evidence_unavailable"
+      ],
+      "environment_demoters": [
+        "has_supplied_sources",
+        "deterministic_verifier_available"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "authoring"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "epistemic-status-gating"
+      ],
+      "escalates_to": [
+        "fail-closed-abstention"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "critical-atomic-verification",
+          "reason": "Allows exact claims when a decisive unit can actually be verified."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "The selection prior is defensible, but the canonical record flags a historical source gap; never treat it as evidence for a specific hidden mechanism."
+    },
+    {
+      "slug": "stable-long-context",
+      "version": "1.1.0",
+      "plain_display_name": "Stable Long-Context",
+      "primary_task_archetypes": [
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "research-grounding"
+      ],
+      "primary_failure_modes": [
+        "lost-state",
+        "context-overload"
+      ],
+      "secondary_failure_modes": [
+        "constraint-loss",
+        "provenance-loss",
+        "stale-state"
+      ],
+      "pipeline_stages": [
+        "initial anchoring",
+        "periodic compaction",
+        "context re-entry",
+        "final consistency check"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "multi_document",
+        "persistent_work",
+        "context_window_pressure"
+      ],
+      "environment_demoters": [
+        "requires_exact_fidelity",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "long-context",
+        "research",
+        "documentation",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "working-memory-lock-in"
+      ],
+      "escalates_to": [
+        "sequential-memory-state-engine"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "drift-suppression",
+          "reason": "Keeps compressed summaries aligned with locked constraints."
+        },
+        {
+          "slug": "scoped-loader",
+          "reason": "Reloads precise source material when summaries are insufficient."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use when context must survive compression or re-entry; do not substitute summaries for material requiring lossless retention."
+    },
+    {
+      "slug": "state-routing-bus",
+      "version": "1.1.0",
+      "plain_display_name": "Task-State Handoff Router",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "poor-handoff",
+        "orchestration-fragmentation"
+      ],
+      "secondary_failure_modes": [
+        "branch-contamination",
+        "domain-context-contamination",
+        "lost-state"
+      ],
+      "pipeline_stages": [
+        "post-module emission",
+        "inter-module routing",
+        "handoff verification"
+      ],
+      "environment_promoters": [
+        "multi_agent_available",
+        "handoff_expected",
+        "durable_state_available",
+        "branches_independent"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state",
+        "sensitive_data"
+      ],
+      "default_complexity_min": "L4",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-authoring",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "structured-state-projection"
+      ],
+      "escalates_to": [
+        "ultimate-suite-supervisor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "scoped-loader",
+          "reason": "Limits each recipient to the state slice needed for its task."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Require a real handoff medium and explicit recipient contract; this is routing support, not an implicit shared-memory promise."
+    },
+    {
+      "slug": "state-snapshot",
+      "version": "1.1.0",
+      "plain_display_name": "State Snapshot",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "action-execution",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "lost-state",
+        "poor-handoff"
+      ],
+      "secondary_failure_modes": [
+        "stale-state",
+        "version-drift"
+      ],
+      "pipeline_stages": [
+        "milestone completion",
+        "before risky transition",
+        "handoff",
+        "recovery"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "handoff_expected",
+        "durable_state_available",
+        "irreversible_action"
+      ],
+      "environment_demoters": [
+        "sensitive_data",
+        "review_only"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "stateblock"
+      ],
+      "escalates_to": [
+        "sequential-memory-state-engine"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "scoped-loader",
+          "reason": "Keeps recovery snapshots discoverable without keeping all state active."
+        },
+        {
+          "slug": "selfblock-auto-update",
+          "reason": "Separates milestone snapshots from continuous state updates."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Snapshot only valid committed state, excluding prohibited sensitive content and incomplete transactions."
+    },
+    {
+      "slug": "stateblock",
+      "version": "1.1.0",
+      "plain_display_name": "Canonical Task State",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "planning-design",
+        "skill-agent-creation"
+      ],
+      "primary_failure_modes": [
+        "lost-state",
+        "task-drift"
+      ],
+      "secondary_failure_modes": [
+        "stale-state",
+        "constraint-loss",
+        "poor-handoff"
+      ],
+      "pipeline_stages": [
+        "task initialization",
+        "after accepted state changes",
+        "before action",
+        "handoff and recovery"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "handoff_expected",
+        "durable_state_available",
+        "acceptance_criteria_present"
+      ],
+      "environment_demoters": [
+        "sensitive_data",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "working-memory-lock-in"
+      ],
+      "escalates_to": [
+        "sequential-memory-state-engine"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "micro-scaffolding",
+          "reason": "Avoids expanding a canonical state record beyond the minimum useful schema."
+        },
+        {
+          "slug": "working-memory-cues",
+          "reason": "Projects only the currently salient state instead of repeating the whole block."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Select for evolving multi-step tasks with a single canonical state contract; suppress for trivial one-turn work."
+    },
+    {
+      "slug": "structured-refinement",
+      "version": "1.1.0",
+      "plain_display_name": "Structured Refinement Cycles",
+      "primary_task_archetypes": [
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "evaluation-audit"
+      ],
+      "primary_failure_modes": [
+        "under-editing",
+        "invalid-validation-signal"
+      ],
+      "secondary_failure_modes": [
+        "over-editing",
+        "weak-stopping-rule",
+        "constraint-loss"
+      ],
+      "pipeline_stages": [
+        "factual pass",
+        "structural pass",
+        "style pass",
+        "release validation"
+      ],
+      "environment_promoters": [
+        "acceptance_criteria_present",
+        "has_supplied_sources",
+        "structured_output_required"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "action-execution",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "micro-repair"
+      ],
+      "escalates_to": [
+        "regenerative-rewrite"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "regenerative-rewrite",
+          "reason": "Stops iterative polishing when a globally broken structure should be rebuilt."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use distinct passes with acceptance tests and a stopping rule; do not select when one bounded repair is enough."
+    },
+    {
+      "slug": "structured-state-projection",
+      "version": "1.1.0",
+      "plain_display_name": "Structured State Projection",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "skill-agent-creation",
+        "content-understanding"
+      ],
+      "primary_failure_modes": [
+        "domain-context-contamination",
+        "context-overload"
+      ],
+      "secondary_failure_modes": [
+        "constraint-loss",
+        "poor-handoff"
+      ],
+      "pipeline_stages": [
+        "before component invocation",
+        "domain transfer",
+        "handoff",
+        "output merge"
+      ],
+      "environment_promoters": [
+        "multi_agent_available",
+        "handoff_expected",
+        "context_window_pressure",
+        "sensitive_data"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development",
+        "software-development",
+        "long-context"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "scoped-loader"
+      ],
+      "escalates_to": [
+        "state-routing-bus"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "Blocks projection when field dependencies or required constraints are unresolved."
+        },
+        {
+          "slug": "cot-structured-state-block",
+          "reason": "Maintains a structured consumer-facing contract without exposing unnecessary state."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "The projection prior is conservative; the canonical source gap requires avoiding claims about unrecovered historical mechanism details."
+    },
+    {
+      "slug": "stuck-pattern-reset",
+      "version": "1.1.0",
+      "plain_display_name": "Stuck-Pattern Reset Pack",
+      "primary_task_archetypes": [
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "software-engineering",
+        "research-grounding",
+        "creative-exploration"
+      ],
+      "primary_failure_modes": [
+        "tunnel-vision",
+        "premature-commitment"
+      ],
+      "secondary_failure_modes": [
+        "weak-stopping-rule",
+        "task-drift",
+        "lost-state"
+      ],
+      "pipeline_stages": [
+        "repetition detection",
+        "state preservation",
+        "path quarantine",
+        "alternative restart"
+      ],
+      "environment_promoters": [
+        "persistent_work",
+        "recurrence_pattern_stable",
+        "reproduction_available"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "irreversible_action"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "research",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "content-transformation",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "bounded-exit"
+      ],
+      "escalates_to": [
+        "meta-supervisor"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "forethought-checkpoints",
+          "reason": "Preserves acceptance criteria and known constraints during an alternative restart."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Select after repeated materially similar failures, not merely after one failed attempt with a new method or evidence."
+    },
+    {
+      "slug": "style-alignment",
+      "version": "1.1.0",
+      "plain_display_name": "Style-Alignment Module",
+      "primary_task_archetypes": [
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "constraint-loss",
+        "over-editing"
+      ],
+      "secondary_failure_modes": [
+        "invariant-violation",
+        "unsupported-claim"
+      ],
+      "pipeline_stages": [
+        "style contract extraction",
+        "surface transformation",
+        "semantic and style validation"
+      ],
+      "environment_promoters": [
+        "has_supplied_sources",
+        "requires_exact_fidelity",
+        "contains_protected_literals"
+      ],
+      "environment_demoters": [
+        "evidence_conflicting",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "quantitative-analysis",
+        "action-execution"
+      ],
+      "escalates_from": [],
+      "escalates_to": [
+        "structured-refinement"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "explanation-minimality-scaffold",
+          "reason": "Avoids adding ornamental explanation while matching style."
+        },
+        {
+          "slug": "grounding-no-invention",
+          "reason": "Keeps stylistic fluency from introducing unsupported substance."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Rank for explicit style transformation only after facts and reasoning are stable; protected text remains unchanged."
+    },
+    {
+      "slug": "surgery-edit",
+      "version": "1.1.0",
+      "plain_display_name": "Structural System Edit",
+      "primary_task_archetypes": [
+        "software-engineering"
+      ],
+      "secondary_task_archetypes": [
+        "content-transformation",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "under-editing",
+        "invariant-violation"
+      ],
+      "secondary_failure_modes": [
+        "over-editing",
+        "constraint-loss",
+        "under-verification"
+      ],
+      "pipeline_stages": [
+        "structural diagnosis",
+        "interface inventory",
+        "replacement design",
+        "migration and cutover",
+        "global validation"
+      ],
+      "environment_promoters": [
+        "editing_requested",
+        "acceptance_criteria_present",
+        "tests_available",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [
+        "review_only",
+        "missing_required_information",
+        "irreversible_action"
+      ],
+      "default_complexity_min": "L4",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "software-development",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-authoring"
+      ],
+      "escalates_from": [
+        "regenerative-rewrite"
+      ],
+      "escalates_to": [],
+      "counterbalance_notes": [
+        {
+          "slug": "crispr-edit",
+          "reason": "Prefers a bounded local edit when it can preserve all interfaces."
+        },
+        {
+          "slug": "micro-repair",
+          "reason": "Suppresses structural replacement for an isolated defect."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Reserve for a system-level replacement with explicit interfaces, migration, rollback, and global validation."
+    },
+    {
+      "slug": "task-set-lock-in",
+      "version": "1.1.0",
+      "plain_display_name": "Task-Set Lock-In",
+      "primary_task_archetypes": [
+        "planning-design"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "software-engineering",
+        "action-execution"
+      ],
+      "primary_failure_modes": [
+        "task-drift",
+        "mode-scope-authority-drift"
+      ],
+      "secondary_failure_modes": [
+        "constraint-loss",
+        "poor-handoff"
+      ],
+      "pipeline_stages": [
+        "after clarification",
+        "before planning",
+        "at scope-change requests",
+        "final acceptance"
+      ],
+      "environment_promoters": [
+        "acceptance_criteria_present",
+        "persistent_work",
+        "handoff_expected",
+        "editing_requested"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "general",
+        "software-development",
+        "agent-development",
+        "documentation"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration"
+      ],
+      "escalates_from": [],
+      "escalates_to": [
+        "stateblock"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "controlled-drift-corridors",
+          "reason": "Allows explicitly bounded adaptation without silently changing the task."
+        },
+        {
+          "slug": "micro-scaffolding",
+          "reason": "Keeps lock-in proportional to the actual task."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use after material ambiguity is resolved; lock the accepted objective, scope, authority, and completion criteria, not incidental wording."
+    },
+    {
+      "slug": "temporal-anchor-scaffold",
+      "version": "1.1.0",
+      "plain_display_name": "Temporal Anchor Scaffold",
+      "primary_task_archetypes": [
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "content-understanding",
+        "decision-support"
+      ],
+      "primary_failure_modes": [
+        "stale-state",
+        "source-applicability-mismatch"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-precision",
+        "evidence-conflict-suppression"
+      ],
+      "pipeline_stages": [
+        "source intake",
+        "timeline reconciliation",
+        "time-sensitive reasoning",
+        "final citation check"
+      ],
+      "environment_promoters": [
+        "time_sensitive",
+        "requires_citations",
+        "multi_document",
+        "evidence_conflicting"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "long-context"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "working-memory-cues"
+      ],
+      "escalates_to": [
+        "sequential-memory-state-engine"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "Surfaces missing or ambiguous dates before timeline synthesis."
+        },
+        {
+          "slug": "stable-long-context",
+          "reason": "Preserves temporal anchors across long evidence sets."
+        }
+      ],
+      "source_support": "source-gap",
+      "review_status": "PASS",
+      "notes": "Select only when time changes claim meaning or source applicability; unsupported dates must remain unknown."
+    },
+    {
+      "slug": "truth-priority-hierarchy",
+      "version": "1.1.0",
+      "plain_display_name": "Truth Priority Hierarchy",
+      "primary_task_archetypes": [
+        "evaluation-audit"
+      ],
+      "secondary_task_archetypes": [
+        "research-grounding",
+        "decision-support"
+      ],
+      "primary_failure_modes": [
+        "evidence-conflict-suppression",
+        "source-applicability-mismatch"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "poor-uncertainty-handling"
+      ],
+      "pipeline_stages": [
+        "task-framing",
+        "evidence-conflict-resolution",
+        "qms-collapse"
+      ],
+      "environment_promoters": [
+        "evidence_conflicting",
+        "requires_citations",
+        "high_stakes",
+        "multi_document"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable",
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "epistemic-status-gating"
+      ],
+      "escalates_to": [
+        "multi-truth-gating"
+      ],
+      "counterbalance_notes": [],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "A hierarchy must come from domain authority and applicability rules; never invent one merely to force conflicting evidence to collapse."
+    },
+    {
+      "slug": "truth-redundancy",
+      "version": "1.1.0",
+      "plain_display_name": "Independent Evidence Redundancy",
+      "primary_task_archetypes": [
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "evaluation-audit",
+        "decision-support"
+      ],
+      "primary_failure_modes": [
+        "evidence-coverage-gap",
+        "under-verification"
+      ],
+      "secondary_failure_modes": [
+        "citation-source-mismatch",
+        "source-applicability-mismatch"
+      ],
+      "pipeline_stages": [
+        "evidence-selection",
+        "pre-synthesis-validation"
+      ],
+      "environment_promoters": [
+        "high_stakes",
+        "requires_citations",
+        "web_available",
+        "external_research_allowed"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable",
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "critical-atomic-verification"
+      ],
+      "escalates_to": [
+        "two-truths-and-corridor"
+      ],
+      "counterbalance_notes": [],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Promote for consequential claims needing genuinely independent anchors; duplicate reports of one source do not provide redundancy."
+    },
+    {
+      "slug": "two-truths-and-corridor",
+      "version": "1.1.0",
+      "plain_display_name": "Dual-Source Bounded Synthesis",
+      "primary_task_archetypes": [
+        "research-grounding"
+      ],
+      "secondary_task_archetypes": [
+        "decision-support",
+        "content-authoring"
+      ],
+      "primary_failure_modes": [
+        "evidence-conflict-suppression",
+        "constraint-loss"
+      ],
+      "secondary_failure_modes": [
+        "unsupported-claim",
+        "provenance-loss"
+      ],
+      "pipeline_stages": [
+        "pre-synthesis",
+        "synthesis",
+        "post-synthesis-validation"
+      ],
+      "environment_promoters": [
+        "multi_document",
+        "requires_citations",
+        "evidence_conflicting",
+        "has_supplied_sources"
+      ],
+      "environment_demoters": [
+        "evidence_unavailable",
+        "requires_exact_fidelity"
+      ],
+      "default_complexity_min": "L3",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "research",
+        "medical-evidence",
+        "legal-evidence",
+        "authoring"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "content-transformation"
+      ],
+      "escalates_from": [
+        "truth-redundancy"
+      ],
+      "escalates_to": [
+        "multi-truth-gating"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "grounding-no-invention",
+          "reason": "Keeps the synthesis corridor bounded by what the two anchors actually support."
+        }
+      ],
+      "source_support": "strongly-derivable",
+      "review_status": "PASS",
+      "notes": "Use only with two defensible anchors and an explicit synthesis corridor; it is not a substitute for exact extraction."
+    },
+    {
+      "slug": "ultimate-suite-supervisor",
+      "version": "1.1.0",
+      "plain_display_name": "Suite-Wide Workflow Supervisor",
+      "primary_task_archetypes": [
+        "skill-agent-creation"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "orchestration-fragmentation",
+        "packaging-activation-drift"
+      ],
+      "secondary_failure_modes": [
+        "mode-scope-authority-drift",
+        "context-overload",
+        "version-drift"
+      ],
+      "pipeline_stages": [
+        "suite activation",
+        "mode and stack declaration",
+        "global routing",
+        "conflict resolution",
+        "post-output health gate"
+      ],
+      "environment_promoters": [
+        "multi_agent_available",
+        "tools_required",
+        "durable_state_available",
+        "branches_independent"
+      ],
+      "environment_demoters": [
+        "tightly_shared_state",
+        "missing_required_information",
+        "context_window_pressure"
+      ],
+      "default_complexity_min": "L5",
+      "default_complexity_max": "L5",
+      "project_profile_priors": [
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "knowledge-explanation",
+        "content-transformation",
+        "content-authoring",
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "meta-supervisor",
+        "state-routing-bus"
+      ],
+      "escalates_to": [],
+      "counterbalance_notes": [
+        {
+          "slug": "reasoning-throughput-governor",
+          "reason": "Constrains suite-wide scheduling and verification cost."
+        },
+        {
+          "slug": "scoped-loader",
+          "reason": "Prevents the supervisor from loading every available component into every task."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Highest-complexity prior for a real suite with explicit manifests and authority rules; suppress whenever a smaller composition can complete the task."
+    },
+    {
+      "slug": "working-memory-cues",
+      "version": "1.1.0",
+      "plain_display_name": "Working-Memory Cues",
+      "primary_task_archetypes": [
+        "content-understanding"
+      ],
+      "secondary_task_archetypes": [
+        "workflow-automation",
+        "planning-design"
+      ],
+      "primary_failure_modes": [
+        "constraint-loss",
+        "task-drift"
+      ],
+      "secondary_failure_modes": [
+        "context-overload",
+        "lost-state"
+      ],
+      "pipeline_stages": [
+        "before risky step",
+        "after context switch",
+        "before output",
+        "at known failure points"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "persistent_work",
+        "context_window_pressure",
+        "recurrence_pattern_stable"
+      ],
+      "environment_demoters": [
+        "missing_required_information"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L3",
+      "project_profile_priors": [
+        "long-context",
+        "agent-development",
+        "software-development",
+        "general"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration"
+      ],
+      "escalates_from": [
+        "task-set-lock-in"
+      ],
+      "escalates_to": [
+        "working-memory-lock-in"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "attention-compression-scaffold",
+          "reason": "Keeps cues short enough to remain salient."
+        },
+        {
+          "slug": "clarification-gateway",
+          "reason": "Prevents unresolved assumptions from becoming repeated cues."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Use a few targeted cues at known failure points; cues supplement rather than replace canonical state."
+    },
+    {
+      "slug": "working-memory-lock-in",
+      "version": "1.1.0",
+      "plain_display_name": "Working-Memory Lock-In",
+      "primary_task_archetypes": [
+        "workflow-automation"
+      ],
+      "secondary_task_archetypes": [
+        "content-understanding",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "constraint-loss",
+        "task-drift"
+      ],
+      "secondary_failure_modes": [
+        "lost-state",
+        "context-overload"
+      ],
+      "pipeline_stages": [
+        "task initialization",
+        "before each major action",
+        "after context/tool transition",
+        "final validation"
+      ],
+      "environment_promoters": [
+        "long_context",
+        "persistent_work",
+        "tools_required",
+        "context_window_pressure"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "tightly_shared_state"
+      ],
+      "default_complexity_min": "L2",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "long-context",
+        "software-development",
+        "agent-development"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "working-memory-cues"
+      ],
+      "escalates_to": [
+        "stateblock"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "attention-compression-scaffold",
+          "reason": "Prevents locked material from crowding out active work."
+        },
+        {
+          "slug": "stable-long-context",
+          "reason": "Moves broader history outside the continuously salient lock."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Lock only small, stable, authority-bearing facts and invariants; unresolved or rapidly changing values should not be locked."
+    },
+    {
+      "slug": "zero-drift-zones",
+      "version": "1.1.0",
+      "plain_display_name": "Immutable Content Zones",
+      "primary_task_archetypes": [
+        "content-transformation"
+      ],
+      "secondary_task_archetypes": [
+        "content-authoring",
+        "software-engineering"
+      ],
+      "primary_failure_modes": [
+        "invariant-violation",
+        "constraint-loss"
+      ],
+      "secondary_failure_modes": [
+        "over-editing",
+        "provenance-loss"
+      ],
+      "pipeline_stages": [
+        "source annotation",
+        "transformation planning",
+        "generation guard",
+        "final verification"
+      ],
+      "environment_promoters": [
+        "contains_protected_literals",
+        "requires_exact_fidelity",
+        "has_supplied_sources",
+        "deterministic_verifier_available"
+      ],
+      "environment_demoters": [
+        "missing_required_information",
+        "evidence_conflicting"
+      ],
+      "default_complexity_min": "L1",
+      "default_complexity_max": "L4",
+      "project_profile_priors": [
+        "authoring",
+        "documentation",
+        "software-development",
+        "legal-evidence",
+        "long-context"
+      ],
+      "normally_exclude_for": [
+        "creative-exploration",
+        "knowledge-explanation"
+      ],
+      "escalates_from": [
+        "controlled-drift-corridors"
+      ],
+      "escalates_to": [
+        "drift-suppression"
+      ],
+      "counterbalance_notes": [
+        {
+          "slug": "clarification-gateway",
+          "reason": "Requires the immutable boundary to be explicit before transformation."
+        },
+        {
+          "slug": "drift-spectra-scaling",
+          "reason": "Avoids treating mutable surrounding content as equally locked."
+        }
+      ],
+      "source_support": "sufficiently-recovered",
+      "review_status": "PASS",
+      "notes": "Select when immutable spans can be identified and verified; if everything is frozen, no useful transformation remains."
+    }
+  ]
+}
