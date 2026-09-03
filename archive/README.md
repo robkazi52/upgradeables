@@ -10,5 +10,6 @@ A modern equivalence is a traceability decision, never a retroactive rename. Use
 structured gaps. The archive remains authoritative for what was recovered even as
 operational packages evolve.
 
-`build-spec/` preserves the latest repository-build handoff separately from the
-source corpus because it governs construction rather than historical content.
+`build-spec/` preserves repository-build handoffs separately from the source
+corpus because they govern construction rather than historical content. Every
+archived file is covered by [`SOURCE_SHA256SUMS`](SOURCE_SHA256SUMS).

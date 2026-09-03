@@ -13,13 +13,15 @@ ALLOWED_FUNCTIONS = {"framing-intake", "state", "context-retrieval", "planning-r
 ALLOWED_SOURCE_KINDS = {"direct_user_spec", "user_accepted", "historical_assistant_artifact", "current_consolidated_catalog", "historical_recovery_inventory", "modern_implementation_recommendation"}
 ALLOWED_CANONICALITY = {"canonical", "accepted", "provisional", "historical_only", "unresolved"}
 ALLOWED_CONFIDENCE = {"high", "medium", "low"}
-REQUIRED = {"id", "slug", "display_name", "version", "registry_generation", "recovery_status", "lifecycle_status", "tiers", "functional_classes", "activation_class", "implementation_forms", "purpose", "triggers", "non_triggers", "requires", "recommended_with", "counterbalances", "potentially_redundant_with", "conflicts", "inputs", "outputs", "strong_model_scaling", "failure_boundary", "supersedes", "superseded_by", "package_path", "provenance"}
+ALLOWED_BASIS = {"recovered", "normalized-from-recovered", "modern-interpretation", "provisional"}
+REQUIRED = {"id", "slug", "display_name", "version", "registry_generation", "recovery_status", "lifecycle_status", "tiers", "functional_classes", "activation_class", "implementation_forms", "purpose", "problem_solved", "os_role", "pipeline_stages", "best_fit_tasks", "avoid_when", "mechanism_basis", "activation_cost", "mechanism", "procedure", "always_do", "never_do", "interaction_reasons", "counterbalance_reasons", "redundancy_reasons", "conflict_rules", "source_refs", "triggers", "non_triggers", "requires", "recommended_with", "counterbalances", "potentially_redundant_with", "conflicts", "inputs", "outputs", "strong_model_scaling", "failure_boundary", "supersedes", "superseded_by", "package_path", "provenance"}
 
 def load(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 def validate():
     errors = []
+    source_cache = {}
     yaml_data = load(ROOT / "registry/registry.yaml")
     json_data = load(ROOT / "registry/registry.json")
     if yaml_data != json_data:
@@ -60,12 +62,36 @@ def validate():
         expected_package = metadata.parent / "UPGRADEABLE.md"
         if package.resolve() != expected_package.resolve():
             errors.append(f"{slug}: package path does not match metadata directory")
-        for key in ("tiers", "functional_classes", "implementation_forms", "triggers", "non_triggers", "requires", "recommended_with", "counterbalances", "potentially_redundant_with", "conflicts", "inputs", "outputs", "failure_boundary"):
+        for key in ("tiers", "functional_classes", "implementation_forms", "os_role", "pipeline_stages", "best_fit_tasks", "avoid_when", "procedure", "always_do", "never_do", "conflict_rules", "source_refs", "triggers", "non_triggers", "requires", "recommended_with", "counterbalances", "potentially_redundant_with", "conflicts", "inputs", "outputs", "failure_boundary"):
             if not isinstance(entry.get(key), list):
                 errors.append(f"{slug}: {key} must be an array")
-        for key in ("display_name", "purpose", "registry_generation"):
+        for key in ("display_name", "purpose", "problem_solved", "mechanism", "registry_generation"):
             if not isinstance(entry.get(key), str) or not entry.get(key, "").strip():
                 errors.append(f"{slug}: {key} must be non-empty text")
+        if entry.get("schema_version") != "2.0.0":
+            errors.append(f"{slug}: schema_version must be 2.0.0")
+        if entry.get("mechanism_basis") not in ALLOWED_BASIS:
+            errors.append(f"{slug}: invalid mechanism_basis")
+        cost = entry.get("activation_cost")
+        if not isinstance(cost, dict) or cost.get("level") not in {"low", "medium", "high"} or not str(cost.get("notes", "")).strip():
+            errors.append(f"{slug}: invalid activation_cost")
+        for key in ("interaction_reasons", "counterbalance_reasons", "redundancy_reasons"):
+            reasons = entry.get(key)
+            if not isinstance(reasons, dict) or any(ref not in known or not isinstance(reason, str) or not reason.strip() for ref, reason in reasons.items()):
+                errors.append(f"{slug}: invalid {key}")
+        for ref in entry.get("source_refs", []):
+            if not isinstance(ref, dict) or not {"document", "heading", "source_kind"} <= set(ref):
+                errors.append(f"{slug}: invalid source_ref")
+                continue
+            if ref["source_kind"] not in ALLOWED_SOURCE_KINDS:
+                errors.append(f"{slug}: invalid source_ref source_kind")
+            source_path = ROOT / "archive/source" / ref["document"]
+            if not source_path.is_file():
+                errors.append(f"{slug}: source_ref document does not exist")
+            else:
+                source_text = source_cache.setdefault(source_path, source_path.read_text(encoding="utf-8"))
+                if ref["heading"] not in source_text:
+                    errors.append(f"{slug}: source_ref heading not found: {ref['heading']}")
         if not re.fullmatch(r"\d+\.\d+\.\d+", entry.get("version", "")):
             errors.append(f"{slug}: invalid semantic version")
         scaling = entry.get("strong_model_scaling")
@@ -107,6 +133,14 @@ def validate():
                 errors.append(f"{path.parent.name}: unknown bundle component {ref}")
         if set(bundle.get("load_order", [])) != set(bundle.get("components", [])):
             errors.append(f"{path.parent.name}: load order/component mismatch")
+        for key in ("problem_solved", "activation_boundary"):
+            if not isinstance(bundle.get(key), str) or not bundle.get(key, "").strip():
+                errors.append(f"{path.parent.name}: invalid {key}")
+        for key in ("required_components", "optional_components", "critical_interactions", "excessive_when"):
+            if not isinstance(bundle.get(key), list):
+                errors.append(f"{path.parent.name}: {key} must be an array")
+        if set(bundle.get("required_components", [])) | set(bundle.get("optional_components", [])) != set(bundle.get("components", [])):
+            errors.append(f"{path.parent.name}: required/optional partition mismatch")
 
     recipes = load(ROOT / "recipes/recipes.json")["recipes"]
     for recipe in recipes:

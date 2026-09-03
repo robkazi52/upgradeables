@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upgradeables.dev/schema/behavior_case.schema.json",
+  "title": "Upgradeable behavior case set",
+  "type": "object",
+  "required": ["schema_version", "slug", "package_version", "cases"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "package_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "cases": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "execution", "given", "expect", "reject"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {
+            "enum": [
+              "positive_activation",
+              "negative_activation",
+              "precedence_or_conflict",
+              "failure_boundary",
+              "strong_model_scaling",
+              "distinctive_mechanism"
+            ]
+          },
+          "execution": {"enum": ["deterministic", "model-required"]},
+          "given": {"type": "string", "minLength": 1},
+          "expect": {"type": "string", "minLength": 1},
+          "reject": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

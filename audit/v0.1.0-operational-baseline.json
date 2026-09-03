@@ -1,0 +1,679 @@
+{
+  "release": "v0.1.0",
+  "captured_from_commit": "624fc845fc0786775589dfcb29e09035990fe015",
+  "operational_package_count": 96,
+  "packages": [
+    {
+      "slug": "activation-budget-funnel",
+      "id": "T2-16",
+      "display_name": "Activation-Budget Funnel",
+      "version": "1.0.0",
+      "package_path": "upgradeables/context-retrieval/activation-budget-funnel/UPGRADEABLE.md"
+    },
+    {
+      "slug": "attention-compression-scaffold",
+      "id": "JAN26-02",
+      "display_name": "Attention Compression Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/context-retrieval/attention-compression-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "neuro-focus",
+      "id": "A-09",
+      "display_name": "Neuro-Focus",
+      "version": "1.0.0",
+      "package_path": "upgradeables/context-retrieval/neuro-focus/UPGRADEABLE.md"
+    },
+    {
+      "slug": "scoped-loader",
+      "id": "T1-07",
+      "display_name": "Scoped Loader / Loader Sequencing",
+      "version": "1.0.0",
+      "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md"
+    },
+    {
+      "slug": "compute-adaptive-drift",
+      "id": "T4-10",
+      "display_name": "Compute-Adaptive Drift Constraining",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/compute-adaptive-drift/UPGRADEABLE.md"
+    },
+    {
+      "slug": "controlled-drift-corridors",
+      "id": "T3-02",
+      "display_name": "Controlled Drift Corridors",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/controlled-drift-corridors/UPGRADEABLE.md"
+    },
+    {
+      "slug": "domain-normalized-drift",
+      "id": "T4-11",
+      "display_name": "Domain-Normalized Drift Field",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/domain-normalized-drift/UPGRADEABLE.md"
+    },
+    {
+      "slug": "drift-immunity-propagation",
+      "id": "T4-14",
+      "display_name": "Drift Immunity Propagation",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/drift-immunity-propagation/UPGRADEABLE.md"
+    },
+    {
+      "slug": "drift-sink-scaffold",
+      "id": "JAN26-10",
+      "display_name": "Drift Sink Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/drift-sink-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "drift-spectra-scaling",
+      "id": "T4-09",
+      "display_name": "Drift-Spectra Scaling",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/drift-spectra-scaling/UPGRADEABLE.md"
+    },
+    {
+      "slug": "drift-suppression",
+      "id": "T1-02",
+      "display_name": "Drift Suppression",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/drift-suppression/UPGRADEABLE.md"
+    },
+    {
+      "slug": "non-authoritative-branch-suppression",
+      "id": "JAN26-14",
+      "display_name": "Non-Authoritative Branch Suppression",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/non-authoritative-branch-suppression/UPGRADEABLE.md"
+    },
+    {
+      "slug": "zero-drift-zones",
+      "id": "T3-14",
+      "display_name": "Zero-Drift Zones",
+      "version": "1.0.0",
+      "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
+    },
+    {
+      "slug": "contradiction-micro-repair",
+      "id": "T4-04",
+      "display_name": "Contradiction Micro-Repair Pack",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/contradiction-micro-repair/UPGRADEABLE.md"
+    },
+    {
+      "slug": "crispr-edit",
+      "id": "A-07",
+      "display_name": "CRISPR Editing",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md"
+    },
+    {
+      "slug": "micro-repair",
+      "id": "T2-04",
+      "display_name": "Micro-Repair",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
+    },
+    {
+      "slug": "regenerative-rewrite",
+      "id": "T2-03",
+      "display_name": "Regenerative Rewrite",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/regenerative-rewrite/UPGRADEABLE.md"
+    },
+    {
+      "slug": "safe-rewrite",
+      "id": "T1-10",
+      "display_name": "Safe Rewrite Logic",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md"
+    },
+    {
+      "slug": "structured-refinement",
+      "id": "T2-02",
+      "display_name": "Structured Refinement Cycles",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/structured-refinement/UPGRADEABLE.md"
+    },
+    {
+      "slug": "surgery-edit",
+      "id": "A-08",
+      "display_name": "Surgery Editing",
+      "version": "1.0.0",
+      "package_path": "upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md"
+    },
+    {
+      "slug": "clarification-gateway",
+      "id": "T1-03",
+      "display_name": "Clarification Gateway",
+      "version": "1.0.0",
+      "package_path": "upgradeables/foundation/clarification-gateway/UPGRADEABLE.md"
+    },
+    {
+      "slug": "micro-scaffolding",
+      "id": "T1-01",
+      "display_name": "Micro-Scaffolding",
+      "version": "1.0.0",
+      "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md"
+    },
+    {
+      "slug": "adapter-first-experimentation",
+      "id": "T2-21",
+      "display_name": "Adapter-First Experimentation",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/adapter-first-experimentation/UPGRADEABLE.md"
+    },
+    {
+      "slug": "behavior-gene-builder",
+      "id": "BG-00",
+      "display_name": "Behavior Gene Builder",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/behavior-gene-builder/UPGRADEABLE.md"
+    },
+    {
+      "slug": "cognitive-governor",
+      "id": "T3-17",
+      "display_name": "Reasoning Budget / Cognitive Governor",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/cognitive-governor/UPGRADEABLE.md"
+    },
+    {
+      "slug": "domain-core-builder",
+      "id": "C-00",
+      "display_name": "Domain Core Builder",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/domain-core-builder/UPGRADEABLE.md"
+    },
+    {
+      "slug": "dynamic-depth-allocation",
+      "id": "T4-12",
+      "display_name": "Dynamic Depth Allocation",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/dynamic-depth-allocation/UPGRADEABLE.md"
+    },
+    {
+      "slug": "future-proof-mode-selector",
+      "id": "T4-17",
+      "display_name": "Future-Proof Mode Selector",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/future-proof-mode-selector/UPGRADEABLE.md"
+    },
+    {
+      "slug": "hybrid-mode",
+      "id": "T4-08",
+      "display_name": "HYBRID Mode",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/hybrid-mode/UPGRADEABLE.md"
+    },
+    {
+      "slug": "meta-awareness",
+      "id": "T4-02",
+      "display_name": "Meta-Awareness Pack",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/meta-awareness/UPGRADEABLE.md"
+    },
+    {
+      "slug": "meta-stability",
+      "id": "T4-15",
+      "display_name": "Meta-Stability Mode",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/meta-stability/UPGRADEABLE.md"
+    },
+    {
+      "slug": "meta-supervisor",
+      "id": "T4-01",
+      "display_name": "Meta-Supervisor Bundle",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/meta-supervisor/UPGRADEABLE.md"
+    },
+    {
+      "slug": "model-size-drift-scaling",
+      "id": "T4-18",
+      "display_name": "Drift-Stability Scaling with Model Size",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/model-size-drift-scaling/UPGRADEABLE.md"
+    },
+    {
+      "slug": "power-mode",
+      "id": "T4-07",
+      "display_name": "POWER Mode",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/power-mode/UPGRADEABLE.md"
+    },
+    {
+      "slug": "reasoning-throughput-governor",
+      "id": "T4-13",
+      "display_name": "Reasoning Throughput Governor",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/reasoning-throughput-governor/UPGRADEABLE.md"
+    },
+    {
+      "slug": "resonance-gene-builder",
+      "id": "A-06",
+      "display_name": "Resonance Gene Builder",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/resonance-gene-builder/UPGRADEABLE.md"
+    },
+    {
+      "slug": "risk-tier-scaling",
+      "id": "T3-05",
+      "display_name": "Risk-Tier Scaling",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md"
+    },
+    {
+      "slug": "safe-mode",
+      "id": "T4-06",
+      "display_name": "SAFE Mode",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/safe-mode/UPGRADEABLE.md"
+    },
+    {
+      "slug": "stuck-pattern-reset",
+      "id": "T4-03",
+      "display_name": "Stuck-Pattern Reset Pack",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/stuck-pattern-reset/UPGRADEABLE.md"
+    },
+    {
+      "slug": "ultimate-suite-supervisor",
+      "id": "T4-05",
+      "display_name": "Ultimate Suite Supervisor",
+      "version": "1.0.0",
+      "package_path": "upgradeables/meta-control/ultimate-suite-supervisor/UPGRADEABLE.md"
+    },
+    {
+      "slug": "architect-orchestrator",
+      "id": "O-01",
+      "display_name": "Architect Orchestrator",
+      "version": "1.0.0",
+      "package_path": "upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md"
+    },
+    {
+      "slug": "authority-anchor-enforcement",
+      "id": "JAN26-12",
+      "display_name": "Authority Anchor Enforcement",
+      "version": "1.0.0",
+      "package_path": "upgradeables/orchestration/authority-anchor-enforcement/UPGRADEABLE.md"
+    },
+    {
+      "slug": "cross-context-resonance-lock",
+      "id": "JAN26-11",
+      "display_name": "Cross-Context Resonance Lock",
+      "version": "1.0.0",
+      "package_path": "upgradeables/orchestration/cross-context-resonance-lock/UPGRADEABLE.md"
+    },
+    {
+      "slug": "progressive-mode-shaping",
+      "id": "T2-06",
+      "display_name": "Progressive Mode Shaping",
+      "version": "1.0.0",
+      "package_path": "upgradeables/orchestration/progressive-mode-shaping/UPGRADEABLE.md"
+    },
+    {
+      "slug": "resonance",
+      "id": "A-05",
+      "display_name": "Resonance",
+      "version": "1.0.0",
+      "package_path": "upgradeables/orchestration/resonance/UPGRADEABLE.md"
+    },
+    {
+      "slug": "state-routing-bus",
+      "id": "A-02",
+      "display_name": "State Routing Bus",
+      "version": "1.0.0",
+      "package_path": "upgradeables/orchestration/state-routing-bus/UPGRADEABLE.md"
+    },
+    {
+      "slug": "explanation-minimality-scaffold",
+      "id": "JAN26-08",
+      "display_name": "Explanation Minimality Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/output/explanation-minimality-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "pedagogical-alignment",
+      "id": "T3-16",
+      "display_name": "Pedagogical Alignment Constraint",
+      "version": "1.0.0",
+      "package_path": "upgradeables/output/pedagogical-alignment/UPGRADEABLE.md"
+    },
+    {
+      "slug": "placeholder-suppression",
+      "id": "T1-08",
+      "display_name": "Placeholder Suppression",
+      "version": "1.0.0",
+      "package_path": "upgradeables/output/placeholder-suppression/UPGRADEABLE.md"
+    },
+    {
+      "slug": "style-alignment",
+      "id": "T3-15",
+      "display_name": "Style-Alignment Module",
+      "version": "1.0.0",
+      "package_path": "upgradeables/output/style-alignment/UPGRADEABLE.md"
+    },
+    {
+      "slug": "external-state-automation",
+      "id": "T2-20",
+      "display_name": "External State Automation",
+      "version": "1.0.0",
+      "package_path": "upgradeables/persistence/external-state-automation/UPGRADEABLE.md"
+    },
+    {
+      "slug": "anti-tunnel-vision",
+      "id": "T2-19",
+      "display_name": "Anti-Tunnel Vision",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+    },
+    {
+      "slug": "bounded-exit",
+      "id": "T2-01",
+      "display_name": "Bounded ExIt",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/bounded-exit/UPGRADEABLE.md"
+    },
+    {
+      "slug": "decision-first-scaffold",
+      "id": "JAN26-04",
+      "display_name": "Decision-First Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "dominant-driver-isolation-scaffold",
+      "id": "JAN26-03",
+      "display_name": "Dominant-Driver Isolation Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "forethought-checkpoints",
+      "id": "T2-17",
+      "display_name": "Forethought / Checkpoints",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md"
+    },
+    {
+      "slug": "multiverse-reasoning",
+      "id": "A-01",
+      "display_name": "Multiverse Engine",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md"
+    },
+    {
+      "slug": "phase-locked-reasoning-scaffold",
+      "id": "JAN26-01",
+      "display_name": "Phase-Locked Reasoning Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/phase-locked-reasoning-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "reasoning-scale-controller",
+      "id": "RS-00",
+      "display_name": "Reasoning-Scale Controller",
+      "version": "1.0.0",
+      "package_path": "upgradeables/reasoning/reasoning-scale-controller/UPGRADEABLE.md"
+    },
+    {
+      "slug": "cot-structured-state-block",
+      "id": "STATE-2025-12-03-T3",
+      "display_name": "CoT-Structured State Block",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/cot-structured-state-block/UPGRADEABLE.md"
+    },
+    {
+      "slug": "domain-mode-isolation",
+      "id": "T3-10",
+      "display_name": "Domain / Mode Isolation",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md"
+    },
+    {
+      "slug": "mode-lock-in",
+      "id": "T1-05",
+      "display_name": "Mode Lock-In",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/mode-lock-in/UPGRADEABLE.md"
+    },
+    {
+      "slug": "selfblock-auto-update",
+      "id": "T2-11",
+      "display_name": "SelfBlock Auto-Update",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/selfblock-auto-update/UPGRADEABLE.md"
+    },
+    {
+      "slug": "sequential-memory-state-engine",
+      "id": "T2-10",
+      "display_name": "Sequential Memory State Engine (SMSE)",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/sequential-memory-state-engine/UPGRADEABLE.md"
+    },
+    {
+      "slug": "stable-long-context",
+      "id": "T2-07",
+      "display_name": "Stable Long-Context",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/stable-long-context/UPGRADEABLE.md"
+    },
+    {
+      "slug": "state-snapshot",
+      "id": "O-03",
+      "display_name": "State Snapshot",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+    },
+    {
+      "slug": "stateblock",
+      "id": "T2-09",
+      "display_name": "StateBlock",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+    },
+    {
+      "slug": "structured-state-projection",
+      "id": "JAN26-13",
+      "display_name": "Structured State Projection",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/structured-state-projection/UPGRADEABLE.md"
+    },
+    {
+      "slug": "task-set-lock-in",
+      "id": "T1-06",
+      "display_name": "Task-Set Lock-In",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+    },
+    {
+      "slug": "temporal-anchor-scaffold",
+      "id": "JAN26-07",
+      "display_name": "Temporal Anchor Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/temporal-anchor-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "working-memory-cues",
+      "id": "T1-09",
+      "display_name": "Working-Memory Cues",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/working-memory-cues/UPGRADEABLE.md"
+    },
+    {
+      "slug": "working-memory-lock-in",
+      "id": "T2-08",
+      "display_name": "Working-Memory Lock-In",
+      "version": "1.0.0",
+      "package_path": "upgradeables/state/working-memory-lock-in/UPGRADEABLE.md"
+    },
+    {
+      "slug": "authenticity-anti-evasion",
+      "id": "T3-18",
+      "display_name": "Authenticity & Anti-Evasion Principle",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/authenticity-anti-evasion/UPGRADEABLE.md"
+    },
+    {
+      "slug": "counterfactual-integrity",
+      "id": "T3-12",
+      "display_name": "Counterfactual Integrity Gate",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/counterfactual-integrity/UPGRADEABLE.md"
+    },
+    {
+      "slug": "counterfactual-silence-scaffold",
+      "id": "JAN26-06",
+      "display_name": "Counterfactual Silence Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/counterfactual-silence-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "epistemic-status-gating",
+      "id": "JAN26-05",
+      "display_name": "Epistemic Status Gating",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/epistemic-status-gating/UPGRADEABLE.md"
+    },
+    {
+      "slug": "fail-closed-abstention",
+      "id": "T3-11",
+      "display_name": "Fail-Closed Abstention",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md"
+    },
+    {
+      "slug": "grounding-no-invention",
+      "id": "T1-04",
+      "display_name": "Grounding / No-Invention",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+    },
+    {
+      "slug": "image-text-fidelity-capture",
+      "id": "T2-14A",
+      "display_name": "Image Text Fidelity Capture",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/image-text-fidelity-capture/UPGRADEABLE.md"
+    },
+    {
+      "slug": "multi-truth-gating",
+      "id": "T3-01",
+      "display_name": "Multi-Truth Gating",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/multi-truth-gating/UPGRADEABLE.md"
+    },
+    {
+      "slug": "truth-priority-hierarchy",
+      "id": "T3-06",
+      "display_name": "Truth Priority Hierarchy",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md"
+    },
+    {
+      "slug": "truth-redundancy",
+      "id": "T3-03",
+      "display_name": "Truth Redundancy",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/truth-redundancy/UPGRADEABLE.md"
+    },
+    {
+      "slug": "two-truths-and-corridor",
+      "id": "T3-08",
+      "display_name": "Two Truths + Corridor",
+      "version": "1.0.0",
+      "package_path": "upgradeables/truth-grounding/two-truths-and-corridor/UPGRADEABLE.md"
+    },
+    {
+      "slug": "bidirectional-consistency",
+      "id": "T2-18",
+      "display_name": "Bidirectional Consistency",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md"
+    },
+    {
+      "slug": "citation-fidelity",
+      "id": "T3-13",
+      "display_name": "Citation Fidelity Gate",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+    },
+    {
+      "slug": "coherence-heartbeat",
+      "id": "A-04",
+      "display_name": "Global Coherence Heartbeat",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/coherence-heartbeat/UPGRADEABLE.md"
+    },
+    {
+      "slug": "coherence-loops",
+      "id": "A-11",
+      "display_name": "Coherence Loops",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/coherence-loops/UPGRADEABLE.md"
+    },
+    {
+      "slug": "critical-atomic-verification",
+      "id": "T3-04",
+      "display_name": "Critical Atomic Verification",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md"
+    },
+    {
+      "slug": "cross-checking-chains",
+      "id": "T3-07",
+      "display_name": "Cross-Checking Chains",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/cross-checking-chains/UPGRADEABLE.md"
+    },
+    {
+      "slug": "cross-universe-consistency",
+      "id": "T4-16",
+      "display_name": "Cross-Universe Consistency Mode",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/cross-universe-consistency/UPGRADEABLE.md"
+    },
+    {
+      "slug": "fermionic-veto",
+      "id": "T3-09",
+      "display_name": "Fermionic Veto Strengthening",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/fermionic-veto/UPGRADEABLE.md"
+    },
+    {
+      "slug": "invariance-stress-scaffold",
+      "id": "JAN26-09",
+      "display_name": "Invariance Stress Scaffold",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md"
+    },
+    {
+      "slug": "multi-layer-consistency",
+      "id": "T2-05",
+      "display_name": "Multi-Layer Consistency",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/multi-layer-consistency/UPGRADEABLE.md"
+    },
+    {
+      "slug": "parallel-qms",
+      "id": "PQ-00",
+      "display_name": "Parallel Quality Management System",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+    },
+    {
+      "slug": "reflectos",
+      "id": "T2-12",
+      "display_name": "Work Reflection Loop OS / ReflectOS",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/reflectos/UPGRADEABLE.md"
+    },
+    {
+      "slug": "specificity-penalty-gate",
+      "id": "JAN26-15",
+      "display_name": "Specificity Penalty Gate",
+      "version": "1.0.0",
+      "package_path": "upgradeables/validation/specificity-penalty-gate/UPGRADEABLE.md"
+    }
+  ]
+}

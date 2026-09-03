@@ -2,6 +2,15 @@
 
 This append-oriented ledger records how recovered items were normalized.
 
+## v0.2 semantic traceability review
+
+All 96 baseline operational rows were re-reviewed against all three immutable
+source documents. Each package now carries structured `source_refs`; its
+recovery decision, interpretation boundary, and exact source headings are in
+[`audit/source-notes/`](../audit/source-notes/). The complete disposition table
+is [`OPERATIONAL_PACKAGE_REVIEW_v0.2.md`](../audit/OPERATIONAL_PACKAGE_REVIEW_v0.2.md).
+No historical line number was invented.
+
 | Source name | Source ID | Registry generation | Recovery | Modern slug / destination | Disposition |
 |---|---|---|---|---|---|
 | Micro-Scaffolding | `T1-01` | `consolidated-2026-09` | `exact_recovery` | [`micro-scaffolding`](../upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md) | operationalized |
