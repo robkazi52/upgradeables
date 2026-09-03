@@ -3,6 +3,9 @@ description: Propose a task-oriented Skill composed from registry entries
 title: "[Skill]: "
 labels: [implementation]
 body:
+  - type: markdown
+    attributes:
+      value: "Start with `templates/SKILL_IMPLEMENTATION_TEMPLATE.md` and the worked example under `implementations/community/source-bounded-research/`. A Skill contribution normally does not edit the canonical registry."
   - type: input
     id: name
     attributes: {label: Skill name}

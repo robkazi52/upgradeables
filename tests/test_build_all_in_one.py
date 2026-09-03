@@ -12,5 +12,7 @@ class BuildTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0)
     def test_all_in_one_has_core_sections(self):
         text = (ROOT / "dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md").read_text(encoding="utf-8")
-        for heading in ("OS Philosophy", "Upgradeable Specification", "Skill Recipe Matrix", "Current Registry Summaries", "Unresolved Records"):
+        for heading in ("Start Here", "Model Consumption Guide", "Quick Task Prompt", "Build a Skill Prompt", "Skill Recipe Matrix", "Current Registry Summaries", "Unresolved Records"):
             self.assertIn(heading, text)
+        self.assertIn("name: <lowercase-skill-name>", text)
+        self.assertIn("name: source-bounded-research", text)

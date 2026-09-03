@@ -1,43 +1,112 @@
 # Model Consumption Guide
 
-This is the execution entrypoint for an LLM or coding agent given the repository.
-Read `spec/SKILL_TRANSLATION_SPEC.md`, `spec/PRECEDENCE_SPEC.md`, and
-`registry/registry.json`; use `recipes/recipes.json` to select a task-family seed.
+[START_HERE.md](START_HERE.md) is the universal router. Use this deeper guide
+when selecting components, building a reusable Skill, or adapting the registry
+to a host platform.
+
+## Choose the operating mode
+
+- **Task mode:** select and apply components, then deliver the user's requested
+  result. Do not stop at architecture commentary.
+- **Skill-building mode:** return a complete task-oriented Skill package,
+  selection rationale, host notes, and tests.
+- **Contribution mode:** preserve registry contracts and use the separate Skill
+  or Upgradeable workflow in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Efficient discovery
+
+Prefer the smallest useful source:
+
+1. Search [`registry/catalog.json`](registry/catalog.json) or run
+   `python scripts/query_registry.py --search <term>`.
+2. Select a task-family seed from [`recipes/`](recipes/) or run
+   `python scripts/query_registry.py --recipe <slug>`.
+3. Open only the selected package files and their required dependencies.
+4. Use the full [`registry/registry.json`](registry/registry.json) for complete
+   machine metadata. Use the
+   [all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) only when granular
+   repository access is unavailable.
+
+Do not load `archive/` for normal task execution. Archived files are provenance,
+not current operating instructions.
+
+## Recipe roles
+
+| Role | Meaning after a recipe is selected |
+|---|---|
+| `R` | Required. Keep it, or explicitly reject the recipe and select another route. |
+| `A` | Recommended by default, but activate only when its trigger applies. |
+| `C` | Conditional; activate only for the named condition or risk. |
+| `O` | Optional; include only when it adds clear value. |
+| `X` | Normally excluded; include only with an explicit task-specific justification. |
+
+A recipe is a starting composition, not permission to activate every component.
 
 ## Deterministic selection procedure
 
 1. Write the task identity, activation boundary, output contract, source boundary,
    risk, evidence sensitivity, and state/persistence needs.
-2. Select the closest recipe. Start with its R entries, evaluate A entries, include
-   C/O only when their own triggers match, and normally exclude X.
-3. Select at most one primary Behavior Gene and the minimum authorized Core(s).
-4. Read each selected package's metadata. Resolve `requires`; consider
-   `recommended_with`; explicitly assess counterbalances, conflicts, and potential
-   redundancy. Preserve the precedence specification.
-5. Remove every component without an active trigger. Do not turn the recipe into an
-   always-on stack.
-6. Choose an implementation form for each retained component: instructions, mode,
-   validator, state schema/manager, reference, script, orchestrator, or bundle.
-7. Copy `templates/SKILL_IMPLEMENTATION_TEMPLATE.md` into the target Skill folder.
-   Put deep content in `references/`, deterministic checks in `scripts/`, and only
-   necessary output materials in `assets/`.
-8. Cite each selected slug and version. State unavailable host capabilities; never
+2. Select the closest recipe. If none fits, search by function or trigger and
+   build a minimal composition directly.
+3. Use one primary recipe. Search for explicit output requirements it does not
+   cover—such as citations, long context, or persistence—and add individual
+   matching components. Do not merge whole recipes.
+4. Keep recipe `R` entries. Evaluate `A`, `C`, and `O` against their actual
+   triggers; normally exclude `X`.
+5. Select at most one primary Behavior Gene and the minimum authorized Core(s).
+6. Read each retained package. Resolve `requires`; consider `recommended_with`;
+   explicitly assess counterbalances, conflicts, and redundancy. Apply
+   [precedence rules](spec/PRECEDENCE_SPEC.md).
+7. Remove every non-required component without an active trigger.
+8. Apply retained mechanisms directly in task mode, or choose an implementation
+   form in Skill-building mode: instructions, mode, validator, state manager,
+   reference, script, orchestrator, or bundle.
+9. Cite each selected `slug@version`. State unavailable host capabilities; never
    simulate hidden persistence, private reasoning, or parallel agents as real.
-9. Add positive, negative, conflict, unsupported-claim, long-context, composition,
-   and strong-model-scaling tests as applicable. Run the repository validators.
+10. Add or perform risk-appropriate positive, negative, conflict, unsupported-
+   claim, long-context, composition, and strong-model-scaling checks.
+
+## Inline activation protocol
+
+When using one Upgradeable directly in a chat:
+
+1. **Locate:** find its catalog record and open its package.
+2. **Test:** confirm a trigger applies and a non-trigger does not.
+3. **Close dependencies:** load required components and check conflicts.
+4. **Apply:** follow the visible procedure within host and user authority.
+5. **Emit:** produce the declared output or honest failure state.
+
+An Upgradeable is not a magic phrase. Its observable mechanism is what matters.
+
+## Skill-building output contract
+
+Use [the Skill template](templates/SKILL_IMPLEMENTATION_TEMPLATE.md). Return:
+
+1. a concise keep/drop table for considered components;
+2. a complete `SKILL.md` with host compatibility and `slug@version` references;
+3. only the supporting references, scripts, or assets the workflow needs;
+4. positive, negative, conflict, and composition tests; and
+5. provider adaptation notes that do not redefine canonical components.
+
+Do not automatically create one Skill folder per Upgradeable. A Skill packages a
+complete job. Put shared purpose and essential workflow in `SKILL.md`; move deep
+conditional detail to discoverable references.
 
 ## Worked selection
 
-For a source-grounded research Skill, read the `research-skill` recipe. Retain the
-required task lock, loader, StateBlock, and grounding controls. Citation Fidelity
-activates only when emitting cited claims. Multi-Truth Gating and Critical Atomic
-Verification scale with claim importance/risk. Neuro-Focus should be counterbalanced
-by Anti-Tunnel Vision when fixation is plausible. The worked output is at
-`implementations/community/example-research-skill/SKILL.md`.
+For source-grounded research, begin with the `research-skill` recipe. Required
+task lock, scoped loading, StateBlock, and grounding controls remain active.
+Citation Fidelity activates when cited claims are emitted. Critical Atomic
+Verification scales with claim importance and risk. Neuro-Focus should be paired
+with Anti-Tunnel Vision when fixation is plausible. Drop long-context machinery
+for a small corpus.
 
-## Non-negotiable output contract
+See the complete [worked research Skill](implementations/community/source-bounded-research/SKILL.md),
+including its keep/drop table and tests.
+
+## Non-negotiable boundaries
 
 Never merge Skills, Behavior Genes, Cores, validators, and Upgradeables into one
-prompt type. Never infer unresolved definitions. Treat historical IDs as scoped to
-their generation. Translate metaphors into visible mechanisms. A provider adapter
-may evolve but cannot redefine the canonical registry.
+undifferentiated prompt type. Never infer unresolved definitions. Treat
+historical IDs as scoped to their generation. Translate metaphors into visible
+mechanisms. Host policy always wins, and an adapter cannot redefine the registry.

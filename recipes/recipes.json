@@ -164,6 +164,36 @@
     },
     {
       "schema_version": "1.0.0",
+      "slug": "code-review",
+      "display_name": "Code / Pull Request Review",
+      "version": "1.0.0",
+      "purpose": "Seed composition for review-only code and pull request analysis.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "scoped-loader": "R",
+        "grounding-no-invention": "R",
+        "stateblock": "C",
+        "forethought-checkpoints": "A",
+        "dominant-driver-isolation-scaffold": "A",
+        "anti-tunnel-vision": "A",
+        "bidirectional-consistency": "A",
+        "invariance-stress-scaffold": "R",
+        "epistemic-status-gating": "A",
+        "critical-atomic-verification": "C",
+        "citation-fidelity": "C",
+        "parallel-qms": "A",
+        "drift-suppression": "A",
+        "fail-closed-abstention": "C"
+      },
+      "provenance": {
+        "source_document": "MODEL_CONSUMPTION_GUIDE.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
       "slug": "long-context-corpus",
       "display_name": "Long-Context / Corpus",
       "version": "1.0.0",
@@ -274,6 +304,7 @@
         "anti-tunnel-vision": "A",
         "bidirectional-consistency": "A",
         "truth-priority-hierarchy": "A",
+        "citation-fidelity": "C",
         "dynamic-depth-allocation": "C",
         "parallel-qms": "A"
       },

@@ -1,0 +1,3445 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "0.1.0",
+  "purpose": "Compact discovery catalog. registry/registry.json remains authoritative.",
+  "entrypoint": "START_HERE.md",
+  "upgradeables": [
+    {
+      "slug": "activation-budget-funnel",
+      "display_name": "Activation-Budget Funnel",
+      "version": "1.0.0",
+      "purpose": "Stage retrieve, capture, index, transform, write, and verify so raw retrieval does not compete with synthesis; keep roughly no more than five to seven active pulls in the live workspace.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "context-retrieval",
+        "state"
+      ],
+      "triggers": [
+        "many sources or modules compete for attention"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/context-retrieval/activation-budget-funnel/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "adapter-first-experimentation",
+      "display_name": "Adapter-First Experimentation",
+      "version": "1.0.0",
+      "purpose": "Prototype new capability as a detachable adapter and promote it only after evaluation.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "a new capability may destabilize a base workflow"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/adapter-first-experimentation/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "anti-tunnel-vision",
+      "display_name": "Anti-Tunnel Vision",
+      "version": "1.0.0",
+      "purpose": "Test a favored interpretation against a small plausible alternative set before committing.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "planning-reasoning",
+        "validation"
+      ],
+      "triggers": [
+        "premature fixation is plausible"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md",
+      "keywords": [
+        "review",
+        "unsafe",
+        "unsafe-assumption"
+      ]
+    },
+    {
+      "slug": "architect-orchestrator",
+      "display_name": "Architect Orchestrator",
+      "version": "1.0.0",
+      "purpose": "Plan modular systems, select components, resolve conflicts, coordinate execution and critique, then emit a compact state snapshot.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "orchestration",
+        "meta-control",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "designing or refactoring a Skill, OS, framework, or workflow"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "attention-compression-scaffold",
+      "display_name": "Attention Compression Scaffold",
+      "version": "1.0.0",
+      "purpose": "Compress verified, task-relevant context into a smaller indexed representation without changing meaning.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "context-retrieval",
+        "state"
+      ],
+      "triggers": [
+        "source volume exceeds the active workspace"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/context-retrieval/attention-compression-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "authenticity-anti-evasion",
+      "display_name": "Authenticity & Anti-Evasion Principle",
+      "version": "1.0.0",
+      "purpose": "Expose uncertainty and actual work status instead of pretending work occurred or substituting vague language for unsupported claims.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "truth-grounding",
+        "output"
+      ],
+      "triggers": [
+        "claims about evidence, actions, or completion are emitted"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/authenticity-anti-evasion/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "authority-anchor-enforcement",
+      "display_name": "Authority Anchor Enforcement",
+      "version": "1.0.0",
+      "purpose": "Bind decisions to the governing authority layer and prevent lower-priority modules from overriding it.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "orchestration",
+        "validation"
+      ],
+      "triggers": [
+        "multiple instruction authorities coexist"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/orchestration/authority-anchor-enforcement/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "behavior-gene-builder",
+      "display_name": "Behavior Gene Builder",
+      "version": "1.0.0",
+      "purpose": "Create and validate reusable behavior and reasoning patterns without embedding domain knowledge dumps.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "a recurring task family needs reusable behavior"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/behavior-gene-builder/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "bidirectional-consistency",
+      "display_name": "Bidirectional Consistency",
+      "version": "1.0.0",
+      "purpose": "Check reasoning forward from evidence to conclusion and backward from conclusion to required evidence.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "causal, logical, quantitative, or evidence claims are central"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md",
+      "keywords": [
+        "code-review",
+        "pull-request",
+        "regression",
+        "regressions",
+        "correctness"
+      ]
+    },
+    {
+      "slug": "bounded-exit",
+      "display_name": "Bounded ExIt",
+      "version": "1.0.0",
+      "purpose": "Run evaluate-repair cycles with an explicit quality threshold and iteration budget.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "planning-reasoning",
+        "validation"
+      ],
+      "triggers": [
+        "a draft needs iterative improvement"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/bounded-exit/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "citation-fidelity",
+      "display_name": "Citation Fidelity Gate",
+      "version": "1.0.0",
+      "purpose": "Verify that each citation exists and actually supports its attached claim without adjacent-source borrowing or meaning drift.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "output contains citations or source-attributed claims"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "clarification-gateway",
+      "display_name": "Clarification Gateway",
+      "version": "1.0.0",
+      "purpose": "Distinguish ambiguity that can be resolved safely from ambiguity that materially blocks correct execution.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "framing-intake",
+        "orchestration"
+      ],
+      "triggers": [
+        "required variables are missing or instructions conflict"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/foundation/clarification-gateway/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "cognitive-governor",
+      "display_name": "Reasoning Budget / Cognitive Governor",
+      "version": "1.0.0",
+      "purpose": "Allocate reasoning effort by complexity, risk, and expected value so trivial work is not overprocessed and high-risk work is not underchecked.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "meta-control",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "effort allocation materially affects cost or quality"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/cognitive-governor/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "coherence-heartbeat",
+      "display_name": "Global Coherence Heartbeat",
+      "version": "1.0.0",
+      "purpose": "Periodically verify that active plan, state, modules, and output remain globally coherent during long workflows.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "state"
+      ],
+      "triggers": [
+        "a workflow is long or multi-stage"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/coherence-heartbeat/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "coherence-loops",
+      "display_name": "Coherence Loops",
+      "version": "1.0.0",
+      "purpose": "Boundedly compare local output with global goals and structure until coherence is sufficient.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "validation",
+        "editing-repair"
+      ],
+      "triggers": [
+        "local edits risk global inconsistency"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/coherence-loops/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "compute-adaptive-drift",
+      "display_name": "Compute-Adaptive Drift Constraining",
+      "version": "1.0.0",
+      "purpose": "Adjust drift constraints as reasoning depth or compute allocation changes.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "drift-control",
+        "meta-control"
+      ],
+      "triggers": [
+        "compute/depth varies across a task"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/compute-adaptive-drift/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "contradiction-micro-repair",
+      "display_name": "Contradiction Micro-Repair Pack",
+      "version": "1.0.0",
+      "purpose": "Detect a contradiction and repair only the implicated region when a local fix is sufficient.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "editing-repair",
+        "validation"
+      ],
+      "triggers": [
+        "a localized contradiction is detected"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/contradiction-micro-repair/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "controlled-drift-corridors",
+      "display_name": "Controlled Drift Corridors",
+      "version": "1.0.0",
+      "purpose": "Declare zero, micro, or bounded exploratory transformation width according to task and risk.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "drift-control",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "synthesis or creativity must coexist with fidelity"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/controlled-drift-corridors/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "cot-structured-state-block",
+      "display_name": "CoT-Structured State Block",
+      "version": "1.0.0",
+      "purpose": "Represent task and reasoning state explicitly without claiming access to hidden or private chain-of-thought.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "state"
+      ],
+      "triggers": [
+        "structured intermediate task state must survive across steps"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/cot-structured-state-block/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "counterfactual-integrity",
+      "display_name": "Counterfactual Integrity Gate",
+      "version": "1.0.0",
+      "purpose": "Keep hypothetical and counterfactual reasoning explicitly separated from factual claims.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "truth-grounding",
+        "drift-control"
+      ],
+      "triggers": [
+        "counterfactual or hypothetical reasoning is used"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/counterfactual-integrity/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "counterfactual-silence-scaffold",
+      "display_name": "Counterfactual Silence Scaffold",
+      "version": "1.0.0",
+      "purpose": "Suppress counterfactual additions when the task does not authorize hypothetical reasoning.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "truth-grounding",
+        "output"
+      ],
+      "triggers": [
+        "factual output could be contaminated by hypothetical content"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/counterfactual-silence-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "crispr-edit",
+      "display_name": "CRISPR Editing",
+      "version": "1.0.0",
+      "purpose": "Apply a localized, invariant-preserving patch to a document, Skill, prompt, or architecture.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "editing-repair"
+      ],
+      "triggers": [
+        "a change is small and local"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "critical-atomic-verification",
+      "display_name": "Critical Atomic Verification",
+      "version": "1.0.0",
+      "purpose": "Identify and verify the smallest claims critical to the final decision before synthesis.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "validation",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "small factual errors could change the outcome"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md",
+      "keywords": [
+        "code-review",
+        "security-review",
+        "correctness"
+      ]
+    },
+    {
+      "slug": "cross-checking-chains",
+      "display_name": "Cross-Checking Chains",
+      "version": "1.0.0",
+      "purpose": "Validate linked dependencies where one failure could cascade into a larger conclusion.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "validation"
+      ],
+      "triggers": [
+        "a conclusion relies on a dependency chain"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/cross-checking-chains/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "cross-context-resonance-lock",
+      "display_name": "Cross-Context Resonance Lock",
+      "version": "1.0.0",
+      "purpose": "Preserve an explicit alignment relationship between related source contexts while respecting their boundaries.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "orchestration",
+        "state"
+      ],
+      "triggers": [
+        "related contexts must stay aligned across a long task"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/orchestration/cross-context-resonance-lock/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "cross-universe-consistency",
+      "display_name": "Cross-Universe Consistency Mode",
+      "version": "1.0.0",
+      "purpose": "Compare candidate branches and reject a selection that depends on an unacknowledged contradiction.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "validation",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "parallel candidate paths are compared"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/cross-universe-consistency/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "decision-first-scaffold",
+      "display_name": "Decision-First Scaffold",
+      "version": "1.0.0",
+      "purpose": "State the decision target and criteria before collecting supporting analysis.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "planning-reasoning",
+        "output"
+      ],
+      "triggers": [
+        "analysis risks becoming directionless"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "domain-core-builder",
+      "display_name": "Domain Core Builder",
+      "version": "1.0.0",
+      "purpose": "Create high-density domain reasoning and evidence references that remain distinct from behavior instructions.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "context-retrieval"
+      ],
+      "triggers": [
+        "a recurring domain needs structured knowledge and decision logic"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/domain-core-builder/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "domain-mode-isolation",
+      "display_name": "Domain / Mode Isolation",
+      "version": "1.0.0",
+      "purpose": "Prevent assumptions, evidence standards, or hypothetical content from contaminating another domain or mode.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "state",
+        "drift-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "multiple domains or semantic modes coexist"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "domain-normalized-drift",
+      "display_name": "Domain-Normalized Drift Field",
+      "version": "1.0.0",
+      "purpose": "Set acceptable drift according to domain rather than applying one creativity width universally.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "drift-control"
+      ],
+      "triggers": [
+        "domains have materially different fidelity needs"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/domain-normalized-drift/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "dominant-driver-isolation-scaffold",
+      "display_name": "Dominant-Driver Isolation Scaffold",
+      "version": "1.0.0",
+      "purpose": "Identify the factor most responsible for an observed failure or decision before choosing an intervention.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "many possible causes compete"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "drift-immunity-propagation",
+      "display_name": "Drift Immunity Propagation",
+      "version": "1.0.0",
+      "purpose": "Carry locked constraints and invariants through downstream modules so resolved drift does not reappear.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "drift-control",
+        "state"
+      ],
+      "triggers": [
+        "many downstream modules consume locked decisions"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/drift-immunity-propagation/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "drift-sink-scaffold",
+      "display_name": "Drift Sink Scaffold",
+      "version": "1.0.0",
+      "purpose": "Capture and retire irrelevant branches so they no longer compete with active task state.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "drift-control",
+        "state"
+      ],
+      "triggers": [
+        "discarded branches keep resurfacing"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/drift-sink-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "drift-spectra-scaling",
+      "display_name": "Drift-Spectra Scaling",
+      "version": "1.0.0",
+      "purpose": "Scale permitted transformation drift according to task type, evidence sensitivity, and risk.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "drift-control",
+        "meta-control"
+      ],
+      "triggers": [
+        "different task regions need different drift widths"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/drift-spectra-scaling/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "drift-suppression",
+      "display_name": "Drift Suppression",
+      "version": "1.0.0",
+      "purpose": "Detect and correct gradual movement away from the active goal, constraints, terminology, or evidence boundary.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "drift-control",
+        "validation"
+      ],
+      "triggers": [
+        "long, branching, or iterative work"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/drift-suppression/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "dynamic-depth-allocation",
+      "display_name": "Dynamic Depth Allocation",
+      "version": "1.0.0",
+      "purpose": "Spend more reasoning depth on difficult, uncertain, or consequential regions and less on trivial ones.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "meta-control",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "task regions vary in difficulty or risk"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/dynamic-depth-allocation/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "epistemic-status-gating",
+      "display_name": "Epistemic Status Gating",
+      "version": "1.0.0",
+      "purpose": "Label and gate statements as fact, inference, framing, or hypothesis before they influence conclusions.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "truth-grounding",
+        "validation"
+      ],
+      "triggers": [
+        "claims of mixed certainty are present"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/epistemic-status-gating/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "explanation-minimality-scaffold",
+      "display_name": "Explanation Minimality Scaffold",
+      "version": "1.0.0",
+      "purpose": "Use the shortest explanation that remains accurate, sufficient, and appropriate for the audience.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "output"
+      ],
+      "triggers": [
+        "verbosity can obscure the answer"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/output/explanation-minimality-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "external-state-automation",
+      "display_name": "External State Automation",
+      "version": "1.0.0",
+      "purpose": "Serialize task state to real files, memory, databases, or project documents only when the host provides persistence.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "state",
+        "persistence"
+      ],
+      "triggers": [
+        "continuation requires real external state"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/persistence/external-state-automation/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "fail-closed-abstention",
+      "display_name": "Fail-Closed Abstention",
+      "version": "1.0.0",
+      "purpose": "Narrow or stop a conclusion when required evidence or integrity gates fail, returning only supported content.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "truth-grounding",
+        "validation",
+        "output"
+      ],
+      "triggers": [
+        "required evidence cannot be verified"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "fermionic-veto",
+      "display_name": "Fermionic Veto Strengthening",
+      "version": "1.0.0",
+      "purpose": "Block commitment when a critical contradiction, safety condition, or integrity failure is detected.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "validation",
+        "meta-control"
+      ],
+      "triggers": [
+        "a defined critical condition must have veto authority"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/fermionic-veto/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "forethought-checkpoints",
+      "display_name": "Forethought / Checkpoints",
+      "version": "1.0.0",
+      "purpose": "Before irreversible or costly actions, predict likely downstream failures and verify prerequisites.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "planning-reasoning",
+        "validation"
+      ],
+      "triggers": [
+        "an action is costly, irreversible, or dependency-sensitive"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "future-proof-mode-selector",
+      "display_name": "Future-Proof Mode Selector",
+      "version": "1.0.0",
+      "purpose": "Select lighter or heavier scaffolding from host capability, environment support, and task risk.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "an implementation targets models with different capabilities"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/future-proof-mode-selector/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "grounding-no-invention",
+      "display_name": "Grounding / No-Invention",
+      "version": "1.0.0",
+      "purpose": "Keep factual output within supplied or verified evidence and label or omit unsupported material.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "truth-grounding",
+        "validation"
+      ],
+      "triggers": [
+        "work relies on documents, data, external facts, or consequential claims"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md",
+      "keywords": [
+        "review",
+        "unsafe-assumption",
+        "source-bounded"
+      ]
+    },
+    {
+      "slug": "hybrid-mode",
+      "display_name": "HYBRID Mode",
+      "version": "1.0.0",
+      "purpose": "Use POWER for planning and SAFE for execution with explicit supervisor-controlled transitions.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "work includes both broad design and grounded execution"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/hybrid-mode/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "image-text-fidelity-capture",
+      "display_name": "Image Text Fidelity Capture",
+      "version": "1.0.0",
+      "purpose": "Extract text and visible structure from images without inferring missing content.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "context-retrieval",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "an image contains source text to transcribe"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/image-text-fidelity-capture/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "invariance-stress-scaffold",
+      "display_name": "Invariance Stress Scaffold",
+      "version": "1.0.0",
+      "purpose": "Test whether protected behavior and facts outside a change remain unchanged.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "editing-repair"
+      ],
+      "triggers": [
+        "a patch or rewrite must preserve invariants"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md",
+      "keywords": [
+        "code-review",
+        "pull-request",
+        "regression",
+        "regressions",
+        "correctness"
+      ]
+    },
+    {
+      "slug": "meta-awareness",
+      "display_name": "Meta-Awareness Pack",
+      "version": "1.0.0",
+      "purpose": "Monitor task-process health and active module interactions without making identity or consciousness claims.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "validation"
+      ],
+      "triggers": [
+        "process failure signals must be observed"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/meta-awareness/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "meta-stability",
+      "display_name": "Meta-Stability Mode",
+      "version": "1.0.0",
+      "purpose": "Enter a stability-preserving mode when repeated changes, long context, or module conflicts threaten coherence.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "meta-control",
+        "state"
+      ],
+      "triggers": [
+        "coherence degrades under repeated change"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/meta-stability/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "meta-supervisor",
+      "display_name": "Meta-Supervisor Bundle",
+      "version": "1.0.0",
+      "purpose": "Monitor process health, active modes, state, loops, contradictions, and module interactions.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration",
+        "validation"
+      ],
+      "triggers": [
+        "complex scaffolding itself needs supervision"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/meta-supervisor/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "micro-repair",
+      "display_name": "Micro-Repair",
+      "version": "1.0.0",
+      "purpose": "Correct the smallest faulty unit while preserving correct surrounding material.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "editing-repair"
+      ],
+      "triggers": [
+        "a defect is localized"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "micro-scaffolding",
+      "display_name": "Micro-Scaffolding",
+      "version": "1.0.0",
+      "purpose": "Create only the smallest temporary checkpoints needed to preserve goals, constraints, evidence boundaries, and the next step.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "planning-reasoning",
+        "state"
+      ],
+      "triggers": [
+        "multi-step or high-constraint work"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "mode-lock-in",
+      "display_name": "Mode Lock-In",
+      "version": "1.0.0",
+      "purpose": "Preserve the selected factual, hypothetical, design, execution, critique, or drafting mode until an authorized transition occurs.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "state",
+        "drift-control"
+      ],
+      "triggers": [
+        "a task can drift between modes"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/mode-lock-in/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "model-size-drift-scaling",
+      "display_name": "Drift-Stability Scaling with Model Size",
+      "version": "1.0.0",
+      "purpose": "Reduce unnecessary scaffolding as base-model reliability grows while preserving required truth, safety, and state controls.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "drift-control"
+      ],
+      "triggers": [
+        "adapting a workflow across model capability levels"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/model-size-drift-scaling/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "multi-layer-consistency",
+      "display_name": "Multi-Layer Consistency",
+      "version": "1.0.0",
+      "purpose": "Check that system, project, task, Gene, Core, evidence, and output layers do not contradict one another.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "orchestration"
+      ],
+      "triggers": [
+        "multiple authority layers are composed"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/multi-layer-consistency/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "multi-truth-gating",
+      "display_name": "Multi-Truth Gating",
+      "version": "1.0.0",
+      "purpose": "Require compatible independent anchors or checks for important conclusions; resolve disagreement or abstain.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "truth-grounding",
+        "validation"
+      ],
+      "triggers": [
+        "an important conclusion rests on fragile evidence"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/multi-truth-gating/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "multiverse-reasoning",
+      "display_name": "Multiverse Engine",
+      "version": "1.0.0",
+      "purpose": "Generate two or three materially distinct candidate paths, evaluate them, and collapse to one bounded result.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "competing hypotheses or designs would add value"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "neuro-focus",
+      "display_name": "Neuro-Focus",
+      "version": "1.0.0",
+      "purpose": "Concentrate processing on the highest-value active region while suppressing irrelevant context.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "context-retrieval",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "large sources or a narrow debug region demand concentration"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/context-retrieval/neuro-focus/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "non-authoritative-branch-suppression",
+      "display_name": "Non-Authoritative Branch Suppression",
+      "version": "1.0.0",
+      "purpose": "Prevent superseded or lower-authority branches from re-entering active decisions.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "drift-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "obsolete alternatives conflict with locked decisions"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/non-authoritative-branch-suppression/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "parallel-qms",
+      "display_name": "Parallel Quality Management System",
+      "version": "1.0.0",
+      "purpose": "Run one or more independent validation modes, compare results, and approve, reject, request repair, or abstain without adding facts.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "orchestration"
+      ],
+      "triggers": [
+        "a composed workflow needs structured quality evaluation"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md",
+      "keywords": [
+        "review",
+        "quality-assurance",
+        "unsafe-assumption"
+      ]
+    },
+    {
+      "slug": "pedagogical-alignment",
+      "display_name": "Pedagogical Alignment Constraint",
+      "version": "1.0.0",
+      "purpose": "Match explanation complexity and examples to the reader while preserving technical accuracy.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "output",
+        "framing-intake"
+      ],
+      "triggers": [
+        "an audience or teaching level is known"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/output/pedagogical-alignment/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "phase-locked-reasoning-scaffold",
+      "display_name": "Phase-Locked Reasoning Scaffold",
+      "version": "1.0.0",
+      "purpose": "Keep factual, evaluative, framing, and hypothetical work in declared phases with explicit transitions.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "planning-reasoning",
+        "state"
+      ],
+      "triggers": [
+        "semantic phase leakage is a risk"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/phase-locked-reasoning-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "placeholder-suppression",
+      "display_name": "Placeholder Suppression",
+      "version": "1.0.0",
+      "purpose": "Prevent TODOs, dummy values, empty required sections, and unresolved markers from leaking into final artifacts.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "output",
+        "validation"
+      ],
+      "triggers": [
+        "templates or staged artifacts are finalized"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/output/placeholder-suppression/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "power-mode",
+      "display_name": "POWER Mode",
+      "version": "1.0.0",
+      "purpose": "Use broad bounded exploration, deeper planning, candidate comparison, and system-level architecture reasoning.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "architecture or design benefits from broad exploration"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/power-mode/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "progressive-mode-shaping",
+      "display_name": "Progressive Mode Shaping",
+      "version": "1.0.0",
+      "purpose": "Narrow exploration through comparison and selection into precise execution as decisions become locked.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "orchestration",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "work moves from design to execution"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/orchestration/progressive-mode-shaping/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "reasoning-scale-controller",
+      "display_name": "Reasoning-Scale Controller",
+      "version": "1.0.0",
+      "purpose": "Select Subatomic, Atomic, Nano, Micro, QMS, or Cosmic decomposition and verification granularity without exposing private reasoning.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "planning-reasoning",
+        "meta-control"
+      ],
+      "triggers": [
+        "task complexity or risk requires depth selection"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/reasoning/reasoning-scale-controller/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "reasoning-throughput-governor",
+      "display_name": "Reasoning Throughput Governor",
+      "version": "1.0.0",
+      "purpose": "Balance speed, breadth, and validation to avoid both underprocessing and wasteful overprocessing.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "meta-control",
+        "planning-reasoning"
+      ],
+      "triggers": [
+        "latency, breadth, and validation compete"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/reasoning-throughput-governor/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "reflectos",
+      "display_name": "Work Reflection Loop OS / ReflectOS",
+      "version": "1.0.0",
+      "purpose": "Run a bounded goal-anchored reflect, test, revise loop that corrects process errors without inventing facts.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "validation",
+        "editing-repair"
+      ],
+      "triggers": [
+        "output needs a deliberate quality pass"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/reflectos/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "regenerative-rewrite",
+      "display_name": "Regenerative Rewrite",
+      "version": "1.0.0",
+      "purpose": "Rebuild an output when local repair cannot restore global structure or coherence, while preserving locked truths.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "editing-repair"
+      ],
+      "triggers": [
+        "architecture or source mapping is globally broken"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/regenerative-rewrite/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "resonance",
+      "display_name": "Resonance",
+      "version": "1.0.0",
+      "purpose": "Coordinate mutually reinforcing modules, suppress irrelevant effects, and preserve authority boundaries.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "orchestration",
+        "drift-control"
+      ],
+      "triggers": [
+        "several active modules must align"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/orchestration/resonance/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "resonance-gene-builder",
+      "display_name": "Resonance Gene Builder",
+      "version": "1.0.0",
+      "purpose": "Encode recurring cross-module coupling rules as compact Behavior Genes with explicit authority boundaries.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration"
+      ],
+      "triggers": [
+        "the same module relationship recurs"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/resonance-gene-builder/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "risk-tier-scaling",
+      "display_name": "Risk-Tier Scaling",
+      "version": "1.0.0",
+      "purpose": "Increase reasoning depth, verification, and veto strength as consequence, uncertainty, or irreversibility rises.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "meta-control",
+        "validation"
+      ],
+      "triggers": [
+        "task risk varies or must be classified"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "safe-mode",
+      "display_name": "SAFE Mode",
+      "version": "1.0.0",
+      "purpose": "Use narrow drift, strong grounding, atomic verification, and conservative output during consequential execution.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "meta-control",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "execution is factual, consequential, or uncertain"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/safe-mode/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "safe-rewrite",
+      "display_name": "Safe Rewrite Logic",
+      "version": "1.0.0",
+      "purpose": "Rewrite authorized dimensions while preserving locked facts, meaning, citations, numbers, names, and constraints.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "editing-repair",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "paraphrasing, polishing, or format conversion"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "scoped-loader",
+      "display_name": "Scoped Loader / Loader Sequencing",
+      "version": "1.0.0",
+      "purpose": "Discover and load only the task-relevant Genes, Cores, Upgradeables, references, tools, and validators in authority order.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "context-retrieval",
+        "orchestration"
+      ],
+      "triggers": [
+        "a modular workflow has multiple available components"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "selfblock-auto-update",
+      "display_name": "SelfBlock Auto-Update",
+      "version": "1.0.0",
+      "purpose": "Maintain task working state automatically without creating an identity narrative or unsupported memory.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "state"
+      ],
+      "triggers": [
+        "the host can update explicit state after steps"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/selfblock-auto-update/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "sequential-memory-state-engine",
+      "display_name": "Sequential Memory State Engine (SMSE)",
+      "version": "1.0.0",
+      "purpose": "Update StateBlock incrementally while preserving source chunk boundaries, provenance, and locked state.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "state",
+        "persistence"
+      ],
+      "triggers": [
+        "state changes across steps or source chunks"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/sequential-memory-state-engine/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "specificity-penalty-gate",
+      "display_name": "Specificity Penalty Gate",
+      "version": "1.0.0",
+      "purpose": "Reject detail whose specificity exceeds the available evidence.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "validation",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "precise details may be plausible but unsupported"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/validation/specificity-penalty-gate/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "stable-long-context",
+      "display_name": "Stable Long-Context",
+      "version": "1.0.0",
+      "purpose": "Preserve decisions, terminology, constraints, and source meaning across large contexts while retiring obsolete branches.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "state",
+        "drift-control"
+      ],
+      "triggers": [
+        "large corpus or long-running workflow"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/stable-long-context/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "state-routing-bus",
+      "display_name": "State Routing Bus",
+      "version": "1.0.0",
+      "purpose": "Pass explicit task state, decisions, evidence pointers, and module outputs through host-supported handoffs.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "state",
+        "orchestration"
+      ],
+      "triggers": [
+        "multiple components exchange state"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/orchestration/state-routing-bus/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "state-snapshot",
+      "display_name": "State Snapshot",
+      "version": "1.0.0",
+      "purpose": "Capture the smallest sufficient goal, architecture, locked decisions, active modules, open issues, and next step for continuation.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "state",
+        "persistence"
+      ],
+      "triggers": [
+        "a workflow pauses, hands off, or persists"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "stateblock",
+      "display_name": "StateBlock",
+      "version": "1.0.0",
+      "purpose": "Represent goal, phase, constraints, decisions, uncertainties, active modules, completed work, and next step explicitly.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "state"
+      ],
+      "triggers": [
+        "work spans multiple steps or components"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "structured-refinement",
+      "display_name": "Structured Refinement Cycles",
+      "version": "1.0.0",
+      "purpose": "Separate factual, structural, style, and final-validation revision passes while preserving accepted decisions.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "editing-repair",
+        "validation"
+      ],
+      "triggers": [
+        "revision has multiple defect classes"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/structured-refinement/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "structured-state-projection",
+      "display_name": "Structured State Projection",
+      "version": "1.0.0",
+      "purpose": "Project selected explicit state fields into a downstream component without exposing unrelated context.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "state",
+        "output"
+      ],
+      "triggers": [
+        "a component needs a bounded state view"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/structured-state-projection/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "stuck-pattern-reset",
+      "display_name": "Stuck-Pattern Reset Pack",
+      "version": "1.0.0",
+      "purpose": "Detect repeated failed approaches and reset only the failed path while preserving locked facts and constraints.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "meta-control",
+        "editing-repair"
+      ],
+      "triggers": [
+        "reasoning loops or stale approaches repeat"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/stuck-pattern-reset/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "style-alignment",
+      "display_name": "Style-Alignment Module",
+      "version": "1.0.0",
+      "purpose": "Match an authorized style without changing facts, evidence relationships, or reasoning integrity.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "output"
+      ],
+      "triggers": [
+        "a style or voice is specified"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/output/style-alignment/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "surgery-edit",
+      "display_name": "Surgery Editing",
+      "version": "1.0.0",
+      "purpose": "Perform controlled structural replacement when a local patch cannot address an architecture-level change.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "editing-repair",
+        "orchestration"
+      ],
+      "triggers": [
+        "layers, Cores, or workflows require major replacement"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "task-set-lock-in",
+      "display_name": "Task-Set Lock-In",
+      "version": "1.0.0",
+      "purpose": "Lock the goal, deliverable, constraints, terminology, source boundaries, current subtask, and completion criteria.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "framing-intake",
+        "state"
+      ],
+      "triggers": [
+        "multi-step work begins or scope changes"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "temporal-anchor-scaffold",
+      "display_name": "Temporal Anchor Scaffold",
+      "version": "1.0.0",
+      "purpose": "Preserve dates, sequence, effective periods, and temporal reference points during reasoning.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "state",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "time or chronology affects correctness"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/temporal-anchor-scaffold/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "truth-priority-hierarchy",
+      "display_name": "Truth Priority Hierarchy",
+      "version": "1.0.0",
+      "purpose": "Resolve evidence conflicts with an explicit domain hierarchy in which verified evidence outranks fluency.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "truth-grounding",
+        "orchestration"
+      ],
+      "triggers": [
+        "evidence classes or authorities conflict"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "truth-redundancy",
+      "display_name": "Truth Redundancy",
+      "version": "1.0.0",
+      "purpose": "Use two independent truth anchors so one failure is less likely to corrupt the result.",
+      "activation_class": "U3-high-risk-expensive",
+      "functional_classes": [
+        "truth-grounding",
+        "validation"
+      ],
+      "triggers": [
+        "a consequential claim can be independently checked"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/truth-redundancy/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "two-truths-and-corridor",
+      "display_name": "Two Truths + Corridor",
+      "version": "1.0.0",
+      "purpose": "Combine two independent anchors with an explicitly permitted synthesis corridor.",
+      "activation_class": "U2-specialized",
+      "functional_classes": [
+        "truth-grounding",
+        "drift-control"
+      ],
+      "triggers": [
+        "source-grounded synthesis permits bounded interpretation"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/truth-grounding/two-truths-and-corridor/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "ultimate-suite-supervisor",
+      "display_name": "Ultimate Suite Supervisor",
+      "version": "1.0.0",
+      "purpose": "Declare modes, enforce the core stack, select local versus global editing, resolve pack conflicts, and run post-output health checks.",
+      "activation_class": "U4-meta-architecture",
+      "functional_classes": [
+        "meta-control",
+        "orchestration",
+        "validation"
+      ],
+      "triggers": [
+        "a large suite needs top-level coordination"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/meta-control/ultimate-suite-supervisor/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "working-memory-cues",
+      "display_name": "Working-Memory Cues",
+      "version": "1.0.0",
+      "purpose": "Maintain compact reminders of the current objective and constraints without repeatedly loading the full instruction set.",
+      "activation_class": "U0-foundational",
+      "functional_classes": [
+        "state"
+      ],
+      "triggers": [
+        "many constraints must remain active"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/working-memory-cues/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "working-memory-lock-in",
+      "display_name": "Working-Memory Lock-In",
+      "version": "1.0.0",
+      "purpose": "Keep the most task-critical information in compact active state, verbatim where fidelity requires it.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "state"
+      ],
+      "triggers": [
+        "critical state competes with large context"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/state/working-memory-lock-in/UPGRADEABLE.md",
+      "keywords": []
+    },
+    {
+      "slug": "zero-drift-zones",
+      "display_name": "Zero-Drift Zones",
+      "version": "1.0.0",
+      "purpose": "Mark quotes, definitions, citation metadata, numbers, and exact policy language that may not be creatively transformed.",
+      "activation_class": "U1-common-conditional",
+      "functional_classes": [
+        "drift-control",
+        "truth-grounding"
+      ],
+      "triggers": [
+        "content contains fidelity-locked atoms"
+      ],
+      "requires": [],
+      "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md",
+      "keywords": []
+    }
+  ],
+  "recipes": [
+    {
+      "slug": "research-skill",
+      "display_name": "Research Skill",
+      "recipe_path": "recipes/resolved/research-skill.md",
+      "source_recipe_path": "recipes/research-skill.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "scoped-loader",
+          "role": "R",
+          "display_name": "Scoped Loader / Loader Sequencing",
+          "version": "1.0.0",
+          "trigger_summary": "a modular workflow has multiple available components",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "R",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "activation-budget-funnel",
+          "role": "A",
+          "display_name": "Activation-Budget Funnel",
+          "version": "1.0.0",
+          "trigger_summary": "many sources or modules compete for attention",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/activation-budget-funnel/UPGRADEABLE.md"
+        },
+        {
+          "slug": "neuro-focus",
+          "role": "A",
+          "display_name": "Neuro-Focus",
+          "version": "1.0.0",
+          "trigger_summary": "large sources or a narrow debug region demand concentration",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/neuro-focus/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stable-long-context",
+          "role": "A",
+          "display_name": "Stable Long-Context",
+          "version": "1.0.0",
+          "trigger_summary": "large corpus or long-running workflow",
+          "requires": [],
+          "package_path": "upgradeables/state/stable-long-context/UPGRADEABLE.md"
+        },
+        {
+          "slug": "sequential-memory-state-engine",
+          "role": "A",
+          "display_name": "Sequential Memory State Engine (SMSE)",
+          "version": "1.0.0",
+          "trigger_summary": "state changes across steps or source chunks",
+          "requires": [],
+          "package_path": "upgradeables/state/sequential-memory-state-engine/UPGRADEABLE.md"
+        },
+        {
+          "slug": "multi-truth-gating",
+          "role": "A",
+          "display_name": "Multi-Truth Gating",
+          "version": "1.0.0",
+          "trigger_summary": "an important conclusion rests on fragile evidence",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/multi-truth-gating/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "A",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-priority-hierarchy",
+          "role": "A",
+          "display_name": "Truth Priority Hierarchy",
+          "version": "1.0.0",
+          "trigger_summary": "evidence classes or authorities conflict",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "critical-atomic-verification",
+          "role": "C",
+          "display_name": "Critical Atomic Verification",
+          "version": "1.0.0",
+          "trigger_summary": "small factual errors could change the outcome",
+          "requires": [],
+          "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "O",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "state-snapshot",
+          "role": "C",
+          "display_name": "State Snapshot",
+          "version": "1.0.0",
+          "trigger_summary": "a workflow pauses, hands off, or persists",
+          "requires": [],
+          "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "source-grounded-analysis",
+      "display_name": "Source-Grounded Analysis",
+      "recipe_path": "recipes/resolved/source-grounded-analysis.md",
+      "source_recipe_path": "recipes/source-grounded-analysis.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "mode-lock-in",
+          "role": "R",
+          "display_name": "Mode Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "a task can drift between modes",
+          "requires": [],
+          "package_path": "upgradeables/state/mode-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "safe-rewrite",
+          "role": "A",
+          "display_name": "Safe Rewrite Logic",
+          "version": "1.0.0",
+          "trigger_summary": "paraphrasing, polishing, or format conversion",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "R",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "zero-drift-zones",
+          "role": "A",
+          "display_name": "Zero-Drift Zones",
+          "version": "1.0.0",
+          "trigger_summary": "content contains fidelity-locked atoms",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
+        },
+        {
+          "slug": "controlled-drift-corridors",
+          "role": "A",
+          "display_name": "Controlled Drift Corridors",
+          "version": "1.0.0",
+          "trigger_summary": "synthesis or creativity must coexist with fidelity",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/controlled-drift-corridors/UPGRADEABLE.md"
+        },
+        {
+          "slug": "counterfactual-integrity",
+          "role": "A",
+          "display_name": "Counterfactual Integrity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "counterfactual or hypothetical reasoning is used",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/counterfactual-integrity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "micro-repair",
+          "role": "A",
+          "display_name": "Micro-Repair",
+          "version": "1.0.0",
+          "trigger_summary": "a defect is localized",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
+        },
+        {
+          "slug": "placeholder-suppression",
+          "role": "A",
+          "display_name": "Placeholder Suppression",
+          "version": "1.0.0",
+          "trigger_summary": "templates or staged artifacts are finalized",
+          "requires": [],
+          "package_path": "upgradeables/output/placeholder-suppression/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "high-stakes-reasoning",
+      "display_name": "High-Stakes Reasoning",
+      "recipe_path": "recipes/resolved/high-stakes-reasoning.md",
+      "source_recipe_path": "recipes/high-stakes-reasoning.md",
+      "components": [
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "epistemic-status-gating",
+          "role": "R",
+          "display_name": "Epistemic Status Gating",
+          "version": "1.0.0",
+          "trigger_summary": "claims of mixed certainty are present",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/epistemic-status-gating/UPGRADEABLE.md"
+        },
+        {
+          "slug": "risk-tier-scaling",
+          "role": "R",
+          "display_name": "Risk-Tier Scaling",
+          "version": "1.0.0",
+          "trigger_summary": "task risk varies or must be classified",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md"
+        },
+        {
+          "slug": "critical-atomic-verification",
+          "role": "R",
+          "display_name": "Critical Atomic Verification",
+          "version": "1.0.0",
+          "trigger_summary": "small factual errors could change the outcome",
+          "requires": [],
+          "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md"
+        },
+        {
+          "slug": "multi-truth-gating",
+          "role": "R",
+          "display_name": "Multi-Truth Gating",
+          "version": "1.0.0",
+          "trigger_summary": "an important conclusion rests on fragile evidence",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/multi-truth-gating/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-redundancy",
+          "role": "A",
+          "display_name": "Truth Redundancy",
+          "version": "1.0.0",
+          "trigger_summary": "a consequential claim can be independently checked",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-redundancy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-priority-hierarchy",
+          "role": "R",
+          "display_name": "Truth Priority Hierarchy",
+          "version": "1.0.0",
+          "trigger_summary": "evidence classes or authorities conflict",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "domain-mode-isolation",
+          "role": "R",
+          "display_name": "Domain / Mode Isolation",
+          "version": "1.0.0",
+          "trigger_summary": "multiple domains or semantic modes coexist",
+          "requires": [],
+          "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "fail-closed-abstention",
+          "role": "R",
+          "display_name": "Fail-Closed Abstention",
+          "version": "1.0.0",
+          "trigger_summary": "required evidence cannot be verified",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "fermionic-veto",
+          "role": "A",
+          "display_name": "Fermionic Veto Strengthening",
+          "version": "1.0.0",
+          "trigger_summary": "a defined critical condition must have veto authority",
+          "requires": [],
+          "package_path": "upgradeables/validation/fermionic-veto/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "R",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "dynamic-depth-allocation",
+          "role": "A",
+          "display_name": "Dynamic Depth Allocation",
+          "version": "1.0.0",
+          "trigger_summary": "task regions vary in difficulty or risk",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/dynamic-depth-allocation/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "medical-evidence",
+      "display_name": "Medical Evidence",
+      "recipe_path": "recipes/resolved/medical-evidence.md",
+      "source_recipe_path": "recipes/medical-evidence.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "risk-tier-scaling",
+          "role": "R",
+          "display_name": "Risk-Tier Scaling",
+          "version": "1.0.0",
+          "trigger_summary": "task risk varies or must be classified",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md"
+        },
+        {
+          "slug": "critical-atomic-verification",
+          "role": "R",
+          "display_name": "Critical Atomic Verification",
+          "version": "1.0.0",
+          "trigger_summary": "small factual errors could change the outcome",
+          "requires": [],
+          "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-priority-hierarchy",
+          "role": "R",
+          "display_name": "Truth Priority Hierarchy",
+          "version": "1.0.0",
+          "trigger_summary": "evidence classes or authorities conflict",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "fail-closed-abstention",
+          "role": "R",
+          "display_name": "Fail-Closed Abstention",
+          "version": "1.0.0",
+          "trigger_summary": "required evidence cannot be verified",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "domain-mode-isolation",
+          "role": "R",
+          "display_name": "Domain / Mode Isolation",
+          "version": "1.0.0",
+          "trigger_summary": "multiple domains or semantic modes coexist",
+          "requires": [],
+          "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "R",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "legal-evidence",
+      "display_name": "Legal Evidence",
+      "recipe_path": "recipes/resolved/legal-evidence.md",
+      "source_recipe_path": "recipes/legal-evidence.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "risk-tier-scaling",
+          "role": "R",
+          "display_name": "Risk-Tier Scaling",
+          "version": "1.0.0",
+          "trigger_summary": "task risk varies or must be classified",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md"
+        },
+        {
+          "slug": "critical-atomic-verification",
+          "role": "R",
+          "display_name": "Critical Atomic Verification",
+          "version": "1.0.0",
+          "trigger_summary": "small factual errors could change the outcome",
+          "requires": [],
+          "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-priority-hierarchy",
+          "role": "R",
+          "display_name": "Truth Priority Hierarchy",
+          "version": "1.0.0",
+          "trigger_summary": "evidence classes or authorities conflict",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "R",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "zero-drift-zones",
+          "role": "A",
+          "display_name": "Zero-Drift Zones",
+          "version": "1.0.0",
+          "trigger_summary": "content contains fidelity-locked atoms",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
+        },
+        {
+          "slug": "fail-closed-abstention",
+          "role": "R",
+          "display_name": "Fail-Closed Abstention",
+          "version": "1.0.0",
+          "trigger_summary": "required evidence cannot be verified",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "R",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "coding-debugging",
+      "display_name": "Coding / Debugging",
+      "recipe_path": "recipes/resolved/coding-debugging.md",
+      "source_recipe_path": "recipes/coding-debugging.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "A",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "forethought-checkpoints",
+          "role": "A",
+          "display_name": "Forethought / Checkpoints",
+          "version": "1.0.0",
+          "trigger_summary": "an action is costly, irreversible, or dependency-sensitive",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md"
+        },
+        {
+          "slug": "dominant-driver-isolation-scaffold",
+          "role": "A",
+          "display_name": "Dominant-Driver Isolation Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "many possible causes compete",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "A",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "bidirectional-consistency",
+          "role": "A",
+          "display_name": "Bidirectional Consistency",
+          "version": "1.0.0",
+          "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
+          "requires": [],
+          "package_path": "upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md"
+        },
+        {
+          "slug": "invariance-stress-scaffold",
+          "role": "R",
+          "display_name": "Invariance Stress Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "a patch or rewrite must preserve invariants",
+          "requires": [],
+          "package_path": "upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "micro-repair",
+          "role": "R",
+          "display_name": "Micro-Repair",
+          "version": "1.0.0",
+          "trigger_summary": "a defect is localized",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
+        },
+        {
+          "slug": "crispr-edit",
+          "role": "A",
+          "display_name": "CRISPR Editing",
+          "version": "1.0.0",
+          "trigger_summary": "a change is small and local",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md"
+        },
+        {
+          "slug": "surgery-edit",
+          "role": "C",
+          "display_name": "Surgery Editing",
+          "version": "1.0.0",
+          "trigger_summary": "layers, Cores, or workflows require major replacement",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md"
+        },
+        {
+          "slug": "structured-refinement",
+          "role": "A",
+          "display_name": "Structured Refinement Cycles",
+          "version": "1.0.0",
+          "trigger_summary": "revision has multiple defect classes",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/structured-refinement/UPGRADEABLE.md"
+        },
+        {
+          "slug": "bounded-exit",
+          "role": "A",
+          "display_name": "Bounded ExIt",
+          "version": "1.0.0",
+          "trigger_summary": "a draft needs iterative improvement",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/bounded-exit/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "drift-suppression",
+          "role": "A",
+          "display_name": "Drift Suppression",
+          "version": "1.0.0",
+          "trigger_summary": "long, branching, or iterative work",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/drift-suppression/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "code-review",
+      "display_name": "Code / Pull Request Review",
+      "recipe_path": "recipes/resolved/code-review.md",
+      "source_recipe_path": "recipes/code-review.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "scoped-loader",
+          "role": "R",
+          "display_name": "Scoped Loader / Loader Sequencing",
+          "version": "1.0.0",
+          "trigger_summary": "a modular workflow has multiple available components",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "C",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "forethought-checkpoints",
+          "role": "A",
+          "display_name": "Forethought / Checkpoints",
+          "version": "1.0.0",
+          "trigger_summary": "an action is costly, irreversible, or dependency-sensitive",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md"
+        },
+        {
+          "slug": "dominant-driver-isolation-scaffold",
+          "role": "A",
+          "display_name": "Dominant-Driver Isolation Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "many possible causes compete",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/dominant-driver-isolation-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "A",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "bidirectional-consistency",
+          "role": "A",
+          "display_name": "Bidirectional Consistency",
+          "version": "1.0.0",
+          "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
+          "requires": [],
+          "package_path": "upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md"
+        },
+        {
+          "slug": "invariance-stress-scaffold",
+          "role": "R",
+          "display_name": "Invariance Stress Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "a patch or rewrite must preserve invariants",
+          "requires": [],
+          "package_path": "upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "epistemic-status-gating",
+          "role": "A",
+          "display_name": "Epistemic Status Gating",
+          "version": "1.0.0",
+          "trigger_summary": "claims of mixed certainty are present",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/epistemic-status-gating/UPGRADEABLE.md"
+        },
+        {
+          "slug": "critical-atomic-verification",
+          "role": "C",
+          "display_name": "Critical Atomic Verification",
+          "version": "1.0.0",
+          "trigger_summary": "small factual errors could change the outcome",
+          "requires": [],
+          "package_path": "upgradeables/validation/critical-atomic-verification/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "drift-suppression",
+          "role": "A",
+          "display_name": "Drift Suppression",
+          "version": "1.0.0",
+          "trigger_summary": "long, branching, or iterative work",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/drift-suppression/UPGRADEABLE.md"
+        },
+        {
+          "slug": "fail-closed-abstention",
+          "role": "C",
+          "display_name": "Fail-Closed Abstention",
+          "version": "1.0.0",
+          "trigger_summary": "required evidence cannot be verified",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "long-context-corpus",
+      "display_name": "Long-Context / Corpus",
+      "recipe_path": "recipes/resolved/long-context-corpus.md",
+      "source_recipe_path": "recipes/long-context-corpus.md",
+      "components": [
+        {
+          "slug": "stateblock",
+          "role": "R",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "sequential-memory-state-engine",
+          "role": "R",
+          "display_name": "Sequential Memory State Engine (SMSE)",
+          "version": "1.0.0",
+          "trigger_summary": "state changes across steps or source chunks",
+          "requires": [],
+          "package_path": "upgradeables/state/sequential-memory-state-engine/UPGRADEABLE.md"
+        },
+        {
+          "slug": "working-memory-lock-in",
+          "role": "A",
+          "display_name": "Working-Memory Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "critical state competes with large context",
+          "requires": [],
+          "package_path": "upgradeables/state/working-memory-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stable-long-context",
+          "role": "R",
+          "display_name": "Stable Long-Context",
+          "version": "1.0.0",
+          "trigger_summary": "large corpus or long-running workflow",
+          "requires": [],
+          "package_path": "upgradeables/state/stable-long-context/UPGRADEABLE.md"
+        },
+        {
+          "slug": "activation-budget-funnel",
+          "role": "R",
+          "display_name": "Activation-Budget Funnel",
+          "version": "1.0.0",
+          "trigger_summary": "many sources or modules compete for attention",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/activation-budget-funnel/UPGRADEABLE.md"
+        },
+        {
+          "slug": "attention-compression-scaffold",
+          "role": "A",
+          "display_name": "Attention Compression Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "source volume exceeds the active workspace",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/attention-compression-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "neuro-focus",
+          "role": "A",
+          "display_name": "Neuro-Focus",
+          "version": "1.0.0",
+          "trigger_summary": "large sources or a narrow debug region demand concentration",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/neuro-focus/UPGRADEABLE.md"
+        },
+        {
+          "slug": "drift-suppression",
+          "role": "R",
+          "display_name": "Drift Suppression",
+          "version": "1.0.0",
+          "trigger_summary": "long, branching, or iterative work",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/drift-suppression/UPGRADEABLE.md"
+        },
+        {
+          "slug": "coherence-heartbeat",
+          "role": "A",
+          "display_name": "Global Coherence Heartbeat",
+          "version": "1.0.0",
+          "trigger_summary": "a workflow is long or multi-stage",
+          "requires": [],
+          "package_path": "upgradeables/validation/coherence-heartbeat/UPGRADEABLE.md"
+        },
+        {
+          "slug": "cross-context-resonance-lock",
+          "role": "C",
+          "display_name": "Cross-Context Resonance Lock",
+          "version": "1.0.0",
+          "trigger_summary": "related contexts must stay aligned across a long task",
+          "requires": [],
+          "package_path": "upgradeables/orchestration/cross-context-resonance-lock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "state-snapshot",
+          "role": "A",
+          "display_name": "State Snapshot",
+          "version": "1.0.0",
+          "trigger_summary": "a workflow pauses, hands off, or persists",
+          "requires": [],
+          "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "authoring",
+      "display_name": "Authoring",
+      "recipe_path": "recipes/resolved/authoring.md",
+      "source_recipe_path": "recipes/authoring.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "C",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "style-alignment",
+          "role": "A",
+          "display_name": "Style-Alignment Module",
+          "version": "1.0.0",
+          "trigger_summary": "a style or voice is specified",
+          "requires": [],
+          "package_path": "upgradeables/output/style-alignment/UPGRADEABLE.md"
+        },
+        {
+          "slug": "pedagogical-alignment",
+          "role": "C",
+          "display_name": "Pedagogical Alignment Constraint",
+          "version": "1.0.0",
+          "trigger_summary": "an audience or teaching level is known",
+          "requires": [],
+          "package_path": "upgradeables/output/pedagogical-alignment/UPGRADEABLE.md"
+        },
+        {
+          "slug": "safe-rewrite",
+          "role": "R",
+          "display_name": "Safe Rewrite Logic",
+          "version": "1.0.0",
+          "trigger_summary": "paraphrasing, polishing, or format conversion",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "placeholder-suppression",
+          "role": "R",
+          "display_name": "Placeholder Suppression",
+          "version": "1.0.0",
+          "trigger_summary": "templates or staged artifacts are finalized",
+          "requires": [],
+          "package_path": "upgradeables/output/placeholder-suppression/UPGRADEABLE.md"
+        },
+        {
+          "slug": "micro-repair",
+          "role": "A",
+          "display_name": "Micro-Repair",
+          "version": "1.0.0",
+          "trigger_summary": "a defect is localized",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/micro-repair/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "creative-ideation",
+      "display_name": "Creative Ideation",
+      "recipe_path": "recipes/resolved/creative-ideation.md",
+      "source_recipe_path": "recipes/creative-ideation.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "controlled-drift-corridors",
+          "role": "R",
+          "display_name": "Controlled Drift Corridors",
+          "version": "1.0.0",
+          "trigger_summary": "synthesis or creativity must coexist with fidelity",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/controlled-drift-corridors/UPGRADEABLE.md"
+        },
+        {
+          "slug": "counterfactual-integrity",
+          "role": "A",
+          "display_name": "Counterfactual Integrity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "counterfactual or hypothetical reasoning is used",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/counterfactual-integrity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "domain-mode-isolation",
+          "role": "A",
+          "display_name": "Domain / Mode Isolation",
+          "version": "1.0.0",
+          "trigger_summary": "multiple domains or semantic modes coexist",
+          "requires": [],
+          "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "multiverse-reasoning",
+          "role": "A",
+          "display_name": "Multiverse Engine",
+          "version": "1.0.0",
+          "trigger_summary": "competing hypotheses or designs would add value",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "A",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "C",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "C",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "education-explanation",
+      "display_name": "Education / Explanation",
+      "recipe_path": "recipes/resolved/education-explanation.md",
+      "source_recipe_path": "recipes/education-explanation.md",
+      "components": [
+        {
+          "slug": "pedagogical-alignment",
+          "role": "R",
+          "display_name": "Pedagogical Alignment Constraint",
+          "version": "1.0.0",
+          "trigger_summary": "an audience or teaching level is known",
+          "requires": [],
+          "package_path": "upgradeables/output/pedagogical-alignment/UPGRADEABLE.md"
+        },
+        {
+          "slug": "explanation-minimality-scaffold",
+          "role": "A",
+          "display_name": "Explanation Minimality Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "verbosity can obscure the answer",
+          "requires": [],
+          "package_path": "upgradeables/output/explanation-minimality-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "style-alignment",
+          "role": "A",
+          "display_name": "Style-Alignment Module",
+          "version": "1.0.0",
+          "trigger_summary": "a style or voice is specified",
+          "requires": [],
+          "package_path": "upgradeables/output/style-alignment/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "A",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "micro-scaffolding",
+          "role": "A",
+          "display_name": "Micro-Scaffolding",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step or high-constraint work",
+          "requires": [],
+          "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md"
+        },
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "safe-rewrite",
+          "role": "A",
+          "display_name": "Safe Rewrite Logic",
+          "version": "1.0.0",
+          "trigger_summary": "paraphrasing, polishing, or format conversion",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/safe-rewrite/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "C",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "C",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "decision-support",
+      "display_name": "Decision Support",
+      "recipe_path": "recipes/resolved/decision-support.md",
+      "source_recipe_path": "recipes/decision-support.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "decision-first-scaffold",
+          "role": "R",
+          "display_name": "Decision-First Scaffold",
+          "version": "1.0.0",
+          "trigger_summary": "analysis risks becoming directionless",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "risk-tier-scaling",
+          "role": "A",
+          "display_name": "Risk-Tier Scaling",
+          "version": "1.0.0",
+          "trigger_summary": "task risk varies or must be classified",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "A",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "bidirectional-consistency",
+          "role": "A",
+          "display_name": "Bidirectional Consistency",
+          "version": "1.0.0",
+          "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
+          "requires": [],
+          "package_path": "upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-priority-hierarchy",
+          "role": "A",
+          "display_name": "Truth Priority Hierarchy",
+          "version": "1.0.0",
+          "trigger_summary": "evidence classes or authorities conflict",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-priority-hierarchy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "dynamic-depth-allocation",
+          "role": "C",
+          "display_name": "Dynamic Depth Allocation",
+          "version": "1.0.0",
+          "trigger_summary": "task regions vary in difficulty or risk",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/dynamic-depth-allocation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "architecture-skill-building",
+      "display_name": "Architecture / Skill Building",
+      "recipe_path": "recipes/resolved/architecture-skill-building.md",
+      "source_recipe_path": "recipes/architecture-skill-building.md",
+      "components": [
+        {
+          "slug": "architect-orchestrator",
+          "role": "R",
+          "display_name": "Architect Orchestrator",
+          "version": "1.0.0",
+          "trigger_summary": "designing or refactoring a Skill, OS, framework, or workflow",
+          "requires": [],
+          "package_path": "upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md"
+        },
+        {
+          "slug": "power-mode",
+          "role": "A",
+          "display_name": "POWER Mode",
+          "version": "1.0.0",
+          "trigger_summary": "architecture or design benefits from broad exploration",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/power-mode/UPGRADEABLE.md"
+        },
+        {
+          "slug": "hybrid-mode",
+          "role": "A",
+          "display_name": "HYBRID Mode",
+          "version": "1.0.0",
+          "trigger_summary": "work includes both broad design and grounded execution",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/hybrid-mode/UPGRADEABLE.md"
+        },
+        {
+          "slug": "reasoning-scale-controller",
+          "role": "A",
+          "display_name": "Reasoning-Scale Controller",
+          "version": "1.0.0",
+          "trigger_summary": "task complexity or risk requires depth selection",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/reasoning-scale-controller/UPGRADEABLE.md"
+        },
+        {
+          "slug": "multiverse-reasoning",
+          "role": "A",
+          "display_name": "Multiverse Engine",
+          "version": "1.0.0",
+          "trigger_summary": "competing hypotheses or designs would add value",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md"
+        },
+        {
+          "slug": "behavior-gene-builder",
+          "role": "C",
+          "display_name": "Behavior Gene Builder",
+          "version": "1.0.0",
+          "trigger_summary": "a recurring task family needs reusable behavior",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/behavior-gene-builder/UPGRADEABLE.md"
+        },
+        {
+          "slug": "domain-core-builder",
+          "role": "C",
+          "display_name": "Domain Core Builder",
+          "version": "1.0.0",
+          "trigger_summary": "a recurring domain needs structured knowledge and decision logic",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/domain-core-builder/UPGRADEABLE.md"
+        },
+        {
+          "slug": "scoped-loader",
+          "role": "R",
+          "display_name": "Scoped Loader / Loader Sequencing",
+          "version": "1.0.0",
+          "trigger_summary": "a modular workflow has multiple available components",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "R",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "R",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "meta-supervisor",
+          "role": "A",
+          "display_name": "Meta-Supervisor Bundle",
+          "version": "1.0.0",
+          "trigger_summary": "complex scaffolding itself needs supervision",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/meta-supervisor/UPGRADEABLE.md"
+        },
+        {
+          "slug": "adapter-first-experimentation",
+          "role": "A",
+          "display_name": "Adapter-First Experimentation",
+          "version": "1.0.0",
+          "trigger_summary": "a new capability may destabilize a base workflow",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/adapter-first-experimentation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "crispr-edit",
+          "role": "A",
+          "display_name": "CRISPR Editing",
+          "version": "1.0.0",
+          "trigger_summary": "a change is small and local",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/crispr-edit/UPGRADEABLE.md"
+        },
+        {
+          "slug": "surgery-edit",
+          "role": "C",
+          "display_name": "Surgery Editing",
+          "version": "1.0.0",
+          "trigger_summary": "layers, Cores, or workflows require major replacement",
+          "requires": [],
+          "package_path": "upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md"
+        },
+        {
+          "slug": "dynamic-depth-allocation",
+          "role": "A",
+          "display_name": "Dynamic Depth Allocation",
+          "version": "1.0.0",
+          "trigger_summary": "task regions vary in difficulty or risk",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/dynamic-depth-allocation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "A",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.0.0",
+          "trigger_summary": "premature fixation is plausible",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "state-snapshot",
+          "role": "A",
+          "display_name": "State Snapshot",
+          "version": "1.0.0",
+          "trigger_summary": "a workflow pauses, hands off, or persists",
+          "requires": [],
+          "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+        },
+        {
+          "slug": "future-proof-mode-selector",
+          "role": "A",
+          "display_name": "Future-Proof Mode Selector",
+          "version": "1.0.0",
+          "trigger_summary": "an implementation targets models with different capabilities",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/future-proof-mode-selector/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "multi-agent-orchestration",
+      "display_name": "Multi-Agent / Orchestration",
+      "recipe_path": "recipes/resolved/multi-agent-orchestration.md",
+      "source_recipe_path": "recipes/multi-agent-orchestration.md",
+      "components": [
+        {
+          "slug": "architect-orchestrator",
+          "role": "R",
+          "display_name": "Architect Orchestrator",
+          "version": "1.0.0",
+          "trigger_summary": "designing or refactoring a Skill, OS, framework, or workflow",
+          "requires": [],
+          "package_path": "upgradeables/orchestration/architect-orchestrator/UPGRADEABLE.md"
+        },
+        {
+          "slug": "scoped-loader",
+          "role": "R",
+          "display_name": "Scoped Loader / Loader Sequencing",
+          "version": "1.0.0",
+          "trigger_summary": "a modular workflow has multiple available components",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md"
+        },
+        {
+          "slug": "state-routing-bus",
+          "role": "R",
+          "display_name": "State Routing Bus",
+          "version": "1.0.0",
+          "trigger_summary": "multiple components exchange state",
+          "requires": [],
+          "package_path": "upgradeables/orchestration/state-routing-bus/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "R",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "state-snapshot",
+          "role": "R",
+          "display_name": "State Snapshot",
+          "version": "1.0.0",
+          "trigger_summary": "a workflow pauses, hands off, or persists",
+          "requires": [],
+          "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+        },
+        {
+          "slug": "domain-mode-isolation",
+          "role": "R",
+          "display_name": "Domain / Mode Isolation",
+          "version": "1.0.0",
+          "trigger_summary": "multiple domains or semantic modes coexist",
+          "requires": [],
+          "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "resonance",
+          "role": "A",
+          "display_name": "Resonance",
+          "version": "1.0.0",
+          "trigger_summary": "several active modules must align",
+          "requires": [],
+          "package_path": "upgradeables/orchestration/resonance/UPGRADEABLE.md"
+        },
+        {
+          "slug": "parallel-qms",
+          "role": "A",
+          "display_name": "Parallel Quality Management System",
+          "version": "1.0.0",
+          "trigger_summary": "a composed workflow needs structured quality evaluation",
+          "requires": [],
+          "package_path": "upgradeables/validation/parallel-qms/UPGRADEABLE.md"
+        },
+        {
+          "slug": "multi-layer-consistency",
+          "role": "A",
+          "display_name": "Multi-Layer Consistency",
+          "version": "1.0.0",
+          "trigger_summary": "multiple authority layers are composed",
+          "requires": [],
+          "package_path": "upgradeables/validation/multi-layer-consistency/UPGRADEABLE.md"
+        },
+        {
+          "slug": "external-state-automation",
+          "role": "C",
+          "display_name": "External State Automation",
+          "version": "1.0.0",
+          "trigger_summary": "continuation requires real external state",
+          "requires": [],
+          "package_path": "upgradeables/persistence/external-state-automation/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "deterministic-intake-routing",
+      "display_name": "Deterministic Intake / Routing",
+      "recipe_path": "recipes/resolved/deterministic-intake-routing.md",
+      "source_recipe_path": "recipes/deterministic-intake-routing.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "clarification-gateway",
+          "role": "A",
+          "display_name": "Clarification Gateway",
+          "version": "1.0.0",
+          "trigger_summary": "required variables are missing or instructions conflict",
+          "requires": [],
+          "package_path": "upgradeables/foundation/clarification-gateway/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.0.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "scoped-loader",
+          "role": "R",
+          "display_name": "Scoped Loader / Loader Sequencing",
+          "version": "1.0.0",
+          "trigger_summary": "a modular workflow has multiple available components",
+          "requires": [],
+          "package_path": "upgradeables/context-retrieval/scoped-loader/UPGRADEABLE.md"
+        },
+        {
+          "slug": "domain-mode-isolation",
+          "role": "R",
+          "display_name": "Domain / Mode Isolation",
+          "version": "1.0.0",
+          "trigger_summary": "multiple domains or semantic modes coexist",
+          "requires": [],
+          "package_path": "upgradeables/state/domain-mode-isolation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "R",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "structured-state-projection",
+          "role": "A",
+          "display_name": "Structured State Projection",
+          "version": "1.0.0",
+          "trigger_summary": "a component needs a bounded state view",
+          "requires": [],
+          "package_path": "upgradeables/state/structured-state-projection/UPGRADEABLE.md"
+        },
+        {
+          "slug": "authority-anchor-enforcement",
+          "role": "A",
+          "display_name": "Authority Anchor Enforcement",
+          "version": "1.0.0",
+          "trigger_summary": "multiple instruction authorities coexist",
+          "requires": [],
+          "package_path": "upgradeables/orchestration/authority-anchor-enforcement/UPGRADEABLE.md"
+        },
+        {
+          "slug": "external-state-automation",
+          "role": "C",
+          "display_name": "External State Automation",
+          "version": "1.0.0",
+          "trigger_summary": "continuation requires real external state",
+          "requires": [],
+          "package_path": "upgradeables/persistence/external-state-automation/UPGRADEABLE.md"
+        },
+        {
+          "slug": "authenticity-anti-evasion",
+          "role": "R",
+          "display_name": "Authenticity & Anti-Evasion Principle",
+          "version": "1.0.0",
+          "trigger_summary": "claims about evidence, actions, or completion are emitted",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/authenticity-anti-evasion/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "long-context-source-fidelity",
+      "display_name": "Long-Context Source Fidelity",
+      "recipe_path": "recipes/resolved/long-context-source-fidelity.md",
+      "source_recipe_path": "recipes/long-context-source-fidelity.md",
+      "components": [
+        {
+          "slug": "working-memory-lock-in",
+          "role": "R",
+          "display_name": "Working-Memory Lock-In",
+          "version": "1.0.0",
+          "trigger_summary": "critical state competes with large context",
+          "requires": [],
+          "package_path": "upgradeables/state/working-memory-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "sequential-memory-state-engine",
+          "role": "R",
+          "display_name": "Sequential Memory State Engine (SMSE)",
+          "version": "1.0.0",
+          "trigger_summary": "state changes across steps or source chunks",
+          "requires": [],
+          "package_path": "upgradeables/state/sequential-memory-state-engine/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stateblock",
+          "role": "R",
+          "display_name": "StateBlock",
+          "version": "1.0.0",
+          "trigger_summary": "work spans multiple steps or components",
+          "requires": [],
+          "package_path": "upgradeables/state/stateblock/UPGRADEABLE.md"
+        },
+        {
+          "slug": "stable-long-context",
+          "role": "R",
+          "display_name": "Stable Long-Context",
+          "version": "1.0.0",
+          "trigger_summary": "large corpus or long-running workflow",
+          "requires": [],
+          "package_path": "upgradeables/state/stable-long-context/UPGRADEABLE.md"
+        },
+        {
+          "slug": "zero-drift-zones",
+          "role": "R",
+          "display_name": "Zero-Drift Zones",
+          "version": "1.0.0",
+          "trigger_summary": "content contains fidelity-locked atoms",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/zero-drift-zones/UPGRADEABLE.md"
+        },
+        {
+          "slug": "drift-suppression",
+          "role": "R",
+          "display_name": "Drift Suppression",
+          "version": "1.0.0",
+          "trigger_summary": "long, branching, or iterative work",
+          "requires": [],
+          "package_path": "upgradeables/drift-control/drift-suppression/UPGRADEABLE.md"
+        },
+        {
+          "slug": "image-text-fidelity-capture",
+          "role": "C",
+          "display_name": "Image Text Fidelity Capture",
+          "version": "1.0.0",
+          "trigger_summary": "an image contains source text to transcribe",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/image-text-fidelity-capture/UPGRADEABLE.md"
+        },
+        {
+          "slug": "reflectos",
+          "role": "A",
+          "display_name": "Work Reflection Loop OS / ReflectOS",
+          "version": "1.0.0",
+          "trigger_summary": "output needs a deliberate quality pass",
+          "requires": [],
+          "package_path": "upgradeables/validation/reflectos/UPGRADEABLE.md"
+        },
+        {
+          "slug": "fail-closed-abstention",
+          "role": "R",
+          "display_name": "Fail-Closed Abstention",
+          "version": "1.0.0",
+          "trigger_summary": "required evidence cannot be verified",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "truth-redundancy",
+          "role": "A",
+          "display_name": "Truth Redundancy",
+          "version": "1.0.0",
+          "trigger_summary": "a consequential claim can be independently checked",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/truth-redundancy/UPGRADEABLE.md"
+        },
+        {
+          "slug": "citation-fidelity",
+          "role": "C",
+          "display_name": "Citation Fidelity Gate",
+          "version": "1.0.0",
+          "trigger_summary": "output contains citations or source-attributed claims",
+          "requires": [],
+          "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "state-snapshot",
+          "role": "A",
+          "display_name": "State Snapshot",
+          "version": "1.0.0",
+          "trigger_summary": "a workflow pauses, hands off, or persists",
+          "requires": [],
+          "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+        }
+      ]
+    }
+  ]
+}

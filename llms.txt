@@ -1,10 +1,25 @@
-# Upgradeables model entrypoint
-README.md
-MODEL_CONSUMPTION_GUIDE.md
-spec/SKILL_TRANSLATION_SPEC.md
-spec/COMPOSITION_SPEC.md
-spec/PRECEDENCE_SPEC.md
-registry/registry.json
-recipes/recipes.json
-dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md
-# Never invent unresolved historical meanings. Host policy always wins.
+# Upgradeables
+> Model-agnostic building blocks for completing AI tasks and constructing reusable Skills.
+
+## START
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/START_HERE.md
+
+## DO A TASK
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/prompts/QUICK_TASK.md
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/registry/catalog.json
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/recipes/README.md
+
+## BUILD A SKILL
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/MODEL_CONSUMPTION_GUIDE.md
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/templates/SKILL_IMPLEMENTATION_TEMPLATE.md
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/implementations/community/source-bounded-research/SKILL.md
+
+## CONTRIBUTE A SKILL OR COMPONENT
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/CONTRIBUTING.md
+- https://github.com/robkazi52/upgradeables/issues/new?template=new_skill.yml
+- https://github.com/robkazi52/upgradeables/issues/new?template=new_upgradeable.yml
+
+## OFFLINE / SINGLE-FILE CONTEXT
+- https://raw.githubusercontent.com/robkazi52/upgradeables/main/dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md
+
+Host policy always wins. Never invent unresolved historical meanings or claim unavailable capabilities.

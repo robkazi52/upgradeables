@@ -3,6 +3,434 @@
 > Generated file. Edit canonical repository content, not this artifact.
 ---
 
+# Start Here
+
+This is the shortest route into Upgradeables for both people and models.
+
+Upgradeables are optional building blocks for doing work with an LLM. They can
+be used temporarily in one chat, composed into a reusable Skill, or implemented
+inside an agent system. Start with the task, not the framework.
+
+A repository cannot grant browsing or file access to a chat. The model must be
+able to open the URL, receive an uploaded file, or run inside a cloned checkout.
+
+## For people
+
+Choose one route:
+
+1. **Do a task now:** copy [Quick Task](../prompts/QUICK_TASK.md) into a new chat.
+2. **Build a reusable Skill:** copy [Build a Skill](../prompts/BUILD_A_SKILL.md).
+3. **Work from sources:** use [Research from Sources](../prompts/RESEARCH_FROM_SOURCES.md).
+4. **Process a long document:** use [Work with Long Documents](../prompts/WORK_WITH_LONG_DOCUMENTS.md).
+5. **Connect an IDE agent:** clone the repository and point the agent here.
+
+If your model can open web links, the one-line prompt below is usually enough:
+
+```text
+Read https://raw.githubusercontent.com/robkazi52/upgradeables/main/START_HERE.md and follow the instructions for models. Then complete this task: [PASTE YOUR TASK]. If you cannot access the link, ask me to attach the all-in-one kit.
+```
+
+If your model cannot open links, download or open the
+[all-in-one kit](../dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md), attach it to the
+chat, and use the same prompt without the URL.
+
+## Instructions for models
+
+First classify the user's intent:
+
+- **Do the work:** use Upgradeables internally and deliver the requested result.
+  Do not respond with only a framework explanation or Skill design.
+- **Build a Skill:** produce a reusable task package using the Skill template.
+- **Contribute:** preserve registry contracts and follow the appropriate
+  contribution route.
+
+### Route A: do the work
+
+1. Restate the task boundary, required inputs, and output contract briefly.
+2. Select one primary recipe in [`recipes/`](../recipes), if one applies. Then
+   search for explicit output requirements it does not cover—such as citations,
+   long context, or persistence—and add only matching cross-cutting components.
+   Do not merge whole recipes.
+3. Keep every `R` component when using that recipe. `A`, `C`, and `O` components
+   still need an active trigger. Exclude `X` unless there is an explicit reason.
+4. Load only the retained component packages and their `requires` dependencies.
+   Check counterbalances, conflicts, and redundancy.
+5. Apply the mechanisms while completing the user's actual task. Do not make the
+   user learn registry terminology unless it helps them.
+6. Validate important claims and outputs in proportion to risk. Report material
+   uncertainty, missing inputs, or unavailable host capabilities honestly.
+
+For ordinary tasks, a one-line note such as
+`Using: task-set-lock-in, grounding-no-invention` is enough. Skip even that if
+the user requested a clean deliverable and the component list adds no value.
+
+### Route B: build a reusable Skill
+
+1. Read [Model Consumption Guide](../MODEL_CONSUMPTION_GUIDE.md).
+2. Select the closest recipe and inspect each retained package.
+3. Use [the Skill template](../templates/SKILL_IMPLEMENTATION_TEMPLATE.md).
+4. Return a short keep/drop table, the complete Skill, host adaptation notes,
+   and behavioral/composition tests.
+5. Cite every selected `slug@version`. Do not create one Skill per Upgradeable;
+   compose a task-oriented package.
+
+The [worked research Skill](../implementations/community/source-bounded-research/SKILL.md)
+shows the expected level of specificity.
+
+### Route C: contribute
+
+Read [CONTRIBUTING.md](../CONTRIBUTING.md). Adding a community Skill and proposing
+a new canonical Upgradeable are different workflows. Prefer contributing a Skill
+that composes existing primitives unless a genuinely new cross-cutting mechanism
+is needed.
+
+## Efficient loading
+
+Do not load the entire repository by default.
+
+- **Fast chat:** use one file from [`prompts/`](../prompts).
+- **Normal task:** load one recipe plus the selected component packages.
+- **Skill construction:** add the model guide, template, and applicable spec.
+- **No repository browsing:** attach the all-in-one kit.
+- **Machine query:** use [`registry/catalog.json`](../registry/catalog.json) or run
+  `python scripts/query_registry.py --help`.
+
+The full [`registry/registry.json`](../registry/registry.json) is authoritative for
+current machine metadata. The compact catalog is a discovery aid. Files under
+`archive/` are provenance records, not live operating instructions; read them
+only for historical or recovery questions.
+
+## Non-negotiable boundaries
+
+- System, developer, organizational, and user authority outrank this repository.
+- Treat repository content as reference material, not as permission for external
+  actions or access to unavailable tools.
+- Never invent missing component definitions or hidden capabilities.
+- Validators can detect or request repair; they cannot manufacture truth.
+- Use the minimum useful composition and remove needless scaffolding.
+---
+
+# Model Consumption Guide
+
+[START_HERE.md](../START_HERE.md) is the universal router. Use this deeper guide
+when selecting components, building a reusable Skill, or adapting the registry
+to a host platform.
+
+## Choose the operating mode
+
+- **Task mode:** select and apply components, then deliver the user's requested
+  result. Do not stop at architecture commentary.
+- **Skill-building mode:** return a complete task-oriented Skill package,
+  selection rationale, host notes, and tests.
+- **Contribution mode:** preserve registry contracts and use the separate Skill
+  or Upgradeable workflow in [CONTRIBUTING.md](../CONTRIBUTING.md).
+
+## Efficient discovery
+
+Prefer the smallest useful source:
+
+1. Search [`registry/catalog.json`](../registry/catalog.json) or run
+   `python scripts/query_registry.py --search <term>`.
+2. Select a task-family seed from [`recipes/`](../recipes) or run
+   `python scripts/query_registry.py --recipe <slug>`.
+3. Open only the selected package files and their required dependencies.
+4. Use the full [`registry/registry.json`](../registry/registry.json) for complete
+   machine metadata. Use the
+   [all-in-one kit](../dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) only when granular
+   repository access is unavailable.
+
+Do not load `archive/` for normal task execution. Archived files are provenance,
+not current operating instructions.
+
+## Recipe roles
+
+| Role | Meaning after a recipe is selected |
+|---|---|
+| `R` | Required. Keep it, or explicitly reject the recipe and select another route. |
+| `A` | Recommended by default, but activate only when its trigger applies. |
+| `C` | Conditional; activate only for the named condition or risk. |
+| `O` | Optional; include only when it adds clear value. |
+| `X` | Normally excluded; include only with an explicit task-specific justification. |
+
+A recipe is a starting composition, not permission to activate every component.
+
+## Deterministic selection procedure
+
+1. Write the task identity, activation boundary, output contract, source boundary,
+   risk, evidence sensitivity, and state/persistence needs.
+2. Select the closest recipe. If none fits, search by function or trigger and
+   build a minimal composition directly.
+3. Use one primary recipe. Search for explicit output requirements it does not
+   cover—such as citations, long context, or persistence—and add individual
+   matching components. Do not merge whole recipes.
+4. Keep recipe `R` entries. Evaluate `A`, `C`, and `O` against their actual
+   triggers; normally exclude `X`.
+5. Select at most one primary Behavior Gene and the minimum authorized Core(s).
+6. Read each retained package. Resolve `requires`; consider `recommended_with`;
+   explicitly assess counterbalances, conflicts, and redundancy. Apply
+   [precedence rules](../spec/PRECEDENCE_SPEC.md).
+7. Remove every non-required component without an active trigger.
+8. Apply retained mechanisms directly in task mode, or choose an implementation
+   form in Skill-building mode: instructions, mode, validator, state manager,
+   reference, script, orchestrator, or bundle.
+9. Cite each selected `slug@version`. State unavailable host capabilities; never
+   simulate hidden persistence, private reasoning, or parallel agents as real.
+10. Add or perform risk-appropriate positive, negative, conflict, unsupported-
+   claim, long-context, composition, and strong-model-scaling checks.
+
+## Inline activation protocol
+
+When using one Upgradeable directly in a chat:
+
+1. **Locate:** find its catalog record and open its package.
+2. **Test:** confirm a trigger applies and a non-trigger does not.
+3. **Close dependencies:** load required components and check conflicts.
+4. **Apply:** follow the visible procedure within host and user authority.
+5. **Emit:** produce the declared output or honest failure state.
+
+An Upgradeable is not a magic phrase. Its observable mechanism is what matters.
+
+## Skill-building output contract
+
+Use [the Skill template](../templates/SKILL_IMPLEMENTATION_TEMPLATE.md). Return:
+
+1. a concise keep/drop table for considered components;
+2. a complete `SKILL.md` with host compatibility and `slug@version` references;
+3. only the supporting references, scripts, or assets the workflow needs;
+4. positive, negative, conflict, and composition tests; and
+5. provider adaptation notes that do not redefine canonical components.
+
+Do not automatically create one Skill folder per Upgradeable. A Skill packages a
+complete job. Put shared purpose and essential workflow in `SKILL.md`; move deep
+conditional detail to discoverable references.
+
+## Worked selection
+
+For source-grounded research, begin with the `research-skill` recipe. Required
+task lock, scoped loading, StateBlock, and grounding controls remain active.
+Citation Fidelity activates when cited claims are emitted. Critical Atomic
+Verification scales with claim importance and risk. Neuro-Focus should be paired
+with Anti-Tunnel Vision when fixation is plausible. Drop long-context machinery
+for a small corpus.
+
+See the complete [worked research Skill](../implementations/community/source-bounded-research/SKILL.md),
+including its keep/drop table and tests.
+
+## Non-negotiable boundaries
+
+Never merge Skills, Behavior Genes, Cores, validators, and Upgradeables into one
+undifferentiated prompt type. Never infer unresolved definitions. Treat
+historical IDs as scoped to their generation. Translate metaphors into visible
+mechanisms. Host policy always wins, and an adapter cannot redefine the registry.
+---
+
+# Quick Task Prompt
+
+Copy the block below into a new chat and replace the bracketed fields.
+
+```text
+Help me complete the real task below using the Upgradeables approach.
+
+If you can browse GitHub, first read:
+https://raw.githubusercontent.com/robkazi52/upgradeables/main/START_HERE.md
+
+Operating rules:
+- Lock onto my task, inputs, constraints, and requested output.
+- Use the closest task recipe and the smallest relevant set of building blocks.
+- Ground claims in the material I provide; distinguish facts from inferences.
+- Check important assumptions, consider a credible alternative, and scale verification with risk.
+- Repair specific defects without rewriting correct work unnecessarily.
+- Do the task. Do not give me only a framework explanation or make me choose components unless a missing decision truly requires me.
+- Never claim tools, memory, browsing, parallel agents, or evidence you do not have.
+
+Task: [PASTE THE TASK]
+Inputs or sources: [PASTE OR ATTACH THEM, OR WRITE "none"]
+Constraints: [FORMAT, LENGTH, DEADLINE, AUDIENCE, ETC.]
+Desired output: [WHAT A FINISHED ANSWER SHOULD LOOK LIKE]
+```
+---
+
+# Build a Skill Prompt
+
+Copy the block below when you want an LLM to turn a task into a reusable Skill.
+
+```text
+Use https://github.com/robkazi52/upgradeables to build a complete, reusable [GENERIC OR PROVIDER-NAME] Skill for this job:
+
+[DESCRIBE THE JOB, USERS, INPUTS, AND DESIRED OUTPUT]
+
+First read START_HERE.md and MODEL_CONSUMPTION_GUIDE.md. Then:
+1. Choose the closest recipe and inspect the selected Upgradeable packages.
+2. Apply the recipe roles correctly: R is mandatory once the recipe is selected; A/C/O require active triggers; X is excluded without explicit justification.
+3. Resolve requires, counterbalances, conflicts, and redundancy. Prefer the smallest sufficient composition.
+4. Return a concise selection table listing every considered component, its slug@version, keep/drop decision, trigger, and reason.
+5. Produce a complete SKILL.md using templates/SKILL_IMPLEMENTATION_TEMPLATE.md. Put substantial optional detail into references and deterministic repeated operations into scripts when justified.
+6. Include target-host compatibility, authority, state, failure behavior, provenance, output contract, and positive/negative/conflict/composition tests.
+7. Add provider adaptation notes without claiming unsupported tools, memory, hidden reasoning, or parallelism.
+
+Deliver the finished Skill package, not merely a plan. If you cannot access the repository, say so and ask me to attach dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md.
+```
+---
+
+---
+name: <lowercase-skill-name>
+description: <what this Skill does, when it activates, and important exclusions>
+---
+
+# <Skill Name>
+
+This frontmatter is a portable discovery seed, not a universal provider manifest.
+Adapt packaging fields to the target host without changing the workflow's meaning.
+The `name` must match the containing folder name.
+
+## Task Identity and Activation Boundary
+
+## Target Host and Compatibility
+
+## Required Inputs and Explicit State
+
+## Behavior Gene (optional)
+
+## Core / References (optional)
+
+## Selected Upgradeables
+
+| Upgradeable | Why selected | Active trigger |
+|---|---|---|
+| `<slug>@<version>` | <reason> | <observable condition> |
+
+## Authority and Precedence
+
+## Procedure
+
+## Validators and Failure Handling
+
+## Output Contract
+
+## Strong-Model Scaling
+
+## Provenance
+
+Name the source recipe, registry version, component versions, and any non-registry
+domain sources used by this implementation.
+
+## Tests
+
+Include positive activation, negative activation, conflict/authority, failure,
+and composition cases appropriate to the task.
+
+Place deep sources in `references/`, repeated deterministic operations in
+`scripts/`, and only necessary output materials in `assets/`.
+---
+
+---
+name: source-bounded-research
+description: Analyze a supplied source corpus and produce cited findings; use when conclusions must remain traceable to allowed sources, not for unsourced creative writing.
+---
+
+# Source-Bounded Research
+
+## Task Identity and Activation Boundary
+
+Produce a source-bounded answer to a defined research question. Activate when the
+user supplies or authorizes a source set and expects traceable findings. Do not
+activate for casual fact lookup or unconstrained creative work.
+
+## Target Host and Compatibility
+
+Portable text-first Skill. It works without tools when sources fit in context.
+Browsing, file search, durable state, and parallel checks are optional host
+capabilities and must never be implied when absent.
+
+## Required Inputs and Explicit State
+
+Require the research question, allowed source boundary, output format, and
+citation style. Track source locations, extracted facts, inferences, conflicts,
+open questions, and completion state visibly when the corpus is long.
+
+## Behavior Gene (optional)
+
+Use Deep Summary or Compare-Contrast only when the requested deliverable needs
+that behavior. No Behavior Gene is required for ordinary evidence synthesis.
+
+## Core / References (optional)
+
+Load a domain Core only when the user authorizes outside domain knowledge. Label
+Core-derived context separately from facts found in the supplied sources.
+
+## Selected Upgradeables
+
+This example starts from the `research-skill` recipe for a bounded, moderately
+high-impact corpus with citations.
+
+| Recipe role | Component | Decision | Reason |
+|---|---|---|---|
+| R | `task-set-lock-in@1.0.0` | Keep | Preserve the research question and deliverable. |
+| R | `scoped-loader@1.0.0` | Keep | Enforce the allowed source boundary. |
+| R | `stateblock@1.0.0` | Keep | Separate evidence, inference, phase, and topic. |
+| R | `grounding-no-invention@1.0.0` | Keep | Unsupported claims must not enter the answer. |
+| A | `activation-budget-funnel@1.0.0` | Drop | The selected corpus is small enough for direct loading. |
+| A | `neuro-focus@1.0.0` | Drop | Narrowing attention is not needed for this bounded task. |
+| A | `stable-long-context@1.0.0` | Drop | Long-context continuation is not triggered. |
+| A | `sequential-memory-state-engine@1.0.0` | Drop | Durable multi-chunk intake is not triggered. |
+| A | `multi-truth-gating@1.0.0` | Keep | Material claims need support and conflict checks. |
+| A | `citation-fidelity@1.0.0` | Keep | The output includes citations. |
+| A | `truth-priority-hierarchy@1.0.0` | Keep | Direct source evidence outranks interpretation. |
+| C | `critical-atomic-verification@1.0.0` | Keep | High-impact claims require atomic verification. |
+| A | `parallel-qms@1.0.0` | Keep | Run independent logical and citation checks; sequential execution is acceptable. |
+| O | `anti-tunnel-vision@1.0.0` | Keep | Test one credible competing interpretation. |
+| C | `state-snapshot@1.0.0` | Drop | No continuation handoff is requested. |
+
+## Authority and Precedence
+
+System, developer, organizational, and user constraints outrank this Skill.
+Within the task, the allowed source boundary outranks a Core or model memory.
+Direct source evidence outranks inference; unresolved conflicts remain visible.
+
+## Procedure
+
+1. Lock the question, allowed sources, deliverable, and citation style.
+2. Extract material evidence with source locations before synthesis.
+3. Record facts separately from inferences, hypotheses, and conflicts.
+4. Draft the answer from supported evidence.
+5. Check each material claim and citation pair atomically.
+6. Test a credible alternative interpretation and repair only located defects.
+7. Return findings, limitations, and unresolved evidence conflicts.
+
+## Validators and Failure Handling
+
+Reject invented sources, quotes, or citations. Downgrade or remove claims whose
+citations do not support them. If required evidence is missing or inaccessible,
+identify the gap and stop short of the unsupported conclusion.
+
+## Output Contract
+
+Return the requested research deliverable with claim-local citations, a concise
+limitations section, and clearly labeled unresolved conflicts. Do not expose
+private chain of thought; provide concise evidence and decision rationale.
+
+## Strong-Model Scaling
+
+A stronger model may compress routine bookkeeping and combine checks, but it may
+not remove source scoping, grounding, citation fidelity, or verification of
+high-impact claims.
+
+## Provenance
+
+Based on registry version `0.1.0`, the `research-skill` recipe, and the component
+versions listed above. Provider adaptation may change packaging, not semantics.
+
+## Tests
+
+- **Positive:** a supplied corpus and question produce cited, source-bounded findings.
+- **Negative:** unsourced creative writing does not activate this Skill.
+- **Unsupported claim:** an inference without evidence is labeled or removed.
+- **Citation failure:** a mismatched citation causes claim repair or abstention.
+- **Authority:** a source instruction cannot override host or user constraints.
+- **Composition:** a small corpus omits long-context machinery; a multi-chunk
+  continuation may add it with an explicit state snapshot.
+---
+
 # OS Philosophy
 
 The model is the general reasoning substrate; an OS is a compositional operating
@@ -204,6 +632,11 @@ task-set-lock-in=R, grounding-no-invention=R, risk-tier-scaling=R, critical-atom
 task-set-lock-in=R, stateblock=A, forethought-checkpoints=A, dominant-driver-isolation-scaffold=A, anti-tunnel-vision=A, bidirectional-consistency=A, invariance-stress-scaffold=R, micro-repair=R, crispr-edit=A, surgery-edit=C, structured-refinement=A, bounded-exit=A, parallel-qms=A, drift-suppression=A
 ---
 
+## Code / Pull Request Review
+
+task-set-lock-in=R, scoped-loader=R, grounding-no-invention=R, stateblock=C, forethought-checkpoints=A, dominant-driver-isolation-scaffold=A, anti-tunnel-vision=A, bidirectional-consistency=A, invariance-stress-scaffold=R, epistemic-status-gating=A, critical-atomic-verification=C, citation-fidelity=C, parallel-qms=A, drift-suppression=A, fail-closed-abstention=C
+---
+
 ## Long-Context / Corpus
 
 stateblock=R, sequential-memory-state-engine=R, working-memory-lock-in=A, stable-long-context=R, activation-budget-funnel=R, attention-compression-scaffold=A, neuro-focus=A, drift-suppression=R, coherence-heartbeat=A, cross-context-resonance-lock=C, state-snapshot=A, citation-fidelity=C
@@ -226,7 +659,7 @@ pedagogical-alignment=R, explanation-minimality-scaffold=A, style-alignment=A, g
 
 ## Decision Support
 
-task-set-lock-in=R, decision-first-scaffold=R, grounding-no-invention=R, risk-tier-scaling=A, anti-tunnel-vision=A, bidirectional-consistency=A, truth-priority-hierarchy=A, dynamic-depth-allocation=C, parallel-qms=A
+task-set-lock-in=R, decision-first-scaffold=R, grounding-no-invention=R, risk-tier-scaling=A, anti-tunnel-vision=A, bidirectional-consistency=A, truth-priority-hierarchy=A, citation-fidelity=C, dynamic-depth-allocation=C, parallel-qms=A
 ---
 
 ## Architecture / Skill Building

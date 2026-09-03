@@ -315,7 +315,7 @@ def root_docs() -> None:
     activates only when emitting cited claims. Multi-Truth Gating and Critical Atomic
     Verification scale with claim importance/risk. Neuro-Focus should be counterbalanced
     by Anti-Tunnel Vision when fixation is plausible. The worked output is at
-    `implementations/community/example-research-skill/SKILL.md`.
+    `implementations/community/source-bounded-research/SKILL.md`.
 
     ## Non-negotiable output contract
 
@@ -1511,7 +1511,7 @@ def domain_and_implementations() -> None:
     behavior, tests, and source provenance. Provider-specific packages are adapters;
     they do not redefine canonical Upgradeables.
     """)
-    write("implementations/community/example-research-skill/SKILL.md", """
+    write("implementations/community/source-bounded-research/SKILL.md", """
     ---
     name: source-bounded-research
     description: Analyze a supplied source corpus and produce cited findings; use when conclusions must remain traceable to provided sources, not for unsourced creative writing.
