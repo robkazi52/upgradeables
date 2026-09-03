@@ -16,6 +16,6 @@ Thumbs.db
 *.log
 tests/tmp*/
 /pytest-cache-files-*/
-/.harness-b-test-*/
+/.harness-*/
 /.tmp-*/
 /tmp*/
