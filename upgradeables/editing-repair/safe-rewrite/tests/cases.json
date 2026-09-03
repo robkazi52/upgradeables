@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Length and jargon may change, but findings and uncertainty must not.",
-      "expect": "A shorter update with unchanged factual atoms.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Condenses explanations, preserves all metrics and caveats, and confirms the citation still supports the adjacent claim. Result: A shorter update with unchanged factual atoms.",
+      "reject": "Omitting the mechanism or instead doing this: Round the numbers, drop uncertainty, or add a business implication absent from the source."
     },
     {
       "id": "safe-rewrite-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the user asks to change substantive meaning",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify authorized change dimensions such as tone, length, format, or reading level.",
+      "reject": "Activating Safe Rewrite Logic solely because its name appears relevant"
     },
     {
       "id": "safe-rewrite-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Truth and locked constraints outrank requested style.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: separate semantic atoms from surface form",
+      "reject": "Silently violating the stated precedence for Safe Rewrite Logic"
     },
     {
       "id": "safe-rewrite-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "semantic drift",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: internal atom extraction",
+      "reject": "Claiming a successful Safe Rewrite Logic result past this boundary"
     },
     {
       "id": "safe-rewrite-strong-model-scaling",

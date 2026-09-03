@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Their decisions must align on the feature identifier, but their evidence and authority differ.",
-      "expect": "The synthesis aligns on the feature while retaining two auditable contexts.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Maintains the feature link and transfers only the declared decision fields with sources. Result: The synthesis aligns on the feature while retaining two auditable contexts.",
+      "reject": "Omitting the mechanism or instead doing this: Does not merge legal claims into technical evidence or give one agent the other's authority."
     },
     {
       "id": "cross-context-resonance-lock-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the contexts are unrelated",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify each context, its source boundary, authority, and current state.",
+      "reject": "Activating Cross-Context Resonance Lock solely because its name appears relevant"
     },
     {
       "id": "cross-context-resonance-lock-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Host, system, domain, and explicit user authority take precedence over this component.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve the defining invariant: separate provenance and authority for every linked context.",
+      "reject": "Silently violating the stated precedence for Cross-Context Resonance Lock"
     },
     {
       "id": "cross-context-resonance-lock-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "the relationship cannot be supported independently in both contexts",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: separate provenance and authority for every linked context",
+      "reject": "Claiming a successful Cross-Context Resonance Lock result past this boundary"
     },
     {
       "id": "cross-context-resonance-lock-strong-model-scaling",

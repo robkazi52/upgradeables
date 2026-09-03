@@ -23,10 +23,9 @@
   ],
   "purpose": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.",
   "recommended_skill_types": [
-    "long agent loops",
-    "high-fidelity transformations",
-    "safety-critical execution",
-    "multi-step builds"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "nothing needs continuous salience",

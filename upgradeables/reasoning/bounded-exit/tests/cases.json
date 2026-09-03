@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The memo is sound but can absorb an unknown number of polish passes.",
-      "expect": "A publishable memo and an explicit diminishing-return exit.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Repairs the unclear paragraph, rechecks the criteria, and exits because the remaining style gain is below its review cost. Result: A publishable memo and an explicit diminishing-return exit.",
+      "reject": "Omitting the mechanism or instead doing this: Rewrite the whole memo or continue polishing synonyms after acceptance."
     },
     {
       "id": "bounded-exit-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a mandatory validator has not yet passed",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Lock acceptance criteria and a maximum pass or cost budget.",
+      "reject": "Activating Bounded ExIt solely because its name appears relevant"
     },
     {
       "id": "bounded-exit-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Mandatory acceptance checks outrank a pass budget; if budget expires first, return blocked rather than pass.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: define the exit condition before iterating",
+      "reject": "Silently violating the stated precedence for Bounded ExIt"
     },
     {
       "id": "bounded-exit-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "endless recursive polishing",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: predeclared exit rule",
+      "reject": "Claiming a successful Bounded ExIt result past this boundary"
     },
     {
       "id": "bounded-exit-strong-model-scaling",

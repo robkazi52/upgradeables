@@ -136,10 +136,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- conflicting requirements
-- inconsistent dates or quantities
-- state snapshots with mutually exclusive flags
-- documents whose conclusion contradicts a cited premise
+- document and code transformation
+- high-stakes evidence work
+- review and quality assurance
 
 ## Example Composition
 
@@ -169,5 +168,5 @@ Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovere
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-04. Contradiction Micro-Repair Pack (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)

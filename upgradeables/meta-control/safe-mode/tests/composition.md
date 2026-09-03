@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** File changes and remote publication require exact state, credentials, and validation.
-- **Expect:** A grounded public release or a precise fail-closed blocker.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Applies only planned changes, verifies tests and diff, confirms remote target and visibility, publishes, and checks the public URL. Result: A grounded public release or a precise fail-closed blocker.
+- **Reject:** Omitting the mechanism or instead doing this: Invent credentials, redesign the repository during push, or claim publication before remote verification.
 
 ## Negative Activation
 
 - **Given:** the primary need is broad architecture discovery
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Declare SAFE and load the committed plan, authoritative state, permitted delta, and risk controls.
+- **Reject:** Activating SAFE Mode solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A missing required source, permission, or checkpoint blocks execution.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: lock state and scope
+- **Reject:** Silently violating the stated precedence for SAFE Mode
 
 ## Failure Boundary
 
 - **Given:** speculative execution
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: scope and state lock
+- **Reject:** Claiming a successful SAFE Mode result past this boundary
 
 ## Strong Model Scaling
 

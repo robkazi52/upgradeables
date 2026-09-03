@@ -150,10 +150,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- mixed-domain workspaces
-- multi-tenant assistants
-- regulated workflows
-- parallel specialist agents
+- document and code transformation
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

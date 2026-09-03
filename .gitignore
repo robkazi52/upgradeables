@@ -11,3 +11,4 @@ venv/
 Thumbs.db
 *.tmp
 *.log
+tests/tmp*/

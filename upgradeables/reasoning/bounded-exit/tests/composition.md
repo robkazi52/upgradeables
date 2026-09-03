@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The memo is sound but can absorb an unknown number of polish passes.
-- **Expect:** A publishable memo and an explicit diminishing-return exit.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Repairs the unclear paragraph, rechecks the criteria, and exits because the remaining style gain is below its review cost. Result: A publishable memo and an explicit diminishing-return exit.
+- **Reject:** Omitting the mechanism or instead doing this: Rewrite the whole memo or continue polishing synonyms after acceptance.
 
 ## Negative Activation
 
 - **Given:** a mandatory validator has not yet passed
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Lock acceptance criteria and a maximum pass or cost budget.
+- **Reject:** Activating Bounded ExIt solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Mandatory acceptance checks outrank a pass budget; if budget expires first, return blocked rather than pass.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: define the exit condition before iterating
+- **Reject:** Silently violating the stated precedence for Bounded ExIt
 
 ## Failure Boundary
 
 - **Given:** endless recursive polishing
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: predeclared exit rule
+- **Reject:** Claiming a successful Bounded ExIt result past this boundary
 
 ## Strong Model Scaling
 

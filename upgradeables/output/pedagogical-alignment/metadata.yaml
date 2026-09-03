@@ -22,11 +22,10 @@
   ],
   "purpose": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.",
   "recommended_skill_types": [
-    "tutorials",
-    "documentation",
-    "stakeholder briefings",
-    "technical-to-nontechnical translation",
-    "onboarding"
+    "communication and content generation",
+    "document and code transformation",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the audience and purpose cannot be inferred and the choice materially changes content",
@@ -157,8 +156,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-16. Pedagogical Alignment Constraint",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-16. Pedagogical Alignment Constraint"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

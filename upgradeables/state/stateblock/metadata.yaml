@@ -21,10 +21,10 @@
   ],
   "purpose": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
   "recommended_skill_types": [
-    "multi-step execution",
-    "agent orchestration",
-    "complex editing",
-    "auditable workflows"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "a trivial one-turn task needs no persistent state",
@@ -160,8 +160,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "StateBlock",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "StateBlock"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -171,9 +172,8 @@
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-      "heading": "T2-038 — High-Coherence State Induction",
-      "source_kind": "historical_assistant_artifact",
-      "anchor_detail": "State kernel and SMSE reconstruction"
+      "heading": "11.1 Kernel / State Block",
+      "source_kind": "historical_assistant_artifact"
     }
   ],
   "source_support": "sufficiently-recovered",

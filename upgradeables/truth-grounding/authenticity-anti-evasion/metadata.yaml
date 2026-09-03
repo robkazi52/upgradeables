@@ -23,10 +23,10 @@
   ],
   "purpose": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability.",
   "recommended_skill_types": [
-    "agentic tool use",
-    "research status reporting",
-    "coding and build completion reports",
-    "high-stakes analysis"
+    "communication and content generation",
+    "document and code transformation",
+    "high-stakes evidence work",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the output makes no claim about evidence, actions, capability, or completion",
@@ -137,8 +137,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-18. Authenticity & Anti-Evasion Principle",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-18. Authenticity & Anti-Evasion Principle"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

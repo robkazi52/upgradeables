@@ -21,10 +21,10 @@
   ],
   "purpose": "Reduce stale state and forgotten deltas during iterative work.",
   "recommended_skill_types": [
-    "agent loops",
-    "long editing sessions",
-    "tool-rich workflows",
-    "multi-step investigations"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the host cannot write persistent state",
@@ -157,8 +157,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "SelfBlock Auto-Update",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "SelfBlock Auto-Update"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

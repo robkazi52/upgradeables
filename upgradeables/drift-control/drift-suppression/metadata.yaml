@@ -23,10 +23,10 @@
   ],
   "purpose": "Keep execution aligned after distracting context, repeated transformation, or model error.",
   "recommended_skill_types": [
-    "long agent workflows",
-    "high-fidelity editing",
-    "multi-stage synthesis",
-    "policy-bound generation"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "no semantic baseline or allowed corridor exists",
@@ -162,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T1-02. Drift Suppression",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T1-02. Drift Suppression"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

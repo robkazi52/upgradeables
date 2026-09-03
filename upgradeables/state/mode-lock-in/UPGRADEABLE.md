@@ -148,10 +148,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- strict transformations
-- long sessions
-- multi-mode assistants
-- policy-bound work
+- document and code transformation
+- long-context workflows
+- multi-step task execution
 
 ## Example Composition
 

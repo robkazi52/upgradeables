@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** One trigger rule changes while safety, citation, and other browsing rules must remain stable.
-- **Expect:** A narrow behavioral change with invariant evidence.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Defines the one-condition delta, lists preserved rules, patches only the current-price branch, tests current and historical prompts, and confirms no unrelated diff. Result: A narrow behavioral change with invariant evidence.
+- **Reject:** Omitting the mechanism or instead doing this: Rewrite the whole browsing policy or silently alter source requirements.
 
 ## Negative Activation
 
 - **Given:** the governing structure is wrong
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Identify the exact editable unit and the request's semantic delta.
+- **Reject:** Activating CRISPR Editing solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Locked safety, truth, and authorization invariants cannot be included in the requested delta.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: declare target and invariants before editing
+- **Reject:** Silently violating the stated precedence for CRISPR Editing
 
 ## Failure Boundary
 
 - **Given:** collateral semantic drift
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit invariant set
+- **Reject:** Claiming a successful CRISPR Editing result past this boundary
 
 ## Strong Model Scaling
 

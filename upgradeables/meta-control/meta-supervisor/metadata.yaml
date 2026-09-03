@@ -24,10 +24,10 @@
   ],
   "purpose": "Coordinate Meta-Awareness, Stuck-Pattern Reset, and Contradiction Micro-Repair without becoming the suite-wide mode and architecture authority.",
   "recommended_skill_types": [
-    "complex iterative scaffolds",
-    "multi-module reasoning",
-    "repeated failures",
-    "runtime process-health supervision"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the task needs suite-wide mode declaration and Core-stack governance",
@@ -165,8 +165,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-01. Meta-Supervisor Bundle",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-01. Meta-Supervisor Bundle"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

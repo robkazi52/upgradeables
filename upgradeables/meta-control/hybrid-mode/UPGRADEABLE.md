@@ -152,10 +152,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- architecture followed by implementation
-- research plan followed by evidence extraction
-- migration design followed by cutover
-- complex repository builds
+- high-stakes evidence work
+- multi-step task execution
+- skill and agent workflows
+- source-grounded research
 
 ## Example Composition
 
@@ -185,5 +185,5 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-08. HYBRID Mode (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)

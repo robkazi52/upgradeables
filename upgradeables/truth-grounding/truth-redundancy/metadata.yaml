@@ -24,10 +24,10 @@
   ],
   "purpose": "Reduce single-point truth failure before high-impact synthesis or decision-making.",
   "recommended_skill_types": [
+    "analysis and decision support",
     "high-stakes evidence work",
-    "critical factual claims",
-    "source-grounded decision support",
-    "safety-relevant tradeoffs"
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the claim is low risk and an authoritative primary source is decisive",
@@ -137,8 +137,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-03. Truth Redundancy / Dual-Lepton Truth Redundancy",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-03. Truth Redundancy / Dual-Lepton Truth Redundancy"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

@@ -154,10 +154,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- incident timelines
-- policy version analysis
-- case chronology
-- news or market research
+- high-stakes evidence work
+- long-context workflows
+- multi-step task execution
+- source-grounded research
 
 ## Example Composition
 

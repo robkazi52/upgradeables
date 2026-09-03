@@ -206,8 +206,21 @@
     "recommended_skill_types": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": [
+          "analysis and decision support",
+          "communication and content generation",
+          "document and code transformation",
+          "high-stakes evidence work",
+          "long-context workflows",
+          "multi-step task execution",
+          "review and quality assurance",
+          "skill and agent workflows",
+          "source-grounded research",
+          "structured problem solving"
+        ]
       },
+      "minItems": 1,
       "uniqueItems": true
     },
     "usually_not_needed_for": {

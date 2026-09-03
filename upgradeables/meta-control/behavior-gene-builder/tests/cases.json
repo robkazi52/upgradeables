@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The comparison logic and output shape recur, while the evidence and entities differ by domain.",
-      "expect": "One reusable behavior module that composes with several domain Cores.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Encodes dimension selection, symmetric treatment, conflict surfacing, evidence rules, and output table contract without copying any domain facts. Result: One reusable behavior module that composes with several domain Cores.",
+      "reject": "Omitting the mechanism or instead doing this: Bundle the medical and legal corpora into the Gene."
     },
     {
       "id": "behavior-gene-builder-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the content is primarily domain knowledge",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Collect repeated successful and failed task instances and isolate the stable behavior rather than domain facts.",
+      "reject": "Activating Behavior Gene Builder solely because its name appears relevant"
     },
     {
       "id": "behavior-gene-builder-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Global truth, safety, and authorization rules outrank any Gene.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: keep behavior separate from domain knowledge",
+      "reject": "Silently violating the stated precedence for Behavior Gene Builder"
     },
     {
       "id": "behavior-gene-builder-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "behavior-knowledge conflation",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: behavior/Core separation",
+      "reject": "Claiming a successful Behavior Gene Builder result past this boundary"
     },
     {
       "id": "behavior-gene-builder-strong-model-scaling",

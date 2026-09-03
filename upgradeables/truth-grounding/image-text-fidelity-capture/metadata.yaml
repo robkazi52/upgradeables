@@ -25,10 +25,9 @@
   ],
   "purpose": "Create a source-faithful textual representation of image-borne evidence for downstream indexing, analysis, or copying.",
   "recommended_skill_types": [
-    "document image transcription",
-    "figure or screenshot capture",
-    "scanned-record intake",
-    "long-document source fidelity"
+    "high-stakes evidence work",
+    "long-context workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "no image contains source text or visible structure",
@@ -143,8 +142,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-14. ITFC — Historical Acronym Collision",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-14. ITFC — Historical Acronym Collision"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

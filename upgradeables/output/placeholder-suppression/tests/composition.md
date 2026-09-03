@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** README templates, manifests, and examples may retain setup prompts or dummy URLs.
-- **Expect:** A release with no accidental placeholders and one documented intentional fixture.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Finds a `[your-org]` README token, an empty license field, and `example.com` in a test fixture; resolves the first two and allowlists the fixture by path before rescanning. Result: A release with no accidental placeholders and one documented intentional fixture.
+- **Reject:** Omitting the mechanism or instead doing this: Replace the license with a guess or globally allow every `example.com` occurrence.
 
 ## Negative Activation
 
 - **Given:** the deliverable is explicitly a template whose placeholders are the product
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Load the artifact's required sections, fields, and variable schema.
+- **Reject:** Activating Placeholder Suppression solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Never fabricate content to satisfy completion.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: combine lexical and structural scans
+- **Reject:** Silently violating the stated precedence for Placeholder Suppression
 
 ## Failure Boundary
 
 - **Given:** false completion
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: lexical plus schema scan
+- **Reject:** Claiming a successful Placeholder Suppression result past this boundary
 
 ## Strong Model Scaling
 

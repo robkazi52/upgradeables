@@ -12,8 +12,15 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
   v0.1 operational baseline.
 - OS-fit/task-fit metadata, structured six-case behavior specifications, a
   semantic-specificity auditor, and provider-neutral eval adapters.
-- Deterministic release checksums and five additional worked community Skills.
+- Deterministic release checksums and six additional worked community Skills,
+  including an ARC-style perception solver.
 - Explicit recipe and bundle reviews with rationale and activation boundaries.
+- A perception/spatial-reasoning recipe and preliminary evidence reports with
+  visible provenance, reconciliation, and reproducibility limitations.
+- Five copy-ready experiments, a plain-language naming review, and a design for
+  future natural-language task discovery.
+- A provider-neutral behavioral-evaluation runner and negative fixtures for all
+  six deterministic package checks.
 
 ### Changed
 
@@ -21,6 +28,10 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
   strong-model invariant, and interaction rationale against the source corpus.
 - Expanded all provider adapters under a shared capability contract.
 - Enriched the registry and portable all-in-one kit; fixed the runnable README example.
+- Replaced five generic worked-Skill shells with task-specific procedures, failure
+  paths, outputs, tests, and component rationales.
+- Made recipe and bundle review status validator-derived, corrected four bundle
+  load orders/default sets, and separated Skill-family taxonomy from task examples.
 - Bumped the registry to `0.2.0`, its package schema to `2.0.0`, and semantically
   hardened packages to `1.1.0` while preserving historical aliases and gaps.
 

@@ -24,10 +24,10 @@
   ],
   "purpose": "Concentrate analysis and verification where local marginal value is highest instead of applying uniform depth across a task.",
   "recommended_skill_types": [
-    "heterogeneous documents",
-    "mixed-risk code changes",
-    "large research corpora",
-    "multi-stage plans with uneven uncertainty"
+    "analysis and decision support",
+    "document and code transformation",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "every unit has the same mandated review depth",
@@ -163,8 +163,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-12. Dynamic Depth Allocation (DDA)",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-12. Dynamic Depth Allocation (DDA)"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

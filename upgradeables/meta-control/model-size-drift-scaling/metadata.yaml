@@ -25,10 +25,10 @@
   ],
   "purpose": "Avoid fossilized over-scaffolding on more reliable models without mistaking model strength for permission to remove essential controls.",
   "recommended_skill_types": [
-    "cross-model deployments",
-    "model upgrades",
-    "prompt simplification",
-    "reliability-sensitive drift control"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "there is no comparative reliability evidence",
@@ -162,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-18. Drift-Stability Scaling with Model Size (DSS-MS)",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-18. Drift-Stability Scaling with Model Size (DSS-MS)"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

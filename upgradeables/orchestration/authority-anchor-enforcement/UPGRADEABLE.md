@@ -124,9 +124,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-module agent workflows
-- policy-constrained execution
-- delegated task routing
+- high-stakes evidence work
+- multi-step task execution
+- review and quality assurance
+- skill and agent workflows
 
 ## Example Composition
 

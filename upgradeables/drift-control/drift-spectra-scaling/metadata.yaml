@@ -25,10 +25,10 @@
   ],
   "purpose": "Allocate strictness where meaning is fragile and flexibility where variation is valuable.",
   "recommended_skill_types": [
-    "mixed-content rewriting",
-    "summaries",
-    "format migrations",
-    "multi-stage synthesis"
+    "communication and content generation",
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution"
   ],
   "usually_not_needed_for": [
     "every element has the same explicit tolerance",

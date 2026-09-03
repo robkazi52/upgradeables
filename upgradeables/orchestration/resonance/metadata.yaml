@@ -25,9 +25,10 @@
   ],
   "purpose": "Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.",
   "recommended_skill_types": [
-    "multi-module Skills",
-    "evidence-to-state coordination",
-    "composed agent workflows"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution"
   ],
   "usually_not_needed_for": [
     "only one module is active",
@@ -138,8 +139,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-05. Resonance",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-05. Resonance"
     }
   ],
   "source_support": "sufficiently-recovered",

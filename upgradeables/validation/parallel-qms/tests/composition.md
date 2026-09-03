@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** It has factual instructions, workflow structure, safety behavior, and cross-file consistency risks.
-- **Expect:** The release ledger shows distinct passes, one repaired traceability gap, no veto, and explicit convergence.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Uses HQMS across instruction/test/repository levels, T-QMS for causal and logical review flow, Inv-QMS from promised result back to required checks, SG-QMS for traceability, and E-QMS for unsafe advice; QMS-EI bounds repair to two passes before global collapse. Result: The release ledger shows distinct passes, one repaired traceability gap, no veto, and explicit convergence.
+- **Reject:** Omitting the mechanism or instead doing this: Launch 15 identical reviewers or approve on majority when E-QMS finds unsafe behavior.
 
 ## Negative Activation
 
 - **Given:** one low-risk deterministic check is sufficient
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: State the decision, critical truths, risk tier, and stop conditions.
+- **Reject:** Activating Parallel Quality Management System solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Crucial factual conflict must be resolved or surfaced before collapse.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Select modes by failure hypothesis, not quantity.
+- **Reject:** Silently violating the stated precedence for Parallel Quality Management System
 
 ## Failure Boundary
 
 - **Given:** Do not certify while a crucial truth is disputed, a safety/ethical veto is active, validator independence is falsely claimed, or bounded repair fails to converge.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: mode distinction
+- **Reject:** Claiming a successful Parallel Quality Management System result past this boundary
 
 ## Strong Model Scaling
 

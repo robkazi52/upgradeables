@@ -23,10 +23,10 @@
   ],
   "purpose": "Give multiple behaviors a shared, sourced domain substrate without duplicating knowledge across Genes or turning a Core into an OS.",
   "recommended_skill_types": [
-    "recurring specialist domains",
-    "evidence-intensive decisions",
-    "policy or technical reference systems",
-    "multi-Gene domain bundles"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution"
   ],
   "usually_not_needed_for": [
     "the need is purely behavioral",
@@ -162,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "PART X. REASONING / SINGULARITY CORES",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "PART X. REASONING / SINGULARITY CORES"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

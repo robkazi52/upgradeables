@@ -24,10 +24,10 @@
   ],
   "purpose": "Avoid applying casual creative tolerance to precision domains or unnecessary rigidity to expressive domains.",
   "recommended_skill_types": [
-    "cross-domain skills",
-    "domain-specific rewriting",
-    "regulated advice",
-    "mixed precision/creative systems"
+    "communication and content generation",
+    "document and code transformation",
+    "long-context workflows",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "domain is ambiguous and stakes are high",
@@ -161,8 +161,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "Domain-Normalized Drift",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Domain-Normalized Drift"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

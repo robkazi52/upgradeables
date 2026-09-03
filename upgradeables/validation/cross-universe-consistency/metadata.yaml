@@ -25,10 +25,10 @@
   ],
   "purpose": "Prevent a final synthesis from combining mutually exclusive premises harvested from different candidate worlds.",
   "recommended_skill_types": [
-    "architecture alternatives",
-    "scenario planning",
-    "multi-hypothesis research",
-    "strategy selection"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "only one branch was explored",
@@ -148,13 +148,15 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-16. Cross-Universe Consistency Mode (CUCM)",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-16. Cross-Universe Consistency Mode (CUCM)"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "T4-16. Cross-Universe Consistency Mode (CUCM)",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "16. Recovery gaps — preserved, not guessed",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "T4-16. Cross-Universe Consistency Mode (CUCM)"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The draft has two incorrect dates, a duplicated section, and inconsistent voice.",
-      "expect": "A release-ready guide with traceable pass boundaries and no semantic regression.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Fixes dates and citations, then removes structural duplication, then aligns voice, and finally checks all three classes. Result: A release-ready guide with traceable pass boundaries and no semantic regression.",
+      "reject": "Omitting the mechanism or instead doing this: Rewrite the dated sentences for tone before establishing correct dates."
     },
     {
       "id": "structured-refinement-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "only one bounded defect exists",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Inventory defects and assign each to factual, structural, stylistic, or validation class.",
+      "reject": "Activating Structured Refinement Cycles solely because its name appears relevant"
     },
     {
       "id": "structured-refinement-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Factual correctness outranks structural elegance and style.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: separate defect classes",
+      "reject": "Silently violating the stated precedence for Structured Refinement Cycles"
     },
     {
       "id": "structured-refinement-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "mixed-objective drift",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: dependency order",
+      "reject": "Claiming a successful Structured Refinement Cycles result past this boundary"
     },
     {
       "id": "structured-refinement-strong-model-scaling",

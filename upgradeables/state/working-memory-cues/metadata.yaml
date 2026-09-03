@@ -22,10 +22,9 @@
   ],
   "purpose": "Keep easily forgotten but relevant information salient during execution.",
   "recommended_skill_types": [
-    "long transformations",
-    "repetitive tool loops",
-    "tasks with a few recurring constraints",
-    "review workflows"
+    "long-context workflows",
+    "multi-step task execution",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "the cue duplicates already salient text",

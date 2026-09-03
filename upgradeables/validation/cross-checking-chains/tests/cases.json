@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Identity, extraction, interpretation, and corroboration must all hold in order.",
-      "expect": "The chain stops at a unit mismatch before the unsafe conclusion is released.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Checks artifact identity, recomputes the value, tests claim entailment, then corroborates with an independent source. Result: The chain stops at a unit mismatch before the unsafe conclusion is released.",
+      "reject": "Omitting the mechanism or instead doing this: Count two pages quoting the same dataset as independent proof."
     },
     {
       "id": "cross-checking-chains-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "one direct authoritative check fully resolves a low-risk atom",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Select the critical claim or atom.",
+      "reject": "Activating Cross-Checking Chains solely because its name appears relevant"
     },
     {
       "id": "cross-checking-chains-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Prerequisite failure blocks dependent links from certifying the claim.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Test independence between links that claim corroboration.",
+      "reject": "Silently violating the stated precedence for Cross-Checking Chains"
     },
     {
       "id": "cross-checking-chains-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not certify when a mandatory link fails, is skipped, or depends on the same untested assumption as its supposed corroborator.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: dependency order",
+      "reject": "Claiming a successful Cross-Checking Chains result past this boundary"
     },
     {
       "id": "cross-checking-chains-strong-model-scaling",

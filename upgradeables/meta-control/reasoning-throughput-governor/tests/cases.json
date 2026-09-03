@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Generation can run in parallel, but source review and schema validation can become bottlenecks.",
-      "expect": "Steady validated output without queue or review collapse.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Limits active package batches, keeps validation one batch behind, reduces concurrency when rework rises, and reports accepted profiles per hour. Result: Steady validated output without queue or review collapse.",
+      "reject": "Omitting the mechanism or instead doing this: Launch all 200 at once or count unvalidated drafts as throughput."
     },
     {
       "id": "reasoning-throughput-governor-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task is one atomic operation",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Map the workflow stages, dependencies, and mandatory serial gates.",
+      "reject": "Activating Reasoning Throughput Governor solely because its name appears relevant"
     },
     {
       "id": "reasoning-throughput-governor-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Mandatory serial dependencies and vetoes override concurrency goals.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: measure useful completion rather than raw output volume",
+      "reject": "Silently violating the stated precedence for Reasoning Throughput Governor"
     },
     {
       "id": "reasoning-throughput-governor-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "raw-volume optimization",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: validation backpressure",
+      "reject": "Claiming a successful Reasoning Throughput Governor result past this boundary"
     },
     {
       "id": "reasoning-throughput-governor-strong-model-scaling",

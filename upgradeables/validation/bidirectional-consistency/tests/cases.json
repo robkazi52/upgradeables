@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The code-to-requirement story may be plausible without every criterion actually being entailed.",
-      "expect": "One missing error-handling criterion is found despite a plausible forward explanation.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Maps criteria to behavior, then reconstructs satisfied criteria from observed behavior alone. Result: One missing error-handling criterion is found despite a plausible forward explanation.",
+      "reject": "Omitting the mechanism or instead doing this: Count a criterion as satisfied because the PR description repeats it."
     },
     {
       "id": "bidirectional-consistency-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the transformation is intentionally irreversible and no reverse contract is claimed",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Lock the source atoms and declared transformation contract.",
+      "reject": "Activating Bidirectional Consistency solely because its name appears relevant"
     },
     {
       "id": "bidirectional-consistency-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "The declared transformation contract determines which information may be lost.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Keep forward and reverse judgments separately inspectable.",
+      "reject": "Silently violating the stated precedence for Bidirectional Consistency"
     },
     {
       "id": "bidirectional-consistency-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not certify when a material source constraint has no forward image or when the result implies a contradictory source condition.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: independent backward reconstruction for lossy or high-stakes transformations",
+      "reject": "Claiming a successful Bidirectional Consistency result past this boundary"
     },
     {
       "id": "bidirectional-consistency-strong-model-scaling",

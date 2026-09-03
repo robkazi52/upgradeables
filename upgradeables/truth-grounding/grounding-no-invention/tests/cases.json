@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The workflow must extract structured facts from supplied records.",
-      "expect": "A source-faithful intake object with an explicit gap.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Marks the field Not documented and continues with supported fields. Result: A source-faithful intake object with an explicit gap.",
+      "reject": "Omitting the mechanism or instead doing this: Infer the date from the surrounding chronology."
     },
     {
       "id": "grounding-no-invention-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "pure creative generation has no asserted factual source boundary",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare the allowed evidence boundary.",
+      "reject": "Activating Grounding / No-Invention solely because its name appears relevant"
     },
     {
       "id": "grounding-no-invention-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Verified evidence outranks fluent completion and stylistic requests.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Mark material uncertainty and undocumented fields.",
+      "reject": "Silently violating the stated precedence for Grounding / No-Invention"
     },
     {
       "id": "grounding-no-invention-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "When an essential material claim lacks support inside the authorized evidence boundary, omit it or fail closed.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: every asserted material fact must remain within the authorized evidence boundary",
+      "reject": "Claiming a successful Grounding / No-Invention result past this boundary"
     },
     {
       "id": "grounding-no-invention-strong-model-scaling",

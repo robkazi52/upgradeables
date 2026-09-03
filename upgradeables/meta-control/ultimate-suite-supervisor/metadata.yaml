@@ -23,10 +23,10 @@
   ],
   "purpose": "Keep a large OS or skill suite operating as one authority-consistent system across planning, execution, repair, and finalization.",
   "recommended_skill_types": [
-    "large modular OS execution",
-    "multi-mode skill suites",
-    "complex authoring or research systems",
-    "architecture plus execution pipelines"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "one small skill can complete the task",
@@ -173,8 +173,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-05. Ultimate Suite Supervisor",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-05. Ultimate Suite Supervisor"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

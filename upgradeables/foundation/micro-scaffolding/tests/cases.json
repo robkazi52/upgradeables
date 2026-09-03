@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Numbers, citations, and conclusion must remain unchanged while prose changes.",
-      "expect": "A clearer paragraph with all four invariants intact and no stale scaffold.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Creates the four-item local checklist, rewrites, verifies each item, promotes no new global state, and retires the checklist. Result: A clearer paragraph with all four invariants intact and no stale scaffold.",
+      "reject": "Omitting the mechanism or instead doing this: It does not reload the full paper, invent a new outline, or keep the checklist active for later sections."
     },
     {
       "id": "micro-scaffolding-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a one-step task has no fragile constraints",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the current subtask and the specific failure risks within it.",
+      "reject": "Activating Micro-Scaffolding solely because its name appears relevant"
     },
     {
       "id": "micro-scaffolding-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Global task locks and source boundaries outrank a local scaffold.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Keep the scaffold task-local and smaller than canonical workflow state.",
+      "reject": "Silently violating the stated precedence for Micro-Scaffolding"
     },
     {
       "id": "micro-scaffolding-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Escalate when the required control cannot remain local or when the scaffold grows into a duplicate of the parent plan/state.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: identify the fragile local invariants",
+      "reject": "Claiming a successful Micro-Scaffolding result past this boundary"
     },
     {
       "id": "micro-scaffolding-strong-model-scaling",

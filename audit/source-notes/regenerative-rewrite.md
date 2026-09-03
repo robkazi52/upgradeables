@@ -8,7 +8,7 @@
 
 ## Recovered facts and source anchors
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-03. Regenerative Rewrite (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
 
 ## Recovered or normalized purpose

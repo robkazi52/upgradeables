@@ -22,10 +22,10 @@
   ],
   "purpose": "Prevent attractive but non-governing alternatives from overriding the authoritative task branch.",
   "recommended_skill_types": [
-    "mixed-authority document sets",
-    "versioned policies",
-    "agent planning trees",
-    "retrieval with untrusted text"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "authority is unresolved",

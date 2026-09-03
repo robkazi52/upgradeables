@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "One trigger rule changes while safety, citation, and other browsing rules must remain stable.",
-      "expect": "A narrow behavioral change with invariant evidence.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Defines the one-condition delta, lists preserved rules, patches only the current-price branch, tests current and historical prompts, and confirms no unrelated diff. Result: A narrow behavioral change with invariant evidence.",
+      "reject": "Omitting the mechanism or instead doing this: Rewrite the whole browsing policy or silently alter source requirements."
     },
     {
       "id": "crispr-edit-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the governing structure is wrong",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the exact editable unit and the request's semantic delta.",
+      "reject": "Activating CRISPR Editing solely because its name appears relevant"
     },
     {
       "id": "crispr-edit-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Locked safety, truth, and authorization invariants cannot be included in the requested delta.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: declare target and invariants before editing",
+      "reject": "Silently violating the stated precedence for CRISPR Editing"
     },
     {
       "id": "crispr-edit-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "collateral semantic drift",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit invariant set",
+      "reject": "Claiming a successful CRISPR Editing result past this boundary"
     },
     {
       "id": "crispr-edit-strong-model-scaling",

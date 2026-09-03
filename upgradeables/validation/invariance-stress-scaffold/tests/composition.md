@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Order is supposed to be irrelevant to the safety judgment.
-- **Expect:** A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Compares findings across preserving variants and confirms the control legitimately changes the result. Result: A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.
+- **Reject:** Omitting the mechanism or instead doing this: Treat removal of a safety fact as a preserving perturbation.
 
 ## Negative Activation
 
 - **Given:** the transformed feature is itself decision-relevant
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: State the claimed invariant and observable pass condition.
+- **Reject:** Activating Invariance Stress Scaffold solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Meaning-changing controls are not invariant breaches.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Declare why each perturbation should preserve the target property.
+- **Reject:** Silently violating the stated precedence for Invariance Stress Scaffold
 
 ## Failure Boundary
 
 - **Given:** Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit invariant and at least one controlled counterfactual comparison when robustness is claimed
+- **Reject:** Claiming a successful Invariance Stress Scaffold result past this boundary
 
 ## Strong Model Scaling
 

@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The trace and recent change isolate a narrow high-value area.
-- **Expect:** A bounded root-cause analysis with an explicit expansion condition.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Concentrates on the implicated module and direct dependencies, then checks one plausible upstream alternative. Result: A bounded root-cause analysis with an explicit expansion condition.
+- **Reject:** Omitting the mechanism or instead doing this: It does not scan every repository file or ignore evidence pointing outside the module.
 
 ## Negative Activation
 
 - **Given:** the task requires broad discovery before a target is known
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Lock the question and define what evidence would make a region high value.
+- **Reject:** Activating Neuro-Focus solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Source coverage and truth gates override the desire to stay narrowly focused.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Make the focus target and exclusion boundary explicit.
+- **Reject:** Silently violating the stated precedence for Neuro-Focus
 
 ## Failure Boundary
 
 - **Given:** Relax or move focus when a credible alternative, uncovered dependency, or counterevidence lies outside the corridor.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit focus boundary
+- **Reject:** Claiming a successful Neuro-Focus result past this boundary
 
 ## Strong Model Scaling
 

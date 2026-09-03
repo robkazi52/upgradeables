@@ -152,10 +152,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-agent research
-- long investigations
-- regulated decisions
-- work requiring resumable rationale
+- analysis and decision support
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

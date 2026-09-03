@@ -23,10 +23,10 @@
   ],
   "purpose": "Enable adaptation, compression, or creativity without surrendering semantic control.",
   "recommended_skill_types": [
-    "document rewriting",
-    "cross-format conversion",
-    "summarization",
-    "creative work with fixed constraints"
+    "communication and content generation",
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows"
   ],
   "usually_not_needed_for": [
     "all content is zero-drift",
@@ -160,8 +160,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "Controlled Drift Corridors",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Controlled Drift Corridors"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "They need a shared current objective, source set, status, and unresolved-risk record.",
-      "expect": "Coordination and validation use the same current task truth.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Creates one versioned block and gives each agent a scoped view with controlled update rights. Result: Coordination and validation use the same current task truth.",
+      "reject": "Omitting the mechanism or instead doing this: It does not let each agent maintain an independent final status."
     },
     {
       "id": "stateblock-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a trivial one-turn task needs no persistent state",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Select only fields required to execute and verify the task.",
+      "reject": "Activating StateBlock solely because its name appears relevant"
     },
     {
       "id": "stateblock-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "System and explicit task authority govern locked fields; evidence updates factual fields only through their declared owners.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: maintain one canonical owner",
+      "reject": "Silently violating the stated precedence for StateBlock"
     },
     {
       "id": "stateblock-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not proceed on dependent actions when required state is contradictory or unknown.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: single source of truth",
+      "reject": "Claiming a successful StateBlock result past this boundary"
     },
     {
       "id": "stateblock-strong-model-scaling",

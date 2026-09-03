@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Two distinct health defects require ordered bounded repairs.",
-      "expect": "Scoped repairs coordinated under one health supervisor.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Routes the loop to Stuck-Pattern Reset, rechecks progress, then routes the local date conflict to Contradiction Micro-Repair without changing the global mode. Result: Scoped repairs coordinated under one health supervisor.",
+      "reject": "Omitting the mechanism or instead doing this: Activate every pack or redesign the deployment architecture."
     },
     {
       "id": "meta-supervisor-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task needs suite-wide mode declaration and Core-stack governance",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Request or read an evidence-bearing process-health snapshot.",
+      "reject": "Activating Meta-Supervisor Bundle solely because its name appears relevant"
     },
     {
       "id": "meta-supervisor-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Suite-wide mode or authority conflicts escalate to Ultimate Suite Supervisor.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: route from observable diagnosis",
+      "reject": "Silently violating the stated precedence for Meta-Supervisor Bundle"
     },
     {
       "id": "meta-supervisor-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "supervisor recursion",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: diagnosis-before-repair",
+      "reject": "Claiming a successful Meta-Supervisor Bundle result past this boundary"
     },
     {
       "id": "meta-supervisor-strong-model-scaling",

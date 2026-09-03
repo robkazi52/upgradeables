@@ -23,9 +23,10 @@
   ],
   "purpose": "Bind consequential decisions and state changes to an explicit governing authority so lower-priority modules cannot silently override them.",
   "recommended_skill_types": [
-    "multi-module agent workflows",
-    "policy-constrained execution",
-    "delegated task routing"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the workflow has no competing instruction or authority layers",

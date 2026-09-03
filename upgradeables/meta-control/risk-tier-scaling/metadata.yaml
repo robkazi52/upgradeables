@@ -23,10 +23,10 @@
   ],
   "purpose": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
   "recommended_skill_types": [
-    "medical, legal, financial, or safety-sensitive work",
-    "irreversible changes",
-    "uncertain external actions",
-    "mixed-risk artifacts"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "a binding protocol already specifies the exact controls",
@@ -161,8 +161,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-05. Risk-Tier Scaling",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-05. Risk-Tier Scaling"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

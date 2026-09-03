@@ -24,11 +24,10 @@
   ],
   "purpose": "Maximize useful completed work per unit time while respecting the Cognitive Governor's budget and every mandatory validation barrier.",
   "recommended_skill_types": [
-    "large package builds",
-    "multi-agent research",
-    "batch validation",
-    "latency-sensitive pipelines",
-    "branch-heavy planning"
+    "analysis and decision support",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the task is one atomic operation",
@@ -167,8 +166,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-13. Reasoning Throughput Governor (RTG)",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-13. Reasoning Throughput Governor (RTG)"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

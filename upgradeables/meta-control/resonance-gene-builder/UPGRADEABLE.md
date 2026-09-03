@@ -152,10 +152,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- recurring validator-generator pairings
-- stable Core-Gene couplings
-- multi-module evidence workflows
-- repeated authority-sensitive compositions
+- high-stakes evidence work
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 
@@ -185,6 +184,6 @@ Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovere
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-06. Resonance Genes (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 14. BEHAVIOR GENE + CORE SEPARATION — HISTORICAL GENESIS (historical_assistant_artifact)

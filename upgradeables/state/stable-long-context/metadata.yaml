@@ -25,10 +25,10 @@
   ],
   "purpose": "Extend usable context duration without treating the entire transcript as equally current or important.",
   "recommended_skill_types": [
-    "long research projects",
-    "large document synthesis",
-    "multi-session builds",
-    "extended agent runs"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "all relevant material fits clearly in one short exchange",

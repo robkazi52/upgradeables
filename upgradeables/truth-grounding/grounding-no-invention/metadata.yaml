@@ -23,11 +23,9 @@
   ],
   "purpose": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
   "recommended_skill_types": [
-    "source-grounded research",
-    "record and chart review",
-    "policy or legal analysis",
-    "citation-bearing authoring",
-    "tool-result reporting"
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "pure creative generation has no asserted factual source boundary",
@@ -147,8 +145,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T1-04. Grounding / No-Invention",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T1-04. Grounding / No-Invention"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

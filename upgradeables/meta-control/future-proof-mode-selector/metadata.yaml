@@ -24,10 +24,8 @@
   ],
   "purpose": "Keep workflows portable across frontier and smaller models, tool environments, and future hosts without weakening invariant controls.",
   "recommended_skill_types": [
-    "cross-model skill packages",
-    "tool-optional workflows",
-    "portable agent systems",
-    "deployments with different context and persistence support"
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the host and task profile are fixed",
@@ -161,8 +159,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-17. Future-Proof Mode Selector (FPMS)",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-17. Future-Proof Mode Selector (FPMS)"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

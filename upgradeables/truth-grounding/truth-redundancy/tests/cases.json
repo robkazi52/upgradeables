@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "A single transcription or calculation error could change the outcome.",
-      "expect": "An anchor pair ready for Multi-Truth Gating.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Records both anchors and checks their independence. Result: An anchor pair ready for Multi-Truth Gating.",
+      "reject": "Omitting the mechanism or instead doing this: Treat two paragraphs citing the same table as independent."
     },
     {
       "id": "truth-redundancy-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the claim is low risk and an authoritative primary source is decisive",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the consequential truth atom.",
+      "reject": "Activating Truth Redundancy solely because its name appears relevant"
     },
     {
       "id": "truth-redundancy-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Independence is invalid if both anchors share the same unverified upstream source.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Test independence, not just numerical multiplicity.",
+      "reject": "Silently violating the stated precedence for Truth Redundancy"
     },
     {
       "id": "truth-redundancy-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If no genuinely independent second anchor is available, report that limitation and do not claim redundant verification.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: when redundancy is claimed, the anchors must be genuinely independent",
+      "reject": "Claiming a successful Truth Redundancy result past this boundary"
     },
     {
       "id": "truth-redundancy-strong-model-scaling",

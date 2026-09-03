@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Narrative order and length may change, but dates, causal uncertainty, and remediation commitments must not.",
-      "expect": "A shorter readable brief whose protected meanings remain intact.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Assigns a wider corridor to prose compression and zero/narrow corridors to dates, causal claims, and commitments. Result: A shorter readable brief whose protected meanings remain intact.",
+      "reject": "Omitting the mechanism or instead doing this: It does not make causality sound certain for fluency."
     },
     {
       "id": "controlled-drift-corridors-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "all content is zero-drift",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Segment the task into regions with materially different tolerance.",
+      "reject": "Activating Controlled Drift Corridors solely because its name appears relevant"
     },
     {
       "id": "controlled-drift-corridors-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Higher-authority task constraints and zero-drift fields override corridor permissions.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: make drift opt-in and dimension-specific",
+      "reject": "Silently violating the stated precedence for Controlled Drift Corridors"
     },
     {
       "id": "controlled-drift-corridors-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Stop transformation when invariants cannot be measured or recovered.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit allowed dimensions",
+      "reject": "Claiming a successful Controlled Drift Corridors result past this boundary"
     },
     {
       "id": "controlled-drift-corridors-strong-model-scaling",

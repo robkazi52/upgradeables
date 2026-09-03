@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "It needs claims and source pointers, not identities or strategy notes.",
-      "expect": "Citation checking occurs with minimal disclosure and safe merge boundaries.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Projects claims, citations, relevant constraints, and version metadata with no mutation rights. Result: Citation checking occurs with minimal disclosure and safe merge boundaries.",
+      "reject": "Omitting the mechanism or instead doing this: It does not expose identities or allow the checker to edit task authority."
     },
     {
       "id": "structured-state-projection-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "one trusted consumer legitimately needs the whole safe state",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the consumer and its minimum information need.",
+      "reject": "Activating Structured State Projection solely because its name appears relevant"
     },
     {
       "id": "structured-state-projection-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Mandatory safety and authority fields override a consumer's request to omit them.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: include mandatory constraints even when they are not task content",
+      "reject": "Silently violating the stated precedence for Structured State Projection"
     },
     {
       "id": "structured-state-projection-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not project when required field dependencies or safety constraints are unknown.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: least privilege",
+      "reject": "Claiming a successful Structured State Projection result past this boundary"
     },
     {
       "id": "structured-state-projection-strong-model-scaling",

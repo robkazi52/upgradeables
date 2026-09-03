@@ -23,11 +23,10 @@
   ],
   "purpose": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.",
   "recommended_skill_types": [
-    "paraphrasing",
-    "tone adjustment",
-    "format conversion",
-    "clarity polishing",
-    "audience adaptation"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the user asks to change substantive meaning",
@@ -158,8 +157,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T1-10. Safe Rewrite Logic",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T1-10. Safe Rewrite Logic"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

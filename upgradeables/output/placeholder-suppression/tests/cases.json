@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "README templates, manifests, and examples may retain setup prompts or dummy URLs.",
-      "expect": "A release with no accidental placeholders and one documented intentional fixture.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Finds a `[your-org]` README token, an empty license field, and `example.com` in a test fixture; resolves the first two and allowlists the fixture by path before rescanning. Result: A release with no accidental placeholders and one documented intentional fixture.",
+      "reject": "Omitting the mechanism or instead doing this: Replace the license with a guess or globally allow every `example.com` occurrence."
     },
     {
       "id": "placeholder-suppression-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the deliverable is explicitly a template whose placeholders are the product",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Load the artifact's required sections, fields, and variable schema.",
+      "reject": "Activating Placeholder Suppression solely because its name appears relevant"
     },
     {
       "id": "placeholder-suppression-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Never fabricate content to satisfy completion.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: combine lexical and structural scans",
+      "reject": "Silently violating the stated precedence for Placeholder Suppression"
     },
     {
       "id": "placeholder-suppression-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "false completion",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: lexical plus schema scan",
+      "reject": "Claiming a successful Placeholder Suppression result past this boundary"
     },
     {
       "id": "placeholder-suppression-strong-model-scaling",

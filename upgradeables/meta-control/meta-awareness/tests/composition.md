@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The process may be stuck even though each agent reports activity.
-- **Expect:** A grounded process-health diagnosis ready for supervisor action.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Detects unchanged state and repeated action signatures, emits repair-required with evidence, and routes the finding to Meta-Supervisor. Result: A grounded process-health diagnosis ready for supervisor action.
+- **Reject:** Omitting the mechanism or instead doing this: Claim the agents are confused or reset their work directly.
 
 ## Negative Activation
 
 - **Given:** a simple task has no meaningful process state
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Read declared mode, locked goal, state version, active modules, and expected next transition.
+- **Reject:** Activating Meta-Awareness Pack solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** An unverifiable signal cannot be reported as a failure or a pass.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: limit claims to observable process state
+- **Reject:** Silently violating the stated precedence for Meta-Awareness Pack
 
 ## Failure Boundary
 
 - **Given:** anthropomorphic narratives
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: observable-only claims
+- **Reject:** Claiming a successful Meta-Awareness Pack result past this boundary
 
 ## Strong Model Scaling
 

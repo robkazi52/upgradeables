@@ -153,10 +153,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long agent loops
-- high-fidelity transformations
-- safety-critical execution
-- multi-step builds
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

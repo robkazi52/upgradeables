@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Identity, extraction, interpretation, and corroboration must all hold in order.
-- **Expect:** The chain stops at a unit mismatch before the unsafe conclusion is released.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Checks artifact identity, recomputes the value, tests claim entailment, then corroborates with an independent source. Result: The chain stops at a unit mismatch before the unsafe conclusion is released.
+- **Reject:** Omitting the mechanism or instead doing this: Count two pages quoting the same dataset as independent proof.
 
 ## Negative Activation
 
 - **Given:** one direct authoritative check fully resolves a low-risk atom
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Select the critical claim or atom.
+- **Reject:** Activating Cross-Checking Chains solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Prerequisite failure blocks dependent links from certifying the claim.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Test independence between links that claim corroboration.
+- **Reject:** Silently violating the stated precedence for Cross-Checking Chains
 
 ## Failure Boundary
 
 - **Given:** Do not certify when a mandatory link fails, is skipped, or depends on the same untested assumption as its supposed corroborator.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: dependency order
+- **Reject:** Claiming a successful Cross-Checking Chains result past this boundary
 
 ## Strong Model Scaling
 

@@ -152,10 +152,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-agent systems
-- domain isolation
-- sensitive workflows
-- tool calls with narrow schemas
+- communication and content generation
+- document and code transformation
+- long-context workflows
+- multi-step task execution
 
 ## Example Composition
 

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Many attractive documentation additions could distract from required build and validation outputs.",
-      "expect": "Completion is evaluated against the original concrete specification.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Locks those fields, gates work against them, and records any user-authorized scope change. Result: Completion is evaluated against the original concrete specification.",
+      "reject": "Omitting the mechanism or instead doing this: It does not stop after scaffolding or rewrite the source corpus."
     },
     {
       "id": "task-set-lock-in-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task is still materially ambiguous",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Extract the objective, required artifacts, constraints, success tests, and exclusions.",
+      "reject": "Activating Task-Set Lock-In solely because its name appears relevant"
     },
     {
       "id": "task-set-lock-in-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "System and latest explicit authorized user scope changes override older task-set versions.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: include non-goals",
+      "reject": "Silently violating the stated precedence for Task-Set Lock-In"
     },
     {
       "id": "task-set-lock-in-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not claim completion when a required artifact or quality gate lacks evidence.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: objective",
+      "reject": "Claiming a successful Task-Set Lock-In result past this boundary"
     },
     {
       "id": "task-set-lock-in-strong-model-scaling",

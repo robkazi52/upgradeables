@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The global guarantee depends on cross-module composition.
-- **Expect:** A cross-layer mismatch blocks the global guarantee until integration behavior changes.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Traces the invariant down and finds one inter-module path committing before validation. Result: A cross-layer mismatch blocks the global guarantee until integration behavior changes.
+- **Reject:** Omitting the mechanism or instead doing this: Approve because each module is locally correct.
 
 ## Negative Activation
 
 - **Given:** the artifact has only one meaningful level
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Map the artifact into atom, local unit, intermediate group, and global levels.
+- **Reject:** Activating Multi-Layer Consistency solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A lower-level verified contradiction defeats an unsupported global summary.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Check boundary relationships, not only each level in isolation.
+- **Reject:** Silently violating the stated precedence for Multi-Layer Consistency
 
 ## Failure Boundary
 
 - **Given:** Do not certify when a global claim lacks lower-layer support or a lower-layer fact violates an undeclared global exception.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: at least one upward and one downward boundary check in hierarchical work
+- **Reject:** Claiming a successful Multi-Layer Consistency result past this boundary
 
 ## Strong Model Scaling
 

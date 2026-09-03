@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The artifact crosses a precision domain and a low-stakes expressive region.",
-      "expect": "Domain-appropriate drift limits across one mixed artifact.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Starts with narrow clinical defaults and broader stylistic defaults, then applies section-specific corridors. Result: Domain-appropriate drift limits across one mixed artifact.",
+      "reject": "Omitting the mechanism or instead doing this: It does not let brand tone soften contraindications or force clinical prose rigidity onto the greeting."
     },
     {
       "id": "domain-normalized-drift-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "domain is ambiguous and stakes are high",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the operative domain and mixed-domain boundaries.",
+      "reject": "Activating Domain-Normalized Drift Field solely because its name appears relevant"
     },
     {
       "id": "domain-normalized-drift-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Explicit task/source authority outranks the domain profile.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: treat domain values as defaults",
+      "reject": "Silently violating the stated precedence for Domain-Normalized Drift Field"
     },
     {
       "id": "domain-normalized-drift-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not select a permissive profile when domain classification or consequence is uncertain.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: consequence assessment",
+      "reject": "Claiming a successful Domain-Normalized Drift Field result past this boundary"
     },
     {
       "id": "domain-normalized-drift-strong-model-scaling",

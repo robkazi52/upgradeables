@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The workflow needs a Domain Core, authoring Gene, POWER planning, SAFE drafting, repair packs, and final grounding and style checks.",
-      "expect": "One authority-consistent suite execution with an auditable final gate.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Declares HYBRID, loads the required Core and Gene, gates the transition, delegates a local loop to Meta-Supervisor, chooses CRISPR for one citation defect, and owns final health acceptance. Result: One authority-consistent suite execution with an auditable final gate.",
+      "reject": "Omitting the mechanism or instead doing this: Have Meta-Supervisor redesign the report architecture or load every available module."
     },
     {
       "id": "ultimate-suite-supervisor-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "one small skill can complete the task",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Load the suite manifest, task, host capabilities, risk, and authority rules.",
+      "reject": "Activating Ultimate Suite Supervisor solely because its name appears relevant"
     },
     {
       "id": "ultimate-suite-supervisor-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Truth, safety, and explicit user authority outrank suite preferences.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: declare mode explicitly",
+      "reject": "Silently violating the stated precedence for Ultimate Suite Supervisor"
     },
     {
       "id": "ultimate-suite-supervisor-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "monolithic full-suite loading",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: mode declaration",
+      "reject": "Claiming a successful Ultimate Suite Supervisor result past this boundary"
     },
     {
       "id": "ultimate-suite-supervisor-strong-model-scaling",

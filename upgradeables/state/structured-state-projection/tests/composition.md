@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** It needs claims and source pointers, not identities or strategy notes.
-- **Expect:** Citation checking occurs with minimal disclosure and safe merge boundaries.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Projects claims, citations, relevant constraints, and version metadata with no mutation rights. Result: Citation checking occurs with minimal disclosure and safe merge boundaries.
+- **Reject:** Omitting the mechanism or instead doing this: It does not expose identities or allow the checker to edit task authority.
 
 ## Negative Activation
 
 - **Given:** one trusted consumer legitimately needs the whole safe state
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Identify the consumer and its minimum information need.
+- **Reject:** Activating Structured State Projection solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Mandatory safety and authority fields override a consumer's request to omit them.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: include mandatory constraints even when they are not task content
+- **Reject:** Silently violating the stated precedence for Structured State Projection
 
 ## Failure Boundary
 
 - **Given:** Do not project when required field dependencies or safety constraints are unknown.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: least privilege
+- **Reject:** Claiming a successful Structured State Projection result past this boundary
 
 ## Strong Model Scaling
 

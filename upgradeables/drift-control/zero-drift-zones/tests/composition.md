@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Dose, units, contraindication, and exception clause cannot drift while explanation can compress.
-- **Expect:** A shorter card with verified critical content.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Marks those atoms as zero-drift, propagates their IDs, and checks the card before release. Result: A shorter card with verified critical content.
+- **Reject:** Omitting the mechanism or instead doing this: It does not freeze all explanatory prose or simplify away the exception.
 
 ## Negative Activation
 
 - **Given:** the user explicitly authorizes change to the marked content
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Locate high-consequence atoms such as names, numbers, negations, conditions, quotations, obligations, and safety thresholds.
+- **Reject:** Activating Zero-Drift Zones solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Latest authorized source correction may replace a zone, with version history retained.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: keep zones minimal and explicit
+- **Reject:** Silently violating the stated precedence for Zero-Drift Zones
 
 ## Failure Boundary
 
 - **Given:** Block release when a required zone fails validation.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: minimal immutable atoms
+- **Reject:** Claiming a successful Zero-Drift Zones result past this boundary
 
 ## Strong Model Scaling
 

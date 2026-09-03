@@ -148,10 +148,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long transformations
-- repetitive tool loops
-- tasks with a few recurring constraints
-- review workflows
+- long-context workflows
+- multi-step task execution
+- review and quality assurance
 
 ## Example Composition
 

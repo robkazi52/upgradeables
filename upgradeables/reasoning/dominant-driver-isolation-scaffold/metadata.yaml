@@ -21,10 +21,8 @@
   ],
   "purpose": "Separate high-leverage causes or constraints from correlated, downstream, or low-impact factors.",
   "recommended_skill_types": [
-    "root-cause analysis",
-    "business driver analysis",
-    "performance bottleneck diagnosis",
-    "risk prioritization"
+    "analysis and decision support",
+    "structured problem solving"
   ],
   "usually_not_needed_for": [
     "the system is known to require irreducibly joint causes",
@@ -149,8 +147,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

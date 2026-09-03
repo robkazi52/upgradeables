@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The completion and two discovered anomalies change live task state.",
-      "expect": "Version 9 accurately reflects progress and exceptions.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Writes a version-checked delta marking validation complete and adding cited anomalies. Result: Version 9 accurately reflects progress and exceptions.",
+      "reject": "Omitting the mechanism or instead doing this: It does not rewrite the objective or infer that the entire project is complete."
     },
     {
       "id": "selfblock-auto-update-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the host cannot write persistent state",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define update-triggering events and mutable fields.",
+      "reject": "Activating SelfBlock Auto-Update solely because its name appears relevant"
     },
     {
       "id": "selfblock-auto-update-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Locked goal, authority, and permission fields cannot be auto-mutated by lower-authority observations.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: update by delta",
+      "reject": "Silently violating the stated precedence for SelfBlock Auto-Update"
     },
     {
       "id": "selfblock-auto-update-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Disable automatic writes when atomicity, schema validation, or authority checks are unavailable.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: delta discipline",
+      "reject": "Claiming a successful SelfBlock Auto-Update result past this boundary"
     },
     {
       "id": "selfblock-auto-update-strong-model-scaling",

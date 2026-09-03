@@ -136,10 +136,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- deployments
-- schema or API changes
-- financial or external communications
-- multi-stage automation
+- analysis and decision support
+- high-stakes evidence work
+- review and quality assurance
+- structured problem solving
 
 ## Example Composition
 
@@ -169,5 +169,5 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-17. Forethought / Checkpoints (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

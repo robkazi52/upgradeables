@@ -22,10 +22,9 @@
   ],
   "purpose": "Obtain real alternative search without losing control of truth, constraints, cost, or convergence.",
   "recommended_skill_types": [
-    "ambiguous design choices",
-    "research plans",
-    "narrative or document architectures",
-    "competing causal models"
+    "analysis and decision support",
+    "source-grounded research",
+    "structured problem solving"
   ],
   "usually_not_needed_for": [
     "a locked source dictates a single faithful transformation",
@@ -163,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-01. Multiverse Engine",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-01. Multiverse Engine"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

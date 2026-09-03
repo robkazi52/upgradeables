@@ -23,9 +23,10 @@
   ],
   "purpose": "Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.",
   "recommended_skill_types": [
-    "design-to-implementation workflows",
-    "iterative planning",
-    "creative work with a committed deliverable"
+    "analysis and decision support",
+    "communication and content generation",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the task is purely exploratory and requires no commitment",
@@ -137,8 +138,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-06. Progressive Mode Shaping",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-06. Progressive Mode Shaping"
     }
   ],
   "source_support": "sufficiently-recovered",

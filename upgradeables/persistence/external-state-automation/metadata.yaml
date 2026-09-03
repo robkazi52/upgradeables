@@ -23,9 +23,9 @@
   ],
   "purpose": "Serialize and restore important task state through real files, memory stores, databases, or project documents when the host supports persistence.",
   "recommended_skill_types": [
-    "multi-session projects",
-    "durable agent workflows",
-    "long document production"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the task ends in one session and needs no continuation",
@@ -137,8 +137,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-20. External State Automation",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-20. External State Automation"
     }
   ],
   "source_support": "sufficiently-recovered",

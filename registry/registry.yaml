@@ -43,11 +43,10 @@
       ],
       "purpose": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.",
       "recommended_skill_types": [
-        "multi-source research",
-        "long-document analysis",
-        "evidence-heavy authoring",
-        "policy or legal evidence review",
-        "large modular agent workflows"
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "a short single source fits comfortably in context",
@@ -181,8 +180,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-16. ABF — Activation-Budget Funnel",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-16. ABF — Activation-Budget Funnel"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -226,10 +226,8 @@
       ],
       "purpose": "Protect a working OS or workflow from speculative capabilities while preserving a path for evidence-based evolution.",
       "recommended_skill_types": [
-        "new loader or validator trials",
-        "tool integrations",
-        "alternative routing logic",
-        "model-specific optimization"
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the change is a mandatory security repair",
@@ -361,8 +359,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-21. Adapter-First Experimentation",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-21. Adapter-First Experimentation"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -406,9 +405,10 @@
       ],
       "purpose": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates.",
       "recommended_skill_types": [
-        "ambiguous diagnosis",
-        "architecture choice with two credible patterns",
-        "research synthesis with competing explanations"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the answer is directly established by a locked source",
@@ -529,8 +529,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-19. Anti-Tunnel Vision",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-19. Anti-Tunnel Vision"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -569,9 +570,10 @@
       ],
       "purpose": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
       "recommended_skill_types": [
-        "Skill and OS architecture",
-        "workflow design",
-        "framework refactoring"
+        "analysis and decision support",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "structured problem solving"
       ],
       "usually_not_needed_for": [
         "the task is a narrow domain execution job with no architecture decision",
@@ -684,8 +686,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "O-01. Architect Orchestrator",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "O-01. Architect Orchestrator"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -718,10 +721,10 @@
       ],
       "purpose": "Reduce attention burden while retaining the facts, constraints, provenance, and retrieval pointers required by the current subtask.",
       "recommended_skill_types": [
-        "long-context analysis",
-        "large codebase navigation",
-        "multi-document synthesis",
-        "stateful agent workflows"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the original context is already small",
@@ -895,10 +898,10 @@
       ],
       "purpose": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability.",
       "recommended_skill_types": [
-        "agentic tool use",
-        "research status reporting",
-        "coding and build completion reports",
-        "high-stakes analysis"
+        "communication and content generation",
+        "document and code transformation",
+        "high-stakes evidence work",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the output makes no claim about evidence, actions, capability, or completion",
@@ -1009,8 +1012,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-18. Authenticity & Anti-Evasion Principle",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-18. Authenticity & Anti-Evasion Principle"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -1054,9 +1058,10 @@
       ],
       "purpose": "Bind consequential decisions and state changes to an explicit governing authority so lower-priority modules cannot silently override them.",
       "recommended_skill_types": [
-        "multi-module agent workflows",
-        "policy-constrained execution",
-        "delegated task routing"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the workflow has no competing instruction or authority layers",
@@ -1207,10 +1212,10 @@
       ],
       "purpose": "Turn repeatable behavior, logic, evidence handling, and output contracts into swappable components that compose with Cores and validators.",
       "recommended_skill_types": [
-        "recurring reasoning patterns",
-        "domain-specific writing behavior",
-        "tone or risk-emphasis modules",
-        "research synthesis behaviors"
+        "communication and content generation",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the content is primarily domain knowledge",
@@ -1345,8 +1350,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "PART IX. BEHAVIOR GENE OS",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "PART IX. BEHAVIOR GENE OS"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -1389,10 +1395,10 @@
       ],
       "purpose": "Expose lossy, non-invertible, or spuriously plausible transformations that one-way review misses.",
       "recommended_skill_types": [
-        "requirements-to-implementation checks",
-        "summary-to-source checks",
-        "schema migrations",
-        "plan-to-objective traceability"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the transformation is intentionally irreversible and no reverse contract is claimed",
@@ -1506,13 +1512,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-18. Bidirectional Consistency",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-18. Bidirectional Consistency"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T2-18. Bidirectional Consistency",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "Interpretation rule for the frozen T2 registry",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T2-18. Bidirectional Consistency"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -1551,10 +1559,10 @@
       ],
       "purpose": "Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates.",
       "recommended_skill_types": [
-        "document revision",
-        "code or prompt refinement",
-        "multi-pass synthesis",
-        "quality-controlled drafting"
+        "analysis and decision support",
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "a mandatory validator has not yet passed",
@@ -1681,8 +1689,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-01. Bounded ExIt",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-01. Bounded ExIt"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -1726,10 +1735,10 @@
       ],
       "purpose": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.",
       "recommended_skill_types": [
-        "research reports",
-        "technical documentation",
-        "legal or policy synthesis",
-        "fact-checked public writing"
+        "communication and content generation",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the output contains no externally attributed factual claims",
@@ -1858,18 +1867,21 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-13. Citation Fidelity Gate",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-13. Citation Fidelity Gate"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T3-13. Citation Fidelity Gate",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "13. Reasoning / Singularity Cores",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T3-13. Citation Fidelity Gate"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-          "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW",
-          "source_kind": "historical_assistant_artifact"
+          "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION",
+          "source_kind": "historical_assistant_artifact",
+          "anchor_detail": "17. VERBATIM-COPY / FIDELITY WORKFLOW"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -1906,10 +1918,9 @@
       ],
       "purpose": "Keep clarification proportional: ask only for materially blocking information, otherwise continue with the narrowest explicit assumption or bounded partial result.",
       "recommended_skill_types": [
-        "requirements intake",
-        "ambiguous data transformation",
-        "multi-constraint planning",
-        "high-stakes evidence work"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the missing detail cannot change a valid result",
@@ -2031,8 +2042,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-03. Clarification Gateway / Clarification-First",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-03. Clarification Gateway / Clarification-First"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -2076,10 +2088,10 @@
       ],
       "purpose": "Prevent both expensive overthinking of trivial work and unsafe underchecking of consequential work.",
       "recommended_skill_types": [
-        "mixed-risk queues",
-        "bounded research",
-        "iterative authoring",
-        "cost-sensitive agent workflows"
+        "analysis and decision support",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "a mandatory protocol fixes the review budget",
@@ -2215,8 +2227,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-17. Reasoning Budget / Cognitive Governor",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-17. Reasoning Budget / Cognitive Governor"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -2259,10 +2272,10 @@
       ],
       "purpose": "Detect long-horizon drift early without rerunning a full review after every step.",
       "recommended_skill_types": [
-        "long coding sessions",
-        "multi-stage research",
-        "agent orchestration",
-        "large document production"
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the task completes in one obvious operation",
@@ -2379,18 +2392,21 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-04. Global Coherence Heartbeat",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-04. Global Coherence Heartbeat"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "A-04. Global Coherence Heartbeat",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "1. Canonical current consolidated inventory",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "A-04. Global Coherence Heartbeat"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-          "heading": "Coherence Heartbeat",
-          "source_kind": "historical_assistant_artifact"
+          "heading": "`HEARTBEAT_SNAPSHOTS_T1`",
+          "source_kind": "historical_assistant_artifact",
+          "anchor_detail": "Coherence Heartbeat"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -2424,10 +2440,10 @@
       ],
       "purpose": "Repair cross-part inconsistencies while preventing endless self-review.",
       "recommended_skill_types": [
-        "multi-file changes",
-        "long-form documents",
-        "multi-agent synthesis",
-        "cross-component specification repair"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the discrepancy is isolated and a single deterministic correction suffices",
@@ -2548,18 +2564,21 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-11. Coherence Loops",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-11. Coherence Loops"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "A-11. Coherence Loops",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "11. Advanced architecture Upgradeables retained",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "A-11. Coherence Loops"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-          "heading": "9. BOUNDED EXIT",
-          "source_kind": "historical_assistant_artifact"
+          "heading": "11.6 Refinement",
+          "source_kind": "historical_assistant_artifact",
+          "anchor_detail": "9. BOUNDED EXIT"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -2594,10 +2613,10 @@
       ],
       "purpose": "Maintain semantic reliability across weak and strong runtimes without burdening every runtime identically.",
       "recommended_skill_types": [
-        "cross-model skills",
-        "variable tool availability",
-        "cost-limited execution",
-        "mixed-capability agents"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "adaptation would weaken factual or safety invariants",
@@ -2734,8 +2753,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "Compute-Adaptive Drift",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "Compute-Adaptive Drift"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -2781,10 +2801,9 @@
       ],
       "purpose": "Resolve direct logical or factual inconsistency while preserving every compatible claim and locked constraint.",
       "recommended_skill_types": [
-        "conflicting requirements",
-        "inconsistent dates or quantities",
-        "state snapshots with mutually exclusive flags",
-        "documents whose conclusion contradicts a cited premise"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the apparent contradiction is a legitimate difference in scope or time",
@@ -2908,8 +2927,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-04. Contradiction Micro-Repair Pack",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-04. Contradiction Micro-Repair Pack"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -2948,10 +2968,10 @@
       ],
       "purpose": "Enable adaptation, compression, or creativity without surrendering semantic control.",
       "recommended_skill_types": [
-        "document rewriting",
-        "cross-format conversion",
-        "summarization",
-        "creative work with fixed constraints"
+        "communication and content generation",
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows"
       ],
       "usually_not_needed_for": [
         "all content is zero-drift",
@@ -3085,8 +3105,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "Controlled Drift Corridors",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "Controlled Drift Corridors"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -3130,10 +3151,10 @@
       ],
       "purpose": "Make reasoning-relevant state portable and auditable while preserving the boundary between useful state and hidden internal deliberation.",
       "recommended_skill_types": [
-        "multi-agent research",
-        "long investigations",
-        "regulated decisions",
-        "work requiring resumable rationale"
+        "analysis and decision support",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a one-turn answer has no meaningful state",
@@ -3313,10 +3334,10 @@
       ],
       "purpose": "Make counterfactual exploration safe and auditable by preserving an explicit boundary between factual, evaluative, framing, and hypothetical phases.",
       "recommended_skill_types": [
-        "scenario analysis",
-        "causal counterfactuals",
-        "planning under alternatives",
-        "creative work mixed with factual sources"
+        "communication and content generation",
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows"
       ],
       "usually_not_needed_for": [
         "the task contains no hypothetical branch",
@@ -3434,8 +3455,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-12. Counterfactual Integrity Gate",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-12. Counterfactual Integrity Gate"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -3478,10 +3500,10 @@
       ],
       "purpose": "Protect factual extraction and reporting tasks from unsolicited counterfactual elaboration.",
       "recommended_skill_types": [
-        "record extraction",
-        "source-faithful summarization",
-        "incident reporting",
-        "citation-bound authoring"
+        "communication and content generation",
+        "document and code transformation",
+        "high-stakes evidence work",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task explicitly requests scenarios, hypotheses, or counterfactual analysis",
@@ -3595,8 +3617,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -3639,10 +3662,9 @@
       ],
       "purpose": "Make high-confidence micro-edits to structured systems without collateral semantic or interface drift.",
       "recommended_skill_types": [
-        "one rule change in a prompt or skill",
-        "small schema-compatible config edit",
-        "precise clause replacement",
-        "localized architecture adjustment"
+        "document and code transformation",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the governing structure is wrong",
@@ -3780,8 +3802,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-07. CRISPR Editing",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-07. CRISPR Editing"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -3824,11 +3847,10 @@
       ],
       "purpose": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
       "recommended_skill_types": [
-        "medical or legal factual synthesis",
-        "deployment decisions",
-        "financial calculations",
-        "requirements verification",
-        "citation-heavy research"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "no factual conclusion or consequential action depends on the output",
@@ -3952,13 +3974,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-04. Critical Atomic Verification",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-04. Critical Atomic Verification"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T3-04. Critical Atomic Verification",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "1. Canonical current consolidated inventory",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T3-04. Critical Atomic Verification"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -3995,10 +4019,9 @@
       ],
       "purpose": "Make validation ordered, traceable, and resistant to repeated correlated checking.",
       "recommended_skill_types": [
-        "high-stakes fact verification",
-        "data pipeline validation",
-        "release qualification",
-        "multi-source research"
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "one direct authoritative check fully resolves a low-risk atom",
@@ -4119,18 +4142,21 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-07. Cross-Checking Chains",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-07. Cross-Checking Chains"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T3-07. Cross-Checking Chains",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "1. Canonical current consolidated inventory",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T3-07. Cross-Checking Chains"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-          "heading": "8.1 QMS-M",
-          "source_kind": "historical_assistant_artifact"
+          "heading": "8.3 QMS-XP — Cross-Phase QMS",
+          "source_kind": "historical_assistant_artifact",
+          "anchor_detail": "8.1 QMS-M"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -4166,9 +4192,9 @@
       ],
       "purpose": "Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.",
       "recommended_skill_types": [
-        "multi-document synthesis",
-        "multi-agent handoffs",
-        "parallel workstream integration"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the contexts are unrelated",
@@ -4323,10 +4349,10 @@
       ],
       "purpose": "Prevent a final synthesis from combining mutually exclusive premises harvested from different candidate worlds.",
       "recommended_skill_types": [
-        "architecture alternatives",
-        "scenario planning",
-        "multi-hypothesis research",
-        "strategy selection"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "only one branch was explored",
@@ -4446,13 +4472,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-16. Cross-Universe Consistency Mode (CUCM)",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-16. Cross-Universe Consistency Mode (CUCM)"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T4-16. Cross-Universe Consistency Mode (CUCM)",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "16. Recovery gaps — preserved, not guessed",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T4-16. Cross-Universe Consistency Mode (CUCM)"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -4490,10 +4518,10 @@
       ],
       "purpose": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.",
       "recommended_skill_types": [
-        "recommendations",
-        "go/no-go reviews",
-        "option selection",
-        "resource allocation"
+        "analysis and decision support",
+        "communication and content generation",
+        "document and code transformation",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the task asks only for faithful extraction or description",
@@ -4616,8 +4644,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -4656,10 +4685,10 @@
       ],
       "purpose": "Give multiple behaviors a shared, sourced domain substrate without duplicating knowledge across Genes or turning a Core into an OS.",
       "recommended_skill_types": [
-        "recurring specialist domains",
-        "evidence-intensive decisions",
-        "policy or technical reference systems",
-        "multi-Gene domain bundles"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "the need is purely behavioral",
@@ -4795,8 +4824,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "PART X. REASONING / SINGULARITY CORES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "PART X. REASONING / SINGULARITY CORES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -4841,10 +4871,10 @@
       ],
       "purpose": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
       "recommended_skill_types": [
-        "mixed-domain workspaces",
-        "multi-tenant assistants",
-        "regulated workflows",
-        "parallel specialist agents"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the task is genuinely single-domain",
@@ -5026,10 +5056,10 @@
       ],
       "purpose": "Avoid applying casual creative tolerance to precision domains or unnecessary rigidity to expressive domains.",
       "recommended_skill_types": [
-        "cross-domain skills",
-        "domain-specific rewriting",
-        "regulated advice",
-        "mixed precision/creative systems"
+        "communication and content generation",
+        "document and code transformation",
+        "long-context workflows",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "domain is ambiguous and stakes are high",
@@ -5163,8 +5193,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "Domain-Normalized Drift",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "Domain-Normalized Drift"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -5208,10 +5239,8 @@
       ],
       "purpose": "Separate high-leverage causes or constraints from correlated, downstream, or low-impact factors.",
       "recommended_skill_types": [
-        "root-cause analysis",
-        "business driver analysis",
-        "performance bottleneck diagnosis",
-        "risk prioritization"
+        "analysis and decision support",
+        "structured problem solving"
       ],
       "usually_not_needed_for": [
         "the system is known to require irreducibly joint causes",
@@ -5336,8 +5365,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -5378,10 +5408,10 @@
       ],
       "purpose": "Preserve established drift resistance across pipelines rather than only at the original source boundary.",
       "recommended_skill_types": [
-        "multi-stage generation",
-        "agent pipelines",
-        "source-to-summary-to-decision workflows",
-        "format conversion chains"
+        "analysis and decision support",
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "no downstream artifact derives from protected material",
@@ -5516,8 +5546,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "Drift Immunity Propagation",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "Drift Immunity Propagation"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -5562,10 +5593,10 @@
       ],
       "purpose": "Stop known drift attractors from repeatedly re-entering active reasoning without destroying potentially useful history.",
       "recommended_skill_types": [
-        "long branching investigations",
-        "iterative drafting",
-        "agent workflows with recurring stale branches",
-        "large mixed-authority contexts"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the branch is unresolved rather than rejected",
@@ -5751,10 +5782,10 @@
       ],
       "purpose": "Allocate strictness where meaning is fragile and flexibility where variation is valuable.",
       "recommended_skill_types": [
-        "mixed-content rewriting",
-        "summaries",
-        "format migrations",
-        "multi-stage synthesis"
+        "communication and content generation",
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "every element has the same explicit tolerance",
@@ -5937,10 +5968,10 @@
       ],
       "purpose": "Keep execution aligned after distracting context, repeated transformation, or model error.",
       "recommended_skill_types": [
-        "long agent workflows",
-        "high-fidelity editing",
-        "multi-stage synthesis",
-        "policy-bound generation"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "no semantic baseline or allowed corridor exists",
@@ -6076,8 +6107,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-02. Drift Suppression",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-02. Drift Suppression"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -6124,10 +6156,10 @@
       ],
       "purpose": "Concentrate analysis and verification where local marginal value is highest instead of applying uniform depth across a task.",
       "recommended_skill_types": [
-        "heterogeneous documents",
-        "mixed-risk code changes",
-        "large research corpora",
-        "multi-stage plans with uneven uncertainty"
+        "analysis and decision support",
+        "document and code transformation",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "every unit has the same mandated review depth",
@@ -6263,8 +6295,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-12. Dynamic Depth Allocation (DDA)",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-12. Dynamic Depth Allocation (DDA)"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -6308,11 +6341,10 @@
       ],
       "purpose": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact.",
       "recommended_skill_types": [
-        "evidence synthesis",
-        "investigation",
-        "decision support",
-        "source-grounded research",
-        "high-stakes review"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task contains only direct transformation with no inferential claims",
@@ -6427,8 +6459,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -6470,11 +6503,8 @@
       ],
       "purpose": "Remove explanatory material that does not change comprehension, verification, decision, or safe execution while retaining required rationale and caveats.",
       "recommended_skill_types": [
-        "direct answers",
-        "status updates",
-        "executive summaries",
-        "routine technical guidance",
-        "high-volume assistant outputs"
+        "communication and content generation",
+        "document and code transformation"
       ],
       "usually_not_needed_for": [
         "the user requests a tutorial or exhaustive rationale",
@@ -6604,8 +6634,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -6649,9 +6680,9 @@
       ],
       "purpose": "Serialize and restore important task state through real files, memory stores, databases, or project documents when the host supports persistence.",
       "recommended_skill_types": [
-        "multi-session projects",
-        "durable agent workflows",
-        "long document production"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the task ends in one session and needs no continuation",
@@ -6763,8 +6794,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-20. External State Automation",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-20. External State Automation"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -6801,10 +6833,10 @@
       ],
       "purpose": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
       "recommended_skill_types": [
-        "medical, legal, or policy analysis",
-        "citation-bearing research",
-        "safety-critical decisions",
-        "source transcription and fidelity work"
+        "analysis and decision support",
+        "communication and content generation",
+        "document and code transformation",
+        "high-stakes evidence work"
       ],
       "usually_not_needed_for": [
         "the failed condition is optional and does not affect the supported deliverable",
@@ -6916,8 +6948,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-11. Fail-Closed Tier-3 Abstention",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-11. Fail-Closed Tier-3 Abstention"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -6961,11 +6994,10 @@
       ],
       "purpose": "Preserve non-compensable constraints during aggregation and synthesis.",
       "recommended_skill_types": [
-        "safety reviews",
-        "constraint-heavy planning",
-        "security decisions",
-        "branch collapse",
-        "truth-conflict resolution"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the alleged defect is merely a soft preference",
@@ -7085,13 +7117,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-09. Fermionic Veto Strengthening",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-09. Fermionic Veto Strengthening"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T3-09. Fermionic Veto Strengthening",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "1. Canonical current consolidated inventory",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T3-09. Fermionic Veto Strengthening"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -7130,10 +7164,10 @@
       ],
       "purpose": "Catch missing prerequisites and foreseeable downstream failure while reversal is still cheap.",
       "recommended_skill_types": [
-        "deployments",
-        "schema or API changes",
-        "financial or external communications",
-        "multi-stage automation"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "structured problem solving"
       ],
       "usually_not_needed_for": [
         "reversible low-cost local edits",
@@ -7257,8 +7291,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-17. Forethought / Checkpoints",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-17. Forethought / Checkpoints"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -7298,10 +7333,8 @@
       ],
       "purpose": "Keep workflows portable across frontier and smaller models, tool environments, and future hosts without weakening invariant controls.",
       "recommended_skill_types": [
-        "cross-model skill packages",
-        "tool-optional workflows",
-        "portable agent systems",
-        "deployments with different context and persistence support"
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the host and task profile are fixed",
@@ -7435,8 +7468,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-17. Future-Proof Mode Selector (FPMS)",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-17. Future-Proof Mode Selector (FPMS)"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -7480,11 +7514,9 @@
       ],
       "purpose": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
       "recommended_skill_types": [
-        "source-grounded research",
-        "record and chart review",
-        "policy or legal analysis",
-        "citation-bearing authoring",
-        "tool-result reporting"
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "pure creative generation has no asserted factual source boundary",
@@ -7604,8 +7636,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-04. Grounding / No-Invention",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-04. Grounding / No-Invention"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -7649,10 +7682,10 @@
       ],
       "purpose": "Combine broad planning capability with conservative implementation without letting speculative branch assumptions leak into committed work.",
       "recommended_skill_types": [
-        "architecture followed by implementation",
-        "research plan followed by evidence extraction",
-        "migration design followed by cutover",
-        "complex repository builds"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task needs only narrow execution",
@@ -7788,8 +7821,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-08. HYBRID Mode",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-08. HYBRID Mode"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -7830,10 +7864,9 @@
       ],
       "purpose": "Create a source-faithful textual representation of image-borne evidence for downstream indexing, analysis, or copying.",
       "recommended_skill_types": [
-        "document image transcription",
-        "figure or screenshot capture",
-        "scanned-record intake",
-        "long-document source fidelity"
+        "high-stakes evidence work",
+        "long-context workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "no image contains source text or visible structure",
@@ -7948,8 +7981,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-14. ITFC — Historical Acronym Collision",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-14. ITFC — Historical Acronym Collision"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -7993,10 +8027,9 @@
       ],
       "purpose": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.",
       "recommended_skill_types": [
-        "prompt robustness checks",
-        "policy interpretation",
-        "classification stability",
-        "summary validation"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the transformed feature is itself decision-relevant",
@@ -8119,13 +8152,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "Invariance Stress Scaffold",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "Initial named Upgradeables",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "Invariance Stress Scaffold"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -8163,10 +8198,10 @@
       ],
       "purpose": "Turn process-health signals into explicit observations that a supervisor can route to repair, pause, or continuation.",
       "recommended_skill_types": [
-        "long multi-module workflows",
-        "multi-agent coordination",
-        "iterative reasoning",
-        "mode-rich systems"
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "a simple task has no meaningful process state",
@@ -8300,8 +8335,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-02. Meta-Awareness Pack",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-02. Meta-Awareness Pack"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -8342,10 +8378,9 @@
       ],
       "purpose": "Preserve a trusted task state while isolating drift sources and resuming from one explicit authority-consistent configuration.",
       "recommended_skill_types": [
-        "long-context drift",
-        "conflicting module activation",
-        "repeated change cycles",
-        "multi-agent state divergence"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "one local defect can be repaired directly",
@@ -8481,8 +8516,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-15. Meta-Stability Mode (MSM)",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-15. Meta-Stability Mode (MSM)"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -8527,10 +8563,10 @@
       ],
       "purpose": "Coordinate Meta-Awareness, Stuck-Pattern Reset, and Contradiction Micro-Repair without becoming the suite-wide mode and architecture authority.",
       "recommended_skill_types": [
-        "complex iterative scaffolds",
-        "multi-module reasoning",
-        "repeated failures",
-        "runtime process-health supervision"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the task needs suite-wide mode declaration and Core-stack governance",
@@ -8668,8 +8704,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-01. Meta-Supervisor Bundle",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-01. Meta-Supervisor Bundle"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -8707,11 +8744,8 @@
       ],
       "purpose": "Restore local correctness or completeness with the minimum semantic blast radius.",
       "recommended_skill_types": [
-        "one unsupported claim",
-        "one missing requirement",
-        "awkward transition",
-        "local contradiction",
-        "small formatting defect"
+        "document and code transformation",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the artifact architecture is globally wrong",
@@ -8845,8 +8879,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-04. Micro-Repair",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-04. Micro-Repair"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -8887,11 +8922,10 @@
       ],
       "purpose": "Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue.",
       "recommended_skill_types": [
-        "high-constraint rewriting",
-        "source-grounded paragraph construction",
-        "localized code changes",
-        "multi-step transformations",
-        "complex formatting"
+        "analysis and decision support",
+        "communication and content generation",
+        "document and code transformation",
+        "long-context workflows"
       ],
       "usually_not_needed_for": [
         "a one-step task has no fragile constraints",
@@ -9021,8 +9055,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-01. Micro-Scaffolding",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-01. Micro-Scaffolding"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -9066,10 +9101,9 @@
       ],
       "purpose": "Keep behavior stable across long sessions, tool calls, and distracting inputs.",
       "recommended_skill_types": [
-        "strict transformations",
-        "long sessions",
-        "multi-mode assistants",
-        "policy-bound work"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "exploration intentionally needs rapid mode switching",
@@ -9250,10 +9284,10 @@
       ],
       "purpose": "Avoid fossilized over-scaffolding on more reliable models without mistaking model strength for permission to remove essential controls.",
       "recommended_skill_types": [
-        "cross-model deployments",
-        "model upgrades",
-        "prompt simplification",
-        "reliability-sensitive drift control"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "there is no comparative reliability evidence",
@@ -9387,8 +9421,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-18. Drift-Stability Scaling with Model Size (DSS-MS)",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-18. Drift-Stability Scaling with Model Size (DSS-MS)"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -9431,10 +9466,10 @@
       ],
       "purpose": "Maintain vertical consistency from local facts and operations to the overall conclusion or system behavior.",
       "recommended_skill_types": [
-        "large documents",
-        "modular software",
-        "policy hierarchies",
-        "multi-step analytical conclusions"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the artifact has only one meaningful level",
@@ -9551,13 +9586,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-05. Multi-Layer Consistency",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-05. Multi-Layer Consistency"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T2-05. Multi-Layer Consistency",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "Interpretation rule for the frozen T2 registry",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T2-05. Multi-Layer Consistency"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -9595,10 +9632,10 @@
       ],
       "purpose": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.",
       "recommended_skill_types": [
-        "high-stakes evidence synthesis",
-        "conflicting-source research",
-        "medical, legal, or policy decisions",
-        "critical architecture choices"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the claim is low consequence and one authoritative direct source is sufficient",
@@ -9713,8 +9750,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-01. Multi-Truth Gating",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-01. Multi-Truth Gating"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -9757,10 +9795,9 @@
       ],
       "purpose": "Obtain real alternative search without losing control of truth, constraints, cost, or convergence.",
       "recommended_skill_types": [
-        "ambiguous design choices",
-        "research plans",
-        "narrative or document architectures",
-        "competing causal models"
+        "analysis and decision support",
+        "source-grounded research",
+        "structured problem solving"
       ],
       "usually_not_needed_for": [
         "a locked source dictates a single faithful transformation",
@@ -9898,8 +9935,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-01. Multiverse Engine",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-01. Multiverse Engine"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -9943,10 +9981,10 @@
       ],
       "purpose": "Increase depth and signal quality on a bounded target when irrelevant material would otherwise dilute effort.",
       "recommended_skill_types": [
-        "large-corpus research",
-        "one-module debugging",
-        "targeted policy review",
-        "high-value constraint analysis"
+        "analysis and decision support",
+        "long-context workflows",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task requires broad discovery before a target is known",
@@ -10073,13 +10111,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-09. Neuro-Focus",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-09. Neuro-Focus"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "Advanced architecture Upgradeables retained",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "11. Advanced architecture Upgradeables retained",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "Advanced architecture Upgradeables retained"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -10117,10 +10157,10 @@
       ],
       "purpose": "Prevent attractive but non-governing alternatives from overriding the authoritative task branch.",
       "recommended_skill_types": [
-        "mixed-authority document sets",
-        "versioned policies",
-        "agent planning trees",
-        "retrieval with untrusted text"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "authority is unresolved",
@@ -10306,11 +10346,10 @@
       ],
       "purpose": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote.",
       "recommended_skill_types": [
-        "high-stakes synthesis",
-        "complex repository validation",
-        "multiverse collapse",
-        "long-form factual work",
-        "safety-sensitive decisions"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "one low-risk deterministic check is sufficient",
@@ -10464,8 +10503,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "PART VII. PARALLEL-QMS FAMILY",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "PART VII. PARALLEL-QMS FAMILY"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -10508,11 +10548,10 @@
       ],
       "purpose": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.",
       "recommended_skill_types": [
-        "tutorials",
-        "documentation",
-        "stakeholder briefings",
-        "technical-to-nontechnical translation",
-        "onboarding"
+        "communication and content generation",
+        "document and code transformation",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the audience and purpose cannot be inferred and the choice materially changes content",
@@ -10643,8 +10682,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-16. Pedagogical Alignment Constraint",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-16. Pedagogical Alignment Constraint"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -10688,10 +10728,10 @@
       ],
       "purpose": "Prevent cross-phase contamination while still allowing explicitly governed transitions between reasoning modes.",
       "recommended_skill_types": [
-        "evidence-grounded writing",
-        "multi-source research",
-        "risk analysis",
-        "long workflows with distinct reasoning modes"
+        "analysis and decision support",
+        "communication and content generation",
+        "high-stakes evidence work",
+        "long-context workflows"
       ],
       "usually_not_needed_for": [
         "a single atomic transformation has no phase transition",
@@ -10815,8 +10855,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -10860,11 +10901,10 @@
       ],
       "purpose": "Prevent scaffolding artifacts from escaping as if they were complete content.",
       "recommended_skill_types": [
-        "template-based documents",
-        "generated repositories",
-        "forms and reports",
-        "configuration generation",
-        "multi-agent artifact assembly"
+        "communication and content generation",
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the deliverable is explicitly a template whose placeholders are the product",
@@ -10996,8 +11036,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-08. Placeholder Suppression",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-08. Placeholder Suppression"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -11040,10 +11081,10 @@
       ],
       "purpose": "Increase solution search and architectural depth before commitment when the problem is genuinely ambiguous or system-wide.",
       "recommended_skill_types": [
-        "system architecture",
-        "novel workflow design",
-        "strategic planning",
-        "ambiguous research design"
+        "analysis and decision support",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task is a precise grounded execution step",
@@ -11181,8 +11222,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-07. POWER Mode",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-07. POWER Mode"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -11226,9 +11268,10 @@
       ],
       "purpose": "Narrow a broad exploratory workflow through comparison and selection into precise execution as decisions become locked.",
       "recommended_skill_types": [
-        "design-to-implementation workflows",
-        "iterative planning",
-        "creative work with a committed deliverable"
+        "analysis and decision support",
+        "communication and content generation",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the task is purely exploratory and requires no commitment",
@@ -11340,8 +11383,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-06. Progressive Mode Shaping",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-06. Progressive Mode Shaping"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -11375,10 +11419,10 @@
       ],
       "purpose": "Match reasoning depth and scope to the unit of work instead of applying either shallow local analysis or system-wide architecture indiscriminately.",
       "recommended_skill_types": [
-        "mixed-complexity workflows",
-        "long-form construction",
-        "system design",
-        "quality evaluation"
+        "analysis and decision support",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a governing workflow already fixes the required scale",
@@ -11511,8 +11555,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "PART V. REASONING-SCALE STACK",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "PART V. REASONING-SCALE STACK"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -11557,11 +11602,10 @@
       ],
       "purpose": "Maximize useful completed work per unit time while respecting the Cognitive Governor's budget and every mandatory validation barrier.",
       "recommended_skill_types": [
-        "large package builds",
-        "multi-agent research",
-        "batch validation",
-        "latency-sensitive pipelines",
-        "branch-heavy planning"
+        "analysis and decision support",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task is one atomic operation",
@@ -11700,8 +11744,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-13. Reasoning Throughput Governor (RTG)",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-13. Reasoning Throughput Governor (RTG)"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -11748,11 +11793,10 @@
       ],
       "purpose": "Correct process and output errors at meaningful checkpoints without turning reflection into unbounded rumination or invented content.",
       "recommended_skill_types": [
-        "multi-step implementation",
-        "research synthesis",
-        "document revision",
-        "agent handoffs",
-        "recovery after test failure"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a deterministic fix is already known and reflection adds no decision value",
@@ -11880,18 +11924,21 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-12. WRL / ReflectOS",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-12. WRL / ReflectOS"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "T2-12. WRL / ReflectOS",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "12. Behavior Gene OS and known Genes",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "T2-12. WRL / ReflectOS"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-          "heading": "bounded WRL / ReflectOS",
-          "source_kind": "historical_assistant_artifact"
+          "heading": "12.2 Intake OS identity",
+          "source_kind": "historical_assistant_artifact",
+          "anchor_detail": "bounded WRL / ReflectOS"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -11925,10 +11972,9 @@
       ],
       "purpose": "Replace a systemically broken expression or structure without losing verified content, requirements, provenance, or accepted decisions.",
       "recommended_skill_types": [
-        "globally incoherent drafts",
-        "broken source-to-section mapping",
-        "documents with incompatible inherited structures",
-        "outputs damaged by repeated patching"
+        "document and code transformation",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "one sentence or field is wrong",
@@ -12060,8 +12106,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-03. Regenerative Rewrite",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-03. Regenerative Rewrite"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -12102,9 +12149,10 @@
       ],
       "purpose": "Coordinate active modules that should reinforce one another while suppressing irrelevant effects and preserving authority boundaries.",
       "recommended_skill_types": [
-        "multi-module Skills",
-        "evidence-to-state coordination",
-        "composed agent workflows"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "only one module is active",
@@ -12215,8 +12263,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-05. Resonance",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-05. Resonance"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -12252,10 +12301,9 @@
       ],
       "purpose": "Make useful cross-module reinforcement explicit and reusable without merging modules, duplicating content, or granting hidden communication.",
       "recommended_skill_types": [
-        "recurring validator-generator pairings",
-        "stable Core-Gene couplings",
-        "multi-module evidence workflows",
-        "repeated authority-sensitive compositions"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the need is a general task behavior unrelated to module coupling",
@@ -12391,8 +12439,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-06. Resonance Genes",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-06. Resonance Genes"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -12436,10 +12485,10 @@
       ],
       "purpose": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
       "recommended_skill_types": [
-        "medical, legal, financial, or safety-sensitive work",
-        "irreversible changes",
-        "uncertain external actions",
-        "mixed-risk artifacts"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a binding protocol already specifies the exact controls",
@@ -12574,8 +12623,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-05. Risk-Tier Scaling",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-05. Risk-Tier Scaling"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -12618,11 +12668,10 @@
       ],
       "purpose": "Protect factual and consequential execution after the plan is chosen or whenever uncertainty and impact require constrained behavior.",
       "recommended_skill_types": [
-        "source-faithful extraction",
-        "production changes",
-        "high-risk recommendations",
-        "final publication",
-        "irreversible operations"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the primary need is broad architecture discovery",
@@ -12759,8 +12808,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-06. SAFE Mode",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-06. SAFE Mode"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -12804,11 +12854,10 @@
       ],
       "purpose": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.",
       "recommended_skill_types": [
-        "paraphrasing",
-        "tone adjustment",
-        "format conversion",
-        "clarity polishing",
-        "audience adaptation"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the user asks to change substantive meaning",
@@ -12939,8 +12988,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-10. Safe Rewrite Logic",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-10. Safe Rewrite Logic"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -12989,11 +13039,10 @@
       ],
       "purpose": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
       "recommended_skill_types": [
-        "modular Skill execution",
-        "agent routing",
-        "large reference libraries",
-        "domain OS selection",
-        "multi-stage research"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the workflow has one small fixed instruction set",
@@ -13121,8 +13170,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T1-07. Loader Sequencing",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T1-07. Loader Sequencing"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -13131,8 +13181,9 @@
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "Canonical current consolidated inventory",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "1. Canonical current consolidated inventory",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "Canonical current consolidated inventory"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -13164,10 +13215,10 @@
       ],
       "purpose": "Reduce stale state and forgotten deltas during iterative work.",
       "recommended_skill_types": [
-        "agent loops",
-        "long editing sessions",
-        "tool-rich workflows",
-        "multi-step investigations"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "the host cannot write persistent state",
@@ -13300,8 +13351,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "SelfBlock Auto-Update",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "SelfBlock Auto-Update"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -13348,10 +13400,10 @@
       ],
       "purpose": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
       "recommended_skill_types": [
-        "long-lived agents",
-        "case management",
-        "iterative research",
-        "multi-source evolving records"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "a one-shot task has no state evolution",
@@ -13538,11 +13590,9 @@
       ],
       "purpose": "Provide a conservative modern interpretation of the recovered name while keeping the historical source gap explicit.",
       "recommended_skill_types": [
-        "research answers",
-        "estimates",
-        "incident explanations",
-        "requirements derived from incomplete evidence",
-        "source recovery"
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "exact values are directly provided and verified",
@@ -13666,13 +13716,15 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "Pack-derived exact names",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "Pack-derived exact names"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-          "heading": "Specificity Penalty Gate",
-          "source_kind": "historical_recovery_inventory"
+          "heading": "15. January 2026 registry philosophy recovered from historical work",
+          "source_kind": "historical_recovery_inventory",
+          "anchor_detail": "Specificity Penalty Gate"
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
@@ -13713,10 +13765,10 @@
       ],
       "purpose": "Extend usable context duration without treating the entire transcript as equally current or important.",
       "recommended_skill_types": [
-        "long research projects",
-        "large document synthesis",
-        "multi-session builds",
-        "extended agent runs"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "all relevant material fits clearly in one short exchange",
@@ -13900,9 +13952,9 @@
       ],
       "purpose": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.",
       "recommended_skill_types": [
-        "multi-agent workflows",
-        "modular Skills",
-        "cross-process continuation"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "all work occurs inside one uninterrupted component",
@@ -14013,8 +14065,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-02. Teleport Bus",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-02. Teleport Bus"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -14048,10 +14101,9 @@
       ],
       "purpose": "Create a stable checkpoint that can be resumed or audited after interruption.",
       "recommended_skill_types": [
-        "multi-session projects",
-        "agent handoffs",
-        "rollback-sensitive workflows",
-        "audits"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a snapshot would persist prohibited sensitive data",
@@ -14230,10 +14282,10 @@
       ],
       "purpose": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
       "recommended_skill_types": [
-        "multi-step execution",
-        "agent orchestration",
-        "complex editing",
-        "auditable workflows"
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a trivial one-turn task needs no persistent state",
@@ -14369,8 +14421,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "StateBlock",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "StateBlock"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -14380,9 +14433,8 @@
         },
         {
           "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-          "heading": "T2-038 — High-Coherence State Induction",
-          "source_kind": "historical_assistant_artifact",
-          "anchor_detail": "State kernel and SMSE reconstruction"
+          "heading": "11.1 Kernel / State Block",
+          "source_kind": "historical_assistant_artifact"
         }
       ],
       "source_support": "sufficiently-recovered",
@@ -14415,10 +14467,10 @@
       ],
       "purpose": "Prevent one revision pass from trading away correctness while improving structure or style.",
       "recommended_skill_types": [
-        "drafts with several defect classes",
-        "reports requiring source and style review",
-        "prompt or specification cleanup",
-        "publication preparation"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "only one bounded defect exists",
@@ -14549,8 +14601,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T2-02. Structured Refinement Cycles",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T2-02. Structured Refinement Cycles"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -14589,10 +14642,10 @@
       ],
       "purpose": "Reduce context, privacy, and authority leakage between components.",
       "recommended_skill_types": [
-        "multi-agent systems",
-        "domain isolation",
-        "sensitive workflows",
-        "tool calls with narrow schemas"
+        "communication and content generation",
+        "document and code transformation",
+        "long-context workflows",
+        "multi-step task execution"
       ],
       "usually_not_needed_for": [
         "one trusted consumer legitimately needs the whole safe state",
@@ -14773,10 +14826,10 @@
       ],
       "purpose": "Break nonproductive loops without erasing the trustworthy task context needed for a genuinely different next attempt.",
       "recommended_skill_types": [
-        "repeated tool failures",
-        "recursive revision loops",
-        "stale debugging hypotheses",
-        "nonconverging planning"
+        "document and code transformation",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a second attempt has new evidence or a materially changed method",
@@ -14912,8 +14965,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-03. Stuck-Pattern Reset Pack",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-03. Stuck-Pattern Reset Pack"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -14955,11 +15009,8 @@
       ],
       "purpose": "Make artifacts consistent with audience, publication, or organizational style while keeping truth and requirements dominant.",
       "recommended_skill_types": [
-        "house-style editing",
-        "voice matching",
-        "channel adaptation",
-        "consistent multi-author documents",
-        "format and tone normalization"
+        "communication and content generation",
+        "document and code transformation"
       ],
       "usually_not_needed_for": [
         "the requested style impersonates a living person or conflicts with policy",
@@ -15096,8 +15147,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-15. Style-Alignment Module",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-15. Style-Alignment Module"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -15141,11 +15193,10 @@
       ],
       "purpose": "Make macro changes to layers, cores, workflows, or incompatible interfaces without losing invariants, dependents, or rollback control.",
       "recommended_skill_types": [
-        "layer reorganization",
-        "Core replacement",
-        "major workflow change",
-        "large incompatible refactor",
-        "schema or public interface migration"
+        "document and code transformation",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "a localized invariant-preserving patch suffices",
@@ -15290,8 +15341,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "A-08. Surgery Editing",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "A-08. Surgery Editing"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -15335,10 +15387,10 @@
       ],
       "purpose": "Prevent scope substitution and goal drift during execution.",
       "recommended_skill_types": [
-        "multi-step builds",
-        "contracted deliverables",
-        "long research",
-        "tasks with exclusions"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the task is still materially ambiguous",
@@ -15523,10 +15575,10 @@
       ],
       "purpose": "Prevent chronology errors and confusion between event time, publication time, and current validity.",
       "recommended_skill_types": [
-        "incident timelines",
-        "policy version analysis",
-        "case chronology",
-        "news or market research"
+        "high-stakes evidence work",
+        "long-context workflows",
+        "multi-step task execution",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "time has no bearing on the answer",
@@ -15709,10 +15761,10 @@
       ],
       "purpose": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
       "recommended_skill_types": [
-        "multi-source research",
-        "policy and regulatory analysis",
-        "multi-validator workflows",
-        "domain decisions with mixed evidence classes"
+        "analysis and decision support",
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "no material evidence or authority conflict exists",
@@ -15826,8 +15878,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-06. Truth Priority Hierarchy",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-06. Truth Priority Hierarchy"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -15872,10 +15925,10 @@
       ],
       "purpose": "Reduce single-point truth failure before high-impact synthesis or decision-making.",
       "recommended_skill_types": [
+        "analysis and decision support",
         "high-stakes evidence work",
-        "critical factual claims",
-        "source-grounded decision support",
-        "safety-relevant tradeoffs"
+        "review and quality assurance",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the claim is low risk and an authoritative primary source is decisive",
@@ -15985,8 +16038,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-03. Truth Redundancy / Dual-Lepton Truth Redundancy",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-03. Truth Redundancy / Dual-Lepton Truth Redundancy"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -16030,10 +16084,10 @@
       ],
       "purpose": "Enable useful synthesis without losing redundant factual grounding.",
       "recommended_skill_types": [
-        "comparative research",
-        "evidence-grounded authoring",
-        "policy synthesis",
-        "explanatory integration of two sources"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "only one defensible anchor exists",
@@ -16154,8 +16208,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T3-08. Two Truths + Corridor",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T3-08. Two Truths + Corridor"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -16199,10 +16254,10 @@
       ],
       "purpose": "Keep a large OS or skill suite operating as one authority-consistent system across planning, execution, repair, and finalization.",
       "recommended_skill_types": [
-        "large modular OS execution",
-        "multi-mode skill suites",
-        "complex authoring or research systems",
-        "architecture plus execution pipelines"
+        "high-stakes evidence work",
+        "multi-step task execution",
+        "review and quality assurance",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "one small skill can complete the task",
@@ -16349,8 +16404,9 @@
       "source_refs": [
         {
           "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-          "heading": "T4-05. Ultimate Suite Supervisor",
-          "source_kind": "current_consolidated_catalog"
+          "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+          "source_kind": "current_consolidated_catalog",
+          "anchor_detail": "T4-05. Ultimate Suite Supervisor"
         },
         {
           "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
@@ -16393,10 +16449,9 @@
       ],
       "purpose": "Keep easily forgotten but relevant information salient during execution.",
       "recommended_skill_types": [
-        "long transformations",
-        "repetitive tool loops",
-        "tasks with a few recurring constraints",
-        "review workflows"
+        "long-context workflows",
+        "multi-step task execution",
+        "review and quality assurance"
       ],
       "usually_not_needed_for": [
         "the cue duplicates already salient text",
@@ -16575,10 +16630,9 @@
       ],
       "purpose": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.",
       "recommended_skill_types": [
-        "long agent loops",
-        "high-fidelity transformations",
-        "safety-critical execution",
-        "multi-step builds"
+        "long-context workflows",
+        "multi-step task execution",
+        "skill and agent workflows"
       ],
       "usually_not_needed_for": [
         "nothing needs continuous salience",
@@ -16764,10 +16818,10 @@
       ],
       "purpose": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.",
       "recommended_skill_types": [
-        "legal and policy transformation",
-        "source-grounded summaries",
-        "code/API migration",
-        "safety-critical instructions"
+        "document and code transformation",
+        "high-stakes evidence work",
+        "long-context workflows",
+        "source-grounded research"
       ],
       "usually_not_needed_for": [
         "the user explicitly authorizes change to the marked content",
@@ -18910,12 +18964,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for research skill workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when a deliverable must synthesize multiple accessible sources and corpus size or ambiguity makes scoped loading, shared state, and claim-level grounding necessary.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling."
       },
       "important_exclusions": [
         "Omit durable or parallel machinery unless corpus size or real host execution triggers it."
@@ -18952,12 +19006,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for source-grounded analysis workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when an analysis or rewrite must remain traceable to identified sources, preserve locked source meaning, and attach citations at claim level.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "mode-lock-in": "Keep behavior stable across long sessions, tool calls, and distracting inputs.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "mode-lock-in": "Keep behavior stable across long sessions, tool calls, and distracting inputs. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support."
       },
       "important_exclusions": [
         "Omit branching and creative expansion unless competing interpretations are an explicit deliverable."
@@ -18993,17 +19047,17 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for high-stakes reasoning workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when an error could materially affect safety, health, rights, finances, or an irreversible action and the necessary evidence can be inspected.",
       "required_rationales": {
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "epistemic-status-gating": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact.",
-        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
-        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
-        "multi-truth-gating": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.",
-        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "epistemic-status-gating": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "multi-truth-gating": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary."
       },
       "important_exclusions": [
         "Omit style and ideation modules; do not add simulated distributed evaluators."
@@ -19041,16 +19095,16 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for medical evidence workflows when its required controls have active triggers.",
+      "activation_boundary": "Use for source-backed medical evidence synthesis where claim scope, uncertainty, and abstention matter; it does not replace clinical diagnosis or treatment.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
-        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
-        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling."
       },
       "important_exclusions": [
         "Omit unconstrained generation and any validator whose evidence boundary cannot be supplied."
@@ -19085,16 +19139,16 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for legal evidence workflows when its required controls have active triggers.",
+      "activation_boundary": "Use for source-backed legal analysis tied to a declared jurisdiction and date where authority, quotation, and uncertainty must remain auditable; it is not legal advice.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
-        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
-        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
-        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention."
       },
       "important_exclusions": [
         "Omit creative rewriting and preserve jurisdiction, date, authority, and quotation boundaries."
@@ -19134,11 +19188,11 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for coding / debugging workflows when its required controls have active triggers.",
+      "activation_boundary": "Use after a software defect is reproducible or tightly localized and the task requests a verified repair, not a review-only finding.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.",
-        "micro-repair": "Restore local correctness or completeness with the minimum semantic blast radius."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit.",
+        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit.",
+        "micro-repair": "Restore local correctness or completeness with the minimum semantic blast radius. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit."
       },
       "important_exclusions": [
         "Omit Surgery Edit while the defect remains local; omit citation controls without external sources."
@@ -19178,12 +19232,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for review-only code and pull request analysis when its required controls have active triggers.",
+      "activation_boundary": "Use when the requested deliverable is review-only analysis of a concrete diff or pull request for correctness, regressions, and unsupported assumptions.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
       },
       "important_exclusions": [
         "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
@@ -19221,13 +19275,13 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for long-context / corpus workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when the authorized corpus cannot be handled safely as one undifferentiated context and indexed state must preserve sequence and provenance.",
       "required_rationales": {
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
-        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important.",
-        "activation-budget-funnel": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.",
-        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error."
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "activation-budget-funnel": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state."
       },
       "important_exclusions": [
         "Omit full-corpus reloads and alternative-branch generation unless explicitly triggered."
@@ -19259,11 +19313,11 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for authoring workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when drafting or rewriting a controlled deliverable with an explicit message, audience, style, source, or placeholder contract.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "safe-rewrite": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.",
-        "placeholder-suppression": "Prevent scaffolding artifacts from escaping as if they were complete content."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue.",
+        "safe-rewrite": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue.",
+        "placeholder-suppression": "Prevent scaffolding artifacts from escaping as if they were complete content. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue."
       },
       "important_exclusions": [
         "Omit citation fidelity for source-free drafting and omit structural surgery for tonal edits."
@@ -19294,10 +19348,10 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for creative ideation workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when the user needs multiple materially distinct concepts followed by bounded convergence, while factual claims remain outside the creative corridor.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "controlled-drift-corridors": "Enable adaptation, compression, or creativity without surrendering semantic control."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because creative search still needs a locked brief and an explicit boundary separating invention from factual assertion.",
+        "controlled-drift-corridors": "Enable adaptation, compression, or creativity without surrendering semantic control. It is required here because creative search still needs a locked brief and an explicit boundary separating invention from factual assertion."
       },
       "important_exclusions": [
         "Omit high-stakes evidence gates unless factual claims enter the deliverable."
@@ -19331,10 +19385,10 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for education / explanation workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when an explanation must be adapted to a named learner, objective, and prerequisite level while retaining domain accuracy.",
       "required_rationales": {
-        "pedagogical-alignment": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.",
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution."
+        "pedagogical-alignment": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications. It is required here because the learning objective and audience model must remain fixed while the explanation is adapted.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the learning objective and audience model must remain fixed while the explanation is adapted."
       },
       "important_exclusions": [
         "Omit deep validation stacks for low-risk exposition; retain accuracy checks that the domain requires."
@@ -19367,11 +19421,11 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for decision support workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when a user must compare consequential options against explicit criteria and evidence without turning generated candidates into facts.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "decision-first-scaffold": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit.",
+        "decision-first-scaffold": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit."
       },
       "important_exclusions": [
         "Omit Multiverse when options are already fixed; never turn candidate generation into fake evidence."
@@ -19412,12 +19466,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for architecture / skill building workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when designing or restructuring a portable multi-component Skill whose interfaces, authority order, and host assumptions must be explicit.",
       "required_rationales": {
-        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology."
       },
       "important_exclusions": [
         "Omit suite-level supervision for a single small Skill and omit surgery for additive changes."
@@ -19461,14 +19515,14 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for multi-agent / orchestration workflows when its required controls have active triggers.",
+      "activation_boundary": "Use only when the host can run or coordinate distinct workers and the task needs explicit routing, state exchange, and result collection.",
       "required_rationales": {
-        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "state-routing-bus": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "state-snapshot": "Create a stable checkpoint that can be resumed or audited after interruption.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts."
+        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "state-routing-bus": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "state-snapshot": "Create a stable checkpoint that can be resumed or audited after interruption. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs."
       },
       "important_exclusions": [
         "Omit distributed claims when the host cannot provide isolated workers or result collection."
@@ -19504,14 +19558,14 @@
         "canonicality": "provisional",
         "recovery_confidence": "high"
       },
-      "activation_boundary": "Use for seed composition for deterministic intake / routing workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when supplied fields and explicit predicates should deterministically select a route, with clarification or fail-closed handling for missing inputs.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "authenticity-anti-evasion": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "authenticity-anti-evasion": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data."
       },
       "important_exclusions": [
         "Omit model-judged routing when deterministic predicates fully decide the route."
@@ -19546,15 +19600,15 @@
         "canonicality": "provisional",
         "recovery_confidence": "high"
       },
-      "activation_boundary": "Use for seed composition for long-context source fidelity workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when a long or segmented source must be transformed without losing sequence, quotations, identifiers, or provenance across context boundaries.",
       "required_rationales": {
-        "working-memory-lock-in": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.",
-        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important.",
-        "zero-drift-zones": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.",
-        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure."
+        "working-memory-lock-in": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "zero-drift-zones": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps."
       },
       "important_exclusions": [
         "Omit persistence when one context suffices and omit citation certification for inaccessible sources."
@@ -19562,6 +19616,53 @@
       "high_cost_components": [
         "fail-closed-abstention",
         "truth-redundancy"
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "review_status": "PASS"
+    },
+    {
+      "schema_version": "2.0.0",
+      "slug": "perception-reasoning",
+      "display_name": "Perception & Spatial Reasoning",
+      "version": "1.1.0",
+      "purpose": "Infer transformation rules from examples, falsify alternatives, and execute the selected rule with bounded verification.",
+      "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "grounding-no-invention": "R",
+        "anti-tunnel-vision": "R",
+        "bounded-exit": "R",
+        "micro-scaffolding": "R",
+        "bidirectional-consistency": "A",
+        "forethought-checkpoints": "A",
+        "cot-structured-state-block": "A",
+        "decision-first-scaffold": "C",
+        "invariance-stress-scaffold": "C",
+        "counterfactual-integrity": "C",
+        "multiverse-reasoning": "O",
+        "cognitive-governor": "O",
+        "coherence-heartbeat": "X",
+        "meta-supervisor": "X"
+      },
+      "provenance": {
+        "source_document": "CODEX_HANDOFF_UPGRADEABLES.md",
+        "source_kind": "author_reported_experimental_mapping",
+        "canonicality": "provisional",
+        "recovery_confidence": "low"
+      },
+      "activation_boundary": "Use for bounded integer-grid or symbolic transformation tasks with at least one training pair and a test input; disclose reduced verification when only one pair is available.",
+      "required_rationales": {
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "anti-tunnel-vision": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "bounded-exit": "Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "micro-scaffolding": "Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly."
+      },
+      "important_exclusions": [
+        "Omit coherence heartbeat and meta supervision for bounded single-puzzle work; add candidate branching only when hypotheses genuinely compete."
+      ],
+      "high_cost_components": [
+        "multiverse-reasoning"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
       "review_status": "PASS"

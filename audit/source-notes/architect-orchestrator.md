@@ -8,7 +8,7 @@
 
 ## Recovered facts and source anchors
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — O-01. Architect Orchestrator (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 
 ## Recovered or normalized purpose
 

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The task requires component architecture and a validated complete package, not one isolated primitive.",
-      "expect": "A minimal coherent Skill and a compact record of decisions are produced.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Builds a modular plan, selects components, coordinates drafting and critique, repairs local defects, and emits the finished Skill plus state. Result: A minimal coherent Skill and a compact record of decisions are produced.",
+      "reject": "Omitting the mechanism or instead doing this: Does not act as the research domain expert or load every available component."
     },
     {
       "id": "architect-orchestrator-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task is a narrow domain execution job with no architecture decision",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Lock the goal, constraints, deliverable, authority, and completion criteria.",
+      "reject": "Activating Architect Orchestrator solely because its name appears relevant"
     },
     {
       "id": "architect-orchestrator-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Host, system, domain, and explicit user authority take precedence over this component.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve the defining invariant: explicit modular interfaces, authority resolution, independent critique, and continuation state.",
+      "reject": "Silently violating the stated precedence for Architect Orchestrator"
     },
     {
       "id": "architect-orchestrator-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "required module interfaces or authority relationships cannot be resolved",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit modular interfaces, authority resolution, independent critique, and continuation state",
+      "reject": "Claiming a successful Architect Orchestrator result past this boundary"
     },
     {
       "id": "architect-orchestrator-strong-model-scaling",

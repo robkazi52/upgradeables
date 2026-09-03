@@ -24,10 +24,10 @@
   ],
   "purpose": "Maintain semantic reliability across weak and strong runtimes without burdening every runtime identically.",
   "recommended_skill_types": [
-    "cross-model skills",
-    "variable tool availability",
-    "cost-limited execution",
-    "mixed-capability agents"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "adaptation would weaken factual or safety invariants",
@@ -164,8 +164,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "Compute-Adaptive Drift",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "Compute-Adaptive Drift"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

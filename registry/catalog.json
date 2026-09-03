@@ -4477,6 +4477,16 @@
     {
       "slug": "research-skill",
       "display_name": "Research Skill",
+      "purpose": "Seed composition for research skill workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when a deliverable must synthesize multiple accessible sources and corpus size or ambiguity makes scoped loading, shared state, and claim-level grounding necessary.",
+      "important_exclusions": [
+        "Omit durable or parallel machinery unless corpus size or real host execution triggers it."
+      ],
+      "high_cost_components": [
+        "multi-truth-gating",
+        "critical-atomic-verification"
+      ],
       "recipe_path": "recipes/resolved/research-skill.md",
       "source_recipe_path": "recipes/research-skill.md",
       "components": [
@@ -4620,6 +4630,13 @@
     {
       "slug": "source-grounded-analysis",
       "display_name": "Source-Grounded Analysis",
+      "purpose": "Seed composition for source-grounded analysis workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when an analysis or rewrite must remain traceable to identified sources, preserve locked source meaning, and attach citations at claim level.",
+      "important_exclusions": [
+        "Omit branching and creative expansion unless competing interpretations are an explicit deliverable."
+      ],
+      "high_cost_components": [],
       "recipe_path": "recipes/resolved/source-grounded-analysis.md",
       "source_recipe_path": "recipes/source-grounded-analysis.md",
       "components": [
@@ -4727,6 +4744,19 @@
     {
       "slug": "high-stakes-reasoning",
       "display_name": "High-Stakes Reasoning",
+      "purpose": "Seed composition for high-stakes reasoning workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when an error could materially affect safety, health, rights, finances, or an irreversible action and the necessary evidence can be inspected.",
+      "important_exclusions": [
+        "Omit style and ideation modules; do not add simulated distributed evaluators."
+      ],
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "multi-truth-gating",
+        "truth-redundancy",
+        "fail-closed-abstention",
+        "fermionic-veto"
+      ],
       "recipe_path": "recipes/resolved/high-stakes-reasoning.md",
       "source_recipe_path": "recipes/high-stakes-reasoning.md",
       "components": [
@@ -4852,6 +4882,16 @@
     {
       "slug": "medical-evidence",
       "display_name": "Medical Evidence",
+      "purpose": "Seed composition for medical evidence workflows.",
+      "task_family": "",
+      "activation_boundary": "Use for source-backed medical evidence synthesis where claim scope, uncertainty, and abstention matter; it does not replace clinical diagnosis or treatment.",
+      "important_exclusions": [
+        "Omit unconstrained generation and any validator whose evidence boundary cannot be supplied."
+      ],
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
       "recipe_path": "recipes/resolved/medical-evidence.md",
       "source_recipe_path": "recipes/medical-evidence.md",
       "components": [
@@ -4941,6 +4981,16 @@
     {
       "slug": "legal-evidence",
       "display_name": "Legal Evidence",
+      "purpose": "Seed composition for legal evidence workflows.",
+      "task_family": "",
+      "activation_boundary": "Use for source-backed legal analysis tied to a declared jurisdiction and date where authority, quotation, and uncertainty must remain auditable; it is not legal advice.",
+      "important_exclusions": [
+        "Omit creative rewriting and preserve jurisdiction, date, authority, and quotation boundaries."
+      ],
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
       "recipe_path": "recipes/resolved/legal-evidence.md",
       "source_recipe_path": "recipes/legal-evidence.md",
       "components": [
@@ -5030,6 +5080,15 @@
     {
       "slug": "coding-debugging",
       "display_name": "Coding / Debugging",
+      "purpose": "Seed composition for coding / debugging workflows.",
+      "task_family": "",
+      "activation_boundary": "Use after a software defect is reproducible or tightly localized and the task requests a verified repair, not a review-only finding.",
+      "important_exclusions": [
+        "Omit Surgery Edit while the defect remains local; omit citation controls without external sources."
+      ],
+      "high_cost_components": [
+        "surgery-edit"
+      ],
       "recipe_path": "recipes/resolved/coding-debugging.md",
       "source_recipe_path": "recipes/coding-debugging.md",
       "components": [
@@ -5164,6 +5223,16 @@
     {
       "slug": "code-review",
       "display_name": "Code / Pull Request Review",
+      "purpose": "Seed composition for review-only code and pull request analysis.",
+      "task_family": "",
+      "activation_boundary": "Use when the requested deliverable is review-only analysis of a concrete diff or pull request for correctness, regressions, and unsupported assumptions.",
+      "important_exclusions": [
+        "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
+      ],
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
       "recipe_path": "recipes/resolved/code-review.md",
       "source_recipe_path": "recipes/code-review.md",
       "components": [
@@ -5307,6 +5376,13 @@
     {
       "slug": "long-context-corpus",
       "display_name": "Long-Context / Corpus",
+      "purpose": "Seed composition for long-context / corpus workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when the authorized corpus cannot be handled safely as one undifferentiated context and indexed state must preserve sequence and provenance.",
+      "important_exclusions": [
+        "Omit full-corpus reloads and alternative-branch generation unless explicitly triggered."
+      ],
+      "high_cost_components": [],
       "recipe_path": "recipes/resolved/long-context-corpus.md",
       "source_recipe_path": "recipes/long-context-corpus.md",
       "components": [
@@ -5423,6 +5499,13 @@
     {
       "slug": "authoring",
       "display_name": "Authoring",
+      "purpose": "Seed composition for authoring workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when drafting or rewriting a controlled deliverable with an explicit message, audience, style, source, or placeholder contract.",
+      "important_exclusions": [
+        "Omit citation fidelity for source-free drafting and omit structural surgery for tonal edits."
+      ],
+      "high_cost_components": [],
       "recipe_path": "recipes/resolved/authoring.md",
       "source_recipe_path": "recipes/authoring.md",
       "components": [
@@ -5512,6 +5595,15 @@
     {
       "slug": "creative-ideation",
       "display_name": "Creative Ideation",
+      "purpose": "Seed composition for creative ideation workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when the user needs multiple materially distinct concepts followed by bounded convergence, while factual claims remain outside the creative corridor.",
+      "important_exclusions": [
+        "Omit high-stakes evidence gates unless factual claims enter the deliverable."
+      ],
+      "high_cost_components": [
+        "multiverse-reasoning"
+      ],
       "recipe_path": "recipes/resolved/creative-ideation.md",
       "source_recipe_path": "recipes/creative-ideation.md",
       "components": [
@@ -5592,6 +5684,13 @@
     {
       "slug": "education-explanation",
       "display_name": "Education / Explanation",
+      "purpose": "Seed composition for education / explanation workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when an explanation must be adapted to a named learner, objective, and prerequisite level while retaining domain accuracy.",
+      "important_exclusions": [
+        "Omit deep validation stacks for low-risk exposition; retain accuracy checks that the domain requires."
+      ],
+      "high_cost_components": [],
       "recipe_path": "recipes/resolved/education-explanation.md",
       "source_recipe_path": "recipes/education-explanation.md",
       "components": [
@@ -5681,6 +5780,13 @@
     {
       "slug": "decision-support",
       "display_name": "Decision Support",
+      "purpose": "Seed composition for decision support workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when a user must compare consequential options against explicit criteria and evidence without turning generated candidates into facts.",
+      "important_exclusions": [
+        "Omit Multiverse when options are already fixed; never turn candidate generation into fake evidence."
+      ],
+      "high_cost_components": [],
       "recipe_path": "recipes/resolved/decision-support.md",
       "source_recipe_path": "recipes/decision-support.md",
       "components": [
@@ -5779,6 +5885,24 @@
     {
       "slug": "architecture-skill-building",
       "display_name": "Architecture / Skill Building",
+      "purpose": "Seed composition for architecture / skill building workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when designing or restructuring a portable multi-component Skill whose interfaces, authority order, and host assumptions must be explicit.",
+      "important_exclusions": [
+        "Omit suite-level supervision for a single small Skill and omit surgery for additive changes."
+      ],
+      "high_cost_components": [
+        "architect-orchestrator",
+        "power-mode",
+        "hybrid-mode",
+        "multiverse-reasoning",
+        "behavior-gene-builder",
+        "domain-core-builder",
+        "meta-supervisor",
+        "adapter-first-experimentation",
+        "surgery-edit",
+        "future-proof-mode-selector"
+      ],
       "recipe_path": "recipes/resolved/architecture-skill-building.md",
       "source_recipe_path": "recipes/architecture-skill-building.md",
       "components": [
@@ -5949,6 +6073,16 @@
     {
       "slug": "multi-agent-orchestration",
       "display_name": "Multi-Agent / Orchestration",
+      "purpose": "Seed composition for multi-agent / orchestration workflows.",
+      "task_family": "",
+      "activation_boundary": "Use only when the host can run or coordinate distinct workers and the task needs explicit routing, state exchange, and result collection.",
+      "important_exclusions": [
+        "Omit distributed claims when the host cannot provide isolated workers or result collection."
+      ],
+      "high_cost_components": [
+        "architect-orchestrator",
+        "state-routing-bus"
+      ],
       "recipe_path": "recipes/resolved/multi-agent-orchestration.md",
       "source_recipe_path": "recipes/multi-agent-orchestration.md",
       "components": [
@@ -6047,6 +6181,13 @@
     {
       "slug": "deterministic-intake-routing",
       "display_name": "Deterministic Intake / Routing",
+      "purpose": "Seed composition for deterministic intake / routing workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when supplied fields and explicit predicates should deterministically select a route, with clarification or fail-closed handling for missing inputs.",
+      "important_exclusions": [
+        "Omit model-judged routing when deterministic predicates fully decide the route."
+      ],
+      "high_cost_components": [],
       "recipe_path": "recipes/resolved/deterministic-intake-routing.md",
       "source_recipe_path": "recipes/deterministic-intake-routing.md",
       "components": [
@@ -6145,6 +6286,16 @@
     {
       "slug": "long-context-source-fidelity",
       "display_name": "Long-Context Source Fidelity",
+      "purpose": "Seed composition for long-context source fidelity workflows.",
+      "task_family": "",
+      "activation_boundary": "Use when a long or segmented source must be transformed without losing sequence, quotations, identifiers, or provenance across context boundaries.",
+      "important_exclusions": [
+        "Omit persistence when one context suffices and omit citation certification for inaccessible sources."
+      ],
+      "high_cost_components": [
+        "fail-closed-abstention",
+        "truth-redundancy"
+      ],
       "recipe_path": "recipes/resolved/long-context-source-fidelity.md",
       "source_recipe_path": "recipes/long-context-source-fidelity.md",
       "components": [
@@ -6255,6 +6406,158 @@
           "trigger_summary": "a workflow pauses, hands off, or persists",
           "requires": [],
           "package_path": "upgradeables/state/state-snapshot/UPGRADEABLE.md"
+        }
+      ]
+    },
+    {
+      "slug": "perception-reasoning",
+      "display_name": "Perception & Spatial Reasoning",
+      "purpose": "Infer transformation rules from examples, falsify alternatives, and execute the selected rule with bounded verification.",
+      "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
+      "activation_boundary": "Use for bounded integer-grid or symbolic transformation tasks with at least one training pair and a test input; disclose reduced verification when only one pair is available.",
+      "important_exclusions": [
+        "Omit coherence heartbeat and meta supervision for bounded single-puzzle work; add candidate branching only when hypotheses genuinely compete."
+      ],
+      "high_cost_components": [
+        "multiverse-reasoning"
+      ],
+      "recipe_path": "recipes/resolved/perception-reasoning.md",
+      "source_recipe_path": "recipes/perception-reasoning.md",
+      "components": [
+        {
+          "slug": "task-set-lock-in",
+          "role": "R",
+          "display_name": "Task-Set Lock-In",
+          "version": "1.1.0",
+          "trigger_summary": "multi-step work begins or scope changes",
+          "requires": [],
+          "package_path": "upgradeables/state/task-set-lock-in/UPGRADEABLE.md"
+        },
+        {
+          "slug": "grounding-no-invention",
+          "role": "R",
+          "display_name": "Grounding / No-Invention",
+          "version": "1.1.0",
+          "trigger_summary": "work relies on documents, data, external facts, or consequential claims",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md"
+        },
+        {
+          "slug": "anti-tunnel-vision",
+          "role": "R",
+          "display_name": "Anti-Tunnel Vision",
+          "version": "1.1.0",
+          "trigger_summary": "Activate when the task requires premature fixation is plausible.",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/anti-tunnel-vision/UPGRADEABLE.md"
+        },
+        {
+          "slug": "bounded-exit",
+          "role": "R",
+          "display_name": "Bounded ExIt",
+          "version": "1.1.0",
+          "trigger_summary": "a draft needs iterative improvement",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/bounded-exit/UPGRADEABLE.md"
+        },
+        {
+          "slug": "micro-scaffolding",
+          "role": "R",
+          "display_name": "Micro-Scaffolding",
+          "version": "1.1.0",
+          "trigger_summary": "Activate when the task requires multi-step or high-constraint work.",
+          "requires": [],
+          "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md"
+        },
+        {
+          "slug": "bidirectional-consistency",
+          "role": "A",
+          "display_name": "Bidirectional Consistency",
+          "version": "1.1.0",
+          "trigger_summary": "causal, logical, quantitative, or evidence claims are central",
+          "requires": [],
+          "package_path": "upgradeables/validation/bidirectional-consistency/UPGRADEABLE.md"
+        },
+        {
+          "slug": "forethought-checkpoints",
+          "role": "A",
+          "display_name": "Forethought / Checkpoints",
+          "version": "1.1.0",
+          "trigger_summary": "an action is costly, irreversible, or dependency-sensitive",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/forethought-checkpoints/UPGRADEABLE.md"
+        },
+        {
+          "slug": "cot-structured-state-block",
+          "role": "A",
+          "display_name": "CoT-Structured State Block",
+          "version": "1.1.0",
+          "trigger_summary": "structured intermediate task state must survive across steps",
+          "requires": [],
+          "package_path": "upgradeables/state/cot-structured-state-block/UPGRADEABLE.md"
+        },
+        {
+          "slug": "decision-first-scaffold",
+          "role": "C",
+          "display_name": "Decision-First Scaffold",
+          "version": "1.1.0",
+          "trigger_summary": "Activate when the task requires analysis risks becoming directionless.",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/decision-first-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "invariance-stress-scaffold",
+          "role": "C",
+          "display_name": "Invariance Stress Scaffold",
+          "version": "1.1.0",
+          "trigger_summary": "a patch or rewrite must preserve invariants",
+          "requires": [],
+          "package_path": "upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md"
+        },
+        {
+          "slug": "counterfactual-integrity",
+          "role": "C",
+          "display_name": "Counterfactual Integrity Gate",
+          "version": "1.1.0",
+          "trigger_summary": "counterfactual or hypothetical reasoning is used",
+          "requires": [],
+          "package_path": "upgradeables/truth-grounding/counterfactual-integrity/UPGRADEABLE.md"
+        },
+        {
+          "slug": "multiverse-reasoning",
+          "role": "O",
+          "display_name": "Multiverse Engine",
+          "version": "1.1.0",
+          "trigger_summary": "competing hypotheses or designs would add value",
+          "requires": [],
+          "package_path": "upgradeables/reasoning/multiverse-reasoning/UPGRADEABLE.md"
+        },
+        {
+          "slug": "cognitive-governor",
+          "role": "O",
+          "display_name": "Reasoning Budget / Cognitive Governor",
+          "version": "1.1.0",
+          "trigger_summary": "effort allocation materially affects cost or quality",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/cognitive-governor/UPGRADEABLE.md"
+        },
+        {
+          "slug": "coherence-heartbeat",
+          "role": "X",
+          "display_name": "Global Coherence Heartbeat",
+          "version": "1.1.0",
+          "trigger_summary": "a workflow is long or multi-stage",
+          "requires": [],
+          "package_path": "upgradeables/validation/coherence-heartbeat/UPGRADEABLE.md"
+        },
+        {
+          "slug": "meta-supervisor",
+          "role": "X",
+          "display_name": "Meta-Supervisor Bundle",
+          "version": "1.1.0",
+          "trigger_summary": "complex scaffolding itself needs supervision",
+          "requires": [],
+          "package_path": "upgradeables/meta-control/meta-supervisor/UPGRADEABLE.md"
         }
       ]
     }

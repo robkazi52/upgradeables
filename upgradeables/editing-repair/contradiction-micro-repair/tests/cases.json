@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The dates are mutually incompatible under the same pilot identity and year.",
-      "expect": "One local correction with timeline consistency restored.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Confirms same scope and year, replaces June with March in the single clause, and rechecks the timeline and conclusion. Result: One local correction with timeline consistency restored.",
+      "reject": "Omitting the mechanism or instead doing this: Rewrite the entire schedule section or preserve both dates as perspectives."
     },
     {
       "id": "contradiction-micro-repair-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the apparent contradiction is a legitimate difference in scope or time",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Extract the two conflicting claims and their provenance.",
+      "reject": "Activating Contradiction Micro-Repair Pack solely because its name appears relevant"
     },
     {
       "id": "contradiction-micro-repair-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A source-locked claim outranks an unsupported generated claim.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: prove the contradiction before editing",
+      "reject": "Silently violating the stated precedence for Contradiction Micro-Repair Pack"
     },
     {
       "id": "contradiction-micro-repair-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "false contradiction from different scopes",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: scope normalization",
+      "reject": "Claiming a successful Contradiction Micro-Repair Pack result past this boundary"
     },
     {
       "id": "contradiction-micro-repair-strong-model-scaling",

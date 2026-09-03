@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Voice and formatting vary while facts and citations are already approved.
-- **Expect:** A consistent guide that retains the approved semantic record.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Builds a style vector, normalizes voice and headings, removes promotional phrasing, and confirms claims, uncertainty, and citations remain unchanged. Result: A consistent guide that retains the approved semantic record.
+- **Reject:** Omitting the mechanism or instead doing this: Add confident benefit claims to make the guide sound polished.
 
 ## Negative Activation
 
 - **Given:** the requested style impersonates a living person or conflicts with policy
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Extract the authorized style source and convert it into observable positive and negative constraints.
+- **Reject:** Activating Style-Alignment Module solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Truth, safety, citation fidelity, and explicit task constraints outrank the style guide.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: use explicit style dimensions
+- **Reject:** Silently violating the stated precedence for Style-Alignment Module
 
 ## Failure Boundary
 
 - **Given:** fact drift for tone
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit target dimensions
+- **Reject:** Claiming a successful Style-Alignment Module result past this boundary
 
 ## Strong Model Scaling
 

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "All proposals cannot remain active without recency and attention competition.",
-      "expect": "A complete comparison built from traceable evidence cards with a bounded live workspace.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Processes bounded batches, captures criterion evidence, indexes it, releases raw text, then compares from the index and verifies finalists. Result: A complete comparison built from traceable evidence cards with a bounded live workspace.",
+      "reject": "Omitting the mechanism or instead doing this: It does not draft the recommendation while still pulling unindexed proposal text."
     },
     {
       "id": "activation-budget-funnel-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a short single source fits comfortably in context",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define the question and the evidence fields the task needs.",
+      "reject": "Activating Activation-Budget Funnel solely because its name appears relevant"
     },
     {
       "id": "activation-budget-funnel-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Source-boundary and authority rules control what may enter the funnel.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Separate retrieval/capture from synthesis.",
+      "reject": "Silently violating the stated precedence for Activation-Budget Funnel"
     },
     {
       "id": "activation-budget-funnel-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Pause synthesis when evidence has not been captured with provenance or active pulls cannot be bounded without losing required coverage.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: retrieval-before-synthesis separation",
+      "reject": "Claiming a successful Activation-Budget Funnel result past this boundary"
     },
     {
       "id": "activation-budget-funnel-strong-model-scaling",

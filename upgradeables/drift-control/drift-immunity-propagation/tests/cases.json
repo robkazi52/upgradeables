@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Each stage could round, relabel, or detach the figures from their period.",
-      "expect": "Final figures retain source identity and protected semantics through the pipeline.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Carries those contracts into analysis and slide projections and validates each derivative. Result: Final figures retain source identity and protected semantics through the pipeline.",
+      "reject": "Omitting the mechanism or instead doing this: It does not propagate a confidence label without the source period or allow silent unit changes."
     },
     {
       "id": "drift-immunity-propagation-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "no downstream artifact derives from protected material",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify verified invariants and assign stable identifiers.",
+      "reject": "Activating Drift Immunity Propagation solely because its name appears relevant"
     },
     {
       "id": "drift-immunity-propagation-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Original verified source and higher-authority constraints outrank downstream paraphrases.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: propagate provenance with protection",
+      "reject": "Silently violating the stated precedence for Drift Immunity Propagation"
     },
     {
       "id": "drift-immunity-propagation-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not label a derivative immune when its invariant cannot be tested.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: stable invariant identity",
+      "reject": "Claiming a successful Drift Immunity Propagation result past this boundary"
     },
     {
       "id": "drift-immunity-propagation-strong-model-scaling",

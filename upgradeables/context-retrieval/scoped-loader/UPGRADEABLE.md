@@ -138,11 +138,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- modular Skill execution
-- agent routing
-- large reference libraries
-- domain OS selection
-- multi-stage research
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
+- source-grounded research
 
 ## Example Composition
 
@@ -172,6 +171,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-07. Loader Sequencing (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 11.2 Research Intake / Corpus Map (historical_assistant_artifact)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — Canonical current consolidated inventory (historical_recovery_inventory)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Central curation, open pull requests, and federated registries have materially different trust and maintenance tradeoffs.",
-      "expect": "One executable governance plan with two retired alternatives and explicit reasons.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Builds three compact branch records, evaluates each against the same governance and usability rubric, vetoes the federation branch if discoverability cannot be guaranteed, and selects an open-PR model with automated validation. Result: One executable governance plan with two retired alternatives and explicit reasons.",
+      "reject": "Omitting the mechanism or instead doing this: Call three slightly different pull-request workflows separate universes or retain federation-only assumptions in the chosen plan."
     },
     {
       "id": "multiverse-reasoning-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a locked source dictates a single faithful transformation",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Lock shared facts, goals, constraints, risk boundaries, and a branch budget of two or three.",
+      "reject": "Activating Multiverse Engine solely because its name appears relevant"
     },
     {
       "id": "multiverse-reasoning-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A hard truth, safety, or authorization veto cannot be outvoted by soft quality scores.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: make branches materially distinct",
+      "reject": "Silently violating the stated precedence for Multiverse Engine"
     },
     {
       "id": "multiverse-reasoning-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "cosmetic branch variants",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: material branch distinctness",
+      "reject": "Claiming a successful Multiverse Engine result past this boundary"
     },
     {
       "id": "multiverse-reasoning-strong-model-scaling",

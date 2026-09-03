@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Numbers and limitations must remain exact, explanations may simplify, and examples may be newly created if labeled.
-- **Expect:** Review effort and permitted transformation match each content type.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Maps measurements to zero, claims/limitations to narrow, organization to moderate, and labeled analogies to creative bands. Result: Review effort and permitted transformation match each content type.
+- **Reject:** Omitting the mechanism or instead doing this: It does not give the entire explainer one creativity value.
 
 ## Negative Activation
 
 - **Given:** every element has the same explicit tolerance
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Define named drift bands and the semantic changes each permits.
+- **Reject:** Activating Drift-Spectra Scaling solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Explicit source/task invariants override a permissive band assignment.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: define bands operationally
+- **Reject:** Silently violating the stated precedence for Drift-Spectra Scaling
 
 ## Failure Boundary
 
 - **Given:** Do not use a spectrum when bands lack observable distinctions.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: operational band definitions
+- **Reject:** Claiming a successful Drift-Spectra Scaling result past this boundary
 
 ## Strong Model Scaling
 

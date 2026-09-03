@@ -2,6 +2,11 @@
 
 This append-oriented ledger records how recovered items were normalized.
 
+`exact_recovery` means the named concept is directly present in the source; it
+does not guarantee that every catalog ID was historically used verbatim. Some
+IDs were normalized by the consolidated source. Package provenance and audit
+notes call out those distinctions, including modern builder IDs such as `C-00`.
+
 ## v0.2 semantic traceability review
 
 All 96 baseline operational rows were re-reviewed against all three immutable

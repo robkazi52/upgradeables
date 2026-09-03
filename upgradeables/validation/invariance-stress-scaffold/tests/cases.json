@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Order is supposed to be irrelevant to the safety judgment.",
-      "expect": "A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Compares findings across preserving variants and confirms the control legitimately changes the result. Result: A missed finding after bullet reorder exposes order sensitivity and narrows the reliability claim.",
+      "reject": "Omitting the mechanism or instead doing this: Treat removal of a safety fact as a preserving perturbation."
     },
     {
       "id": "invariance-stress-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the transformed feature is itself decision-relevant",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: State the claimed invariant and observable pass condition.",
+      "reject": "Activating Invariance Stress Scaffold solely because its name appears relevant"
     },
     {
       "id": "invariance-stress-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Meaning-changing controls are not invariant breaches.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Declare why each perturbation should preserve the target property.",
+      "reject": "Silently violating the stated precedence for Invariance Stress Scaffold"
     },
     {
       "id": "invariance-stress-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not claim robustness when decision-relevant output changes under a justified semantics-preserving perturbation.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit invariant and at least one controlled counterfactual comparison when robustness is claimed",
+      "reject": "Claiming a successful Invariance Stress Scaffold result past this boundary"
     },
     {
       "id": "invariance-stress-scaffold-strong-model-scaling",

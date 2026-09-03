@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The sources report observations, while the requested conclusion requires interpretation and uncertainty.",
-      "expect": "A readable conclusion whose evidence, inference, and uncertainty remain distinguishable.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Keeps reported findings in the factual/evidentiary phase, labels the synthesis as interpretation, and states probability without converting it into fact. Result: A readable conclusion whose evidence, inference, and uncertainty remain distinguishable.",
+      "reject": "Omitting the mechanism or instead doing this: Attribute the synthesized policy conclusion directly to a source that did not make it."
     },
     {
       "id": "phase-locked-reasoning-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a single atomic transformation has no phase transition",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare the phases needed for the task and what claim types each admits.",
+      "reject": "Activating Phase-Locked Reasoning Scaffold solely because its name appears relevant"
     },
     {
       "id": "phase-locked-reasoning-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A transition cannot increase certainty beyond its evidence without an explicit warrant.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: retain provenance across phase transitions",
+      "reject": "Silently violating the stated precedence for Phase-Locked Reasoning Scaffold"
     },
     {
       "id": "phase-locked-reasoning-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "phase leakage",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: internal claim-status separation",
+      "reject": "Claiming a successful Phase-Locked Reasoning Scaffold result past this boundary"
     },
     {
       "id": "phase-locked-reasoning-scaffold-strong-model-scaling",

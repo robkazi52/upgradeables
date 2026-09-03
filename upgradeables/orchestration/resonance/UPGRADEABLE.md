@@ -124,9 +124,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-module Skills
-- evidence-to-state coordination
-- composed agent workflows
+- document and code transformation
+- high-stakes evidence work
+- long-context workflows
+- multi-step task execution
 
 ## Example Composition
 
@@ -156,4 +157,4 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-05. Resonance (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)

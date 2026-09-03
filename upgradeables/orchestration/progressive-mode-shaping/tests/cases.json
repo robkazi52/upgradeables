@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Exploration is useful early but must not persist into engineering execution.",
-      "expect": "Engineering receives one precise specification with traceable retired alternatives.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Narrows from ideation to comparison to one plan, locking decisions at each transition. Result: Engineering receives one precise specification with traceable retired alternatives.",
+      "reject": "Omitting the mechanism or instead doing this: Does not keep rejected features active or force a premature choice without comparison."
     },
     {
       "id": "progressive-mode-shaping-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task is purely exploratory and requires no commitment",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare the initial exploration boundary and the decisions that must eventually lock.",
+      "reject": "Activating Progressive Mode Shaping solely because its name appears relevant"
     },
     {
       "id": "progressive-mode-shaping-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Host, system, domain, and explicit user authority take precedence over this component.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve the defining invariant: evidence-backed narrowing and retirement of losing branches before execution.",
+      "reject": "Silently violating the stated precedence for Progressive Mode Shaping"
     },
     {
       "id": "progressive-mode-shaping-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "transition criteria are absent or accepted decisions cannot be distinguished from open options",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: evidence-backed narrowing and retirement of losing branches before execution",
+      "reject": "Claiming a successful Progressive Mode Shaping result past this boundary"
     },
     {
       "id": "progressive-mode-shaping-strong-model-scaling",

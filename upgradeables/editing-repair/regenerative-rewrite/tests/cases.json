@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Multiple local edits have not restored coherent source mapping.",
-      "expect": "A coherent report whose claims map back to verified source atoms.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Builds a fact-and-citation ledger, creates a new section map, writes afresh from the ledger, and records which unsupported passages were discarded. Result: A coherent report whose claims map back to verified source atoms.",
+      "reject": "Omitting the mechanism or instead doing this: Polish each old section in sequence or carry unsupported transitions into the rebuild."
     },
     {
       "id": "regenerative-rewrite-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "one sentence or field is wrong",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Demonstrate systemic failure: wrong architecture, cross-section contradiction, or broken source mapping that resists bounded repair.",
+      "reject": "Activating Regenerative Rewrite solely because its name appears relevant"
     },
     {
       "id": "regenerative-rewrite-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Verified facts, citations, and non-negotiable requirements survive even if they complicate the new structure.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: prove local repair is insufficient",
+      "reject": "Silently violating the stated precedence for Regenerative Rewrite"
     },
     {
       "id": "regenerative-rewrite-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "unnecessary global rewrite",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: locked-atom extraction",
+      "reject": "Claiming a successful Regenerative Rewrite result past this boundary"
     },
     {
       "id": "regenerative-rewrite-strong-model-scaling",

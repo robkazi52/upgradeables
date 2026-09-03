@@ -138,10 +138,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- recommendations
-- go/no-go reviews
-- option selection
-- resource allocation
+- analysis and decision support
+- communication and content generation
+- document and code transformation
+- review and quality assurance
 
 ## Example Composition
 
@@ -171,5 +171,5 @@ Source support: `source-gap`. Mechanism basis: `provisional`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)

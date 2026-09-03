@@ -153,10 +153,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- legal and policy transformation
-- source-grounded summaries
-- code/API migration
-- safety-critical instructions
+- document and code transformation
+- high-stakes evidence work
+- long-context workflows
+- source-grounded research
 
 ## Example Composition
 

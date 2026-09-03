@@ -177,11 +177,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- high-stakes synthesis
-- complex repository validation
-- multiverse collapse
-- long-form factual work
-- safety-sensitive decisions
+- analysis and decision support
+- high-stakes evidence work
+- long-context workflows
+- multi-step task execution
 
 ## Example Composition
 
@@ -211,6 +210,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-reco
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — PART VII. PARALLEL-QMS FAMILY (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 9. Parallel-QMS recovered family (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8. PARALLEL-QMS — DEEP HISTORICAL OPERATING DETAILS (historical_assistant_artifact)

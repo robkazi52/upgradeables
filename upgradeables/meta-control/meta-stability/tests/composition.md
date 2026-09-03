@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Repeated changes and divergent state threaten global coherence.
-- **Expect:** One coherent baseline and a controlled resume queue.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Freezes new edits, compares each diff to the passing state, quarantines conflicting changes, rebuilds one authoritative state, validates it, then resumes changes sequentially. Result: One coherent baseline and a controlled resume queue.
+- **Reject:** Omitting the mechanism or instead doing this: Delete all recent work or keep launching more repair agents.
 
 ## Negative Activation
 
 - **Given:** one local defect can be repaired directly
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Confirm an instability trigger such as state divergence, repeated regression, or unresolved module conflict.
+- **Reject:** Activating Meta-Stability Mode solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A user-approved newer decision is not rolled back solely because an older checkpoint is internally coherent.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: preserve the last verified checkpoint
+- **Reject:** Silently violating the stated precedence for Meta-Stability Mode
 
 ## Failure Boundary
 
 - **Given:** stability theater
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: verified checkpoint
+- **Reject:** Claiming a successful Meta-Stability Mode result past this boundary
 
 ## Strong Model Scaling
 

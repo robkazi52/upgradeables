@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Many attractive documentation additions could distract from required build and validation outputs.
-- **Expect:** Completion is evaluated against the original concrete specification.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Locks those fields, gates work against them, and records any user-authorized scope change. Result: Completion is evaluated against the original concrete specification.
+- **Reject:** Omitting the mechanism or instead doing this: It does not stop after scaffolding or rewrite the source corpus.
 
 ## Negative Activation
 
 - **Given:** the task is still materially ambiguous
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Extract the objective, required artifacts, constraints, success tests, and exclusions.
+- **Reject:** Activating Task-Set Lock-In solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** System and latest explicit authorized user scope changes override older task-set versions.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: include non-goals
+- **Reject:** Silently violating the stated precedence for Task-Set Lock-In
 
 ## Failure Boundary
 
 - **Given:** Do not claim completion when a required artifact or quality gate lacks evidence.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: objective
+- **Reject:** Claiming a successful Task-Set Lock-In result past this boundary
 
 ## Strong Model Scaling
 

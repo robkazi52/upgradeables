@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "They differ in reliable context handling but must meet the same evidence standard.",
-      "expect": "Different process overhead, identical semantic acceptance boundary.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Gives the compact model smaller source batches and per-claim checks; permits the frontier model to batch low-risk extraction after it passes calibration. Result: Different process overhead, identical semantic acceptance boundary.",
+      "reject": "Omitting the mechanism or instead doing this: It does not let either model omit citations or alter locked facts."
     },
     {
       "id": "compute-adaptive-drift-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "adaptation would weaken factual or safety invariants",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Classify consequence of drift and identify non-negotiable invariants.",
+      "reject": "Activating Compute-Adaptive Drift Constraining solely because its name appears relevant"
     },
     {
       "id": "compute-adaptive-drift-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Task risk and zero-drift requirements cap any relaxation due to compute.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: hold truth and authority invariants constant",
+      "reject": "Silently violating the stated precedence for Compute-Adaptive Drift Constraining"
     },
     {
       "id": "compute-adaptive-drift-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not relax controls for high-impact claims without demonstrated validation performance.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: zero-drift fields",
+      "reject": "Claiming a successful Compute-Adaptive Drift Constraining result past this boundary"
     },
     {
       "id": "compute-adaptive-drift-strong-model-scaling",

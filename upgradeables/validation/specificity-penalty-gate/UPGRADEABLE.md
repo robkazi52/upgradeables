@@ -141,11 +141,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- research answers
-- estimates
-- incident explanations
-- requirements derived from incomplete evidence
-- source recovery
+- high-stakes evidence work
+- review and quality assurance
+- source-grounded research
 
 ## Example Composition
 
@@ -175,6 +173,6 @@ Source support: `source-gap`. Mechanism basis: `modern-interpretation`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — Pack-derived exact names (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — Specificity Penalty Gate (historical_recovery_inventory)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 15. January 2026 registry philosophy recovered from historical work (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 20. RECOVERY GAPS AFTER DEEP PASS 2.0 (historical_assistant_artifact)

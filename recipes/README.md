@@ -29,3 +29,4 @@ run `python scripts/query_registry.py --recipe <recipe-slug>` or inspect
 - [Multi-Agent / Orchestration](resolved/multi-agent-orchestration.md)
 - [Deterministic Intake / Routing](resolved/deterministic-intake-routing.md)
 - [Long-Context Source Fidelity](resolved/long-context-source-fidelity.md)
+- [Perception & Spatial Reasoning](resolved/perception-reasoning.md)

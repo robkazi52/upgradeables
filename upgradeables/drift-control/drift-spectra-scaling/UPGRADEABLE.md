@@ -152,10 +152,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- mixed-content rewriting
-- summaries
-- format migrations
-- multi-stage synthesis
+- communication and content generation
+- document and code transformation
+- long-context workflows
+- multi-step task execution
 
 ## Example Composition
 

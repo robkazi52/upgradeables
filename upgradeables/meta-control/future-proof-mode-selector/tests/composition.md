@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The hosts differ in filesystem, command, context, and state capabilities.
-- **Expect:** Portable behavior with explicit host-specific execution profiles.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Selects tool-enabled validation for capable agents, a document-only sequence for Copilot, and a conservative manual checklist for the tool-less model while retaining source and safety gates. Result: Portable behavior with explicit host-specific execution profiles.
+- **Reject:** Omitting the mechanism or instead doing this: Assume all frontier models can run shell commands or drop integrity checks on the strongest model.
 
 ## Negative Activation
 
 - **Given:** the host and task profile are fixed
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Declare the task's risk, state, tool, and validation requirements.
+- **Reject:** Activating Future-Proof Mode Selector solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Task-risk requirements override host convenience.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: test capabilities rather than infer them from brand or model size
+- **Reject:** Silently violating the stated precedence for Future-Proof Mode Selector
 
 ## Failure Boundary
 
 - **Given:** capability hallucination
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: risk overlay
+- **Reject:** Claiming a successful Future-Proof Mode Selector result past this boundary
 
 ## Strong Model Scaling
 

@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The output must remain factual and the missing cause invites speculation.
-- **Expect:** A factual summary with an explicit evidence gap.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Reports the chronology and marks cause as undetermined. Result: A factual summary with an explicit evidence gap.
+- **Reject:** Omitting the mechanism or instead doing this: Add what might have happened if a different operator acted.
 
 ## Negative Activation
 
 - **Given:** the task explicitly requests scenarios, hypotheses, or counterfactual analysis
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Confirm that the task contract excludes hypothetical reasoning.
+- **Reject:** Activating Counterfactual Silence Scaffold solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** An explicit user request for counterfactual analysis deactivates this scaffold and activates counterfactual integrity instead.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Tie activation to an explicit factual-only boundary.
+- **Reject:** Silently violating the stated precedence for Counterfactual Silence Scaffold
 
 ## Failure Boundary
 
 - **Given:** If factual and counterfactual propositions cannot be distinguished reliably, request review rather than deleting uncertain content wholesale.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: unauthorized hypothetical premises must not enter factual output
+- **Reject:** Claiming a successful Counterfactual Silence Scaffold result past this boundary
 
 ## Strong Model Scaling
 

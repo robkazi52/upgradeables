@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The dates are mutually incompatible under the same pilot identity and year.
-- **Expect:** One local correction with timeline consistency restored.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Confirms same scope and year, replaces June with March in the single clause, and rechecks the timeline and conclusion. Result: One local correction with timeline consistency restored.
+- **Reject:** Omitting the mechanism or instead doing this: Rewrite the entire schedule section or preserve both dates as perspectives.
 
 ## Negative Activation
 
 - **Given:** the apparent contradiction is a legitimate difference in scope or time
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Extract the two conflicting claims and their provenance.
+- **Reject:** Activating Contradiction Micro-Repair Pack solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A source-locked claim outranks an unsupported generated claim.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: prove the contradiction before editing
+- **Reject:** Silently violating the stated precedence for Contradiction Micro-Repair Pack
 
 ## Failure Boundary
 
 - **Given:** false contradiction from different scopes
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: scope normalization
+- **Reject:** Claiming a successful Contradiction Micro-Repair Pack result past this boundary
 
 ## Strong Model Scaling
 

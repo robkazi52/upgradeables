@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** They need impact and rollout logic, not implementation-level type-system detail.
-- **Expect:** A technically faithful explanation that supports planning decisions.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Starts with user-visible impact, defines compatibility window in plain language, sequences rollout dependencies, and includes one workflow example while preserving rollback limits. Result: A technically faithful explanation that supports planning decisions.
+- **Reject:** Omitting the mechanism or instead doing this: Replace the mechanism with a false everyday analogy or omit the irreversible deadline.
 
 ## Negative Activation
 
 - **Given:** the audience and purpose cannot be inferred and the choice materially changes content
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Identify the reader's likely starting knowledge and the capability they need after reading.
+- **Reject:** Activating Pedagogical Alignment Constraint solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Accuracy, scope, and uncertainty outrank ease of explanation.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: preserve accuracy before accessibility
+- **Reject:** Silently violating the stated precedence for Pedagogical Alignment Constraint
 
 ## Failure Boundary
 
 - **Given:** oversimplification
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: internal prerequisite model
+- **Reject:** Claiming a successful Pedagogical Alignment Constraint result past this boundary
 
 ## Strong Model Scaling
 

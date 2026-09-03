@@ -153,11 +153,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- source-faithful extraction
-- production changes
-- high-risk recommendations
-- final publication
-- irreversible operations
+- high-stakes evidence work
+- multi-step task execution
+- skill and agent workflows
+- source-grounded research
 
 ## Example Composition
 
@@ -187,6 +186,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-06. SAFE Mode (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION (historical_assistant_artifact)

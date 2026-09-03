@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Rollback capability is a declared non-compensable condition.
-- **Expect:** The candidate remains quarantined until the fatal condition is removed.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Vetoes deployment and requires a tested rollback path before rescoring. Result: The candidate remains quarantined until the fatal condition is removed.
+- **Reject:** Omitting the mechanism or instead doing this: Approve because four of five validators passed.
 
 ## Negative Activation
 
 - **Given:** the alleged defect is merely a soft preference
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Define non-compensable predicates and required evidence.
+- **Reject:** Activating Fermionic Veto Strengthening solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Verified veto evidence outranks aggregate score or validator majority.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Keep veto predicates narrow and inspectable.
+- **Reject:** Silently violating the stated precedence for Fermionic Veto Strengthening
 
 ## Failure Boundary
 
 - **Given:** Do not certify or execute a candidate while a verified non-compensable predicate remains active.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: independent hard-constraint check whenever aggregate scoring is used
+- **Reject:** Claiming a successful Fermionic Veto Strengthening result past this boundary
 
 ## Strong Model Scaling
 

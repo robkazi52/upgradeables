@@ -155,10 +155,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long branching investigations
-- iterative drafting
-- agent workflows with recurring stale branches
-- large mixed-authority contexts
+- document and code transformation
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

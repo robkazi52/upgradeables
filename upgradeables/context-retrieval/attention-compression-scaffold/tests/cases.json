@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Full repository context exceeds the active workspace.",
-      "expect": "A compact debug context that can be expanded back to authoritative files.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Keeps exact signatures and errors, summarizes surrounding behavior with file pointers, and retires unrelated modules. Result: A compact debug context that can be expanded back to authoritative files.",
+      "reject": "Omitting the mechanism or instead doing this: It does not rewrite signatures, discard conflicting traces, or pretend summaries are source files."
     },
     {
       "id": "attention-compression-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the original context is already small",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define the current subtask and protected atoms that compression must preserve.",
+      "reject": "Activating Attention Compression Scaffold solely because its name appears relevant"
     },
     {
       "id": "attention-compression-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Zero-drift and source-fidelity requirements override compression goals.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve exact literals that cannot tolerate paraphrase.",
+      "reject": "Silently violating the stated precedence for Attention Compression Scaffold"
     },
     {
       "id": "attention-compression-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not activate the compressed view when a protected fact, conflict, or provenance link is lost or unverifiable.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: protected-atom preservation",
+      "reject": "Claiming a successful Attention Compression Scaffold result past this boundary"
     },
     {
       "id": "attention-compression-scaffold-strong-model-scaling",

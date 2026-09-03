@@ -24,10 +24,10 @@
   ],
   "purpose": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
   "recommended_skill_types": [
-    "mixed-domain workspaces",
-    "multi-tenant assistants",
-    "regulated workflows",
-    "parallel specialist agents"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the task is genuinely single-domain",

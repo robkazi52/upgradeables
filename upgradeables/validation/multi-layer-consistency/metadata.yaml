@@ -22,10 +22,10 @@
   ],
   "purpose": "Maintain vertical consistency from local facts and operations to the overall conclusion or system behavior.",
   "recommended_skill_types": [
-    "large documents",
-    "modular software",
-    "policy hierarchies",
-    "multi-step analytical conclusions"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the artifact has only one meaningful level",
@@ -142,13 +142,15 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-05. Multi-Layer Consistency",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-05. Multi-Layer Consistency"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "T2-05. Multi-Layer Consistency",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "Interpretation rule for the frozen T2 registry",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "T2-05. Multi-Layer Consistency"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",

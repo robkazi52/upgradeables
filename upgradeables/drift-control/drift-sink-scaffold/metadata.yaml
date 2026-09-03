@@ -22,10 +22,10 @@
   ],
   "purpose": "Stop known drift attractors from repeatedly re-entering active reasoning without destroying potentially useful history.",
   "recommended_skill_types": [
-    "long branching investigations",
-    "iterative drafting",
-    "agent workflows with recurring stale branches",
-    "large mixed-authority contexts"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the branch is unresolved rather than rejected",

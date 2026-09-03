@@ -23,10 +23,9 @@
   ],
   "purpose": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.",
   "recommended_skill_types": [
-    "prompt robustness checks",
-    "policy interpretation",
-    "classification stability",
-    "summary validation"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "the transformed feature is itself decision-relevant",
@@ -149,13 +148,15 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "Invariance Stress Scaffold",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "Initial named Upgradeables",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Invariance Stress Scaffold"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",

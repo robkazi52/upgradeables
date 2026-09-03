@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The second session must know exactly which sources and claims were accepted at handoff.",
-      "expect": "The review resumes from a reproducible checkpoint.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Freezes those fields with integrity and predecessor metadata, then verifies new events on restore. Result: The review resumes from a reproducible checkpoint.",
+      "reject": "Omitting the mechanism or instead doing this: It does not treat the copy as live or omit unresolved questions."
     },
     {
       "id": "state-snapshot-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a snapshot would persist prohibited sensitive data",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Choose a transaction-safe checkpoint.",
+      "reject": "Activating State Snapshot solely because its name appears relevant"
     },
     {
       "id": "state-snapshot-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A newer validated canonical state outranks an older snapshot.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: freeze an identified state version",
+      "reject": "Silently violating the stated precedence for State Snapshot"
     },
     {
       "id": "state-snapshot-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not restore when integrity, task identity, or schema compatibility cannot be established.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: immutable version identity",
+      "reject": "Claiming a successful State Snapshot result past this boundary"
     },
     {
       "id": "state-snapshot-strong-model-scaling",

@@ -148,11 +148,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- paraphrasing
-- tone adjustment
-- format conversion
-- clarity polishing
-- audience adaptation
+- document and code transformation
+- high-stakes evidence work
+- review and quality assurance
+- source-grounded research
 
 ## Example Composition
 
@@ -182,6 +181,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-10. Safe Rewrite Logic (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION (historical_assistant_artifact)

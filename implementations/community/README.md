@@ -2,7 +2,8 @@
 
 Add a model-agnostic Skill at `implementations/community/<skill-slug>/SKILL.md`.
 Use [the Skill template](../../templates/SKILL_IMPLEMENTATION_TEMPLATE.md) and
-review the [source-bounded research example](source-bounded-research/SKILL.md).
+review the [source-bounded research example](source-bounded-research/SKILL.md)
+or the contrasting [ARC perception solver](arc-perception-solver/SKILL.md).
 
 A contribution must identify its target compatibility, activation and failure
 boundaries, selected `slug@version` components, provenance, output contract, and

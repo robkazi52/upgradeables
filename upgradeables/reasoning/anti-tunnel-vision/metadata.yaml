@@ -23,9 +23,10 @@
   ],
   "purpose": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates.",
   "recommended_skill_types": [
-    "ambiguous diagnosis",
-    "architecture choice with two credible patterns",
-    "research synthesis with competing explanations"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the answer is directly established by a locked source",
@@ -146,8 +147,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-19. Anti-Tunnel Vision",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-19. Anti-Tunnel Vision"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

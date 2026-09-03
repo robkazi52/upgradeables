@@ -152,10 +152,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- repeated tool failures
-- recursive revision loops
-- stale debugging hypotheses
-- nonconverging planning
+- document and code transformation
+- multi-step task execution
+- review and quality assurance
+- skill and agent workflows
 
 ## Example Composition
 
@@ -185,6 +185,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-03. Stuck-Pattern Reset Pack (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 9. BOUNDED EXIT — DEEPER HISTORICAL USE (historical_assistant_artifact)

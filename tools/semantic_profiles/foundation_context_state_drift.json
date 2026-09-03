@@ -412,7 +412,7 @@
     "source_refs": [
       {"document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md", "heading": "StateBlock", "source_kind": "current_consolidated_catalog"},
       {"document": "OS_Upgradeables_Historical_Recovery_Inventory.md", "heading": "StateBlock and StateBlock SmartUpdate entries", "source_kind": "historical_inventory"},
-      {"document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md", "heading": "State kernel and SMSE reconstruction", "source_kind": "deep_context_recovery"}
+      {"document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md", "heading": "11.1 Kernel / State Block", "source_kind": "deep_context_recovery"}
     ],
     "summary": "Maintain one canonical, schema-defined representation of the task's current operational state.",
     "purpose": "Give tools, agents, validators, and handoffs a shared source of current task truth.",

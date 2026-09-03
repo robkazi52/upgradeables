@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** They need a shared current objective, source set, status, and unresolved-risk record.
-- **Expect:** Coordination and validation use the same current task truth.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Creates one versioned block and gives each agent a scoped view with controlled update rights. Result: Coordination and validation use the same current task truth.
+- **Reject:** Omitting the mechanism or instead doing this: It does not let each agent maintain an independent final status.
 
 ## Negative Activation
 
 - **Given:** a trivial one-turn task needs no persistent state
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Select only fields required to execute and verify the task.
+- **Reject:** Activating StateBlock solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** System and explicit task authority govern locked fields; evidence updates factual fields only through their declared owners.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: maintain one canonical owner
+- **Reject:** Silently violating the stated precedence for StateBlock
 
 ## Failure Boundary
 
 - **Given:** Do not proceed on dependent actions when required state is contradictory or unknown.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: single source of truth
+- **Reject:** Claiming a successful StateBlock result past this boundary
 
 ## Strong Model Scaling
 

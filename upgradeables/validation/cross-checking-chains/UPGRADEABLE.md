@@ -137,10 +137,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- high-stakes fact verification
-- data pipeline validation
-- release qualification
-- multi-source research
+- high-stakes evidence work
+- review and quality assurance
+- source-grounded research
 
 ## Example Composition
 
@@ -170,6 +169,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-07. Cross-Checking Chains (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — T3-07. Cross-Checking Chains (historical_recovery_inventory)
-- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.1 QMS-M (historical_assistant_artifact)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.3 QMS-XP — Cross-Phase QMS (historical_assistant_artifact)

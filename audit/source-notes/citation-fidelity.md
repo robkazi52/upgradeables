@@ -8,9 +8,9 @@
 
 ## Recovered facts and source anchors
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-13. Citation Fidelity Gate (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — T3-13. Citation Fidelity Gate (historical_recovery_inventory)
-- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW (historical_assistant_artifact)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 13. Reasoning / Singularity Cores (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION (historical_assistant_artifact)
 
 ## Recovered or normalized purpose
 

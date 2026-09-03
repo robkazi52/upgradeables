@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Observation time does not establish exact onset time or cause.",
-      "expect": "The response retains useful evidence while removing unsupported temporal and causal precision.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Changes the claim to 'observed by 14:32' and keeps the causal explanation provisional. Result: The response retains useful evidence while removing unsupported temporal and causal precision.",
+      "reject": "Omitting the mechanism or instead doing this: Invent a 14:31–14:32 onset interval or delete the verified timestamp."
     },
     {
       "id": "specificity-penalty-gate-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "exact values are directly provided and verified",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify all atoms whose precision materially narrows the claim.",
+      "reject": "Activating Specificity Penalty Gate solely because its name appears relevant"
     },
     {
       "id": "specificity-penalty-gate-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A verified decision-critical exact atom is not penalized merely for being specific.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Penalize precision mismatch rather than detail itself.",
+      "reject": "Silently violating the stated precedence for Specificity Penalty Gate"
     },
     {
       "id": "specificity-penalty-gate-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not release a material exact claim when the available evidence supports only a broader range, class, or uncertainty state.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: support-versus-resolution comparison for generated dates, numbers, causes, and identities",
+      "reject": "Claiming a successful Specificity Penalty Gate result past this boundary"
     },
     {
       "id": "specificity-penalty-gate-strong-model-scaling",

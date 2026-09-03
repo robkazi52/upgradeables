@@ -23,10 +23,9 @@
   ],
   "purpose": "Replace a systemically broken expression or structure without losing verified content, requirements, provenance, or accepted decisions.",
   "recommended_skill_types": [
-    "globally incoherent drafts",
-    "broken source-to-section mapping",
-    "documents with incompatible inherited structures",
-    "outputs damaged by repeated patching"
+    "document and code transformation",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "one sentence or field is wrong",
@@ -158,8 +157,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-03. Regenerative Rewrite",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-03. Regenerative Rewrite"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

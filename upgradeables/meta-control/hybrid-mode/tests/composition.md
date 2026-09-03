@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Several architectures deserve exploration, but repository edits and publication require precise validated execution.
-- **Expect:** Broad design quality with a controlled, auditable execution path.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Uses POWER for three architectures, collapses to one, records interfaces and rejected assumptions, then switches to SAFE for file edits, tests, and publication. Result: Broad design quality with a controlled, auditable execution path.
+- **Reject:** Omitting the mechanism or instead doing this: Mix components from losing designs during implementation without reopening the design gate.
 
 ## Negative Activation
 
 - **Given:** the task needs only narrow execution
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Declare HYBRID and define separate planning and execution completion criteria.
+- **Reject:** Activating HYBRID Mode solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** No POWER branch may execute until one plan passes collapse and handoff validation.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: declare the active phase
+- **Reject:** Silently violating the stated precedence for HYBRID Mode
 
 ## Failure Boundary
 
 - **Given:** mode leakage
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit collapse
+- **Reject:** Claiming a successful HYBRID Mode result past this boundary
 
 ## Strong Model Scaling
 

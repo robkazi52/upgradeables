@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Generation can run in parallel, but source review and schema validation can become bottlenecks.
-- **Expect:** Steady validated output without queue or review collapse.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Limits active package batches, keeps validation one batch behind, reduces concurrency when rework rises, and reports accepted profiles per hour. Result: Steady validated output without queue or review collapse.
+- **Reject:** Omitting the mechanism or instead doing this: Launch all 200 at once or count unvalidated drafts as throughput.
 
 ## Negative Activation
 
 - **Given:** the task is one atomic operation
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Map the workflow stages, dependencies, and mandatory serial gates.
+- **Reject:** Activating Reasoning Throughput Governor solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Mandatory serial dependencies and vetoes override concurrency goals.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: measure useful completion rather than raw output volume
+- **Reject:** Silently violating the stated precedence for Reasoning Throughput Governor
 
 ## Failure Boundary
 
 - **Given:** raw-volume optimization
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: validation backpressure
+- **Reject:** Claiming a successful Reasoning Throughput Governor result past this boundary
 
 ## Strong Model Scaling
 

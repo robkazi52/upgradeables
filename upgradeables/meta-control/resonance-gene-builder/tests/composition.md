@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The same directional module relationship recurs across several authoring Genes.
-- **Expect:** One reusable, testable module relationship.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Builds a coupling Gene that passes changed claims to the validator, blocks finalization on mismatch, suppresses duplicate style output, and terminates after pass or explicit repair route. Result: One reusable, testable module relationship.
+- **Reject:** Omitting the mechanism or instead doing this: Merge rewriting and citation logic or claim they communicate outside explicit state.
 
 ## Negative Activation
 
 - **Given:** the need is a general task behavior unrelated to module coupling
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Collect repeated cases where the same modules should coordinate and isolate the stable relationship.
+- **Reject:** Activating Resonance Gene Builder solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Global authority ordering outranks a coupling's preferred flow.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: use explicit host-supported interfaces
+- **Reject:** Silently violating the stated precedence for Resonance Gene Builder
 
 ## Failure Boundary
 
 - **Given:** implicit coupling
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit interfaces
+- **Reject:** Claiming a successful Resonance Gene Builder result past this boundary
 
 ## Strong Model Scaling
 

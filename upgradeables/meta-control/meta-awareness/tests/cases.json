@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The process may be stuck even though each agent reports activity.",
-      "expect": "A grounded process-health diagnosis ready for supervisor action.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Detects unchanged state and repeated action signatures, emits repair-required with evidence, and routes the finding to Meta-Supervisor. Result: A grounded process-health diagnosis ready for supervisor action.",
+      "reject": "Omitting the mechanism or instead doing this: Claim the agents are confused or reset their work directly."
     },
     {
       "id": "meta-awareness-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a simple task has no meaningful process state",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Read declared mode, locked goal, state version, active modules, and expected next transition.",
+      "reject": "Activating Meta-Awareness Pack solely because its name appears relevant"
     },
     {
       "id": "meta-awareness-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "An unverifiable signal cannot be reported as a failure or a pass.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: limit claims to observable process state",
+      "reject": "Silently violating the stated precedence for Meta-Awareness Pack"
     },
     {
       "id": "meta-awareness-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "anthropomorphic narratives",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: observable-only claims",
+      "reject": "Claiming a successful Meta-Awareness Pack result past this boundary"
     },
     {
       "id": "meta-awareness-strong-model-scaling",

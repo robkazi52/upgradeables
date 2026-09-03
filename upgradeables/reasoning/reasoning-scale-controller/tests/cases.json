@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The surrounding artifact is large, but the actual defect is local and source-verifiable.",
-      "expect": "A proportional local correction with an explicit escalation condition.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Routes source verification to Subatomic, the citation replacement to Atomic, and avoids Cosmic redesign unless the correction exposes a section-wide provenance failure. Result: A proportional local correction with an explicit escalation condition.",
+      "reject": "Omitting the mechanism or instead doing this: Re-outline the report because the document is long."
     },
     {
       "id": "reasoning-scale-controller-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a governing workflow already fixes the required scale",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the unit of work, dependency radius, uncertainty, and consequence of error.",
+      "reject": "Activating Reasoning-Scale Controller solely because its name appears relevant"
     },
     {
       "id": "reasoning-scale-controller-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Risk-mandated review overrides the desire to stay at a cheaper scale.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: start at the smallest adequate scale",
+      "reject": "Silently violating the stated precedence for Reasoning-Scale Controller"
     },
     {
       "id": "reasoning-scale-controller-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "scale theater",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: smallest-adequate-scope selection",
+      "reject": "Claiming a successful Reasoning-Scale Controller result past this boundary"
     },
     {
       "id": "reasoning-scale-controller-strong-model-scaling",

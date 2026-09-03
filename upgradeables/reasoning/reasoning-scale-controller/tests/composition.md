@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The surrounding artifact is large, but the actual defect is local and source-verifiable.
-- **Expect:** A proportional local correction with an explicit escalation condition.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Routes source verification to Subatomic, the citation replacement to Atomic, and avoids Cosmic redesign unless the correction exposes a section-wide provenance failure. Result: A proportional local correction with an explicit escalation condition.
+- **Reject:** Omitting the mechanism or instead doing this: Re-outline the report because the document is long.
 
 ## Negative Activation
 
 - **Given:** a governing workflow already fixes the required scale
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Identify the unit of work, dependency radius, uncertainty, and consequence of error.
+- **Reject:** Activating Reasoning-Scale Controller solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Risk-mandated review overrides the desire to stay at a cheaper scale.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: start at the smallest adequate scale
+- **Reject:** Silently violating the stated precedence for Reasoning-Scale Controller
 
 ## Failure Boundary
 
 - **Given:** scale theater
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: smallest-adequate-scope selection
+- **Reject:** Claiming a successful Reasoning-Scale Controller result past this boundary
 
 ## Strong Model Scaling
 

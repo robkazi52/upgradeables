@@ -23,10 +23,9 @@
   ],
   "purpose": "Keep behavior stable across long sessions, tool calls, and distracting inputs.",
   "recommended_skill_types": [
-    "strict transformations",
-    "long sessions",
-    "multi-mode assistants",
-    "policy-bound work"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution"
   ],
   "usually_not_needed_for": [
     "exploration intentionally needs rapid mode switching",

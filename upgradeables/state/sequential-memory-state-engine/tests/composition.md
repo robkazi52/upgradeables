@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The new event supersedes part of current state but history must remain auditable.
-- **Expect:** Current state is corrected with a traceable transition.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Normalizes the correction, resolves the conflict, commits version 13, and refreshes the support-agent view. Result: Current state is corrected with a traceable transition.
+- **Reject:** Omitting the mechanism or instead doing this: It does not delete the earlier classification or keep both values current.
 
 ## Negative Activation
 
 - **Given:** a one-shot task has no state evolution
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Ingest one event with source, time, and authority metadata.
+- **Reject:** Activating Sequential Memory State Engine (SMSE) solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Authority outranks recency unless the authoritative source explicitly delegates update power.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: preserve event order and provenance
+- **Reject:** Silently violating the stated precedence for Sequential Memory State Engine (SMSE)
 
 ## Failure Boundary
 
 - **Given:** Stop dependent actions when a safety-critical contradiction cannot be resolved.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: ordered transitions
+- **Reject:** Claiming a successful Sequential Memory State Engine (SMSE) result past this boundary
 
 ## Strong Model Scaling
 

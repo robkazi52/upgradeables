@@ -21,11 +21,8 @@
   ],
   "purpose": "Remove explanatory material that does not change comprehension, verification, decision, or safe execution while retaining required rationale and caveats.",
   "recommended_skill_types": [
-    "direct answers",
-    "status updates",
-    "executive summaries",
-    "routine technical guidance",
-    "high-volume assistant outputs"
+    "communication and content generation",
+    "document and code transformation"
   ],
   "usually_not_needed_for": [
     "the user requests a tutorial or exhaustive rationale",
@@ -155,8 +152,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

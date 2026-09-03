@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The trace and recent change isolate a narrow high-value area.",
-      "expect": "A bounded root-cause analysis with an explicit expansion condition.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Concentrates on the implicated module and direct dependencies, then checks one plausible upstream alternative. Result: A bounded root-cause analysis with an explicit expansion condition.",
+      "reject": "Omitting the mechanism or instead doing this: It does not scan every repository file or ignore evidence pointing outside the module."
     },
     {
       "id": "neuro-focus-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task requires broad discovery before a target is known",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Lock the question and define what evidence would make a region high value.",
+      "reject": "Activating Neuro-Focus solely because its name appears relevant"
     },
     {
       "id": "neuro-focus-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Source coverage and truth gates override the desire to stay narrowly focused.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Make the focus target and exclusion boundary explicit.",
+      "reject": "Silently violating the stated precedence for Neuro-Focus"
     },
     {
       "id": "neuro-focus-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Relax or move focus when a credible alternative, uncovered dependency, or counterevidence lies outside the corridor.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit focus boundary",
+      "reject": "Claiming a successful Neuro-Focus result past this boundary"
     },
     {
       "id": "neuro-focus-strong-model-scaling",

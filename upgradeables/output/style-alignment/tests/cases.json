@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Voice and formatting vary while facts and citations are already approved.",
-      "expect": "A consistent guide that retains the approved semantic record.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Builds a style vector, normalizes voice and headings, removes promotional phrasing, and confirms claims, uncertainty, and citations remain unchanged. Result: A consistent guide that retains the approved semantic record.",
+      "reject": "Omitting the mechanism or instead doing this: Add confident benefit claims to make the guide sound polished."
     },
     {
       "id": "style-alignment-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the requested style impersonates a living person or conflicts with policy",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Extract the authorized style source and convert it into observable positive and negative constraints.",
+      "reject": "Activating Style-Alignment Module solely because its name appears relevant"
     },
     {
       "id": "style-alignment-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Truth, safety, citation fidelity, and explicit task constraints outrank the style guide.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: use explicit style dimensions",
+      "reject": "Silently violating the stated precedence for Style-Alignment Module"
     },
     {
       "id": "style-alignment-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "fact drift for tone",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit target dimensions",
+      "reject": "Claiming a successful Style-Alignment Module result past this boundary"
     },
     {
       "id": "style-alignment-strong-model-scaling",

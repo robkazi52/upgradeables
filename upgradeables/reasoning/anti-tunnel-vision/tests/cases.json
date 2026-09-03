@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The team has fixated on the new database query although saturation and cache invalidation are also plausible.",
-      "expect": "A bounded, evidence-selected diagnosis with one residual uncertainty noted.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Compares query regression against cache invalidation using the cheapest discriminating metrics, then selects the explanation supported by timing and cache data. Result: A bounded, evidence-selected diagnosis with one residual uncertainty noted.",
+      "reject": "Omitting the mechanism or instead doing this: List every imaginable outage cause or preserve the query hypothesis after contrary evidence."
     },
     {
       "id": "anti-tunnel-vision-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the answer is directly established by a locked source",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: State the current favored hypothesis or plan and the evidence supporting it.",
+      "reject": "Activating Anti-Tunnel Vision solely because its name appears relevant"
     },
     {
       "id": "anti-tunnel-vision-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "If a hard veto eliminates a branch, do not keep it alive for balance.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: make the favored path explicit",
+      "reject": "Silently violating the stated precedence for Anti-Tunnel Vision"
     },
     {
       "id": "anti-tunnel-vision-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "unbounded ideation",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicitly test at least one plausible rival before a costly commitment",
+      "reject": "Claiming a successful Anti-Tunnel Vision result past this boundary"
     },
     {
       "id": "anti-tunnel-vision-strong-model-scaling",

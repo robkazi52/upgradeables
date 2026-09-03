@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Destination changes price and feasibility.",
-      "expect": "A resolved destination field or an explicit inability to quote.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Asks one focused destination question before pricing and records the answer. Result: A resolved destination field or an explicit inability to quote.",
+      "reject": "Omitting the mechanism or instead doing this: It does not guess the state or ask unrelated preference questions."
     },
     {
       "id": "clarification-gateway-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the missing detail cannot change a valid result",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Extract missing variables, ambiguous terms, and instruction conflicts before substantive execution.",
+      "reject": "Activating Clarification Gateway solely because its name appears relevant"
     },
     {
       "id": "clarification-gateway-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A higher-authority instruction not to ask questions converts the gate into assumption selection, not permission to ignore ambiguity.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Explain why a requested clarification changes the result.",
+      "reject": "Silently violating the stated precedence for Clarification Gateway"
     },
     {
       "id": "clarification-gateway-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Stop or narrow when a required variable has multiple materially different interpretations and neither clarification nor a safe assumption is available.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: materiality test",
+      "reject": "Claiming a successful Clarification Gateway result past this boundary"
     },
     {
       "id": "clarification-gateway-strong-model-scaling",

@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The draft has two incorrect dates, a duplicated section, and inconsistent voice.
-- **Expect:** A release-ready guide with traceable pass boundaries and no semantic regression.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Fixes dates and citations, then removes structural duplication, then aligns voice, and finally checks all three classes. Result: A release-ready guide with traceable pass boundaries and no semantic regression.
+- **Reject:** Omitting the mechanism or instead doing this: Rewrite the dated sentences for tone before establishing correct dates.
 
 ## Negative Activation
 
 - **Given:** only one bounded defect exists
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Inventory defects and assign each to factual, structural, stylistic, or validation class.
+- **Reject:** Activating Structured Refinement Cycles solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Factual correctness outranks structural elegance and style.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: separate defect classes
+- **Reject:** Silently violating the stated precedence for Structured Refinement Cycles
 
 ## Failure Boundary
 
 - **Given:** mixed-objective drift
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: dependency order
+- **Reject:** Claiming a successful Structured Refinement Cycles result past this boundary
 
 ## Strong Model Scaling
 

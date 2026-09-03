@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Search may improve discovery but could add latency and unstable ranking to a working deterministic loader.
-- **Expect:** Evidence-backed adoption or clean retirement with the original loader intact.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Routes a test cohort through the adapter, compares it with deterministic resolution, tests fallback, and promotes only the stable query interface after thresholds pass. Result: Evidence-backed adoption or clean retirement with the original loader intact.
+- **Reject:** Omitting the mechanism or instead doing this: Replace the base resolver before evaluation or let the adapter mutate registry records.
 
 ## Negative Activation
 
 - **Given:** the change is a mandatory security repair
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: State the hypothesis, acceptance metrics, test cohort, and non-negotiable invariants.
+- **Reject:** Activating Adapter-First Experimentation solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Security and integrity repairs follow their mandated path rather than waiting for experimental promotion.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: keep the base path available during evaluation
+- **Reject:** Silently violating the stated precedence for Adapter-First Experimentation
 
 ## Failure Boundary
 
 - **Given:** base contamination
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: detachable boundary
+- **Reject:** Claiming a successful Adapter-First Experimentation result past this boundary
 
 ## Strong Model Scaling
 

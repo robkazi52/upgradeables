@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The working context must stay small without losing binding definitions and decisions.",
-      "expect": "Each session resumes coherently with traceable detail.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Keeps those anchors active, compacts resolved discussion, and retrieves page-level detail only for the current section. Result: Each session resumes coherently with traceable detail.",
+      "reject": "Omitting the mechanism or instead doing this: It does not reload every conversation or let the latest draft redefine approved terms."
     },
     {
       "id": "stable-long-context-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "all relevant material fits clearly in one short exchange",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Establish task, authority, terminology, and zero-drift facts as anchors.",
+      "reject": "Activating Stable Long-Context solely because its name appears relevant"
     },
     {
       "id": "stable-long-context-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Explicit authority and accepted state transitions outrank recency.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: distinguish current, superseded, and unresolved state",
+      "reject": "Silently violating the stated precedence for Stable Long-Context"
     },
     {
       "id": "stable-long-context-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not compact evidence beyond recoverability when precise citation is required.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: anchored invariants",
+      "reject": "Claiming a successful Stable Long-Context result past this boundary"
     },
     {
       "id": "stable-long-context-strong-model-scaling",

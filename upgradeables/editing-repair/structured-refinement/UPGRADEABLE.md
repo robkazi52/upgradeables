@@ -147,10 +147,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- drafts with several defect classes
-- reports requiring source and style review
-- prompt or specification cleanup
-- publication preparation
+- document and code transformation
+- high-stakes evidence work
+- review and quality assurance
+- source-grounded research
 
 ## Example Composition
 
@@ -180,5 +180,5 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-02. Structured Refinement Cycles (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

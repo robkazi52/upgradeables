@@ -23,10 +23,9 @@
   ],
   "purpose": "Resolve direct logical or factual inconsistency while preserving every compatible claim and locked constraint.",
   "recommended_skill_types": [
-    "conflicting requirements",
-    "inconsistent dates or quantities",
-    "state snapshots with mutually exclusive flags",
-    "documents whose conclusion contradicts a cited premise"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "the apparent contradiction is a legitimate difference in scope or time",
@@ -150,8 +149,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-04. Contradiction Micro-Repair Pack",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-04. Contradiction Micro-Repair Pack"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

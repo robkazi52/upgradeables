@@ -14,6 +14,32 @@ PROFILE_DIR = ROOT / "tools/semantic_profiles"
 BASELINE = ROOT / "audit/v0.1.0-operational-baseline.json"
 ALLOWED_BASIS = {"recovered", "normalized-from-recovered", "modern-interpretation", "provisional"}
 ALLOWED_SUPPORT = {"sufficiently-recovered", "strongly-derivable", "modern-operationalization", "source-gap"}
+SKILL_TYPE_TAXONOMY = (
+    "analysis and decision support",
+    "communication and content generation",
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows",
+    "source-grounded research",
+    "structured problem solving",
+)
+SKILL_TYPES_BY_CLASS = {
+    "context-retrieval": ("long-context workflows", "source-grounded research"),
+    "drift-control": ("document and code transformation", "long-context workflows"),
+    "editing-repair": ("document and code transformation", "review and quality assurance"),
+    "framing-intake": ("multi-step task execution", "skill and agent workflows"),
+    "meta-control": ("skill and agent workflows", "multi-step task execution"),
+    "orchestration": ("skill and agent workflows", "multi-step task execution"),
+    "output": ("communication and content generation", "document and code transformation"),
+    "persistence": ("long-context workflows", "multi-step task execution"),
+    "planning-reasoning": ("analysis and decision support", "structured problem solving"),
+    "state": ("long-context workflows", "multi-step task execution"),
+    "truth-grounding": ("source-grounded research", "high-stakes evidence work"),
+    "validation": ("review and quality assurance", "high-stakes evidence work"),
+}
 SOURCE_KIND_BY_DOCUMENT = {
     "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md": "current_consolidated_catalog",
     "OS_Upgradeables_Historical_Recovery_Inventory.md": "historical_recovery_inventory",
@@ -127,14 +153,17 @@ def normalized_source_refs(refs, metadata):
         source_text = (ROOT / "archive/source" / ref["document"]).read_text(encoding="utf-8")
         heading = ref["heading"]
         item = {**ref, "source_kind": SOURCE_KIND_BY_DOCUMENT[ref["document"]]}
-        if heading not in source_text:
-            source_lines = source_text.splitlines()
-            heading_rows = [
-                (index, line.lstrip("#").strip())
-                for index, line in enumerate(source_lines)
-                if re.match(r"^#{1,6}\s+\S", line)
-            ]
-            headings = [value for _, value in heading_rows]
+        source_lines = source_text.splitlines()
+        heading_rows = [
+            (index, line.lstrip("#").strip())
+            for index, line in enumerate(source_lines)
+            if re.match(r"^#{1,6}\s+\S", line)
+        ]
+        headings = [value for _, value in heading_rows]
+        exact_heading = next((value for value in headings if value.casefold() == heading.casefold()), None)
+        if exact_heading:
+            item["heading"] = exact_heading
+        else:
             desired_words = set(re.findall(r"[a-z0-9]+", heading.casefold()))
             identity_words = set(re.findall(
                 r"[a-z0-9]+",
@@ -159,6 +188,36 @@ def normalized_source_refs(refs, metadata):
     return normalized
 
 
+def recommended_skill_types(metadata, profile):
+    """Map task examples to a small, stable family taxonomy.
+
+    Best-fit tasks remain concrete activation examples. Skill types are broader
+    discovery facets and must never be a copy of those examples.
+    """
+    selected = set()
+    for functional_class in metadata["functional_classes"]:
+        selected.update(SKILL_TYPES_BY_CLASS.get(functional_class, ()))
+    task_text = " ".join(profile["best_fit_tasks"]).casefold()
+    keyword_families = {
+        "research": "source-grounded research",
+        "source": "source-grounded research",
+        "citation": "high-stakes evidence work",
+        "evidence": "high-stakes evidence work",
+        "code": "document and code transformation",
+        "edit": "document and code transformation",
+        "review": "review and quality assurance",
+        "creative": "communication and content generation",
+        "writing": "communication and content generation",
+        "decision": "analysis and decision support",
+        "puzzle": "structured problem solving",
+        "long": "long-context workflows",
+        "agent": "skill and agent workflows",
+        "skill": "skill and agent workflows",
+    }
+    selected.update(family for word, family in keyword_families.items() if word in task_text)
+    return [family for family in SKILL_TYPE_TAXONOMY if family in selected][:4]
+
+
 def update_metadata(metadata, profile):
     item = dict(metadata)
     interactions = normalized_relationships(profile["interaction_reasons"])
@@ -175,7 +234,7 @@ def update_metadata(metadata, profile):
         "best_fit_tasks": profile["best_fit_tasks"],
         "avoid_when": profile["avoid_when"],
         "non_triggers": profile["avoid_when"],
-        "recommended_skill_types": profile["best_fit_tasks"],
+        "recommended_skill_types": recommended_skill_types(metadata, profile),
         "usually_not_needed_for": profile["avoid_when"],
         "mechanism_basis": profile["mechanism_basis"],
         "mechanism": profile["mechanism"],
@@ -320,7 +379,7 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-{bullets(profile['best_fit_tasks'])}
+{bullets(metadata['recommended_skill_types'])}
 
 ## Example Composition
 
@@ -396,10 +455,10 @@ def behavior_cases(metadata, profile):
     failure = profile["failure_boundary"][0]
     keep = profile["strong_model_keep"][0]
     cases = [
-        ("positive_activation", profile["example"]["why_activates"], profile["example"]["result"], "remaining inactive despite a satisfied trigger"),
-        ("negative_activation", negative, "the component stays inactive and adds no scaffolding", "activating solely because the name appears relevant"),
-        ("precedence_or_conflict", conflict, "the higher-authority rule wins and the conflict is visible", "silently resolving against higher authority"),
-        ("failure_boundary", failure, "the component stops, abstains, narrows, or escalates as documented", "manufacturing a successful result past its failure boundary"),
+        ("positive_activation", profile["example"]["why_activates"], f"{profile['example']['does']} Result: {profile['example']['result']}", f"Omitting the mechanism or instead doing this: {profile['example']['does_not']}"),
+        ("negative_activation", negative, f"Remain inactive; do not begin the package-specific first step: {profile['procedure'][0]}", f"Activating {metadata['display_name']} solely because its name appears relevant"),
+        ("precedence_or_conflict", conflict, f"Honor the conflict rule and preserve this invariant: {profile['always_do'][0]}", f"Silently violating the stated precedence for {metadata['display_name']}"),
+        ("failure_boundary", failure, f"Stop, narrow, abstain, or escalate while preserving: {keep}", f"Claiming a successful {metadata['display_name']} result past this boundary"),
         ("strong_model_scaling", "a capable host can compress the workflow", keep, "dropping the mandatory invariant"),
         ("distinctive_mechanism", profile["distinctive_test"]["given"], profile["distinctive_test"]["expect"], profile["distinctive_test"]["reject"]),
     ]

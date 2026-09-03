@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The second session must know exactly which sources and claims were accepted at handoff.
-- **Expect:** The review resumes from a reproducible checkpoint.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Freezes those fields with integrity and predecessor metadata, then verifies new events on restore. Result: The review resumes from a reproducible checkpoint.
+- **Reject:** Omitting the mechanism or instead doing this: It does not treat the copy as live or omit unresolved questions.
 
 ## Negative Activation
 
 - **Given:** a snapshot would persist prohibited sensitive data
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Choose a transaction-safe checkpoint.
+- **Reject:** Activating State Snapshot solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A newer validated canonical state outranks an older snapshot.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: freeze an identified state version
+- **Reject:** Silently violating the stated precedence for State Snapshot
 
 ## Failure Boundary
 
 - **Given:** Do not restore when integrity, task identity, or schema compatibility cannot be established.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: immutable version identity
+- **Reject:** Claiming a successful State Snapshot result past this boundary
 
 ## Strong Model Scaling
 

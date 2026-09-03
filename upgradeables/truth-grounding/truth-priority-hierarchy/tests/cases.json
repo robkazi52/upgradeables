@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Two evidence classes conflict.",
-      "expect": "A source-ranked conclusion with traceable precedence.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Applies the hierarchy, explains the controlling source, and preserves the disagreement. Result: A source-ranked conclusion with traceable precedence.",
+      "reject": "Omitting the mechanism or instead doing this: Blend incompatible statements into a false compromise."
     },
     {
       "id": "truth-priority-hierarchy-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "no material evidence or authority conflict exists",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the conflicting propositions or validator outcomes.",
+      "reject": "Activating Truth Priority Hierarchy solely because its name appears relevant"
     },
     {
       "id": "truth-priority-hierarchy-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Host/system safety and organization policy remain above repository-level truth ordering.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Make domain-specific precedence explicit.",
+      "reject": "Silently violating the stated precedence for Truth Priority Hierarchy"
     },
     {
       "id": "truth-priority-hierarchy-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If a material conflict has no defensible domain/authority ordering, the resolver must not select a winner.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: evidence and authority, not fluency or optimization, determine conflict resolution",
+      "reject": "Claiming a successful Truth Priority Hierarchy result past this boundary"
     },
     {
       "id": "truth-priority-hierarchy-strong-model-scaling",

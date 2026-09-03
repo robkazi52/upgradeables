@@ -25,10 +25,10 @@
   ],
   "purpose": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.",
   "recommended_skill_types": [
-    "legal and policy transformation",
-    "source-grounded summaries",
-    "code/API migration",
-    "safety-critical instructions"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the user explicitly authorizes change to the marked content",

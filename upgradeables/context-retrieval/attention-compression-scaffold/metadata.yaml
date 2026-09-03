@@ -22,10 +22,10 @@
   ],
   "purpose": "Reduce attention burden while retaining the facts, constraints, provenance, and retrieval pointers required by the current subtask.",
   "recommended_skill_types": [
-    "long-context analysis",
-    "large codebase navigation",
-    "multi-document synthesis",
-    "stateful agent workflows"
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the original context is already small",

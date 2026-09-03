@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The sources report observations, while the requested conclusion requires interpretation and uncertainty.
-- **Expect:** A readable conclusion whose evidence, inference, and uncertainty remain distinguishable.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Keeps reported findings in the factual/evidentiary phase, labels the synthesis as interpretation, and states probability without converting it into fact. Result: A readable conclusion whose evidence, inference, and uncertainty remain distinguishable.
+- **Reject:** Omitting the mechanism or instead doing this: Attribute the synthesized policy conclusion directly to a source that did not make it.
 
 ## Negative Activation
 
 - **Given:** a single atomic transformation has no phase transition
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Declare the phases needed for the task and what claim types each admits.
+- **Reject:** Activating Phase-Locked Reasoning Scaffold solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A transition cannot increase certainty beyond its evidence without an explicit warrant.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: retain provenance across phase transitions
+- **Reject:** Silently violating the stated precedence for Phase-Locked Reasoning Scaffold
 
 ## Failure Boundary
 
 - **Given:** phase leakage
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: internal claim-status separation
+- **Reject:** Claiming a successful Phase-Locked Reasoning Scaffold result past this boundary
 
 ## Strong Model Scaling
 

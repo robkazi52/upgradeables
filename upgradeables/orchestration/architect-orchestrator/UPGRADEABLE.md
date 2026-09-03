@@ -124,9 +124,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- Skill and OS architecture
-- workflow design
-- framework refactoring
+- analysis and decision support
+- multi-step task execution
+- skill and agent workflows
+- structured problem solving
 
 ## Example Composition
 
@@ -156,4 +157,4 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — O-01. Architect Orchestrator (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)

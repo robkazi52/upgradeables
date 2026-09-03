@@ -1,41 +1,89 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "cases": [
     {
+      "id": "placeholder-suppression-resolved",
       "package": "placeholder-suppression",
       "check": "no_unresolved_placeholders",
       "input": {"text": "Hello Robbie; project status is ready."},
       "expected": true
     },
     {
+      "id": "placeholder-suppression-lowercase-insert-token",
+      "package": "placeholder-suppression",
+      "check": "no_unresolved_placeholders",
+      "input": {"text": "Hello [insert client name]; project status is ready."},
+      "expected": false
+    },
+    {
+      "id": "stateblock-complete",
       "package": "stateblock",
       "check": "required_stateblock_fields",
       "input": {"state": {"task": "audit", "phase": "validate", "constraints": ["source bounded"], "decisions": [], "open_items": []}},
       "expected": true
     },
     {
+      "id": "stateblock-missing-open-items",
+      "package": "stateblock",
+      "check": "required_stateblock_fields",
+      "input": {"state": {"task": "audit", "phase": "validate", "constraints": ["source bounded"], "decisions": []}},
+      "expected": false
+    },
+    {
+      "id": "state-snapshot-complete",
       "package": "state-snapshot",
       "check": "required_snapshot_fields",
       "input": {"snapshot": {"version": "1", "task": "audit", "phase": "validate", "locked_facts": [], "next_action": "run checks"}},
       "expected": true
     },
     {
+      "id": "state-snapshot-missing-next-action",
+      "package": "state-snapshot",
+      "check": "required_snapshot_fields",
+      "input": {"snapshot": {"version": "1", "task": "audit", "phase": "validate", "locked_facts": []}},
+      "expected": false
+    },
+    {
+      "id": "safe-rewrite-preserves-locked-literals",
       "package": "safe-rewrite",
       "check": "locked_literals_preserved",
       "input": {"before": "Limit: 15 mg; ID A-17.", "after": "The limit is 15 mg under ID A-17.", "locked": ["15 mg", "A-17"]},
       "expected": true
     },
     {
+      "id": "safe-rewrite-drops-locked-literal",
+      "package": "safe-rewrite",
+      "check": "locked_literals_preserved",
+      "input": {"before": "Limit: 15 mg; ID A-17.", "after": "The limit is 15 mg.", "locked": ["15 mg", "A-17"]},
+      "expected": false
+    },
+    {
+      "id": "citation-fidelity-exact-quote",
       "package": "citation-fidelity",
       "check": "exact_quote_exists",
       "input": {"source": "The measured reduction was 12 percent in the study group.", "quote": "reduction was 12 percent"},
       "expected": true
     },
     {
+      "id": "citation-fidelity-paraphrase-is-not-quote",
+      "package": "citation-fidelity",
+      "check": "exact_quote_exists",
+      "input": {"source": "The measured reduction was 12 percent in the study group.", "quote": "the study group improved by twelve percent"},
+      "expected": false
+    },
+    {
+      "id": "task-set-lock-complete",
       "package": "task-set-lock-in",
       "check": "task_lock_complete",
       "input": {"lock": {"objective": "publish audit", "deliverable": "release", "constraints": ["all checks pass"], "done_when": ["public URL resolves"]}},
       "expected": true
+    },
+    {
+      "id": "task-set-lock-empty-done-condition",
+      "package": "task-set-lock-in",
+      "check": "task_lock_complete",
+      "input": {"lock": {"objective": "publish audit", "deliverable": "release", "constraints": ["all checks pass"], "done_when": []}},
+      "expected": false
     }
   ]
 }

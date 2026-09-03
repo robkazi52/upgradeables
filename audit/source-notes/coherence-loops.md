@@ -8,9 +8,9 @@
 
 ## Recovered facts and source anchors
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-11. Coherence Loops (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — A-11. Coherence Loops (historical_recovery_inventory)
-- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 9. BOUNDED EXIT (historical_assistant_artifact)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
+- OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 11.6 Refinement (historical_assistant_artifact)
 
 ## Recovered or normalized purpose
 

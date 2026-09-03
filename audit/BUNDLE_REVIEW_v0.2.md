@@ -8,16 +8,16 @@ Every curated bundle has an activation boundary, required/optional split, load o
 - Boundary: Activate for multi-component architecture work, not a small prompt edit.
 - Required: architect-orchestrator, scoped-loader, state-snapshot
 - Optional: behavior-gene-builder, domain-core-builder, adapter-first-experimentation, crispr-edit, surgery-edit, ultimate-suite-supervisor
-- Interaction: The orchestrator selects builders and edit depth; snapshots preserve handoffs.
+- Interaction: The orchestrator frames the design, Scoped Loader limits the active architecture, an optional suite supervisor governs only genuinely complex stacks, and a snapshot is taken before destructive editing.
 - Excessive when: Excessive for a single bounded Skill or documentation-only change.
 
 ## `authoring` — PASS
 
 - Problem: Produce controlled writing while separating style, pedagogy, evidence, and placeholders.
 - Boundary: Activate only the controls demanded by the deliverable.
-- Required: style-alignment, placeholder-suppression
-- Optional: pedagogical-alignment, safe-rewrite, citation-fidelity
-- Interaction: Safe Rewrite protects locked meaning while style or pedagogy changes.
+- Required: style-alignment
+- Optional: pedagogical-alignment, safe-rewrite, citation-fidelity, placeholder-suppression
+- Interaction: Audience and style contracts precede transformation; Citation Fidelity validates sourced claims, and Placeholder Suppression is the finalization gate only when templates are present.
 - Excessive when: Excessive for unconstrained prose with no sources, locked content, or template fields.
 
 ## `foundation` — PASS
@@ -60,16 +60,16 @@ Every curated bundle has an activation boundary, required/optional split, load o
 
 - Problem: Choose repair depth while protecting locked content and interfaces.
 - Boundary: Activate after locating a defect and deciding whether its scope is local, targeted, or architectural.
-- Required: safe-rewrite
-- Optional: micro-repair, regenerative-rewrite, crispr-edit, surgery-edit, contradiction-micro-repair
-- Interaction: Failure boundaries escalate from micro repair toward surgery; deeper editors must preserve declared invariants.
+- Required: micro-repair
+- Optional: safe-rewrite, regenerative-rewrite, crispr-edit, surgery-edit, contradiction-micro-repair
+- Interaction: Start with Micro Repair; add Safe Rewrite when meaning is locked, route contradictions to the dedicated local repair, and escalate CRISPR to regeneration to surgery only when the shallower boundary fails.
 - Excessive when: Excessive when multiple editors compete or an architectural rewrite is used for a local defect.
 
 ## `truth-safety` — PASS
 
 - Problem: Gate high-impact claims against evidence, conflict, risk, and abstention rules.
 - Boundary: Activate proportionally to claim impact and available evidence.
-- Required: multi-truth-gating, truth-priority-hierarchy, fail-closed-abstention
-- Optional: truth-redundancy, critical-atomic-verification, controlled-drift-corridors, domain-mode-isolation, citation-fidelity, counterfactual-integrity, fermionic-veto, risk-tier-scaling
-- Interaction: Risk tiers allocate checks; evidence priority and abstention resolve failures without inventing support.
+- Required: risk-tier-scaling, truth-priority-hierarchy, fail-closed-abstention
+- Optional: multi-truth-gating, truth-redundancy, critical-atomic-verification, controlled-drift-corridors, domain-mode-isolation, citation-fidelity, counterfactual-integrity, fermionic-veto
+- Interaction: Risk tier and domain are established before selecting evidence checks; priority and veto resolution precede the final fail-closed decision, while redundant or citation checks activate only when their evidence inputs exist.
 - Excessive when: Excessive for low-impact source-free tasks or when redundant checks add no independent evidence.

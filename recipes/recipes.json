@@ -30,12 +30,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for research skill workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when a deliverable must synthesize multiple accessible sources and corpus size or ambiguity makes scoped loading, shared state, and claim-level grounding necessary.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling."
       },
       "important_exclusions": [
         "Omit durable or parallel machinery unless corpus size or real host execution triggers it."
@@ -72,12 +72,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for source-grounded analysis workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when an analysis or rewrite must remain traceable to identified sources, preserve locked source meaning, and attach citations at claim level.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "mode-lock-in": "Keep behavior stable across long sessions, tool calls, and distracting inputs.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "mode-lock-in": "Keep behavior stable across long sessions, tool calls, and distracting inputs. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support."
       },
       "important_exclusions": [
         "Omit branching and creative expansion unless competing interpretations are an explicit deliverable."
@@ -113,17 +113,17 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for high-stakes reasoning workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when an error could materially affect safety, health, rights, finances, or an irreversible action and the necessary evidence can be inspected.",
       "required_rationales": {
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "epistemic-status-gating": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact.",
-        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
-        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
-        "multi-truth-gating": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.",
-        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "epistemic-status-gating": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "multi-truth-gating": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary."
       },
       "important_exclusions": [
         "Omit style and ideation modules; do not add simulated distributed evaluators."
@@ -161,16 +161,16 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for medical evidence workflows when its required controls have active triggers.",
+      "activation_boundary": "Use for source-backed medical evidence synthesis where claim scope, uncertainty, and abstention matter; it does not replace clinical diagnosis or treatment.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
-        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
-        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling."
       },
       "important_exclusions": [
         "Omit unconstrained generation and any validator whose evidence boundary cannot be supplied."
@@ -205,16 +205,16 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for legal evidence workflows when its required controls have active triggers.",
+      "activation_boundary": "Use for source-backed legal analysis tied to a declared jurisdiction and date where authority, quotation, and uncertainty must remain auditable; it is not legal advice.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling.",
-        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
-        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
-        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention."
       },
       "important_exclusions": [
         "Omit creative rewriting and preserve jurisdiction, date, authority, and quotation boundaries."
@@ -254,11 +254,11 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for coding / debugging workflows when its required controls have active triggers.",
+      "activation_boundary": "Use after a software defect is reproducible or tightly localized and the task requests a verified repair, not a review-only finding.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered.",
-        "micro-repair": "Restore local correctness or completeness with the minimum semantic blast radius."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit.",
+        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit.",
+        "micro-repair": "Restore local correctness or completeness with the minimum semantic blast radius. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit."
       },
       "important_exclusions": [
         "Omit Surgery Edit while the defect remains local; omit citation controls without external sources."
@@ -298,12 +298,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for review-only code and pull request analysis when its required controls have active triggers.",
+      "activation_boundary": "Use when the requested deliverable is review-only analysis of a concrete diff or pull request for correctness, regressions, and unsupported assumptions.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
       },
       "important_exclusions": [
         "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
@@ -341,13 +341,13 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for long-context / corpus workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when the authorized corpus cannot be handled safely as one undifferentiated context and indexed state must preserve sequence and provenance.",
       "required_rationales": {
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
-        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important.",
-        "activation-budget-funnel": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.",
-        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error."
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "activation-budget-funnel": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state."
       },
       "important_exclusions": [
         "Omit full-corpus reloads and alternative-branch generation unless explicitly triggered."
@@ -379,11 +379,11 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for authoring workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when drafting or rewriting a controlled deliverable with an explicit message, audience, style, source, or placeholder contract.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "safe-rewrite": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions.",
-        "placeholder-suppression": "Prevent scaffolding artifacts from escaping as if they were complete content."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue.",
+        "safe-rewrite": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue.",
+        "placeholder-suppression": "Prevent scaffolding artifacts from escaping as if they were complete content. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue."
       },
       "important_exclusions": [
         "Omit citation fidelity for source-free drafting and omit structural surgery for tonal edits."
@@ -414,10 +414,10 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for creative ideation workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when the user needs multiple materially distinct concepts followed by bounded convergence, while factual claims remain outside the creative corridor.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "controlled-drift-corridors": "Enable adaptation, compression, or creativity without surrendering semantic control."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because creative search still needs a locked brief and an explicit boundary separating invention from factual assertion.",
+        "controlled-drift-corridors": "Enable adaptation, compression, or creativity without surrendering semantic control. It is required here because creative search still needs a locked brief and an explicit boundary separating invention from factual assertion."
       },
       "important_exclusions": [
         "Omit high-stakes evidence gates unless factual claims enter the deliverable."
@@ -451,10 +451,10 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for education / explanation workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when an explanation must be adapted to a named learner, objective, and prerequisite level while retaining domain accuracy.",
       "required_rationales": {
-        "pedagogical-alignment": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications.",
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution."
+        "pedagogical-alignment": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications. It is required here because the learning objective and audience model must remain fixed while the explanation is adapted.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the learning objective and audience model must remain fixed while the explanation is adapted."
       },
       "important_exclusions": [
         "Omit deep validation stacks for low-risk exposition; retain accuracy checks that the domain requires."
@@ -487,11 +487,11 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for decision support workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when a user must compare consequential options against explicit criteria and evidence without turning generated candidates into facts.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "decision-first-scaffold": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit.",
+        "decision-first-scaffold": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit."
       },
       "important_exclusions": [
         "Omit Multiverse when options are already fixed; never turn candidate generation into fake evidence."
@@ -532,12 +532,12 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for architecture / skill building workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when designing or restructuring a portable multi-component Skill whose interfaces, authority order, and host assumptions must be explicit.",
       "required_rationales": {
-        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote."
+        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology."
       },
       "important_exclusions": [
         "Omit suite-level supervision for a single small Skill and omit surgery for additive changes."
@@ -581,14 +581,14 @@
         "canonicality": "provisional",
         "recovery_confidence": "medium"
       },
-      "activation_boundary": "Use for seed composition for multi-agent / orchestration workflows when its required controls have active triggers.",
+      "activation_boundary": "Use only when the host can run or coordinate distinct workers and the task needs explicit routing, state exchange, and result collection.",
       "required_rationales": {
-        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "state-routing-bus": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "state-snapshot": "Create a stable checkpoint that can be resumed or audited after interruption.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts."
+        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "state-routing-bus": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "state-snapshot": "Create a stable checkpoint that can be resumed or audited after interruption. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs."
       },
       "important_exclusions": [
         "Omit distributed claims when the host cannot provide isolated workers or result collection."
@@ -624,14 +624,14 @@
         "canonicality": "provisional",
         "recovery_confidence": "high"
       },
-      "activation_boundary": "Use for seed composition for deterministic intake / routing workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when supplied fields and explicit predicates should deterministically select a route, with clarification or fail-closed handling for missing inputs.",
       "required_rationales": {
-        "task-set-lock-in": "Prevent scope substitution and goal drift during execution.",
-        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work.",
-        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start.",
-        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "authenticity-anti-evasion": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability."
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "authenticity-anti-evasion": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data."
       },
       "important_exclusions": [
         "Omit model-judged routing when deterministic predicates fully decide the route."
@@ -666,15 +666,15 @@
         "canonicality": "provisional",
         "recovery_confidence": "high"
       },
-      "activation_boundary": "Use for seed composition for long-context source fidelity workflows when its required controls have active triggers.",
+      "activation_boundary": "Use when a long or segmented source must be transformed without losing sequence, quotations, identifiers, or provenance across context boundaries.",
       "required_rationales": {
-        "working-memory-lock-in": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context.",
-        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
-        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth.",
-        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important.",
-        "zero-drift-zones": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift.",
-        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error.",
-        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure."
+        "working-memory-lock-in": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "zero-drift-zones": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps."
       },
       "important_exclusions": [
         "Omit persistence when one context suffices and omit citation certification for inaccessible sources."
@@ -682,6 +682,53 @@
       "high_cost_components": [
         "fail-closed-abstention",
         "truth-redundancy"
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "review_status": "PASS"
+    },
+    {
+      "schema_version": "2.0.0",
+      "slug": "perception-reasoning",
+      "display_name": "Perception & Spatial Reasoning",
+      "version": "1.1.0",
+      "purpose": "Infer transformation rules from examples, falsify alternatives, and execute the selected rule with bounded verification.",
+      "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "grounding-no-invention": "R",
+        "anti-tunnel-vision": "R",
+        "bounded-exit": "R",
+        "micro-scaffolding": "R",
+        "bidirectional-consistency": "A",
+        "forethought-checkpoints": "A",
+        "cot-structured-state-block": "A",
+        "decision-first-scaffold": "C",
+        "invariance-stress-scaffold": "C",
+        "counterfactual-integrity": "C",
+        "multiverse-reasoning": "O",
+        "cognitive-governor": "O",
+        "coherence-heartbeat": "X",
+        "meta-supervisor": "X"
+      },
+      "provenance": {
+        "source_document": "CODEX_HANDOFF_UPGRADEABLES.md",
+        "source_kind": "author_reported_experimental_mapping",
+        "canonicality": "provisional",
+        "recovery_confidence": "low"
+      },
+      "activation_boundary": "Use for bounded integer-grid or symbolic transformation tasks with at least one training pair and a test input; disclose reduced verification when only one pair is available.",
+      "required_rationales": {
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "anti-tunnel-vision": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "bounded-exit": "Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "micro-scaffolding": "Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly."
+      },
+      "important_exclusions": [
+        "Omit coherence heartbeat and meta supervision for bounded single-puzzle work; add candidate branching only when hypotheses genuinely compete."
+      ],
+      "high_cost_components": [
+        "multiverse-reasoning"
       ],
       "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
       "review_status": "PASS"

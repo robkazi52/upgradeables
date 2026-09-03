@@ -155,10 +155,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- complex iterative scaffolds
-- multi-module reasoning
-- repeated failures
-- runtime process-health supervision
+- high-stakes evidence work
+- multi-step task execution
+- review and quality assurance
+- skill and agent workflows
 
 ## Example Composition
 
@@ -188,5 +188,5 @@ Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovere
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-01. Meta-Supervisor Bundle (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)

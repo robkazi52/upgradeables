@@ -133,10 +133,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- large documents
-- modular software
-- policy hierarchies
-- multi-step analytical conclusions
+- high-stakes evidence work
+- multi-step task execution
+- review and quality assurance
+- skill and agent workflows
 
 ## Example Composition
 
@@ -166,6 +166,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-reco
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-05. Multi-Layer Consistency (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — T2-05. Multi-Layer Consistency (historical_recovery_inventory)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — Interpretation rule for the frozen T2 registry (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 8.6 HQMS — Hierarchical QMS (historical_assistant_artifact)

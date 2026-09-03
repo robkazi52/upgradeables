@@ -25,11 +25,10 @@
   ],
   "purpose": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions.",
   "recommended_skill_types": [
-    "multi-source research",
-    "long-document analysis",
-    "evidence-heavy authoring",
-    "policy or legal evidence review",
-    "large modular agent workflows"
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "a short single source fits comfortably in context",
@@ -163,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T2-16. ABF — Activation-Budget Funnel",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T2-16. ABF — Activation-Budget Funnel"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

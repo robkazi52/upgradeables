@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The working context must stay small without losing binding definitions and decisions.
-- **Expect:** Each session resumes coherently with traceable detail.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Keeps those anchors active, compacts resolved discussion, and retrieves page-level detail only for the current section. Result: Each session resumes coherently with traceable detail.
+- **Reject:** Omitting the mechanism or instead doing this: It does not reload every conversation or let the latest draft redefine approved terms.
 
 ## Negative Activation
 
 - **Given:** all relevant material fits clearly in one short exchange
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Establish task, authority, terminology, and zero-drift facts as anchors.
+- **Reject:** Activating Stable Long-Context solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Explicit authority and accepted state transitions outrank recency.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: distinguish current, superseded, and unresolved state
+- **Reject:** Silently violating the stated precedence for Stable Long-Context
 
 ## Failure Boundary
 
 - **Given:** Do not compact evidence beyond recoverability when precise citation is required.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: anchored invariants
+- **Reject:** Claiming a successful Stable Long-Context result past this boundary
 
 ## Strong Model Scaling
 

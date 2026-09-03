@@ -25,10 +25,9 @@
   ],
   "purpose": "Preserve a trusted task state while isolating drift sources and resuming from one explicit authority-consistent configuration.",
   "recommended_skill_types": [
-    "long-context drift",
-    "conflicting module activation",
-    "repeated change cycles",
-    "multi-agent state divergence"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "one local defect can be repaired directly",
@@ -164,8 +163,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-15. Meta-Stability Mode (MSM)",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-15. Meta-Stability Mode (MSM)"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

@@ -18,37 +18,37 @@
     "risk-tier-scaling"
   ],
   "load_order": [
-    "multi-truth-gating",
+    "risk-tier-scaling",
+    "domain-mode-isolation",
+    "controlled-drift-corridors",
+    "counterfactual-integrity",
     "truth-redundancy",
     "critical-atomic-verification",
-    "controlled-drift-corridors",
-    "truth-priority-hierarchy",
-    "domain-mode-isolation",
-    "fail-closed-abstention",
+    "multi-truth-gating",
     "citation-fidelity",
-    "counterfactual-integrity",
+    "truth-priority-hierarchy",
     "fermionic-veto",
-    "risk-tier-scaling"
+    "fail-closed-abstention"
   ],
   "problem_solved": "Gate high-impact claims against evidence, conflict, risk, and abstention rules.",
   "activation_boundary": "Activate proportionally to claim impact and available evidence.",
   "required_components": [
-    "multi-truth-gating",
+    "risk-tier-scaling",
     "truth-priority-hierarchy",
     "fail-closed-abstention"
   ],
   "optional_components": [
+    "multi-truth-gating",
     "truth-redundancy",
     "critical-atomic-verification",
     "controlled-drift-corridors",
     "domain-mode-isolation",
     "citation-fidelity",
     "counterfactual-integrity",
-    "fermionic-veto",
-    "risk-tier-scaling"
+    "fermionic-veto"
   ],
   "critical_interactions": [
-    "Risk tiers allocate checks; evidence priority and abstention resolve failures without inventing support."
+    "Risk tier and domain are established before selecting evidence checks; priority and veto resolution precede the final fail-closed decision, while redundant or citation checks activate only when their evidence inputs exist."
   ],
   "excessive_when": [
     "Excessive for low-impact source-free tasks or when redundant checks add no independent evidence."

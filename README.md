@@ -5,6 +5,8 @@ chat, combine them into a reusable Skill, or adapt them to an agent system.
 
 You do not need to understand the whole registry before using it.
 
+Want to experiment first? Open [Try These Five Things](TRY_IT.md).
+
 ## Start in 30 seconds
 
 ### Use it in a chat
@@ -76,6 +78,7 @@ Use one of three short discovery paths:
 - Full machine registry: [`registry/registry.json`](registry/registry.json)
 - Task-family starting points: [`recipes/`](recipes/)
 - Individual packages: [`upgradeables/`](upgradeables/)
+- Plain-language name recommendations: [v0.2 naming review](audit/NAMING_REVIEW_v0.2.md)
 - Copy-ready chat prompts: [`prompts/`](prompts/)
 - Portable offline context: [all-in-one kit](dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md)
 - Deeper model instructions: [Model Consumption Guide](MODEL_CONSUMPTION_GUIDE.md)
@@ -106,12 +109,25 @@ research = next(
 )
 ```
 
+## Evidence
+
+The repository now preserves preliminary, author-reported experiments that
+motivated several composition choices. The ARC report describes one-shot grid
+reasoning runs and a small within-session comparison in which focused directives
+matched or exceeded a more elaborate prompt on three of five ARC-AGI-2 tasks.
+
+These reports are not independently reproduced: raw runs and grader artifacts
+are not yet archived, and the supplied ARC-AGI-1 totals contain discrepancies.
+Read the [evidence status and methodology limits](evidence/) before citing any
+number. See [Design Principles](DESIGN_PRINCIPLES.md) for the deliberately narrow
+hypotheses the results motivate.
+
 ## Build and contribute Skills
 
 Use the [Skill implementation template](templates/SKILL_IMPLEMENTATION_TEMPLATE.md)
 and the [worked community examples](implementations/community/), covering research,
 coding/debugging, long-context analysis, creative ideation, high-stakes evidence,
-and Skill architecture.
+Skill architecture, and ARC-style perception reasoning.
 Community members and companies can contribute complete Skills without changing
 the canonical Upgradeable registry. See [CONTRIBUTING.md](CONTRIBUTING.md) for the
 separate Skill and Upgradeable contribution paths.

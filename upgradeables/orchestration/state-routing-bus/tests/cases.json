@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The writer needs decisions and source pointers but not the worker's full context.",
-      "expect": "The writer receives traceable state or the workflow reports a handoff failure.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Validates and sends a bounded envelope, then records the writer's acknowledgement. Result: The writer receives traceable state or the workflow reports a handoff failure.",
+      "reject": "Omitting the mechanism or instead doing this: Does not claim secret shared memory or transfer private reasoning."
     },
     {
       "id": "state-routing-bus-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "all work occurs inside one uninterrupted component",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define the sender, receiver, state schema, and permitted payload fields.",
+      "reject": "Activating State Routing Bus solely because its name appears relevant"
     },
     {
       "id": "state-routing-bus-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Host, system, domain, and explicit user authority take precedence over this component.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve the defining invariant: explicit payload, provenance, receiver boundary, and delivery status.",
+      "reject": "Silently violating the stated precedence for State Routing Bus"
     },
     {
       "id": "state-routing-bus-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "no real host-supported handoff channel exists",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit payload, provenance, receiver boundary, and delivery status",
+      "reject": "Claiming a successful State Routing Bus result past this boundary"
     },
     {
       "id": "state-routing-bus-strong-model-scaling",

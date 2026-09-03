@@ -13,7 +13,8 @@ able to open the URL, receive an uploaded file, or run inside a cloned checkout.
 
 Choose one route:
 
-1. **Do a task now:** copy [Quick Task](prompts/QUICK_TASK.md) into a new chat.
+1. **Try it immediately:** choose a copy-paste example from
+   [Try These Five Things](TRY_IT.md), or use [Quick Task](prompts/QUICK_TASK.md).
 2. **Build a reusable Skill:** copy [Build a Skill](prompts/BUILD_A_SKILL.md).
 3. **Work from sources:** use [Research from Sources](prompts/RESEARCH_FROM_SOURCES.md).
 4. **Process a long document:** use [Work with Long Documents](prompts/WORK_WITH_LONG_DOCUMENTS.md).

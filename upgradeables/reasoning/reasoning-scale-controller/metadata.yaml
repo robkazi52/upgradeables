@@ -23,10 +23,10 @@
   ],
   "purpose": "Match reasoning depth and scope to the unit of work instead of applying either shallow local analysis or system-wide architecture indiscriminately.",
   "recommended_skill_types": [
-    "mixed-complexity workflows",
-    "long-form construction",
-    "system design",
-    "quality evaluation"
+    "analysis and decision support",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "a governing workflow already fixes the required scale",
@@ -159,8 +159,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "PART V. REASONING-SCALE STACK",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "PART V. REASONING-SCALE STACK"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

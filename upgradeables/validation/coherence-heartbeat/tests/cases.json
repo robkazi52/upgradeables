@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Local edits can drift from the handoff while still passing narrow tests.",
-      "expect": "Drift is caught before release while routine checkpoints remain cheap.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "After generation, notices several files imply unsupported provenance and triggers repair. Result: Drift is caught before release while routine checkpoints remain cheap.",
+      "reject": "Omitting the mechanism or instead doing this: Rerun every test suite after each file edit."
     },
     {
       "id": "coherence-heartbeat-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task completes in one obvious operation",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Capture a compact baseline of objective, constraints, decisions, and open obligations.",
+      "reject": "Activating Global Coherence Heartbeat solely because its name appears relevant"
     },
     {
       "id": "coherence-heartbeat-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Hard constraints and explicit user updates outrank the stored baseline.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Keep the pulse cheap enough to run repeatedly.",
+      "reject": "Silently violating the stated precedence for Global Coherence Heartbeat"
     },
     {
       "id": "coherence-heartbeat-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Escalate when a hard constraint, core objective, or accepted decision no longer matches current work.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: event-triggered pulse after major state changes in long work",
+      "reject": "Claiming a successful Global Coherence Heartbeat result past this boundary"
     },
     {
       "id": "coherence-heartbeat-strong-model-scaling",

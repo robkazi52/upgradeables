@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The global guarantee depends on cross-module composition.",
-      "expect": "A cross-layer mismatch blocks the global guarantee until integration behavior changes.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Traces the invariant down and finds one inter-module path committing before validation. Result: A cross-layer mismatch blocks the global guarantee until integration behavior changes.",
+      "reject": "Omitting the mechanism or instead doing this: Approve because each module is locally correct."
     },
     {
       "id": "multi-layer-consistency-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the artifact has only one meaningful level",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Map the artifact into atom, local unit, intermediate group, and global levels.",
+      "reject": "Activating Multi-Layer Consistency solely because its name appears relevant"
     },
     {
       "id": "multi-layer-consistency-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A lower-level verified contradiction defeats an unsupported global summary.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Check boundary relationships, not only each level in isolation.",
+      "reject": "Silently violating the stated precedence for Multi-Layer Consistency"
     },
     {
       "id": "multi-layer-consistency-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not certify when a global claim lacks lower-layer support or a lower-layer fact violates an undeclared global exception.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: at least one upward and one downward boundary check in hierarchical work",
+      "reject": "Claiming a successful Multi-Layer Consistency result past this boundary"
     },
     {
       "id": "multi-layer-consistency-strong-model-scaling",

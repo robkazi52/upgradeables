@@ -124,9 +124,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-session projects
-- durable agent workflows
-- long document production
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 
@@ -156,4 +156,4 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-20. External State Automation (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)

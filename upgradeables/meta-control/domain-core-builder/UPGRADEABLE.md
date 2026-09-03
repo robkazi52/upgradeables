@@ -150,10 +150,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- recurring specialist domains
-- evidence-intensive decisions
-- policy or technical reference systems
-- multi-Gene domain bundles
+- analysis and decision support
+- high-stakes evidence work
+- long-context workflows
+- multi-step task execution
 
 ## Example Composition
 
@@ -183,6 +183,6 @@ Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovere
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — PART X. REASONING / SINGULARITY CORES (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 13. Reasoning / Singularity Cores (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 14. BEHAVIOR GENE + CORE SEPARATION — HISTORICAL GENESIS (historical_assistant_artifact)

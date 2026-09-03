@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Completion requires more than generation: schemas, tests, docs, Git, and publication must match the handoff.
-- **Expect:** The release decision is tied to requirements and evidence with a bounded repair history.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Finds a missing all-package validation path, selects revise, adds the relevant test, reruns checks, then accepts and updates state. Result: The release decision is tied to requirements and evidence with a bounded repair history.
+- **Reject:** Omitting the mechanism or instead doing this: Declare success because scaffolding exists or invent a passing publication result.
 
 ## Negative Activation
 
 - **Given:** a deterministic fix is already known and reflection adds no decision value
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Recheck the session goal and current subgoal.
+- **Reject:** Activating Work Reflection Loop OS / ReflectOS solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Explicit requirements and evidence outrank the reflector's preference.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Anchor every critique to the goal, requirements, or observed risk.
+- **Reject:** Silently violating the stated precedence for Work Reflection Loop OS / ReflectOS
 
 ## Failure Boundary
 
 - **Given:** Do not accept when a material requirement is unmet; do not revise with invented facts; stop and surface the dependency when progress requires external authority.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: goal comparison, requirement audit, explicit transition, and state update for long or risky work
+- **Reject:** Claiming a successful Work Reflection Loop OS / ReflectOS result past this boundary
 
 ## Strong Model Scaling
 

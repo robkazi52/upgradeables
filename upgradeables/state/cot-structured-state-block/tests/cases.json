@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The handoff needs the basis and open issues, not a transcript of private reasoning.",
-      "expect": "The next analyst can resume and audit the decision basis.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Writes those into separate evidence, assumptions, conclusion, uncertainty, and next-action fields. Result: The next analyst can resume and audit the decision basis.",
+      "reject": "Omitting the mechanism or instead doing this: It does not publish hidden deliberation or uncited intermediate thoughts."
     },
     {
       "id": "cot-structured-state-block-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a one-turn answer has no meaningful state",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define the minimum state schema and sensitivity boundary.",
+      "reject": "Activating CoT-Structured State Block solely because its name appears relevant"
     },
     {
       "id": "cot-structured-state-block-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Canonical cited evidence overrides stale state summaries.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: separate facts, assumptions, and conclusions",
+      "reject": "Silently violating the stated precedence for CoT-Structured State Block"
     },
     {
       "id": "cot-structured-state-block-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Stop treating the block as authoritative if provenance is missing or fields are stale.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: fact/inference separation",
+      "reject": "Claiming a successful CoT-Structured State Block result past this boundary"
     },
     {
       "id": "cot-structured-state-block-strong-model-scaling",

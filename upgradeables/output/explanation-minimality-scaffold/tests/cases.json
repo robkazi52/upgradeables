@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The user needs outcome, material changes, validation, and next step—not a narration of every command.",
-      "expect": "A compact handoff that remains trustworthy and actionable.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "States the completed artifact, count, validation result, and source-gap caveat in a few sentences. Result: A compact handoff that remains trustworthy and actionable.",
+      "reject": "Omitting the mechanism or instead doing this: Paste the full validation log or omit the source-gap caveat to stay short."
     },
     {
       "id": "explanation-minimality-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the user requests a tutorial or exhaustive rationale",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the reader, requested depth, decision or action, and risk tier.",
+      "reject": "Activating Explanation Minimality Scaffold solely because its name appears relevant"
     },
     {
       "id": "explanation-minimality-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "User-requested detail and risk-mandated disclosure override brevity.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: lead with the outcome",
+      "reject": "Silently violating the stated precedence for Explanation Minimality Scaffold"
     },
     {
       "id": "explanation-minimality-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "terse but unactionable output",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: reader-and-risk calibration",
+      "reject": "Claiming a successful Explanation Minimality Scaffold result past this boundary"
     },
     {
       "id": "explanation-minimality-scaffold-strong-model-scaling",

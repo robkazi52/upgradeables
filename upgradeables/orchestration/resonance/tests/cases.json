@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Their outputs should reinforce source fidelity without duplicating the source corpus.",
-      "expect": "Synthesis receives compact grounded state and no duplicate noise.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Routes verified evidence pointers into state and suppresses duplicate narrative output. Result: Synthesis receives compact grounded state and no duplicate noise.",
+      "reject": "Omitting the mechanism or instead doing this: Does not merge module identities, repeat evidence for emphasis, or elevate a lower-authority signal."
     },
     {
       "id": "resonance-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "only one module is active",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: List active modules and the exact relationship that should be reinforced.",
+      "reject": "Activating Resonance solely because its name appears relevant"
     },
     {
       "id": "resonance-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Host, system, domain, and explicit user authority take precedence over this component.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve the defining invariant: explicit relationship, bounded effect, noise suppression, and authority preservation.",
+      "reject": "Silently violating the stated precedence for Resonance"
     },
     {
       "id": "resonance-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "the modules have incompatible authority or source boundaries",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit relationship, bounded effect, noise suppression, and authority preservation",
+      "reject": "Claiming a successful Resonance result past this boundary"
     },
     {
       "id": "resonance-strong-model-scaling",

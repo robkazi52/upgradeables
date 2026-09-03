@@ -23,10 +23,10 @@
   ],
   "purpose": "Prevent cross-phase contamination while still allowing explicitly governed transitions between reasoning modes.",
   "recommended_skill_types": [
-    "evidence-grounded writing",
-    "multi-source research",
-    "risk analysis",
-    "long workflows with distinct reasoning modes"
+    "analysis and decision support",
+    "communication and content generation",
+    "high-stakes evidence work",
+    "long-context workflows"
   ],
   "usually_not_needed_for": [
     "a single atomic transformation has no phase transition",
@@ -150,8 +150,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

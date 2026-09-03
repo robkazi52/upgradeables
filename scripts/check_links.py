@@ -12,6 +12,10 @@ def main():
     for document in ROOT.rglob("*.md"):
         if ".git" in document.parts:
             continue
+        # Build handoffs are byte-preserved input artifacts. Their prospective
+        # example links are not repository navigation and cannot be rewritten.
+        if document.is_relative_to(ROOT / "archive/build-spec"):
+            continue
         text = document.read_text(encoding="utf-8")
         for raw in LINK.findall(text):
             target = raw.strip().split()[0].strip("<>")

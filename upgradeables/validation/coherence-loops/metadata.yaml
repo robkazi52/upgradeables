@@ -23,10 +23,10 @@
   ],
   "purpose": "Repair cross-part inconsistencies while preventing endless self-review.",
   "recommended_skill_types": [
-    "multi-file changes",
-    "long-form documents",
-    "multi-agent synthesis",
-    "cross-component specification repair"
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "the discrepancy is isolated and a single deterministic correction suffices",
@@ -147,18 +147,21 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-11. Coherence Loops",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-11. Coherence Loops"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "A-11. Coherence Loops",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "A-11. Coherence Loops"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-      "heading": "9. BOUNDED EXIT",
-      "source_kind": "historical_assistant_artifact"
+      "heading": "11.6 Refinement",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "9. BOUNDED EXIT"
     }
   ],
   "source_support": "sufficiently-recovered",

@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Multiple local edits have not restored coherent source mapping.
-- **Expect:** A coherent report whose claims map back to verified source atoms.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Builds a fact-and-citation ledger, creates a new section map, writes afresh from the ledger, and records which unsupported passages were discarded. Result: A coherent report whose claims map back to verified source atoms.
+- **Reject:** Omitting the mechanism or instead doing this: Polish each old section in sequence or carry unsupported transitions into the rebuild.
 
 ## Negative Activation
 
 - **Given:** one sentence or field is wrong
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Demonstrate systemic failure: wrong architecture, cross-section contradiction, or broken source mapping that resists bounded repair.
+- **Reject:** Activating Regenerative Rewrite solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Verified facts, citations, and non-negotiable requirements survive even if they complicate the new structure.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: prove local repair is insufficient
+- **Reject:** Silently violating the stated precedence for Regenerative Rewrite
 
 ## Failure Boundary
 
 - **Given:** unnecessary global rewrite
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: locked-atom extraction
+- **Reject:** Claiming a successful Regenerative Rewrite result past this boundary
 
 ## Strong Model Scaling
 

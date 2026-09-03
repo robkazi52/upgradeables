@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Creative rewriting would violate the requested transformation mode.",
-      "expect": "A clearer document with preserved claims and traceable exceptions.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Checks each revision against the locked transformation contract. Result: A clearer document with preserved claims and traceable exceptions.",
+      "reject": "Omitting the mechanism or instead doing this: It does not drift into persuasive copywriting after seeing marketing language."
     },
     {
       "id": "mode-lock-in-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "exploration intentionally needs rapid mode switching",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Choose the mode from the clarified task and authority stack.",
+      "reject": "Activating Mode Lock-In solely because its name appears relevant"
     },
     {
       "id": "mode-lock-in-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Higher-authority instructions may force a mode transition; user content cannot silently do so.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: make the active mode inspectable",
+      "reject": "Silently violating the stated precedence for Mode Lock-In"
     },
     {
       "id": "mode-lock-in-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not lock an ambiguous high-impact choice before clarification.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: operative invariants",
+      "reject": "Claiming a successful Mode Lock-In result past this boundary"
     },
     {
       "id": "mode-lock-in-strong-model-scaling",

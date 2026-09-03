@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The same capitalization rule is easy to forget after many clauses.",
-      "expect": "The recurring error is prevented with little context cost.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Shows a one-line cue to verify defined-term capitalization before each clause is accepted. Result: The recurring error is prevented with little context cost.",
+      "reject": "Omitting the mechanism or instead doing this: It does not copy the whole glossary into every step or edit the glossary itself."
     },
     {
       "id": "working-memory-cues-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the cue duplicates already salient text",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify a recurrent omission risk and its decision point.",
+      "reject": "Activating Working-Memory Cues solely because its name appears relevant"
     },
     {
       "id": "working-memory-cues-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Canonical state and higher-authority instructions override stale cues.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: keep cues short",
+      "reject": "Silently violating the stated precedence for Working-Memory Cues"
     },
     {
       "id": "working-memory-cues-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not cue an unverified claim as fact.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: highest-risk cue at transition points",
+      "reject": "Claiming a successful Working-Memory Cues result past this boundary"
     },
     {
       "id": "working-memory-cues-strong-model-scaling",

@@ -23,10 +23,10 @@
   ],
   "purpose": "Prevent chronology errors and confusion between event time, publication time, and current validity.",
   "recommended_skill_types": [
-    "incident timelines",
-    "policy version analysis",
-    "case chronology",
-    "news or market research"
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "time has no bearing on the answer",

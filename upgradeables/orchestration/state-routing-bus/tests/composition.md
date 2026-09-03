@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The writer needs decisions and source pointers but not the worker's full context.
-- **Expect:** The writer receives traceable state or the workflow reports a handoff failure.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Validates and sends a bounded envelope, then records the writer's acknowledgement. Result: The writer receives traceable state or the workflow reports a handoff failure.
+- **Reject:** Omitting the mechanism or instead doing this: Does not claim secret shared memory or transfer private reasoning.
 
 ## Negative Activation
 
 - **Given:** all work occurs inside one uninterrupted component
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Define the sender, receiver, state schema, and permitted payload fields.
+- **Reject:** Activating State Routing Bus solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Host, system, domain, and explicit user authority take precedence over this component.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Preserve the defining invariant: explicit payload, provenance, receiver boundary, and delivery status.
+- **Reject:** Silently violating the stated precedence for State Routing Bus
 
 ## Failure Boundary
 
 - **Given:** no real host-supported handoff channel exists
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit payload, provenance, receiver boundary, and delivery status
+- **Reject:** Claiming a successful State Routing Bus result past this boundary
 
 ## Strong Model Scaling
 

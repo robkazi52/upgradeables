@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The hosts differ in filesystem, command, context, and state capabilities.",
-      "expect": "Portable behavior with explicit host-specific execution profiles.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Selects tool-enabled validation for capable agents, a document-only sequence for Copilot, and a conservative manual checklist for the tool-less model while retaining source and safety gates. Result: Portable behavior with explicit host-specific execution profiles.",
+      "reject": "Omitting the mechanism or instead doing this: Assume all frontier models can run shell commands or drop integrity checks on the strongest model."
     },
     {
       "id": "future-proof-mode-selector-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the host and task profile are fixed",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare the task's risk, state, tool, and validation requirements.",
+      "reject": "Activating Future-Proof Mode Selector solely because its name appears relevant"
     },
     {
       "id": "future-proof-mode-selector-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Task-risk requirements override host convenience.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: test capabilities rather than infer them from brand or model size",
+      "reject": "Silently violating the stated precedence for Future-Proof Mode Selector"
     },
     {
       "id": "future-proof-mode-selector-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "capability hallucination",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: risk overlay",
+      "reject": "Claiming a successful Future-Proof Mode Selector result past this boundary"
     },
     {
       "id": "future-proof-mode-selector-strong-model-scaling",

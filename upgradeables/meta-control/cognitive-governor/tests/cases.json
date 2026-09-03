@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Complete line-by-line deep review is expensive, but schema and source accuracy are mandatory.",
-      "expect": "A risk-funded review plan with a defensible completion boundary.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Funds full schema validation, deeper review for source-gap and high-risk packages, sampled review for routine packages, and stops optional polishing when marginal value falls. Result: A risk-funded review plan with a defensible completion boundary.",
+      "reject": "Omitting the mechanism or instead doing this: Give every package equal manual time or skip required provenance checks to meet the clock."
     },
     {
       "id": "cognitive-governor-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a mandatory protocol fixes the review budget",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Classify task complexity, uncertainty, consequence, and reversibility.",
+      "reject": "Activating Reasoning Budget / Cognitive Governor solely because its name appears relevant"
     },
     {
       "id": "cognitive-governor-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Risk-mandated validation overrides a lower convenience budget.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: preserve a validation floor",
+      "reject": "Silently violating the stated precedence for Reasoning Budget / Cognitive Governor"
     },
     {
       "id": "cognitive-governor-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "over-polishing",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: risk-based validation floor",
+      "reject": "Claiming a successful Reasoning Budget / Cognitive Governor result past this boundary"
     },
     {
       "id": "cognitive-governor-strong-model-scaling",

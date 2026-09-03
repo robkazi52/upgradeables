@@ -15,25 +15,25 @@
   "load_order": [
     "safe-rewrite",
     "micro-repair",
-    "regenerative-rewrite",
+    "contradiction-micro-repair",
     "crispr-edit",
-    "surgery-edit",
-    "contradiction-micro-repair"
+    "regenerative-rewrite",
+    "surgery-edit"
   ],
   "problem_solved": "Choose repair depth while protecting locked content and interfaces.",
   "activation_boundary": "Activate after locating a defect and deciding whether its scope is local, targeted, or architectural.",
   "required_components": [
-    "safe-rewrite"
+    "micro-repair"
   ],
   "optional_components": [
-    "micro-repair",
+    "safe-rewrite",
     "regenerative-rewrite",
     "crispr-edit",
     "surgery-edit",
     "contradiction-micro-repair"
   ],
   "critical_interactions": [
-    "Failure boundaries escalate from micro repair toward surgery; deeper editors must preserve declared invariants."
+    "Start with Micro Repair; add Safe Rewrite when meaning is locked, route contradictions to the dedicated local repair, and escalate CRISPR to regeneration to surgery only when the shallower boundary fails."
   ],
   "excessive_when": [
     "Excessive when multiple editors compete or an architectural rewrite is used for a local defect."

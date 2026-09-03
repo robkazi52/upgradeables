@@ -12,8 +12,8 @@
     "placeholder-suppression"
   ],
   "load_order": [
-    "style-alignment",
     "pedagogical-alignment",
+    "style-alignment",
     "safe-rewrite",
     "citation-fidelity",
     "placeholder-suppression"
@@ -21,16 +21,16 @@
   "problem_solved": "Produce controlled writing while separating style, pedagogy, evidence, and placeholders.",
   "activation_boundary": "Activate only the controls demanded by the deliverable.",
   "required_components": [
-    "style-alignment",
-    "placeholder-suppression"
+    "style-alignment"
   ],
   "optional_components": [
     "pedagogical-alignment",
     "safe-rewrite",
-    "citation-fidelity"
+    "citation-fidelity",
+    "placeholder-suppression"
   ],
   "critical_interactions": [
-    "Safe Rewrite protects locked meaning while style or pedagogy changes."
+    "Audience and style contracts precede transformation; Citation Fidelity validates sourced claims, and Placeholder Suppression is the finalization gate only when templates are present."
   ],
   "excessive_when": [
     "Excessive for unconstrained prose with no sources, locked content, or template fields."

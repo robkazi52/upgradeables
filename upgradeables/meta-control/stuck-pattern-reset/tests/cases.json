@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The method and corpus are unchanged despite different wording.",
-      "expect": "A materially different recovery path or an explicit source blocker.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Preserves the target and findings, quarantines web query reformulation, switches to identifier search inside the local archive, and sets one success check. Result: A materially different recovery path or an explicit source blocker.",
+      "reject": "Omitting the mechanism or instead doing this: Forget the verified target or issue a fourth cosmetic query."
     },
     {
       "id": "stuck-pattern-reset-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a second attempt has new evidence or a materially changed method",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Record each attempt's goal, method, key assumptions, state version, and observed failure.",
+      "reject": "Activating Stuck-Pattern Reset Pack solely because its name appears relevant"
     },
     {
       "id": "stuck-pattern-reset-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Locked facts and constraints survive the reset.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: detect semantic repetition rather than repeated wording",
+      "reject": "Silently violating the stated precedence for Stuck-Pattern Reset Pack"
     },
     {
       "id": "stuck-pattern-reset-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "false loop detection",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: trusted-state preservation",
+      "reject": "Claiming a successful Stuck-Pattern Reset Pack result past this boundary"
     },
     {
       "id": "stuck-pattern-reset-strong-model-scaling",

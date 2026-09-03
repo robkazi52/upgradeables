@@ -24,10 +24,10 @@
   ],
   "purpose": "Preserve sequence, provenance, relevance, and current truth across long-running work.",
   "recommended_skill_types": [
-    "long-lived agents",
-    "case management",
-    "iterative research",
-    "multi-source evolving records"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "a one-shot task has no state evolution",

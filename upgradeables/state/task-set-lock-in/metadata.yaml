@@ -23,10 +23,10 @@
   ],
   "purpose": "Prevent scope substitution and goal drift during execution.",
   "recommended_skill_types": [
-    "multi-step builds",
-    "contracted deliverables",
-    "long research",
-    "tasks with exclusions"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the task is still materially ambiguous",

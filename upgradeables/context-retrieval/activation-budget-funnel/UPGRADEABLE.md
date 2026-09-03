@@ -148,11 +148,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-source research
-- long-document analysis
-- evidence-heavy authoring
-- policy or legal evidence review
-- large modular agent workflows
+- high-stakes evidence work
+- long-context workflows
+- multi-step task execution
+- review and quality assurance
 
 ## Example Composition
 
@@ -182,6 +181,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-16. ABF — Activation-Budget Funnel (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — ABF — Activation-Budget Funnel (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 18. ABF — DEEP CONTEXT IMPLICATION (historical_assistant_artifact)

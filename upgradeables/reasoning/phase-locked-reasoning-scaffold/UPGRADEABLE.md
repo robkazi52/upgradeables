@@ -135,10 +135,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- evidence-grounded writing
-- multi-source research
-- risk analysis
-- long workflows with distinct reasoning modes
+- analysis and decision support
+- communication and content generation
+- high-stakes evidence work
+- long-context workflows
 
 ## Example Composition
 
@@ -168,6 +168,6 @@ Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovere
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 5. January 5, 2026 — training/scaffolding Upgradeables snapshot (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.2 Semantic phase separation (historical_assistant_artifact)

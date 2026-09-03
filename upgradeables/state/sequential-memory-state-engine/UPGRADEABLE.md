@@ -153,10 +153,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long-lived agents
-- case management
-- iterative research
-- multi-source evolving records
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
+- source-grounded research
 
 ## Example Composition
 

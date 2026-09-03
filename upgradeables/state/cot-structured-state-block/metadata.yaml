@@ -21,10 +21,10 @@
   ],
   "purpose": "Make reasoning-relevant state portable and auditable while preserving the boundary between useful state and hidden internal deliberation.",
   "recommended_skill_types": [
-    "multi-agent research",
-    "long investigations",
-    "regulated decisions",
-    "work requiring resumable rationale"
+    "analysis and decision support",
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "a one-turn answer has no meaningful state",

@@ -25,9 +25,9 @@
   ],
   "purpose": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs.",
   "recommended_skill_types": [
-    "multi-agent workflows",
-    "modular Skills",
-    "cross-process continuation"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "all work occurs inside one uninterrupted component",
@@ -138,8 +138,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-02. Teleport Bus",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-02. Teleport Bus"
     }
   ],
   "source_support": "sufficiently-recovered",

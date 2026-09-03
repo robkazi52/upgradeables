@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** A real citation may not support the magnitude, population, or causal verb.
-- **Expect:** The claim becomes a correctly scoped subgroup association with a pinpoint citation.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Finds the 40 percent is a subgroup association, verifies no causal design, and narrows the sentence. Result: The claim becomes a correctly scoped subgroup association with a pinpoint citation.
+- **Reject:** Omitting the mechanism or instead doing this: Pass the sentence merely because the paper mentions the intervention and risk.
 
 ## Negative Activation
 
 - **Given:** the output contains no externally attributed factual claims
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Atomize each externally checkable claim and bind each citation to a specific atom.
+- **Reject:** Activating Citation Fidelity Gate solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** The source passage outranks a draft's intended meaning.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Bind citations at claim-atom granularity.
+- **Reject:** Silently violating the stated precedence for Citation Fidelity Gate
 
 ## Failure Boundary
 
 - **Given:** Block any material claim whose cited artifact cannot be opened, whose passage does not entail it, or whose quote/paraphrase changes meaning.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: direct passage inspection
+- **Reject:** Claiming a successful Citation Fidelity Gate result past this boundary
 
 ## Strong Model Scaling
 

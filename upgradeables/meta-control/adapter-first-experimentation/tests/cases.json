@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Search may improve discovery but could add latency and unstable ranking to a working deterministic loader.",
-      "expect": "Evidence-backed adoption or clean retirement with the original loader intact.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Routes a test cohort through the adapter, compares it with deterministic resolution, tests fallback, and promotes only the stable query interface after thresholds pass. Result: Evidence-backed adoption or clean retirement with the original loader intact.",
+      "reject": "Omitting the mechanism or instead doing this: Replace the base resolver before evaluation or let the adapter mutate registry records."
     },
     {
       "id": "adapter-first-experimentation-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the change is a mandatory security repair",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: State the hypothesis, acceptance metrics, test cohort, and non-negotiable invariants.",
+      "reject": "Activating Adapter-First Experimentation solely because its name appears relevant"
     },
     {
       "id": "adapter-first-experimentation-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Security and integrity repairs follow their mandated path rather than waiting for experimental promotion.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: keep the base path available during evaluation",
+      "reject": "Silently violating the stated precedence for Adapter-First Experimentation"
     },
     {
       "id": "adapter-first-experimentation-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "base contamination",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: detachable boundary",
+      "reject": "Claiming a successful Adapter-First Experimentation result past this boundary"
     },
     {
       "id": "adapter-first-experimentation-strong-model-scaling",

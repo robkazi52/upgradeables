@@ -150,10 +150,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-session projects
-- agent handoffs
-- rollback-sensitive workflows
-- audits
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

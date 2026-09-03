@@ -26,10 +26,10 @@
   ],
   "purpose": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure.",
   "recommended_skill_types": [
-    "medical, legal, or policy analysis",
-    "citation-bearing research",
-    "safety-critical decisions",
-    "source transcription and fidelity work"
+    "analysis and decision support",
+    "communication and content generation",
+    "document and code transformation",
+    "high-stakes evidence work"
   ],
   "usually_not_needed_for": [
     "the failed condition is optional and does not affect the supported deliverable",
@@ -141,8 +141,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-11. Fail-Closed Tier-3 Abstention",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-11. Fail-Closed Tier-3 Abstention"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

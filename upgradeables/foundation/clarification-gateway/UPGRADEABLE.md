@@ -130,10 +130,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- requirements intake
-- ambiguous data transformation
-- multi-constraint planning
 - high-stakes evidence work
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 
@@ -163,6 +162,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-03. Clarification Gateway / Clarification-First (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — January 5 scaffolding classification (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — `UPGRADEABLE_ACTIVATION_TIERS_T1` (historical_assistant_artifact)

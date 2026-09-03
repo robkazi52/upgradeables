@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The workflow must extract structured facts from supplied records.
-- **Expect:** A source-faithful intake object with an explicit gap.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Marks the field Not documented and continues with supported fields. Result: A source-faithful intake object with an explicit gap.
+- **Reject:** Omitting the mechanism or instead doing this: Infer the date from the surrounding chronology.
 
 ## Negative Activation
 
 - **Given:** pure creative generation has no asserted factual source boundary
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Declare the allowed evidence boundary.
+- **Reject:** Activating Grounding / No-Invention solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Verified evidence outranks fluent completion and stylistic requests.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Mark material uncertainty and undocumented fields.
+- **Reject:** Silently violating the stated precedence for Grounding / No-Invention
 
 ## Failure Boundary
 
 - **Given:** When an essential material claim lacks support inside the authorized evidence boundary, omit it or fail closed.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: every asserted material fact must remain within the authorized evidence boundary
+- **Reject:** Claiming a successful Grounding / No-Invention result past this boundary
 
 ## Strong Model Scaling
 

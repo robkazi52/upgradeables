@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The change alters selection, dependency resolution, package interfaces, and state migration across the repository.",
-      "expect": "One coherent loader architecture with migrated dependents and an auditable retirement.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Maps every loader responsibility, designs registry adapters, migrates callers in stages, validates resolution and fallback, then removes the monolith after cutover checks. Result: One coherent loader architecture with migrated dependents and an auditable retirement.",
+      "reject": "Omitting the mechanism or instead doing this: Patch conditionals into the old loader until it accidentally behaves like two architectures."
     },
     {
       "id": "surgery-edit-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a localized invariant-preserving patch suffices",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Document the architecture-level failure and evidence that local editing is insufficient.",
+      "reject": "Activating Surgery Editing solely because its name appears relevant"
     },
     {
       "id": "surgery-edit-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Use CRISPR when all required behavior can coexist with current interfaces inside a bounded patch.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: prove macro scope",
+      "reject": "Silently violating the stated precedence for Surgery Editing"
     },
     {
       "id": "surgery-edit-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "macro edit disguised as patch accumulation",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: CRISPR-insufficiency proof",
+      "reject": "Claiming a successful Surgery Editing result past this boundary"
     },
     {
       "id": "surgery-edit-strong-model-scaling",

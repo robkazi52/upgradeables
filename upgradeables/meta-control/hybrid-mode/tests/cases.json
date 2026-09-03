@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Several architectures deserve exploration, but repository edits and publication require precise validated execution.",
-      "expect": "Broad design quality with a controlled, auditable execution path.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Uses POWER for three architectures, collapses to one, records interfaces and rejected assumptions, then switches to SAFE for file edits, tests, and publication. Result: Broad design quality with a controlled, auditable execution path.",
+      "reject": "Omitting the mechanism or instead doing this: Mix components from losing designs during implementation without reopening the design gate."
     },
     {
       "id": "hybrid-mode-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task needs only narrow execution",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare HYBRID and define separate planning and execution completion criteria.",
+      "reject": "Activating HYBRID Mode solely because its name appears relevant"
     },
     {
       "id": "hybrid-mode-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "No POWER branch may execute until one plan passes collapse and handoff validation.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: declare the active phase",
+      "reject": "Silently violating the stated precedence for HYBRID Mode"
     },
     {
       "id": "hybrid-mode-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "mode leakage",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit collapse",
+      "reject": "Claiming a successful HYBRID Mode result past this boundary"
     },
     {
       "id": "hybrid-mode-strong-model-scaling",

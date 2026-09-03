@@ -23,10 +23,10 @@
   ],
   "purpose": "Combine broad planning capability with conservative implementation without letting speculative branch assumptions leak into committed work.",
   "recommended_skill_types": [
-    "architecture followed by implementation",
-    "research plan followed by evidence extraction",
-    "migration design followed by cutover",
-    "complex repository builds"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the task needs only narrow execution",
@@ -162,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-08. HYBRID Mode",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-08. HYBRID Mode"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

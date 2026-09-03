@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The code-to-requirement story may be plausible without every criterion actually being entailed.
-- **Expect:** One missing error-handling criterion is found despite a plausible forward explanation.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Maps criteria to behavior, then reconstructs satisfied criteria from observed behavior alone. Result: One missing error-handling criterion is found despite a plausible forward explanation.
+- **Reject:** Omitting the mechanism or instead doing this: Count a criterion as satisfied because the PR description repeats it.
 
 ## Negative Activation
 
 - **Given:** the transformation is intentionally irreversible and no reverse contract is claimed
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Lock the source atoms and declared transformation contract.
+- **Reject:** Activating Bidirectional Consistency solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** The declared transformation contract determines which information may be lost.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Keep forward and reverse judgments separately inspectable.
+- **Reject:** Silently violating the stated precedence for Bidirectional Consistency
 
 ## Failure Boundary
 
 - **Given:** Do not certify when a material source constraint has no forward image or when the result implies a contradictory source condition.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: independent backward reconstruction for lossy or high-stakes transformations
+- **Reject:** Claiming a successful Bidirectional Consistency result past this boundary
 
 ## Strong Model Scaling
 

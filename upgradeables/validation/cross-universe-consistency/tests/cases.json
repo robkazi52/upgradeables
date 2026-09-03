@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "A final proposal might incorrectly combine offline guarantees with cloud-only observability.",
-      "expect": "The final design states one coherent assumption set and conditional alternative.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Labels the observability benefit cloud-conditional and rejects it from the offline configuration unless a new compatible mechanism is supplied. Result: The final design states one coherent assumption set and conditional alternative.",
+      "reject": "Omitting the mechanism or instead doing this: Call the hybrid consistent because both branches are individually viable."
     },
     {
       "id": "cross-universe-consistency-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "only one branch was explored",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Record assumptions, constraints, claims, and actions for every branch.",
+      "reject": "Activating Cross-Universe Consistency Mode solely because its name appears relevant"
     },
     {
       "id": "cross-universe-consistency-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A branch-conditional claim cannot be imported without its enabling assumptions.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve branch provenance through collapse.",
+      "reject": "Silently violating the stated precedence for Cross-Universe Consistency Mode"
     },
     {
       "id": "cross-universe-consistency-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Block the collapse when it combines mutually exclusive assumptions or strips a claim from conditions required for its validity.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: assumption provenance and compatibility check for any hybrid",
+      "reject": "Claiming a successful Cross-Universe Consistency Mode result past this boundary"
     },
     {
       "id": "cross-universe-consistency-strong-model-scaling",

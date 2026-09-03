@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The change can break downstream consumers and is costly to reverse after rollout.",
-      "expect": "A gated rollout with evidence before irreversible cleanup.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Verifies consumer migration, stages compatibility, sets an error-rate threshold, deploys, and checks telemetry before removing the old field. Result: A gated rollout with evidence before irreversible cleanup.",
+      "reject": "Omitting the mechanism or instead doing this: Approve the rename because the local service tests pass."
     },
     {
       "id": "forethought-checkpoints-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "reversible low-cost local edits",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the next irreversible, high-cost, or dependency-sensitive action.",
+      "reject": "Activating Forethought / Checkpoints solely because its name appears relevant"
     },
     {
       "id": "forethought-checkpoints-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A failed hard prerequisite blocks commitment regardless of schedule pressure.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: tie each checkpoint to a concrete consequence",
+      "reject": "Silently violating the stated precedence for Forethought / Checkpoints"
     },
     {
       "id": "forethought-checkpoints-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "ritual checklists unrelated to risk",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: pre-commit prerequisite check for consequential actions",
+      "reject": "Claiming a successful Forethought / Checkpoints result past this boundary"
     },
     {
       "id": "forethought-checkpoints-strong-model-scaling",

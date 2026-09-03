@@ -22,10 +22,9 @@
   ],
   "purpose": "Make high-confidence micro-edits to structured systems without collateral semantic or interface drift.",
   "recommended_skill_types": [
-    "one rule change in a prompt or skill",
-    "small schema-compatible config edit",
-    "precise clause replacement",
-    "localized architecture adjustment"
+    "document and code transformation",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the governing structure is wrong",
@@ -163,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-07. CRISPR Editing",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-07. CRISPR Editing"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

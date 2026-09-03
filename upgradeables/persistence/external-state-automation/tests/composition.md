@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Verified decisions and source pointers need durable continuation.
-- **Expect:** The next session restores traceable state or receives an explicit failure/staleness warning.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Writes the compact snapshot to an authorized file, verifies it, and validates it on resume. Result: The next session restores traceable state or receives an explicit failure/staleness warning.
+- **Reject:** Omitting the mechanism or instead doing this: Does not claim persistence before the write succeeds or store the whole conversation by default.
 
 ## Negative Activation
 
 - **Given:** the task ends in one session and needs no continuation
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Confirm an authorized storage mechanism, location, lifetime, and data policy.
+- **Reject:** Activating External State Automation solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Host, system, domain, and explicit user authority take precedence over this component.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Preserve the defining invariant: capability declaration, minimum-state serialization, write verification, and restore validation.
+- **Reject:** Silently violating the stated precedence for External State Automation
 
 ## Failure Boundary
 
 - **Given:** no authorized storage capability is available
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: capability declaration, minimum-state serialization, write verification, and restore validation
+- **Reject:** Claiming a successful External State Automation result past this boundary
 
 ## Strong Model Scaling
 

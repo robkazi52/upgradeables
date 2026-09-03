@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** A single transcription or calculation error could change the outcome.
-- **Expect:** An anchor pair ready for Multi-Truth Gating.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Records both anchors and checks their independence. Result: An anchor pair ready for Multi-Truth Gating.
+- **Reject:** Omitting the mechanism or instead doing this: Treat two paragraphs citing the same table as independent.
 
 ## Negative Activation
 
 - **Given:** the claim is low risk and an authoritative primary source is decisive
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Identify the consequential truth atom.
+- **Reject:** Activating Truth Redundancy solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Independence is invalid if both anchors share the same unverified upstream source.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Test independence, not just numerical multiplicity.
+- **Reject:** Silently violating the stated precedence for Truth Redundancy
 
 ## Failure Boundary
 
 - **Given:** If no genuinely independent second anchor is available, report that limitation and do not claim redundant verification.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: when redundancy is claimed, the anchors must be genuinely independent
+- **Reject:** Claiming a successful Truth Redundancy result past this boundary
 
 ## Strong Model Scaling
 

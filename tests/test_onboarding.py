@@ -38,6 +38,18 @@ class OnboardingTests(unittest.TestCase):
         self.assertEqual(data["slug"], "research-skill")
         self.assertTrue(all(item["package_path"] for item in data["components"]))
 
+    def test_perception_recipe_is_discoverable(self):
+        result = subprocess.run(
+            [sys.executable, "scripts/query_registry.py", "--recipe", "perception-reasoning"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        data = json.loads(result.stdout)
+        self.assertEqual(data["task_family"], "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations")
+        self.assertEqual(next(item["role"] for item in data["components"] if item["slug"] == "meta-supervisor"), "X")
+
     def test_common_code_review_terms_are_searchable(self):
         for term in ("review", "unsafe", "regressions", "pull-request", "correctness"):
             result = subprocess.run(
@@ -70,6 +82,18 @@ class OnboardingTests(unittest.TestCase):
             text=True,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_arc_skill_and_evidence_disclose_limits(self):
+        result = subprocess.run(
+            [sys.executable, "scripts/validate_skill.py", "implementations/community/arc-perception-solver"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        evidence = (ROOT / "evidence/arc-agi-benchmarks.md").read_text(encoding="utf-8").casefold()
+        for disclosure in ("not independently verified", "reconciliation warning", "raw run artifacts"):
+            self.assertIn(disclosure, evidence)
 
     def test_incomplete_skill_is_rejected(self):
         skill = ROOT / "tests/fixtures/invalid-skill/SKILL.md"

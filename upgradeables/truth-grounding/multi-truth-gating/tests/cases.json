@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The recommendation is consequential and one reasoning path may be fragile.",
-      "expect": "A committed or bounded recommendation with its support status.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Compares independent support and narrows the recommendation if causal support diverges. Result: A committed or bounded recommendation with its support status.",
+      "reject": "Omitting the mechanism or instead doing this: Treat repeated citations to the same study as multiple truths."
     },
     {
       "id": "multi-truth-gating-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the claim is low consequence and one authoritative direct source is sufficient",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify conclusions whose failure would materially change the outcome.",
+      "reject": "Activating Multi-Truth Gating solely because its name appears relevant"
     },
     {
       "id": "multi-truth-gating-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A higher-authority direct source can outweigh a weaker corroborating path, but the disagreement must be recorded.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Test anchor independence.",
+      "reject": "Silently violating the stated precedence for Multi-Truth Gating"
     },
     {
       "id": "multi-truth-gating-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If an important conclusion lacks an independent check or the anchors materially disagree without resolution, do not certify the conclusion.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: decision-critical claims require genuinely independent support or an explicit unresolved status",
+      "reject": "Claiming a successful Multi-Truth Gating result past this boundary"
     },
     {
       "id": "multi-truth-gating-strong-model-scaling",

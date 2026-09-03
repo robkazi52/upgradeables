@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Text must be captured from an image for evidence use.
-- **Expect:** A usable transcription whose uncertainty remains auditable.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Transcribes legible digits, preserves row order, and marks the obscured digits with their location. Result: A usable transcription whose uncertainty remains auditable.
+- **Reject:** Omitting the mechanism or instead doing this: Infer the missing digits from another identifier.
 
 ## Negative Activation
 
 - **Given:** no image contains source text or visible structure
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Record the image/page identifier and reading order.
+- **Reject:** Activating Image Text Fidelity Capture solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Visible evidence outranks grammatical completion.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Preserve visible spelling, numbers, labels, and structure.
+- **Reject:** Silently violating the stated precedence for Image Text Fidelity Capture
 
 ## Failure Boundary
 
 - **Given:** If a region is not legible enough to verify, mark it uncertain and do not produce a confident transcription for that region.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: only visible evidence may determine captured text or structure
+- **Reject:** Claiming a successful Image Text Fidelity Capture result past this boundary
 
 ## Strong Model Scaling
 

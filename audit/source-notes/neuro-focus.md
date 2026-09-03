@@ -8,8 +8,8 @@
 
 ## Recovered facts and source anchors
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — A-09. Neuro-Focus (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — Advanced architecture Upgradeables retained (historical_recovery_inventory)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 11. Advanced architecture Upgradeables retained (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — T2-040 — Attention Corridor Narrowing (historical_assistant_artifact)
 
 ## Recovered or normalized purpose

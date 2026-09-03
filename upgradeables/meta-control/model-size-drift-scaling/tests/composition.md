@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Repeated planning reminders may be unnecessary, but source fidelity and tool-state checks remain essential.
-- **Expect:** Lower overhead without loss of measured integrity.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Compresses proven-redundant planning prompts, retains grounding and state checks, runs regressions, and publishes a reversible frontier profile. Result: Lower overhead without loss of measured integrity.
+- **Reject:** Omitting the mechanism or instead doing this: Remove citations and safety gates because the new model is larger.
 
 ## Negative Activation
 
 - **Given:** there is no comparative reliability evidence
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Inventory controls and classify each as invariant, compensatory, or convenience.
+- **Reject:** Activating Drift-Stability Scaling with Model Size solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Invariant controls do not scale away.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: use task-relevant evidence rather than size labels alone
+- **Reject:** Silently violating the stated precedence for Drift-Stability Scaling with Model Size
 
 ## Failure Boundary
 
 - **Given:** size-as-capability assumption
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: truth and safety gates
+- **Reject:** Claiming a successful Drift-Stability Scaling with Model Size result past this boundary
 
 ## Strong Model Scaling
 

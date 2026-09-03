@@ -23,6 +23,23 @@ Adapters:
   mock results are not model results.
 - `adapters/command.py` sends a prompt to an explicit local command over stdin.
 
+Run a selected case through a local model command and write a raw, initially
+unscored report:
+
+```bash
+python scripts/run_behavioral_evals.py --adapter command \
+  --command "your-model-cli --flag" --model "exact-model-build" \
+  --package grounding-no-invention --max-cases 1 \
+  --parameters '{"temperature": 0}' --output evals/reports/local-run.json
+```
+
+For harness development, `--adapter mock --allow-mock --model mock` is available.
+Mock reports are labeled `mock-not-evidence`. Optional human judgments are a JSON
+object keyed by case ID; each value must contain an `outcome` of `pass`, `fail`,
+or `uncertain` and may include notes.
+
 Providers can add adapters without changing canonical Upgradeable semantics.
 Store generated evaluation output under `evals/reports/` and identify the actual
-model, adapter, date, parameters, and case set. Do not commit credentials.
+model, adapter, date, parameters, and case set. Do not commit credentials. The
+runner records raw outputs and optional declared judgments; it does not infer a
+pass from lexical overlap and does not make model-quality claims automatically.

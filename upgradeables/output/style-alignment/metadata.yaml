@@ -21,11 +21,8 @@
   ],
   "purpose": "Make artifacts consistent with audience, publication, or organizational style while keeping truth and requirements dominant.",
   "recommended_skill_types": [
-    "house-style editing",
-    "voice matching",
-    "channel adaptation",
-    "consistent multi-author documents",
-    "format and tone normalization"
+    "communication and content generation",
+    "document and code transformation"
   ],
   "usually_not_needed_for": [
     "the requested style impersonates a living person or conflicts with policy",
@@ -162,8 +159,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-15. Style-Alignment Module",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-15. Style-Alignment Module"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

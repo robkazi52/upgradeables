@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The task requires component architecture and a validated complete package, not one isolated primitive.
-- **Expect:** A minimal coherent Skill and a compact record of decisions are produced.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Builds a modular plan, selects components, coordinates drafting and critique, repairs local defects, and emits the finished Skill plus state. Result: A minimal coherent Skill and a compact record of decisions are produced.
+- **Reject:** Omitting the mechanism or instead doing this: Does not act as the research domain expert or load every available component.
 
 ## Negative Activation
 
 - **Given:** the task is a narrow domain execution job with no architecture decision
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Lock the goal, constraints, deliverable, authority, and completion criteria.
+- **Reject:** Activating Architect Orchestrator solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Host, system, domain, and explicit user authority take precedence over this component.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Preserve the defining invariant: explicit modular interfaces, authority resolution, independent critique, and continuation state.
+- **Reject:** Silently violating the stated precedence for Architect Orchestrator
 
 ## Failure Boundary
 
 - **Given:** required module interfaces or authority relationships cannot be resolved
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit modular interfaces, authority resolution, independent critique, and continuation state
+- **Reject:** Claiming a successful Architect Orchestrator result past this boundary
 
 ## Strong Model Scaling
 

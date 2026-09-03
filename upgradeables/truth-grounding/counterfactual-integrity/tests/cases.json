@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The answer combines factual and counterfactual modes.",
-      "expect": "Two separated sections with no phase leakage.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Keeps the current rule factual and reports projected effects under a labeled hypothetical branch. Result: Two separated sections with no phase leakage.",
+      "reject": "Omitting the mechanism or instead doing this: State that the threshold was actually changed."
     },
     {
       "id": "counterfactual-integrity-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task contains no hypothetical branch",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare the factual baseline and the allowed counterfactual question.",
+      "reject": "Activating Counterfactual Integrity Gate solely because its name appears relevant"
     },
     {
       "id": "counterfactual-integrity-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A factual-only task boundary overrides permission to explore counterfactuals.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve the original factual baseline.",
+      "reject": "Silently violating the stated precedence for Counterfactual Integrity Gate"
     },
     {
       "id": "counterfactual-integrity-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If branch-local assumptions cannot be separated from factual claims, do not certify the mixed output.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: no hypothetical premise or consequence may silently become fact",
+      "reject": "Claiming a successful Counterfactual Integrity Gate result past this boundary"
     },
     {
       "id": "counterfactual-integrity-strong-model-scaling",

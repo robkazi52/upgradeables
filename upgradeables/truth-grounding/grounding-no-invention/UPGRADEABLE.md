@@ -135,11 +135,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
+- high-stakes evidence work
+- review and quality assurance
 - source-grounded research
-- record and chart review
-- policy or legal analysis
-- citation-bearing authoring
-- tool-result reporting
 
 ## Example Composition
 
@@ -169,6 +167,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T1-04. Grounding / No-Invention (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 2. November 28, 2025 — frozen T1-Core Bundle v1 (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 12.5 Retrofitted no-inference intake behavior (historical_assistant_artifact)

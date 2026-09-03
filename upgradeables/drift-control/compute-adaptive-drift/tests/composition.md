@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** They differ in reliable context handling but must meet the same evidence standard.
-- **Expect:** Different process overhead, identical semantic acceptance boundary.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Gives the compact model smaller source batches and per-claim checks; permits the frontier model to batch low-risk extraction after it passes calibration. Result: Different process overhead, identical semantic acceptance boundary.
+- **Reject:** Omitting the mechanism or instead doing this: It does not let either model omit citations or alter locked facts.
 
 ## Negative Activation
 
 - **Given:** adaptation would weaken factual or safety invariants
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Classify consequence of drift and identify non-negotiable invariants.
+- **Reject:** Activating Compute-Adaptive Drift Constraining solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Task risk and zero-drift requirements cap any relaxation due to compute.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: hold truth and authority invariants constant
+- **Reject:** Silently violating the stated precedence for Compute-Adaptive Drift Constraining
 
 ## Failure Boundary
 
 - **Given:** Do not relax controls for high-impact claims without demonstrated validation performance.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: zero-drift fields
+- **Reject:** Claiming a successful Compute-Adaptive Drift Constraining result past this boundary
 
 ## Strong Model Scaling
 

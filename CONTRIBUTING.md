@@ -27,6 +27,16 @@ Upgradeables.
 See the [worked research Skill](implementations/community/source-bounded-research/SKILL.md).
 Adding a Skill does not require changing canonical registry metadata.
 
+## Contribute empirical evidence
+
+Evidence may motivate a recipe or test but does not redefine historical package
+semantics. Put study reports under [`evidence/`](evidence/) and include the task
+manifest, prompts or hashes, model/build identifiers, inference parameters, raw
+outputs, grader source, per-run results, dates, and an aggregation command where
+licensing permits. Label retrospective, exploratory, confirmatory, and independently
+reproduced evidence distinctly. Reconcile aggregate totals before making comparative
+claims, cite external baselines, and disclose missing artifacts explicitly.
+
 ## Propose a new Upgradeable
 
 Choose this route only for a reusable cross-cutting mechanism that cannot be
@@ -45,8 +55,14 @@ represented by composing current primitives.
 
 ## General rules
 
+Preserve canonical IDs and slugs when improving terminology. Propose clearer
+display names and aliases using the principles in the
+[v0.2 naming review](audit/NAMING_REVIEW_v0.2.md); path changes require an
+explicit versioned migration and redirect plan.
+
 Fork and branch from `main`, keep pull requests focused, and use the pull request
 checklist. Do not invent missing history, collapse acronym collisions, claim host
 capabilities that are not present, or let a validator add unsupported facts.
+Do not turn an exploratory benchmark into a universal superiority claim.
 
 By contributing, you agree that your contribution is licensed under Apache-2.0.

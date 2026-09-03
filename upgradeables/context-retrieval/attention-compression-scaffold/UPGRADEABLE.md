@@ -142,10 +142,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long-context analysis
-- large codebase navigation
-- multi-document synthesis
-- stateful agent workflows
+- document and code transformation
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

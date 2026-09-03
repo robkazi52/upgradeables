@@ -23,10 +23,9 @@
   ],
   "purpose": "Create a stable checkpoint that can be resumed or audited after interruption.",
   "recommended_skill_types": [
-    "multi-session projects",
-    "agent handoffs",
-    "rollback-sensitive workflows",
-    "audits"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "a snapshot would persist prohibited sensitive data",

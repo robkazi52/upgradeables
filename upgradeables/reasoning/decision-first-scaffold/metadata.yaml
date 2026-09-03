@@ -22,10 +22,10 @@
   ],
   "purpose": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail.",
   "recommended_skill_types": [
-    "recommendations",
-    "go/no-go reviews",
-    "option selection",
-    "resource allocation"
+    "analysis and decision support",
+    "communication and content generation",
+    "document and code transformation",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "the task asks only for faithful extraction or description",
@@ -148,8 +148,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "C. JANUARY 5, 2026 TRAINING / SCAFFOLDING UPGRADEABLES"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

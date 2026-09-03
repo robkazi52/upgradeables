@@ -8,11 +8,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md"
+REPOSITORY_BLOB_BASE = "https://github.com/robkazi52/upgradeables/blob/main"
 
 LINK = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
 
 def portable_text(relative_path):
-    """Read a document and relocate repository links for the dist directory."""
+    """Read a document and turn repository links into standalone web links."""
     source = ROOT / relative_path
     text = source.read_text(encoding="utf-8")
 
@@ -30,7 +31,7 @@ def portable_text(relative_path):
         except ValueError:
             return match.group(0)
         suffix = f"#{anchor}" if separator else ""
-        return f"[{label}](../{repo_path}{suffix})"
+        return f"[{label}]({REPOSITORY_BLOB_BASE}/{repo_path}{suffix})"
 
     return LINK.sub(relocate, text)
 

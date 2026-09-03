@@ -22,10 +22,10 @@
   ],
   "purpose": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed.",
   "recommended_skill_types": [
-    "high-stakes evidence synthesis",
-    "conflicting-source research",
-    "medical, legal, or policy decisions",
-    "critical architecture choices"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the claim is low consequence and one authoritative direct source is sufficient",
@@ -140,8 +140,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-01. Multi-Truth Gating",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-01. Multi-Truth Gating"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

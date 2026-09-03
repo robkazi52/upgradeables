@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The task needs bounded interpretation across two sources.",
-      "expect": "An integrated but source-bounded paragraph.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Links compatible findings and labels a remaining disagreement. Result: An integrated but source-bounded paragraph.",
+      "reject": "Omitting the mechanism or instead doing this: Invent a causal mechanism neither study supports."
     },
     {
       "id": "two-truths-and-corridor-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "only one defensible anchor exists",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Select and verify two independent anchors.",
+      "reject": "Activating Two Truths + Corridor solely because its name appears relevant"
     },
     {
       "id": "two-truths-and-corridor-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Zero-drift atoms override a wider surrounding synthesis corridor.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Verify both anchors before synthesis.",
+      "reject": "Silently violating the stated precedence for Two Truths + Corridor"
     },
     {
       "id": "two-truths-and-corridor-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If either anchor is unverified or the synthesis requires claims outside the declared corridor, do not certify the synthesis.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: two verified anchors and the declared transformation boundary",
+      "reject": "Claiming a successful Two Truths + Corridor result past this boundary"
     },
     {
       "id": "two-truths-and-corridor-strong-model-scaling",

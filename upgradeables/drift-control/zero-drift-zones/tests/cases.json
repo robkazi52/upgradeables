@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Dose, units, contraindication, and exception clause cannot drift while explanation can compress.",
-      "expect": "A shorter card with verified critical content.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Marks those atoms as zero-drift, propagates their IDs, and checks the card before release. Result: A shorter card with verified critical content.",
+      "reject": "Omitting the mechanism or instead doing this: It does not freeze all explanatory prose or simplify away the exception."
     },
     {
       "id": "zero-drift-zones-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the user explicitly authorizes change to the marked content",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Locate high-consequence atoms such as names, numbers, negations, conditions, quotations, obligations, and safety thresholds.",
+      "reject": "Activating Zero-Drift Zones solely because its name appears relevant"
     },
     {
       "id": "zero-drift-zones-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Latest authorized source correction may replace a zone, with version history retained.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: keep zones minimal and explicit",
+      "reject": "Silently violating the stated precedence for Zero-Drift Zones"
     },
     {
       "id": "zero-drift-zones-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Block release when a required zone fails validation.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: minimal immutable atoms",
+      "reject": "Claiming a successful Zero-Drift Zones result past this boundary"
     },
     {
       "id": "zero-drift-zones-strong-model-scaling",

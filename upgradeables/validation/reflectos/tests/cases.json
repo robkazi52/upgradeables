@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Completion requires more than generation: schemas, tests, docs, Git, and publication must match the handoff.",
-      "expect": "The release decision is tied to requirements and evidence with a bounded repair history.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Finds a missing all-package validation path, selects revise, adds the relevant test, reruns checks, then accepts and updates state. Result: The release decision is tied to requirements and evidence with a bounded repair history.",
+      "reject": "Omitting the mechanism or instead doing this: Declare success because scaffolding exists or invent a passing publication result."
     },
     {
       "id": "reflectos-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a deterministic fix is already known and reflection adds no decision value",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Recheck the session goal and current subgoal.",
+      "reject": "Activating Work Reflection Loop OS / ReflectOS solely because its name appears relevant"
     },
     {
       "id": "reflectos-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Explicit requirements and evidence outrank the reflector's preference.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Anchor every critique to the goal, requirements, or observed risk.",
+      "reject": "Silently violating the stated precedence for Work Reflection Loop OS / ReflectOS"
     },
     {
       "id": "reflectos-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not accept when a material requirement is unmet; do not revise with invented facts; stop and surface the dependency when progress requires external authority.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: goal comparison, requirement audit, explicit transition, and state update for long or risky work",
+      "reject": "Claiming a successful Work Reflection Loop OS / ReflectOS result past this boundary"
     },
     {
       "id": "reflectos-strong-model-scaling",

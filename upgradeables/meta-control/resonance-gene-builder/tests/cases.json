@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The same directional module relationship recurs across several authoring Genes.",
-      "expect": "One reusable, testable module relationship.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Builds a coupling Gene that passes changed claims to the validator, blocks finalization on mismatch, suppresses duplicate style output, and terminates after pass or explicit repair route. Result: One reusable, testable module relationship.",
+      "reject": "Omitting the mechanism or instead doing this: Merge rewriting and citation logic or claim they communicate outside explicit state."
     },
     {
       "id": "resonance-gene-builder-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the need is a general task behavior unrelated to module coupling",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Collect repeated cases where the same modules should coordinate and isolate the stable relationship.",
+      "reject": "Activating Resonance Gene Builder solely because its name appears relevant"
     },
     {
       "id": "resonance-gene-builder-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Global authority ordering outranks a coupling's preferred flow.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: use explicit host-supported interfaces",
+      "reject": "Silently violating the stated precedence for Resonance Gene Builder"
     },
     {
       "id": "resonance-gene-builder-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "implicit coupling",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit interfaces",
+      "reject": "Claiming a successful Resonance Gene Builder result past this boundary"
     },
     {
       "id": "resonance-gene-builder-strong-model-scaling",

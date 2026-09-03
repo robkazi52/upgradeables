@@ -23,11 +23,10 @@
   ],
   "purpose": "Preserve non-compensable constraints during aggregation and synthesis.",
   "recommended_skill_types": [
-    "safety reviews",
-    "constraint-heavy planning",
-    "security decisions",
-    "branch collapse",
-    "truth-conflict resolution"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "the alleged defect is merely a soft preference",
@@ -147,13 +146,15 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-09. Fermionic Veto Strengthening",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-09. Fermionic Veto Strengthening"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "T3-09. Fermionic Veto Strengthening",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "T3-09. Fermionic Veto Strengthening"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",

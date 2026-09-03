@@ -126,9 +126,9 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-document synthesis
-- multi-agent handoffs
-- parallel workstream integration
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

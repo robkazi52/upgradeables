@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "File changes and remote publication require exact state, credentials, and validation.",
-      "expect": "A grounded public release or a precise fail-closed blocker.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Applies only planned changes, verifies tests and diff, confirms remote target and visibility, publishes, and checks the public URL. Result: A grounded public release or a precise fail-closed blocker.",
+      "reject": "Omitting the mechanism or instead doing this: Invent credentials, redesign the repository during push, or claim publication before remote verification."
     },
     {
       "id": "safe-mode-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the primary need is broad architecture discovery",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Declare SAFE and load the committed plan, authoritative state, permitted delta, and risk controls.",
+      "reject": "Activating SAFE Mode solely because its name appears relevant"
     },
     {
       "id": "safe-mode-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A missing required source, permission, or checkpoint blocks execution.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: lock state and scope",
+      "reject": "Silently violating the stated precedence for SAFE Mode"
     },
     {
       "id": "safe-mode-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "speculative execution",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: scope and state lock",
+      "reject": "Claiming a successful SAFE Mode result past this boundary"
     },
     {
       "id": "safe-mode-strong-model-scaling",

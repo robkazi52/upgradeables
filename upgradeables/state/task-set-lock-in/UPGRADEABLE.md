@@ -154,10 +154,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- multi-step builds
-- contracted deliverables
-- long research
-- tasks with exclusions
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
+- source-grounded research
 
 ## Example Composition
 

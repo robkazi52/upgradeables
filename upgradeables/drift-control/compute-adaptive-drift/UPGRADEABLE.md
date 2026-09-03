@@ -154,10 +154,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- cross-model skills
-- variable tool availability
-- cost-limited execution
-- mixed-capability agents
+- document and code transformation
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 
@@ -187,6 +187,6 @@ Source support: `strongly-derivable`. Mechanism basis: `normalized-from-recovere
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — Compute-Adaptive Drift (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — ECL / Drift Sink (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.3 Drift widths (historical_assistant_artifact)

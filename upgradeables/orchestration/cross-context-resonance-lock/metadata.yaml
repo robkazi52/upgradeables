@@ -25,9 +25,9 @@
   ],
   "purpose": "Preserve an explicitly declared relationship between related contexts without blending their facts, authority, or unresolved assumptions.",
   "recommended_skill_types": [
-    "multi-document synthesis",
-    "multi-agent handoffs",
-    "parallel workstream integration"
+    "long-context workflows",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the contexts are unrelated",

@@ -23,10 +23,10 @@
   ],
   "purpose": "Increase depth and signal quality on a bounded target when irrelevant material would otherwise dilute effort.",
   "recommended_skill_types": [
-    "large-corpus research",
-    "one-module debugging",
-    "targeted policy review",
-    "high-value constraint analysis"
+    "analysis and decision support",
+    "long-context workflows",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the task requires broad discovery before a target is known",
@@ -153,13 +153,15 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-09. Neuro-Focus",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-09. Neuro-Focus"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "Advanced architecture Upgradeables retained",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "11. Advanced architecture Upgradeables retained",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "Advanced architecture Upgradeables retained"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Repeated changes and divergent state threaten global coherence.",
-      "expect": "One coherent baseline and a controlled resume queue.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Freezes new edits, compares each diff to the passing state, quarantines conflicting changes, rebuilds one authoritative state, validates it, then resumes changes sequentially. Result: One coherent baseline and a controlled resume queue.",
+      "reject": "Omitting the mechanism or instead doing this: Delete all recent work or keep launching more repair agents."
     },
     {
       "id": "meta-stability-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "one local defect can be repaired directly",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Confirm an instability trigger such as state divergence, repeated regression, or unresolved module conflict.",
+      "reject": "Activating Meta-Stability Mode solely because its name appears relevant"
     },
     {
       "id": "meta-stability-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A user-approved newer decision is not rolled back solely because an older checkpoint is internally coherent.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: preserve the last verified checkpoint",
+      "reject": "Silently violating the stated precedence for Meta-Stability Mode"
     },
     {
       "id": "meta-stability-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "stability theater",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: verified checkpoint",
+      "reject": "Claiming a successful Meta-Stability Mode result past this boundary"
     },
     {
       "id": "meta-stability-strong-model-scaling",

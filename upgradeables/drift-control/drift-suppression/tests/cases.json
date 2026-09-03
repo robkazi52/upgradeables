@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The qualification is a narrow-corridor claim and the output crossed it.",
-      "expect": "The repaired summary preserves the source condition.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Flags the lost condition, restores that claim, regenerates locally, and records qualification loss as a drift signature. Result: The repaired summary preserves the source condition.",
+      "reject": "Omitting the mechanism or instead doing this: It does not rewrite the whole report or accept the smoother but inaccurate claim."
     },
     {
       "id": "drift-suppression-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "no semantic baseline or allowed corridor exists",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Establish baseline anchors and permitted drift corridors before substantive transformation.",
+      "reject": "Activating Drift Suppression solely because its name appears relevant"
     },
     {
       "id": "drift-suppression-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Latest authorized task/source state defines the baseline, not the oldest lock by default.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: compare to authoritative baselines",
+      "reject": "Silently violating the stated precedence for Drift Suppression"
     },
     {
       "id": "drift-suppression-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Stop publication when a high-impact deviation cannot be repaired or adjudicated.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: source/task baseline",
+      "reject": "Claiming a successful Drift Suppression result past this boundary"
     },
     {
       "id": "drift-suppression-strong-model-scaling",

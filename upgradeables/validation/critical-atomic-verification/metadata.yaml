@@ -22,11 +22,10 @@
   ],
   "purpose": "Concentrate verification on the smallest facts whose failure would invalidate the output.",
   "recommended_skill_types": [
-    "medical or legal factual synthesis",
-    "deployment decisions",
-    "financial calculations",
-    "requirements verification",
-    "citation-heavy research"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "no factual conclusion or consequential action depends on the output",
@@ -150,13 +149,15 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-04. Critical Atomic Verification",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-04. Critical Atomic Verification"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "T3-04. Critical Atomic Verification",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "T3-04. Critical Atomic Verification"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",

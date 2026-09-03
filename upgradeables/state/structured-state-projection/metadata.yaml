@@ -23,10 +23,10 @@
   ],
   "purpose": "Reduce context, privacy, and authority leakage between components.",
   "recommended_skill_types": [
-    "multi-agent systems",
-    "domain isolation",
-    "sensitive workflows",
-    "tool calls with narrow schemas"
+    "communication and content generation",
+    "document and code transformation",
+    "long-context workflows",
+    "multi-step task execution"
   ],
   "usually_not_needed_for": [
     "one trusted consumer legitimately needs the whole safe state",

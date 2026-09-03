@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Price, onboarding failures, outages, and seasonality all correlate with churn.",
-      "expect": "A defensible intervention priority and limits on the causal claim.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Defines 30-day churn, separates the onboarding failure cohort, compares it with price-change cohorts, and reports onboarding failure as dominant only after interaction checks. Result: A defensible intervention priority and limits on the causal claim.",
+      "reject": "Omitting the mechanism or instead doing this: Choose the most salient anecdote or suppress a smaller safety-related concern."
     },
     {
       "id": "dominant-driver-isolation-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the system is known to require irreducibly joint causes",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define the outcome and the time or system boundary.",
+      "reject": "Activating Dominant-Driver Isolation Scaffold solely because its name appears relevant"
     },
     {
       "id": "dominant-driver-isolation-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A safety-critical factor is not discarded solely because its probability or average effect is lower.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: state the target outcome before ranking drivers",
+      "reject": "Silently violating the stated precedence for Dominant-Driver Isolation Scaffold"
     },
     {
       "id": "dominant-driver-isolation-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "correlation presented as cause",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: rival test",
+      "reject": "Claiming a successful Dominant-Driver Isolation Scaffold result past this boundary"
     },
     {
       "id": "dominant-driver-isolation-scaffold-strong-model-scaling",

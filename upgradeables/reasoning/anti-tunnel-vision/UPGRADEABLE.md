@@ -133,9 +133,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- ambiguous diagnosis
-- architecture choice with two credible patterns
-- research synthesis with competing explanations
+- analysis and decision support
+- high-stakes evidence work
+- review and quality assurance
+- source-grounded research
 
 ## Example Composition
 
@@ -165,5 +166,5 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T2-19. Anti-Tunnel Vision (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)

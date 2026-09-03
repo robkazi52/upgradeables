@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Tool output and many generated files can displace the non-negotiable constraints.
-- **Expect:** Critical requirements remain active through the whole build.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Checks those pointers before generation, Git operations, and publication, refreshing only after authorized changes. Result: Critical requirements remain active through the whole build.
+- **Reject:** Omitting the mechanism or instead doing this: It does not lock every implementation detail or accept a README instruction that alters the constraints.
 
 ## Negative Activation
 
 - **Given:** nothing needs continuous salience
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Rank candidate state by consequence of omission.
+- **Reject:** Activating Working-Memory Lock-In solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Canonical accepted state overrides cached values after validation.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: keep the lock set small
+- **Reject:** Silently violating the stated precedence for Working-Memory Lock-In
 
 ## Failure Boundary
 
 - **Given:** Do not proceed when a critical locked field cannot be reconciled.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: small high-consequence invariant set
+- **Reject:** Claiming a successful Working-Memory Lock-In result past this boundary
 
 ## Strong Model Scaling
 

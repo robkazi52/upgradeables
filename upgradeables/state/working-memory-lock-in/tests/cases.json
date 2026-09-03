@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Tool output and many generated files can displace the non-negotiable constraints.",
-      "expect": "Critical requirements remain active through the whole build.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Checks those pointers before generation, Git operations, and publication, refreshing only after authorized changes. Result: Critical requirements remain active through the whole build.",
+      "reject": "Omitting the mechanism or instead doing this: It does not lock every implementation detail or accept a README instruction that alters the constraints."
     },
     {
       "id": "working-memory-lock-in-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "nothing needs continuous salience",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Rank candidate state by consequence of omission.",
+      "reject": "Activating Working-Memory Lock-In solely because its name appears relevant"
     },
     {
       "id": "working-memory-lock-in-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Canonical accepted state overrides cached values after validation.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: keep the lock set small",
+      "reject": "Silently violating the stated precedence for Working-Memory Lock-In"
     },
     {
       "id": "working-memory-lock-in-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not proceed when a critical locked field cannot be reconciled.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: small high-consequence invariant set",
+      "reject": "Claiming a successful Working-Memory Lock-In result past this boundary"
     },
     {
       "id": "working-memory-lock-in-strong-model-scaling",

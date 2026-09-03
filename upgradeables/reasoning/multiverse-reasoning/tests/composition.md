@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Central curation, open pull requests, and federated registries have materially different trust and maintenance tradeoffs.
-- **Expect:** One executable governance plan with two retired alternatives and explicit reasons.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Builds three compact branch records, evaluates each against the same governance and usability rubric, vetoes the federation branch if discoverability cannot be guaranteed, and selects an open-PR model with automated validation. Result: One executable governance plan with two retired alternatives and explicit reasons.
+- **Reject:** Omitting the mechanism or instead doing this: Call three slightly different pull-request workflows separate universes or retain federation-only assumptions in the chosen plan.
 
 ## Negative Activation
 
 - **Given:** a locked source dictates a single faithful transformation
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Lock shared facts, goals, constraints, risk boundaries, and a branch budget of two or three.
+- **Reject:** Activating Multiverse Engine solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** A hard truth, safety, or authorization veto cannot be outvoted by soft quality scores.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: make branches materially distinct
+- **Reject:** Silently violating the stated precedence for Multiverse Engine
 
 ## Failure Boundary
 
 - **Given:** cosmetic branch variants
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: material branch distinctness
+- **Reject:** Claiming a successful Multiverse Engine result past this boundary
 
 ## Strong Model Scaling
 

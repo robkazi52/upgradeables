@@ -22,10 +22,10 @@
   ],
   "purpose": "Turn process-health signals into explicit observations that a supervisor can route to repair, pause, or continuation.",
   "recommended_skill_types": [
-    "long multi-module workflows",
-    "multi-agent coordination",
-    "iterative reasoning",
-    "mode-rich systems"
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution",
+    "review and quality assurance"
   ],
   "usually_not_needed_for": [
     "a simple task has no meaningful process state",
@@ -159,8 +159,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-02. Meta-Awareness Pack",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-02. Meta-Awareness Pack"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

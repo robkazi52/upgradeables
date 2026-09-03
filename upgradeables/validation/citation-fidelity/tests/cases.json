@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "A real citation may not support the magnitude, population, or causal verb.",
-      "expect": "The claim becomes a correctly scoped subgroup association with a pinpoint citation.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Finds the 40 percent is a subgroup association, verifies no causal design, and narrows the sentence. Result: The claim becomes a correctly scoped subgroup association with a pinpoint citation.",
+      "reject": "Omitting the mechanism or instead doing this: Pass the sentence merely because the paper mentions the intervention and risk."
     },
     {
       "id": "citation-fidelity-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the output contains no externally attributed factual claims",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Atomize each externally checkable claim and bind each citation to a specific atom.",
+      "reject": "Activating Citation Fidelity Gate solely because its name appears relevant"
     },
     {
       "id": "citation-fidelity-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "The source passage outranks a draft's intended meaning.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Bind citations at claim-atom granularity.",
+      "reject": "Silently violating the stated precedence for Citation Fidelity Gate"
     },
     {
       "id": "citation-fidelity-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Block any material claim whose cited artifact cannot be opened, whose passage does not entail it, or whose quote/paraphrase changes meaning.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: direct passage inspection",
+      "reject": "Claiming a successful Citation Fidelity Gate result past this boundary"
     },
     {
       "id": "citation-fidelity-strong-model-scaling",

@@ -18,10 +18,11 @@ able to open the URL, receive an uploaded file, or run inside a cloned checkout.
 
 Choose one route:
 
-1. **Do a task now:** copy [Quick Task](../prompts/QUICK_TASK.md) into a new chat.
-2. **Build a reusable Skill:** copy [Build a Skill](../prompts/BUILD_A_SKILL.md).
-3. **Work from sources:** use [Research from Sources](../prompts/RESEARCH_FROM_SOURCES.md).
-4. **Process a long document:** use [Work with Long Documents](../prompts/WORK_WITH_LONG_DOCUMENTS.md).
+1. **Try it immediately:** choose a copy-paste example from
+   [Try These Five Things](https://github.com/robkazi52/upgradeables/blob/main/TRY_IT.md), or use [Quick Task](https://github.com/robkazi52/upgradeables/blob/main/prompts/QUICK_TASK.md).
+2. **Build a reusable Skill:** copy [Build a Skill](https://github.com/robkazi52/upgradeables/blob/main/prompts/BUILD_A_SKILL.md).
+3. **Work from sources:** use [Research from Sources](https://github.com/robkazi52/upgradeables/blob/main/prompts/RESEARCH_FROM_SOURCES.md).
+4. **Process a long document:** use [Work with Long Documents](https://github.com/robkazi52/upgradeables/blob/main/prompts/WORK_WITH_LONG_DOCUMENTS.md).
 5. **Connect an IDE agent:** clone the repository and point the agent here.
 
 If your model can open web links, the one-line prompt below is usually enough:
@@ -31,7 +32,7 @@ Read https://raw.githubusercontent.com/robkazi52/upgradeables/main/START_HERE.md
 ```
 
 If your model cannot open links, download or open the
-[all-in-one kit](../dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md), attach it to the
+[all-in-one kit](https://github.com/robkazi52/upgradeables/blob/main/dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md), attach it to the
 chat, and use the same prompt without the URL.
 
 ## Instructions for models
@@ -47,7 +48,7 @@ First classify the user's intent:
 ### Route A: do the work
 
 1. Restate the task boundary, required inputs, and output contract briefly.
-2. Select one primary recipe in [`recipes/`](../recipes), if one applies. Then
+2. Select one primary recipe in [`recipes/`](https://github.com/robkazi52/upgradeables/blob/main/recipes), if one applies. Then
    search for explicit output requirements it does not cover—such as citations,
    long context, or persistence—and add only matching cross-cutting components.
    Do not merge whole recipes.
@@ -66,20 +67,20 @@ the user requested a clean deliverable and the component list adds no value.
 
 ### Route B: build a reusable Skill
 
-1. Read [Model Consumption Guide](../MODEL_CONSUMPTION_GUIDE.md).
+1. Read [Model Consumption Guide](https://github.com/robkazi52/upgradeables/blob/main/MODEL_CONSUMPTION_GUIDE.md).
 2. Select the closest recipe and inspect each retained package.
-3. Use [the Skill template](../templates/SKILL_IMPLEMENTATION_TEMPLATE.md).
+3. Use [the Skill template](https://github.com/robkazi52/upgradeables/blob/main/templates/SKILL_IMPLEMENTATION_TEMPLATE.md).
 4. Return a short keep/drop table, the complete Skill, host adaptation notes,
    and behavioral/composition tests.
 5. Cite every selected `slug@version`. Do not create one Skill per Upgradeable;
    compose a task-oriented package.
 
-The [worked research Skill](../implementations/community/source-bounded-research/SKILL.md)
+The [worked research Skill](https://github.com/robkazi52/upgradeables/blob/main/implementations/community/source-bounded-research/SKILL.md)
 shows the expected level of specificity.
 
 ### Route C: contribute
 
-Read [CONTRIBUTING.md](../CONTRIBUTING.md). Adding a community Skill and proposing
+Read [CONTRIBUTING.md](https://github.com/robkazi52/upgradeables/blob/main/CONTRIBUTING.md). Adding a community Skill and proposing
 a new canonical Upgradeable are different workflows. Prefer contributing a Skill
 that composes existing primitives unless a genuinely new cross-cutting mechanism
 is needed.
@@ -88,14 +89,14 @@ is needed.
 
 Do not load the entire repository by default.
 
-- **Fast chat:** use one file from [`prompts/`](../prompts).
+- **Fast chat:** use one file from [`prompts/`](https://github.com/robkazi52/upgradeables/blob/main/prompts).
 - **Normal task:** load one recipe plus the selected component packages.
 - **Skill construction:** add the model guide, template, and applicable spec.
 - **No repository browsing:** attach the all-in-one kit.
-- **Machine query:** use [`registry/catalog.json`](../registry/catalog.json) or run
+- **Machine query:** use [`registry/catalog.json`](https://github.com/robkazi52/upgradeables/blob/main/registry/catalog.json) or run
   `python scripts/query_registry.py --help`.
 
-The full [`registry/registry.json`](../registry/registry.json) is authoritative for
+The full [`registry/registry.json`](https://github.com/robkazi52/upgradeables/blob/main/registry/registry.json) is authoritative for
 current machine metadata. The compact catalog is a discovery aid. Files under
 `archive/` are provenance records, not live operating instructions; read them
 only for historical or recovery questions.
@@ -112,7 +113,7 @@ only for historical or recovery questions.
 
 # Model Consumption Guide
 
-[START_HERE.md](../START_HERE.md) is the universal router. Use this deeper guide
+[START_HERE.md](https://github.com/robkazi52/upgradeables/blob/main/START_HERE.md) is the universal router. Use this deeper guide
 when selecting components, building a reusable Skill, or adapting the registry
 to a host platform.
 
@@ -123,20 +124,20 @@ to a host platform.
 - **Skill-building mode:** return a complete task-oriented Skill package,
   selection rationale, host notes, and tests.
 - **Contribution mode:** preserve registry contracts and use the separate Skill
-  or Upgradeable workflow in [CONTRIBUTING.md](../CONTRIBUTING.md).
+  or Upgradeable workflow in [CONTRIBUTING.md](https://github.com/robkazi52/upgradeables/blob/main/CONTRIBUTING.md).
 
 ## Efficient discovery
 
 Prefer the smallest useful source:
 
-1. Search [`registry/catalog.json`](../registry/catalog.json) or run
+1. Search [`registry/catalog.json`](https://github.com/robkazi52/upgradeables/blob/main/registry/catalog.json) or run
    `python scripts/query_registry.py --search <term>`.
-2. Select a task-family seed from [`recipes/`](../recipes) or run
+2. Select a task-family seed from [`recipes/`](https://github.com/robkazi52/upgradeables/blob/main/recipes) or run
    `python scripts/query_registry.py --recipe <slug>`.
 3. Open only the selected package files and their required dependencies.
-4. Use the full [`registry/registry.json`](../registry/registry.json) for complete
+4. Use the full [`registry/registry.json`](https://github.com/robkazi52/upgradeables/blob/main/registry/registry.json) for complete
    machine metadata. Use the
-   [all-in-one kit](../dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) only when granular
+   [all-in-one kit](https://github.com/robkazi52/upgradeables/blob/main/dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md) only when granular
    repository access is unavailable.
 
 Do not load `archive/` for normal task execution. Archived files are provenance,
@@ -175,7 +176,7 @@ A recipe is a starting composition, not permission to activate every component.
 5. Select at most one primary Behavior Gene and the minimum authorized Core(s).
 6. Read each retained package. Resolve `requires`; consider `recommended_with`;
    explicitly assess counterbalances, conflicts, and redundancy. Apply
-   [precedence rules](../spec/PRECEDENCE_SPEC.md).
+   [precedence rules](https://github.com/robkazi52/upgradeables/blob/main/spec/PRECEDENCE_SPEC.md).
 7. Remove every non-required component without an active trigger.
 8. Apply retained mechanisms directly in task mode, or choose an implementation
    form in Skill-building mode: instructions, mode, validator, state manager,
@@ -199,7 +200,7 @@ An Upgradeable is not a magic phrase. Its observable mechanism is what matters.
 
 ## Skill-building output contract
 
-Use [the Skill template](../templates/SKILL_IMPLEMENTATION_TEMPLATE.md). Return:
+Use [the Skill template](https://github.com/robkazi52/upgradeables/blob/main/templates/SKILL_IMPLEMENTATION_TEMPLATE.md). Return:
 
 1. a concise keep/drop table for considered components;
 2. a complete `SKILL.md` with host compatibility and `slug@version` references;
@@ -220,8 +221,29 @@ Verification scales with claim importance and risk. Neuro-Focus should be paired
 with Anti-Tunnel Vision when fixation is plausible. Drop long-context machinery
 for a small corpus.
 
-See the complete [worked research Skill](../implementations/community/source-bounded-research/SKILL.md),
+See the complete [worked research Skill](https://github.com/robkazi52/upgradeables/blob/main/implementations/community/source-bounded-research/SKILL.md),
 including its keep/drop table and tests.
+
+## Preliminary empirical design signal
+
+An author-reported ARC session compared code-shaped prompt architectures with
+shorter directives targeting concrete failures. In its supplied ARC-AGI-2 table,
+the directive-oriented v5+ condition matched or exceeded the elaborate v4
+condition on three of five tasks. The sample is small, raw runs are not archived,
+and other supplied totals are unreconciled, so treat this as a design hypothesis—not
+as proof that one prompt style or Upgradeable composition is universally superior.
+
+Prefer the minimum control that targets an observed failure:
+
+1. Name the concrete execution error that must be prevented.
+2. Require falsification before commitment when premature selection is the risk.
+3. Add stepwise construction checks when the model knows the rule but may apply it
+   incorrectly.
+
+Do not prescribe hidden reasoning steps or simulate an operating system when a
+short directive preserves the needed invariant. See the
+[ARC evidence report](https://github.com/robkazi52/upgradeables/blob/main/evidence/arc-agi-benchmarks.md) for supplied figures,
+discrepancies, and reproduction gaps.
 
 ## Non-negotiable boundaries
 
@@ -687,6 +709,11 @@ task-set-lock-in=R, clarification-gateway=A, grounding-no-invention=R, scoped-lo
 ## Long-Context Source Fidelity
 
 working-memory-lock-in=R, sequential-memory-state-engine=R, stateblock=R, stable-long-context=R, zero-drift-zones=R, drift-suppression=R, image-text-fidelity-capture=C, reflectos=A, fail-closed-abstention=R, truth-redundancy=A, citation-fidelity=C, state-snapshot=A
+---
+
+## Perception & Spatial Reasoning
+
+task-set-lock-in=R, grounding-no-invention=R, anti-tunnel-vision=R, bounded-exit=R, micro-scaffolding=R, bidirectional-consistency=A, forethought-checkpoints=A, cot-structured-state-block=A, decision-first-scaffold=C, invariance-stress-scaffold=C, counterfactual-integrity=C, multiverse-reasoning=O, cognitive-governor=O, coherence-heartbeat=X, meta-supervisor=X
 ---
 
 # Recovered Recipe Procedures

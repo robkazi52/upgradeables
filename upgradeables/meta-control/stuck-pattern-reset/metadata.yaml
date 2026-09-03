@@ -23,10 +23,10 @@
   ],
   "purpose": "Break nonproductive loops without erasing the trustworthy task context needed for a genuinely different next attempt.",
   "recommended_skill_types": [
-    "repeated tool failures",
-    "recursive revision loops",
-    "stale debugging hypotheses",
-    "nonconverging planning"
+    "document and code transformation",
+    "multi-step task execution",
+    "review and quality assurance",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "a second attempt has new evidence or a materially changed method",
@@ -162,8 +162,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-03. Stuck-Pattern Reset Pack",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-03. Stuck-Pattern Reset Pack"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

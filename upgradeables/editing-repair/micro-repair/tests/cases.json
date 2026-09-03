@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The defect is local and the surrounding argument is correct.",
-      "expect": "The unsupported claim is removed with no unrelated semantic change.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Freezes both paragraphs, replaces only the overstated clause with source-supported wording, and checks both transitions and citation fit. Result: The unsupported claim is removed with no unrelated semantic change.",
+      "reject": "Omitting the mechanism or instead doing this: Reframe the whole section or add new evidence claims."
     },
     {
       "id": "micro-repair-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the artifact architecture is globally wrong",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify the exact failed criterion and the smallest text, field, rule, or code unit causing it.",
+      "reject": "Activating Micro-Repair solely because its name appears relevant"
     },
     {
       "id": "micro-repair-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Do not preserve a frozen neighbor if it is proven part of the defect; explicitly widen the window instead.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: name the defect before patching",
+      "reject": "Silently violating the stated precedence for Micro-Repair"
     },
     {
       "id": "micro-repair-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "scope creep",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: smallest-fault localization",
+      "reject": "Claiming a successful Micro-Repair result past this boundary"
     },
     {
       "id": "micro-repair-strong-model-scaling",

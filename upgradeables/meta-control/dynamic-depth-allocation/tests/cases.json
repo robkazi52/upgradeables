@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The plan's risk and uncertainty are sharply uneven.",
-      "expect": "Depth concentrated on consequential bottlenecks without losing baseline coverage.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Runs a baseline check on all steps, assigns deep failure and rollback analysis to the three cutovers, and reallocates when one exposes a shared dependency. Result: Depth concentrated on consequential bottlenecks without losing baseline coverage.",
+      "reject": "Omitting the mechanism or instead doing this: Spend equal time on renaming a label and switching production data."
     },
     {
       "id": "dynamic-depth-allocation-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "every unit has the same mandated review depth",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Decompose the task into independently inspectable regions or claims.",
+      "reject": "Activating Dynamic Depth Allocation solely because its name appears relevant"
     },
     {
       "id": "dynamic-depth-allocation-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A high-risk mandatory check receives its floor even if its estimated uncertainty is low.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: maintain a minimum pass everywhere",
+      "reject": "Silently violating the stated precedence for Dynamic Depth Allocation"
     },
     {
       "id": "dynamic-depth-allocation-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "uniform-depth default",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: minimum regional pass",
+      "reject": "Claiming a successful Dynamic Depth Allocation result past this boundary"
     },
     {
       "id": "dynamic-depth-allocation-strong-model-scaling",

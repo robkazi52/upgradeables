@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The branch consumes attention and contaminates new summaries.",
-      "expect": "Automatic retrieval stops resurfacing the disproven branch while auditability remains.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Places the theory in a reversible task-local sink with its disproof, pointer, and restore condition. Result: Automatic retrieval stops resurfacing the disproven branch while auditability remains.",
+      "reject": "Omitting the mechanism or instead doing this: It does not delete the branch or sink unresolved evidence that challenges the current theory."
     },
     {
       "id": "drift-sink-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the branch is unresolved rather than rejected",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify a branch that repeatedly causes drift and classify it as superseded, rejected, irrelevant, or low-authority.",
+      "reject": "Activating Drift Sink Scaffold solely because its name appears relevant"
     },
     {
       "id": "drift-sink-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Higher-authority evidence or audit obligations can force restoration.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: make quarantine reversible",
+      "reject": "Silently violating the stated precedence for Drift Sink Scaffold"
     },
     {
       "id": "drift-sink-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not quarantine unresolved contrary evidence or safety-critical information.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: reversibility",
+      "reject": "Claiming a successful Drift Sink Scaffold result past this boundary"
     },
     {
       "id": "drift-sink-scaffold-strong-model-scaling",

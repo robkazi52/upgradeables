@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Text must be captured from an image for evidence use.",
-      "expect": "A usable transcription whose uncertainty remains auditable.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Transcribes legible digits, preserves row order, and marks the obscured digits with their location. Result: A usable transcription whose uncertainty remains auditable.",
+      "reject": "Omitting the mechanism or instead doing this: Infer the missing digits from another identifier."
     },
     {
       "id": "image-text-fidelity-capture-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "no image contains source text or visible structure",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Record the image/page identifier and reading order.",
+      "reject": "Activating Image Text Fidelity Capture solely because its name appears relevant"
     },
     {
       "id": "image-text-fidelity-capture-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Visible evidence outranks grammatical completion.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Preserve visible spelling, numbers, labels, and structure.",
+      "reject": "Silently violating the stated precedence for Image Text Fidelity Capture"
     },
     {
       "id": "image-text-fidelity-capture-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If a region is not legible enough to verify, mark it uncertain and do not produce a confident transcription for that region.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: only visible evidence may determine captured text or structure",
+      "reject": "Claiming a successful Image Text Fidelity Capture result past this boundary"
     },
     {
       "id": "image-text-fidelity-capture-strong-model-scaling",

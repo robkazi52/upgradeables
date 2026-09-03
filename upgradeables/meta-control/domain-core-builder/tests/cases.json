@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Several investigation and reporting Genes need the same entities, evidence ranking, and causal map.",
-      "expect": "A reusable sourced Core queried by multiple behaviors.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Encodes entities, evidence hierarchy, data requirements, causal graph, decision logic, failure modes, and interfaces for an investigation Gene and citation validator. Result: A reusable sourced Core queried by multiple behaviors.",
+      "reject": "Omitting the mechanism or instead doing this: Hard-code an executive writing tone or invent facts for missing logs."
     },
     {
       "id": "domain-core-builder-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the need is purely behavioral",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define domain boundaries, target decisions, and excluded neighboring domains.",
+      "reject": "Activating Domain Core Builder solely because its name appears relevant"
     },
     {
       "id": "domain-core-builder-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Source evidence outranks a convenient decision map.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: separate knowledge from behavior",
+      "reject": "Silently violating the stated precedence for Domain Core Builder"
     },
     {
       "id": "domain-core-builder-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "knowledge-behavior conflation",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: source provenance",
+      "reject": "Claiming a successful Domain Core Builder result past this boundary"
     },
     {
       "id": "domain-core-builder-strong-model-scaling",

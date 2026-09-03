@@ -155,10 +155,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- mixed-authority document sets
-- versioned policies
-- agent planning trees
-- retrieval with untrusted text
+- document and code transformation
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The team has collected architecture notes without defining the commitment.",
-      "expect": "A criterion-linked recommendation with a named evidence gate.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Frames the quarter-specific go/no-go decision, maps compliance, cost, and migration risk to the two options, and recommends a gated pilot. Result: A criterion-linked recommendation with a named evidence gate.",
+      "reject": "Omitting the mechanism or instead doing this: Treat every platform fact as equally decision-relevant."
     },
     {
       "id": "decision-first-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task asks only for faithful extraction or description",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: State the decision in one sentence, including who will act.",
+      "reject": "Activating Decision-First Scaffold solely because its name appears relevant"
     },
     {
       "id": "decision-first-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "If the user requests exploration without commitment, do not impose a final choice.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: label the procedure as a modern interpretation",
+      "reject": "Silently violating the stated precedence for Decision-First Scaffold"
     },
     {
       "id": "decision-first-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "invented historical mechanics",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit decision statement",
+      "reject": "Claiming a successful Decision-First Scaffold result past this boundary"
     },
     {
       "id": "decision-first-scaffold-strong-model-scaling",

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The tasks share a release but have radically different consequence and reversibility.",
-      "expect": "Proportionate rigor with the irreversible boundary fully protected.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Applies a light review to README wording and high-tier independent verification, checkpoints, and fail-closed cutover to the key rotation. Result: Proportionate rigor with the irreversible boundary fully protected.",
+      "reject": "Omitting the mechanism or instead doing this: Average both tasks into a medium tier or burden README punctuation with key-rotation controls."
     },
     {
       "id": "risk-tier-scaling-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a binding protocol already specifies the exact controls",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify potential harms, affected parties, uncertainty, reversibility, and blast radius.",
+      "reject": "Activating Risk-Tier Scaling solely because its name appears relevant"
     },
     {
       "id": "risk-tier-scaling-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "A required tier cannot be lowered because of cost or deadline.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: assess consequence and uncertainty separately",
+      "reject": "Silently violating the stated precedence for Risk-Tier Scaling"
     },
     {
       "id": "risk-tier-scaling-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "domain-label risk",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: consequence and uncertainty assessment",
+      "reject": "Claiming a successful Risk-Tier Scaling result past this boundary"
     },
     {
       "id": "risk-tier-scaling-strong-model-scaling",

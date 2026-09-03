@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The defect spans dependent artifacts and one repair may expose another.",
-      "expect": "All surfaces use one schema name with a recorded two-iteration repair path.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Repairs the schema source, regenerates dependents, checks docs and fixtures, then exits when all agree. Result: All surfaces use one schema name with a recorded two-iteration repair path.",
+      "reject": "Omitting the mechanism or instead doing this: Keep rewriting unrelated prose after convergence."
     },
     {
       "id": "coherence-loops-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the discrepancy is isolated and a single deterministic correction suffices",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Record the detected inconsistency and governing invariants.",
+      "reject": "Activating Coherence Loops solely because its name appears relevant"
     },
     {
       "id": "coherence-loops-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Explicit invariants outrank local convenience.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Set exit criteria before iterating.",
+      "reject": "Silently violating the stated precedence for Coherence Loops"
     },
     {
       "id": "coherence-loops-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Stop without certification when inconsistency does not decrease, repairs oscillate, or resolution requires changing a locked invariant.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: explicit invariants, dependency recheck, and bounded exit",
+      "reject": "Claiming a successful Coherence Loops result past this boundary"
     },
     {
       "id": "coherence-loops-strong-model-scaling",

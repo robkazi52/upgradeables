@@ -22,10 +22,10 @@
   ],
   "purpose": "Increase solution search and architectural depth before commitment when the problem is genuinely ambiguous or system-wide.",
   "recommended_skill_types": [
-    "system architecture",
-    "novel workflow design",
-    "strategic planning",
-    "ambiguous research design"
+    "analysis and decision support",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the task is a precise grounded execution step",
@@ -163,8 +163,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T4-07. POWER Mode",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T4-07. POWER Mode"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

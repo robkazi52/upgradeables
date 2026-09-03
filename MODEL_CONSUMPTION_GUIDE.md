@@ -111,6 +111,27 @@ for a small corpus.
 See the complete [worked research Skill](implementations/community/source-bounded-research/SKILL.md),
 including its keep/drop table and tests.
 
+## Preliminary empirical design signal
+
+An author-reported ARC session compared code-shaped prompt architectures with
+shorter directives targeting concrete failures. In its supplied ARC-AGI-2 table,
+the directive-oriented v5+ condition matched or exceeded the elaborate v4
+condition on three of five tasks. The sample is small, raw runs are not archived,
+and other supplied totals are unreconciled, so treat this as a design hypothesis—not
+as proof that one prompt style or Upgradeable composition is universally superior.
+
+Prefer the minimum control that targets an observed failure:
+
+1. Name the concrete execution error that must be prevented.
+2. Require falsification before commitment when premature selection is the risk.
+3. Add stepwise construction checks when the model knows the rule but may apply it
+   incorrectly.
+
+Do not prescribe hidden reasoning steps or simulate an operating system when a
+short directive preserves the needed invariant. See the
+[ARC evidence report](evidence/arc-agi-benchmarks.md) for supplied figures,
+discrepancies, and reproduction gaps.
+
 ## Non-negotiable boundaries
 
 Never merge Skills, Behavior Genes, Cores, validators, and Upgradeables into one

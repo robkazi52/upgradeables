@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Two distinct health defects require ordered bounded repairs.
-- **Expect:** Scoped repairs coordinated under one health supervisor.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Routes the loop to Stuck-Pattern Reset, rechecks progress, then routes the local date conflict to Contradiction Micro-Repair without changing the global mode. Result: Scoped repairs coordinated under one health supervisor.
+- **Reject:** Omitting the mechanism or instead doing this: Activate every pack or redesign the deployment architecture.
 
 ## Negative Activation
 
 - **Given:** the task needs suite-wide mode declaration and Core-stack governance
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Request or read an evidence-bearing process-health snapshot.
+- **Reject:** Activating Meta-Supervisor Bundle solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Suite-wide mode or authority conflicts escalate to Ultimate Suite Supervisor.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: route from observable diagnosis
+- **Reject:** Silently violating the stated precedence for Meta-Supervisor Bundle
 
 ## Failure Boundary
 
 - **Given:** supervisor recursion
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: diagnosis-before-repair
+- **Reject:** Claiming a successful Meta-Supervisor Bundle result past this boundary
 
 ## Strong Model Scaling
 

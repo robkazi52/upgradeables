@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** Complete line-by-line deep review is expensive, but schema and source accuracy are mandatory.
-- **Expect:** A risk-funded review plan with a defensible completion boundary.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Funds full schema validation, deeper review for source-gap and high-risk packages, sampled review for routine packages, and stops optional polishing when marginal value falls. Result: A risk-funded review plan with a defensible completion boundary.
+- **Reject:** Omitting the mechanism or instead doing this: Give every package equal manual time or skip required provenance checks to meet the clock.
 
 ## Negative Activation
 
 - **Given:** a mandatory protocol fixes the review budget
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Classify task complexity, uncertainty, consequence, and reversibility.
+- **Reject:** Activating Reasoning Budget / Cognitive Governor solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Risk-mandated validation overrides a lower convenience budget.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: preserve a validation floor
+- **Reject:** Silently violating the stated precedence for Reasoning Budget / Cognitive Governor
 
 ## Failure Boundary
 
 - **Given:** over-polishing
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: risk-based validation floor
+- **Reject:** Claiming a successful Reasoning Budget / Cognitive Governor result past this boundary
 
 ## Strong Model Scaling
 

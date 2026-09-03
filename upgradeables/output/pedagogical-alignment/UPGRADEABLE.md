@@ -143,11 +143,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- tutorials
-- documentation
-- stakeholder briefings
-- technical-to-nontechnical translation
-- onboarding
+- communication and content generation
+- document and code transformation
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 
@@ -177,6 +176,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-16. Pedagogical Alignment Constraint (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 8. Tier-3 / Paper-Author alignment family recovered from late-November work (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 19.1 Evidence-grounded authoring (historical_assistant_artifact)

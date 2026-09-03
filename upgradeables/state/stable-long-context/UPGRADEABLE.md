@@ -151,10 +151,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long research projects
-- large document synthesis
-- multi-session builds
-- extended agent runs
+- document and code transformation
+- long-context workflows
+- multi-step task execution
+- skill and agent workflows
 
 ## Example Composition
 

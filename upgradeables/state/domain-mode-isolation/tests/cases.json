@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Legal constraints must inform but not be rewritten by the creative mode.",
-      "expect": "Creative copy respects cited constraints without domain-rule leakage.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Keeps legal authority in the legal compartment and projects only approved constraints to the writing compartment. Result: Creative copy respects cited constraints without domain-rule leakage.",
+      "reject": "Omitting the mechanism or instead doing this: It does not treat brand tone as legal authority or expose the full legal workspace to the copywriter."
     },
     {
       "id": "domain-mode-isolation-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task is genuinely single-domain",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Classify the task and enumerate domains that are actually needed.",
+      "reject": "Activating Domain / Mode Isolation solely because its name appears relevant"
     },
     {
       "id": "domain-mode-isolation-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "System and task authority outrank domain-local preferences.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: name the active domain",
+      "reject": "Silently violating the stated precedence for Domain / Mode Isolation"
     },
     {
       "id": "domain-mode-isolation-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Pause when the domain is ambiguous and different classifications change safety or authority.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: active-domain marker",
+      "reject": "Claiming a successful Domain / Mode Isolation result past this boundary"
     },
     {
       "id": "domain-mode-isolation-strong-model-scaling",

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Publication date, effective date, and incident time differ.",
-      "expect": "The applicable version is identified with an explicit uncertainty branch.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Builds a temporary typed timeline, flags the ambiguity, and tests applicability windows. Result: The applicable version is identified with an explicit uncertainty branch.",
+      "reject": "Omitting the mechanism or instead doing this: It does not equate publication with effectiveness or guess the relative date."
     },
     {
       "id": "temporal-anchor-scaffold-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "time has no bearing on the answer",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Identify which temporal distinctions affect the decision.",
+      "reject": "Activating Temporal Anchor Scaffold solely because its name appears relevant"
     },
     {
       "id": "temporal-anchor-scaffold-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Source-stated timestamps outrank inferred order; higher-authority corrections supersede earlier dates while retaining history.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: distinguish event, publication, observation, and effective time",
+      "reject": "Silently violating the stated precedence for Temporal Anchor Scaffold"
     },
     {
       "id": "temporal-anchor-scaffold-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not assert total order from partial temporal evidence.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: time-type distinction",
+      "reject": "Claiming a successful Temporal Anchor Scaffold result past this boundary"
     },
     {
       "id": "temporal-anchor-scaffold-strong-model-scaling",

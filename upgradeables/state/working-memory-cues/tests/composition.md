@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The same capitalization rule is easy to forget after many clauses.
-- **Expect:** The recurring error is prevented with little context cost.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Shows a one-line cue to verify defined-term capitalization before each clause is accepted. Result: The recurring error is prevented with little context cost.
+- **Reject:** Omitting the mechanism or instead doing this: It does not copy the whole glossary into every step or edit the glossary itself.
 
 ## Negative Activation
 
 - **Given:** the cue duplicates already salient text
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Identify a recurrent omission risk and its decision point.
+- **Reject:** Activating Working-Memory Cues solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Canonical state and higher-authority instructions override stale cues.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: keep cues short
+- **Reject:** Silently violating the stated precedence for Working-Memory Cues
 
 ## Failure Boundary
 
 - **Given:** Do not cue an unverified claim as fact.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: highest-risk cue at transition points
+- **Reject:** Claiming a successful Working-Memory Cues result past this boundary
 
 ## Strong Model Scaling
 

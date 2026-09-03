@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The comparison logic and output shape recur, while the evidence and entities differ by domain.
-- **Expect:** One reusable behavior module that composes with several domain Cores.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Encodes dimension selection, symmetric treatment, conflict surfacing, evidence rules, and output table contract without copying any domain facts. Result: One reusable behavior module that composes with several domain Cores.
+- **Reject:** Omitting the mechanism or instead doing this: Bundle the medical and legal corpora into the Gene.
 
 ## Negative Activation
 
 - **Given:** the content is primarily domain knowledge
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Collect repeated successful and failed task instances and isolate the stable behavior rather than domain facts.
+- **Reject:** Activating Behavior Gene Builder solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Global truth, safety, and authorization rules outrank any Gene.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: keep behavior separate from domain knowledge
+- **Reject:** Silently violating the stated precedence for Behavior Gene Builder
 
 ## Failure Boundary
 
 - **Given:** behavior-knowledge conflation
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: behavior/Core separation
+- **Reject:** Claiming a successful Behavior Gene Builder result past this boundary
 
 ## Strong Model Scaling
 

@@ -26,10 +26,9 @@
   ],
   "purpose": "Keep clarification proportional: ask only for materially blocking information, otherwise continue with the narrowest explicit assumption or bounded partial result.",
   "recommended_skill_types": [
-    "requirements intake",
-    "ambiguous data transformation",
-    "multi-constraint planning",
-    "high-stakes evidence work"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the missing detail cannot change a valid result",
@@ -151,8 +150,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T1-03. Clarification Gateway / Clarification-First",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T1-03. Clarification Gateway / Clarification-First"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

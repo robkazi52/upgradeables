@@ -151,10 +151,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- long multi-module workflows
-- multi-agent coordination
-- iterative reasoning
-- mode-rich systems
+- high-stakes evidence work
+- long-context workflows
+- multi-step task execution
+- review and quality assurance
 
 ## Example Composition
 
@@ -184,5 +184,5 @@ Source support: `sufficiently-recovered`. Mechanism basis: `normalized-from-reco
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T4-02. Meta-Awareness Pack (current_consolidated_catalog)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
 - OS_Upgradeables_Historical_Recovery_Inventory.md — 10. Tier-4 / Meta-Supervisor recovered family (historical_recovery_inventory)

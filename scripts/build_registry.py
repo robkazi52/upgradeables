@@ -85,6 +85,11 @@ def catalog_payload(data):
         recipes.append({
             "slug": recipe["slug"],
             "display_name": recipe["display_name"],
+            "purpose": recipe["purpose"],
+            "task_family": recipe.get("task_family", ""),
+            "activation_boundary": recipe.get("activation_boundary", ""),
+            "important_exclusions": recipe.get("important_exclusions", []),
+            "high_cost_components": recipe.get("high_cost_components", []),
             "recipe_path": f"recipes/resolved/{recipe['slug']}.md",
             "source_recipe_path": f"recipes/{recipe['slug']}.md",
             "components": components,

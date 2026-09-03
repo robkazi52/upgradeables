@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "The new event supersedes part of current state but history must remain auditable.",
-      "expect": "Current state is corrected with a traceable transition.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Normalizes the correction, resolves the conflict, commits version 13, and refreshes the support-agent view. Result: Current state is corrected with a traceable transition.",
+      "reject": "Omitting the mechanism or instead doing this: It does not delete the earlier classification or keep both values current."
     },
     {
       "id": "sequential-memory-state-engine-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "a one-shot task has no state evolution",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Ingest one event with source, time, and authority metadata.",
+      "reject": "Activating Sequential Memory State Engine (SMSE) solely because its name appears relevant"
     },
     {
       "id": "sequential-memory-state-engine-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Authority outranks recency unless the authoritative source explicitly delegates update power.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: preserve event order and provenance",
+      "reject": "Silently violating the stated precedence for Sequential Memory State Engine (SMSE)"
     },
     {
       "id": "sequential-memory-state-engine-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Stop dependent actions when a safety-critical contradiction cannot be resolved.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: ordered transitions",
+      "reject": "Claiming a successful Sequential Memory State Engine (SMSE) result past this boundary"
     },
     {
       "id": "sequential-memory-state-engine-strong-model-scaling",

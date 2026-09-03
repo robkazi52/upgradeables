@@ -23,9 +23,10 @@
   ],
   "purpose": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state.",
   "recommended_skill_types": [
-    "Skill and OS architecture",
-    "workflow design",
-    "framework refactoring"
+    "analysis and decision support",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "structured problem solving"
   ],
   "usually_not_needed_for": [
     "the task is a narrow domain execution job with no architecture decision",
@@ -138,8 +139,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "O-01. Architect Orchestrator",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "O-01. Architect Orchestrator"
     }
   ],
   "source_support": "sufficiently-recovered",

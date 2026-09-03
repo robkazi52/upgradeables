@@ -23,10 +23,10 @@
   ],
   "purpose": "Make counterfactual exploration safe and auditable by preserving an explicit boundary between factual, evaluative, framing, and hypothetical phases.",
   "recommended_skill_types": [
-    "scenario analysis",
-    "causal counterfactuals",
-    "planning under alternatives",
-    "creative work mixed with factual sources"
+    "communication and content generation",
+    "document and code transformation",
+    "high-stakes evidence work",
+    "long-context workflows"
   ],
   "usually_not_needed_for": [
     "the task contains no hypothetical branch",
@@ -144,8 +144,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-12. Counterfactual Integrity Gate",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-12. Counterfactual Integrity Gate"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

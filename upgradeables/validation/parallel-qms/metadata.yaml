@@ -25,11 +25,10 @@
   ],
   "purpose": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote.",
   "recommended_skill_types": [
-    "high-stakes synthesis",
-    "complex repository validation",
-    "multiverse collapse",
-    "long-form factual work",
-    "safety-sensitive decisions"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "long-context workflows",
+    "multi-step task execution"
   ],
   "usually_not_needed_for": [
     "one low-risk deterministic check is sufficient",
@@ -183,8 +182,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "PART VII. PARALLEL-QMS FAMILY",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "PART VII. PARALLEL-QMS FAMILY"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Observed evidence and causal inference have different certainty.",
-      "expect": "A review finding with calibrated certainty and a verification step.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Marks the failure as fact and the root cause as an inference requiring confirmation. Result: A review finding with calibrated certainty and a verification step.",
+      "reject": "Omitting the mechanism or instead doing this: Report the suspected cause as established."
     },
     {
       "id": "epistemic-status-gating-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "the task contains only direct transformation with no inferential claims",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Split the candidate reasoning product into material propositions.",
+      "reject": "Activating Epistemic Status Gating solely because its name appears relevant"
     },
     {
       "id": "epistemic-status-gating-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Direct source evidence outranks an unlabeled model inference.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Keep evidence pointers with factual claims.",
+      "reject": "Silently violating the stated precedence for Epistemic Status Gating"
     },
     {
       "id": "epistemic-status-gating-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "If a decision-critical proposition has no defensible status or evidence pointer, it cannot support the conclusion.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: the distinction between source fact, inference, framing, and hypothesis",
+      "reject": "Claiming a successful Epistemic Status Gating result past this boundary"
     },
     {
       "id": "epistemic-status-gating-strong-model-scaling",

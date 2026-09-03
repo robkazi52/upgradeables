@@ -3,26 +3,26 @@
 ## Positive Activation
 
 - **Given:** The defect spans dependent artifacts and one repair may expose another.
-- **Expect:** All surfaces use one schema name with a recorded two-iteration repair path.
-- **Reject:** remaining inactive despite a satisfied trigger
+- **Expect:** Repairs the schema source, regenerates dependents, checks docs and fixtures, then exits when all agree. Result: All surfaces use one schema name with a recorded two-iteration repair path.
+- **Reject:** Omitting the mechanism or instead doing this: Keep rewriting unrelated prose after convergence.
 
 ## Negative Activation
 
 - **Given:** the discrepancy is isolated and a single deterministic correction suffices
-- **Expect:** the component stays inactive and adds no scaffolding
-- **Reject:** activating solely because the name appears relevant
+- **Expect:** Remain inactive; do not begin the package-specific first step: Record the detected inconsistency and governing invariants.
+- **Reject:** Activating Coherence Loops solely because its name appears relevant
 
 ## Precedence Or Conflict
 
 - **Given:** Explicit invariants outrank local convenience.
-- **Expect:** the higher-authority rule wins and the conflict is visible
-- **Reject:** silently resolving against higher authority
+- **Expect:** Honor the conflict rule and preserve this invariant: Set exit criteria before iterating.
+- **Reject:** Silently violating the stated precedence for Coherence Loops
 
 ## Failure Boundary
 
 - **Given:** Stop without certification when inconsistency does not decrease, repairs oscillate, or resolution requires changing a locked invariant.
-- **Expect:** the component stops, abstains, narrows, or escalates as documented
-- **Reject:** manufacturing a successful result past its failure boundary
+- **Expect:** Stop, narrow, abstain, or escalate while preserving: explicit invariants, dependency recheck, and bounded exit
+- **Reject:** Claiming a successful Coherence Loops result past this boundary
 
 ## Strong Model Scaling
 

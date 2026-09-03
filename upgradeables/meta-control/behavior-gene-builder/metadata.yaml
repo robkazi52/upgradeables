@@ -25,10 +25,10 @@
   ],
   "purpose": "Turn repeatable behavior, logic, evidence handling, and output contracts into swappable components that compose with Cores and validators.",
   "recommended_skill_types": [
-    "recurring reasoning patterns",
-    "domain-specific writing behavior",
-    "tone or risk-emphasis modules",
-    "research synthesis behaviors"
+    "communication and content generation",
+    "multi-step task execution",
+    "skill and agent workflows",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the content is primarily domain knowledge",
@@ -163,8 +163,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "PART IX. BEHAVIOR GENE OS",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "PART IX. BEHAVIOR GENE OS"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

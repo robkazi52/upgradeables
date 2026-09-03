@@ -25,10 +25,9 @@
   ],
   "purpose": "Make useful cross-module reinforcement explicit and reusable without merging modules, duplicating content, or granting hidden communication.",
   "recommended_skill_types": [
-    "recurring validator-generator pairings",
-    "stable Core-Gene couplings",
-    "multi-module evidence workflows",
-    "repeated authority-sensitive compositions"
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "the need is a general task behavior unrelated to module coupling",
@@ -164,8 +163,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "A-06. Resonance Genes",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "A-06. Resonance Genes"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",

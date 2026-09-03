@@ -21,10 +21,9 @@
   ],
   "purpose": "Make validation ordered, traceable, and resistant to repeated correlated checking.",
   "recommended_skill_types": [
-    "high-stakes fact verification",
-    "data pipeline validation",
-    "release qualification",
-    "multi-source research"
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "one direct authoritative check fully resolves a low-risk atom",
@@ -145,18 +144,21 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-07. Cross-Checking Chains",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-07. Cross-Checking Chains"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "T3-07. Cross-Checking Chains",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "1. Canonical current consolidated inventory",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "T3-07. Cross-Checking Chains"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-      "heading": "8.1 QMS-M",
-      "source_kind": "historical_assistant_artifact"
+      "heading": "8.3 QMS-XP — Cross-Phase QMS",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "8.1 QMS-M"
     }
   ],
   "source_support": "sufficiently-recovered",

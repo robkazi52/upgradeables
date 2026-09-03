@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "It has factual instructions, workflow structure, safety behavior, and cross-file consistency risks.",
-      "expect": "The release ledger shows distinct passes, one repaired traceability gap, no veto, and explicit convergence.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Uses HQMS across instruction/test/repository levels, T-QMS for causal and logical review flow, Inv-QMS from promised result back to required checks, SG-QMS for traceability, and E-QMS for unsafe advice; QMS-EI bounds repair to two passes before global collapse. Result: The release ledger shows distinct passes, one repaired traceability gap, no veto, and explicit convergence.",
+      "reject": "Omitting the mechanism or instead doing this: Launch 15 identical reviewers or approve on majority when E-QMS finds unsafe behavior."
     },
     {
       "id": "parallel-qms-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "one low-risk deterministic check is sufficient",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: State the decision, critical truths, risk tier, and stop conditions.",
+      "reject": "Activating Parallel Quality Management System solely because its name appears relevant"
     },
     {
       "id": "parallel-qms-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Crucial factual conflict must be resolved or surfaced before collapse.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: Select modes by failure hypothesis, not quantity.",
+      "reject": "Silently violating the stated precedence for Parallel Quality Management System"
     },
     {
       "id": "parallel-qms-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not certify while a crucial truth is disputed, a safety/ethical veto is active, validator independence is falsely claimed, or bounded repair fails to converge.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: mode distinction",
+      "reject": "Claiming a successful Parallel Quality Management System result past this boundary"
     },
     {
       "id": "parallel-qms-strong-model-scaling",

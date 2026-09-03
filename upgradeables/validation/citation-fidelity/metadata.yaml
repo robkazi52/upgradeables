@@ -23,10 +23,10 @@
   ],
   "purpose": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence.",
   "recommended_skill_types": [
-    "research reports",
-    "technical documentation",
-    "legal or policy synthesis",
-    "fact-checked public writing"
+    "communication and content generation",
+    "high-stakes evidence work",
+    "review and quality assurance",
+    "source-grounded research"
   ],
   "usually_not_needed_for": [
     "the output contains no externally attributed factual claims",
@@ -155,18 +155,21 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-13. Citation Fidelity Gate",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-13. Citation Fidelity Gate"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
-      "heading": "T3-13. Citation Fidelity Gate",
-      "source_kind": "historical_recovery_inventory"
+      "heading": "13. Reasoning / Singularity Cores",
+      "source_kind": "historical_recovery_inventory",
+      "anchor_detail": "T3-13. Citation Fidelity Gate"
     },
     {
       "document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
-      "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW",
-      "source_kind": "historical_assistant_artifact"
+      "heading": "17. VERBATIM-COPY / FIDELITY WORKFLOW — EXAMPLE OF UPGRADEABLE COMPOSITION",
+      "source_kind": "historical_assistant_artifact",
+      "anchor_detail": "17. VERBATIM-COPY / FIDELITY WORKFLOW"
     }
   ],
   "source_support": "sufficiently-recovered",

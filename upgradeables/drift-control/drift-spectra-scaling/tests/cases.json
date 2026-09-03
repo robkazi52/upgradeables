@@ -8,32 +8,32 @@
       "type": "positive_activation",
       "execution": "model-required",
       "given": "Numbers and limitations must remain exact, explanations may simplify, and examples may be newly created if labeled.",
-      "expect": "Review effort and permitted transformation match each content type.",
-      "reject": "remaining inactive despite a satisfied trigger"
+      "expect": "Maps measurements to zero, claims/limitations to narrow, organization to moderate, and labeled analogies to creative bands. Result: Review effort and permitted transformation match each content type.",
+      "reject": "Omitting the mechanism or instead doing this: It does not give the entire explainer one creativity value."
     },
     {
       "id": "drift-spectra-scaling-negative-activation",
       "type": "negative_activation",
       "execution": "model-required",
       "given": "every element has the same explicit tolerance",
-      "expect": "the component stays inactive and adds no scaffolding",
-      "reject": "activating solely because the name appears relevant"
+      "expect": "Remain inactive; do not begin the package-specific first step: Define named drift bands and the semantic changes each permits.",
+      "reject": "Activating Drift-Spectra Scaling solely because its name appears relevant"
     },
     {
       "id": "drift-spectra-scaling-precedence-or-conflict",
       "type": "precedence_or_conflict",
       "execution": "model-required",
       "given": "Explicit source/task invariants override a permissive band assignment.",
-      "expect": "the higher-authority rule wins and the conflict is visible",
-      "reject": "silently resolving against higher authority"
+      "expect": "Honor the conflict rule and preserve this invariant: define bands operationally",
+      "reject": "Silently violating the stated precedence for Drift-Spectra Scaling"
     },
     {
       "id": "drift-spectra-scaling-failure-boundary",
       "type": "failure_boundary",
       "execution": "model-required",
       "given": "Do not use a spectrum when bands lack observable distinctions.",
-      "expect": "the component stops, abstains, narrows, or escalates as documented",
-      "reject": "manufacturing a successful result past its failure boundary"
+      "expect": "Stop, narrow, abstain, or escalate while preserving: operational band definitions",
+      "reject": "Claiming a successful Drift-Spectra Scaling result past this boundary"
     },
     {
       "id": "drift-spectra-scaling-strong-model-scaling",

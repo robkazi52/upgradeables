@@ -140,11 +140,10 @@ Keep mandatory:
 
 ## Recommended Skill Types
 
-- medical or legal factual synthesis
-- deployment decisions
-- financial calculations
-- requirements verification
-- citation-heavy research
+- analysis and decision support
+- high-stakes evidence work
+- review and quality assurance
+- source-grounded research
 
 ## Example Composition
 
@@ -174,6 +173,6 @@ Source support: `sufficiently-recovered`. Mechanism basis: `recovered`.
 
 Structured source references:
 
-- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — T3-04. Critical Atomic Verification (current_consolidated_catalog)
-- OS_Upgradeables_Historical_Recovery_Inventory.md — T3-04. Critical Atomic Verification (historical_recovery_inventory)
+- OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md — OS Philosophy and Upgradeable-to-Skill Translation Catalog (current_consolidated_catalog)
+- OS_Upgradeables_Historical_Recovery_Inventory.md — 1. Canonical current consolidated inventory (historical_recovery_inventory)
 - OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md — 10.1 Source atomization (historical_assistant_artifact)

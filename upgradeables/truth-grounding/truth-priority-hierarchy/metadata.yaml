@@ -23,10 +23,10 @@
   ],
   "purpose": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority.",
   "recommended_skill_types": [
-    "multi-source research",
-    "policy and regulatory analysis",
-    "multi-validator workflows",
-    "domain decisions with mixed evidence classes"
+    "analysis and decision support",
+    "high-stakes evidence work",
+    "multi-step task execution",
+    "skill and agent workflows"
   ],
   "usually_not_needed_for": [
     "no material evidence or authority conflict exists",
@@ -140,8 +140,9 @@
   "source_refs": [
     {
       "document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
-      "heading": "T3-06. Truth Priority Hierarchy",
-      "source_kind": "current_consolidated_catalog"
+      "heading": "OS Philosophy and Upgradeable-to-Skill Translation Catalog",
+      "source_kind": "current_consolidated_catalog",
+      "anchor_detail": "T3-06. Truth Priority Hierarchy"
     },
     {
       "document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
