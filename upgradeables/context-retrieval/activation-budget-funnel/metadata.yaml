@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T2-16",
+  "slug": "activation-budget-funnel",
+  "display_name": "Activation-Budget Funnel",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [
+    "ABF"
+  ],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T2"
+  ],
+  "functional_classes": [
+    "context-retrieval",
+    "state"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "orchestrator",
+    "state-manager"
+  ],
+  "purpose": "Stage retrieve, capture, index, transform, write, and verify so raw retrieval does not compete with synthesis; keep roughly no more than five to seven active pulls in the live workspace.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "many sources or modules compete for attention"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "scoped-loader",
+    "neuro-focus"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "current explicit task state",
+    "authorized state update or source event"
+  ],
+  "outputs": [
+    "updated explicit state",
+    "conflict or unavailable-persistence status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim state was retained or persisted without a real host-visible mechanism"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/context-retrieval/activation-budget-funnel/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T2-16",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

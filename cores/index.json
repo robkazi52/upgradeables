@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "cores": [
+    {
+      "id": "C-01",
+      "slug": "ipmn",
+      "display_name": "IPMN Core",
+      "purpose": "Inpatient medical-necessity domain reasoning and evidence reference.",
+      "path": "cores/examples/ipmn.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-02",
+      "slug": "ipta",
+      "display_name": "IPTA Core",
+      "purpose": "Inpatient technical or administrative appeal reference.",
+      "path": "cores/examples/ipta.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-03",
+      "slug": "opmn",
+      "display_name": "OPMN Core",
+      "purpose": "Outpatient medical-necessity domain reference.",
+      "path": "cores/examples/opmn.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-04",
+      "slug": "opta",
+      "display_name": "OPTA Core",
+      "purpose": "Outpatient technical or authorization reference.",
+      "path": "cores/examples/opta.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-05",
+      "slug": "readmission",
+      "display_name": "Readmission Core",
+      "purpose": "Readmission evidence and comparison reference.",
+      "path": "cores/examples/readmission.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-06",
+      "slug": "gmn",
+      "display_name": "GMN Core",
+      "purpose": "General medical-necessity domain reference.",
+      "path": "cores/examples/gmn.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-07",
+      "slug": "policy",
+      "display_name": "Policy Core",
+      "purpose": "Versioned policy evidence and authority reference.",
+      "path": "cores/examples/policy.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-08",
+      "slug": "chart-review",
+      "display_name": "Chart-Review Core",
+      "purpose": "Source-faithful chart review variables and evidence map.",
+      "path": "cores/examples/chart-review.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-09",
+      "slug": "analysis",
+      "display_name": "Analysis Core",
+      "purpose": "Coordinates Deep Summary and Compare-Contrast behavior.",
+      "path": "cores/examples/analysis.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-10",
+      "slug": "synthesis",
+      "display_name": "Synthesis Core",
+      "purpose": "Coordinates Alignment and Synthesis behavior.",
+      "path": "cores/examples/synthesis.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "C-11",
+      "slug": "meta-integrity",
+      "display_name": "Meta-Integrity Core",
+      "purpose": "Coordinates conflict handling, memory, fabrication checks, and speculation labels.",
+      "path": "cores/examples/meta-integrity.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    }
+  ]
+}

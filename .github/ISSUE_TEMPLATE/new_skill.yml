@@ -1,0 +1,28 @@
+name: Community Skill implementation
+description: Propose a task-oriented Skill composed from registry entries
+title: "[Skill]: "
+labels: [implementation]
+body:
+  - type: input
+    id: name
+    attributes: {label: Skill name}
+    validations: {required: true}
+  - type: textarea
+    id: boundary
+    attributes: {label: Task and activation boundary}
+    validations: {required: true}
+  - type: textarea
+    id: components
+    attributes: {label: Upgradeable slugs and versions}
+    validations: {required: true}
+  - type: textarea
+    id: gene_core
+    attributes: {label: Behavior Gene, Core, and source provenance}
+  - type: textarea
+    id: host
+    attributes: {label: Host compatibility and state/tool requirements}
+    validations: {required: true}
+  - type: textarea
+    id: tests
+    attributes: {label: Tests and failure behavior}
+    validations: {required: true}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T2-14A",
+  "slug": "image-text-fidelity-capture",
+  "display_name": "Image Text Fidelity Capture",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [
+    "ITFC"
+  ],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T2"
+  ],
+  "functional_classes": [
+    "context-retrieval",
+    "truth-grounding"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "skill-component",
+    "validator"
+  ],
+  "purpose": "Extract text and visible structure from images without inferring missing content.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "long-context-corpus",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "an image contains source text to transcribe"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "grounding-no-invention",
+    "zero-drift-zones"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "candidate output or claim",
+    "applicable evidence, constraints, and invariants"
+  ],
+  "outputs": [
+    "pass",
+    "fail",
+    "repair-required",
+    "unverifiable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "if the applicable condition cannot be checked, do not certify the candidate"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/truth-grounding/image-text-fidelity-capture/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T2-14A",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": "Distinct from the unresolved Intent/Task Framing Controller use of ITFC."
+  }
+}

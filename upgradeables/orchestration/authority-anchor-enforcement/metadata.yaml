@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "id": "JAN26-12",
+  "slug": "authority-anchor-enforcement",
+  "display_name": "Authority Anchor Enforcement",
+  "version": "1.0.0",
+  "registry_generation": "training-scaffolding-2026-01-05",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "partial_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "historical-2026-01"
+  ],
+  "functional_classes": [
+    "orchestration",
+    "validation"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "guard",
+    "validator"
+  ],
+  "purpose": "Bind decisions to the governing authority layer and prevent lower-priority modules from overriding it.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "multi-agent-orchestration",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "multiple instruction authorities coexist"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "multi-layer-consistency"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "candidate output or claim",
+    "applicable evidence, constraints, and invariants"
+  ],
+  "outputs": [
+    "pass",
+    "fail",
+    "repair-required",
+    "unverifiable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "if the applicable condition cannot be checked, do not certify the candidate"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/orchestration/authority-anchor-enforcement/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+    "source_id": "JAN26-12",
+    "source_date": "2026-09-03",
+    "source_kind": "historical_recovery_inventory",
+    "canonicality": "provisional",
+    "recovery_confidence": "medium",
+    "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  }
+}

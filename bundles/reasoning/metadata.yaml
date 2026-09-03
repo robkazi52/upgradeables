@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "reasoning",
+  "display_name": "Reasoning Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated reasoning composition from recovered architecture.",
+  "components": [
+    "micro-scaffolding",
+    "reasoning-scale-controller",
+    "anti-tunnel-vision",
+    "forethought-checkpoints",
+    "bidirectional-consistency",
+    "multiverse-reasoning",
+    "bounded-exit"
+  ],
+  "load_order": [
+    "micro-scaffolding",
+    "reasoning-scale-controller",
+    "anti-tunnel-vision",
+    "forethought-checkpoints",
+    "bidirectional-consistency",
+    "multiverse-reasoning",
+    "bounded-exit"
+  ]
+}

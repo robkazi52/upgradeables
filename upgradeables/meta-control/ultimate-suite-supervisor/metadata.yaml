@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T4-05",
+  "slug": "ultimate-suite-supervisor",
+  "display_name": "Ultimate Suite Supervisor",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "T4"
+  ],
+  "functional_classes": [
+    "meta-control",
+    "orchestration",
+    "validation"
+  ],
+  "activation_class": "U4-meta-architecture",
+  "implementation_forms": [
+    "orchestrator"
+  ],
+  "purpose": "Declare modes, enforce the core stack, select local versus global editing, resolve pack conflicts, and run post-output health checks.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "multi-agent-orchestration",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "a large suite needs top-level coordination"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "meta-supervisor",
+    "hybrid-mode"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task state",
+    "available component manifests and authority rules"
+  ],
+  "outputs": [
+    "bounded activation or routing plan",
+    "explicit component state and unresolved conflicts"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not activate unavailable components or silently resolve an authority conflict"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/meta-control/ultimate-suite-supervisor/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T4-05",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "id": "A-11",
+  "slug": "coherence-loops",
+  "display_name": "Coherence Loops",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "A"
+  ],
+  "functional_classes": [
+    "validation",
+    "editing-repair"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "validator",
+    "parent-skill-mode"
+  ],
+  "purpose": "Boundedly compare local output with global goals and structure until coherence is sufficient.",
+  "recommended_skill_types": [
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "local edits risk global inconsistency"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "bounded-exit",
+    "coherence-heartbeat"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "candidate output or claim",
+    "applicable evidence, constraints, and invariants"
+  ],
+  "outputs": [
+    "pass",
+    "fail",
+    "repair-required",
+    "unverifiable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "if the applicable condition cannot be checked, do not certify the candidate"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/validation/coherence-loops/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "A-11",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

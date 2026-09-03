@@ -1,0 +1,296 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://upgradeables.dev/schema/upgradeable.schema.json",
+  "title": "Upgradeable metadata",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "slug",
+    "display_name",
+    "version",
+    "registry_generation",
+    "recovery_status",
+    "lifecycle_status",
+    "tiers",
+    "functional_classes",
+    "activation_class",
+    "implementation_forms",
+    "purpose",
+    "triggers",
+    "non_triggers",
+    "requires",
+    "recommended_with",
+    "counterbalances",
+    "potentially_redundant_with",
+    "conflicts",
+    "inputs",
+    "outputs",
+    "strong_model_scaling",
+    "failure_boundary",
+    "supersedes",
+    "superseded_by",
+    "package_path",
+    "provenance"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "recovery_status": {
+      "enum": [
+        "exact_recovery",
+        "partial_recovery",
+        "family_recovery",
+        "historical_artifact",
+        "unresolved",
+        "modern_inference"
+      ]
+    },
+    "lifecycle_status": {
+      "enum": [
+        "historical",
+        "unresolved",
+        "experimental",
+        "candidate",
+        "stable",
+        "core",
+        "deprecated"
+      ]
+    },
+    "activation_class": {
+      "enum": [
+        "U0-foundational",
+        "U1-common-conditional",
+        "U2-specialized",
+        "U3-high-risk-expensive",
+        "U4-meta-architecture"
+      ]
+    },
+    "functional_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "framing-intake",
+          "state",
+          "context-retrieval",
+          "planning-reasoning",
+          "truth-grounding",
+          "validation",
+          "drift-control",
+          "editing-repair",
+          "output",
+          "orchestration",
+          "meta-control",
+          "persistence"
+        ]
+      }
+    },
+    "package_path": {
+      "type": "string",
+      "pattern": "^upgradeables/.+/UPGRADEABLE\\.md$"
+    },
+    "strong_model_scaling": {
+      "type": "object",
+      "required": [
+        "may_skip",
+        "keep_mandatory"
+      ]
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "registry_generation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "historical_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "historical_aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "tiers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "implementation_forms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "recommended_skill_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "usually_not_needed_for": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "non_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "recommended_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "counterbalances": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "potentially_redundant_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "failure_boundary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "superseded_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "source_id",
+        "source_date",
+        "source_kind",
+        "canonicality",
+        "recovery_confidence",
+        "notes"
+      ],
+      "properties": {
+        "source_kind": {
+          "enum": [
+            "direct_user_spec",
+            "user_accepted",
+            "historical_assistant_artifact",
+            "current_consolidated_catalog",
+            "historical_recovery_inventory",
+            "modern_implementation_recommendation"
+          ]
+        },
+        "canonicality": {
+          "enum": [
+            "canonical",
+            "accepted",
+            "provisional",
+            "historical_only",
+            "unresolved"
+          ]
+        },
+        "recovery_confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

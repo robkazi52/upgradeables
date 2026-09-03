@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "authoring",
+  "display_name": "Authoring Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated authoring composition from recovered architecture.",
+  "components": [
+    "style-alignment",
+    "pedagogical-alignment",
+    "safe-rewrite",
+    "citation-fidelity",
+    "placeholder-suppression"
+  ],
+  "load_order": [
+    "style-alignment",
+    "pedagogical-alignment",
+    "safe-rewrite",
+    "citation-fidelity",
+    "placeholder-suppression"
+  ]
+}

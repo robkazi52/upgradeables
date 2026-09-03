@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "meta-control",
+  "display_name": "Meta Control Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated meta control composition from recovered architecture.",
+  "components": [
+    "meta-supervisor",
+    "meta-awareness",
+    "stuck-pattern-reset",
+    "coherence-heartbeat",
+    "resonance",
+    "neuro-focus",
+    "dynamic-depth-allocation",
+    "reasoning-throughput-governor",
+    "drift-spectra-scaling",
+    "compute-adaptive-drift",
+    "domain-normalized-drift",
+    "drift-immunity-propagation",
+    "meta-stability",
+    "cross-universe-consistency",
+    "future-proof-mode-selector",
+    "model-size-drift-scaling"
+  ],
+  "load_order": [
+    "meta-supervisor",
+    "meta-awareness",
+    "stuck-pattern-reset",
+    "coherence-heartbeat",
+    "resonance",
+    "neuro-focus",
+    "dynamic-depth-allocation",
+    "reasoning-throughput-governor",
+    "drift-spectra-scaling",
+    "compute-adaptive-drift",
+    "domain-normalized-drift",
+    "drift-immunity-propagation",
+    "meta-stability",
+    "cross-universe-consistency",
+    "future-proof-mode-selector",
+    "model-size-drift-scaling"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "architect",
+  "display_name": "Architect Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated architect composition from recovered architecture.",
+  "components": [
+    "architect-orchestrator",
+    "behavior-gene-builder",
+    "domain-core-builder",
+    "adapter-first-experimentation",
+    "crispr-edit",
+    "surgery-edit",
+    "scoped-loader",
+    "state-snapshot",
+    "ultimate-suite-supervisor"
+  ],
+  "load_order": [
+    "architect-orchestrator",
+    "behavior-gene-builder",
+    "domain-core-builder",
+    "adapter-first-experimentation",
+    "crispr-edit",
+    "surgery-edit",
+    "scoped-loader",
+    "state-snapshot",
+    "ultimate-suite-supervisor"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "id": "JAN26-01",
+  "slug": "phase-locked-reasoning-scaffold",
+  "display_name": "Phase-Locked Reasoning Scaffold",
+  "version": "1.0.0",
+  "registry_generation": "training-scaffolding-2026-01-05",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "partial_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "historical-2026-01"
+  ],
+  "functional_classes": [
+    "planning-reasoning",
+    "state"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "state-schema",
+    "guard"
+  ],
+  "purpose": "Keep factual, evaluative, framing, and hypothetical work in declared phases with explicit transitions.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "semantic phase leakage is a risk"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "domain-mode-isolation"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "current explicit task state",
+    "authorized state update or source event"
+  ],
+  "outputs": [
+    "updated explicit state",
+    "conflict or unavailable-persistence status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim state was retained or persisted without a real host-visible mechanism"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/reasoning/phase-locked-reasoning-scaffold/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+    "source_id": "JAN26-01",
+    "source_date": "2026-09-03",
+    "source_kind": "historical_recovery_inventory",
+    "canonicality": "provisional",
+    "recovery_confidence": "medium",
+    "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  }
+}

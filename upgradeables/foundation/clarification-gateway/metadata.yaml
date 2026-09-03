@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T1-03",
+  "slug": "clarification-gateway",
+  "display_name": "Clarification Gateway",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [
+    "Clarification-First",
+    "Clarification-First Behavior"
+  ],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T1"
+  ],
+  "functional_classes": [
+    "framing-intake",
+    "orchestration"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "orchestrator",
+    "guard"
+  ],
+  "purpose": "Distinguish ambiguity that can be resolved safely from ambiguity that materially blocks correct execution.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "general-agent-workflow",
+    "multi-agent-orchestration"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "required variables are missing or instructions conflict"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "task-set-lock-in"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task state",
+    "available component manifests and authority rules"
+  ],
+  "outputs": [
+    "bounded activation or routing plan",
+    "explicit component state and unresolved conflicts"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not activate unavailable components or silently resolve an authority conflict"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/foundation/clarification-gateway/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T1-03",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

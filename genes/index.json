@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "behavior_genes": [
+    {
+      "id": "BG-01",
+      "slug": "ipmn",
+      "display_name": "IPMN Gene",
+      "purpose": "Inpatient medical-necessity appeal reasoning and writing behavior.",
+      "path": "genes/examples/ipmn.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-02",
+      "slug": "ipta",
+      "display_name": "IPTA Gene",
+      "purpose": "Inpatient technical or administrative appeal routing behavior.",
+      "path": "genes/examples/ipta.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-03",
+      "slug": "opmn",
+      "display_name": "OPMN Gene",
+      "purpose": "Outpatient medical-necessity reasoning behavior.",
+      "path": "genes/examples/opmn.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-04",
+      "slug": "opta",
+      "display_name": "OPTA Gene",
+      "purpose": "Outpatient administrative or authorization reasoning behavior.",
+      "path": "genes/examples/opta.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-05",
+      "slug": "readmission",
+      "display_name": "Readmission Gene",
+      "purpose": "Compare episodes, discharge conditions, deterioration, barriers, and preventability.",
+      "path": "genes/examples/readmission.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-06",
+      "slug": "gmn",
+      "display_name": "GMN Gene",
+      "purpose": "Fallback behavior for mixed or cross-setting medical-necessity work.",
+      "path": "genes/examples/gmn.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-07",
+      "slug": "tone",
+      "display_name": "Tone Genes",
+      "purpose": "Apply authorized tone without changing truth, evidence, or structure.",
+      "path": "genes/examples/tone.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-08",
+      "slug": "risk-emphasis",
+      "display_name": "Risk-Emphasis Genes",
+      "purpose": "Adjust risk emphasis according to task and evidence.",
+      "path": "genes/examples/risk-emphasis.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-09",
+      "slug": "deep-summary",
+      "display_name": "Deep Summary Gene",
+      "purpose": "Produce source-faithful deep summaries.",
+      "path": "genes/examples/deep-summary.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-10",
+      "slug": "compare-contrast",
+      "display_name": "Compare-Contrast Gene",
+      "purpose": "Compare sources, options, or frameworks systematically.",
+      "path": "genes/examples/compare-contrast.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-11",
+      "slug": "alignment",
+      "display_name": "Alignment Gene",
+      "purpose": "Map agreement among sources, requirements, or plans.",
+      "path": "genes/examples/alignment.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-12",
+      "slug": "conflict-handling",
+      "display_name": "Conflict-Handling Gene",
+      "purpose": "Surface and reconcile contradictory source claims or requirements.",
+      "path": "genes/examples/conflict-handling.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-13",
+      "slug": "synthesis",
+      "display_name": "Synthesis Gene",
+      "purpose": "Combine supported findings into a coherent higher-level model.",
+      "path": "genes/examples/synthesis.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    },
+    {
+      "id": "BG-14",
+      "slug": "memory",
+      "display_name": "Memory Gene",
+      "purpose": "Preserve established decisions and cross-source consistency without inventing memory.",
+      "path": "genes/examples/memory.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high"
+    }
+  ]
+}

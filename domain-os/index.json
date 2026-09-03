@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "domain_os": [
+    {
+      "id": "D-01",
+      "slug": "architect-os",
+      "display_name": "Architect OS",
+      "purpose": "System architecture, modular decomposition, controlled editing, validation, and state snapshots.",
+      "historical_aliases": [],
+      "path": "domain-os/architect-os.md",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "detail_source_kind": "current_consolidated_catalog",
+      "detail_canonicality": "canonical"
+    },
+    {
+      "id": "D-02",
+      "slug": "appeal-caf-os",
+      "display_name": "Appeal / CAF OS",
+      "purpose": "Routes inpatient, outpatient, technical, readmission, and general medical-necessity Gene/Core pairs.",
+      "historical_aliases": [],
+      "path": "domain-os/appeal-caf-os.md",
+      "source_kind": "direct_user_spec",
+      "canonicality": "accepted",
+      "recovery_confidence": "high",
+      "detail_source_kind": "direct_user_spec",
+      "detail_canonicality": "provisional"
+    },
+    {
+      "id": "D-03",
+      "slug": "research-decision-os",
+      "display_name": "Research & Decision OS",
+      "purpose": "Corpus intake, evidence evaluation, conceptual mapping, decision criteria, synthesis, and planning.",
+      "historical_aliases": [],
+      "path": "domain-os/research-decision-os.md",
+      "source_kind": "direct_user_spec",
+      "canonicality": "provisional",
+      "recovery_confidence": "high",
+      "detail_source_kind": "historical_assistant_artifact",
+      "detail_canonicality": "provisional"
+    },
+    {
+      "id": "D-04",
+      "slug": "paper-author-os",
+      "display_name": "Paper-Author OS",
+      "purpose": "Source-grounded authoring with semantic phase separation, citation fidelity, and global validation.",
+      "historical_aliases": [],
+      "path": "domain-os/paper-author-os.md",
+      "source_kind": "direct_user_spec",
+      "canonicality": "provisional",
+      "recovery_confidence": "high",
+      "detail_source_kind": "historical_assistant_artifact",
+      "detail_canonicality": "provisional"
+    },
+    {
+      "id": "D-05",
+      "slug": "local-chat-analysis-author-os",
+      "display_name": "Local Chat-Analysis Author OS",
+      "purpose": "Source-faithful analysis and synthesis of pasted conversations.",
+      "historical_aliases": [
+        "LCA-OS"
+      ],
+      "path": "domain-os/local-chat-analysis-author-os.md",
+      "source_kind": "direct_user_spec",
+      "canonicality": "accepted",
+      "recovery_confidence": "high",
+      "detail_source_kind": "direct_user_spec",
+      "detail_canonicality": "provisional"
+    },
+    {
+      "id": "D-06",
+      "slug": "multi-os",
+      "display_name": "Multi-OS",
+      "purpose": "Coordinates domain operating systems while preserving domain and mode isolation.",
+      "historical_aliases": [],
+      "path": "domain-os/multi-os.md",
+      "source_kind": "historical_assistant_artifact",
+      "canonicality": "provisional",
+      "recovery_confidence": "medium",
+      "detail_source_kind": "historical_assistant_artifact",
+      "detail_canonicality": "provisional"
+    },
+    {
+      "id": "META-OS-HIST",
+      "slug": "meta-os-builder",
+      "display_name": "Meta-OS / OS-Builder",
+      "purpose": "Compose new OS architectures from explicit primitives and assembly rules.",
+      "historical_aliases": [],
+      "path": "domain-os/meta-os-builder.md",
+      "source_kind": "direct_user_spec",
+      "canonicality": "provisional",
+      "recovery_confidence": "medium",
+      "template_source_kind": "historical_assistant_artifact",
+      "template_canonicality": "provisional"
+    }
+  ]
+}

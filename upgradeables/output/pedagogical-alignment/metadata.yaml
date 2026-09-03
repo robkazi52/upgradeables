@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T3-16",
+  "slug": "pedagogical-alignment",
+  "display_name": "Pedagogical Alignment Constraint",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T3"
+  ],
+  "functional_classes": [
+    "output",
+    "framing-intake"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "skill-component"
+  ],
+  "purpose": "Match explanation complexity and examples to the reader while preserving technical accuracy.",
+  "recommended_skill_types": [
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "an audience or teaching level is known"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "explanation-minimality-scaffold",
+    "style-alignment"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task goal and constraints",
+    "relevant source or workflow state"
+  ],
+  "outputs": [
+    "bounded component result",
+    "explicit uncertainty or failure status when applicable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/output/pedagogical-alignment/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T3-16",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

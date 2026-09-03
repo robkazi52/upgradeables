@@ -1,0 +1,43 @@
+name: New Upgradeable proposal
+description: Propose a new composable primitive after checking prior art
+title: "[Proposal]: "
+labels: [proposal]
+body:
+  - type: input
+    id: name
+    attributes: {label: Proposed name}
+    validations: {required: true}
+  - type: textarea
+    id: problem
+    attributes: {label: Problem solved}
+    validations: {required: true}
+  - type: textarea
+    id: prior_art
+    attributes: {label: Existing prior art and closest Upgradeables}
+    validations: {required: true}
+  - type: textarea
+    id: composition
+    attributes: {label: Why composition is insufficient}
+    validations: {required: true}
+  - type: textarea
+    id: trigger
+    attributes: {label: Trigger and non-trigger}
+    validations: {required: true}
+  - type: textarea
+    id: mechanism
+    attributes: {label: Explicit mechanism}
+    validations: {required: true}
+  - type: textarea
+    id: boundary
+    attributes: {label: Failure boundary}
+    validations: {required: true}
+  - type: textarea
+    id: tests
+    attributes: {label: Behavioral and composition tests}
+    validations: {required: true}
+  - type: dropdown
+    id: form
+    attributes:
+      label: Recommended implementation form
+      options: [Skill component, Parent-skill mode, Validator or guard, State schema or manager, Reference module, Deterministic script, Orchestrator, Bundle component]
+    validations: {required: true}

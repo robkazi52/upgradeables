@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "reasoning-scale-nano-details",
+  "display_name": "Nano reasoning-scale details",
+  "recovery_status": "unresolved",
+  "lifecycle_status": "historical",
+  "operational_status": "archival_only",
+  "known_gap": "The mode name and position are recovered; its detailed historical specification is not.",
+  "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+  "source_id": "not individually recovered",
+  "source_date": "2026-09-03",
+  "source_kind": "historical_recovery_inventory",
+  "canonicality": "unresolved",
+  "recovery_confidence": "low",
+  "supersedes": [],
+  "superseded_by": [],
+  "resolution_requirements": [
+    "documented proposal",
+    "source provenance",
+    "maintainer review"
+  ]
+}

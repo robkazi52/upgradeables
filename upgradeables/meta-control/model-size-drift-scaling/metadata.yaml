@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T4-18",
+  "slug": "model-size-drift-scaling",
+  "display_name": "Drift-Stability Scaling with Model Size",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [
+    "DSS-MS"
+  ],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "T4"
+  ],
+  "functional_classes": [
+    "meta-control",
+    "drift-control"
+  ],
+  "activation_class": "U4-meta-architecture",
+  "implementation_forms": [
+    "guard",
+    "reference-module"
+  ],
+  "purpose": "Reduce unnecessary scaffolding as base-model reliability grows while preserving required truth, safety, and state controls.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "general-agent-workflow",
+    "multi-agent-orchestration"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "adapting a workflow across model capability levels"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "future-proof-mode-selector"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task goal and constraints",
+    "relevant source or workflow state"
+  ],
+  "outputs": [
+    "bounded component result",
+    "explicit uncertainty or failure status when applicable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/meta-control/model-size-drift-scaling/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T4-18",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

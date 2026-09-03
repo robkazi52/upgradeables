@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T3-08",
+  "slug": "two-truths-and-corridor",
+  "display_name": "Two Truths + Corridor",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T3"
+  ],
+  "functional_classes": [
+    "truth-grounding",
+    "drift-control"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "plugin-bundle-component",
+    "guard"
+  ],
+  "purpose": "Combine two independent anchors with an explicitly permitted synthesis corridor.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "source-grounded synthesis permits bounded interpretation"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "truth-redundancy",
+    "controlled-drift-corridors"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task goal and constraints",
+    "relevant source or workflow state"
+  ],
+  "outputs": [
+    "bounded component result",
+    "explicit uncertainty or failure status when applicable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/truth-grounding/two-truths-and-corridor/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T3-08",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "parallel-qms",
+  "display_name": "Parallel QMS",
+  "version": "1.0.0",
+  "purpose": "Compose named validation modes under one bounded family.",
+  "components": [
+    "parallel-qms"
+  ],
+  "modes": [
+    "mirror",
+    "risk-tier-split",
+    "cross-phase",
+    "redundancy",
+    "exit-integrated",
+    "hierarchical",
+    "transversal",
+    "heterogeneous",
+    "monte",
+    "inversion",
+    "conflict-resolution",
+    "distributed",
+    "meta",
+    "semantic-glass-box",
+    "ethical"
+  ],
+  "load_order": [
+    "parallel-qms"
+  ]
+}

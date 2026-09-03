@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "JAN26-02",
+  "slug": "attention-compression-scaffold",
+  "display_name": "Attention Compression Scaffold",
+  "version": "1.0.0",
+  "registry_generation": "training-scaffolding-2026-01-05",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "partial_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "historical-2026-01"
+  ],
+  "functional_classes": [
+    "context-retrieval",
+    "state"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "state-manager"
+  ],
+  "purpose": "Compress verified, task-relevant context into a smaller indexed representation without changing meaning.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "source volume exceeds the active workspace"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "activation-budget-funnel"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "current explicit task state",
+    "authorized state update or source event"
+  ],
+  "outputs": [
+    "updated explicit state",
+    "conflict or unavailable-persistence status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim state was retained or persisted without a real host-visible mechanism"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/context-retrieval/attention-compression-scaffold/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+    "source_id": "JAN26-02",
+    "source_date": "2026-09-03",
+    "source_kind": "historical_recovery_inventory",
+    "canonicality": "provisional",
+    "recovery_confidence": "medium",
+    "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  }
+}

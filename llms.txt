@@ -1,0 +1,10 @@
+# Upgradeables model entrypoint
+README.md
+MODEL_CONSUMPTION_GUIDE.md
+spec/SKILL_TRANSLATION_SPEC.md
+spec/COMPOSITION_SPEC.md
+spec/PRECEDENCE_SPEC.md
+registry/registry.json
+recipes/recipes.json
+dist/ALL_IN_ONE_UPGRADEABLE_SKILL_KIT.md
+# Never invent unresolved historical meanings. Host policy always wins.

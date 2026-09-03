@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "id": "STATE-2025-12-03-T3",
+  "slug": "cot-structured-state-block",
+  "display_name": "CoT-Structured State Block",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "historical-2025-12"
+  ],
+  "functional_classes": [
+    "state"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "state-schema"
+  ],
+  "purpose": "Represent task and reasoning state explicitly without claiming access to hidden or private chain-of-thought.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "structured intermediate task state must survive across steps"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "stateblock",
+    "sequential-memory-state-engine"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "current explicit task state",
+    "authorized state update or source event"
+  ],
+  "outputs": [
+    "updated explicit state",
+    "conflict or unavailable-persistence status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim state was retained or persisted without a real host-visible mechanism"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/state/cot-structured-state-block/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+    "source_id": "STATE-2025-12-03-T3",
+    "source_date": "2026-09-03",
+    "source_kind": "user_accepted",
+    "canonicality": "accepted",
+    "recovery_confidence": "high",
+    "notes": "Exact recovered name and role; modern implementations expose task state only."
+  }
+}

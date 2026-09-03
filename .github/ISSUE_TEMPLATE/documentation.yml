@@ -1,0 +1,20 @@
+name: Documentation or recipe contribution
+description: Improve a specification, recipe, or guide
+title: "[Docs]: "
+labels: [documentation]
+body:
+  - type: input
+    id: affected
+    attributes: {label: Affected recipe or specification}
+    validations: {required: true}
+  - type: textarea
+    id: rationale
+    attributes: {label: Rationale}
+    validations: {required: true}
+  - type: textarea
+    id: components
+    attributes: {label: Upgradeables involved}
+  - type: dropdown
+    id: change_type
+    attributes: {label: Change type, options: [Documentation only, Behavior change]}
+    validations: {required: true}

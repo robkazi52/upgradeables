@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use Upgradeables, cite this repository."
+title: "Upgradeables: A Model-Agnostic Registry of Composable AI Primitives"
+type: software
+version: 0.1.0
+date-released: 2026-09-03
+authors:
+  - name: "Upgradeables contributors"
+license: Apache-2.0
+repository-code: "https://github.com/robkazi52/upgradeables"

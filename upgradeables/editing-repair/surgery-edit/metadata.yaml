@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "id": "A-08",
+  "slug": "surgery-edit",
+  "display_name": "Surgery Editing",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "A"
+  ],
+  "functional_classes": [
+    "editing-repair",
+    "orchestration"
+  ],
+  "activation_class": "U3-high-risk-expensive",
+  "implementation_forms": [
+    "skill-component",
+    "orchestrator"
+  ],
+  "purpose": "Perform controlled structural replacement when a local patch cannot address an architecture-level change.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow",
+    "multi-agent-orchestration"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "layers, Cores, or workflows require major replacement"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "regenerative-rewrite",
+    "task-set-lock-in"
+  ],
+  "counterbalances": [
+    "crispr-edit"
+  ],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "source artifact",
+    "authorized change request",
+    "protected facts and invariants"
+  ],
+  "outputs": [
+    "bounded patch or revised artifact",
+    "preservation and validation status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "escalate the repair class or stop when protected invariants cannot be preserved"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/editing-repair/surgery-edit/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "A-08",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T4-03",
+  "slug": "stuck-pattern-reset",
+  "display_name": "Stuck-Pattern Reset Pack",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "T4"
+  ],
+  "functional_classes": [
+    "meta-control",
+    "editing-repair"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "guard",
+    "skill-component"
+  ],
+  "purpose": "Detect repeated failed approaches and reset only the failed path while preserving locked facts and constraints.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow",
+    "multi-agent-orchestration"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "reasoning loops or stale approaches repeat"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "bounded-exit",
+    "stateblock"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "source artifact",
+    "authorized change request",
+    "protected facts and invariants"
+  ],
+  "outputs": [
+    "bounded patch or revised artifact",
+    "preservation and validation status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "escalate the repair class or stop when protected invariants cannot be preserved"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/meta-control/stuck-pattern-reset/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T4-03",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

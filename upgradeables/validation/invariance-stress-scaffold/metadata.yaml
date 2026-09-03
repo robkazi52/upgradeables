@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "id": "JAN26-09",
+  "slug": "invariance-stress-scaffold",
+  "display_name": "Invariance Stress Scaffold",
+  "version": "1.0.0",
+  "registry_generation": "training-scaffolding-2026-01-05",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "partial_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "historical-2026-01"
+  ],
+  "functional_classes": [
+    "validation",
+    "editing-repair"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "validator",
+    "deterministic-script"
+  ],
+  "purpose": "Test whether protected behavior and facts outside a change remain unchanged.",
+  "recommended_skill_types": [
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "a patch or rewrite must preserve invariants"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "crispr-edit",
+    "safe-rewrite"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "candidate output or claim",
+    "applicable evidence, constraints, and invariants"
+  ],
+  "outputs": [
+    "pass",
+    "fail",
+    "repair-required",
+    "unverifiable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "if the applicable condition cannot be checked, do not certify the candidate"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/validation/invariance-stress-scaffold/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+    "source_id": "JAN26-09",
+    "source_date": "2026-09-03",
+    "source_kind": "historical_recovery_inventory",
+    "canonicality": "provisional",
+    "recovery_confidence": "medium",
+    "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  }
+}

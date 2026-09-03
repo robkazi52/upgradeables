@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T2-20",
+  "slug": "external-state-automation",
+  "display_name": "External State Automation",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T2"
+  ],
+  "functional_classes": [
+    "state",
+    "persistence"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "state-manager",
+    "deterministic-script"
+  ],
+  "purpose": "Serialize task state to real files, memory, databases, or project documents only when the host provides persistence.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "continuation requires real external state"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "state-snapshot",
+    "stateblock"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "current explicit task state",
+    "authorized state update or source event"
+  ],
+  "outputs": [
+    "updated explicit state",
+    "conflict or unavailable-persistence status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim state was retained or persisted without a real host-visible mechanism"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/persistence/external-state-automation/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T2-20",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T3-11",
+  "slug": "fail-closed-abstention",
+  "display_name": "Fail-Closed Abstention",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [
+    "Fail-Closed Tier-3 Abstention"
+  ],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T3"
+  ],
+  "functional_classes": [
+    "truth-grounding",
+    "validation",
+    "output"
+  ],
+  "activation_class": "U3-high-risk-expensive",
+  "implementation_forms": [
+    "guard",
+    "validator"
+  ],
+  "purpose": "Narrow or stop a conclusion when required evidence or integrity gates fail, returning only supported content.",
+  "recommended_skill_types": [
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "required evidence cannot be verified"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "grounding-no-invention",
+    "fermionic-veto"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "candidate output or claim",
+    "applicable evidence, constraints, and invariants"
+  ],
+  "outputs": [
+    "pass",
+    "fail",
+    "repair-required",
+    "unverifiable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "if the applicable condition cannot be checked, do not certify the candidate"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/truth-grounding/fail-closed-abstention/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T3-11",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

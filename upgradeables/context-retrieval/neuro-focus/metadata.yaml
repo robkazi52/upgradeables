@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "A-09",
+  "slug": "neuro-focus",
+  "display_name": "Neuro-Focus",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "A"
+  ],
+  "functional_classes": [
+    "context-retrieval",
+    "planning-reasoning"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "orchestrator",
+    "skill-component"
+  ],
+  "purpose": "Concentrate processing on the highest-value active region while suppressing irrelevant context.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "large sources or a narrow debug region demand concentration"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "activation-budget-funnel",
+    "anti-tunnel-vision"
+  ],
+  "counterbalances": [
+    "anti-tunnel-vision"
+  ],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task state",
+    "available component manifests and authority rules"
+  ],
+  "outputs": [
+    "bounded activation or routing plan",
+    "explicit component state and unresolved conflicts"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not activate unavailable components or silently resolve an authority conflict"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/context-retrieval/neuro-focus/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "A-09",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

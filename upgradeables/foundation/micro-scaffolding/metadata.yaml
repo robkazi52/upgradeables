@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T1-01",
+  "slug": "micro-scaffolding",
+  "display_name": "Micro-Scaffolding",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [
+    "Micro-Scaffolding (Planning Before Writing)"
+  ],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T1"
+  ],
+  "functional_classes": [
+    "planning-reasoning",
+    "state"
+  ],
+  "activation_class": "U0-foundational",
+  "implementation_forms": [
+    "skill-component",
+    "parent-skill-mode"
+  ],
+  "purpose": "Create only the smallest temporary checkpoints needed to preserve goals, constraints, evidence boundaries, and the next step.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "long-context-corpus"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "multi-step or high-constraint work"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "task-set-lock-in",
+    "drift-suppression"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task goal and constraints",
+    "relevant source or workflow state"
+  ],
+  "outputs": [
+    "bounded component result",
+    "explicit uncertainty or failure status when applicable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/foundation/micro-scaffolding/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T1-01",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

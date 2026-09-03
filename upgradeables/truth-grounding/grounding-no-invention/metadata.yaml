@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T1-04",
+  "slug": "grounding-no-invention",
+  "display_name": "Grounding / No-Invention",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T1"
+  ],
+  "functional_classes": [
+    "truth-grounding",
+    "validation"
+  ],
+  "activation_class": "U0-foundational",
+  "implementation_forms": [
+    "validator",
+    "guard"
+  ],
+  "purpose": "Keep factual output within supplied or verified evidence and label or omit unsupported material.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "work relies on documents, data, external facts, or consequential claims"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "citation-fidelity",
+    "fail-closed-abstention"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "candidate factual claims",
+    "supplied or verified evidence boundary"
+  ],
+  "outputs": [
+    "supported claims",
+    "labeled inference",
+    "omitted/uncertain unsupported claims"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "when an essential claim lacks support, fail closed instead of filling the gap"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/truth-grounding/grounding-no-invention/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T1-04",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

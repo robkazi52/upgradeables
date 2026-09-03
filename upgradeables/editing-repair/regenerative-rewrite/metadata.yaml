@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T2-03",
+  "slug": "regenerative-rewrite",
+  "display_name": "Regenerative Rewrite",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [
+    "A-10"
+  ],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T2"
+  ],
+  "functional_classes": [
+    "editing-repair"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "skill-component"
+  ],
+  "purpose": "Rebuild an output when local repair cannot restore global structure or coherence, while preserving locked truths.",
+  "recommended_skill_types": [
+    "authoring",
+    "coding-debugging",
+    "general-agent-workflow"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "architecture or source mapping is globally broken"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "task-set-lock-in",
+    "surgery-edit"
+  ],
+  "counterbalances": [
+    "micro-repair"
+  ],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "source artifact",
+    "authorized change request",
+    "protected facts and invariants"
+  ],
+  "outputs": [
+    "bounded patch or revised artifact",
+    "preservation and validation status"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "escalate the repair class or stop when protected invariants cannot be preserved"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/editing-repair/regenerative-rewrite/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T2-03",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recipe metadata",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "slug",
+    "display_name",
+    "version",
+    "purpose",
+    "classifications"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "classifications": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "enum": [
+          "R",
+          "A",
+          "C",
+          "O",
+          "X"
+        ]
+      }
+    }
+  }
+}

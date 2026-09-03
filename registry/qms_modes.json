@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "modes": [
+    {
+      "id": "PQ-01",
+      "slug": "mirror",
+      "display_name": "Mirror QMS",
+      "purpose": "Run mirrored independent checks and compare results.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-02",
+      "slug": "risk-tier-split",
+      "display_name": "Risk-Tier-Split QMS",
+      "purpose": "Apply evaluative depth and criteria by risk tier.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-03",
+      "slug": "cross-phase",
+      "display_name": "Cross-Phase QMS",
+      "purpose": "Check separation across factual, evaluative, framing, and hypothetical phases.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-04",
+      "slug": "redundancy",
+      "display_name": "Redundancy-QMS",
+      "purpose": "Use independent validation passes with veto or abstention capability.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-05",
+      "slug": "exit-integrated",
+      "display_name": "ExIt-Integrated QMS",
+      "purpose": "Combine scoring with bounded refinement and convergence.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-06",
+      "slug": "hierarchical",
+      "display_name": "Hierarchical QMS",
+      "purpose": "Check atomic, section, and global consistency.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-07",
+      "slug": "transversal",
+      "display_name": "Transversal QMS",
+      "purpose": "Check temporal, causal, logical, and modal dimensions.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-08",
+      "slug": "heterogeneous",
+      "display_name": "Heterogeneous QMS",
+      "purpose": "Apply different evaluator perspectives to the same candidate.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-09",
+      "slug": "monte",
+      "display_name": "Monte QMS",
+      "purpose": "Perturb assumptions and test stability; this is not formal Monte Carlo unless sampling is implemented.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-10",
+      "slug": "inversion",
+      "display_name": "Inversion QMS",
+      "purpose": "Test whether a conclusion's implied evidence is actually present.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-11",
+      "slug": "conflict-resolution",
+      "display_name": "Conflict-Resolution QMS",
+      "purpose": "Resolve evaluator or evidence conflicts with explicit priority rules.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-12",
+      "slug": "distributed",
+      "display_name": "Distributed QMS",
+      "purpose": "Use real isolated evaluators when available, otherwise label independent sequential passes honestly.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-13",
+      "slug": "meta",
+      "display_name": "Meta-QMS",
+      "purpose": "Evaluate the quality and agreement of other QMS evaluations.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-14",
+      "slug": "semantic-glass-box",
+      "display_name": "Semantic Glass-Box QMS",
+      "purpose": "Emit an auditable semantic pass/fail map instead of only a score.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    },
+    {
+      "id": "PQ-15",
+      "slug": "ethical",
+      "display_name": "Ethical QMS",
+      "purpose": "Apply an ethical or safety evaluator with explicit veto authority where applicable.",
+      "source_kind": "current_consolidated_catalog",
+      "canonicality": "canonical",
+      "recovery_confidence": "high",
+      "deep_operating_detail_source": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+      "deep_detail_canonicality": "provisional"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "id": "JAN26-14",
+  "slug": "non-authoritative-branch-suppression",
+  "display_name": "Non-Authoritative Branch Suppression",
+  "version": "1.0.0",
+  "registry_generation": "training-scaffolding-2026-01-05",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "partial_recovery",
+  "lifecycle_status": "candidate",
+  "tiers": [
+    "historical-2026-01"
+  ],
+  "functional_classes": [
+    "drift-control",
+    "orchestration"
+  ],
+  "activation_class": "U2-specialized",
+  "implementation_forms": [
+    "guard"
+  ],
+  "purpose": "Prevent superseded or lower-authority branches from re-entering active decisions.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "general-agent-workflow",
+    "multi-agent-orchestration"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "obsolete alternatives conflict with locked decisions"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "authority-anchor-enforcement",
+    "drift-sink-scaffold"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task goal and constraints",
+    "relevant source or workflow state"
+  ],
+  "outputs": [
+    "bounded component result",
+    "explicit uncertainty or failure status when applicable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not claim success when required evidence, state, host capability, or validation is unavailable"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/drift-control/non-authoritative-branch-suppression/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+    "source_id": "JAN26-14",
+    "source_date": "2026-09-03",
+    "source_kind": "historical_recovery_inventory",
+    "canonicality": "provisional",
+    "recovery_confidence": "medium",
+    "notes": "Exact name recovery; operational mechanism is a conservative modern interpretation."
+  }
+}

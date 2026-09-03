@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "intent-task-framing-controller",
+  "display_name": "Intent/Task Framing Controller (ITFC)",
+  "recovery_status": "unresolved",
+  "lifecycle_status": "historical",
+  "operational_status": "archival_only",
+  "known_gap": "Name is recovered, but the full original specification is incomplete.",
+  "source_document": "OS_Upgradeables_Historical_Recovery_Inventory.md",
+  "source_id": "T2-14B",
+  "source_date": "2026-09-03",
+  "source_kind": "historical_recovery_inventory",
+  "canonicality": "unresolved",
+  "recovery_confidence": "low",
+  "supersedes": [],
+  "superseded_by": [],
+  "resolution_requirements": [
+    "documented proposal",
+    "source provenance",
+    "maintainer review"
+  ],
+  "legacy_acronym": "ITFC",
+  "collision_namespace": "itfc-intent-task-framing",
+  "distinct_from": "image-text-fidelity-capture"
+}

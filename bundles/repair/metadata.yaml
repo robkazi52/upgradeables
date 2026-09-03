@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "repair",
+  "display_name": "Repair Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated repair composition from recovered architecture.",
+  "components": [
+    "safe-rewrite",
+    "micro-repair",
+    "regenerative-rewrite",
+    "crispr-edit",
+    "surgery-edit",
+    "contradiction-micro-repair"
+  ],
+  "load_order": [
+    "safe-rewrite",
+    "micro-repair",
+    "regenerative-rewrite",
+    "crispr-edit",
+    "surgery-edit",
+    "contradiction-micro-repair"
+  ]
+}

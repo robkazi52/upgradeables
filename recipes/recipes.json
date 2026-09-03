@@ -1,0 +1,398 @@
+{
+  "schema_version": "1.0.0",
+  "recipes": [
+    {
+      "schema_version": "1.0.0",
+      "slug": "research-skill",
+      "display_name": "Research Skill",
+      "version": "1.0.0",
+      "purpose": "Seed composition for research skill workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "scoped-loader": "R",
+        "stateblock": "R",
+        "grounding-no-invention": "R",
+        "activation-budget-funnel": "A",
+        "neuro-focus": "A",
+        "stable-long-context": "A",
+        "sequential-memory-state-engine": "A",
+        "multi-truth-gating": "A",
+        "citation-fidelity": "A",
+        "truth-priority-hierarchy": "A",
+        "critical-atomic-verification": "C",
+        "parallel-qms": "A",
+        "anti-tunnel-vision": "O",
+        "state-snapshot": "C"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "source-grounded-analysis",
+      "display_name": "Source-Grounded Analysis",
+      "version": "1.0.0",
+      "purpose": "Seed composition for source-grounded analysis workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "mode-lock-in": "R",
+        "grounding-no-invention": "R",
+        "safe-rewrite": "A",
+        "citation-fidelity": "R",
+        "zero-drift-zones": "A",
+        "controlled-drift-corridors": "A",
+        "counterfactual-integrity": "A",
+        "micro-repair": "A",
+        "placeholder-suppression": "A",
+        "parallel-qms": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "high-stakes-reasoning",
+      "display_name": "High-Stakes Reasoning",
+      "version": "1.0.0",
+      "purpose": "Seed composition for high-stakes reasoning workflows.",
+      "classifications": {
+        "grounding-no-invention": "R",
+        "epistemic-status-gating": "R",
+        "risk-tier-scaling": "R",
+        "critical-atomic-verification": "R",
+        "multi-truth-gating": "R",
+        "truth-redundancy": "A",
+        "truth-priority-hierarchy": "R",
+        "domain-mode-isolation": "R",
+        "citation-fidelity": "C",
+        "fail-closed-abstention": "R",
+        "fermionic-veto": "A",
+        "parallel-qms": "R",
+        "dynamic-depth-allocation": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "medical-evidence",
+      "display_name": "Medical Evidence",
+      "version": "1.0.0",
+      "purpose": "Seed composition for medical evidence workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "grounding-no-invention": "R",
+        "risk-tier-scaling": "R",
+        "critical-atomic-verification": "R",
+        "truth-priority-hierarchy": "R",
+        "citation-fidelity": "C",
+        "fail-closed-abstention": "R",
+        "domain-mode-isolation": "R",
+        "parallel-qms": "R"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "legal-evidence",
+      "display_name": "Legal Evidence",
+      "version": "1.0.0",
+      "purpose": "Seed composition for legal evidence workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "grounding-no-invention": "R",
+        "risk-tier-scaling": "R",
+        "critical-atomic-verification": "R",
+        "truth-priority-hierarchy": "R",
+        "citation-fidelity": "R",
+        "zero-drift-zones": "A",
+        "fail-closed-abstention": "R",
+        "parallel-qms": "R"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "coding-debugging",
+      "display_name": "Coding / Debugging",
+      "version": "1.0.0",
+      "purpose": "Seed composition for coding / debugging workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "stateblock": "A",
+        "forethought-checkpoints": "A",
+        "dominant-driver-isolation-scaffold": "A",
+        "anti-tunnel-vision": "A",
+        "bidirectional-consistency": "A",
+        "invariance-stress-scaffold": "R",
+        "micro-repair": "R",
+        "crispr-edit": "A",
+        "surgery-edit": "C",
+        "structured-refinement": "A",
+        "bounded-exit": "A",
+        "parallel-qms": "A",
+        "drift-suppression": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "long-context-corpus",
+      "display_name": "Long-Context / Corpus",
+      "version": "1.0.0",
+      "purpose": "Seed composition for long-context / corpus workflows.",
+      "classifications": {
+        "stateblock": "R",
+        "sequential-memory-state-engine": "R",
+        "working-memory-lock-in": "A",
+        "stable-long-context": "R",
+        "activation-budget-funnel": "R",
+        "attention-compression-scaffold": "A",
+        "neuro-focus": "A",
+        "drift-suppression": "R",
+        "coherence-heartbeat": "A",
+        "cross-context-resonance-lock": "C",
+        "state-snapshot": "A",
+        "citation-fidelity": "C"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "authoring",
+      "display_name": "Authoring",
+      "version": "1.0.0",
+      "purpose": "Seed composition for authoring workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "grounding-no-invention": "C",
+        "style-alignment": "A",
+        "pedagogical-alignment": "C",
+        "safe-rewrite": "R",
+        "citation-fidelity": "C",
+        "placeholder-suppression": "R",
+        "micro-repair": "A",
+        "parallel-qms": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "creative-ideation",
+      "display_name": "Creative Ideation",
+      "version": "1.0.0",
+      "purpose": "Seed composition for creative ideation workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "controlled-drift-corridors": "R",
+        "counterfactual-integrity": "A",
+        "domain-mode-isolation": "A",
+        "multiverse-reasoning": "A",
+        "anti-tunnel-vision": "A",
+        "parallel-qms": "C",
+        "grounding-no-invention": "C"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "education-explanation",
+      "display_name": "Education / Explanation",
+      "version": "1.0.0",
+      "purpose": "Seed composition for education / explanation workflows.",
+      "classifications": {
+        "pedagogical-alignment": "R",
+        "explanation-minimality-scaffold": "A",
+        "style-alignment": "A",
+        "grounding-no-invention": "A",
+        "micro-scaffolding": "A",
+        "task-set-lock-in": "R",
+        "safe-rewrite": "A",
+        "anti-tunnel-vision": "C",
+        "parallel-qms": "C"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "decision-support",
+      "display_name": "Decision Support",
+      "version": "1.0.0",
+      "purpose": "Seed composition for decision support workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "decision-first-scaffold": "R",
+        "grounding-no-invention": "R",
+        "risk-tier-scaling": "A",
+        "anti-tunnel-vision": "A",
+        "bidirectional-consistency": "A",
+        "truth-priority-hierarchy": "A",
+        "dynamic-depth-allocation": "C",
+        "parallel-qms": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "architecture-skill-building",
+      "display_name": "Architecture / Skill Building",
+      "version": "1.0.0",
+      "purpose": "Seed composition for architecture / skill building workflows.",
+      "classifications": {
+        "architect-orchestrator": "R",
+        "power-mode": "A",
+        "hybrid-mode": "A",
+        "reasoning-scale-controller": "A",
+        "multiverse-reasoning": "A",
+        "behavior-gene-builder": "C",
+        "domain-core-builder": "C",
+        "scoped-loader": "R",
+        "stateblock": "R",
+        "parallel-qms": "R",
+        "meta-supervisor": "A",
+        "adapter-first-experimentation": "A",
+        "crispr-edit": "A",
+        "surgery-edit": "C",
+        "dynamic-depth-allocation": "A",
+        "anti-tunnel-vision": "A",
+        "state-snapshot": "A",
+        "future-proof-mode-selector": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "multi-agent-orchestration",
+      "display_name": "Multi-Agent / Orchestration",
+      "version": "1.0.0",
+      "purpose": "Seed composition for multi-agent / orchestration workflows.",
+      "classifications": {
+        "architect-orchestrator": "R",
+        "scoped-loader": "R",
+        "state-routing-bus": "R",
+        "stateblock": "R",
+        "state-snapshot": "R",
+        "domain-mode-isolation": "R",
+        "resonance": "A",
+        "parallel-qms": "A",
+        "multi-layer-consistency": "A",
+        "external-state-automation": "C"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation",
+        "canonicality": "provisional",
+        "recovery_confidence": "medium"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "deterministic-intake-routing",
+      "display_name": "Deterministic Intake / Routing",
+      "version": "1.0.0",
+      "purpose": "Seed composition for deterministic intake / routing workflows.",
+      "classifications": {
+        "task-set-lock-in": "R",
+        "clarification-gateway": "A",
+        "grounding-no-invention": "R",
+        "scoped-loader": "R",
+        "domain-mode-isolation": "R",
+        "stateblock": "R",
+        "structured-state-projection": "A",
+        "authority-anchor-enforcement": "A",
+        "external-state-automation": "C",
+        "authenticity-anti-evasion": "R"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+        "source_kind": "historical_use_case_mapping",
+        "canonicality": "provisional",
+        "recovery_confidence": "high"
+      }
+    },
+    {
+      "schema_version": "1.0.0",
+      "slug": "long-context-source-fidelity",
+      "display_name": "Long-Context Source Fidelity",
+      "version": "1.0.0",
+      "purpose": "Seed composition for long-context source fidelity workflows.",
+      "classifications": {
+        "working-memory-lock-in": "R",
+        "sequential-memory-state-engine": "R",
+        "stateblock": "R",
+        "stable-long-context": "R",
+        "zero-drift-zones": "R",
+        "drift-suppression": "R",
+        "image-text-fidelity-capture": "C",
+        "reflectos": "A",
+        "fail-closed-abstention": "R",
+        "truth-redundancy": "A",
+        "citation-fidelity": "C",
+        "state-snapshot": "A"
+      },
+      "provenance": {
+        "source_document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+        "source_kind": "historical_use_case_mapping",
+        "canonicality": "provisional",
+        "recovery_confidence": "high"
+      }
+    }
+  ]
+}

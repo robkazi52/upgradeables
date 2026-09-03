@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "foundation",
+  "display_name": "Foundation Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated foundation composition from recovered architecture.",
+  "components": [
+    "scoped-loader",
+    "stateblock",
+    "task-set-lock-in",
+    "working-memory-cues",
+    "grounding-no-invention",
+    "drift-suppression",
+    "placeholder-suppression",
+    "mode-lock-in"
+  ],
+  "load_order": [
+    "scoped-loader",
+    "stateblock",
+    "task-set-lock-in",
+    "working-memory-cues",
+    "grounding-no-invention",
+    "drift-suppression",
+    "placeholder-suppression",
+    "mode-lock-in"
+  ]
+}

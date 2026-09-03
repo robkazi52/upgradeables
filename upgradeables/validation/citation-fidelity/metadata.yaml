@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T3-13",
+  "slug": "citation-fidelity",
+  "display_name": "Citation Fidelity Gate",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T3"
+  ],
+  "functional_classes": [
+    "validation",
+    "truth-grounding"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "validator",
+    "deterministic-script"
+  ],
+  "purpose": "Verify that each citation exists and actually supports its attached claim without adjacent-source borrowing or meaning drift.",
+  "recommended_skill_types": [
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "output contains citations or source-attributed claims"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "grounding-no-invention",
+    "critical-atomic-verification"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "claim",
+    "citation",
+    "supporting source passage"
+  ],
+  "outputs": [
+    "pass",
+    "fail",
+    "repair-required",
+    "unverifiable"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [],
+    "keep_mandatory": [
+      "a citation must actually support its attached claim"
+    ]
+  },
+  "failure_boundary": [
+    "if support cannot be verified, do not certify the citation"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/validation/citation-fidelity/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T3-13",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "id": "T3-05",
+  "slug": "risk-tier-scaling",
+  "display_name": "Risk-Tier Scaling",
+  "version": "1.0.0",
+  "registry_generation": "consolidated-2026-09",
+  "historical_ids": [],
+  "historical_aliases": [],
+  "recovery_status": "exact_recovery",
+  "lifecycle_status": "stable",
+  "tiers": [
+    "T3"
+  ],
+  "functional_classes": [
+    "meta-control",
+    "validation"
+  ],
+  "activation_class": "U1-common-conditional",
+  "implementation_forms": [
+    "orchestrator",
+    "guard"
+  ],
+  "purpose": "Increase reasoning depth, verification, and veto strength as consequence, uncertainty, or irreversibility rises.",
+  "recommended_skill_types": [
+    "architecture-skill-building",
+    "general-agent-workflow",
+    "high-stakes-reasoning",
+    "multi-agent-orchestration",
+    "research",
+    "source-grounded-analysis"
+  ],
+  "usually_not_needed_for": [
+    "simple tasks where the trigger condition is absent"
+  ],
+  "triggers": [
+    "task risk varies or must be classified"
+  ],
+  "non_triggers": [
+    "the declared trigger is absent or the control would add no material value"
+  ],
+  "requires": [],
+  "recommended_with": [
+    "dynamic-depth-allocation",
+    "fail-closed-abstention"
+  ],
+  "counterbalances": [],
+  "potentially_redundant_with": [],
+  "conflicts": [],
+  "inputs": [
+    "locked task state",
+    "available component manifests and authority rules"
+  ],
+  "outputs": [
+    "bounded activation or routing plan",
+    "explicit component state and unresolved conflicts"
+  ],
+  "strong_model_scaling": {
+    "may_skip": [
+      "verbose intermediate scaffolding when the host model is reliable and the task is simple"
+    ],
+    "keep_mandatory": [
+      "truth, state, safety, and integrity invariants whenever the task still requires them"
+    ]
+  },
+  "failure_boundary": [
+    "do not activate unavailable components or silently resolve an authority conflict"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "package_path": "upgradeables/meta-control/risk-tier-scaling/UPGRADEABLE.md",
+  "provenance": {
+    "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+    "source_id": "T3-05",
+    "source_date": "2026-09-03",
+    "source_kind": "current_consolidated_catalog",
+    "canonicality": "canonical",
+    "recovery_confidence": "high",
+    "notes": ""
+  }
+}

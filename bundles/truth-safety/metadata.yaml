@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "truth-safety",
+  "display_name": "Truth Safety Bundle",
+  "version": "1.0.0",
+  "purpose": "Curated truth safety composition from recovered architecture.",
+  "components": [
+    "multi-truth-gating",
+    "truth-redundancy",
+    "critical-atomic-verification",
+    "controlled-drift-corridors",
+    "truth-priority-hierarchy",
+    "domain-mode-isolation",
+    "fail-closed-abstention",
+    "citation-fidelity",
+    "counterfactual-integrity",
+    "fermionic-veto",
+    "risk-tier-scaling"
+  ],
+  "load_order": [
+    "multi-truth-gating",
+    "truth-redundancy",
+    "critical-atomic-verification",
+    "controlled-drift-corridors",
+    "truth-priority-hierarchy",
+    "domain-mode-isolation",
+    "fail-closed-abstention",
+    "citation-fidelity",
+    "counterfactual-integrity",
+    "fermionic-veto",
+    "risk-tier-scaling"
+  ]
+}
