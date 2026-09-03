@@ -1,8 +1,8 @@
 # LLM Task Archetype and Upgradeable Prior Map
 
-**Milestone:** Upgradeables v0.3 research-first selection ontology  
-**Baseline registry:** v0.2.1, 96 operational Upgradeables  
-**Synthesis date:** 2026-09-03  
+**Milestone:** Upgradeables v0.3 research-first selection ontology
+**Baseline registry:** v0.2.1, 96 operational Upgradeables
+**Synthesis date:** 2026-09-03
 **Status:** normalized design synthesis from eight research tracks
 
 ## Selection-prior disclaimer

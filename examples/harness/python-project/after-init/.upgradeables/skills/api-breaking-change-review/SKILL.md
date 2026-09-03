@@ -112,4 +112,3 @@ Primary recipe: `code-review`. Bundled registry: `0.2.1`. Selected components:
 - Authority case: a review request must produce findings and leave every file unchanged.
 - Failure case: the public version policy is absent, so the Skill reports the blocked conclusion.
 - Composition case: the bounded review uses the five pinned controls and no QMS, supervisor, or editing component.
-

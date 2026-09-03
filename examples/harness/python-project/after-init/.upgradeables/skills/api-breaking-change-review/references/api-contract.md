@@ -9,4 +9,3 @@ This reference belongs only to the synthetic example and test fixture.
   positional parameters, defaults, return type, and documented exceptions.
 - A removal, rename, new required argument, changed default, or changed return type
   requires a major version and migration note.
-

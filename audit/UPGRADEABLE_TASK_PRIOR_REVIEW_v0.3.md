@@ -3,8 +3,8 @@
 > Generated from the reviewed shards under `tools/selection_priors/`.
 > These are candidate-selection priors, not activation claims or evidence of efficacy.
 
-Operational Upgradeables reviewed: **96/96**  
-Missing mappings: **0**  
+Operational Upgradeables reviewed: **96/96**
+Missing mappings: **0**
 Unreviewed: **0**
 
 | Upgradeable | Primary tasks | Primary failures | Complexity | Project priors |

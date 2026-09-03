@@ -288,4 +288,3 @@ The v0.3 resolver should:
 - U.S. Government Accountability Office, [Artificial Intelligence: An Accountability Framework for Federal Agencies and Other Entities (GAO-21-519SP)](https://www.gao.gov/products/gao-21-519sp).
 - OpenAI, [Model Spec — Express uncertainty](https://model-spec.openai.com/2025-02-12.html#express-uncertainty).
 - OpenAI, [A practical guide to building agents](https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/).
-

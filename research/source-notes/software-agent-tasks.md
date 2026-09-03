@@ -268,4 +268,3 @@ activation rules.
 - **[B8]** GitHub Docs, [About GitHub Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review), accessed 2026-09-03.
 - **[B9]** GitHub Docs, [Application card: GitHub Copilot Agents](https://docs.github.com/en/copilot/responsible-use/agents), accessed 2026-09-03.
 - **[B10]** GitHub Docs, [Risks and mitigations for GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/risks-and-mitigations), accessed 2026-09-03.
-

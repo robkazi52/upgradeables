@@ -1,8 +1,8 @@
 # Selection Ontology Review v0.3
 
-**Review type:** independent research-gate audit  
-**Handoff:** `UPGRADEABLES_V0.3_PROJECT_HARNESS_HANDOFF_v1.1_RESEARCH_FIRST.md`  
-**Review date:** 2026-09-03  
+**Review type:** independent research-gate audit
+**Handoff:** `UPGRADEABLES_V0.3_PROJECT_HARNESS_HANDOFF_v1.1_RESEARCH_FIRST.md`
+**Review date:** 2026-09-03
 **Baseline:** registry v0.2.1 with 96 operational Upgradeables
 
 ## Scope and method

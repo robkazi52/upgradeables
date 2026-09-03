@@ -241,4 +241,3 @@ Default ceiling recommendations:
 - **[A4]** Liu et al., [AgentBench: Evaluating LLMs as Agents](https://arxiv.org/abs/2308.03688), ICLR 2024; arXiv revision 2025.
 - **[A5]** Anthropic, [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system), 2025.
 - **[A6]** Anthropic, [Trustworthy agents in practice](https://www.anthropic.com/research/trustworthy-agents), accessed 2026-09-03.
-

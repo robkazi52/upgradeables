@@ -1,7 +1,7 @@
 # Long-Context and Stateful Work
 
-**Research track:** D — Long-context / corpus / stateful project work  
-**Access date:** 2026-09-03  
+**Research track:** D — Long-context / corpus / stateful project work
+**Access date:** 2026-09-03
 **Status:** source notes for ontology synthesis; not an empirical claim that any Upgradeable improves task performance
 
 ## Scope and evidence boundary

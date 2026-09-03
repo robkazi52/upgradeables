@@ -1,7 +1,7 @@
 # Research and Knowledge Tasks
 
-**Research track:** C — Research / knowledge / source-grounded work  
-**Access date:** 2026-09-03  
+**Research track:** C — Research / knowledge / source-grounded work
+**Access date:** 2026-09-03
 **Status:** source notes for ontology synthesis; not an empirical claim that any Upgradeable improves task performance
 
 ## Scope and evidence boundary
