@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/HARNESS_LOCK_SCHEMA.json",
+  "title": "Upgradeables Harness Lock",
+  "type": "object",
+  "required": ["schema_version", "harness_version", "registry_version", "registry_source", "components", "skills"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "harness_version": {"const": "0.3.0"},
+    "registry_version": {"const": "0.2.1"},
+    "registry_source": {
+      "type": "object",
+      "required": ["type", "commit", "tag", "snapshot_hash"],
+      "properties": {
+        "type": {"const": "bundled"},
+        "commit": {"type": "string"},
+        "tag": {"type": ["string", "null"]},
+        "snapshot_hash": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {"type": "string"},
+          {"type": "object", "required": ["version"], "properties": {"version": {"type": "string"}}, "additionalProperties": false}
+        ]
+      }
+    },
+    "skills": {"type": "object"}
+  },
+  "additionalProperties": false
+}

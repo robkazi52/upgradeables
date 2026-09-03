@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/SKILL_SUGGESTION_SCHEMA.json",
+  "title": "Upgradeables Skill Suggestion Result",
+  "type": "object",
+  "required": [
+    "schema_version", "status", "method", "project_root",
+    "recorded_event_count", "threshold", "suggestions", "writes_performed"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "status": {"enum": ["candidate", "not-enough-history", "existing-skill", "needs-user-definition"]},
+    "method": {"const": "workflow repetition analysis"},
+    "project_root": {"type": "string"},
+    "recorded_event_count": {"type": "integer", "minimum": 0},
+    "threshold": {"type": "integer", "minimum": 2},
+    "suggestions": {"type": "array", "items": {"type": "object"}},
+    "writes_performed": {"const": false}
+  },
+  "additionalProperties": false
+}

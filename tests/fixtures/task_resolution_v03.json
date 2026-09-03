@@ -1,0 +1,92 @@
+[
+  {
+    "task": "review this pull request for bugs and regressions",
+    "archetype": "evaluation-audit",
+    "recipe": "code-review",
+    "required": ["task-set-lock-in", "scoped-loader", "grounding-no-invention"]
+  },
+  {
+    "task": "fix this one failing test without refactoring unrelated code",
+    "archetype": "software-engineering",
+    "recipe": "coding-debugging"
+  },
+  {
+    "task": "design an architecture refactor",
+    "archetype": "planning-design",
+    "recipe": "architecture-skill-building"
+  },
+  {
+    "task": "write documentation for this API",
+    "archetype": "content-authoring",
+    "recipe": "authoring"
+  },
+  {
+    "task": "research five sources and cite them",
+    "archetype": "research-grounding",
+    "recipe": "research-skill"
+  },
+  {
+    "task": "analyze a long PDF corpus",
+    "archetype": "content-understanding",
+    "recipe": "long-context-corpus",
+    "minimum_floor": "L2"
+  },
+  {
+    "task": "brainstorm distinct product ideas",
+    "archetype": "creative-exploration",
+    "recipe": "creative-ideation"
+  },
+  {
+    "task": "review medical evidence",
+    "archetype": "evaluation-audit",
+    "recipe": "medical-evidence"
+  },
+  {
+    "task": "research legal sources",
+    "archetype": "research-grounding",
+    "recipe": "legal-evidence"
+  },
+  {
+    "task": "analyze this CSV dataset",
+    "archetype": "quantitative-analysis",
+    "recipe": "source-grounded-analysis"
+  },
+  {
+    "task": "build a reusable skill",
+    "archetype": "skill-agent-creation",
+    "recipe": "architecture-skill-building"
+  },
+  {
+    "task": "rename this heading from Foo to Bar",
+    "archetype": "content-transformation",
+    "recipe": null,
+    "maximum_ceiling": "L1"
+  },
+  {
+    "task": "review this patch, do not modify files",
+    "archetype": "evaluation-audit",
+    "recipe": "code-review",
+    "review_only": true,
+    "maximum_ceiling": "L2"
+  },
+  {
+    "task": "rewrite this table while preserving all numbers",
+    "archetype": "content-transformation",
+    "recipe": "authoring"
+  },
+  {
+    "task": "solve this grid puzzle",
+    "archetype": "constraint-reasoning",
+    "recipe": "perception-reasoning"
+  },
+  {
+    "task": "help with this",
+    "archetype": null,
+    "recipe": null
+  },
+  {
+    "task": "say hello",
+    "archetype": null,
+    "recipe": null
+  }
+]

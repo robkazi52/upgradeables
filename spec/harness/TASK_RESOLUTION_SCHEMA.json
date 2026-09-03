@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/TASK_RESOLUTION_SCHEMA.json",
+  "title": "Upgradeables deterministic task resolution",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_version",
+    "selection_only",
+    "query",
+    "normalized_task",
+    "task",
+    "environment",
+    "failure_modes",
+    "complexity",
+    "matched_prior_rules",
+    "hard_restrictions",
+    "required_checks",
+    "best_recipe",
+    "candidates",
+    "required_by_recipe",
+    "trigger_likely",
+    "conditional",
+    "optional",
+    "excluded",
+    "needs_agent_evaluation",
+    "activation_note"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_version": {"type": "string"},
+    "selection_only": {"const": true},
+    "query": {"type": "string", "minLength": 1},
+    "normalized_task": {"type": "string", "minLength": 1},
+    "project": {"type": ["object", "null"]},
+    "task": {
+      "type": "object",
+      "required": ["resolution", "archetype", "subtype", "execution_form"],
+      "properties": {
+        "resolution": {"enum": ["matched", "ambiguous", "no-match"]},
+        "archetype": {"type": ["string", "null"]},
+        "subtype": {"type": ["string", "null"]},
+        "execution_form": {"type": "string"}
+      }
+    },
+    "environment": {"type": "object"},
+    "failure_modes": {"type": "array"},
+    "complexity": {
+      "type": "object",
+      "required": ["floor", "ceiling", "reasons"],
+      "properties": {
+        "floor": {"enum": ["L0", "L1", "L2", "L3", "L4", "L5"]},
+        "ceiling": {"enum": ["L0", "L1", "L2", "L3", "L4", "L5"]},
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "matched_prior_rules": {"type": "array"},
+    "hard_restrictions": {"type": "array", "items": {"type": "string"}},
+    "required_checks": {"type": "array", "items": {"type": "string"}},
+    "best_recipe": {"type": ["object", "null"]},
+    "candidates": {"type": "array"},
+    "required_by_recipe": {"$ref": "#/$defs/components"},
+    "trigger_likely": {"$ref": "#/$defs/components"},
+    "conditional": {"$ref": "#/$defs/components"},
+    "optional": {"$ref": "#/$defs/components"},
+    "excluded": {"$ref": "#/$defs/components"},
+    "needs_agent_evaluation": {"$ref": "#/$defs/components"},
+    "activation_note": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slug", "version", "plain_display_name", "recipe_role", "status", "reasons"]
+      }
+    }
+  }
+}

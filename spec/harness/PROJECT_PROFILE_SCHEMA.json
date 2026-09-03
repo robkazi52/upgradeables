@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/PROJECT_PROFILE_SCHEMA.json",
+  "title": "Upgradeables Project Profile",
+  "type": "object",
+  "required": ["schema_version", "registry_version", "project_root", "languages", "frameworks", "project_types", "selected_profiles", "features", "signals", "likely_task_families", "host_capabilities"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_version": {"const": "0.2.1"},
+    "project_root": {"const": "."},
+    "languages": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "frameworks": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "project_types": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "selected_profiles": {"type": "array", "items": {"enum": ["general", "software-development", "research", "long-context", "authoring", "data-analysis", "medical-evidence", "legal-evidence", "agent-development", "documentation"]}, "minItems": 1, "uniqueItems": true},
+    "features": {
+      "type": "object",
+      "required": ["git", "tests", "documentation", "ci", "pull_requests", "long_context"],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "value", "reason"],
+        "properties": {"type": {"type": "string"}, "value": {"type": "string"}, "reason": {"type": "string"}},
+        "additionalProperties": false
+      }
+    },
+    "likely_task_families": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "host_capabilities": {
+      "type": "object",
+      "required": ["shell", "web", "durable_state", "parallel_agents"],
+      "properties": {
+        "shell": {"enum": ["unknown", "available", "unavailable"]},
+        "web": {"enum": ["unknown", "available", "unavailable"]},
+        "durable_state": {"enum": ["unknown", "project-files", "unavailable"]},
+        "parallel_agents": {"enum": ["unknown", "available", "unavailable"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

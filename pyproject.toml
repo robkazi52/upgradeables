@@ -1,10 +1,26 @@
 [project]
 name = "upgradeables-registry"
-version = "0.2.1"
-description = "Validation and build tooling for the Upgradeables registry"
+version = "0.3.0"
+description = "Local-first project harness and deterministic resolver for Upgradeables"
 requires-python = ">=3.11"
 license = "Apache-2.0"
 dependencies = []
+
+[project.scripts]
+upgradeables = "upgradeables_harness.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+upgradeables_harness = ["data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

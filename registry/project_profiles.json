@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "0.2.1",
+  "kind": "project-profile-priors",
+  "selection_prior_disclaimer": "Project profiles provide weak discovery priors. They never activate a recipe or component and never override explicit task wording, permissions, triggers, non-triggers, or complexity limits.",
+  "profiles": [
+    {
+      "slug": "general",
+      "version": "1.0.0",
+      "display_name": "General Project",
+      "project_types": ["general"],
+      "signals": [],
+      "likely_recipes": ["education-explanation", "source-grounded-analysis", "decision-support"],
+      "candidate_cross_cutting": ["task-set-lock-in", "grounding-no-invention", "bounded-exit"],
+      "likely_exclusions": ["multi-agent-orchestration"]
+    },
+    {
+      "slug": "software-development",
+      "version": "1.0.0",
+      "display_name": "Software Development",
+      "project_types": ["software-development"],
+      "signals": ["pyproject.toml", "package.json", "Cargo.toml", "go.mod", "pom.xml", "build.gradle"],
+      "likely_recipes": ["coding-debugging", "code-review", "architecture-skill-building"],
+      "candidate_cross_cutting": ["task-set-lock-in", "micro-repair", "invariance-stress-scaffold", "anti-tunnel-vision", "bidirectional-consistency"],
+      "likely_exclusions": ["medical-evidence", "legal-evidence"]
+    },
+    {
+      "slug": "research",
+      "version": "1.0.0",
+      "display_name": "Research",
+      "project_types": ["research-and-knowledge"],
+      "signals": ["papers", "sources", "references", ".bib", "notebooks"],
+      "likely_recipes": ["research-skill", "source-grounded-analysis", "long-context-corpus"],
+      "candidate_cross_cutting": ["grounding-no-invention", "citation-fidelity", "anti-tunnel-vision", "multi-truth-gating"],
+      "likely_exclusions": ["coding-debugging"]
+    },
+    {
+      "slug": "long-context",
+      "version": "1.0.0",
+      "display_name": "Long-Context Work",
+      "project_types": ["general"],
+      "signals": ["large-corpus", "many-documents", "persistent-work"],
+      "likely_recipes": ["long-context-corpus", "long-context-source-fidelity", "source-grounded-analysis"],
+      "candidate_cross_cutting": ["activation-budget-funnel", "scoped-loader", "stable-long-context", "state-snapshot"],
+      "likely_exclusions": ["creative-ideation"]
+    },
+    {
+      "slug": "authoring",
+      "version": "1.0.0",
+      "display_name": "Authoring",
+      "project_types": ["documentation"],
+      "signals": ["manuscript", "book", "articles", "content"],
+      "likely_recipes": ["authoring", "source-grounded-analysis", "creative-ideation"],
+      "candidate_cross_cutting": ["style-alignment", "placeholder-suppression", "controlled-drift-corridors"],
+      "likely_exclusions": ["coding-debugging"]
+    },
+    {
+      "slug": "data-analysis",
+      "version": "1.0.0",
+      "display_name": "Data Analysis",
+      "project_types": ["data-analysis"],
+      "signals": ["notebooks", "data", "datasets", ".csv", ".parquet"],
+      "likely_recipes": ["source-grounded-analysis", "research-skill", "high-stakes-reasoning"],
+      "candidate_cross_cutting": ["critical-atomic-verification", "grounding-no-invention", "bidirectional-consistency"],
+      "likely_exclusions": ["creative-ideation"]
+    },
+    {
+      "slug": "medical-evidence",
+      "version": "1.0.0",
+      "display_name": "Medical Evidence",
+      "project_types": ["medical-evidence"],
+      "signals": ["clinical", "medical", "protocol", "trials"],
+      "likely_recipes": ["medical-evidence", "research-skill", "high-stakes-reasoning"],
+      "candidate_cross_cutting": ["citation-fidelity", "critical-atomic-verification", "fail-closed-abstention", "epistemic-status-gating"],
+      "likely_exclusions": ["creative-ideation"]
+    },
+    {
+      "slug": "legal-evidence",
+      "version": "1.0.0",
+      "display_name": "Legal Evidence",
+      "project_types": ["legal-evidence"],
+      "signals": ["legal", "cases", "statutes", "citations"],
+      "likely_recipes": ["legal-evidence", "research-skill", "high-stakes-reasoning"],
+      "candidate_cross_cutting": ["citation-fidelity", "critical-atomic-verification", "fail-closed-abstention", "truth-priority-hierarchy"],
+      "likely_exclusions": ["creative-ideation"]
+    },
+    {
+      "slug": "agent-development",
+      "version": "1.0.0",
+      "display_name": "Agent Development",
+      "project_types": ["agent-development"],
+      "signals": ["AGENTS.md", "CLAUDE.md", ".github/copilot-instructions.md", "skills"],
+      "likely_recipes": ["architecture-skill-building", "deterministic-intake-routing", "multi-agent-orchestration"],
+      "candidate_cross_cutting": ["authenticity-anti-evasion", "authority-anchor-enforcement", "bounded-exit", "state-routing-bus"],
+      "likely_exclusions": ["multi-agent-orchestration"],
+      "notes": "The orchestration recipe remains excluded unless the current task has genuinely separable workstreams and an explicit synthesis contract."
+    },
+    {
+      "slug": "documentation",
+      "version": "1.0.0",
+      "display_name": "Documentation",
+      "project_types": ["documentation"],
+      "signals": ["docs", "mkdocs.yml", "sphinx", "README.md"],
+      "likely_recipes": ["authoring", "source-grounded-analysis", "long-context-source-fidelity"],
+      "candidate_cross_cutting": ["style-alignment", "citation-fidelity", "controlled-drift-corridors", "bidirectional-consistency"],
+      "likely_exclusions": ["multi-agent-orchestration"]
+    }
+  ]
+}

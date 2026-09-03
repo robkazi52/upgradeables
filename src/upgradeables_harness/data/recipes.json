@@ -1,0 +1,2092 @@
+{
+  "recipes": [
+    {
+      "activation_boundary": "Use when a deliverable must synthesize multiple accessible sources and corpus size or ambiguity makes scoped loading, shared state, and claim-level grounding necessary.",
+      "classifications": {
+        "activation-budget-funnel": "A",
+        "anti-tunnel-vision": "O",
+        "citation-fidelity": "A",
+        "critical-atomic-verification": "C",
+        "grounding-no-invention": "R",
+        "multi-truth-gating": "A",
+        "neuro-focus": "A",
+        "parallel-qms": "A",
+        "scoped-loader": "R",
+        "sequential-memory-state-engine": "A",
+        "stable-long-context": "A",
+        "state-snapshot": "C",
+        "stateblock": "R",
+        "task-set-lock-in": "R",
+        "truth-priority-hierarchy": "A"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
+          "role": "R",
+          "slug": "scoped-loader",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "R",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Progressive Context Intake",
+          "role": "A",
+          "slug": "activation-budget-funnel",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Attention Focus",
+          "role": "A",
+          "slug": "neuro-focus",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Stable Long-Context",
+          "role": "A",
+          "slug": "stable-long-context",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Ordered Memory-State Update Engine",
+          "role": "A",
+          "slug": "sequential-memory-state-engine",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Independent Evidence Gate",
+          "role": "A",
+          "slug": "multi-truth-gating",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "A",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Truth Priority Hierarchy",
+          "role": "A",
+          "slug": "truth-priority-hierarchy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Critical Fact Verification",
+          "role": "C",
+          "slug": "critical-atomic-verification",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "O",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "State Snapshot",
+          "role": "C",
+          "slug": "state-snapshot",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Research Skill",
+      "high_cost_components": [
+        "multi-truth-gating",
+        "critical-atomic-verification"
+      ],
+      "important_exclusions": [
+        "Omit durable or parallel machinery unless corpus size or real host execution triggers it."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Research a question across multiple sources and produce a bounded, cited synthesis.",
+      "required_rationales": {
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the research result needs stable scope, bounded retrieval, shared evidence state, and no invented gap-filling."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "research-skill",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/research-skill.md",
+      "task_family": "multi-source research and evidence synthesis",
+      "task_phrases": [
+        "research several sources",
+        "compare sources",
+        "write a cited research synthesis"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when an analysis or rewrite must remain traceable to identified sources, preserve locked source meaning, and attach citations at claim level.",
+      "classifications": {
+        "citation-fidelity": "R",
+        "controlled-drift-corridors": "A",
+        "counterfactual-integrity": "A",
+        "grounding-no-invention": "R",
+        "micro-repair": "A",
+        "mode-lock-in": "R",
+        "parallel-qms": "A",
+        "placeholder-suppression": "A",
+        "safe-rewrite": "A",
+        "task-set-lock-in": "R",
+        "zero-drift-zones": "A"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Mode Lock-In",
+          "role": "R",
+          "slug": "mode-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Safe Rewrite Logic",
+          "role": "A",
+          "slug": "safe-rewrite",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "R",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Immutable Content Zones",
+          "role": "A",
+          "slug": "zero-drift-zones",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Change Rules",
+          "role": "A",
+          "slug": "controlled-drift-corridors",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Counterfactual Integrity Gate",
+          "role": "A",
+          "slug": "counterfactual-integrity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Minimal Local Correction",
+          "role": "A",
+          "slug": "micro-repair",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Placeholder Suppression",
+          "role": "A",
+          "slug": "placeholder-suppression",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Source-Grounded Analysis",
+      "high_cost_components": [],
+      "important_exclusions": [
+        "Omit branching and creative expansion unless competing interpretations are an explicit deliverable."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Analyze or transform supplied sources without inventing unsupported claims or losing attribution.",
+      "required_rationales": {
+        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "mode-lock-in": "Keep behavior stable across long sessions, tool calls, and distracting inputs. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the output contract requires stable mode, source-only claims, and claim-level citation support."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "source-grounded-analysis",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/source-grounded-analysis.md",
+      "task_family": "source-bounded analysis, comparison, extraction, and rewriting",
+      "task_phrases": [
+        "analyze these sources",
+        "compare supplied documents",
+        "rewrite using only provided evidence"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when an error could materially affect safety, health, rights, finances, or an irreversible action and the necessary evidence can be inspected.",
+      "classifications": {
+        "citation-fidelity": "C",
+        "critical-atomic-verification": "R",
+        "domain-mode-isolation": "R",
+        "dynamic-depth-allocation": "A",
+        "epistemic-status-gating": "R",
+        "fail-closed-abstention": "R",
+        "fermionic-veto": "A",
+        "grounding-no-invention": "R",
+        "multi-truth-gating": "R",
+        "parallel-qms": "R",
+        "risk-tier-scaling": "R",
+        "truth-priority-hierarchy": "R",
+        "truth-redundancy": "A"
+      },
+      "components": [
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Evidence-Confidence Gate",
+          "role": "R",
+          "slug": "epistemic-status-gating",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Risk-Tier Scaling",
+          "role": "R",
+          "slug": "risk-tier-scaling",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Critical Fact Verification",
+          "role": "R",
+          "slug": "critical-atomic-verification",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Independent Evidence Gate",
+          "role": "R",
+          "slug": "multi-truth-gating",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Independent Evidence Redundancy",
+          "role": "A",
+          "slug": "truth-redundancy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Truth Priority Hierarchy",
+          "role": "R",
+          "slug": "truth-priority-hierarchy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Domain / Mode Isolation",
+          "role": "R",
+          "slug": "domain-mode-isolation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Fail-Closed Abstention",
+          "role": "R",
+          "slug": "fail-closed-abstention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Non-Compensable Constraint Veto",
+          "role": "A",
+          "slug": "fermionic-veto",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "R",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Per-Region Reasoning Depth",
+          "role": "A",
+          "slug": "dynamic-depth-allocation",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "High-Stakes Reasoning",
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "multi-truth-gating",
+        "truth-redundancy",
+        "fail-closed-abstention",
+        "fermionic-veto"
+      ],
+      "important_exclusions": [
+        "Omit style and ideation modules; do not add simulated distributed evaluators."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Evaluate consequential claims with proportionate evidence, uncertainty, verification, and abstention controls.",
+      "required_rationales": {
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "epistemic-status-gating": "Keep mixed-certainty reasoning auditable and stop conclusions from laundering inference or hypothesis into fact. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "multi-truth-gating": "Reduce dependence on one fragile source, inference chain, or evaluator before a consequential conclusion is committed. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because every required control protects a non-compensable evidence, domain, risk, or abstention boundary."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "high-stakes-reasoning",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/high-stakes-reasoning.md",
+      "task_family": "consequential evidence evaluation and decision support",
+      "task_phrases": [
+        "verify a consequential claim",
+        "high stakes analysis",
+        "evidence sensitive decision"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use for source-backed medical evidence synthesis where claim scope, uncertainty, and abstention matter; it does not replace clinical diagnosis or treatment.",
+      "classifications": {
+        "citation-fidelity": "C",
+        "critical-atomic-verification": "R",
+        "domain-mode-isolation": "R",
+        "fail-closed-abstention": "R",
+        "grounding-no-invention": "R",
+        "parallel-qms": "R",
+        "risk-tier-scaling": "R",
+        "task-set-lock-in": "R",
+        "truth-priority-hierarchy": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Risk-Tier Scaling",
+          "role": "R",
+          "slug": "risk-tier-scaling",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Critical Fact Verification",
+          "role": "R",
+          "slug": "critical-atomic-verification",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Truth Priority Hierarchy",
+          "role": "R",
+          "slug": "truth-priority-hierarchy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Fail-Closed Abstention",
+          "role": "R",
+          "slug": "fail-closed-abstention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Domain / Mode Isolation",
+          "role": "R",
+          "slug": "domain-mode-isolation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "R",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Medical Evidence",
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
+      "important_exclusions": [
+        "Omit unconstrained generation and any validator whose evidence boundary cannot be supplied."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Synthesize medical evidence with applicability, uncertainty, and professional-review boundaries.",
+      "required_rationales": {
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because medical uncertainty and consequence require source grounding, authority ranking, domain separation, and fail-closed handling."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "medical-evidence",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/medical-evidence.md",
+      "task_family": "medical literature and clinical-evidence synthesis",
+      "task_phrases": [
+        "review medical evidence",
+        "compare clinical studies",
+        "medical literature synthesis"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use for source-backed legal analysis tied to a declared jurisdiction and date where authority, quotation, and uncertainty must remain auditable; it is not legal advice.",
+      "classifications": {
+        "citation-fidelity": "R",
+        "critical-atomic-verification": "R",
+        "fail-closed-abstention": "R",
+        "grounding-no-invention": "R",
+        "parallel-qms": "R",
+        "risk-tier-scaling": "R",
+        "task-set-lock-in": "R",
+        "truth-priority-hierarchy": "R",
+        "zero-drift-zones": "A"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Risk-Tier Scaling",
+          "role": "R",
+          "slug": "risk-tier-scaling",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Critical Fact Verification",
+          "role": "R",
+          "slug": "critical-atomic-verification",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Truth Priority Hierarchy",
+          "role": "R",
+          "slug": "truth-priority-hierarchy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "R",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Immutable Content Zones",
+          "role": "A",
+          "slug": "zero-drift-zones",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Fail-Closed Abstention",
+          "role": "R",
+          "slug": "fail-closed-abstention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "R",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Legal Evidence",
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
+      "important_exclusions": [
+        "Omit creative rewriting and preserve jurisdiction, date, authority, and quotation boundaries."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Analyze jurisdiction- and date-sensitive legal sources while preserving authority and citation fidelity.",
+      "required_rationales": {
+        "citation-fidelity": "Ensure citations prove the precise nearby claim instead of functioning as decorative evidence. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "critical-atomic-verification": "Concentrate verification on the smallest facts whose failure would invalidate the output. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "risk-tier-scaling": "Apply proportionate rigor so low-risk tasks remain efficient and high-risk claims or actions receive stronger evidence and fail-closed handling. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention.",
+        "truth-priority-hierarchy": "Resolve conflicting signals without letting fluency, optimization, or an undifferentiated vote override stronger evidence or safety authority. It is required here because jurisdiction-sensitive claims require source grounding, authority ranking, exact citation behavior, and bounded abstention."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "legal-evidence",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/legal-evidence.md",
+      "task_family": "legal research and jurisdiction-sensitive source analysis",
+      "task_phrases": [
+        "research legal sources",
+        "analyze a law or regulation",
+        "jurisdiction specific legal analysis"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use after a software defect is reproducible or tightly localized and the task requests a verified repair, not a review-only finding.",
+      "classifications": {
+        "anti-tunnel-vision": "A",
+        "bidirectional-consistency": "A",
+        "bounded-exit": "A",
+        "crispr-edit": "A",
+        "dominant-driver-isolation-scaffold": "A",
+        "drift-suppression": "A",
+        "forethought-checkpoints": "A",
+        "invariance-stress-scaffold": "R",
+        "micro-repair": "R",
+        "parallel-qms": "A",
+        "stateblock": "A",
+        "structured-refinement": "A",
+        "surgery-edit": "C",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "A",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Forethought / Checkpoints",
+          "role": "A",
+          "slug": "forethought-checkpoints",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Dominant-Driver Isolation Scaffold",
+          "role": "A",
+          "slug": "dominant-driver-isolation-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "A",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bidirectional Consistency",
+          "role": "A",
+          "slug": "bidirectional-consistency",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Protected-Constraint Robustness Test",
+          "role": "R",
+          "slug": "invariance-stress-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Minimal Local Correction",
+          "role": "R",
+          "slug": "micro-repair",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Precision Local System Edit",
+          "role": "A",
+          "slug": "crispr-edit",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Structural System Edit",
+          "role": "C",
+          "slug": "surgery-edit",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Structured Refinement Cycles",
+          "role": "A",
+          "slug": "structured-refinement",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Iteration Stop Rule",
+          "role": "A",
+          "slug": "bounded-exit",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Drift Suppression",
+          "role": "A",
+          "slug": "drift-suppression",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Coding / Debugging",
+      "high_cost_components": [
+        "surgery-edit"
+      ],
+      "important_exclusions": [
+        "Omit Surgery Edit while the defect remains local; omit citation controls without external sources."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Reproduce, diagnose, and repair a software defect with the smallest verified change.",
+      "required_rationales": {
+        "invariance-stress-scaffold": "Operationalize the recovered name without pretending the original January 2026 mechanics were recovered. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit.",
+        "micro-repair": "Restore local correctness or completeness with the minimum semantic blast radius. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the repair must preserve task scope and invariants while starting at the smallest viable edit."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "coding-debugging",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/coding-debugging.md",
+      "task_family": "software debugging, reproduction, diagnosis, and verified repair",
+      "task_phrases": [
+        "debug this code",
+        "reproduce this bug",
+        "fix a failing test",
+        "diagnose a software issue"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when the requested deliverable is review-only analysis of a concrete diff or pull request for correctness, regressions, and unsupported assumptions.",
+      "classifications": {
+        "anti-tunnel-vision": "A",
+        "bidirectional-consistency": "A",
+        "citation-fidelity": "C",
+        "critical-atomic-verification": "C",
+        "dominant-driver-isolation-scaffold": "A",
+        "drift-suppression": "A",
+        "epistemic-status-gating": "A",
+        "fail-closed-abstention": "C",
+        "forethought-checkpoints": "A",
+        "grounding-no-invention": "R",
+        "invariance-stress-scaffold": "C",
+        "parallel-qms": "A",
+        "scoped-loader": "R",
+        "stateblock": "C",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
+          "role": "R",
+          "slug": "scoped-loader",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "C",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Forethought / Checkpoints",
+          "role": "A",
+          "slug": "forethought-checkpoints",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Dominant-Driver Isolation Scaffold",
+          "role": "A",
+          "slug": "dominant-driver-isolation-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "A",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bidirectional Consistency",
+          "role": "A",
+          "slug": "bidirectional-consistency",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Protected-Constraint Robustness Test",
+          "role": "C",
+          "slug": "invariance-stress-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Evidence-Confidence Gate",
+          "role": "A",
+          "slug": "epistemic-status-gating",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Critical Fact Verification",
+          "role": "C",
+          "slug": "critical-atomic-verification",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Drift Suppression",
+          "role": "A",
+          "slug": "drift-suppression",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Fail-Closed Abstention",
+          "role": "C",
+          "slug": "fail-closed-abstention",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Code / Pull Request Review",
+      "high_cost_components": [
+        "critical-atomic-verification",
+        "fail-closed-abstention"
+      ],
+      "important_exclusions": [
+        "Omit rewrite modules unless remediation is requested; review evidence must precede edits."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "MODEL_CONSUMPTION_GUIDE.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Review a concrete diff or pull request for bugs, regressions, unsafe assumptions, and missing tests without editing it.",
+      "required_rationales": {
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because a review must stay within the supplied diff and repository evidence and must not silently become remediation."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "code-review",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/code-review.md",
+      "task_family": "pull-request, diff, commit, and regression review",
+      "task_phrases": [
+        "review this pull request",
+        "review this diff",
+        "find bugs and regressions",
+        "review code without editing"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when the authorized corpus cannot be handled safely as one undifferentiated context and indexed state must preserve sequence and provenance.",
+      "classifications": {
+        "activation-budget-funnel": "R",
+        "attention-compression-scaffold": "A",
+        "citation-fidelity": "C",
+        "coherence-heartbeat": "A",
+        "cross-context-resonance-lock": "C",
+        "drift-suppression": "R",
+        "neuro-focus": "A",
+        "sequential-memory-state-engine": "R",
+        "stable-long-context": "R",
+        "state-snapshot": "A",
+        "stateblock": "R",
+        "working-memory-lock-in": "A"
+      },
+      "components": [
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "R",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Ordered Memory-State Update Engine",
+          "role": "R",
+          "slug": "sequential-memory-state-engine",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Working-Memory Lock-In",
+          "role": "A",
+          "slug": "working-memory-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Stable Long-Context",
+          "role": "R",
+          "slug": "stable-long-context",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Progressive Context Intake",
+          "role": "R",
+          "slug": "activation-budget-funnel",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Temporary Focused-Context View",
+          "role": "A",
+          "slug": "attention-compression-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Attention Focus",
+          "role": "A",
+          "slug": "neuro-focus",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Drift Suppression",
+          "role": "R",
+          "slug": "drift-suppression",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Periodic Whole-Task Consistency Check",
+          "role": "A",
+          "slug": "coherence-heartbeat",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Cross-Context Relationship Guard",
+          "role": "C",
+          "slug": "cross-context-resonance-lock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "State Snapshot",
+          "role": "A",
+          "slug": "state-snapshot",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Long-Context / Corpus",
+      "high_cost_components": [],
+      "important_exclusions": [
+        "Omit full-corpus reloads and alternative-branch generation unless explicitly triggered."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Analyze a corpus too large for one context while preserving sequence, provenance, and resumable state.",
+      "required_rationales": {
+        "activation-budget-funnel": "Protect limited active context by progressively disclosing sources and transferring verified evidence into compact indexed state before higher-level decisions. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because segmented corpus work needs durable provenance, bounded active context, and drift-resistant state."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "long-context-corpus",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/long-context-corpus.md",
+      "task_family": "large-corpus analysis and resumable document workflows",
+      "task_phrases": [
+        "analyze a large corpus",
+        "work across many documents",
+        "resume a long document analysis"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when drafting or rewriting a controlled deliverable with an explicit message, audience, style, source, or placeholder contract.",
+      "classifications": {
+        "citation-fidelity": "C",
+        "grounding-no-invention": "C",
+        "micro-repair": "A",
+        "parallel-qms": "A",
+        "pedagogical-alignment": "C",
+        "placeholder-suppression": "R",
+        "safe-rewrite": "R",
+        "style-alignment": "A",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "C",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Style-Alignment Module",
+          "role": "A",
+          "slug": "style-alignment",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Pedagogical Alignment Constraint",
+          "role": "C",
+          "slug": "pedagogical-alignment",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Safe Rewrite Logic",
+          "role": "R",
+          "slug": "safe-rewrite",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Placeholder Suppression",
+          "role": "R",
+          "slug": "placeholder-suppression",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Minimal Local Correction",
+          "role": "A",
+          "slug": "micro-repair",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Authoring",
+      "high_cost_components": [],
+      "important_exclusions": [
+        "Omit citation fidelity for source-free drafting and omit structural surgery for tonal edits."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Draft or rewrite a controlled deliverable for a defined message, audience, style, and source boundary.",
+      "required_rationales": {
+        "placeholder-suppression": "Prevent scaffolding artifacts from escaping as if they were complete content. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue.",
+        "safe-rewrite": "Make paraphrase, polish, tone, or formatting safe by treating content atoms as invariants rather than suggestions. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the controlled deliverable must retain its locked message and cannot ship unresolved template residue."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "authoring",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/authoring.md",
+      "task_family": "controlled drafting, rewriting, and publication preparation",
+      "task_phrases": [
+        "write a controlled draft",
+        "rewrite this document",
+        "prepare a publication draft"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when the user needs multiple materially distinct concepts followed by bounded convergence, while factual claims remain outside the creative corridor.",
+      "classifications": {
+        "anti-tunnel-vision": "A",
+        "controlled-drift-corridors": "R",
+        "counterfactual-integrity": "A",
+        "domain-mode-isolation": "A",
+        "grounding-no-invention": "C",
+        "multiverse-reasoning": "A",
+        "parallel-qms": "C",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Change Rules",
+          "role": "R",
+          "slug": "controlled-drift-corridors",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Counterfactual Integrity Gate",
+          "role": "A",
+          "slug": "counterfactual-integrity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Domain / Mode Isolation",
+          "role": "A",
+          "slug": "domain-mode-isolation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Alternative Search",
+          "role": "A",
+          "slug": "multiverse-reasoning",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "A",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "C",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "C",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Creative Ideation",
+      "high_cost_components": [
+        "multiverse-reasoning"
+      ],
+      "important_exclusions": [
+        "Omit high-stakes evidence gates unless factual claims enter the deliverable."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Generate materially distinct ideas and converge on a bounded selection using explicit criteria.",
+      "required_rationales": {
+        "controlled-drift-corridors": "Enable adaptation, compression, or creativity without surrendering semantic control. It is required here because creative search still needs a locked brief and an explicit boundary separating invention from factual assertion.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because creative search still needs a locked brief and an explicit boundary separating invention from factual assertion."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "creative-ideation",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/creative-ideation.md",
+      "task_family": "bounded brainstorming, concept generation, and selection",
+      "task_phrases": [
+        "brainstorm distinct ideas",
+        "generate concepts",
+        "compare creative directions"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when an explanation must be adapted to a named learner, objective, and prerequisite level while retaining domain accuracy.",
+      "classifications": {
+        "anti-tunnel-vision": "C",
+        "explanation-minimality-scaffold": "A",
+        "grounding-no-invention": "A",
+        "micro-scaffolding": "A",
+        "parallel-qms": "C",
+        "pedagogical-alignment": "R",
+        "safe-rewrite": "A",
+        "style-alignment": "A",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Pedagogical Alignment Constraint",
+          "role": "R",
+          "slug": "pedagogical-alignment",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Minimum Sufficient Explanation",
+          "role": "A",
+          "slug": "explanation-minimality-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Style-Alignment Module",
+          "role": "A",
+          "slug": "style-alignment",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "A",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Micro-Scaffolding",
+          "role": "A",
+          "slug": "micro-scaffolding",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Safe Rewrite Logic",
+          "role": "A",
+          "slug": "safe-rewrite",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "C",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "C",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Education / Explanation",
+      "high_cost_components": [],
+      "important_exclusions": [
+        "Omit deep validation stacks for low-risk exposition; retain accuracy checks that the domain requires."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Explain a subject for a defined learner and objective without sacrificing domain accuracy.",
+      "required_rationales": {
+        "pedagogical-alignment": "Make correct content learnable and usable for a specified audience without diluting claims or inventing simplifications. It is required here because the learning objective and audience model must remain fixed while the explanation is adapted.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the learning objective and audience model must remain fixed while the explanation is adapted."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "education-explanation",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/education-explanation.md",
+      "task_family": "teaching, tutoring, and audience-adapted explanation",
+      "task_phrases": [
+        "explain this to a learner",
+        "teach this concept",
+        "create a lesson"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when a user must compare consequential options against explicit criteria and evidence without turning generated candidates into facts.",
+      "classifications": {
+        "anti-tunnel-vision": "A",
+        "bidirectional-consistency": "A",
+        "citation-fidelity": "C",
+        "decision-first-scaffold": "R",
+        "dynamic-depth-allocation": "C",
+        "grounding-no-invention": "R",
+        "parallel-qms": "A",
+        "risk-tier-scaling": "A",
+        "task-set-lock-in": "R",
+        "truth-priority-hierarchy": "A"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Decision-First Scaffold",
+          "role": "R",
+          "slug": "decision-first-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Risk-Tier Scaling",
+          "role": "A",
+          "slug": "risk-tier-scaling",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "A",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bidirectional Consistency",
+          "role": "A",
+          "slug": "bidirectional-consistency",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Truth Priority Hierarchy",
+          "role": "A",
+          "slug": "truth-priority-hierarchy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Per-Region Reasoning Depth",
+          "role": "C",
+          "slug": "dynamic-depth-allocation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Decision Support",
+      "high_cost_components": [],
+      "important_exclusions": [
+        "Omit Multiverse when options are already fixed; never turn candidate generation into fake evidence."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Compare consequential options against explicit criteria and evidence without presenting generated choices as facts.",
+      "required_rationales": {
+        "decision-first-scaffold": "Keep analysis shaped around a decision, options, and decision criteria rather than accumulating directionless detail. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the decision question, option criteria, and factual evidence boundary must remain explicit."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "decision-support",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/decision-support.md",
+      "task_family": "option comparison, trade-off analysis, and recommendation support",
+      "task_phrases": [
+        "compare my options",
+        "help me decide",
+        "analyze tradeoffs"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when designing or restructuring a portable multi-component Skill whose interfaces, authority order, and host assumptions must be explicit.",
+      "classifications": {
+        "adapter-first-experimentation": "A",
+        "anti-tunnel-vision": "A",
+        "architect-orchestrator": "R",
+        "behavior-gene-builder": "C",
+        "crispr-edit": "A",
+        "domain-core-builder": "C",
+        "dynamic-depth-allocation": "A",
+        "future-proof-mode-selector": "A",
+        "hybrid-mode": "A",
+        "meta-supervisor": "A",
+        "multiverse-reasoning": "A",
+        "parallel-qms": "R",
+        "power-mode": "A",
+        "reasoning-scale-controller": "A",
+        "scoped-loader": "R",
+        "state-snapshot": "A",
+        "stateblock": "R",
+        "surgery-edit": "C"
+      },
+      "components": [
+        {
+          "plain_display_name": "Modular System Design Orchestrator",
+          "role": "R",
+          "slug": "architect-orchestrator",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Deep Exploration Mode",
+          "role": "A",
+          "slug": "power-mode",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Explore-Then-Commit Mode",
+          "role": "A",
+          "slug": "hybrid-mode",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Task-Scope Reasoning Controller",
+          "role": "A",
+          "slug": "reasoning-scale-controller",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Alternative Search",
+          "role": "A",
+          "slug": "multiverse-reasoning",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Reusable Behavior Component Builder",
+          "role": "C",
+          "slug": "behavior-gene-builder",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Shared Domain Knowledge Component Builder",
+          "role": "C",
+          "slug": "domain-core-builder",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
+          "role": "R",
+          "slug": "scoped-loader",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "R",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "R",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Workflow Repair Supervisor",
+          "role": "A",
+          "slug": "meta-supervisor",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Adapter-First Experimentation",
+          "role": "A",
+          "slug": "adapter-first-experimentation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Precision Local System Edit",
+          "role": "A",
+          "slug": "crispr-edit",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Structural System Edit",
+          "role": "C",
+          "slug": "surgery-edit",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Per-Region Reasoning Depth",
+          "role": "A",
+          "slug": "dynamic-depth-allocation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "A",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "State Snapshot",
+          "role": "A",
+          "slug": "state-snapshot",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Runtime Compatibility Mode Selector",
+          "role": "A",
+          "slug": "future-proof-mode-selector",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Architecture / Skill Building",
+      "high_cost_components": [
+        "architect-orchestrator",
+        "power-mode",
+        "hybrid-mode",
+        "multiverse-reasoning",
+        "behavior-gene-builder",
+        "domain-core-builder",
+        "meta-supervisor",
+        "adapter-first-experimentation",
+        "surgery-edit",
+        "future-proof-mode-selector"
+      ],
+      "important_exclusions": [
+        "Omit suite-level supervision for a single small Skill and omit surgery for additive changes."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Design a portable multi-component Skill with explicit interfaces, authority, host assumptions, and tests.",
+      "required_rationales": {
+        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "parallel-qms": "Match validation topology to failure risk instead of treating QMS as one generic critic or a majority vote. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because multi-component Skill design needs one coordinator, selective loading, explicit state, and a validation topology."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "architecture-skill-building",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/architecture-skill-building.md",
+      "task_family": "Skill, agent, prompt-system, and workflow architecture",
+      "task_phrases": [
+        "build a reusable skill",
+        "design an agent workflow",
+        "improve a complex prompt system"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use only when the host can run or coordinate distinct workers and the task needs explicit routing, state exchange, and result collection.",
+      "classifications": {
+        "architect-orchestrator": "R",
+        "domain-mode-isolation": "R",
+        "external-state-automation": "C",
+        "multi-layer-consistency": "A",
+        "parallel-qms": "A",
+        "resonance": "A",
+        "scoped-loader": "R",
+        "state-routing-bus": "R",
+        "state-snapshot": "R",
+        "stateblock": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Modular System Design Orchestrator",
+          "role": "R",
+          "slug": "architect-orchestrator",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
+          "role": "R",
+          "slug": "scoped-loader",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Task-State Handoff Router",
+          "role": "R",
+          "slug": "state-routing-bus",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "R",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "State Snapshot",
+          "role": "R",
+          "slug": "state-snapshot",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Domain / Mode Isolation",
+          "role": "R",
+          "slug": "domain-mode-isolation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Cross-Module Coordination",
+          "role": "A",
+          "slug": "resonance",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Parallel Validation System",
+          "role": "A",
+          "slug": "parallel-qms",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Multi-Layer Consistency",
+          "role": "A",
+          "slug": "multi-layer-consistency",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "External State Automation",
+          "role": "C",
+          "slug": "external-state-automation",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Multi-Agent / Orchestration",
+      "high_cost_components": [
+        "architect-orchestrator",
+        "state-routing-bus"
+      ],
+      "important_exclusions": [
+        "Omit distributed claims when the host cannot provide isolated workers or result collection."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "medium",
+        "source_document": "OS_Upgradeable_to_Skills_Translation_Catalog_v2_Recovery_Merged.md",
+        "source_kind": "modern_implementation_recommendation"
+      },
+      "purpose": "Coordinate distinct workers through scoped tasks, explicit state handoffs, and result collection.",
+      "required_rationales": {
+        "architect-orchestrator": "Plan and coordinate modular system design from goal discovery through critique, localized repair, synthesis, and continuation state. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "state-routing-bus": "Pass explicit task state, decisions, evidence pointers, and module outputs through real host-supported handoffs. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "state-snapshot": "Create a stable checkpoint that can be resumed or audited after interruption. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because distinct workers need a coordinator, scoped loading, routed shared state, domain separation, and recoverable handoffs."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "multi-agent-orchestration",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/multi-agent-orchestration.md",
+      "task_family": "multi-worker delegation, handoffs, and synthesis",
+      "task_phrases": [
+        "delegate to multiple agents",
+        "coordinate parallel workers",
+        "combine agent results"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when supplied fields and explicit predicates should deterministically select a route, with clarification or fail-closed handling for missing inputs.",
+      "classifications": {
+        "authenticity-anti-evasion": "R",
+        "authority-anchor-enforcement": "A",
+        "clarification-gateway": "A",
+        "domain-mode-isolation": "R",
+        "external-state-automation": "C",
+        "grounding-no-invention": "R",
+        "scoped-loader": "R",
+        "stateblock": "R",
+        "structured-state-projection": "A",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Clarification Gateway",
+          "role": "A",
+          "slug": "clarification-gateway",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Scoped Loader / Loader Sequencing",
+          "role": "R",
+          "slug": "scoped-loader",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Domain / Mode Isolation",
+          "role": "R",
+          "slug": "domain-mode-isolation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "R",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Structured State Projection",
+          "role": "A",
+          "slug": "structured-state-projection",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Authority Anchor Enforcement",
+          "role": "A",
+          "slug": "authority-anchor-enforcement",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "External State Automation",
+          "role": "C",
+          "slug": "external-state-automation",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Capability and Completion Honesty Gate",
+          "role": "R",
+          "slug": "authenticity-anti-evasion",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Deterministic Intake / Routing",
+      "high_cost_components": [],
+      "important_exclusions": [
+        "Omit model-judged routing when deterministic predicates fully decide the route."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "high",
+        "source_document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+        "source_kind": "historical_use_case_mapping"
+      },
+      "purpose": "Route structured requests using explicit fields and predicates, clarifying or failing closed when inputs are missing.",
+      "required_rationales": {
+        "authenticity-anti-evasion": "Keep process-status and completion claims auditable, especially when the host lacks a requested source, tool, persistent state, or execution capability. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "domain-mode-isolation": "Prevent cross-domain contamination while permitting explicit, reviewed transfers of shared facts. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "scoped-loader": "Keep modular OS or Skill execution relevant, ordered, and within context limits instead of loading the full library at session start. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the route must remain grounded in supplied fields, isolated by domain, and honestly report missing capability or data."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "deterministic-intake-routing",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/deterministic-intake-routing.md",
+      "task_family": "form intake, rules-based classification, and workflow routing",
+      "task_phrases": [
+        "route an intake form",
+        "classify requests by rules",
+        "choose a workflow from fields"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use when a long or segmented source must be transformed without losing sequence, quotations, identifiers, or provenance across context boundaries.",
+      "classifications": {
+        "citation-fidelity": "C",
+        "drift-suppression": "R",
+        "fail-closed-abstention": "R",
+        "image-text-fidelity-capture": "C",
+        "reflectos": "A",
+        "sequential-memory-state-engine": "R",
+        "stable-long-context": "R",
+        "state-snapshot": "A",
+        "stateblock": "R",
+        "truth-redundancy": "A",
+        "working-memory-lock-in": "R",
+        "zero-drift-zones": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Working-Memory Lock-In",
+          "role": "R",
+          "slug": "working-memory-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Ordered Memory-State Update Engine",
+          "role": "R",
+          "slug": "sequential-memory-state-engine",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Canonical Task State",
+          "role": "R",
+          "slug": "stateblock",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Stable Long-Context",
+          "role": "R",
+          "slug": "stable-long-context",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Immutable Content Zones",
+          "role": "R",
+          "slug": "zero-drift-zones",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Drift Suppression",
+          "role": "R",
+          "slug": "drift-suppression",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Image Text Fidelity Capture",
+          "role": "C",
+          "slug": "image-text-fidelity-capture",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Checkpointed Work Reflection",
+          "role": "A",
+          "slug": "reflectos",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Fail-Closed Abstention",
+          "role": "R",
+          "slug": "fail-closed-abstention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Independent Evidence Redundancy",
+          "role": "A",
+          "slug": "truth-redundancy",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Citation Fidelity Gate",
+          "role": "C",
+          "slug": "citation-fidelity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "State Snapshot",
+          "role": "A",
+          "slug": "state-snapshot",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Long-Context Source Fidelity",
+      "high_cost_components": [
+        "fail-closed-abstention",
+        "truth-redundancy"
+      ],
+      "important_exclusions": [
+        "Omit persistence when one context suffices and omit citation certification for inaccessible sources."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "high",
+        "source_document": "OS_Upgradeables_Deep_Context_Recovery_Addendum_2026-09-03.md",
+        "source_kind": "historical_use_case_mapping"
+      },
+      "purpose": "Transform a long or segmented source without losing quotations, identifiers, sequence, or provenance.",
+      "required_rationales": {
+        "drift-suppression": "Keep execution aligned after distracting context, repeated transformation, or model error. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "fail-closed-abstention": "Ensure that missing essential support produces an explicit bounded result rather than fabricated closure. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "sequential-memory-state-engine": "Preserve sequence, provenance, relevance, and current truth across long-running work. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "stable-long-context": "Extend usable context duration without treating the entire transcript as equally current or important. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "stateblock": "Give tools, agents, validators, and handoffs a shared source of current task truth. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "working-memory-lock-in": "Prevent critical goals, constraints, identifiers, or safety conditions from being displaced by incoming context. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps.",
+        "zero-drift-zones": "Protect facts, identifiers, quotations, obligations, safety limits, and other high-consequence content from transformation drift. It is required here because source continuity requires locked working facts, sequential provenance, protected exact atoms, drift control, and abstention on gaps."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "long-context-source-fidelity",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/long-context-source-fidelity.md",
+      "task_family": "long-document transformation and source-faithful continuation",
+      "task_phrases": [
+        "transform a long document",
+        "preserve quotes across sections",
+        "continue source faithful editing"
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "activation_boundary": "Use for bounded integer-grid or symbolic transformation tasks with at least one training pair and a test input; disclose reduced verification when only one pair is available.",
+      "classifications": {
+        "anti-tunnel-vision": "R",
+        "bidirectional-consistency": "A",
+        "bounded-exit": "R",
+        "cognitive-governor": "O",
+        "coherence-heartbeat": "X",
+        "cot-structured-state-block": "A",
+        "counterfactual-integrity": "C",
+        "decision-first-scaffold": "C",
+        "forethought-checkpoints": "A",
+        "grounding-no-invention": "R",
+        "invariance-stress-scaffold": "C",
+        "meta-supervisor": "X",
+        "micro-scaffolding": "R",
+        "multiverse-reasoning": "O",
+        "task-set-lock-in": "R"
+      },
+      "components": [
+        {
+          "plain_display_name": "Task-Set Lock-In",
+          "role": "R",
+          "slug": "task-set-lock-in",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Grounding / No-Invention",
+          "role": "R",
+          "slug": "grounding-no-invention",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Anti-Tunnel Vision",
+          "role": "R",
+          "slug": "anti-tunnel-vision",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Iteration Stop Rule",
+          "role": "R",
+          "slug": "bounded-exit",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Micro-Scaffolding",
+          "role": "R",
+          "slug": "micro-scaffolding",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bidirectional Consistency",
+          "role": "A",
+          "slug": "bidirectional-consistency",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Forethought / Checkpoints",
+          "role": "A",
+          "slug": "forethought-checkpoints",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Auditable Reasoning State",
+          "role": "A",
+          "slug": "cot-structured-state-block",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Decision-First Scaffold",
+          "role": "C",
+          "slug": "decision-first-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Protected-Constraint Robustness Test",
+          "role": "C",
+          "slug": "invariance-stress-scaffold",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Counterfactual Integrity Gate",
+          "role": "C",
+          "slug": "counterfactual-integrity",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Bounded Alternative Search",
+          "role": "O",
+          "slug": "multiverse-reasoning",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Reasoning Effort Budget Controller",
+          "role": "O",
+          "slug": "cognitive-governor",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Periodic Whole-Task Consistency Check",
+          "role": "X",
+          "slug": "coherence-heartbeat",
+          "version": "1.1.0"
+        },
+        {
+          "plain_display_name": "Workflow Repair Supervisor",
+          "role": "X",
+          "slug": "meta-supervisor",
+          "version": "1.1.0"
+        }
+      ],
+      "display_name": "Perception & Spatial Reasoning",
+      "high_cost_components": [
+        "multiverse-reasoning"
+      ],
+      "important_exclusions": [
+        "Omit coherence heartbeat and meta supervision for bounded single-puzzle work; add candidate branching only when hypotheses genuinely compete."
+      ],
+      "over_inclusion_rule": "A, C, and O components require an active package trigger; never load the recipe as an always-on maximal stack.",
+      "provenance": {
+        "canonicality": "provisional",
+        "recovery_confidence": "low",
+        "source_document": "CODEX_HANDOFF_UPGRADEABLES.md",
+        "source_kind": "author_reported_experimental_mapping"
+      },
+      "purpose": "Infer and apply transformations in bounded grid, symbolic, visual-analogy, or spatial-reasoning tasks.",
+      "required_rationales": {
+        "anti-tunnel-vision": "Preserve enough search breadth to expose premature fixation, then collapse quickly when evidence discriminates. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "bounded-exit": "Turn iterative improvement into a terminating control loop with explicit quality, budget, and diminishing-return gates. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "grounding-no-invention": "Prevent fabricated facts, citations, measurements, policies, records, and gap-filling in source-grounded work. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "micro-scaffolding": "Protect a difficult local operation without loading the full OS, duplicating the parent StateBlock, or leaving permanent context residue. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly.",
+        "task-set-lock-in": "Prevent scope substitution and goal drift during execution. It is required here because the solver must lock the task, derive rules only from examples, falsify premature hypotheses, and terminate boundedly."
+      },
+      "review_status": "PASS",
+      "schema_version": "2.0.0",
+      "slug": "perception-reasoning",
+      "source_url": "https://github.com/robkazi52/upgradeables/blob/d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2/recipes/perception-reasoning.md",
+      "task_family": "grid puzzles, pattern completion, visual analogies, inductive rule inference, and spatial transformations",
+      "task_phrases": [
+        "solve a grid puzzle",
+        "infer a visual transformation",
+        "complete a spatial pattern"
+      ],
+      "version": "1.1.0"
+    }
+  ],
+  "registry_version": "0.2.1",
+  "role_semantics": {
+    "A": "trigger-likely",
+    "C": "conditional",
+    "O": "optional",
+    "R": "required-by-recipe",
+    "X": "excluded"
+  },
+  "schema_version": "1.0.0"
+}
