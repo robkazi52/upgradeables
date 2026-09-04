@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "status": "candidate-brief",
+  "candidate_skill": "api-breaking-change-review",
+  "task": "API breaking change review",
+  "project_root": ".",
+  "project_types": ["software-development"],
+  "primary_recipe": "code-review",
+  "required_components": [
+    "grounding-no-invention@1.1.0",
+    "scoped-loader@1.1.0",
+    "task-set-lock-in@1.1.0"
+  ],
+  "trigger_likely_components": [
+    "epistemic-status-gating@1.1.0",
+    "forethought-checkpoints@1.1.0"
+  ],
+  "conditional_components": [
+    "critical-atomic-verification@1.1.0",
+    "fail-closed-abstention@1.1.0",
+    "invariance-stress-scaffold@1.1.0",
+    "stateblock@1.1.0"
+  ],
+  "optional_components": [],
+  "excluded_components": [],
+  "needs_agent_evaluation": [
+    "anti-tunnel-vision@1.1.0",
+    "bidirectional-consistency@1.1.0",
+    "dominant-driver-isolation-scaffold@1.1.0",
+    "drift-suppression@1.1.0",
+    "parallel-qms@1.1.0"
+  ],
+  "selected_component_pins": [
+    "epistemic-status-gating@1.1.0",
+    "forethought-checkpoints@1.1.0",
+    "grounding-no-invention@1.1.0",
+    "scoped-loader@1.1.0",
+    "task-set-lock-in@1.1.0"
+  ],
+  "project_references": ["docs/"],
+  "instructions": [
+    "Confirm the activation boundary and nearby non-triggers.",
+    "Evaluate conditional components against the actual API change.",
+    "Keep a review-only authority boundary and define observable findings."
+  ],
+  "next_command": "upgradeables skill scaffold api-breaking-change-review --task \"API breaking change review\""
+}

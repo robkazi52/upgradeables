@@ -42,6 +42,23 @@ python scripts/query_registry.py --task "review this pull request" --brief
 python scripts/query_registry.py --recipe code-review --runtime
 ```
 
+### Install it into a project
+
+The `0.3.0` project harness is local-first and has no runtime dependencies:
+
+```bash
+pipx install git+https://github.com/robkazi52/upgradeables.git
+cd your-project
+upgradeables init
+upgradeables integrate codex --write
+upgradeables task "review this pull request for regressions"
+```
+
+The harness writes its own state under `.upgradeables/`; host instructions are
+changed only by an explicit integration write. Build a reusable project workflow
+with `upgradeables skill brief`, `skill scaffold`, and `skill validate`. See the
+[Harness guide](docs/HARNESS.md) and [Project Skill Factory](docs/SKILL_FACTORY.md).
+
 ## What is an Upgradeable?
 
 An Upgradeable is an optional capability with a defined trigger, inputs,
@@ -155,7 +172,10 @@ python scripts/build_semantic_packages.py --check
 python scripts/build_ecosystem_reviews.py --check
 python scripts/build_registry.py --check
 python scripts/build_runtime.py --check
+python scripts/build_selection_ontology.py --check
+python scripts/build_harness_data.py --check
 python scripts/validate_registry.py
+python scripts/validate_selection_ontology.py
 python scripts/validate_behavior_cases.py
 python scripts/run_deterministic_package_checks.py
 python scripts/audit_semantic_specificity.py

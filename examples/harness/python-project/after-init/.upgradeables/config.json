@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "profile_mode": "auto",
+  "install_depth": "standard",
+  "preferred_profiles": [],
+  "agent_integrations": [],
+  "record_task_events": false,
+  "skill_suggestion_threshold": 3,
+  "reference_roots": ["docs/"],
+  "network": {"allow_registry_update": false}
+}

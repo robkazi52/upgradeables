@@ -1,0 +1,1405 @@
+{
+  "aliases": [
+    {
+      "kind": "historical-alias",
+      "label": "ABF",
+      "slug": "activation-budget-funnel"
+    },
+    {
+      "kind": "display-name",
+      "label": "Activation-Budget Funnel",
+      "slug": "activation-budget-funnel"
+    },
+    {
+      "kind": "display-name",
+      "label": "Adapter-First Experimentation",
+      "slug": "adapter-first-experimentation"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Adapter-First Experimentation",
+      "slug": "adapter-first-experimentation"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Alternative-Scenario Consistency Check",
+      "slug": "cross-universe-consistency"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Alternative-Scenario Consistency Check",
+      "slug": "cross-universe-consistency"
+    },
+    {
+      "kind": "display-name",
+      "label": "Anti-Tunnel Vision",
+      "slug": "anti-tunnel-vision"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Anti-Tunnel Vision",
+      "slug": "anti-tunnel-vision"
+    },
+    {
+      "kind": "display-name",
+      "label": "Architect Orchestrator",
+      "slug": "architect-orchestrator"
+    },
+    {
+      "kind": "display-name",
+      "label": "Attention Compression Scaffold",
+      "slug": "attention-compression-scaffold"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Auditable Reasoning State",
+      "slug": "cot-structured-state-block"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Auditable Reasoning State",
+      "slug": "cot-structured-state-block"
+    },
+    {
+      "kind": "display-name",
+      "label": "Authenticity & Anti-Evasion Principle",
+      "slug": "authenticity-anti-evasion"
+    },
+    {
+      "kind": "display-name",
+      "label": "Authority Anchor Enforcement",
+      "slug": "authority-anchor-enforcement"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Authority Anchor Enforcement",
+      "slug": "authority-anchor-enforcement"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Automatic Canonical-State Update",
+      "slug": "selfblock-auto-update"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Automatic Canonical-State Update",
+      "slug": "selfblock-auto-update"
+    },
+    {
+      "kind": "display-name",
+      "label": "Behavior Gene Builder",
+      "slug": "behavior-gene-builder"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Behavior Gene OS",
+      "slug": "behavior-gene-builder"
+    },
+    {
+      "kind": "display-name",
+      "label": "Bidirectional Consistency",
+      "slug": "bidirectional-consistency"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Bidirectional Consistency",
+      "slug": "bidirectional-consistency"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Bounded Alternative Search",
+      "slug": "multiverse-reasoning"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Bounded Alternative Search",
+      "slug": "multiverse-reasoning"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Bounded Attention Focus",
+      "slug": "neuro-focus"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Bounded Attention Focus",
+      "slug": "neuro-focus"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Bounded Change Rules",
+      "slug": "controlled-drift-corridors"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Bounded Change Rules",
+      "slug": "controlled-drift-corridors"
+    },
+    {
+      "kind": "display-name",
+      "label": "Bounded ExIt",
+      "slug": "bounded-exit"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Bounded Iteration Stop Rule",
+      "slug": "bounded-exit"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Bounded Iteration Stop Rule",
+      "slug": "bounded-exit"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "CADC",
+      "slug": "compute-adaptive-drift"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Canonical Task State",
+      "slug": "stateblock"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Canonical Task State",
+      "slug": "stateblock"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Capability and Completion Honesty Gate",
+      "slug": "authenticity-anti-evasion"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Capability and Completion Honesty Gate",
+      "slug": "authenticity-anti-evasion"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Checkpointed Work Reflection",
+      "slug": "reflectos"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Checkpointed Work Reflection",
+      "slug": "reflectos"
+    },
+    {
+      "kind": "display-name",
+      "label": "Citation Fidelity Gate",
+      "slug": "citation-fidelity"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Citation Fidelity Gate",
+      "slug": "citation-fidelity"
+    },
+    {
+      "kind": "display-name",
+      "label": "Clarification Gateway",
+      "slug": "clarification-gateway"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Clarification Gateway",
+      "slug": "clarification-gateway"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Clarification-First",
+      "slug": "clarification-gateway"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Clarification-First Behavior",
+      "slug": "clarification-gateway"
+    },
+    {
+      "kind": "display-name",
+      "label": "Coherence Loops",
+      "slug": "coherence-loops"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Coherence Loops",
+      "slug": "coherence-loops"
+    },
+    {
+      "kind": "display-name",
+      "label": "Compute-Adaptive Drift Constraining",
+      "slug": "compute-adaptive-drift"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Conservative Execution Mode",
+      "slug": "safe-mode"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Conservative Execution Mode",
+      "slug": "safe-mode"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Content-Specific Change Tolerance",
+      "slug": "drift-spectra-scaling"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Content-Specific Change Tolerance",
+      "slug": "drift-spectra-scaling"
+    },
+    {
+      "kind": "display-name",
+      "label": "Contradiction Micro-Repair Pack",
+      "slug": "contradiction-micro-repair"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Contradiction Micro-Repair Pack",
+      "slug": "contradiction-micro-repair"
+    },
+    {
+      "kind": "display-name",
+      "label": "Controlled Drift Corridors",
+      "slug": "controlled-drift-corridors"
+    },
+    {
+      "kind": "display-name",
+      "label": "CoT-Structured State Block",
+      "slug": "cot-structured-state-block"
+    },
+    {
+      "kind": "display-name",
+      "label": "Counterfactual Integrity Gate",
+      "slug": "counterfactual-integrity"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Counterfactual Integrity Gate",
+      "slug": "counterfactual-integrity"
+    },
+    {
+      "kind": "display-name",
+      "label": "Counterfactual Silence Scaffold",
+      "slug": "counterfactual-silence-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "CRISPR Editing",
+      "slug": "crispr-edit"
+    },
+    {
+      "kind": "display-name",
+      "label": "Critical Atomic Verification",
+      "slug": "critical-atomic-verification"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Critical Fact Verification",
+      "slug": "critical-atomic-verification"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Critical Fact Verification",
+      "slug": "critical-atomic-verification"
+    },
+    {
+      "kind": "display-name",
+      "label": "Cross-Checking Chains",
+      "slug": "cross-checking-chains"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Cross-Checking Chains",
+      "slug": "cross-checking-chains"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Cross-Context Relationship Guard",
+      "slug": "cross-context-resonance-lock"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Cross-Context Relationship Guard",
+      "slug": "cross-context-resonance-lock"
+    },
+    {
+      "kind": "display-name",
+      "label": "Cross-Context Resonance Lock",
+      "slug": "cross-context-resonance-lock"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Cross-Module Coordination",
+      "slug": "resonance"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Cross-Module Coordination",
+      "slug": "resonance"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Cross-Module Coordination Rule Builder",
+      "slug": "resonance-gene-builder"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Cross-Module Coordination Rule Builder",
+      "slug": "resonance-gene-builder"
+    },
+    {
+      "kind": "display-name",
+      "label": "Cross-Universe Consistency Mode",
+      "slug": "cross-universe-consistency"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "CUCM",
+      "slug": "cross-universe-consistency"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "DDA",
+      "slug": "dynamic-depth-allocation"
+    },
+    {
+      "kind": "display-name",
+      "label": "Decision-First Scaffold",
+      "slug": "decision-first-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Decision-First Scaffold",
+      "slug": "decision-first-scaffold"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Deep Exploration Mode",
+      "slug": "power-mode"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Deep Exploration Mode",
+      "slug": "power-mode"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "DIP",
+      "slug": "drift-immunity-propagation"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "DNDF",
+      "slug": "domain-normalized-drift"
+    },
+    {
+      "kind": "display-name",
+      "label": "Domain / Mode Isolation",
+      "slug": "domain-mode-isolation"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Domain / Mode Isolation",
+      "slug": "domain-mode-isolation"
+    },
+    {
+      "kind": "display-name",
+      "label": "Domain Core Builder",
+      "slug": "domain-core-builder"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Domain-Calibrated Change Tolerance",
+      "slug": "domain-normalized-drift"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Domain-Calibrated Change Tolerance",
+      "slug": "domain-normalized-drift"
+    },
+    {
+      "kind": "display-name",
+      "label": "Domain-Normalized Drift Field",
+      "slug": "domain-normalized-drift"
+    },
+    {
+      "kind": "display-name",
+      "label": "Dominant-Driver Isolation Scaffold",
+      "slug": "dominant-driver-isolation-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Dominant-Driver Isolation Scaffold",
+      "slug": "dominant-driver-isolation-scaffold"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Downstream Invariant Protection",
+      "slug": "drift-immunity-propagation"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Downstream Invariant Protection",
+      "slug": "drift-immunity-propagation"
+    },
+    {
+      "kind": "display-name",
+      "label": "Drift Immunity Propagation",
+      "slug": "drift-immunity-propagation"
+    },
+    {
+      "kind": "display-name",
+      "label": "Drift Sink Scaffold",
+      "slug": "drift-sink-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "Drift Suppression",
+      "slug": "drift-suppression"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Drift Suppression",
+      "slug": "drift-suppression"
+    },
+    {
+      "kind": "display-name",
+      "label": "Drift-Spectra Scaling",
+      "slug": "drift-spectra-scaling"
+    },
+    {
+      "kind": "display-name",
+      "label": "Drift-Stability Scaling with Model Size",
+      "slug": "model-size-drift-scaling"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "DS-Scale",
+      "slug": "drift-spectra-scaling"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "DSS-MS",
+      "slug": "model-size-drift-scaling"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Dual-Lepton Truth Redundancy",
+      "slug": "truth-redundancy"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Dual-Source Bounded Synthesis",
+      "slug": "two-truths-and-corridor"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Dual-Source Bounded Synthesis",
+      "slug": "two-truths-and-corridor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Dynamic Depth Allocation",
+      "slug": "dynamic-depth-allocation"
+    },
+    {
+      "kind": "display-name",
+      "label": "Epistemic Status Gating",
+      "slug": "epistemic-status-gating"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Evidence-Confidence Gate",
+      "slug": "epistemic-status-gating"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Evidence-Confidence Gate",
+      "slug": "epistemic-status-gating"
+    },
+    {
+      "kind": "display-name",
+      "label": "Explanation Minimality Scaffold",
+      "slug": "explanation-minimality-scaffold"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Explore-Then-Commit Mode",
+      "slug": "hybrid-mode"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Explore-Then-Commit Mode",
+      "slug": "hybrid-mode"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Explore-to-Execute Transition",
+      "slug": "progressive-mode-shaping"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Explore-to-Execute Transition",
+      "slug": "progressive-mode-shaping"
+    },
+    {
+      "kind": "display-name",
+      "label": "External State Automation",
+      "slug": "external-state-automation"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "External State Automation",
+      "slug": "external-state-automation"
+    },
+    {
+      "kind": "display-name",
+      "label": "Fail-Closed Abstention",
+      "slug": "fail-closed-abstention"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Fail-Closed Abstention",
+      "slug": "fail-closed-abstention"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Fail-Closed Tier-3 Abstention",
+      "slug": "fail-closed-abstention"
+    },
+    {
+      "kind": "display-name",
+      "label": "Fermionic Veto Strengthening",
+      "slug": "fermionic-veto"
+    },
+    {
+      "kind": "display-name",
+      "label": "Forethought / Checkpoints",
+      "slug": "forethought-checkpoints"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Forethought / Checkpoints",
+      "slug": "forethought-checkpoints"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "FPMS",
+      "slug": "future-proof-mode-selector"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Full-Structure Invariant-Preserving Rewrite",
+      "slug": "regenerative-rewrite"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Full-Structure Invariant-Preserving Rewrite",
+      "slug": "regenerative-rewrite"
+    },
+    {
+      "kind": "display-name",
+      "label": "Future-Proof Mode Selector",
+      "slug": "future-proof-mode-selector"
+    },
+    {
+      "kind": "display-name",
+      "label": "Global Coherence Heartbeat",
+      "slug": "coherence-heartbeat"
+    },
+    {
+      "kind": "display-name",
+      "label": "Grounding / No-Invention",
+      "slug": "grounding-no-invention"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Grounding / No-Invention",
+      "slug": "grounding-no-invention"
+    },
+    {
+      "kind": "display-name",
+      "label": "HYBRID Mode",
+      "slug": "hybrid-mode"
+    },
+    {
+      "kind": "display-name",
+      "label": "Image Text Fidelity Capture",
+      "slug": "image-text-fidelity-capture"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Image Text Fidelity Capture",
+      "slug": "image-text-fidelity-capture"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Immutable Content Zones",
+      "slug": "zero-drift-zones"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Immutable Content Zones",
+      "slug": "zero-drift-zones"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Independent Evidence Gate",
+      "slug": "multi-truth-gating"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Independent Evidence Gate",
+      "slug": "multi-truth-gating"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Independent Evidence Redundancy",
+      "slug": "truth-redundancy"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Independent Evidence Redundancy",
+      "slug": "truth-redundancy"
+    },
+    {
+      "kind": "display-name",
+      "label": "Invariance Stress Scaffold",
+      "slug": "invariance-stress-scaffold"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "ITFC",
+      "slug": "image-text-fidelity-capture"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Loader",
+      "slug": "scoped-loader"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Loader Sequencing",
+      "slug": "scoped-loader"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Long-Context Coherence",
+      "slug": "stable-long-context"
+    },
+    {
+      "kind": "display-name",
+      "label": "Meta-Awareness Pack",
+      "slug": "meta-awareness"
+    },
+    {
+      "kind": "display-name",
+      "label": "Meta-Stability Mode",
+      "slug": "meta-stability"
+    },
+    {
+      "kind": "display-name",
+      "label": "Meta-Supervisor Bundle",
+      "slug": "meta-supervisor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Micro-Repair",
+      "slug": "micro-repair"
+    },
+    {
+      "kind": "display-name",
+      "label": "Micro-Scaffolding",
+      "slug": "micro-scaffolding"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Micro-Scaffolding",
+      "slug": "micro-scaffolding"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Micro-Scaffolding (Planning Before Writing)",
+      "slug": "micro-scaffolding"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Minimal Local Correction",
+      "slug": "micro-repair"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Minimal Local Correction",
+      "slug": "micro-repair"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Minimum Sufficient Explanation",
+      "slug": "explanation-minimality-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Minimum Sufficient Explanation",
+      "slug": "explanation-minimality-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "Mode Lock-In",
+      "slug": "mode-lock-in"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Mode Lock-In",
+      "slug": "mode-lock-in"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Model-Capability Scaffolding Scale",
+      "slug": "model-size-drift-scaling"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Model-Capability Scaffolding Scale",
+      "slug": "model-size-drift-scaling"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Modular System Design Orchestrator",
+      "slug": "architect-orchestrator"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Modular System Design Orchestrator",
+      "slug": "architect-orchestrator"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "MSM",
+      "slug": "meta-stability"
+    },
+    {
+      "kind": "display-name",
+      "label": "Multi-Layer Consistency",
+      "slug": "multi-layer-consistency"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Multi-Layer Consistency",
+      "slug": "multi-layer-consistency"
+    },
+    {
+      "kind": "display-name",
+      "label": "Multi-Truth Gating",
+      "slug": "multi-truth-gating"
+    },
+    {
+      "kind": "display-name",
+      "label": "Multiverse Engine",
+      "slug": "multiverse-reasoning"
+    },
+    {
+      "kind": "display-name",
+      "label": "Neuro-Focus",
+      "slug": "neuro-focus"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "No-Unrequested-Scenarios Guard",
+      "slug": "counterfactual-silence-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "No-Unrequested-Scenarios Guard",
+      "slug": "counterfactual-silence-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "Non-Authoritative Branch Suppression",
+      "slug": "non-authoritative-branch-suppression"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Non-Authoritative Branch Suppression",
+      "slug": "non-authoritative-branch-suppression"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Non-Compensable Constraint Veto",
+      "slug": "fermionic-veto"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Non-Compensable Constraint Veto",
+      "slug": "fermionic-veto"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Ordered Memory-State Update Engine",
+      "slug": "sequential-memory-state-engine"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Ordered Memory-State Update Engine",
+      "slug": "sequential-memory-state-engine"
+    },
+    {
+      "kind": "display-name",
+      "label": "Parallel Quality Management System",
+      "slug": "parallel-qms"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Parallel Validation System",
+      "slug": "parallel-qms"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Parallel Validation System",
+      "slug": "parallel-qms"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Parallel-QMS",
+      "slug": "parallel-qms"
+    },
+    {
+      "kind": "display-name",
+      "label": "Pedagogical Alignment Constraint",
+      "slug": "pedagogical-alignment"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Pedagogical Alignment Constraint",
+      "slug": "pedagogical-alignment"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Per-Region Reasoning Depth",
+      "slug": "dynamic-depth-allocation"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Per-Region Reasoning Depth",
+      "slug": "dynamic-depth-allocation"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Periodic Whole-Task Consistency Check",
+      "slug": "coherence-heartbeat"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Periodic Whole-Task Consistency Check",
+      "slug": "coherence-heartbeat"
+    },
+    {
+      "kind": "display-name",
+      "label": "Phase-Locked Reasoning Scaffold",
+      "slug": "phase-locked-reasoning-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "Placeholder Suppression",
+      "slug": "placeholder-suppression"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Placeholder Suppression",
+      "slug": "placeholder-suppression"
+    },
+    {
+      "kind": "display-name",
+      "label": "POWER Mode",
+      "slug": "power-mode"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Precision Local System Edit",
+      "slug": "crispr-edit"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Precision Local System Edit",
+      "slug": "crispr-edit"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Progressive Context Intake",
+      "slug": "activation-budget-funnel"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Progressive Context Intake",
+      "slug": "activation-budget-funnel"
+    },
+    {
+      "kind": "display-name",
+      "label": "Progressive Mode Shaping",
+      "slug": "progressive-mode-shaping"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Protected-Constraint Robustness Test",
+      "slug": "invariance-stress-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Protected-Constraint Robustness Test",
+      "slug": "invariance-stress-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "Reasoning Budget / Cognitive Governor",
+      "slug": "cognitive-governor"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Reasoning Efficiency Controller",
+      "slug": "reasoning-throughput-governor"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Reasoning Efficiency Controller",
+      "slug": "reasoning-throughput-governor"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Reasoning Effort Budget Controller",
+      "slug": "cognitive-governor"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Reasoning Effort Budget Controller",
+      "slug": "cognitive-governor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Reasoning Throughput Governor",
+      "slug": "reasoning-throughput-governor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Reasoning-Scale Controller",
+      "slug": "reasoning-scale-controller"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "ReflectOS",
+      "slug": "reflectos"
+    },
+    {
+      "kind": "display-name",
+      "label": "Regenerative Rewrite",
+      "slug": "regenerative-rewrite"
+    },
+    {
+      "kind": "display-name",
+      "label": "Resonance",
+      "slug": "resonance"
+    },
+    {
+      "kind": "display-name",
+      "label": "Resonance Gene Builder",
+      "slug": "resonance-gene-builder"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Resonance Genes",
+      "slug": "resonance-gene-builder"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Resonance Locks",
+      "slug": "resonance"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Resonance Upgradeable",
+      "slug": "cross-context-resonance-lock"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Retired-Branch Quarantine",
+      "slug": "drift-sink-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Retired-Branch Quarantine",
+      "slug": "drift-sink-scaffold"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Reusable Behavior Component Builder",
+      "slug": "behavior-gene-builder"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Reusable Behavior Component Builder",
+      "slug": "behavior-gene-builder"
+    },
+    {
+      "kind": "display-name",
+      "label": "Risk-Tier Scaling",
+      "slug": "risk-tier-scaling"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Risk-Tier Scaling",
+      "slug": "risk-tier-scaling"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "RTG",
+      "slug": "reasoning-throughput-governor"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Runtime Compatibility Mode Selector",
+      "slug": "future-proof-mode-selector"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Runtime Compatibility Mode Selector",
+      "slug": "future-proof-mode-selector"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Runtime-Adaptive Drift Checks",
+      "slug": "compute-adaptive-drift"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Runtime-Adaptive Drift Checks",
+      "slug": "compute-adaptive-drift"
+    },
+    {
+      "kind": "display-name",
+      "label": "SAFE Mode",
+      "slug": "safe-mode"
+    },
+    {
+      "kind": "display-name",
+      "label": "Safe Rewrite Logic",
+      "slug": "safe-rewrite"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Safe Rewrite Logic",
+      "slug": "safe-rewrite"
+    },
+    {
+      "kind": "display-name",
+      "label": "Scoped Loader / Loader Sequencing",
+      "slug": "scoped-loader"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Scoped Loader / Loader Sequencing",
+      "slug": "scoped-loader"
+    },
+    {
+      "kind": "display-name",
+      "label": "SelfBlock Auto-Update",
+      "slug": "selfblock-auto-update"
+    },
+    {
+      "kind": "display-name",
+      "label": "Sequential Memory State Engine (SMSE)",
+      "slug": "sequential-memory-state-engine"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Shared Domain Knowledge Component Builder",
+      "slug": "domain-core-builder"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Shared Domain Knowledge Component Builder",
+      "slug": "domain-core-builder"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "SMSE",
+      "slug": "sequential-memory-state-engine"
+    },
+    {
+      "kind": "display-name",
+      "label": "Specificity Penalty Gate",
+      "slug": "specificity-penalty-gate"
+    },
+    {
+      "kind": "display-name",
+      "label": "Stable Long-Context",
+      "slug": "stable-long-context"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Stable Long-Context",
+      "slug": "stable-long-context"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Stable-State Recovery Mode",
+      "slug": "meta-stability"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Stable-State Recovery Mode",
+      "slug": "meta-stability"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Stage-Separated Reasoning Scaffold",
+      "slug": "phase-locked-reasoning-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Stage-Separated Reasoning Scaffold",
+      "slug": "phase-locked-reasoning-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "State Routing Bus",
+      "slug": "state-routing-bus"
+    },
+    {
+      "kind": "display-name",
+      "label": "State Snapshot",
+      "slug": "state-snapshot"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "State Snapshot",
+      "slug": "state-snapshot"
+    },
+    {
+      "kind": "display-name",
+      "label": "StateBlock",
+      "slug": "stateblock"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Structural System Edit",
+      "slug": "surgery-edit"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Structural System Edit",
+      "slug": "surgery-edit"
+    },
+    {
+      "kind": "display-name",
+      "label": "Structured Refinement Cycles",
+      "slug": "structured-refinement"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Structured Refinement Cycles",
+      "slug": "structured-refinement"
+    },
+    {
+      "kind": "display-name",
+      "label": "Structured State Projection",
+      "slug": "structured-state-projection"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Structured State Projection",
+      "slug": "structured-state-projection"
+    },
+    {
+      "kind": "display-name",
+      "label": "Stuck-Pattern Reset Pack",
+      "slug": "stuck-pattern-reset"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Stuck-Pattern Reset Pack",
+      "slug": "stuck-pattern-reset"
+    },
+    {
+      "kind": "display-name",
+      "label": "Style-Alignment Module",
+      "slug": "style-alignment"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Style-Alignment Module",
+      "slug": "style-alignment"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Suite-Wide Workflow Supervisor",
+      "slug": "ultimate-suite-supervisor"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Suite-Wide Workflow Supervisor",
+      "slug": "ultimate-suite-supervisor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Surgery Editing",
+      "slug": "surgery-edit"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Task-Scope Reasoning Controller",
+      "slug": "reasoning-scale-controller"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Task-Scope Reasoning Controller",
+      "slug": "reasoning-scale-controller"
+    },
+    {
+      "kind": "display-name",
+      "label": "Task-Set Lock-In",
+      "slug": "task-set-lock-in"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Task-Set Lock-In",
+      "slug": "task-set-lock-in"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Task-State Handoff Router",
+      "slug": "state-routing-bus"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Task-State Handoff Router",
+      "slug": "state-routing-bus"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Teleport Bus",
+      "slug": "state-routing-bus"
+    },
+    {
+      "kind": "display-name",
+      "label": "Temporal Anchor Scaffold",
+      "slug": "temporal-anchor-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Temporal Anchor Scaffold",
+      "slug": "temporal-anchor-scaffold"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Temporary Focused-Context View",
+      "slug": "attention-compression-scaffold"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Temporary Focused-Context View",
+      "slug": "attention-compression-scaffold"
+    },
+    {
+      "kind": "display-name",
+      "label": "Truth Priority Hierarchy",
+      "slug": "truth-priority-hierarchy"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Truth Priority Hierarchy",
+      "slug": "truth-priority-hierarchy"
+    },
+    {
+      "kind": "display-name",
+      "label": "Truth Redundancy",
+      "slug": "truth-redundancy"
+    },
+    {
+      "kind": "display-name",
+      "label": "Two Truths + Corridor",
+      "slug": "two-truths-and-corridor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Ultimate Suite Supervisor",
+      "slug": "ultimate-suite-supervisor"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Unsupported Precision Gate",
+      "slug": "specificity-penalty-gate"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Unsupported Precision Gate",
+      "slug": "specificity-penalty-gate"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "WM Lock-In",
+      "slug": "working-memory-lock-in"
+    },
+    {
+      "kind": "display-name",
+      "label": "Work Reflection Loop OS / ReflectOS",
+      "slug": "reflectos"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Workflow Health Monitor",
+      "slug": "meta-awareness"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Workflow Health Monitor",
+      "slug": "meta-awareness"
+    },
+    {
+      "kind": "plain-alias",
+      "label": "Workflow Repair Supervisor",
+      "slug": "meta-supervisor"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Workflow Repair Supervisor",
+      "slug": "meta-supervisor"
+    },
+    {
+      "kind": "display-name",
+      "label": "Working-Memory Cues",
+      "slug": "working-memory-cues"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Working-Memory Cues",
+      "slug": "working-memory-cues"
+    },
+    {
+      "kind": "display-name",
+      "label": "Working-Memory Lock-In",
+      "slug": "working-memory-lock-in"
+    },
+    {
+      "kind": "plain-display-name",
+      "label": "Working-Memory Lock-In",
+      "slug": "working-memory-lock-in"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "WRL",
+      "slug": "reflectos"
+    },
+    {
+      "kind": "historical-alias",
+      "label": "Zero-Drift Citation / Quote / Definition Zones",
+      "slug": "zero-drift-zones"
+    },
+    {
+      "kind": "display-name",
+      "label": "Zero-Drift Zones",
+      "slug": "zero-drift-zones"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

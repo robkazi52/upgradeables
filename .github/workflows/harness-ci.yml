@@ -1,0 +1,60 @@
+name: Harness package
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package-and-install:
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade build
+      - name: Validate source registries and Skills
+        run: |
+          python scripts/build_semantic_packages.py --check
+          python scripts/build_ecosystem_reviews.py --check
+          python scripts/build_registry.py --check
+          python scripts/build_runtime.py --check
+          python scripts/build_harness_data.py --check
+          python scripts/validate_registry.py
+          python scripts/validate_behavior_cases.py
+          python scripts/run_deterministic_package_checks.py
+          python scripts/audit_semantic_specificity.py
+          python scripts/validate_skill.py
+      - name: Run complete deterministic test suite
+        run: python -m unittest discover -s tests -v
+      - run: python -m build
+      - run: python -m venv clean-venv
+      - run: clean-venv/bin/python -m pip install dist/*.whl
+      - name: Exercise installed CLI and project workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          CLI="$PWD/clean-venv/bin/upgradeables"
+          PROJECT="$RUNNER_TEMP/upgradeables-python-project"
+          cp -R tests/fixtures/projects/python-lib "$PROJECT"
+          "$CLI" --help >/dev/null
+          "$CLI" version
+          "$CLI" inspect --project "$PROJECT" --json
+          "$CLI" recommend --project "$PROJECT"
+          "$CLI" init "$PROJECT"
+          "$CLI" init "$PROJECT"
+          "$CLI" task "review this pull request for bugs and regressions" --project "$PROJECT" --json
+          "$CLI" task "fix this one failing test without refactoring unrelated code" --project "$PROJECT" --json
+          "$CLI" integrate codex --project "$PROJECT"
+          "$CLI" integrate codex --project "$PROJECT" --write
+          "$CLI" integrate codex --project "$PROJECT" --write
+          "$CLI" skill brief "review API changes for backwards compatibility" --project "$PROJECT" --json
+          "$CLI" skill scaffold api-breaking-change-review --task "review API changes for backwards compatibility" --project "$PROJECT"
+          "$CLI" skill validate "$PROJECT/.upgradeables/skills/api-breaking-change-review" --draft
+          "$CLI" skill list --project "$PROJECT" --json
+          "$CLI" skill suggest --project "$PROJECT" --json
+          "$CLI" doctor --project "$PROJECT"

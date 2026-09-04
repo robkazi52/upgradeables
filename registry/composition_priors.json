@@ -1,0 +1,850 @@
+{
+  "schema_version": "1.0.0",
+  "status": "v0.3-research-synthesis",
+  "description": "Concise deterministic priors for recipe and Upgradeable consideration. These rules never activate a component; canonical triggers, non-triggers, dependencies, conflicts, locks, and current-task authority still govern activation.",
+  "source_notes": [
+    "research/source-notes/general-agent-task-taxonomy.md",
+    "research/source-notes/software-agent-tasks.md",
+    "research/source-notes/research-and-knowledge-tasks.md",
+    "research/source-notes/long-context-and-stateful-work.md",
+    "research/source-notes/tool-use-and-action-workflows.md",
+    "research/source-notes/planning-decision-and-reasoning.md",
+    "research/source-notes/high-stakes-and-validation.md",
+    "research/source-notes/skills-and-recurring-workflows.md"
+  ],
+  "matching_semantics": {
+    "input_namespaces": [
+      "task",
+      "modifiers",
+      "permissions",
+      "risk",
+      "capabilities",
+      "derived"
+    ],
+    "operators": [
+      "eq",
+      "in",
+      "exists",
+      "gte"
+    ],
+    "condition_expression": "A condition is always:true, a predicate with field/op/value, or a recursively nested all/any list of conditions.",
+    "field_catalog": {
+      "task.resolution": {
+        "type": "enum",
+        "values": [
+          "matched",
+          "ambiguous",
+          "no-match"
+        ],
+        "source": "task resolver output"
+      },
+      "task.archetype": {
+        "type": "enum",
+        "source": "registry/task_archetypes.json#/archetypes/*/slug",
+        "meaning": "One broad primary archetype."
+      },
+      "task.subtype": {
+        "type": "enum",
+        "source": "registry/task_archetypes.json#/archetypes/*/subtypes",
+        "meaning": "A subtype valid beneath the selected primary archetype."
+      },
+      "task.execution_form": {
+        "type": "enum",
+        "source": "registry/task_archetypes.json#/execution_forms/*/slug"
+      },
+      "modifiers.*": {
+        "type": "tri_state",
+        "source": "registry/environment_modifiers.json#/task_environment_modifiers/*/slug"
+      },
+      "permissions.*": {
+        "type": "tri_state",
+        "source": "registry/environment_modifiers.json#/permissions/*/slug"
+      },
+      "capabilities.*": {
+        "type": "tri_state",
+        "source": "registry/environment_modifiers.json#/host_capabilities/*/slug"
+      },
+      "derived.*": {
+        "type": "tri_state",
+        "source": "registry/environment_modifiers.json#/derived_signals/*/slug plus composition-local derived_signals"
+      },
+      "risk.impact_magnitude": {
+        "type": "enum",
+        "values": [
+          "low",
+          "moderate",
+          "high",
+          "critical",
+          "unknown"
+        ],
+        "source": "research/source-notes/high-stakes-and-validation.md#proposed-risk-dimensions"
+      },
+      "risk.action_requested": {
+        "type": "enum",
+        "values": [
+          "no",
+          "draft-only",
+          "reversible",
+          "consequential"
+        ],
+        "source": "research/source-notes/high-stakes-and-validation.md#proposed-risk-dimensions"
+      }
+    },
+    "derived_signals": {
+      "simple_exact_edit": {
+        "type": "tri_state",
+        "derive_only_when": "The task requests one explicitly identified local literal, label, formatting, or equivalent bounded edit; scope and replacement are known; no structural behavior change is requested.",
+        "required_inputs": [
+          "task.archetype",
+          "task.subtype",
+          "permissions.editing_requested"
+        ]
+      },
+      "synthesis_required": {
+        "type": "tri_state",
+        "derive_only_when": "Two or more bounded worker outputs must be reconciled through an explicit coverage, conflict-resolution, or integration contract.",
+        "required_inputs": [
+          "derived.branches_independent",
+          "task.execution_form"
+        ]
+      }
+    },
+    "application_order": "Apply all matching rules from lowest to highest priority. A higher-priority rule may override a lower-priority demotion or bound. hard_exclude always wins and cannot be overridden by a promotion.",
+    "inheritance": "Every rule inherits base-minimal unless another rule ID is named. Inheritance supplies defaults; it does not imply activation.",
+    "recipe_policy": "Prefer one primary recipe. Conditional recipes are alternatives for resolver evaluation, not recipe stacks.",
+    "unknown_policy": "Unknown authority, capability, reversibility, evidence, or target is never interpreted as safe or present.",
+    "no_match_policy": "A legitimate no-match returns no recipe and no component stack. It may request clarification or use a direct path."
+  },
+  "rules": [
+    {
+      "id": "base-minimal",
+      "priority": 0,
+      "when": {
+        "always": true
+      },
+      "effects": {
+        "complexity": {
+          "floor": "L0",
+          "ceiling": "L3"
+        },
+        "components": {
+          "demote": [
+            "multiverse-reasoning",
+            "parallel-qms",
+            "meta-supervisor",
+            "sequential-memory-state-engine",
+            "external-state-automation"
+          ]
+        },
+        "policy": [
+          "Use explicit task wording before project-profile priors.",
+          "Prefer a direct path or one primary recipe and the smallest sufficient composition.",
+          "Select validators by observed failure risk and independence, not by count."
+        ]
+      },
+      "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+    },
+    {
+      "id": "no-match",
+      "inherits": "base-minimal",
+      "priority": 100,
+      "when": {
+        "all": [
+          {
+            "field": "task.resolution",
+            "op": "eq",
+            "value": "no-match"
+          }
+        ]
+      },
+      "effects": {
+        "primary_strategy": "direct-or-clarify",
+        "candidate_recipes": {
+          "force_none": true
+        },
+        "complexity": {
+          "ceiling": "L1"
+        },
+        "components": {
+          "hard_exclude": [
+            "multiverse-reasoning",
+            "parallel-qms",
+            "meta-supervisor",
+            "sequential-memory-state-engine",
+            "external-state-automation"
+          ]
+        }
+      },
+      "reason": "Do not fabricate a recipe or maximal stack to make an uncertain result look complete."
+    },
+    {
+      "id": "simple-exact-edit-suppression",
+      "inherits": "base-minimal",
+      "priority": 95,
+      "when": {
+        "all": [
+          {
+            "field": "derived.simple_exact_edit",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "risk.impact_magnitude",
+            "op": "in",
+            "value": [
+              "low",
+              "moderate"
+            ]
+          }
+        ]
+      },
+      "effects": {
+        "primary_strategy": "direct-minimal-edit",
+        "candidate_recipes": {
+          "force_none": true
+        },
+        "complexity": {
+          "ceiling": "L1"
+        },
+        "components": {
+          "promote": [
+            "micro-repair"
+          ],
+          "conditional": [
+            "task-set-lock-in",
+            "bidirectional-consistency"
+          ],
+          "hard_exclude": [
+            "multiverse-reasoning",
+            "parallel-qms",
+            "meta-supervisor",
+            "sequential-memory-state-engine",
+            "surgery-edit"
+          ]
+        }
+      },
+      "reason": "A bounded rename or literal edit should not trigger architecture, branching, durable-state, or orchestration machinery."
+    },
+    {
+      "id": "review-only-boundary",
+      "inherits": "base-minimal",
+      "priority": 100,
+      "when": {
+        "all": [
+          {
+            "field": "permissions.review_only",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "components": {
+          "promote": [
+            "task-set-lock-in",
+            "scoped-loader",
+            "grounding-no-invention"
+          ],
+          "hard_exclude": [
+            "micro-repair",
+            "contradiction-micro-repair",
+            "surgery-edit",
+            "external-state-automation"
+          ]
+        },
+        "hard_restrictions": [
+          "No file edits, record changes, commits, pushes, sends, deploys, or remediation unless separately and explicitly requested."
+        ]
+      },
+      "reason": "Review and remediation are separate authority modes."
+    },
+    {
+      "id": "software-code-review",
+      "inherits": "review-only-boundary",
+      "priority": 70,
+      "when": {
+        "all": [
+          {
+            "field": "task.archetype",
+            "op": "in",
+            "value": [
+              "software-engineering",
+              "evaluation-audit"
+            ]
+          },
+          {
+            "field": "task.subtype",
+            "op": "eq",
+            "value": "code-review"
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "promote": [
+            "code-review"
+          ]
+        },
+        "components": {
+          "conditional": [
+            "anti-tunnel-vision",
+            "bidirectional-consistency",
+            "invariance-stress-scaffold",
+            "critical-atomic-verification"
+          ]
+        }
+      },
+      "reason": "Review needs grounded findings and targeted surrounding context; deeper validators remain conditional on change risk."
+    },
+    {
+      "id": "coding-repair",
+      "inherits": "base-minimal",
+      "priority": 65,
+      "when": {
+        "all": [
+          {
+            "field": "task.archetype",
+            "op": "eq",
+            "value": "software-engineering"
+          },
+          {
+            "field": "task.subtype",
+            "op": "in",
+            "value": [
+              "bug-diagnosis",
+              "localized-repair"
+            ]
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "promote": [
+            "coding-debugging"
+          ]
+        },
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L3"
+        },
+        "components": {
+          "promote": [
+            "task-set-lock-in",
+            "scoped-loader"
+          ],
+          "conditional": [
+            "micro-repair",
+            "invariance-stress-scaffold",
+            "anti-tunnel-vision",
+            "bidirectional-consistency"
+          ],
+          "demote": [
+            "multiverse-reasoning",
+            "meta-supervisor"
+          ]
+        }
+      },
+      "reason": "Repair should localize and verify the smallest sufficient change; diagnosis-only still excludes mutation through the authority rules."
+    },
+    {
+      "id": "source-bounded-research",
+      "inherits": "base-minimal",
+      "priority": 60,
+      "when": {
+        "any": [
+          {
+            "all": [
+              {
+                "field": "task.archetype",
+                "op": "eq",
+                "value": "content-understanding"
+              },
+              {
+                "field": "task.subtype",
+                "op": "in",
+                "value": [
+                  "source-bounded-qa",
+                  "single-document-analysis",
+                  "bounded-corpus-comparison"
+                ]
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "field": "task.archetype",
+                "op": "eq",
+                "value": "research-grounding"
+              },
+              {
+                "field": "task.subtype",
+                "op": "eq",
+                "value": "multi-source-comparison"
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "field": "modifiers.has_supplied_sources",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "permissions.external_research_allowed",
+                "op": "eq",
+                "value": false
+              }
+            ]
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "promote": [
+            "source-grounded-analysis"
+          ],
+          "conditional": [
+            "long-context-source-fidelity"
+          ]
+        },
+        "components": {
+          "promote": [
+            "grounding-no-invention"
+          ],
+          "conditional": [
+            "scoped-loader",
+            "critical-atomic-verification",
+            "citation-fidelity"
+          ]
+        },
+        "hard_restrictions": [
+          "Do not introduce external evidence unless external research is explicitly allowed."
+        ]
+      },
+      "reason": "Supplied-source work needs a hard evidence boundary; source length independently controls context machinery."
+    },
+    {
+      "id": "citation-bearing-output",
+      "inherits": "base-minimal",
+      "priority": 85,
+      "when": {
+        "all": [
+          {
+            "field": "modifiers.requires_citations",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "components": {
+          "promote": [
+            "citation-fidelity",
+            "grounding-no-invention"
+          ],
+          "conditional": [
+            "critical-atomic-verification",
+            "epistemic-status-gating"
+          ]
+        },
+        "required_checks": [
+          "Verify that each material citation entails the adjacent bounded claim and that material claims have support."
+        ]
+      },
+      "reason": "Citation correctness, completeness, and answer correctness are distinct."
+    },
+    {
+      "id": "open-research",
+      "inherits": "base-minimal",
+      "priority": 60,
+      "when": {
+        "all": [
+          {
+            "field": "task.archetype",
+            "op": "eq",
+            "value": "research-grounding"
+          },
+          {
+            "field": "permissions.external_research_allowed",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "promote": [
+            "research-skill"
+          ],
+          "conditional": [
+            "source-grounded-analysis"
+          ]
+        },
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L4"
+        },
+        "components": {
+          "promote": [
+            "grounding-no-invention",
+            "task-set-lock-in"
+          ],
+          "conditional": [
+            "anti-tunnel-vision",
+            "scoped-loader",
+            "epistemic-status-gating",
+            "citation-fidelity"
+          ]
+        }
+      },
+      "reason": "Retrieval, verification, synthesis, and systematic review remain distinguishable through task signals and modifiers."
+    },
+    {
+      "id": "long-context-pressure",
+      "inherits": "base-minimal",
+      "priority": 55,
+      "when": {
+        "any": [
+          {
+            "field": "derived.context_window_pressure",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "modifiers.multi_document",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "modifiers.long_context",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "conditional": [
+            "long-context-corpus",
+            "long-context-source-fidelity"
+          ]
+        },
+        "complexity": {
+          "ceiling": "L4"
+        },
+        "components": {
+          "promote": [
+            "scoped-loader",
+            "activation-budget-funnel"
+          ],
+          "conditional": [
+            "attention-compression-scaffold",
+            "working-memory-lock-in",
+            "citation-fidelity"
+          ],
+          "demote": [
+            "meta-supervisor"
+          ]
+        }
+      },
+      "reason": "Long context is a modifier: route by the underlying task, then use targeted retrieval and explicit provenance."
+    },
+    {
+      "id": "persistent-or-handoff-work",
+      "inherits": "long-context-pressure",
+      "priority": 75,
+      "when": {
+        "any": [
+          {
+            "field": "modifiers.persistent_work",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "modifiers.handoff_expected",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "complexity": {
+          "floor": "L2",
+          "ceiling": "L4"
+        },
+        "components": {
+          "promote": [
+            "stable-long-context",
+            "working-memory-lock-in",
+            "task-set-lock-in"
+          ],
+          "conditional": [
+            "stateblock",
+            "state-snapshot",
+            "sequential-memory-state-engine"
+          ]
+        },
+        "required_checks": [
+          "Persist authoritative scope, completed work, validation, blockers, and next action in an explicit handoff artifact."
+        ]
+      },
+      "reason": "Durable state is justified by continuation or handoff, not source size alone."
+    },
+    {
+      "id": "exact-fidelity",
+      "inherits": "base-minimal",
+      "priority": 85,
+      "when": {
+        "any": [
+          {
+            "field": "modifiers.requires_exact_fidelity",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "modifiers.contains_protected_literals",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "components": {
+          "promote": [
+            "zero-drift-zones",
+            "bidirectional-consistency"
+          ],
+          "conditional": [
+            "safe-rewrite",
+            "controlled-drift-corridors",
+            "critical-atomic-verification",
+            "invariance-stress-scaffold"
+          ]
+        }
+      },
+      "reason": "Numbers, quotations, identifiers, obligations, and interfaces need explicit preservation checks."
+    },
+    {
+      "id": "external-state-action",
+      "inherits": "base-minimal",
+      "priority": 85,
+      "when": {
+        "all": [
+          {
+            "field": "task.archetype",
+            "op": "eq",
+            "value": "action-execution"
+          },
+          {
+            "field": "permissions.external_action_allowed",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "complexity": {
+          "floor": "L2",
+          "ceiling": "L4"
+        },
+        "components": {
+          "promote": [
+            "task-set-lock-in",
+            "authority-anchor-enforcement",
+            "forethought-checkpoints"
+          ],
+          "conditional": [
+            "critical-atomic-verification",
+            "state-snapshot",
+            "bounded-exit",
+            "external-state-automation"
+          ]
+        },
+        "required_checks": [
+          "Resolve capability, credential scope, current-task authority, exact target, postcondition, and retry safety separately."
+        ]
+      },
+      "reason": "An external mutation needs narrower authority and postcondition evidence than an observation."
+    },
+    {
+      "id": "irreversible-or-consequential-action",
+      "inherits": "external-state-action",
+      "priority": 100,
+      "when": {
+        "any": [
+          {
+            "field": "modifiers.irreversible_action",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "risk.action_requested",
+            "op": "eq",
+            "value": "consequential"
+          }
+        ]
+      },
+      "effects": {
+        "complexity": {
+          "floor": "L3",
+          "ceiling": "L4"
+        },
+        "components": {
+          "promote": [
+            "risk-tier-scaling",
+            "critical-atomic-verification",
+            "fail-closed-abstention",
+            "forethought-checkpoints"
+          ],
+          "conditional": [
+            "clarification-gateway",
+            "state-snapshot",
+            "bounded-exit"
+          ]
+        },
+        "hard_restrictions": [
+          "Do not execute while authority, target, effect, evidence, approval requirement, or safe-failure path is unresolved.",
+          "Do not automatically retry a non-idempotent or ambiguously completed mutation."
+        ]
+      },
+      "reason": "Consequential actions require exact preflight, explicit authorization, bounded recovery, and safe failure."
+    },
+    {
+      "id": "high-stakes-control",
+      "inherits": "base-minimal",
+      "priority": 90,
+      "when": {
+        "any": [
+          {
+            "field": "modifiers.high_stakes",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "risk.impact_magnitude",
+            "op": "in",
+            "value": [
+              "high",
+              "critical"
+            ]
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "conditional": [
+            "high-stakes-reasoning"
+          ]
+        },
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L4"
+        },
+        "components": {
+          "promote": [
+            "risk-tier-scaling",
+            "critical-atomic-verification",
+            "epistemic-status-gating"
+          ],
+          "conditional": [
+            "fail-closed-abstention",
+            "authority-anchor-enforcement",
+            "parallel-qms",
+            "anti-tunnel-vision"
+          ],
+          "demote": [
+            "meta-supervisor"
+          ]
+        }
+      },
+      "reason": "High stakes modifies the underlying task and scales validation to decision-critical uncertainty; it does not imply maximal orchestration."
+    },
+    {
+      "id": "orchestration-eligible",
+      "inherits": "base-minimal",
+      "priority": 70,
+      "when": {
+        "all": [
+          {
+            "field": "derived.branches_independent",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "derived.synthesis_required",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "capabilities.multi_agent_available",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "conditional": [
+            "multi-agent-orchestration"
+          ]
+        },
+        "complexity": {
+          "floor": "L3",
+          "ceiling": "L5"
+        },
+        "components": {
+          "promote": [
+            "task-set-lock-in",
+            "working-memory-lock-in"
+          ],
+          "conditional": [
+            "meta-supervisor",
+            "parallel-qms",
+            "stateblock"
+          ]
+        },
+        "required_checks": [
+          "Each worker needs a bounded objective, context, tool boundary, output contract, and stop condition; synthesis must resolve overlap and gaps."
+        ]
+      },
+      "reason": "Availability is insufficient; orchestration needs separable responsibilities and a specified synthesis job."
+    },
+    {
+      "id": "orchestration-suppression",
+      "inherits": "base-minimal",
+      "priority": 80,
+      "when": {
+        "any": [
+          {
+            "field": "derived.simple_exact_edit",
+            "op": "eq",
+            "value": true
+          },
+          {
+            "field": "derived.tightly_shared_state",
+            "op": "eq",
+            "value": true
+          }
+        ]
+      },
+      "effects": {
+        "candidate_recipes": {
+          "exclude": [
+            "multi-agent-orchestration"
+          ]
+        },
+        "components": {
+          "hard_exclude": [
+            "meta-supervisor"
+          ],
+          "demote": [
+            "parallel-qms"
+          ]
+        }
+      },
+      "reason": "Tightly coupled, tiny, or serial work pays coordination cost without gaining independent coverage."
+    }
+  ]
+}

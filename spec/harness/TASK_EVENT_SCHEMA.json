@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/TASK_EVENT_SCHEMA.json",
+  "title": "Upgradeables Opt-In Task Event",
+  "type": "object",
+  "required": ["event_id", "timestamp", "normalized_task"],
+  "properties": {
+    "event_id": {"type": "string", "pattern": "^evt-[a-f0-9]{12}$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "raw_task": {"type": "string"},
+    "normalized_task": {"type": "string", "minLength": 1},
+    "task_archetype": {"type": "string"},
+    "selected_recipe": {"type": ["string", "null"]},
+    "candidate_components": {"type": "array"},
+    "environment_modifiers": {"type": ["array", "object"]},
+    "project_constraints": {"type": ["array", "object"]},
+    "requested_output_shape": {},
+    "output_contract": {},
+    "authority_mode": {"type": "string"},
+    "component_composition": {"type": "array"},
+    "required_inputs": {"type": ["array", "object", "string"]},
+    "activation_boundary": {"type": ["object", "string"]},
+    "procedure_signature": {"type": ["array", "object", "string"]},
+    "user_agent_overrides": {"type": ["array", "object"]},
+    "skill_used": {"type": ["string", "null"]},
+    "outcome": {}
+  },
+  "additionalProperties": false
+}

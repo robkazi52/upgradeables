@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "0.2.1",
+  "selection_only": true,
+  "recipes": {
+    "code-review": {
+      "priority": "high",
+      "reason": ["software-development project profile", "tests detected", "CI detected"]
+    }
+  }
+}

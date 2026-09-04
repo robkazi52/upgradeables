@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "harness_version": "0.3.0",
+  "registry_version": "0.2.1",
+  "registry_source": {
+    "type": "bundled",
+    "commit": "d76f2cdf8e08dfa63636fa6e9cf35cad6448d5a2",
+    "tag": null,
+    "snapshot_hash": "sha256:f921c450a42d03b46aef2f76d3cc7b5dfc67e9d62ce64098bccb78bf033bf8c7"
+  },
+  "components": {},
+  "skills": {}
+}

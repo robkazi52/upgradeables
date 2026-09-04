@@ -4,6 +4,20 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ## [Unreleased]
 
+### Added
+
+- A local-first `0.3.0` project harness with shallow inspection, deterministic
+  task resolution, project profiles, version locks, and bounded agent adapters.
+- A project Skill factory with deterministic briefs, draft scaffolds, separate
+  draft/final validation, a Skill map, and opt-in workflow repetition analysis.
+- Machine-readable harness schemas, synthetic Python project examples, and clean
+  package-install CI coverage without model or network calls at runtime.
+
+### Security
+
+- Task-event history is disabled by default and excludes private chain-of-thought.
+- Skill activation does not grant file, network, publication, or other authority.
+
 ## [0.2.1] - 2026-09-03
 
 ### Added

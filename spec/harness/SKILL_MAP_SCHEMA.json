@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/SKILL_MAP_SCHEMA.json",
+  "title": "Upgradeables Project Skill Map",
+  "type": "object",
+  "required": ["schema_version", "harness_version", "skills"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "harness_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slug", "path", "status", "recipe", "components", "project_specific"],
+        "properties": {
+          "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "path": {"type": "string", "pattern": "^\\.upgradeables/skills/[a-z0-9]+(?:-[a-z0-9]+)*/SKILL\\.md$"},
+          "status": {"enum": ["draft", "candidate", "validated", "deprecated"]},
+          "recipe": {"type": ["string", "null"]},
+          "components": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*@\\d+\\.\\d+\\.\\d+$"}
+          },
+          "project_specific": {"const": true}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

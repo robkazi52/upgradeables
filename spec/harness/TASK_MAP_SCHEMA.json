@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/TASK_MAP_SCHEMA.json",
+  "title": "Upgradeables Project Task Map",
+  "type": "object",
+  "required": ["schema_version", "registry_version", "selection_only", "recipes"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_version": {"const": "0.2.1"},
+    "selection_only": {"const": true},
+    "recipes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["priority", "reason"],
+        "properties": {
+          "priority": {"enum": ["high", "medium", "low"]},
+          "reason": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

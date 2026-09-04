@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/RECOMMENDATION_SCHEMA.json",
+  "title": "Upgradeables project recommendation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_version",
+    "selection_only",
+    "project",
+    "likely_recipes",
+    "candidate_cross_cutting",
+    "excluded",
+    "reasons"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "registry_version": {"type": "string"},
+    "selection_only": {"const": true},
+    "project": {"type": "object"},
+    "likely_recipes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "candidate_cross_cutting": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "excluded": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "reasons": {"type": "array", "items": {"type": "string"}}
+  }
+}

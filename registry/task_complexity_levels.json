@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "0.2.1",
+  "kind": "task-complexity-ceiling-registry",
+  "selection_prior_disclaimer": "Complexity levels cap scaffolding and coordination; they do not measure model intelligence, guarantee task success, or activate components. Begin at the lowest sufficient level and raise only for an explicit condition tied to the current task.",
+  "ordering": ["L0", "L1", "L2", "L3", "L4", "L5"],
+  "levels": [
+    {
+      "slug": "L0",
+      "display_name": "Direct",
+      "description": "Single-step or deterministic work with minimal controls and no persistent state.",
+      "typical_execution_forms": ["direct-response"],
+      "minimum_characteristics": ["clear bounded goal", "small explicit input", "low consequence or directly checkable result"],
+      "normally_allowed_controls": ["task restatement when needed", "one direct check", "format or literal validation"],
+      "normally_suppressed": ["branch search", "persistent state", "agent loop", "multi-agent orchestration", "full QMS"],
+      "examples": ["Rename one heading", "Format supplied text", "Answer a direct stable question"]
+    },
+    {
+      "slug": "L1",
+      "display_name": "Controlled",
+      "description": "A small bounded composition with explicit scope, fidelity, evidence, or validation controls.",
+      "typical_execution_forms": ["direct-response", "fixed-workflow", "tool-assisted"],
+      "minimum_characteristics": ["one or a few dependent steps", "bounded source or mutation surface", "a concrete validator or completion check"],
+      "normally_allowed_controls": ["task lock", "grounding", "one focused validator", "small scoped retrieval", "bounded local edit"],
+      "normally_suppressed": ["durable project memory for one turn", "unbounded alternatives", "multi-agent orchestration"],
+      "examples": ["Verify one sourced fact", "Apply a local repair", "Compare two options against clear criteria"]
+    },
+    {
+      "slug": "L2",
+      "display_name": "Stateful",
+      "description": "Work needs explicit state, retrieval, several coordinated steps, or checkpoints to remain coherent.",
+      "typical_execution_forms": ["fixed-workflow", "tool-assisted", "stateful-continuation"],
+      "minimum_characteristics": ["multiple documents or modules", "resumable or multi-step work", "state or provenance that cannot safely remain implicit"],
+      "normally_allowed_controls": ["scoped retrieval", "progress state", "claim or constraint ledger", "checkpoint", "bounded alternatives"],
+      "normally_suppressed": ["autonomous high-impact action", "supervisor hierarchy", "multiple workers without separable work"],
+      "examples": ["Synthesize a bounded corpus", "Implement a feature across related files", "Resume from an explicit handoff"]
+    },
+    {
+      "slug": "L3",
+      "display_name": "Evaluated",
+      "description": "Material ambiguity, consequence, or hard-to-observe correctness justifies stronger and preferably independent validation.",
+      "typical_execution_forms": ["fixed-workflow", "tool-assisted", "stateful-continuation", "agentic-loop"],
+      "minimum_characteristics": ["consequential or structurally broad outcome", "conflicting evidence or coupled constraints", "validator adds distinct information"],
+      "normally_allowed_controls": ["risk-scaled validators", "counterexample or falsification", "independent check", "human review gate", "explicit abstention or escalation"],
+      "normally_suppressed": ["automatic irreversible execution", "multiple correlated judges", "orchestration without a decomposition case"],
+      "examples": ["Review security-sensitive code", "Perform a protocol-driven evidence review", "Validate a large behavior-preserving refactor"]
+    },
+    {
+      "slug": "L4",
+      "display_name": "Agentic",
+      "description": "An adaptive tool loop maintains explicit state, observations, retries, action boundaries, and recovery over a longer horizon.",
+      "typical_execution_forms": ["agentic-loop", "stateful-continuation"],
+      "minimum_characteristics": ["next step depends on external observation", "bounded retries and stop conditions", "durable state or recovery is necessary"],
+      "normally_allowed_controls": ["tool selection and preflight", "action ledger", "retry and recovery policy", "compaction with provenance", "approval pause and resume"],
+      "normally_suppressed": ["parallel agents for a serial loop", "unbounded autonomy", "hidden state or memory claims"],
+      "examples": ["Long issue-to-patch loop", "Open-web investigation with adaptive queries", "Approval-aware cross-system workflow"]
+    },
+    {
+      "slug": "L5",
+      "display_name": "Orchestrated",
+      "description": "Multiple bounded workers or specialist roles operate with explicit ownership, handoffs, budgets, and synthesis.",
+      "typical_execution_forms": ["orchestrated-workers"],
+      "minimum_characteristics": ["genuinely separable workstreams or distinct authority/tool boundaries", "synthesis or handoff contract", "coordination value exceeds overhead"],
+      "normally_allowed_controls": ["worker scopes", "independent context", "coverage map", "conflict resolution", "supervisor synthesis", "durable handoffs"],
+      "normally_suppressed": ["shared full-context duplication", "workers for tiny or sequential tasks", "majority vote as truth"],
+      "examples": ["Breadth-first research across independent branches", "Cross-repository program with separate owners", "Incident response with distinct expert and operational roles"]
+    }
+  ],
+  "global_rules": {
+    "apply_order": [
+      "Classify the primary task and explicit authority.",
+      "Start from the archetype's default floor and ceiling.",
+      "Apply lowering conditions before raising conditions.",
+      "Apply hard restrictions such as review-only or missing approval.",
+      "Raise one level at a time only when an explicit condition is observed.",
+      "Select candidate recipes and components within the resulting ceiling.",
+      "Evaluate canonical triggers, non-triggers, dependencies, conflicts, and counterbalances."
+    ],
+    "hard_suppressions": [
+      {
+        "condition": "review_only",
+        "effect": "Exclude editing and external-action components regardless of project profile."
+      },
+      {
+        "condition": "trivial_exact_task",
+        "effect": "Cap at L0 or L1 and suppress Multiverse, full QMS, Meta-Supervisor, long-context machinery, and orchestration."
+      },
+      {
+        "condition": "multi_agent_available_without_parallelizable_breadth",
+        "effect": "Do not raise to L5."
+      },
+      {
+        "condition": "human_approval_unavailable AND approval_required",
+        "effect": "Stop before the action; a preview, draft, or approval packet may still be produced."
+      },
+      {
+        "condition": "source_boundary_closed",
+        "effect": "Do not browse or import outside evidence."
+      }
+    ],
+    "general_raise_conditions": [
+      "material consequences combine with uncertainty",
+      "relevant information is distributed across a large corpus",
+      "several coupled constraints or interfaces must remain consistent",
+      "the next step depends on observed tool or environment results",
+      "work must resume across context windows or actors",
+      "an action is external, destructive, difficult to reverse, or rights-affecting",
+      "independent workstreams are genuinely separable and require synthesis"
+    ],
+    "general_lower_conditions": [
+      "one direct authoritative source resolves the question",
+      "a deterministic validator settles the relevant property",
+      "the task is a short exact transformation or local edit",
+      "the current task touches only a small part of a large project",
+      "the user requests quick orientation rather than comprehensive treatment",
+      "the workflow is fixed and does not need adaptive tool choice"
+    ]
+  },
+  "archetype_bounds": {
+    "knowledge-explanation": {
+      "default_complexity_floor": "L0",
+      "default_complexity_ceiling": "L1",
+      "conditions_to_raise_ceiling": ["external current facts require retrieval", "high-stakes consequences depend on the answer", "the explanation requires several supplied sources"],
+      "conditions_to_lower_ceiling": ["stable direct question", "one short supplied source", "quick orientation requested"]
+    },
+    "content-understanding": {
+      "default_complexity_floor": "L0",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["multi-document or long-context evidence is dispersed", "exact quotations or protected values matter", "claim-level citations or consequential interpretation are required", "the corpus exceeds one context window"],
+      "conditions_to_lower_ceiling": ["one short source", "simple extraction with explicit fields", "summary without consequential inference"]
+    },
+    "content-transformation": {
+      "default_complexity_floor": "L0",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["long source requires staged transformation", "protected literals or semantic invariants are numerous", "output must satisfy a strict schema", "the transformation is consequential or difficult to reverse"],
+      "conditions_to_lower_ceiling": ["short exact rewrite", "mechanically checkable format conversion", "no factual expansion or protected content"]
+    },
+    "content-authoring": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["multi-source research is required", "publication consequences are material", "many sections require persistent state", "citation and evidence coverage must be audited"],
+      "conditions_to_lower_ceiling": ["short creative draft", "outline only", "source-free low-risk prose with a clear brief"]
+    },
+    "research-grounding": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L4",
+      "conditions_to_raise_ceiling": ["open-ended adaptive browsing is required", "sources are conflicting or time-sensitive", "a systematic protocol is requested", "many independent branches justify orchestrated research", "high-stakes conclusions depend on weak or dispersed evidence"],
+      "conditions_to_lower_ceiling": ["one stable fact from one authoritative source", "short closed supplied corpus", "citations and exhaustive coverage are explicitly unnecessary"]
+    },
+    "quantitative-analysis": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["large data requires tool loops", "statistical assumptions materially affect a consequential result", "several transformations need reproducible state", "independent validation adds distinct information"],
+      "conditions_to_lower_ceiling": ["one direct calculation", "deterministic formula and validator", "small clean table with explicit units"]
+    },
+    "constraint-reasoning": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["many coupled constraints create a large search space", "adaptive solver or tool interaction is required", "optimality must be proved after feasibility", "consequential commitment depends on the solution"],
+      "conditions_to_lower_ceiling": ["small deterministic puzzle", "verifier directly checks the solution", "no branching is needed"]
+    },
+    "planning-design": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["state changes require adaptive replanning", "architecture spans multiple systems", "implementation evidence must be gathered through tools", "workstreams are independent and synthesis is explicit"],
+      "conditions_to_lower_ceiling": ["short plan with known state and constraints", "task decomposition only", "no execution is requested"]
+    },
+    "decision-support": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["decision is difficult to reverse", "evidence is conflicting or incomplete", "many material criteria interact", "qualified human review is needed"],
+      "conditions_to_lower_ceiling": ["low-impact reversible choice", "few options and explicit criteria", "one option is infeasible by a direct check"]
+    },
+    "creative-exploration": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L2",
+      "conditions_to_raise_ceiling": ["very broad independent domains are requested", "later selection has consequential constraints", "hypotheses require adaptive external tests"],
+      "conditions_to_lower_ceiling": ["small brainstorm", "one concept variation", "no convergence or validation requested"]
+    },
+    "software-engineering": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L4",
+      "conditions_to_raise_ceiling": ["change spans public APIs, schemas, services, or repositories", "long issue-to-patch loop requires repeated execution", "security or production criticality raises validation", "multi-session state is required", "independent workstreams justify orchestration"],
+      "conditions_to_lower_ceiling": ["exact one-line edit", "small read-only repository question", "local reproducible repair with a direct focused test", "review-only task on a small diff"]
+    },
+    "evaluation-audit": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L3",
+      "conditions_to_raise_ceiling": ["artifact has high downstream impact", "coverage spans a large corpus or codebase", "independent validation addresses a distinct failure mode", "criteria or evidence are conflicting"],
+      "conditions_to_lower_ceiling": ["one direct deterministic check", "small low-risk artifact", "bounded rubric with observable evidence"]
+    },
+    "action-execution": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L4",
+      "conditions_to_raise_ceiling": ["mutation affects external or shared state", "action is destructive, irreversible, financial, privacy-sensitive, deployment, or rights-affecting", "workflow must pause for approval and resume", "ambiguous outcomes require reconciliation and recovery"],
+      "conditions_to_lower_ceiling": ["read-only observation", "reversible local versioned change", "direct postcondition establishes success"]
+    },
+    "workflow-automation": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L4",
+      "conditions_to_raise_ceiling": ["next steps depend on tool observations", "external systems or side effects require recovery", "durable state and approvals are required", "separate roles need explicit routing and synthesis"],
+      "conditions_to_lower_ceiling": ["mechanical deterministic script suffices", "single fixed trigger-to-output path", "no external state or adaptive loop"]
+    },
+    "skill-agent-creation": {
+      "default_complexity_floor": "L1",
+      "default_complexity_ceiling": "L4",
+      "conditions_to_raise_ceiling": ["Skill needs tools, large references, or stateful checks", "specialist requires a distinct permission or context boundary", "several independent specialists require orchestration", "cross-project distribution requires stronger compatibility validation"],
+      "conditions_to_lower_ceiling": ["one-off task should remain one-off", "reusable wording only needs a prompt", "project-wide fact belongs in concise instructions", "one Skill on the current agent is sufficient"]
+    }
+  }
+}

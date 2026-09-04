@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/harness/SKILL_BRIEF_SCHEMA.json",
+  "title": "Upgradeables Project Skill Brief",
+  "type": "object",
+  "required": [
+    "schema_version", "status", "candidate_skill", "task", "project_root",
+    "project_types", "primary_recipe", "required_components",
+    "trigger_likely_components", "conditional_components", "optional_components",
+    "excluded_components", "needs_agent_evaluation", "selected_component_pins",
+    "project_references", "instructions", "next_command"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "status": {"enum": ["candidate-brief", "needs-agent-evaluation"]},
+    "candidate_skill": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "task": {"type": "string", "minLength": 1},
+    "project_root": {"type": "string", "minLength": 1},
+    "project_types": {"type": "array", "items": {"type": "string"}},
+    "primary_recipe": {"type": ["string", "null"]},
+    "required_components": {"$ref": "#/$defs/componentPins"},
+    "trigger_likely_components": {"$ref": "#/$defs/componentPins"},
+    "conditional_components": {"$ref": "#/$defs/componentPins"},
+    "optional_components": {"$ref": "#/$defs/componentPins"},
+    "excluded_components": {"$ref": "#/$defs/componentRefs"},
+    "needs_agent_evaluation": {"$ref": "#/$defs/componentRefs"},
+    "selected_component_pins": {"$ref": "#/$defs/componentPins"},
+    "project_references": {"type": "array", "items": {"type": "string"}},
+    "instructions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "next_command": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "componentPins": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*@\\d+\\.\\d+\\.\\d+$"}
+    },
+    "componentRefs": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:@\\d+\\.\\d+\\.\\d+)?$"}
+    }
+  },
+  "additionalProperties": false
+}
