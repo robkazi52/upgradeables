@@ -47,7 +47,7 @@ python scripts/query_registry.py --recipe code-review --runtime
 The `0.3.0` project harness is local-first and has no runtime dependencies:
 
 ```bash
-pipx install git+https://github.com/robkazi52/upgradeables.git
+pipx install git+https://github.com/robkazi52/upgradeables.git@v0.3.0
 cd your-project
 upgradeables init
 upgradeables integrate codex --write

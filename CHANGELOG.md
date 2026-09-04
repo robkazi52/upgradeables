@@ -4,6 +4,8 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-09-03
+
 ### Added
 
 - A local-first `0.3.0` project harness with shallow inspection, deterministic
@@ -12,6 +14,11 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
   draft/final validation, a Skill map, and opt-in workflow repetition analysis.
 - Machine-readable harness schemas, synthetic Python project examples, and clean
   package-install CI coverage without model or network calls at runtime.
+- A research-first selection ontology with 15 task archetypes, 36 failure modes,
+  37 environment/capability signals, six complexity levels, and reviewed prior
+  mappings for all 96 operational Upgradeables.
+- A one-command release-candidate smoke test covering installation, idempotency,
+  task resolution, managed integration, Skill scaffolding, and diagnostics.
 
 ### Security
 
