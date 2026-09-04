@@ -69,7 +69,10 @@ do {
     if ($LASTEXITCODE -ne 0) {
         throw "Could not query GitHub Actions runs."
     }
-    $Runs = @($RunJson | ConvertFrom-Json)
+    # Windows PowerShell can wrap a JSON array as one nested object, and an
+    # empty JSON array can become a single null entry. Flatten the result so a
+    # newly pushed commit with no registered runs yet reaches the retry path.
+    $Runs = @($RunJson | ConvertFrom-Json | ForEach-Object { $_ })
     $Selected = @{}
     foreach ($Workflow in $ExpectedWorkflows) {
         $Selected[$Workflow] = $Runs | Where-Object { $_.name -eq $Workflow } | Select-Object -First 1

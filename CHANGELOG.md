@@ -27,6 +27,8 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 - Serialized project initialization and made atomic staging filenames unique so
   concurrent first-run initialization is reliable on Windows.
 - Made public-asset checksums stable across LF and CRLF Git checkouts.
+- Made the release publisher wait cleanly when GitHub Actions has not registered
+  a newly pushed commit yet.
 
 ### Security
 
