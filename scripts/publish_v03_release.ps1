@@ -111,8 +111,19 @@ else {
 
 Invoke-Checked "push $Tag" { & git push origin $Tag }
 
-& gh release view $Tag --repo $Repository *> $null
-if ($LASTEXITCODE -eq 0) {
+$PreviousErrorActionPreference = $ErrorActionPreference
+try {
+    # A missing release is the expected first-publication state. Suppress that
+    # native stderr so Windows PowerShell does not promote it to a terminating
+    # error while strict mode is active.
+    $ErrorActionPreference = "SilentlyContinue"
+    & gh release view $Tag --repo $Repository 2>$null | Out-Null
+    $ReleaseExists = $LASTEXITCODE -eq 0
+}
+finally {
+    $ErrorActionPreference = $PreviousErrorActionPreference
+}
+if ($ReleaseExists) {
     throw "GitHub release $Tag already exists; refusing to overwrite it."
 }
 
