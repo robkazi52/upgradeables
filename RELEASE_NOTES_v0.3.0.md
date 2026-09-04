@@ -30,7 +30,7 @@ components or claim that the components improve every model or task.
 
 ## Validation
 
-- 112 deterministic unit and integration tests passed.
+- 121 deterministic unit, integration, and bounded stress tests passed.
 - 96 semantic packages and 576 behavior cases passed existing validation.
 - 1,189 internal links passed.
 - Wheel and source distribution built successfully.
@@ -38,6 +38,9 @@ components or claim that the components improve every model or task.
 - A GitHub-installed release-candidate smoke test passed project inspection,
   repeat initialization, task resolution, managed integration, Skill creation,
   validation, and `doctor`.
+- Three consecutive stress-gate runs passed resolver paraphrases, newline and
+  Unicode managed blocks, concurrent initialization, corrupt-state fail-closed
+  handling, unsafe paths, deep directory noise, and invalid Skill slugs.
 
 ## Install
 

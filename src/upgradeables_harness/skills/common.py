@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import tempfile
+import time
 from pathlib import Path
 from typing import Any
 
@@ -40,12 +43,36 @@ def write_json(path: Path, value: dict[str, Any]) -> None:
     """Write one harness-owned JSON artifact with stable formatting."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(f".{path.name}.tmp")
-    temporary.write_text(
-        json.dumps(value, indent=2, ensure_ascii=False, sort_keys=False) + "\n",
-        encoding="utf-8",
+    payload = (
+        json.dumps(value, indent=2, ensure_ascii=False, sort_keys=False) + "\n"
+    ).encode("utf-8")
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{path.name}.", suffix=".upgradeables-tmp", dir=path.parent
     )
-    temporary.replace(path)
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "wb") as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+        for attempt in range(8):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError:
+                try:
+                    if path.read_bytes() == payload:
+                        break
+                except OSError:
+                    pass
+                if attempt == 7:
+                    raise
+                time.sleep(0.005 * (attempt + 1))
+    finally:
+        try:
+            temporary.unlink(missing_ok=True)
+        except OSError:
+            pass
 
 
 def resolve_project_root(value: str | Path | None = None) -> Path:

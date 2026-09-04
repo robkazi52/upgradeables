@@ -2,7 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
+import time
 from argparse import Namespace
+from contextlib import contextmanager
 from pathlib import Path
 
 from ..agents.base import PROVIDERS, generate_fragment
@@ -13,6 +16,40 @@ from .config import default_config
 from .lockfile import default_lockfile
 from .manifest import WriteResult, harness_root, owned_path, write_owned_json, write_owned_text
 from .task_map import build_task_map
+
+
+@contextmanager
+def _initialization_lock(base: Path):
+    """Serialize initialization of one project across threads/processes."""
+    lock = base / ".init.lock"
+    deadline = time.monotonic() + 30.0
+    descriptor = None
+    while descriptor is None:
+        try:
+            descriptor = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(descriptor, f"{os.getpid()}\n".encode("ascii"))
+        except FileExistsError:
+            try:
+                stale = time.time() - lock.stat().st_mtime > 60.0
+            except OSError:
+                stale = False
+            if stale:
+                try:
+                    lock.unlink()
+                except OSError:
+                    pass
+                continue
+            if time.monotonic() >= deadline:
+                raise RuntimeError(f"timed out waiting for harness initialization lock: {lock}")
+            time.sleep(0.01)
+    try:
+        yield
+    finally:
+        os.close(descriptor)
+        try:
+            lock.unlink(missing_ok=True)
+        except OSError:
+            pass
 
 
 def _depth(args: Namespace) -> str:
@@ -69,32 +106,37 @@ def initialize_project(
     profiles = select_profiles(inspection, [profile] if profile else None)
     recommendation = recommend_project(root, preferred_profiles=profiles, inspection=inspection)
     project_record = _project_record(inspection, profiles, recommendation["likely_recipes"])
-    results = [
-        write_owned_json(root, "project.json", project_record, force=force),
-        write_owned_json(
-            root, "config.json",
-            default_config(
-                preferred_profiles=[profile] if profile else [],
-                reference_roots=inspection["reference_roots"],
-                install_depth=depth,
+    # Establish the owned directory once before individual atomic writes. This
+    # removes a first-run directory-creation race when multiple agents or shells
+    # initialize the same project concurrently.
+    harness_root(root).mkdir(parents=True, exist_ok=True)
+    with _initialization_lock(harness_root(root)):
+        results = [
+            write_owned_json(root, "project.json", project_record, force=force),
+            write_owned_json(
+                root, "config.json",
+                default_config(
+                    preferred_profiles=[profile] if profile else [],
+                    reference_roots=inspection["reference_roots"],
+                    install_depth=depth,
+                ),
+                force=force,
             ),
-            force=force,
-        ),
-        write_owned_json(root, "lock.json", default_lockfile(), force=force),
-        write_owned_text(root, "agents/generic.md", generate_fragment("generic"), force=force),
-    ]
-    if depth in {"standard", "full"}:
-        results.append(write_owned_json(root, "task-map.json", build_task_map(recommendation, inspection["features"]), force=force))
-        results.extend(_ensure_skill_state(root, force=force))
-        for provider in (provider for provider in PROVIDERS if provider != "generic"):
-            results.append(write_owned_text(root, f"agents/{provider}.md", generate_fragment(provider), force=force))
-        for relative in ("skills", "briefs"):
-            (harness_root(root) / relative).mkdir(parents=True, exist_ok=True)
-    if depth == "full":
-        (harness_root(root) / "runtime" / "session").mkdir(parents=True, exist_ok=True)
-        events = harness_root(root) / "runtime" / "task-events.jsonl"
-        if not events.exists():
-            events.write_bytes(b"")
+            write_owned_json(root, "lock.json", default_lockfile(), force=force),
+            write_owned_text(root, "agents/generic.md", generate_fragment("generic"), force=force),
+        ]
+        if depth in {"standard", "full"}:
+            results.append(write_owned_json(root, "task-map.json", build_task_map(recommendation, inspection["features"]), force=force))
+            results.extend(_ensure_skill_state(root, force=force))
+            for provider in (provider for provider in PROVIDERS if provider != "generic"):
+                results.append(write_owned_text(root, f"agents/{provider}.md", generate_fragment(provider), force=force))
+            for relative in ("skills", "briefs"):
+                (harness_root(root) / relative).mkdir(parents=True, exist_ok=True)
+        if depth == "full":
+            (harness_root(root) / "runtime" / "session").mkdir(parents=True, exist_ok=True)
+            events = harness_root(root) / "runtime" / "task-events.jsonl"
+            if not events.exists():
+                events.write_bytes(b"")
     return {
         "schema_version": "1.0.0",
         "project_root": str(root),

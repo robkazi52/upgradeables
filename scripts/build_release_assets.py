@@ -27,13 +27,19 @@ def assets():
     return (*CORE_ASSETS, *packs)
 
 
+def canonical_asset_bytes(path: Path) -> bytes:
+    """Return repository-canonical bytes independent of Git checkout EOLs."""
+
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
 def render():
     lines = []
     for relative in assets():
         path = ROOT / relative
         if not path.is_file():
             raise FileNotFoundError(relative)
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        digest = hashlib.sha256(canonical_asset_bytes(path)).hexdigest()
         lines.append(f"{digest}  {relative}")
     return "\n".join(lines) + "\n"
 

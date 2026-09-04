@@ -19,6 +19,14 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
   mappings for all 96 operational Upgradeables.
 - A one-command release-candidate smoke test covering installation, idempotency,
   task resolution, managed integration, Skill scaffolding, and diagnostics.
+- A reusable deterministic stress gate covering resolver paraphrases, concurrent
+  initialization, hostile local state, path safety, and managed-block fuzz cases.
+
+### Changed
+
+- Serialized project initialization and made atomic staging filenames unique so
+  concurrent first-run initialization is reliable on Windows.
+- Made public-asset checksums stable across LF and CRLF Git checkouts.
 
 ### Security
 
