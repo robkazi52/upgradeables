@@ -24,3 +24,16 @@ Run `upgradeables doctor --fix` to repair only deterministic harness-owned files
 To turn a stable project workflow into a local, reviewable Skill, follow the
 [Project Skill Factory](SKILL_FACTORY.md). Task-event recording remains off by
 default and Skill suggestions never auto-create files.
+
+## Release-candidate smoke test
+
+On Windows, maintainers can validate a GitHub branch end to end with one command:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/test_v03_release_candidate.ps1
+```
+
+The script waits for PR checks, installs the branch through `pipx`, exercises a
+temporary Python project, checks initialization and managed-block idempotency,
+tests task resolution and the Skill factory, and requires `doctor` to pass. Use
+`-KeepTemp` to retain the synthetic project for inspection.
