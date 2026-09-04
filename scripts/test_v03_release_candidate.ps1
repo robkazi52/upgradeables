@@ -16,6 +16,7 @@ $RepoRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
 $OriginalPythonPath = $env:PYTHONPATH
 $SmokeRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("upgradeables-v03-smoke-" + [guid]::NewGuid().ToString("N"))
 $Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$script:HarnessExecutable = $null
 
 function Assert-True {
     param([bool]$Condition, [string]$Message)
@@ -52,7 +53,7 @@ function Invoke-Upgradeables {
         } -Capture:$Capture
     }
     return Invoke-External "upgradeables $($CommandArgs -join ' ')" {
-        & upgradeables @CommandArgs
+        & $script:HarnessExecutable @CommandArgs
     } -Capture:$Capture
 }
 
@@ -80,6 +81,8 @@ function Get-TreeFingerprint {
 }
 
 try {
+    [System.IO.Directory]::CreateDirectory($SmokeRoot) | Out-Null
+
     if (-not $SkipPrChecks) {
         Assert-True ($null -ne (Get-Command gh -ErrorAction SilentlyContinue)) "GitHub CLI (gh) is required."
         Invoke-External "wait for PR #$PullRequest checks" {
@@ -97,19 +100,38 @@ try {
         }
     }
     elseif (-not $SkipInstall) {
-        Assert-True ($null -ne (Get-Command pipx -ErrorAction SilentlyContinue)) "pipx is required for the GitHub installation test."
         $Spec = "git+$Repository@$Ref"
-        Invoke-External "install $Spec" { & pipx install --force $Spec }
-        Assert-True ($null -ne (Get-Command upgradeables -ErrorAction SilentlyContinue)) "pipx installed the package, but the upgradeables command is not on PATH."
+        $Pipx = Get-Command pipx -ErrorAction SilentlyContinue
+        if ($null -ne $Pipx) {
+            Invoke-External "install $Spec with pipx" { & $Pipx.Source install --force $Spec }
+            $InstalledCommand = Get-Command upgradeables -ErrorAction SilentlyContinue
+            Assert-True ($null -ne $InstalledCommand) "pipx installed the package, but the upgradeables command is not on PATH."
+            $script:HarnessExecutable = $InstalledCommand.Source
+        }
+        else {
+            $Python = Get-Command python -ErrorAction SilentlyContinue
+            Assert-True ($null -ne $Python) "Python is required for the disposable virtual-environment fallback."
+            $VenvRoot = Join-Path $SmokeRoot ".install-venv"
+            Invoke-External "create disposable installation environment" { & $Python.Source -m venv $VenvRoot }
+            $VenvPython = Join-Path $VenvRoot "Scripts/python.exe"
+            $script:HarnessExecutable = Join-Path $VenvRoot "Scripts/upgradeables.exe"
+            Invoke-External "install $Spec in disposable environment" {
+                & $VenvPython -m pip install --disable-pip-version-check $Spec
+            }
+            Assert-True (Test-Path -LiteralPath $script:HarnessExecutable) "The disposable installation did not create the upgradeables command."
+        }
     }
-    elseif ($null -eq (Get-Command upgradeables -ErrorAction SilentlyContinue)) {
-        throw "upgradeables is not on PATH. Remove -SkipInstall or use -UseSource."
+    else {
+        $InstalledCommand = Get-Command upgradeables -ErrorAction SilentlyContinue
+        if ($null -eq $InstalledCommand) {
+            throw "upgradeables is not on PATH. Remove -SkipInstall or use -UseSource."
+        }
+        $script:HarnessExecutable = $InstalledCommand.Source
     }
 
     Invoke-Upgradeables -CommandArgs @("version")
     Invoke-Upgradeables -CommandArgs @("--help") | Out-Null
 
-    [System.IO.Directory]::CreateDirectory($SmokeRoot) | Out-Null
     [System.IO.Directory]::CreateDirectory((Join-Path $SmokeRoot "tests")) | Out-Null
     [System.IO.Directory]::CreateDirectory((Join-Path $SmokeRoot "docs")) | Out-Null
     [System.IO.File]::WriteAllText((Join-Path $SmokeRoot "pyproject.toml"), "[project]`nname = `"v03-smoke`"`nversion = `"0.0.0`"`n", $Utf8NoBom)
