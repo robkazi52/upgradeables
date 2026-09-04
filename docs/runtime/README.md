@@ -11,6 +11,21 @@ The compiler is local, deterministic, and requires no API key or provider SDK.
 Network access occurs only when application code explicitly calls a network
 adapter.
 
+## Directory roles
+
+The top-level [`runtime/`](../../runtime/) directory keeps its v0.3 role: it
+contains generated low-context projections such as the router, compact
+component cards, recipe packs, and the runtime registry used as compiler source
+material. These files remain useful to models and tools that consume the
+repository without importing Python.
+
+Executable v0.4 middleware lives separately under
+`src/upgradeables_harness/runtime/`. That package loads the generated installed
+data, compiles `RuntimePlan` values, and provides adapters and evaluation code;
+it does not replace or redefine the top-level projections. Contributors should
+change the canonical source/generator and rebuild derived data rather than hand
+editing only one generated copy.
+
 ## Quick start
 
 Compile a task to the default text capsule:
@@ -134,17 +149,19 @@ coverage is recorded in the
 
 - Runtime compilation is explicit; project initialization does not turn on
   global instruction injection.
-- The CLI compiles plans, runs the offline mock evaluation harness, and exposes
-  an explicit, non-streaming Ollama run command. It does not expose a live
-  OpenAI-compatible or other remote-provider run command.
+- The CLI compiles plans, defaults evaluation to the offline mock, and exposes
+  explicit non-streaming Ollama task execution plus Ollama/OpenAI-compatible
+  live evaluation. Live evaluation starts with a no-network/no-write dry-run.
 - The OpenAI-compatible helper targets `/v1/chat/completions`, not the Responses
   API. `/models` discovery checks identity only; other capabilities stay
   caller-declared or unknown.
 - Ollama has explicit read-only discovery, and both HTTP dialects have offline
   stream normalizers. The included executors still parse a single JSON response;
   callers must own live NDJSON/SSE connections and pass chunks to a normalizer.
-- Discovery and execution are never implicit, no adapter retries automatically,
-  and no adapter downloads or permanently modifies a model.
+- Standalone discovery and execution are explicit. A non-dry Ollama evaluation
+  includes documented read-only exact-model preflight before experiment
+  creation. No adapter retries automatically, downloads a model, or permanently
+  modifies one.
 - LangChain, MCP, and a universal proxy are not implemented.
 - No paid API tests or model downloads run automatically.
 - No empirical superiority or model-equivalence claim has been established.

@@ -7,16 +7,22 @@ Sources checked: 2026-09-03
 
 The v0.4 harness should be a randomized, blocked, paired experiment over a
 fixed task set. For each model and task, run the same ordinary host
-instructions, task input, adapter, and generation parameters under three
+instructions, task input, adapter, and generation parameters under four
 conditions:
 
 1. `baseline`: no Upgradeables runtime layer;
 2. `static-full`: one useful, broad, non-adaptive Upgradeables-style layer;
-3. `adaptive-runtime`: the task-specific compiled `RuntimePlan`.
+3. `adaptive-fixed-resolution`: compile a saved, validated per-task
+   `TaskResolution` so selection is held fixed;
+4. `adaptive-end-to-end`: resolve the raw task with v0.3 and compile the
+   task-specific `RuntimePlan` with v0.4.
 
-The pre-declared primary comparison is `adaptive-runtime - baseline` (`C - A`).
-`adaptive-runtime - static-full` (`C - B`) is the key architectural secondary
-comparison. Repeated generations measure response variability; they do not turn
+Pre-declare comparisons according to the research question. Fixed-resolution
+minus baseline estimates the directive/runtime association with saved selection;
+end-to-end minus fixed-resolution describes the contribution associated with a
+different TaskResolution source; end-to-end minus baseline describes the total
+product association. These decompositions are descriptive, not proof of a causal
+mechanism. Repeated generations measure response variability; they do not turn
 one task into several independent tasks. Aggregate trials within each task,
 compute task-level paired deltas, and report uncertainty across tasks.
 
@@ -65,9 +71,12 @@ date, sample size, and observed uncertainty.
 
 ## Freeze the protocol before inference
 
-An experiment manifest is immutable after the first real response is accepted.
-Corrections create a new manifest/version; they do not rewrite the old run. At
-minimum, pre-declare:
+The manifest's run-contract and configuration fields are immutable after the
+first real response is accepted. The sole mutable progress field is
+`request_count_completed`; the runner durably rewrites it after each recorded
+adapter invocation and excludes it from the immutable manifest-hash scope.
+Corrections to any run-contract field create a new manifest/version; they do
+not rewrite the old run contract. At minimum, pre-declare:
 
 - experiment ID and hypothesis;
 - primary and secondary comparisons;
@@ -111,9 +120,18 @@ inspect the task, `TaskResolution`, selected components, failure modes, or
 runtime plan. It should be genuinely usable, bounded, and frozen before
 confirmatory testing—not an intentionally bloated straw comparator.
 
-`adaptive-runtime` adds the compiled runtime channels produced from the task's
-`TaskResolution`, selected model profile, host capabilities, and budget. Persist
-both the structured `RuntimePlan` and the exact rendered instruction block.
+`adaptive-fixed-resolution` adds runtime channels compiled from the suite's
+versioned, validated, hash-preserved fixed `TaskResolution`. A missing or stale
+resolution is unsupported and must never silently fall back to live selection.
+
+`adaptive-end-to-end` runs the v0.3 resolver on the raw user task, then passes
+that resolution through the same v0.4 compiler, model profile, host-capability,
+and budget path used by the fixed condition. Persist the resulting
+`TaskResolution` hash, structured `RuntimePlan`, and exact instruction block.
+
+`adaptive-runtime` is a compatibility alias for `adaptive-end-to-end`. New
+manifests and reports use the canonical name; supplying both labels in one run
+is an error because they are the same condition.
 
 ### Hold everything else equal
 
@@ -145,23 +163,16 @@ Treat each task as a block. Each task receives every requested condition the sam
 number of times. Generate the order schedule before inference from a recorded
 runner seed.
 
-For three conditions, use shuffled balanced permutations across task/trial
-blocks. A simple deterministic schedule cycles among:
-
-```text
-A B C
-B C A
-C A B
-A C B
-C B A
-B A C
-```
-
-Shuffle which task starts on which row using the recorded schedule seed. This
-balances warm caches, server load, thermal throttling, rate limits, and temporal
-provider drift more fairly than running all baselines first. If concurrency is
-enabled, assign all conditions the same concurrency policy and record dispatch
-and completion timestamps.
+For the requested conditions, construct all condition-order permutations,
+shuffle that permutation list with the recorded schedule seed, and cycle
+through it across task/trial blocks. The standard four-condition experiment
+therefore balances permutations of `baseline`, `static-full`,
+`adaptive-fixed-resolution`, and `adaptive-end-to-end`; a complete cycle has 24
+orders. Partial cycles remain deterministic and should be reported as such.
+This balances warm caches, server load, thermal throttling, rate limits, and
+temporal provider drift more fairly than running all baselines first. If
+concurrency is enabled, assign all conditions the same concurrency policy and
+record dispatch and completion timestamps.
 
 Repeated trials are required when generation can vary. Five trials per
 task/condition is a reasonable initial manifest default, not a universal sample
@@ -304,7 +315,10 @@ not call either an intelligence gain.
 
 ### Default report
 
-For `C - A` and `C - B`, publish:
+For every predeclared contrast, including the standard
+`adaptive-fixed-resolution - baseline`,
+`adaptive-end-to-end - adaptive-fixed-resolution`, and
+`adaptive-end-to-end - baseline` contrasts, publish:
 
 - number of planned and completed tasks;
 - trials requested/completed/failed per condition;
@@ -334,13 +348,14 @@ not pretend independence.
 
 ### Multiple comparisons and exploratory work
 
-`C - A` is the sole confirmatory primary contrast. `C - B`, family breakdowns,
-model-size comparisons, micro/standard/full, and component ablations are
-secondary or exploratory unless a separate manifest says otherwise. Publish all
-planned comparisons and negative results. If inferential claims are made over
-many comparisons, apply a declared correction or clearly label unadjusted
-intervals exploratory. Do not report only the winning family, model, directive
-level, or seed.
+The manifest must name its confirmatory primary contrast before inference; the
+methodology does not assign one implicitly. Other named contrasts, family
+breakdowns, model-size comparisons, micro/standard/full, and component
+ablations are secondary or exploratory unless the manifest predeclares them
+otherwise. Publish all planned comparisons and negative results. If inferential
+claims are made over many comparisons, apply a declared correction or clearly
+label unadjusted intervals exploratory. Do not report only the winning family,
+model, directive level, or seed.
 
 ### Missingness and failures
 
@@ -476,7 +491,8 @@ The harness is ready for post-PR experiments when automated tests demonstrate:
 
 1. baseline excludes the Upgradeables runtime layer;
 2. static-full is fixed across tasks and has a stable version/hash;
-3. adaptive uses the exact persisted `RuntimePlan` and rendered block;
+3. fixed-resolution and end-to-end modes use the same compiler path and preserve
+   the exact `TaskResolution`/`RuntimePlan`/rendered-block hashes;
 4. all conditions retain identical base task/model settings;
 5. schedule generation is deterministic and condition order is balanced;
 6. repeated trials remain nested under task IDs;
@@ -501,8 +517,9 @@ The harness is ready for post-PR experiments when automated tests demonstrate:
 After the v0.4 PR is reviewed, begin with small, bounded runs:
 
 1. one already-installed small local model on `constraint-following-v1`,
-   `baseline` versus `adaptive-runtime`;
-2. the same model on a tiny debugging suite across all three conditions;
+   `baseline` versus `adaptive-fixed-resolution`;
+2. the same model on a tiny debugging suite across baseline, static-full,
+   fixed-resolution, and end-to-end conditions;
 3. a small and larger local model on the same frozen suite;
 4. only with explicit authorization, small and larger API snapshots on one
    held-out suite;

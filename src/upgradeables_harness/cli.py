@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -117,7 +118,7 @@ def command_run(args):
 
 def command_eval(args):
     from .runtime.evals.report import summarize, write_report
-    from .runtime.evals.runner import mock_adapter, run_experiment
+    from .runtime.evals.runner import mock_adapter, prepare_experiment, run_experiment
     from .runtime.evals.suites import list_suites, load_suite
 
     if args.eval_command == "list-suites":
@@ -139,25 +140,162 @@ def command_eval(args):
                 print(f"- {item['id']} [{item['family']}]")
         return 0
     if args.eval_command == "run":
-        if args.adapter != "mock":
-            raise ValueError("core eval run supports only the offline mock adapter; external adapters require explicit integration")
-        experiment_id = args.experiment_id or f"{args.slug}-mock"
+        from .runtime.adapters.generic import AdapterRequestError, endpoint_type
+        from .runtime.adapters.ollama import discover as discover_ollama
+        from .runtime.evals.live import (
+            create_live_adapter,
+            validate_api_key_environment,
+            validate_endpoint_origin,
+        )
+
+        adapter_name = args.adapter
+        api_key = None
+        endpoint = None
+        if adapter_name == "mock":
+            if args.model or args.endpoint or args.api_key_env:
+                raise ValueError("--model, --endpoint, and --api-key-env are live-adapter options")
+            model_id = "deterministic-fixture"
+            evaluation_evidence = "mock"
+            adapter = mock_adapter
+        else:
+            if not args.model:
+                raise ValueError("live evaluation requires --model with an exact model identifier")
+            endpoint_value = args.endpoint
+            if endpoint_value is None and adapter_name == "ollama":
+                endpoint_value = "http://127.0.0.1:11434"
+            if endpoint_value is None:
+                raise ValueError("openai-compatible evaluation requires an explicit --endpoint origin")
+            endpoint = validate_endpoint_origin(endpoint_value, adapter_name)
+            key_environment = validate_api_key_environment(args.api_key_env)
+            if key_environment is not None:
+                if adapter_name != "openai-compatible":
+                    raise ValueError("--api-key-env is supported only for openai-compatible evaluation")
+                api_key = os.environ.get(key_environment)
+                if not api_key:
+                    raise ValueError("configured API key environment variable is missing or empty")
+            model_id = args.model
+            location = endpoint_type(endpoint)
+            evaluation_evidence = "local" if location in {"loopback", "private-network"} else "api"
+            adapter = create_live_adapter(
+                adapter_name,
+                model=model_id,
+                endpoint=endpoint,
+                api_key=api_key,
+                timeout=args.timeout,
+            )
+        experiment_id = args.experiment_id or f"{args.slug}-{adapter_name}"
+        model_record = {"adapter": adapter_name, "model": model_id}
+        if endpoint is not None:
+            model_record.update({
+                "endpoint_origin": endpoint,
+                "endpoint_type": endpoint_type(endpoint),
+            })
         manifest = {
             "schema_version": "1.0.0",
             "experiment_id": experiment_id,
             "suite": args.slug,
             "conditions": args.conditions,
-            "model": {"adapter": "mock", "model": "deterministic-fixture"},
+            "model": model_record,
             "trials_per_task": args.trials,
             "temperature": 0,
-            "seed_policy": "deterministic-mock",
+            "seed_policy": "deterministic-mock" if adapter_name == "mock" else "provider-controlled-no-retry",
             "grader": "objective",
             "order_seed": args.order_seed,
             "model_profile": args.model_profile,
             "max_directive_tokens": args.max_directive_tokens,
+            "generation_parameters": {"temperature": 0, "stream": False},
+            "evaluation_evidence": evaluation_evidence,
+            "network_policy": (
+                "none" if adapter_name == "mock" else
+                "explicit-read-only-preflight-then-single-attempts" if adapter_name == "ollama" else
+                "explicit-single-attempts-no-preflight"
+            ),
+            "retry_policy": "none",
+            "timeout_seconds": args.timeout if adapter_name != "mock" else None,
+            "estimated_cost": {
+                "value": None,
+                "currency": None,
+                "availability": "unavailable",
+                "reason": "no verified provider pricing metadata is available",
+            },
         }
-        target = run_experiment(manifest, mock_adapter, args.output_root)
-        print(target)
+        preview = prepare_experiment(manifest)
+        if args.dry_run:
+            output = {
+                "status": "dry-run",
+                "network_performed": False,
+                "writes_performed": False,
+                "adapter": adapter_name,
+                "model_id": model_id,
+                "endpoint_origin": endpoint,
+                "task_ids": preview["task_ids"],
+                "conditions": preview["manifest"]["conditions"],
+                "trials_per_task": args.trials,
+                "request_count_planned": preview["manifest"]["request_count_planned"],
+                "fixed_resolution_availability": preview["fixed_resolution_availability"],
+                "estimated_cost": preview["manifest"]["estimated_cost"],
+                "configuration_hash": preview["manifest"]["configuration_hash"],
+                "manifest": preview["manifest"],
+            }
+            if args.json:
+                print(json.dumps(output, ensure_ascii=False, indent=2, sort_keys=True))
+            else:
+                print("Dry run: no network requests or experiment writes performed.")
+                print(f"Suite: {args.slug}")
+                print(f"Adapter: {adapter_name}")
+                print(f"Model: {model_id}")
+                if endpoint:
+                    print(f"Endpoint: {endpoint}")
+                print(f"Tasks: {len(preview['task_ids'])}")
+                print(
+                    f"Conditions ({len(preview['manifest']['conditions'])}): "
+                    f"{', '.join(preview['manifest']['conditions'])}"
+                )
+                print(f"Trials per task: {args.trials}")
+                print(f"Planned model requests: {preview['manifest']['request_count_planned']}")
+                fixed = preview["fixed_resolution_availability"]
+                print(f"Fixed resolutions: {fixed['available']}/{len(preview['task_ids'])} available")
+                print("Estimated cost: unavailable")
+                print(f"Configuration hash: {preview['manifest']['configuration_hash']}")
+            return 0
+        expected_target = Path(args.output_root) / experiment_id
+        if expected_target.exists():
+            raise FileExistsError(f"experiment directory already exists: {expected_target}")
+        if adapter_name == "ollama":
+            try:
+                discovery = discover_ollama(
+                    endpoint,
+                    model_id,
+                    timeout=min(args.timeout, 10),
+                )
+            except AdapterRequestError as error:
+                raise ValueError(
+                    f"Ollama preflight failed: {error.error['kind']}: {error.error['message']}"
+                ) from error
+            model_available = discovery["model_available"]["status"]
+            if model_available != "supported":
+                raise ValueError(
+                    f"Ollama preflight failed: exact model {model_id!r} is not available; "
+                    "install it explicitly before starting the experiment"
+                )
+            manifest["preflight"] = {
+                "adapter": "ollama",
+                "endpoint_type": discovery["endpoint_type"],
+                "server_version": discovery["server_version"],
+                "model_id": model_id,
+                "model_available": model_available,
+            }
+        target = run_experiment(manifest, adapter, args.output_root)
+        if args.json:
+            completed = json.loads((target / "manifest.json").read_text(encoding="utf-8"))
+            print(json.dumps({
+                "experiment_directory": str(target),
+                "manifest_hash": completed["manifest_hash"],
+                "request_count_planned": completed["request_count_planned"],
+                "request_count_completed": completed["request_count_completed"],
+            }, indent=2, sort_keys=True))
+        else:
+            print(target)
         return 0
 
     target = Path(args.experiment)
@@ -386,10 +524,20 @@ def build_parser():
     inspect_eval.set_defaults(handler=command_eval)
     run_eval = eval_commands.add_parser("run")
     run_eval.add_argument("slug")
-    run_eval.add_argument("--adapter", default="mock")
+    run_eval.add_argument("--adapter", choices=("mock", "ollama", "openai-compatible"), default="mock")
+    run_eval.add_argument("--model")
+    run_eval.add_argument("--endpoint")
+    run_eval.add_argument("--api-key-env")
+    run_eval.add_argument("--timeout", type=float, default=60)
+    run_eval.add_argument("--dry-run", action="store_true")
+    run_eval.add_argument("--json", action="store_true")
     run_eval.add_argument("--experiment-id")
     run_eval.add_argument("--output-root", default=".evals/upgradeables")
-    run_eval.add_argument("--conditions", nargs="+", choices=("baseline", "static-full", "adaptive-runtime"), default=["baseline", "static-full", "adaptive-runtime"])
+    run_eval.add_argument(
+        "--conditions", nargs="+",
+        choices=("baseline", "static-full", "adaptive-fixed-resolution", "adaptive-end-to-end", "adaptive-runtime"),
+        default=["baseline", "static-full", "adaptive-end-to-end"],
+    )
     run_eval.add_argument("--trials", type=int, default=1)
     run_eval.add_argument("--order-seed", type=int, default=0)
     run_eval.add_argument("--model-profile", choices=("small", "medium", "strong", "auto", "custom"), default="medium")

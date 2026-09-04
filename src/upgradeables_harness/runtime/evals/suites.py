@@ -1,7 +1,11 @@
 """Load bundled or source-checkout runtime evaluation suites."""
 from __future__ import annotations
 
-from ..data import load_runtime_registry
+from copy import deepcopy
+
+from ...registry.query import normalize
+from ..compiler import RuntimeCompileError, canonical_hash, validate_task_resolution
+from ..data import load_runtime_registry, runtime_components
 
 
 def list_suites() -> list[dict]:
@@ -23,7 +27,19 @@ def load_suite(slug: str) -> dict:
     if data is None:
         raise ValueError(f"Unknown evaluation suite: {slug}")
     _validate_suite(data, expected_slug=slug)
-    return data
+    return deepcopy(data)
+
+
+def fixed_resolution_inventory(suite: dict) -> tuple[dict[str, dict], dict[str, str]]:
+    """Return copied fixed resolutions and their canonical hashes by task ID."""
+    resolutions = {}
+    hashes = {}
+    for task in suite["tasks"]:
+        resolution = task.get("fixed_resolution")
+        if resolution is not None:
+            resolutions[task["id"]] = deepcopy(resolution)
+            hashes[task["id"]] = canonical_hash(resolution)
+    return resolutions, hashes
 
 
 def _validate_suite(data: object, *, expected_slug: str) -> None:
@@ -50,3 +66,23 @@ def _validate_suite(data: object, *, expected_slug: str) -> None:
         grader = task.get("grader")
         if not isinstance(grader, dict) or not isinstance(grader.get("type"), str):
             raise ValueError(f"Invalid evaluation suite {expected_slug}: task {task['id']} has no grader")
+        if "fixed_resolution" in task:
+            resolution = task["fixed_resolution"]
+            if not isinstance(resolution, dict):
+                raise ValueError(
+                    f"Invalid evaluation suite {expected_slug}: task {task['id']} fixed_resolution must be an object"
+                )
+            if resolution.get("query") != task["prompt"]:
+                raise ValueError(
+                    f"Invalid evaluation suite {expected_slug}: task {task['id']} fixed_resolution query must match prompt"
+                )
+            if resolution.get("normalized_task") != normalize(task["prompt"]):
+                raise ValueError(
+                    f"Invalid evaluation suite {expected_slug}: task {task['id']} fixed_resolution normalized_task is stale"
+                )
+            try:
+                validate_task_resolution(resolution, runtime_components())
+            except RuntimeCompileError as error:
+                raise ValueError(
+                    f"Invalid evaluation suite {expected_slug}: task {task['id']} fixed_resolution: {error}"
+                ) from error

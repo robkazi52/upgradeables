@@ -8,21 +8,31 @@ The implementation and bundled data live under
 [evals/runtime](../../evals/runtime/). The research protocol is documented in
 [evaluation methodology](../../research/runtime/evaluation-methodology.md).
 
-## Current conditions
+## Current conditions and attribution
 
 - `baseline`: task with no Upgradeables runtime instructions.
 - `static-full`: task plus the fixed
   [static-full-v1](../../evals/runtime/static-full-v1.txt) bundle.
-- `adaptive-runtime`: task plus the v0.4 capsule compiled at run time.
+- `adaptive-fixed-resolution`: compile the checked-in, per-task v0.3
+  `TaskResolution` without rerunning selection. A missing or stale fixed
+  resolution fails before execution; it never falls back to live selection.
+- `adaptive-end-to-end`: resolve the task with v0.3 and compile the v0.4 capsule
+  during each observation.
+
+`adaptive-runtime` remains a deprecated compatibility alias for
+`adaptive-end-to-end`; manifests and observations record the canonical label.
 
 An optional larger-model comparator is run as a separate baseline experiment;
 `large-model-baseline` is not a core condition label accepted by the current
 condition builder or CLI.
 
-The central comparison is adaptive runtime versus baseline. Adaptive versus
-static full asks whether task selection is useful beyond adding one broad prompt.
-A larger-model baseline, when separately integrated, measures a remaining gap;
-it does not establish model equivalence.
+The fixed-resolution comparison isolates the runtime compiler more cleanly;
+the end-to-end comparison also includes task-selection behavior. Differences
+between those conditions are descriptive **Selection Attribution** evidence,
+while fixed-resolution versus baseline/static-full is descriptive **Runtime
+Attribution** evidence. Neither is causal without an appropriately powered,
+predeclared design. A larger-model baseline, when separately integrated,
+measures a remaining gap; it does not establish model equivalence.
 
 ## Bundled suite and graders
 
@@ -52,10 +62,62 @@ upgradeables eval report .evals/upgradeables/synthetic-runtime-v1-mock
 upgradeables eval compare .evals/upgradeables/run-a .evals/upgradeables/run-b
 ```
 
-`eval run` currently accepts only `--adapter mock`. The mock deterministically
-returns grader-compatible fixture output and proves condition construction,
-randomized ordering, persistence, grading, and reporting. It is not model-quality
-evidence.
+The mock remains the default and makes no network request. Preview a complete
+Ollama experiment without contacting Ollama or creating an experiment:
+
+```bash
+upgradeables eval run synthetic-runtime-v1 \
+  --adapter ollama \
+  --model your-already-installed-model \
+  --conditions baseline static-full adaptive-fixed-resolution adaptive-end-to-end \
+  --trials 1 \
+  --dry-run \
+  --json
+```
+
+The preview validates the suite, conditions, model/endpoint configuration, and
+fixed-resolution availability. It reports task IDs, trials, exact planned
+request count, deterministic configuration hash, manifest preview, and
+`estimated_cost` as unavailable rather than guessing.
+
+Run that experiment only after reviewing the preview:
+
+```bash
+upgradeables eval run synthetic-runtime-v1 \
+  --adapter ollama \
+  --model your-already-installed-model \
+  --endpoint http://127.0.0.1:11434 \
+  --conditions baseline static-full adaptive-fixed-resolution adaptive-end-to-end \
+  --trials 1 \
+  --output-root .evals/upgradeables \
+  --json
+```
+
+Before creating the experiment directory, a live Ollama run performs one
+read-only model-availability preflight through the existing discovery helper.
+It fails if the endpoint or exact model is unavailable. The preflight never
+pulls or loads a missing model, and generation requests have no retry path.
+
+For an explicitly selected OpenAI-compatible endpoint, put the credential in
+an environment variable and pass only its name. For PowerShell:
+
+```powershell
+$env:UPGRADEABLES_EVAL_API_KEY = "your-key"
+upgradeables eval run synthetic-runtime-v1 `
+  --adapter openai-compatible `
+  --model your-exact-model-id `
+  --endpoint https://models.example/v1 `
+  --api-key-env UPGRADEABLES_EVAL_API_KEY `
+  --conditions baseline adaptive-fixed-resolution `
+  --trials 1 `
+  --dry-run `
+  --json
+```
+
+Remove `--dry-run` only when the request count, endpoint, model, and possible
+cost are accepted. OpenAI-compatible live evaluation performs no implicit
+model discovery. `--timeout` controls each request; all live adapters are
+non-streaming and make one attempt per scheduled observation.
 
 `eval compare` returns the descriptive summaries for two experiment directories.
 It does not claim the manifests are matched; verify model, task, and generation
@@ -69,7 +131,10 @@ trial it assigns a deterministic balanced condition permutation using
 `order_seed`, builds the condition, invokes the selected adapter callback,
 grades the raw string, and records hashes. Condition, adapter, and grader
 failures remain typed ungraded observations rather than silently becoming task
-failures or aborting later observations.
+failures or aborting later observations. Structured live-adapter observations
+also preserve the redacted provider request/response, provider usage, measured
+latency, response model ID, provider timing, finish reason, partial/truncated
+flags, and normalized error.
 
 The default CLI output root is `.evals/upgradeables/`. A new experiment directory
 is created; an existing directory is not overwritten.
@@ -83,11 +148,12 @@ summary.json
 report.md
 ```
 
-Each raw result records task/family, trial and condition order, the full raw
-request and request hash, approximate directive tokens, unmodified adapter
-response and its hash, observation status, and grader result. Results are
-appended and flushed per observation. The manifest records a suite hash and its
-own hash.
+Each raw result records task/family, trial and condition order, the condition
+request and request hash, approximate directive tokens, response text and its
+hash, any redacted provider request and raw response, usage and latency,
+observation status, attribution fields, and grader result. Results are appended
+and flushed per observation. The manifest records the suite, configuration,
+condition schedule, fixed-resolution, and immutable run-contract hashes.
 
 ## Reporting
 
@@ -96,9 +162,10 @@ success rate, mean score, output size, directive overhead, status counts, and
 task-level paired adaptive-minus-baseline/static-full deltas across repeated
 trials. The report preserves limitations and points to raw results.
 
-These are descriptive aggregate rates. The current reporter does not yet compute
-task-clustered confidence intervals, bootstrap uncertainty, latency, provider
-token usage, cost, or family-level paired deltas.
+These are descriptive aggregate rates. Provider usage and latency are captured
+per observation when available, but the current reporter does not yet compute
+task-clustered confidence intervals, bootstrap uncertainty, verified monetary
+cost, or every family-level paired statistic.
 Use the fuller research protocol before making empirical claims.
 
 ## Protocol for real model experiments
@@ -131,9 +198,10 @@ estimate as provider token usage or invent local-model dollar cost.
 
 ## Safety and cost
 
-Core tests use mocks and make no network call, paid request, or model download.
-Live local/remote evaluation requires separate explicit adapter code and user
-authorization. Never pull a local model or spend API credits automatically.
+Core tests and dry-runs use mocks/fake transports and make no network call, paid
+request, or model download. Live local/remote evaluation requires an explicit
+adapter, exact model, reviewed request count, and caller-selected endpoint.
+Never pull a local model or spend API credits automatically.
 
 The experiment schema is
 [EXPERIMENT_SCHEMA.json](../../evals/runtime/schemas/EXPERIMENT_SCHEMA.json), and

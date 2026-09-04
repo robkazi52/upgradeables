@@ -33,6 +33,14 @@ before passing task or project data.
 artifacts. A live `upgradeables run ollama` call contacts only the endpoint the
 caller supplies; it performs no discovery, model pull, or automatic retry.
 
+Live evaluation applies a narrower endpoint-origin policy: HTTP(S) only, no
+embedded credentials, query, fragment, or arbitrary API path, and HTTPS for a
+remote origin. Loopback/private HTTP remains available for local servers.
+`upgradeables eval run --dry-run` performs no network request and writes no
+experiment. A non-dry Ollama evaluation performs read-only exact-model
+preflight before creating its experiment directory; OpenAI-compatible
+evaluation performs no implicit discovery. Neither path retries or downloads.
+
 The adapters do not upload a checkout automatically. They send only the strings
 and options placed in the constructed request. Do not add source files,
 `.upgradeables` history, environment data, or attachments unless the user has
@@ -51,6 +59,13 @@ history.
 The OpenAI-compatible executor can add a bearer header. It does not log that
 header itself, but callers must prevent HTTP debugging, exception wrappers, or
 custom openers from exposing it.
+
+The eval CLI accepts only `--api-key-env ENVIRONMENT_VARIABLE`, never a literal
+API-key argument. It reads the value at execution setup and does not place the
+value or variable name in the manifest or dry-run output. Live result values
+and unexpected exception messages are recursively redacted before persistence.
+Public experiment manifests reject secret-bearing field names and endpoint
+origins containing credentials.
 
 `redact_secrets` masks common bearer, key/value, OpenAI-style, and GitHub-style
 patterns. Redaction is defense in depth, not a guarantee: unusual credentials,
@@ -98,8 +113,9 @@ is not needed.
 
 ## Evaluation safety
 
-Core CI and the built-in eval CLI use the mock adapter only. Paid API calls and
-local model downloads require a separate, explicit integration. Keep generation
-and graders isolated, do not leak expected answers into model input, sandbox any
-code grader, and retain failed/partial attempts rather than silently replaying
-side effects. See [Evaluation](EVALUATION.md).
+Core CI and dry-run use mock/fake transports only. A live eval requires an
+explicit adapter/model/endpoint choice; it may use local compute or incur remote
+provider cost. Keep generation and graders isolated, do not leak expected
+answers into model input, sandbox any code grader, and retain failed/partial
+attempts rather than silently replaying side effects. See
+[Evaluation](EVALUATION.md).

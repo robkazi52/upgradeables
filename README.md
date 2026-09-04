@@ -74,12 +74,14 @@ upgradeables runtime compile "fix the failing parser test without unrelated refa
 upgradeables runtime explain "review this patch, do not modify files" --model-profile strong
 upgradeables run ollama --model your-already-installed-model --task "review this function" --dry-run --format json
 upgradeables eval list-suites
+upgradeables eval run synthetic-runtime-v1 --adapter ollama --model your-already-installed-model --dry-run --json
 ```
 
 The generic, Ollama, OpenAI-compatible, and optional OpenAI Agents adapters
 preserve existing host instructions. Evaluation is offline and mocked by
-default; it never spends API credits or downloads models automatically. Start
-with the [runtime guide](docs/runtime/README.md).
+default; live evaluation is explicit and starts with a no-write/no-network dry
+run. Nothing downloads models or spends API credits automatically. Start with
+the [runtime guide](docs/runtime/README.md).
 
 ## What is an Upgradeable?
 

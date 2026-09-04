@@ -18,6 +18,22 @@ Shared helpers provide:
 Capability records report evidence; they do not select a model profile or grant
 permission to contact an endpoint.
 
+## Live evaluation callables
+
+`runtime.evals.live.create_live_adapter` wraps the existing Ollama or
+OpenAI-compatible request builder, executor, and normalizer as one callable for
+the evaluation runner. It does not duplicate HTTP logic. Each observation uses
+one non-streaming attempt and returns response text for grading plus a redacted
+provider request/raw response, usage, latency, response model ID, provider
+timing, finish/partial/truncation fields, and normalized errors.
+
+The CLI exposes these callables through `upgradeables eval run`; see
+[Runtime evaluation](EVALUATION.md) for exact dry-run and live commands. Dry-run
+constructs no callable request, contacts no endpoint, and writes no experiment.
+A live Ollama experiment performs read-only exact-model preflight before the
+experiment directory is created. OpenAI-compatible evaluation has no implicit
+discovery. Neither path retries or downloads a model.
+
 ## Generic composition
 
 `upgradeables_harness.runtime.adapters.generic.compose_instructions` supports:
@@ -231,8 +247,8 @@ best-effort; see [Security](SECURITY.md).
 
 ## Not implemented
 
-The current tree has no Responses API composer, live OpenAI-compatible CLI,
-LangChain middleware, MCP server, transparent localhost proxy, automatic
+The current tree has no Responses API composer, LangChain middleware, MCP
+server, transparent localhost proxy, automatic
 retries, or automatic capability probing during composition/execution.
 OpenAI-compatible discovery establishes identity only unless the caller
 supplies declarations; neither executor owns a live streaming connection.

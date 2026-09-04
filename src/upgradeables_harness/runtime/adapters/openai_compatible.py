@@ -99,9 +99,11 @@ def discover_models(
         with opener(request, timeout=timeout) as response:
             payload = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
-        raise AdapterRequestError(normalized_error(
+        normalized = normalized_error(
             provider="openai-compatible", status=error.code, message=error.reason,
-        )) from error
+        )
+        error.close()
+        raise AdapterRequestError(normalized) from error
     except (urllib.error.URLError, TimeoutError, OSError) as error:
         raise AdapterRequestError(normalized_error(
             provider="openai-compatible", message=str(getattr(error, "reason", error)),
@@ -168,9 +170,11 @@ def chat_completions(
         with opener(request, timeout=timeout) as response:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
-        raise AdapterRequestError(normalized_error(
+        normalized = normalized_error(
             provider="openai-compatible", status=error.code, message=error.reason,
-        )) from error
+        )
+        error.close()
+        raise AdapterRequestError(normalized) from error
     except (urllib.error.URLError, TimeoutError, OSError) as error:
         raise AdapterRequestError(normalized_error(
             provider="openai-compatible", message=str(getattr(error, "reason", error)),

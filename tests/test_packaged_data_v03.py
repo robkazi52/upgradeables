@@ -53,6 +53,7 @@ class PackagedDataTests(unittest.TestCase):
     def test_package_configuration_has_entrypoint(self):
         import tomllib
         data = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+        self.assertEqual(data["project"]["name"], "upgradeables-registry")
         self.assertEqual(data["project"]["version"], "0.4.0")
         self.assertEqual(data["project"]["scripts"]["upgradeables"], "upgradeables_harness.cli:main")
         self.assertIn("data/*.json", data["tool"]["setuptools"]["package-data"]["upgradeables_harness"])

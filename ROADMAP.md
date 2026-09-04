@@ -10,6 +10,10 @@
    (`query_registry.py --task "…"`) that ranks
    recipes and R/A/C/O/X components with inspectable reasons, deterministic
    fallbacks, and no change to canonical slugs.
+6. Make a pre-PyPI distribution-name decision. Keep the v0.4 distribution name
+   `upgradeables-registry` and canonical `upgradeables` CLI stable; evaluate a
+   clearer public distribution name separately, and do not claim name
+   availability until it is checked.
 
 ## Later
 
@@ -18,3 +22,6 @@
 - Provenance proposals for currently unresolved historical concepts.
 - Plain-language display-name and alias governance informed by the
   [v0.2 naming review](audit/NAMING_REVIEW_v0.2.md).
+- A checksum-verified `upgradeables update --apply` workflow. Until then,
+  updates remain explicit checks and upgrade guidance rather than silent
+  changes to pinned project Skills or components.
