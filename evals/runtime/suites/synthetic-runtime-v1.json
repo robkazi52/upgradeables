@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "synthetic-runtime-v1",
+  "description": "Small redistributable synthetic tasks covering the v0.3 ontology; suitable for plumbing and local model experiments.",
+  "license": "CC0-1.0",
+  "tasks": [
+    {"id": "constraint-01", "family": "constraint-following", "prompt": "Return exactly: 17 BLUE", "grader": {"type": "exact", "expected": "17 BLUE"}},
+    {"id": "source-01", "family": "source-grounded-answering", "prompt": "Source: The cedar box weighs 4 kg. State only its weight.", "grader": {"type": "exact", "expected": "4 kg"}},
+    {"id": "citation-01", "family": "citation-fidelity", "prompt": "[S1] Rowan arrived Tuesday. State when Rowan arrived and cite S1.", "grader": {"type": "contains-all", "values": ["Tuesday", "S1"]}},
+    {"id": "editing-01", "family": "local-editing", "prompt": "Change only foo to bar in: foo = 3", "grader": {"type": "exact", "expected": "bar = 3"}},
+    {"id": "debug-01", "family": "debugging-repair", "prompt": "Repair: def double(x): return x + x + 1. Return only the corrected return statement.", "grader": {"type": "exact", "expected": "return x + x"}},
+    {"id": "review-01", "family": "code-review", "prompt": "Review only; do not edit. Code: if user.is_admin: allow=False. Name the likely defect.", "grader": {"type": "contains-all", "values": ["admin", "denied"]}},
+    {"id": "state-01", "family": "long-context-state", "prompt": "Constraint A=red. Distraction: B=blue. Return A only.", "grader": {"type": "exact", "expected": "red"}},
+    {"id": "alternative-01", "family": "alternative-hypothesis", "prompt": "A lamp fails after a bulb replacement; a known-good bulb also fails. Name the likelier next hypothesis.", "grader": {"type": "contains-any", "values": ["power", "socket", "wiring", "switch"]}},
+    {"id": "structured-01", "family": "structured-output", "prompt": "Return JSON with integer field answer set to 5.", "grader": {"type": "json-fields", "fields": {"answer": 5}}},
+    {"id": "stopping-01", "family": "stopping-overwork", "prompt": "Rename heading Old to New. Return only the new heading.", "grader": {"type": "exact", "expected": "New"}}
+  ]
+}

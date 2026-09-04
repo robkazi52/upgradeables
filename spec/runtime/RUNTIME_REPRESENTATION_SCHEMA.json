@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/runtime/RUNTIME_REPRESENTATION_SCHEMA.json",
+  "title": "Upgradeable runtime representation",
+  "type": "object",
+  "required": ["schema_version", "slug", "component_version", "runtime_form", "runtime_injectable", "compile", "validator_checks", "state_contract", "orchestration", "tool_requirements", "output_contract", "compile_constraints", "basis", "source_path"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "slug": {"type": "string", "minLength": 1},
+    "component_version": {"type": "string", "minLength": 1},
+    "runtime_form": {"enum": ["instruction-directive", "state-contract", "validator-check", "orchestration-control", "tool-capability", "output-contract", "host-behavior", "mixed", "not-runtime-injectable"]},
+    "runtime_injectable": {"type": "boolean"},
+    "compile": {
+      "type": "object",
+      "required": ["micro", "standard", "full"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["directives", "mandatory_invariants"],
+        "properties": {
+          "directives": {"type": "array", "items": {"type": "string"}},
+          "mandatory_invariants": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "validator_checks": {"type": "array", "items": {"type": "string"}},
+    "state_contract": {"type": "array", "items": {"type": "string"}},
+    "orchestration": {"type": "array", "items": {"type": "string"}},
+    "tool_requirements": {"type": "array", "items": {"type": "string"}},
+    "output_contract": {"type": "array", "items": {"type": "string"}},
+    "compile_constraints": {"type": "object"},
+    "basis": {"type": "string"},
+    "source_path": {"type": "string"}
+  }
+}

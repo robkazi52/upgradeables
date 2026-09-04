@@ -1,0 +1,97 @@
+slug,version,runtime_form,runtime_injectable,micro_directive_review,standard_directive_review,full_directive_review,state_contract_review,validator_review,orchestration_review,tool_requirement_review,strong_model_scaling_review,small_model_expansion_review,conflict_review,dedupe_review,source_support,final_status,notes
+activation-budget-funnel,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+adapter-first-experimentation,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+anti-tunnel-vision,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+architect-orchestrator,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+attention-compression-scaffold,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+authenticity-anti-evasion,1.1.0,mixed,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+authority-anchor-enforcement,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,PASS,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+behavior-gene-builder,1.1.0,not-runtime-injectable,false,N/A,N/A,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,NOT_RUNTIME_INJECTABLE,Normalized from the hardened compact runtime card.
+bidirectional-consistency,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+bounded-exit,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+citation-fidelity,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+clarification-gateway,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+cognitive-governor,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+coherence-heartbeat,1.1.0,mixed,true,PASS,PASS,PASS,PASS,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+coherence-loops,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+compute-adaptive-drift,1.1.0,host-behavior,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+contradiction-micro-repair,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+controlled-drift-corridors,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+cot-structured-state-block,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+counterfactual-integrity,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+counterfactual-silence-scaffold,1.1.0,mixed,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+crispr-edit,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+critical-atomic-verification,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+cross-checking-chains,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+cross-context-resonance-lock,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+cross-universe-consistency,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+decision-first-scaffold,1.1.0,mixed,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+domain-core-builder,1.1.0,not-runtime-injectable,false,N/A,N/A,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,strongly-derivable,NOT_RUNTIME_INJECTABLE,Normalized from the hardened compact runtime card.
+domain-mode-isolation,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+domain-normalized-drift,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+dominant-driver-isolation-scaffold,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+drift-immunity-propagation,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+drift-sink-scaffold,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+drift-spectra-scaling,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+drift-suppression,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+dynamic-depth-allocation,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+epistemic-status-gating,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+explanation-minimality-scaffold,1.1.0,output-contract,false,N/A,N/A,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,modern-operationalization,PASS,Normalized from the hardened compact runtime card.
+external-state-automation,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,PASS,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+fail-closed-abstention,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+fermionic-veto,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+forethought-checkpoints,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+future-proof-mode-selector,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+grounding-no-invention,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+hybrid-mode,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+image-text-fidelity-capture,1.1.0,mixed,true,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+invariance-stress-scaffold,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,PASS,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+meta-awareness,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+meta-stability,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+meta-supervisor,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+micro-repair,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+micro-scaffolding,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+mode-lock-in,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+model-size-drift-scaling,1.1.0,host-behavior,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+multi-layer-consistency,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+multi-truth-gating,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+multiverse-reasoning,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+neuro-focus,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+non-authoritative-branch-suppression,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+parallel-qms,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,PASS,PASS,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+pedagogical-alignment,1.1.0,output-contract,false,N/A,N/A,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+phase-locked-reasoning-scaffold,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+placeholder-suppression,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+power-mode,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+progressive-mode-shaping,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+reasoning-scale-controller,1.1.0,host-behavior,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+reasoning-throughput-governor,1.1.0,host-behavior,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+reflectos,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+regenerative-rewrite,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+resonance,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+resonance-gene-builder,1.1.0,not-runtime-injectable,false,N/A,N/A,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,strongly-derivable,NOT_RUNTIME_INJECTABLE,Normalized from the hardened compact runtime card.
+risk-tier-scaling,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+safe-mode,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+safe-rewrite,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+scoped-loader,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+selfblock-auto-update,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+sequential-memory-state-engine,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+specificity-penalty-gate,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+stable-long-context,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+state-routing-bus,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+state-snapshot,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+stateblock,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+structured-refinement,1.1.0,mixed,true,PASS,PASS,PASS,N/A,PASS,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+structured-state-projection,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+stuck-pattern-reset,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+style-alignment,1.1.0,output-contract,false,N/A,N/A,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+surgery-edit,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+task-set-lock-in,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+temporal-anchor-scaffold,1.1.0,mixed,true,PASS,PASS,PASS,PASS,N/A,N/A,N/A,PASS,PASS,PASS,N/A,source-gap,PASS_WITH_LIMITATION,Normalized from the hardened compact runtime card; historical source gap retained.
+truth-priority-hierarchy,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+truth-redundancy,1.1.0,validator-check,false,N/A,N/A,N/A,N/A,PASS,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+two-truths-and-corridor,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,N/A,strongly-derivable,PASS,Normalized from the hardened compact runtime card.
+ultimate-suite-supervisor,1.1.0,orchestration-control,false,N/A,N/A,N/A,N/A,N/A,PASS,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+working-memory-cues,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,N/A,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+working-memory-lock-in,1.1.0,state-contract,false,N/A,N/A,N/A,PASS,N/A,N/A,N/A,PASS,N/A,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.
+zero-drift-zones,1.1.0,instruction-directive,true,PASS,PASS,PASS,N/A,N/A,N/A,N/A,PASS,PASS,PASS,PASS,sufficiently-recovered,PASS,Normalized from the hardened compact runtime card.

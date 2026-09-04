@@ -13,6 +13,179 @@ from .resolver.explain import render_task
 from .resolver.task import resolve_task
 
 
+def _runtime_resolution(args):
+    if args.resolution:
+        return json.loads(Path(args.resolution).read_text(encoding="utf-8"))
+    if not args.task:
+        raise ValueError("provide task text or --resolution <json-file>")
+    project = _find_project(args.project) if not args.no_project_profile else None
+    return resolve_task(args.task, project=project, use_project_profile=not args.no_project_profile)
+
+
+def command_runtime(args):
+    from .runtime import RuntimeContext, compile as compile_runtime
+    from .runtime.data import load_model_profiles
+    from .runtime.render import render_plan
+
+    if args.runtime_command == "profiles":
+        profiles = load_model_profiles()["profiles"]
+        if args.format == "json":
+            print(json.dumps({"schema_version": "1.0.0", "profiles": profiles}, indent=2))
+        else:
+            for name, profile in profiles.items():
+                print(f"{name}: {profile['default_level']} — {profile['description']}")
+        return 0
+    resolution = _runtime_resolution(args)
+    project = _find_project(args.project) if not args.no_project_profile else None
+    runtime_config = {}
+    if project is not None:
+        config_path = project / ".upgradeables" / "config.json"
+        if config_path.is_file():
+            runtime_config = json.loads(config_path.read_text(encoding="utf-8")).get("runtime", {})
+    model_profile = args.model_profile or runtime_config.get("default_model_profile", "medium")
+    max_directive_tokens = args.max_directive_tokens
+    if max_directive_tokens is None:
+        max_directive_tokens = runtime_config.get("max_directive_tokens", 500)
+    context = RuntimeContext.from_value({
+        "model_profile": model_profile,
+        "max_directive_tokens": max_directive_tokens,
+    })
+    plan = compile_runtime(resolution, context)
+    json_output = args.format == "json" or args.runtime_command == "plan"
+    if json_output:
+        print(json.dumps(plan, ensure_ascii=False, indent=2, sort_keys=True))
+    else:
+        print(render_plan(plan, explain=args.runtime_command == "explain" or args.explain or args.format == "debug"), end="")
+    return 0
+
+
+def command_run(args):
+    if args.run_adapter != "ollama":
+        raise ValueError(f"unsupported run adapter: {args.run_adapter}")
+    from .runtime.adapters.ollama import run_ollama
+
+    project = _find_project(args.project) if not args.no_project_profile else None
+    runtime_config = {}
+    if project is not None:
+        config_path = project / ".upgradeables" / "config.json"
+        if config_path.is_file():
+            runtime_config = json.loads(config_path.read_text(encoding="utf-8")).get("runtime", {})
+    model_profile = args.model_profile or runtime_config.get("default_model_profile", "medium")
+    max_directive_tokens = args.max_directive_tokens
+    if max_directive_tokens is None:
+        max_directive_tokens = runtime_config.get("max_directive_tokens", 500)
+    base_instructions = args.base_instructions
+    if args.base_instructions_file:
+        base_instructions = Path(args.base_instructions_file).read_text(encoding="utf-8")
+    options = json.loads(args.options_json) if args.options_json else {}
+    if not isinstance(options, dict):
+        raise ValueError("--options-json must contain a JSON object")
+
+    result = run_ollama(
+        model=args.model,
+        task=args.task,
+        endpoint=args.endpoint,
+        project=project,
+        model_profile=model_profile,
+        max_directive_tokens=max_directive_tokens,
+        base_instructions=base_instructions,
+        options=options,
+        timeout=args.timeout,
+        output_root=args.output_root,
+        dry_run=args.dry_run,
+        use_project_profile=not args.no_project_profile,
+    )
+    if args.dry_run or args.format == "json":
+        print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    else:
+        response = result["response"] or {}
+        if response.get("response_text"):
+            print(response["response_text"])
+        if response.get("error"):
+            print(
+                f"upgradeables: Ollama {response['error']['kind']}: {response['error']['message']}",
+                file=sys.stderr,
+            )
+        print(f"Artifacts: {result['artifact_directory']}", file=sys.stderr)
+        for warning in result["runtime_plan"].get("warnings", []):
+            print(f"Runtime warning: {warning}", file=sys.stderr)
+    if args.dry_run:
+        return 0
+    response = result["response"] or {}
+    return 1 if response.get("error") or response.get("partial") else 0
+
+
+def command_eval(args):
+    from .runtime.evals.report import summarize, write_report
+    from .runtime.evals.runner import mock_adapter, run_experiment
+    from .runtime.evals.suites import list_suites, load_suite
+
+    if args.eval_command == "list-suites":
+        suites = list_suites()
+        if args.json:
+            print(json.dumps({"suites": suites}, indent=2))
+        else:
+            for item in suites:
+                print(f"{item['slug']}: {item['description']}")
+        return 0
+    if args.eval_command == "inspect-suite":
+        suite = load_suite(args.slug)
+        if args.json:
+            print(json.dumps(suite, indent=2, sort_keys=True))
+        else:
+            print(f"{suite['slug']}: {suite['description']}")
+            print(f"License: {suite['license']}")
+            for item in suite["tasks"]:
+                print(f"- {item['id']} [{item['family']}]")
+        return 0
+    if args.eval_command == "run":
+        if args.adapter != "mock":
+            raise ValueError("core eval run supports only the offline mock adapter; external adapters require explicit integration")
+        experiment_id = args.experiment_id or f"{args.slug}-mock"
+        manifest = {
+            "schema_version": "1.0.0",
+            "experiment_id": experiment_id,
+            "suite": args.slug,
+            "conditions": args.conditions,
+            "model": {"adapter": "mock", "model": "deterministic-fixture"},
+            "trials_per_task": args.trials,
+            "temperature": 0,
+            "seed_policy": "deterministic-mock",
+            "grader": "objective",
+            "order_seed": args.order_seed,
+            "model_profile": args.model_profile,
+            "max_directive_tokens": args.max_directive_tokens,
+        }
+        target = run_experiment(manifest, mock_adapter, args.output_root)
+        print(target)
+        return 0
+
+    target = Path(args.experiment)
+    manifest_path = target / "manifest.json"
+    results_path = target / "raw-results.jsonl"
+    if not manifest_path.is_file() or not results_path.is_file():
+        raise ValueError(f"not an evaluation experiment directory: {target}")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    results = [json.loads(line) for line in results_path.read_text(encoding="utf-8").splitlines() if line]
+    if args.eval_command == "report":
+        summary = write_report(target, manifest, results)
+    else:
+        other = Path(args.experiment_b)
+        other_results_path = other / "raw-results.jsonl"
+        if not other_results_path.is_file():
+            raise ValueError(f"not an evaluation experiment directory: {other}")
+        other_results = [json.loads(line) for line in other_results_path.read_text(encoding="utf-8").splitlines() if line]
+        summary_a = summarize(results)
+        summary_b = summarize(other_results)
+        summary = {
+            "run_a": {"path": str(target), "summary": summary_a},
+            "run_b": {"path": str(other), "summary": summary_b},
+            "comparison_scope": "descriptive; verify matched manifests before causal interpretation",
+        }
+    print(json.dumps(summary, indent=2, sort_keys=True))
+    return 0
+
+
 def _lazy(module: str, function: str, args):
     try:
         handler = getattr(importlib.import_module(module), function)
@@ -109,7 +282,7 @@ def command_version(args):
 
 def command_update(args):
     if args.apply:
-        print("Registry update apply is not implemented in v0.3.0; pinned projects were not changed.", file=sys.stderr)
+        print("Registry update apply is not implemented in v0.4.0; pinned projects were not changed.", file=sys.stderr)
         return 2
     if not args.check:
         print("Use `upgradeables update --check`; network access is explicit.", file=sys.stderr)
@@ -164,6 +337,71 @@ def build_parser():
     task.add_argument("--no-project-profile", action="store_true")
     task.add_argument("--record", action="store_true")
     task.set_defaults(handler=command_task)
+
+    runtime = commands.add_parser("runtime", help="compile selected Upgradeables into runtime controls")
+    runtime_commands = runtime.add_subparsers(dest="runtime_command", required=True)
+    for name in ("compile", "explain", "plan"):
+        runtime_parser = runtime_commands.add_parser(name)
+        runtime_parser.add_argument("task", nargs="?")
+        runtime_parser.add_argument("--resolution")
+        runtime_parser.add_argument("--project")
+        runtime_parser.add_argument("--model-profile", choices=("small", "medium", "strong", "auto", "custom"))
+        runtime_parser.add_argument("--max-directive-tokens", type=int)
+        runtime_parser.add_argument("--format", choices=("text", "json", "agent-instructions", "debug"), default="text")
+        runtime_parser.add_argument("--explain", action="store_true")
+        runtime_parser.add_argument("--no-project-profile", action="store_true")
+        runtime_parser.set_defaults(handler=command_runtime)
+    profiles = runtime_commands.add_parser("profiles")
+    profiles.add_argument("--format", choices=("text", "json"), default="text")
+    profiles.set_defaults(handler=command_runtime)
+
+    run = commands.add_parser("run", help="explicitly execute a compiled runtime plan")
+    run_adapters = run.add_subparsers(dest="run_adapter", required=True)
+    run_ollama = run_adapters.add_parser("ollama", help="run one task through native Ollama chat")
+    run_ollama.add_argument("--model", required=True)
+    run_ollama.add_argument("--task", required=True)
+    run_ollama.add_argument("--endpoint", default="http://127.0.0.1:11434")
+    run_ollama.add_argument("--project")
+    run_ollama.add_argument("--model-profile", choices=("small", "medium", "strong", "auto", "custom"))
+    run_ollama.add_argument("--max-directive-tokens", type=int)
+    base = run_ollama.add_mutually_exclusive_group()
+    base.add_argument("--base-instructions")
+    base.add_argument("--base-instructions-file")
+    run_ollama.add_argument("--options-json", help="Ollama options as one JSON object")
+    run_ollama.add_argument("--timeout", type=float, default=60)
+    run_ollama.add_argument("--output-root", default=".upgradeables/runs")
+    run_ollama.add_argument("--dry-run", action="store_true")
+    run_ollama.add_argument("--format", choices=("text", "json"), default="text")
+    run_ollama.add_argument("--no-project-profile", action="store_true")
+    run_ollama.set_defaults(handler=command_run)
+
+    evaluation = commands.add_parser("eval", help="run offline-first runtime evaluations")
+    eval_commands = evaluation.add_subparsers(dest="eval_command", required=True)
+    list_eval = eval_commands.add_parser("list-suites")
+    list_eval.add_argument("--json", action="store_true")
+    list_eval.set_defaults(handler=command_eval)
+    inspect_eval = eval_commands.add_parser("inspect-suite")
+    inspect_eval.add_argument("slug")
+    inspect_eval.add_argument("--json", action="store_true")
+    inspect_eval.set_defaults(handler=command_eval)
+    run_eval = eval_commands.add_parser("run")
+    run_eval.add_argument("slug")
+    run_eval.add_argument("--adapter", default="mock")
+    run_eval.add_argument("--experiment-id")
+    run_eval.add_argument("--output-root", default=".evals/upgradeables")
+    run_eval.add_argument("--conditions", nargs="+", choices=("baseline", "static-full", "adaptive-runtime"), default=["baseline", "static-full", "adaptive-runtime"])
+    run_eval.add_argument("--trials", type=int, default=1)
+    run_eval.add_argument("--order-seed", type=int, default=0)
+    run_eval.add_argument("--model-profile", choices=("small", "medium", "strong", "auto", "custom"), default="medium")
+    run_eval.add_argument("--max-directive-tokens", type=int, default=500)
+    run_eval.set_defaults(handler=command_eval)
+    eval_report = eval_commands.add_parser("report")
+    eval_report.add_argument("experiment")
+    eval_report.set_defaults(handler=command_eval)
+    eval_compare = eval_commands.add_parser("compare")
+    eval_compare.add_argument("experiment")
+    eval_compare.add_argument("experiment_b")
+    eval_compare.set_defaults(handler=command_eval)
 
     skill = commands.add_parser("skill", help="project Skill factory")
     skills = skill.add_subparsers(dest="skill_command", required=True)

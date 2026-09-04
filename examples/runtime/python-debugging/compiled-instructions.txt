@@ -1,0 +1,16 @@
+<upgradeables-runtime version="0.4.0">
+Task controls:
+- Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority.
+- Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision.
+- Required invariant: objective, required deliverables, constraints and non-goals.
+- Each pass evaluates the artifact against locked goals, chooses the single highest-value remaining defect, repairs it, and re-evaluates.
+- Exit occurs on threshold satisfaction, budget exhaustion, or diminishing expected improvement; the historical acronym expansion is deliberately left unrecovered.
+- Required invariant: predeclared exit rule, post-repair re-evaluation, mandatory-gate precedence.
+- Construct a patch contract before editing: exact target coordinates, requested semantic delta, protected invariants, allowed collateral region, and validation probes.
+- Snapshot the target plus its immediate dependency boundary, apply the smallest diff that realizes the delta, and compare before/after behavior on both the changed case and invariant cases.
+- A patch that requires broad remapping is rejected and escalated to Surgery rather than stretched into disguised rewrite.
+- Required invariant: explicit invariant set, bounded dependency inspection, positive and negative probes.
+- Define a repair window around the smallest unit that fails an explicit criterion, freeze the surrounding accepted region, patch only that unit and any directly required connective token, then compare the window before and after.
+- Widen once only when a direct dependency proves the first window insufficient; recurring or architecture-level failure escalates instead of allowing scope creep.
+- Required invariant: smallest-fault localization, changed-atom comparison, systemic-failure escalation.
+</upgradeables-runtime>

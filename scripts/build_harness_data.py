@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "src" / "upgradeables_harness" / "data"
 MANIFEST_PATH = TARGET / "registry-manifest.json"
-HARNESS_VERSION = "0.3.0"
+HARNESS_VERSION = "0.4.0"
 CANONICAL_SNAPSHOT_INPUTS = (
     "registry/registry.json",
     "registry/upgradeable_task_priors.json",

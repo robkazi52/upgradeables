@@ -11,7 +11,7 @@ def default_lockfile() -> dict:
         raise ValueError(f"bundled registry must be 0.2.1, found {registry_version!r}")
     return {
         "schema_version": "1.0.0",
-        "harness_version": manifest.get("harness_version", "0.3.0"),
+        "harness_version": manifest.get("harness_version", "0.4.0"),
         "registry_version": registry_version,
         "registry_source": {
             "type": "bundled",

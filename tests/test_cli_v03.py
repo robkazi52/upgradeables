@@ -20,14 +20,14 @@ class CliV03Tests(unittest.TestCase):
     def test_help_exposes_complete_command_surface(self):
         result = run_cli("--help")
         self.assertEqual(result.returncode, 0, result.stderr)
-        for command in ("init", "inspect", "recommend", "task", "skill", "integrate", "doctor", "update", "version"):
+        for command in ("init", "inspect", "recommend", "task", "runtime", "eval", "skill", "integrate", "doctor", "update", "version"):
             self.assertIn(command, result.stdout)
 
     def test_version_json_is_stable_and_uses_current_registry(self):
         result = run_cli("version", "--json")
         self.assertEqual(result.returncode, 0, result.stderr)
         payload = json.loads(result.stdout)
-        self.assertEqual(payload["harness_version"], "0.3.0")
+        self.assertEqual(payload["harness_version"], "0.4.0")
         self.assertEqual(payload["bundled_registry_version"], "0.2.1")
         self.assertEqual(payload["aggregate_registry_schema_version"], "1.0.0")
         self.assertEqual(payload["component_schema_version"], "2.0.0")

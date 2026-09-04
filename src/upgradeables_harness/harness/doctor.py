@@ -11,6 +11,7 @@ from ..agents.managed_block import ManagedBlockError, validate_managed_block
 from ..project.root import resolve_project_root
 from ..project.profile import PROFILES
 from ..registry.load import load_catalog, load_manifest, load_recipes
+from ..constants import HARNESS_VERSION
 from .init import initialize_project
 from .manifest import harness_root, read_json, write_owned_text
 
@@ -68,6 +69,17 @@ def _skill_component(value: object) -> tuple[str, str | None] | None:
 
 def diagnose_project(project_root: Path) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
+    try:
+        from ..runtime.data import load_runtime_registry
+        runtime_registry = load_runtime_registry()
+        runtime_slugs = {item["slug"] for item in runtime_registry.get("components", [])}
+        catalog_slugs = {item["slug"] for item in load_catalog()["components"]}
+        if runtime_registry.get("schema_version") != "1.0.0" or runtime_registry.get("compiler_version") != "0.4.0":
+            diagnostics.append(_diag("FAIL", "runtime-data-version", "bundled:runtime-registry", "Expected runtime schema 1.0.0 and compiler 0.4.0."))
+        if runtime_slugs != catalog_slugs:
+            diagnostics.append(_diag("FAIL", "runtime-coverage", "bundled:runtime-registry", "Runtime representation coverage does not match the bundled catalog."))
+    except (ImportError, KeyError, OSError, ValueError) as error:
+        diagnostics.append(_diag("FAIL", "runtime-data-unavailable", "bundled:runtime-registry", str(error)))
     base = harness_root(project_root)
     if not base.is_dir():
         return [_diag("FAIL", "harness-missing", ".upgradeables", "Harness is not initialized; run upgradeables init.")]
@@ -88,12 +100,14 @@ def diagnose_project(project_root: Path) -> list[Diagnostic]:
         if record is not None and record.get("schema_version") != "1.0.0":
             diagnostics.append(_diag("FAIL", "schema-version", f".upgradeables/{relative}", "Expected schema_version 1.0.0."))
     if lock is not None:
-        for field, expected in (
-            ("registry_version", "0.2.1"),
-            ("harness_version", manifest.get("harness_version", "0.3.0")),
-        ):
+        for field, expected in (("registry_version", "0.2.1"),):
             if lock.get(field) != expected:
                 diagnostics.append(_diag("FAIL", "version-mismatch", ".upgradeables/lock.json", f"{field} must be {expected}."))
+        locked_harness = lock.get("harness_version")
+        if locked_harness == "0.3.0" and HARNESS_VERSION == "0.4.0":
+            diagnostics.append(_diag("WARN", "compatible-v03-lock", ".upgradeables/lock.json", "v0.3 lock remains compatible; reinitialize explicitly to adopt v0.4 defaults."))
+        elif locked_harness != HARNESS_VERSION:
+            diagnostics.append(_diag("FAIL", "version-mismatch", ".upgradeables/lock.json", f"harness_version must be {HARNESS_VERSION}."))
         if not isinstance(lock.get("components"), dict):
             diagnostics.append(_diag("FAIL", "invalid-lock", ".upgradeables/lock.json", "components must be an object."))
         for slug, version in _locked_components(lock.get("components")):
@@ -127,6 +141,24 @@ def diagnose_project(project_root: Path) -> list[Diagnostic]:
                 target = project_root / relative
                 if Path(relative).is_absolute() or not target.resolve(strict=False).is_relative_to(project_root.resolve()):
                     diagnostics.append(_diag("FAIL", "unsafe-reference-path", ".upgradeables/config.json", f"Reference root escapes the project: {relative!r}."))
+        runtime = config.get("runtime")
+        if runtime is not None:
+            if not isinstance(runtime, dict):
+                diagnostics.append(_diag("FAIL", "invalid-runtime-config", ".upgradeables/config.json", "runtime must be an object."))
+            else:
+                if runtime.get("default_model_profile") not in {"small", "medium", "strong", "auto", "custom"}:
+                    diagnostics.append(_diag("FAIL", "invalid-runtime-profile", ".upgradeables/config.json", "runtime.default_model_profile is invalid."))
+                if not isinstance(runtime.get("max_directive_tokens"), int) or runtime.get("max_directive_tokens", -1) < 0:
+                    diagnostics.append(_diag("FAIL", "invalid-runtime-budget", ".upgradeables/config.json", "runtime.max_directive_tokens must be a non-negative integer."))
+                if runtime.get("enabled") not in {True, False} or runtime.get("debug") not in {True, False}:
+                    diagnostics.append(_diag("FAIL", "invalid-runtime-config", ".upgradeables/config.json", "runtime.enabled and runtime.debug must be boolean."))
+        models = config.get("models")
+        if models is not None:
+            if not isinstance(models, dict) or any(
+                not isinstance(value, dict) or value.get("runtime_profile") not in {"small", "medium", "strong", "auto", "custom"}
+                for value in models.values()
+            ):
+                diagnostics.append(_diag("FAIL", "invalid-model-runtime-profile", ".upgradeables/config.json", "models entries require a valid runtime_profile."))
     if project is not None and Path(project.get("project_root", ".")) != Path("."):
         diagnostics.append(_diag("FAIL", "invalid-project-root", ".upgradeables/project.json", "project_root must be the portable value '.'."))
     if project is not None:

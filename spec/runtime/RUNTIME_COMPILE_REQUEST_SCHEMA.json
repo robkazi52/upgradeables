@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/robkazi52/upgradeables/spec/runtime/RUNTIME_COMPILE_REQUEST_SCHEMA.json",
+  "title": "Upgradeables runtime compile request",
+  "type": "object",
+  "required": ["task_resolution", "model_profile", "host", "budget", "base_instructions_present"],
+  "properties": {
+    "task_resolution": {"type": "object"},
+    "model_profile": {"enum": ["small", "medium", "strong", "auto", "custom"]},
+    "host": {
+      "type": "object",
+      "required": ["instruction_channel", "tools", "state_support", "parallelism"],
+      "properties": {
+        "instruction_channel": {"type": "string"},
+        "tools": {"type": "array", "items": {"type": "string"}},
+        "state_support": {"type": "string"},
+        "parallelism": {"type": "boolean"}
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": ["max_directive_tokens"],
+      "properties": {"max_directive_tokens": {"type": "integer", "minimum": 0}}
+    },
+    "base_instructions_present": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

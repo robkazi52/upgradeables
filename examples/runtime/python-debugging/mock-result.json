@@ -1,0 +1,5 @@
+{
+  "evidence_status": "mock-non-evidence",
+  "note": "Illustrative shape only; no model or adapter was executed.",
+  "response": "Located the parser boundary defect, applied a local correction, and verified the affected test and neighboring parser tests."
+}

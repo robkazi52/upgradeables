@@ -5,6 +5,7 @@ import json
 from urllib.request import Request, urlopen
 
 from .load import load_catalog, load_manifest, load_recipes
+from ..constants import HARNESS_VERSION
 
 REMOTE_REGISTRY_URL = "https://raw.githubusercontent.com/robkazi52/upgradeables/main/registry/registry.json"
 
@@ -25,7 +26,7 @@ def _changes(local: list[dict], remote: list[dict]):
 def check_for_update(*, opener=urlopen, url: str = REMOTE_REGISTRY_URL, timeout: float = 10.0):
     """Contact the canonical remote registry only when explicitly called."""
     request = Request(url, headers={"Accept": "application/json",
-                                    "User-Agent": "upgradeables-harness/0.3.0"})
+                                    "User-Agent": f"upgradeables-harness/{HARNESS_VERSION}"})
     with opener(request, timeout=timeout) as response:
         payload = json.load(response)
     current = load_manifest()["registry_version"]

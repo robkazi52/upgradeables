@@ -1,0 +1,400 @@
+{
+  "base_instructions_present": true,
+  "compiler_version": "0.4.0",
+  "complexity": {
+    "ceiling": "L4",
+    "floor": "L1",
+    "reasons": [
+      "default bound for software-engineering"
+    ]
+  },
+  "components": [
+    {
+      "required": true,
+      "runtime_form": "validator-check",
+      "runtime_level": "standard",
+      "selection_reasons": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "slug": "invariance-stress-scaffold",
+      "source_group": "required_by_recipe",
+      "source_path": "runtime/components/invariance-stress-scaffold.md",
+      "version": "1.1.0"
+    },
+    {
+      "required": true,
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selection_reasons": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "slug": "micro-repair",
+      "source_group": "required_by_recipe",
+      "source_path": "runtime/components/micro-repair.md",
+      "version": "1.1.0"
+    },
+    {
+      "required": true,
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selection_reasons": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "slug": "task-set-lock-in",
+      "source_group": "required_by_recipe",
+      "source_path": "runtime/components/task-set-lock-in.md",
+      "version": "1.1.0"
+    },
+    {
+      "required": false,
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selection_reasons": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "matched: code"
+      ],
+      "slug": "bounded-exit",
+      "source_group": "trigger_likely",
+      "source_path": "runtime/components/bounded-exit.md",
+      "version": "1.1.0"
+    },
+    {
+      "required": false,
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selection_reasons": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "promoted by: editing_requested"
+      ],
+      "slug": "crispr-edit",
+      "source_group": "trigger_likely",
+      "source_path": "runtime/components/crispr-edit.md",
+      "version": "1.1.0"
+    },
+    {
+      "required": false,
+      "runtime_form": "orchestration-control",
+      "runtime_level": "standard",
+      "selection_reasons": [
+        "promoted by matched composition prior"
+      ],
+      "slug": "scoped-loader",
+      "source_group": "trigger_likely",
+      "source_path": "runtime/components/scoped-loader.md",
+      "version": "1.1.0"
+    }
+  ],
+  "decisions": [],
+  "directive_provenance": [
+    {
+      "component": "task-set-lock-in",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selected_because": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/task-set-lock-in.md",
+      "suppression_reason": null,
+      "text": "Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "task-set-lock-in",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selected_because": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/task-set-lock-in.md",
+      "suppression_reason": null,
+      "text": "Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "task-set-lock-in",
+      "emitted": true,
+      "kind": "mandatory-invariant",
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selected_because": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/task-set-lock-in.md",
+      "suppression_reason": null,
+      "text": "Required invariant: objective, required deliverables, constraints and non-goals.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "bounded-exit",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "matched: code"
+      ],
+      "source_path": "runtime/components/bounded-exit.md",
+      "suppression_reason": null,
+      "text": "Each pass evaluates the artifact against locked goals, chooses the single highest-value remaining defect, repairs it, and re-evaluates.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "bounded-exit",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "matched: code"
+      ],
+      "source_path": "runtime/components/bounded-exit.md",
+      "suppression_reason": null,
+      "text": "Exit occurs on threshold satisfaction, budget exhaustion, or diminishing expected improvement; the historical acronym expansion is deliberately left unrecovered.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "bounded-exit",
+      "emitted": true,
+      "kind": "mandatory-invariant",
+      "runtime_form": "mixed",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "matched: code"
+      ],
+      "source_path": "runtime/components/bounded-exit.md",
+      "suppression_reason": null,
+      "text": "Required invariant: predeclared exit rule, post-repair re-evaluation, mandatory-gate precedence.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "crispr-edit",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/crispr-edit.md",
+      "suppression_reason": null,
+      "text": "Construct a patch contract before editing: exact target coordinates, requested semantic delta, protected invariants, allowed collateral region, and validation probes.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "crispr-edit",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/crispr-edit.md",
+      "suppression_reason": null,
+      "text": "Snapshot the target plus its immediate dependency boundary, apply the smallest diff that realizes the delta, and compare before/after behavior on both the changed case and invariant cases.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "crispr-edit",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/crispr-edit.md",
+      "suppression_reason": null,
+      "text": "A patch that requires broad remapping is rejected and escalated to Surgery rather than stretched into disguised rewrite.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "crispr-edit",
+      "emitted": true,
+      "kind": "mandatory-invariant",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/crispr-edit.md",
+      "suppression_reason": null,
+      "text": "Required invariant: explicit invariant set, bounded dependency inspection, positive and negative probes.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "micro-repair",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/micro-repair.md",
+      "suppression_reason": null,
+      "text": "Define a repair window around the smallest unit that fails an explicit criterion, freeze the surrounding accepted region, patch only that unit and any directly required connective token, then compare the window before and after.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "micro-repair",
+      "emitted": true,
+      "kind": "directive",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/micro-repair.md",
+      "suppression_reason": null,
+      "text": "Widen once only when a direct dependency proves the first window insufficient; recurring or architecture-level failure escalates instead of allowing scope creep.",
+      "version": "1.1.0"
+    },
+    {
+      "component": "micro-repair",
+      "emitted": true,
+      "kind": "mandatory-invariant",
+      "runtime_form": "instruction-directive",
+      "runtime_level": "standard",
+      "selected_because": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "source_path": "runtime/components/micro-repair.md",
+      "suppression_reason": null,
+      "text": "Required invariant: smallest-fault localization, changed-atom comparison, systemic-failure escalation.",
+      "version": "1.1.0"
+    }
+  ],
+  "excluded_runtime_components": [
+    {
+      "reason": "condition was not deterministically activated by v0.3",
+      "slug": "anti-tunnel-vision",
+      "source_group": "conditional"
+    },
+    {
+      "reason": "condition was not deterministically activated by v0.3",
+      "slug": "bidirectional-consistency",
+      "source_group": "conditional"
+    },
+    {
+      "reason": "condition was not deterministically activated by v0.3",
+      "slug": "surgery-edit",
+      "source_group": "conditional"
+    },
+    {
+      "reason": "task-time trigger requires host/agent evaluation",
+      "slug": "dominant-driver-isolation-scaffold",
+      "source_group": "needs_agent_evaluation"
+    },
+    {
+      "reason": "task-time trigger requires host/agent evaluation",
+      "slug": "drift-suppression",
+      "source_group": "needs_agent_evaluation"
+    },
+    {
+      "reason": "task-time trigger requires host/agent evaluation",
+      "slug": "forethought-checkpoints",
+      "source_group": "needs_agent_evaluation"
+    },
+    {
+      "reason": "task-time trigger requires host/agent evaluation",
+      "slug": "parallel-qms",
+      "source_group": "needs_agent_evaluation"
+    },
+    {
+      "reason": "task-time trigger requires host/agent evaluation",
+      "slug": "stateblock",
+      "source_group": "needs_agent_evaluation"
+    },
+    {
+      "reason": "task-time trigger requires host/agent evaluation",
+      "slug": "structured-refinement",
+      "source_group": "needs_agent_evaluation"
+    }
+  ],
+  "failure_modes": [
+    {
+      "reason": "common risk for software-engineering; not asserted as observed",
+      "slug": "task-drift"
+    }
+  ],
+  "host": {
+    "instruction_channel": "system-or-developer",
+    "parallelism": false,
+    "state_support": "none",
+    "tools": []
+  },
+  "instruction_capsule": "<upgradeables-runtime version=\"0.4.0\">\nTask controls:\n- Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority.\n- Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision.\n- Required invariant: objective, required deliverables, constraints and non-goals.\n- Each pass evaluates the artifact against locked goals, chooses the single highest-value remaining defect, repairs it, and re-evaluates.\n- Exit occurs on threshold satisfaction, budget exhaustion, or diminishing expected improvement; the historical acronym expansion is deliberately left unrecovered.\n- Required invariant: predeclared exit rule, post-repair re-evaluation, mandatory-gate precedence.\n- Construct a patch contract before editing: exact target coordinates, requested semantic delta, protected invariants, allowed collateral region, and validation probes.\n- Snapshot the target plus its immediate dependency boundary, apply the smallest diff that realizes the delta, and compare before/after behavior on both the changed case and invariant cases.\n- A patch that requires broad remapping is rejected and escalated to Surgery rather than stretched into disguised rewrite.\n- Required invariant: explicit invariant set, bounded dependency inspection, positive and negative probes.\n- Define a repair window around the smallest unit that fails an explicit criterion, freeze the surrounding accepted region, patch only that unit and any directly required connective token, then compare the window before and after.\n- Widen once only when a direct dependency proves the first window insufficient; recurring or architecture-level failure escalates instead of allowing scope creep.\n- Required invariant: smallest-fault localization, changed-atom comparison, systemic-failure escalation.\n</upgradeables-runtime>",
+  "manifest_hash": "sha256:649a380007c70e8e6d8d048f7aa4f70f75e4dc5a1ac7776cd1cee318c4f21fbd",
+  "model_profile": "medium",
+  "orchestration": [
+    {
+      "component": "scoped-loader",
+      "control": "Classify the task, domain, mode, risk, and output contract."
+    },
+    {
+      "component": "scoped-loader",
+      "control": "Load the task shell and its authority constraints."
+    },
+    {
+      "component": "scoped-loader",
+      "control": "Load at most the required Behavior Gene and authorized Core/reference layer."
+    },
+    {
+      "component": "scoped-loader",
+      "control": "Evaluate Upgradeable triggers and dependencies, then activate only the minimal matching set."
+    },
+    {
+      "component": "scoped-loader",
+      "control": "Fetch deep references, resources, or tools only when a retained component needs them."
+    }
+  ],
+  "output_contract": [],
+  "schema_version": "1.0.0",
+  "state_contract": [
+    {
+      "component": "task-set-lock-in",
+      "contract": "Convert the clarified request into a compact task-set contract: primary objective, required outputs, quality gates, constraints, non-goals, dependencies, and change authority. Check each planned action and final artifact against it; update only through an explicit, versioned scope-change decision."
+    }
+  ],
+  "task": {
+    "archetype": "software-engineering",
+    "execution_form": "direct-response",
+    "subtype": "localized-repair"
+  },
+  "task_resolution_hash": "sha256:fffeb04d0cedaf16e385438ef54be13d64f5450146f8e84f05b4e817f04452b0",
+  "token_estimate": 489,
+  "token_estimate_approximate": true,
+  "tool_requirements": [],
+  "validators": [
+    {
+      "check": "explicit invariant and at least one controlled counterfactual comparison when robustness is claimed.",
+      "component": "invariance-stress-scaffold"
+    },
+    {
+      "check": "predeclared exit rule, post-repair re-evaluation, mandatory-gate precedence.",
+      "component": "bounded-exit"
+    }
+  ],
+  "warnings": []
+}

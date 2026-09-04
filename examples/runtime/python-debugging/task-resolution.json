@@ -1,0 +1,348 @@
+{
+  "activation_note": "Selection priors only. Evaluate current triggers, non-triggers, dependencies, conflicts, counterbalances, authority, and the complexity ceiling before activation.",
+  "archetype_alternatives": [
+    {
+      "matched": [
+        "code",
+        "fix",
+        "refactor",
+        "task-pattern",
+        "test",
+        "without"
+      ],
+      "score": 153,
+      "slug": "software-engineering"
+    },
+    {
+      "matched": [
+        "code",
+        "fail",
+        "without"
+      ],
+      "score": 9,
+      "slug": "evaluation-audit"
+    },
+    {
+      "matched": [
+        "without"
+      ],
+      "score": 4,
+      "slug": "content-transformation"
+    }
+  ],
+  "best_recipe": {
+    "display_name": "Coding / Debugging",
+    "matched": [
+      "code",
+      "fail",
+      "failing",
+      "fix",
+      "test"
+    ],
+    "reasons": [
+      "candidate for software-engineering",
+      "promoted by editing_requested",
+      "promoted by matched composition prior"
+    ],
+    "score": 124,
+    "slug": "coding-debugging"
+  },
+  "candidates": [
+    {
+      "display_name": "Coding / Debugging",
+      "matched": [
+        "code",
+        "fail",
+        "failing",
+        "fix",
+        "test"
+      ],
+      "reasons": [
+        "candidate for software-engineering",
+        "promoted by editing_requested",
+        "promoted by matched composition prior"
+      ],
+      "score": 124,
+      "slug": "coding-debugging"
+    },
+    {
+      "display_name": "Code / Pull Request Review",
+      "matched": [
+        "code",
+        "test",
+        "without"
+      ],
+      "reasons": [
+        "candidate for software-engineering",
+        "demoted by editing_requested"
+      ],
+      "score": 61,
+      "slug": "code-review"
+    },
+    {
+      "display_name": "Long-Context Source Fidelity",
+      "matched": [
+        "without"
+      ],
+      "reasons": [
+        "candidate for software-engineering",
+        "promoted by editing_requested"
+      ],
+      "score": 39,
+      "slug": "long-context-source-fidelity"
+    }
+  ],
+  "complexity": {
+    "ceiling": "L4",
+    "floor": "L1",
+    "reasons": [
+      "default bound for software-engineering"
+    ]
+  },
+  "conditional": [
+    {
+      "plain_display_name": "Anti-Tunnel Vision",
+      "reasons": [
+        "conditional matched composition prior"
+      ],
+      "recipe_role": "A",
+      "slug": "anti-tunnel-vision",
+      "status": "conditional",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Bidirectional Consistency",
+      "reasons": [
+        "conditional matched composition prior"
+      ],
+      "recipe_role": "A",
+      "slug": "bidirectional-consistency",
+      "status": "conditional",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Structural System Edit",
+      "reasons": [
+        "conditional recipe role; condition not asserted automatically",
+        "matched: refactor",
+        "promoted by: editing_requested"
+      ],
+      "recipe_role": "C",
+      "slug": "surgery-edit",
+      "status": "conditional",
+      "version": "1.1.0"
+    }
+  ],
+  "environment": {
+    "acceptance_criteria_present": null,
+    "branches_independent": null,
+    "contains_protected_literals": null,
+    "context_window_pressure": null,
+    "corpus_mutable": null,
+    "deterministic_verifier_available": null,
+    "durable_state_available": null,
+    "editing_requested": true,
+    "evidence_conflicting": null,
+    "evidence_unavailable": null,
+    "external_action_allowed": null,
+    "external_research_allowed": null,
+    "file_write_allowed": null,
+    "handoff_expected": null,
+    "has_supplied_sources": null,
+    "high_stakes": null,
+    "human_approval_available": null,
+    "irreversible_action": null,
+    "long_context": null,
+    "missing_required_information": null,
+    "multi_agent_available": null,
+    "multi_document": null,
+    "network_available": null,
+    "persistent_work": null,
+    "recurrence_pattern_stable": null,
+    "reproduction_available": null,
+    "requires_citations": null,
+    "requires_exact_fidelity": null,
+    "review_only": false,
+    "sensitive_data": null,
+    "shell_available": null,
+    "simple_exact_edit": null,
+    "structured_output_required": null,
+    "tests_available": null,
+    "tightly_shared_state": null,
+    "time_sensitive": null,
+    "tools_required": null,
+    "web_available": null
+  },
+  "excluded": [],
+  "failure_modes": [
+    {
+      "reason": "common risk for software-engineering; not asserted as observed",
+      "slug": "task-drift"
+    }
+  ],
+  "hard_restrictions": [],
+  "matched_prior_rules": [
+    {
+      "id": "base-minimal",
+      "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+    },
+    {
+      "id": "coding-repair",
+      "reason": "Repair should localize and verify the smallest sufficient change; diagnosis-only still excludes mutation through the authority rules."
+    }
+  ],
+  "needs_agent_evaluation": [
+    {
+      "plain_display_name": "Dominant-Driver Isolation Scaffold",
+      "reasons": [
+        "recipe candidate; no deterministic positive trigger observed"
+      ],
+      "recipe_role": "A",
+      "slug": "dominant-driver-isolation-scaffold",
+      "status": "needs-agent-evaluation",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Drift Suppression",
+      "reasons": [
+        "recipe candidate; no deterministic positive trigger observed"
+      ],
+      "recipe_role": "A",
+      "slug": "drift-suppression",
+      "status": "needs-agent-evaluation",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Forethought / Checkpoints",
+      "reasons": [
+        "recipe candidate; no deterministic positive trigger observed"
+      ],
+      "recipe_role": "A",
+      "slug": "forethought-checkpoints",
+      "status": "needs-agent-evaluation",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Parallel Validation System",
+      "reasons": [
+        "demoted by matched composition prior"
+      ],
+      "recipe_role": "A",
+      "slug": "parallel-qms",
+      "status": "needs-agent-evaluation",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Canonical Task State",
+      "reasons": [
+        "recipe candidate; no deterministic positive trigger observed"
+      ],
+      "recipe_role": "A",
+      "slug": "stateblock",
+      "status": "needs-agent-evaluation",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Structured Refinement Cycles",
+      "reasons": [
+        "recipe candidate; no deterministic positive trigger observed"
+      ],
+      "recipe_role": "A",
+      "slug": "structured-refinement",
+      "status": "needs-agent-evaluation",
+      "version": "1.1.0"
+    }
+  ],
+  "normalized_task": "fix the failing parser test without refactoring unrelated code",
+  "optional": [],
+  "project": null,
+  "query": "Fix the failing parser test without refactoring unrelated code.",
+  "registry_version": "0.2.1",
+  "required_by_recipe": [
+    {
+      "plain_display_name": "Protected-Constraint Robustness Test",
+      "reasons": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "recipe_role": "R",
+      "slug": "invariance-stress-scaffold",
+      "status": "required-by-recipe",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Minimal Local Correction",
+      "reasons": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "recipe_role": "R",
+      "slug": "micro-repair",
+      "status": "required-by-recipe",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Task-Set Lock-In",
+      "reasons": [
+        "required by selected recipe",
+        "promoted by: editing_requested"
+      ],
+      "recipe_role": "R",
+      "slug": "task-set-lock-in",
+      "status": "required-by-recipe",
+      "version": "1.1.0"
+    }
+  ],
+  "required_checks": [],
+  "schema_version": "1.0.0",
+  "selection_only": true,
+  "task": {
+    "archetype": "software-engineering",
+    "archetype_score": 153,
+    "execution_form": "direct-response",
+    "matched": [
+      "code",
+      "fix",
+      "refactor",
+      "task-pattern",
+      "test",
+      "without"
+    ],
+    "resolution": "matched",
+    "subtype": "localized-repair"
+  },
+  "trigger_likely": [
+    {
+      "plain_display_name": "Bounded Iteration Stop Rule",
+      "reasons": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "matched: code"
+      ],
+      "recipe_role": "A",
+      "slug": "bounded-exit",
+      "status": "trigger-likely",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Precision Local System Edit",
+      "reasons": [
+        "positive trigger evidence observed; still requires task-time evaluation",
+        "promoted by: editing_requested"
+      ],
+      "recipe_role": "A",
+      "slug": "crispr-edit",
+      "status": "trigger-likely",
+      "version": "1.1.0"
+    },
+    {
+      "plain_display_name": "Scoped Loader / Loader Sequencing",
+      "reasons": [
+        "promoted by matched composition prior"
+      ],
+      "recipe_role": null,
+      "slug": "scoped-loader",
+      "status": "trigger-likely",
+      "version": "1.1.0"
+    }
+  ]
+}
