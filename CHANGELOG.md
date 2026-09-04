@@ -4,6 +4,18 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ## [Unreleased]
 
+### Added
+
+- A provider-neutral v0.4 runtime compiler, multi-channel RuntimePlan, generic
+  instruction-density profiles, adapters, and offline evaluation harness.
+- A deterministic runtime-form review and representation for all 96 operational
+  Upgradeables, including explicit non-injectable builder/meta packages.
+
+### Fixed
+
+- Made the v0.3 publisher treat a missing GitHub release as the expected
+  first-publication state under Windows PowerShell strict error handling.
+
 ## [0.3.0] - 2026-09-03
 
 ### Added

@@ -24,6 +24,9 @@ jobs:
           python scripts/build_registry.py --check
           python scripts/build_runtime.py --check
           python scripts/build_harness_data.py --check
+          python scripts/build_runtime_registry.py --check
+          python scripts/audit_runtime_directives.py --check
+          python scripts/build_runtime_example.py --check
           python scripts/validate_registry.py
           python scripts/validate_behavior_cases.py
           python scripts/run_deterministic_package_checks.py
@@ -49,6 +52,9 @@ jobs:
           "$CLI" init "$PROJECT"
           "$CLI" task "review this pull request for bugs and regressions" --project "$PROJECT" --json
           "$CLI" task "fix this one failing test without refactoring unrelated code" --project "$PROJECT" --json
+          "$CLI" runtime compile "fix this one failing test without refactoring unrelated code" --project "$PROJECT"
+          "$CLI" runtime explain "review this patch, do not modify files" --project "$PROJECT" --model-profile strong
+          "$CLI" eval list-suites
           "$CLI" integrate codex --project "$PROJECT"
           "$CLI" integrate codex --project "$PROJECT" --write
           "$CLI" integrate codex --project "$PROJECT" --write
