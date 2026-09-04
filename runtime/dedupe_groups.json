@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "groups": [
+    "authority",
+    "scope",
+    "source-grounding",
+    "alternative-search",
+    "state",
+    "invariants",
+    "repair-locality",
+    "verification",
+    "stopping",
+    "risk"
+  ],
+  "rule": "Within one group, suppress only whitespace/case/punctuation-equivalent directives after their first stable occurrence; preserve distinct controls and mandatory invariants."
+}

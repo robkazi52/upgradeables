@@ -1,0 +1,9 @@
+{
+  "messages": [
+    {
+      "content": "Fix the failing parser test without refactoring unrelated code.",
+      "role": "user"
+    }
+  ],
+  "model": "example-model"
+}

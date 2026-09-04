@@ -16,6 +16,9 @@ jobs:
       - run: python scripts/build_ecosystem_reviews.py --check
       - run: python scripts/build_registry.py --check
       - run: python scripts/build_runtime.py --check
+      - run: python scripts/build_runtime_registry.py --check
+      - run: python scripts/audit_runtime_directives.py --check
+      - run: python scripts/build_runtime_example.py --check
       - run: python scripts/validate_registry.py
       - run: python scripts/validate_behavior_cases.py
       - run: python scripts/run_deterministic_package_checks.py

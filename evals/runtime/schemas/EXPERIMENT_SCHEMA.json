@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "experiment_id", "suite", "conditions", "evaluation_modes", "model", "adapter", "model_id", "endpoint_type", "endpoint_origin", "trials_per_task", "trial_count", "temperature", "generation_parameters", "seed_policy", "grader", "condition_order_seed", "fixed_resolution_policy", "fixed_resolutions", "fixed_resolution_hashes", "request_count_planned", "request_count_completed"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "experiment_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "suite": {"type": "string", "minLength": 1},
+    "conditions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["baseline", "static-full", "adaptive-fixed-resolution", "adaptive-end-to-end"]}},
+    "requested_conditions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["baseline", "static-full", "adaptive-fixed-resolution", "adaptive-end-to-end", "adaptive-runtime"]}},
+    "evaluation_modes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["baseline", "static-full", "adaptive-fixed-resolution", "adaptive-end-to-end"]}},
+    "model": {
+      "type": "object",
+      "required": ["adapter", "model"],
+      "properties": {
+        "adapter": {"type": "string", "minLength": 1},
+        "model": {"type": "string", "minLength": 1}
+      }
+    },
+    "adapter": {"type": "string", "minLength": 1},
+    "model_id": {"type": "string", "minLength": 1},
+    "endpoint_type": {"type": "string", "minLength": 1},
+    "endpoint_origin": {"type": ["string", "null"]},
+    "trials_per_task": {"type": "integer", "minimum": 1},
+    "trial_count": {"type": "integer", "minimum": 1},
+    "temperature": {"type": "number"},
+    "generation_parameters": {"type": "object"},
+    "seed_policy": {"type": "string", "minLength": 1},
+    "grader": {"const": "objective"},
+    "order_seed": {"type": "integer"},
+    "condition_order_seed": {"type": "integer"},
+    "fixed_resolution_policy": {"enum": ["required-per-task-v1", "available-not-requested-v1", "none"]},
+    "fixed_resolutions": {"type": "object", "additionalProperties": {"type": "object"}},
+    "fixed_resolution_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}},
+    "request_count_planned": {"type": "integer", "minimum": 0},
+    "request_count_completed": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": true
+}

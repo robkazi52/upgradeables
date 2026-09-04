@@ -44,7 +44,7 @@ python scripts/query_registry.py --recipe code-review --runtime
 
 ### Install it into a project
 
-The `0.3.0` project harness is local-first and has no runtime dependencies:
+The stable `0.3.0` project harness is local-first and has no runtime dependencies:
 
 ```bash
 pipx install git+https://github.com/robkazi52/upgradeables.git@v0.3.0
@@ -58,6 +58,30 @@ The harness writes its own state under `.upgradeables/`; host instructions are
 changed only by an explicit integration write. Build a reusable project workflow
 with `upgradeables skill brief`, `skill scaffold`, and `skill validate`. See the
 [Harness guide](docs/HARNESS.md) and [Project Skill Factory](docs/SKILL_FACTORY.md).
+
+### Runtime reasoning middleware
+
+The unreleased v0.4 candidate compiles v0.3 task selections into the smallest
+runtime control layer that preserves their required invariants. It emits a
+provider-neutral `RuntimePlan`: instruction text remains separate from state,
+validators, orchestration, tool requirements, and output contracts.
+
+From a v0.4 source checkout:
+
+```bash
+python -m pip install -e .
+upgradeables runtime compile "fix the failing parser test without unrelated refactoring"
+upgradeables runtime explain "review this patch, do not modify files" --model-profile strong
+upgradeables run ollama --model your-already-installed-model --task "review this function" --dry-run --format json
+upgradeables eval list-suites
+upgradeables eval run synthetic-runtime-v1 --adapter ollama --model your-already-installed-model --dry-run --json
+```
+
+The generic, Ollama, OpenAI-compatible, and optional OpenAI Agents adapters
+preserve existing host instructions. Evaluation is offline and mocked by
+default; live evaluation is explicit and starts with a no-write/no-network dry
+run. Nothing downloads models or spends API credits automatically. Start with
+the [runtime guide](docs/runtime/README.md).
 
 ## What is an Upgradeable?
 
@@ -174,6 +198,8 @@ python scripts/build_registry.py --check
 python scripts/build_runtime.py --check
 python scripts/build_selection_ontology.py --check
 python scripts/build_harness_data.py --check
+python scripts/build_runtime_registry.py --check
+python scripts/audit_runtime_directives.py --check
 python scripts/validate_registry.py
 python scripts/validate_selection_ontology.py
 python scripts/validate_behavior_cases.py

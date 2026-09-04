@@ -18,4 +18,11 @@ def default_config(
         "skill_suggestion_threshold": 3,
         "reference_roots": reference_roots or [],
         "network": {"allow_registry_update": False},
+        "runtime": {
+            "enabled": True,
+            "default_model_profile": "medium",
+            "max_directive_tokens": 500,
+            "debug": False,
+        },
+        "models": {},
     }

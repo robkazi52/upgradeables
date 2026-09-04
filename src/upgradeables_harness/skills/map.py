@@ -35,7 +35,7 @@ def _harness_version() -> str:
 
         return str(HARNESS_VERSION)
     except (ImportError, AttributeError):
-        return "0.3.0"
+        return "0.4.0"
 
 
 def _known_recipe(slug: str) -> bool:
@@ -65,8 +65,11 @@ def validate_skill_map(value: dict[str, Any]) -> list[str]:
         errors.append(
             f"schema_version must be {SKILL_MAP_SCHEMA_VERSION!r}"
         )
-    if value.get("harness_version") != _harness_version():
-        errors.append(f"harness_version must be {_harness_version()!r}")
+    compatible_versions = {_harness_version()}
+    if _harness_version() == "0.4.0":
+        compatible_versions.add("0.3.0")
+    if value.get("harness_version") not in compatible_versions:
+        errors.append(f"harness_version must be one of {sorted(compatible_versions)!r}")
     skills = value.get("skills")
     if not isinstance(skills, list):
         return [*errors, "skills must be an array"]

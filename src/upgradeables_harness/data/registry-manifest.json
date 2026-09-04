@@ -1,7 +1,7 @@
 {
   "aggregate_registry_schema_version": "1.0.0",
   "component_schema_version": "2.0.0",
-  "harness_version": "0.3.0",
+  "harness_version": "0.4.0",
   "normal_operations_require_network": false,
   "registry_version": "0.2.1",
   "schema_version": "1.0.0",

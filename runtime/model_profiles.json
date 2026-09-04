@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "profiles": {
+    "small": {
+      "default_level": "full",
+      "description": "Explicit procedure and concrete checkpoints with all mandatory invariants preserved."
+    },
+    "medium": {
+      "default_level": "standard",
+      "description": "Standard procedural detail for ordinary model and agent use."
+    },
+    "strong": {
+      "default_level": "micro",
+      "description": "Compressed routine scaffolding with critical invariants and high-risk validation preserved."
+    },
+    "auto": {
+      "default_level": "standard",
+      "description": "Safe standard fallback; adapter metadata does not yet alter compiler density."
+    },
+    "custom": {
+      "default_level": "standard",
+      "description": "Safe standard fallback; caller-supplied density policies are not yet implemented."
+    }
+  }
+}

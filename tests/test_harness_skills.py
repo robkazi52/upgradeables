@@ -106,7 +106,7 @@ class SkillMapTests(unittest.TestCase):
             self.assertEqual(first, second)
             self.assertEqual(before, (root / ".upgradeables" / "skill-map.json").read_bytes())
             self.assertEqual([], validate_skill_map(first))
-            self.assertEqual("0.3.0", first["harness_version"])
+            self.assertEqual("0.4.0", first["harness_version"])
             self.assertTrue((root / ".upgradeables" / "skills" / "README.md").is_file())
 
 

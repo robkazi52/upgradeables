@@ -144,7 +144,7 @@ class HarnessInitTests(WorkspaceCase):
         self.assertTrue((base / "skill-map.json").is_file())
         self.assertTrue((base / "agents/codex.md").is_file())
         lock = json.loads((base / "lock.json").read_text(encoding="utf-8"))
-        self.assertEqual(lock["harness_version"], "0.3.0")
+        self.assertEqual(lock["harness_version"], "0.4.0")
         self.assertEqual(lock["registry_version"], "0.2.1")
 
     def test_explicit_profile_is_fixed(self):

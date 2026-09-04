@@ -6,7 +6,7 @@
   "required": ["schema_version", "harness_version", "registry_version", "registry_source", "components", "skills"],
   "properties": {
     "schema_version": {"const": "1.0.0"},
-    "harness_version": {"const": "0.3.0"},
+    "harness_version": {"enum": ["0.3.0", "0.4.0"]},
     "registry_version": {"const": "0.2.1"},
     "registry_source": {
       "type": "object",

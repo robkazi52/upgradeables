@@ -1,0 +1,1141 @@
+{
+  "schema_version": "1.0.0",
+  "slug": "synthetic-runtime-v1",
+  "description": "Small redistributable synthetic tasks covering the v0.3 ontology; suitable for plumbing and local model experiments.",
+  "license": "CC0-1.0",
+  "tasks": [
+    {
+      "id": "constraint-01",
+      "family": "constraint-following",
+      "prompt": "Return exactly: 17 BLUE",
+      "grader": {
+        "type": "exact",
+        "expected": "17 BLUE"
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Return exactly: 17 BLUE",
+        "normalized_task": "return exactly 17 blue",
+        "project": null,
+        "task": {
+          "resolution": "no-match",
+          "archetype": null,
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [],
+        "complexity": {
+          "floor": "L0",
+          "ceiling": "L1",
+          "reasons": [
+            "no-match direct-or-clarify policy"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          },
+          {
+            "id": "no-match",
+            "reason": "Do not fabricate a recipe or maximal stack to make an uncertain result look complete."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "task-set-lock-in",
+            "version": "1.1.0",
+            "plain_display_name": "Task-Set Lock-In",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for constraint-following"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "source-01",
+      "family": "source-grounded-answering",
+      "prompt": "Source: The cedar box weighs 4 kg. State only its weight.",
+      "grader": {
+        "type": "exact",
+        "expected": "4 kg"
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Source: The cedar box weighs 4 kg. State only its weight.",
+        "normalized_task": "source the cedar box weighs 4 kg state only its weight",
+        "project": null,
+        "task": {
+          "resolution": "matched",
+          "archetype": "research-grounding",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "unsupported-claim",
+            "reason": "common risk for research-grounding; not asserted as observed"
+          }
+        ],
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L4",
+          "reasons": [
+            "default bound for research-grounding"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "grounding-no-invention",
+            "version": "1.1.0",
+            "plain_display_name": "Grounding / No-Invention",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for source-grounded-answering"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "citation-01",
+      "family": "citation-fidelity",
+      "prompt": "[S1] Rowan arrived Tuesday. State when Rowan arrived and cite S1.",
+      "grader": {
+        "type": "contains-all",
+        "values": [
+          "Tuesday",
+          "S1"
+        ]
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "[S1] Rowan arrived Tuesday. State when Rowan arrived and cite S1.",
+        "normalized_task": "s1 rowan arrived tuesday state when rowan arrived and cite s1",
+        "project": null,
+        "task": {
+          "resolution": "no-match",
+          "archetype": null,
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": true,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "citation-source-mismatch",
+            "reason": "claim-level citation support is requested"
+          },
+          {
+            "slug": "evidence-coverage-gap",
+            "reason": "required claims may lack source coverage"
+          }
+        ],
+        "complexity": {
+          "floor": "L0",
+          "ceiling": "L1",
+          "reasons": [
+            "no-match direct-or-clarify policy"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          },
+          {
+            "id": "citation-bearing-output",
+            "reason": "Citation correctness, completeness, and answer correctness are distinct."
+          },
+          {
+            "id": "no-match",
+            "reason": "Do not fabricate a recipe or maximal stack to make an uncertain result look complete."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [
+          "Verify that each material citation entails the adjacent bounded claim and that material claims have support."
+        ],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "citation-fidelity",
+            "version": "1.1.0",
+            "plain_display_name": "Citation Fidelity Gate",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for citation-fidelity"
+            ]
+          },
+          {
+            "slug": "grounding-no-invention",
+            "version": "1.1.0",
+            "plain_display_name": "Grounding / No-Invention",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for citation-fidelity"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "editing-01",
+      "family": "local-editing",
+      "prompt": "Change only foo to bar in: foo = 3",
+      "grader": {
+        "type": "exact",
+        "expected": "bar = 3"
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Change only foo to bar in: foo = 3",
+        "normalized_task": "change only foo to bar in foo 3",
+        "project": null,
+        "task": {
+          "resolution": "ambiguous",
+          "archetype": "action-execution",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "mode-scope-authority-drift",
+            "reason": "common risk for action-execution; not asserted as observed"
+          }
+        ],
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L4",
+          "reasons": [
+            "default bound for action-execution"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "micro-repair",
+            "version": "1.1.0",
+            "plain_display_name": "Minimal Local Correction",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for local-editing"
+            ]
+          },
+          {
+            "slug": "task-set-lock-in",
+            "version": "1.1.0",
+            "plain_display_name": "Task-Set Lock-In",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for local-editing"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "debug-01",
+      "family": "debugging-repair",
+      "prompt": "Repair: def double(x): return x + x + 1. Return only the corrected return statement.",
+      "grader": {
+        "type": "exact",
+        "expected": "return x + x"
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Repair: def double(x): return x + x + 1. Return only the corrected return statement.",
+        "normalized_task": "repair def double x return x x 1 return only the corrected return statement",
+        "project": null,
+        "task": {
+          "resolution": "no-match",
+          "archetype": null,
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [],
+        "complexity": {
+          "floor": "L0",
+          "ceiling": "L1",
+          "reasons": [
+            "no-match direct-or-clarify policy"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          },
+          {
+            "id": "no-match",
+            "reason": "Do not fabricate a recipe or maximal stack to make an uncertain result look complete."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "micro-repair",
+            "version": "1.1.0",
+            "plain_display_name": "Minimal Local Correction",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for debugging-repair"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "review-01",
+      "family": "code-review",
+      "prompt": "Review only; do not edit. Code: if user.is_admin: allow=False. Name the likely defect.",
+      "grader": {
+        "type": "contains-all",
+        "values": [
+          "admin",
+          "denied"
+        ]
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Review only; do not edit. Code: if user.is_admin: allow=False. Name the likely defect.",
+        "normalized_task": "review only do not edit code if user is admin allow false name the likely defect",
+        "project": null,
+        "task": {
+          "resolution": "matched",
+          "archetype": "evaluation-audit",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": true,
+          "editing_requested": false,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "over-editing",
+            "reason": "task explicitly denies edit authority"
+          },
+          {
+            "slug": "mode-scope-authority-drift",
+            "reason": "review authority must remain read-only"
+          }
+        ],
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L2",
+          "reasons": [
+            "bounded review-only task"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          },
+          {
+            "id": "review-only-boundary",
+            "reason": "Review and remediation are separate authority modes."
+          }
+        ],
+        "hard_restrictions": [
+          "No file edits, record changes, commits, pushes, sends, deploys, or remediation unless separately and explicitly requested."
+        ],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "grounding-no-invention",
+            "version": "1.1.0",
+            "plain_display_name": "Grounding / No-Invention",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for code-review"
+            ]
+          },
+          {
+            "slug": "scoped-loader",
+            "version": "1.1.0",
+            "plain_display_name": "Scoped Loader / Loader Sequencing",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for code-review"
+            ]
+          },
+          {
+            "slug": "task-set-lock-in",
+            "version": "1.1.0",
+            "plain_display_name": "Task-Set Lock-In",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for code-review"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "state-01",
+      "family": "long-context-state",
+      "prompt": "Constraint A=red. Distraction: B=blue. Return A only.",
+      "grader": {
+        "type": "exact",
+        "expected": "red"
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Constraint A=red. Distraction: B=blue. Return A only.",
+        "normalized_task": "constraint a red distraction b blue return a only",
+        "project": null,
+        "task": {
+          "resolution": "ambiguous",
+          "archetype": "constraint-reasoning",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "constraint-loss",
+            "reason": "common risk for constraint-reasoning; not asserted as observed"
+          }
+        ],
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L3",
+          "reasons": [
+            "default bound for constraint-reasoning"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "working-memory-lock-in",
+            "version": "1.1.0",
+            "plain_display_name": "Working-Memory Lock-In",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for long-context-state"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "alternative-01",
+      "family": "alternative-hypothesis",
+      "prompt": "A lamp fails after a bulb replacement; a known-good bulb also fails. Name the likelier next hypothesis.",
+      "grader": {
+        "type": "contains-any",
+        "values": [
+          "power",
+          "socket",
+          "wiring",
+          "switch"
+        ]
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "A lamp fails after a bulb replacement; a known-good bulb also fails. Name the likelier next hypothesis.",
+        "normalized_task": "a lamp fails after a bulb replacement a known good bulb also fails name the likelier next hypothesis",
+        "project": null,
+        "task": {
+          "resolution": "ambiguous",
+          "archetype": "creative-exploration",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "premature-commitment",
+            "reason": "common risk for creative-exploration; not asserted as observed"
+          }
+        ],
+        "complexity": {
+          "floor": "L1",
+          "ceiling": "L2",
+          "reasons": [
+            "default bound for creative-exploration"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "anti-tunnel-vision",
+            "version": "1.1.0",
+            "plain_display_name": "Anti-Tunnel Vision",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for alternative-hypothesis"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "structured-01",
+      "family": "structured-output",
+      "prompt": "Return JSON with integer field answer set to 5.",
+      "grader": {
+        "type": "json-fields",
+        "fields": {
+          "answer": 5
+        }
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Return JSON with integer field answer set to 5.",
+        "normalized_task": "return json with integer field answer set to 5",
+        "project": null,
+        "task": {
+          "resolution": "ambiguous",
+          "archetype": "knowledge-explanation",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": true,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": null,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": null
+        },
+        "failure_modes": [
+          {
+            "slug": "task-drift",
+            "reason": "common risk for knowledge-explanation; not asserted as observed"
+          }
+        ],
+        "complexity": {
+          "floor": "L0",
+          "ceiling": "L1",
+          "reasons": [
+            "default bound for knowledge-explanation"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "task-set-lock-in",
+            "version": "1.1.0",
+            "plain_display_name": "Task-Set Lock-In",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for structured-output"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    },
+    {
+      "id": "stopping-01",
+      "family": "stopping-overwork",
+      "prompt": "Rename heading Old to New. Return only the new heading.",
+      "grader": {
+        "type": "exact",
+        "expected": "New"
+      },
+      "fixed_resolution": {
+        "schema_version": "1.0.0",
+        "registry_version": "0.2.1",
+        "selection_only": true,
+        "query": "Rename heading Old to New. Return only the new heading.",
+        "normalized_task": "rename heading old to new return only the new heading",
+        "project": null,
+        "task": {
+          "resolution": "ambiguous",
+          "archetype": "content-transformation",
+          "subtype": null,
+          "execution_form": "direct-response"
+        },
+        "environment": {
+          "has_supplied_sources": null,
+          "requires_citations": null,
+          "long_context": null,
+          "multi_document": null,
+          "requires_exact_fidelity": null,
+          "contains_protected_literals": null,
+          "tools_required": null,
+          "persistent_work": null,
+          "handoff_expected": null,
+          "irreversible_action": null,
+          "high_stakes": null,
+          "time_sensitive": null,
+          "structured_output_required": null,
+          "sensitive_data": null,
+          "shell_available": null,
+          "web_available": null,
+          "tests_available": null,
+          "network_available": null,
+          "multi_agent_available": null,
+          "human_approval_available": null,
+          "deterministic_verifier_available": null,
+          "durable_state_available": null,
+          "external_research_allowed": null,
+          "review_only": false,
+          "editing_requested": true,
+          "file_write_allowed": null,
+          "external_action_allowed": null,
+          "context_window_pressure": null,
+          "evidence_conflicting": null,
+          "evidence_unavailable": null,
+          "missing_required_information": null,
+          "acceptance_criteria_present": null,
+          "reproduction_available": null,
+          "corpus_mutable": null,
+          "branches_independent": null,
+          "tightly_shared_state": null,
+          "recurrence_pattern_stable": null,
+          "simple_exact_edit": true
+        },
+        "failure_modes": [
+          {
+            "slug": "constraint-loss",
+            "reason": "common risk for content-transformation; not asserted as observed"
+          }
+        ],
+        "complexity": {
+          "floor": "L0",
+          "ceiling": "L1",
+          "reasons": [
+            "simple exact edit hard suppression"
+          ]
+        },
+        "matched_prior_rules": [
+          {
+            "id": "base-minimal",
+            "reason": "High-cost, stateful, and orchestrated controls require positive task-time evidence."
+          },
+          {
+            "id": "orchestration-suppression",
+            "reason": "Tightly coupled, tiny, or serial work pays coordination cost without gaining independent coverage."
+          },
+          {
+            "id": "simple-exact-edit-suppression",
+            "reason": "A bounded rename or literal edit should not trigger architecture, branching, durable-state, or orchestration machinery."
+          }
+        ],
+        "hard_restrictions": [],
+        "required_checks": [],
+        "best_recipe": null,
+        "candidates": [],
+        "required_by_recipe": [
+          {
+            "slug": "bounded-exit",
+            "version": "1.1.0",
+            "plain_display_name": "Bounded Iteration Stop Rule",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for stopping-overwork"
+            ]
+          },
+          {
+            "slug": "micro-repair",
+            "version": "1.1.0",
+            "plain_display_name": "Minimal Local Correction",
+            "recipe_role": "R",
+            "status": "required-by-recipe",
+            "reasons": [
+              "curated fixed-resolution fixture for stopping-overwork"
+            ]
+          }
+        ],
+        "trigger_likely": [],
+        "conditional": [],
+        "optional": [],
+        "excluded": [],
+        "needs_agent_evaluation": [],
+        "activation_note": "Curated fixed TaskResolution fixture version 1.0.0; compile without rerunning selection."
+      }
+    }
+  ]
+}

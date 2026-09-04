@@ -18,6 +18,26 @@
       "required": ["allow_registry_update"],
       "properties": {"allow_registry_update": {"type": "boolean"}},
       "additionalProperties": false
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["enabled", "default_model_profile", "max_directive_tokens", "debug"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "default_model_profile": {"enum": ["small", "medium", "strong", "auto", "custom"]},
+        "max_directive_tokens": {"type": "integer", "minimum": 0},
+        "debug": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["runtime_profile"],
+        "properties": {"runtime_profile": {"enum": ["small", "medium", "strong", "auto", "custom"]}},
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false
